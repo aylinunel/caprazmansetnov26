@@ -1535,10 +1535,10 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
 @media (max-width:760px){.xcmp-sum{grid-template-columns:72px 1fr}.xcmp-mark{width:72px;height:72px}.xcmp-list{grid-template-columns:1fr}}
 
 /* ---- method: the annotated example */
-.xwalk-l{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:18px}
-.xwalk-s{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;border-top:1px solid var(--line);padding-top:14px}
-.xwalk-n{font-size:22px;color:var(--muted)}
-.xwalk-s h3{font-size:22px;margin:0 0 4px}
+.xwalk-l{margin-top:18px}
+.phead .p-lead{margin-top:16px}
+/* the walk's split card is taller than the accordion: on desktop the row grows to its longest step, bodies sit in flow under the giant number */
+@media (min-width:901px){.xwalk-l.p-splits{height:auto}.xwalk-l.p-splits .panel{display:flex;flex-direction:column;justify-content:flex-end;padding:260px 0 22px}.xwalk-l .p-body{position:relative;left:24px;bottom:auto}}
 .xwalk-s p{margin:0 0 6px;color:var(--ink2);max-width:72ch}
 .xpromise{margin-top:26px;padding:22px 26px;background:var(--ink);color:var(--paper);border-radius:14px}
 .xpromise .xwm{font-size:30px;margin:0;color:var(--paper)}
@@ -1717,7 +1717,9 @@ th{color:var(--ink);border-bottom-width:3px}
   border-radius:8px;padding:10px 12px;font:400 13px/1.45 var(--ff-b);box-shadow:var(--shadow-pop);animation:glin .15s ease}
 .gl-pop a{display:inline-block;min-height:24px;color:var(--ink);font-weight:600;white-space:nowrap}
 @keyframes glin{from{opacity:0}to{opacity:1}}
-.v7-gloss dt{font-weight:600;margin-top:12px}
+.v7-gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:0}
+.v7-gloss>div{padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.v7-gloss dt{font-weight:600}
 .v7-gloss dd{margin:2px 0 0;color:var(--ink2)}
 .v7-how summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--ff-m);font-size:12.5px;
   border:1px solid var(--line);border-radius:99px;padding:0 14px;background:var(--surface);list-style:none}
@@ -2353,7 +2355,7 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 .p-rule{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink)}
 .p-head .p-kick{font:500 11px/1.2 var(--ff-m);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;max-width:none}
 .p-head .p-kick::before{content:"";display:inline-block;width:7px;height:7px;margin-right:10px;background:var(--ink);vertical-align:1px}
-.p-head .p-title{font:500 clamp(32px,4.4vw,56px)/1.02 var(--serif);letter-spacing:-.025em;margin:0;color:var(--ink)}
+.p-head .p-title{font:500 clamp(32px,4.4vw,56px)/1.02 var(--serif);letter-spacing:-.025em;margin:0;border:0;padding:0;color:var(--ink)}
 .pw{display:inline-block}
 .v7-kisaca p.p-lead,.p-lead{position:relative;z-index:1;display:flow-root;font:400 clamp(24px,2.7vw,34px)/1.3 var(--serif);letter-spacing:-.012em;color:var(--ink);max-width:30em;margin:0;text-wrap:pretty}
 .p-cap{float:left;font-size:4.55em;line-height:.8;font-weight:600;margin:.05em .09em 0 -.03em;color:var(--ink)}
@@ -9236,9 +9238,11 @@ function methodExtras() {
   var arts = e.a.map(function (i) { return ART[i]; });
   var lo = arts.slice().sort(function (x, y) { return x.v - y.v; })[0], hi = arts.filter(function (x) { return x.s !== lo.s; }).sort(function (x, y) { return y.v - x.v; })[0] || lo;
   var cmp = compareHeads(artOf(e, pair[0]), artOf(e, pair[1]));
-  var step = function (n, t, body) { return '<li class="xwalk-s"><span class="num xwalk-n">' + n + "</span><div><h3>" + t + "</h3>" + body + "</div></li>"; };
-  var ex = '<section class="sec xwalk"><h2>Bir olayın yolculuğu</h2>' +
-    '<p class="sub">Yöntem, kurallar listesinden önce bir örnekle: “' + esc(e.t) + "” olayı, toplamadan split karta kadar.</p><ol class=\"xwalk-l\">" +
+  /* the steps as the broadsheet split accordion (pSplits markup; bodies hold links and the split card, so panels are focusable divs) */
+  var step = function (n, t, body) { return '<div class="panel mid xwalk-s' + (n === "01" ? " on" : "") + '" tabindex="0"><span class="p-no">' + n + '</span><span class="p-giant" aria-hidden="true">' + +n + "</span>" +
+    '<div class="p-body"><h3 class="p-ttl">' + t + '</h3><div class="p-txt">' + body + "</div></div></div>"; };
+  var ex = '<section class="sec xwalk">' + pHead("Nasıl çalışır", "Bir olayın yolculuğu") +
+    '<p class="sub">Yöntem, kurallar listesinden önce bir örnekle: “' + esc(e.t) + "” olayı, toplamadan split karta kadar.</p><div class=\"p-splits xwalk-l\" data-m=\"splits\">" +
     step("01", "Toplama", "<p>Kurumların site haritalarından " + e.n + " başlık, " + e.s.length + " kurum. İlk haber " + fmtDT(e.f) + ", son haber " + fmtDT(e.l) + ".</p>") +
     step("02", "Kümeleme", "<p>Başlıklar ortak kelimeleriyle aynı olaya bağlandı: <span class=\"mono\">" + esc((e.c || []).join(" · ")) + "</span>. 48 saat içinde, en az beş kurum.</p>") +
     step("03", "Puanlama", "<p>En yalın başlık " + esc(srcName(lo.s)) + " (<span class=\"num\">" + lo.v + "</span>), en yüklü başlık " + esc(srcName(hi.s)) +
@@ -9247,7 +9251,7 @@ function methodExtras() {
       (e.bs ? "Kör nokta kuralını karşılıyor." : "Kör nokta kuralını karşılamıyor.") + "</p>") +
     step("05", "Split kart", "<p>Varsayılan çift en soldaki (" + esc(srcName(pair[0])) + ") ve en sağdaki (" + esc(srcName(pair[1])) + ") kurum. Ortak kelimeler: <b>" +
       esc(cmp.shared.join(" ") || "yok") + "</b>. İşaretli kelimeler ekler alınarak karşılaştırılır (İspanya’da = İspanya’nın).</p>" + splitCard(e) +
-      '<p class="xsmall" style="margin-top:8px"><a class="lnk" href="#/olay?e=' + e.i + '">Olayın sayfası →</a></p>') + "</ol>" +
+      '<p class="xsmall" style="margin-top:8px"><a class="lnk" href="#/olay?e=' + e.i + '">Olayın sayfası →</a></p>') + "</div>" +
     '<div class="xpromise"><p class="xwm">Manşet bütün kalır.</p><p>Hiçbir başlık kısaltılmaz, hiçbir kelime silinmez.</p></div></section>';
   var fix = '<section class="sec" id="sfix"><h2>Düzeltme iste</h2><p class="sub">Hatalı bir küme, yanlış bir yerleşim, yanlış bir işaret ya da yanlış bir özet gördüğünüzde bildirin: ' +
     "ne yanlış, neye dayanarak. Düzeltme talebi göndermek bir değişikliği garanti etmez ve kaydı kendiliğinden değiştirmez.</p>" + fixLink("genel", "yontem", "Yöntem") + "</section>";
@@ -12166,8 +12170,8 @@ function fogMount(root) {
 /* v7 press: broadsheet component markup. Every helper takes plain text and escapes it; data-m="<kind>" hooks the
    matching MOTION_K timeline in motion.js. Without the motion libraries each component already reads in its final state. */
 
-function pHead(kicker, title) {
-  return '<header class="p-head" data-m="head"><i class="p-rule" aria-hidden="true"></i><p class="p-kick">' + esc(kicker) + '</p><h2 class="p-title">' + esc(title) + "</h2></header>";
+function pHead(kicker, title, id) {
+  return '<header class="p-head" data-m="head"' + (id ? ' id="' + esc(id) + '"' : "") + '><i class="p-rule" aria-hidden="true"></i><p class="p-kick">' + esc(kicker) + '</p><h2 class="p-title">' + esc(title) + "</h2></header>";
 }
 
 /* Lead paragraph; the first letter (with any opening quote) becomes a 3-line drop cap. */
@@ -13697,7 +13701,7 @@ function kurumFindings7(s) {
 var YM_TOC = [["veri", "Veri"], ["olay", "Olay tespiti"], ["dil", "Yüklü dil"], ["anlati", "Anlatı kodlaması"], ["yz", "Bilişsel inceleme (YZ)"],
   ["yzicerik", "YZ ile üretilen içerik"], ["turkiye", "Türkiye bağlamı"], ["kavramlar", "Kavram kütüphanesi"], ["sozluk", "Sözlük"], ["kapsama", "Kapsama"], ["sinir", "Sınırlılıklar"], ["kaynak", "Kaynaklar"]];
 function glossaryHTML() {
-  return "<dl class=\"v7-gloss\">" + Object.keys(GLOSSARY).sort(trCmp).map(function (k) { return "<dt>" + esc(k) + "</dt><dd>" + esc(GLOSSARY[k]) + "</dd>"; }).join("") + "</dl>";
+  return '<dl class="v7-gloss" data-m="cascade">' + Object.keys(GLOSSARY).sort(trCmp).map(function (k) { return "<div><dt>" + esc(k) + "</dt><dd>" + esc(GLOSSARY[k]) + "</dd></div>"; }).join("") + "</dl>";
 }
 var YM_TIER = { detected: "Kural saptıyor", codable: "İnsan kodlaması", reference: "Okur davranışı" };
 
@@ -13894,9 +13898,9 @@ function kaynakHtml(refs) {
 
 function pgYontem7(params) {
   var M = methodSecs(), X = methodExtras();
-  var h2 = function (id, t, ai) { return '<h2 id="' + id + '">' + t + (ai ? " " + yzBadge() : "") + "</h2>"; };
+  var h2 = function (id, t, ai) { var h = pHead("Nasıl çalışır", t, id); return ai ? h.replace("</h2>", " " + yzBadge() + "</h2>") : h; };
   return '<div class="wrap page ym"><div class="phead"><div class="eyebrow">Nasıl çalışır</div><h1>Nasıl çalışır</h1>' +
-    '<p class="lede">Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.</p>' +
+    pLead("Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.") +
     '<nav class="xtoc" aria-label="Bölümler">' + YM_TOC.map(function (t) { return '<a href="#/yontem?s=' + t[0] + '">' + t[1] + "</a>"; }).join("") + "</nav></div>" +
     X.walk + '<article class="xpaper">' + M.intro +
     h2("veri", "Veri") + M.veri + h2("olay", "Olay tespiti") + M.olay + h2("dil", "Yüklü dil puanlayıcısı") + M.dil + h2("anlati", "Anlatı kodlaması") + M.anlati +

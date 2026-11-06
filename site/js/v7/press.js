@@ -1,8 +1,8 @@
 /* v7 press: broadsheet component markup. Every helper takes plain text and escapes it; data-m="<kind>" hooks the
    matching MOTION_K timeline in motion.js. Without the motion libraries each component already reads in its final state. */
 
-function pHead(kicker, title) {
-  return '<header class="p-head" data-m="head"><i class="p-rule" aria-hidden="true"></i><p class="p-kick">' + esc(kicker) + '</p><h2 class="p-title">' + esc(title) + "</h2></header>";
+function pHead(kicker, title, id) {
+  return '<header class="p-head" data-m="head"' + (id ? ' id="' + esc(id) + '"' : "") + '><i class="p-rule" aria-hidden="true"></i><p class="p-kick">' + esc(kicker) + '</p><h2 class="p-title">' + esc(title) + "</h2></header>";
 }
 
 /* Lead paragraph; the first letter (with any opening quote) becomes a 3-line drop cap. */

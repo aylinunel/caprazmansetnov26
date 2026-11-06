@@ -1523,10 +1523,10 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
 @media (max-width:760px){.xcmp-sum{grid-template-columns:72px 1fr}.xcmp-mark{width:72px;height:72px}.xcmp-list{grid-template-columns:1fr}}
 
 /* ---- method: the annotated example */
-.xwalk-l{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:18px}
-.xwalk-s{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;border-top:1px solid var(--line);padding-top:14px}
-.xwalk-n{font-size:22px;color:var(--muted)}
-.xwalk-s h3{font-size:22px;margin:0 0 4px}
+.xwalk-l{margin-top:18px}
+.phead .p-lead{margin-top:16px}
+/* the walk's split card is taller than the accordion: on desktop the row grows to its longest step, bodies sit in flow under the giant number */
+@media (min-width:901px){.xwalk-l.p-splits{height:auto}.xwalk-l.p-splits .panel{display:flex;flex-direction:column;justify-content:flex-end;padding:260px 0 22px}.xwalk-l .p-body{position:relative;left:24px;bottom:auto}}
 .xwalk-s p{margin:0 0 6px;color:var(--ink2);max-width:72ch}
 .xpromise{margin-top:26px;padding:22px 26px;background:var(--ink);color:var(--paper);border-radius:14px}
 .xpromise .xwm{font-size:30px;margin:0;color:var(--paper)}
@@ -1705,7 +1705,9 @@ th{color:var(--ink);border-bottom-width:3px}
   border-radius:8px;padding:10px 12px;font:400 13px/1.45 var(--ff-b);box-shadow:var(--shadow-pop);animation:glin .15s ease}
 .gl-pop a{display:inline-block;min-height:24px;color:var(--ink);font-weight:600;white-space:nowrap}
 @keyframes glin{from{opacity:0}to{opacity:1}}
-.v7-gloss dt{font-weight:600;margin-top:12px}
+.v7-gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:0}
+.v7-gloss>div{padding:16px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.v7-gloss dt{font-weight:600}
 .v7-gloss dd{margin:2px 0 0;color:var(--ink2)}
 .v7-how summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--ff-m);font-size:12.5px;
   border:1px solid var(--line);border-radius:99px;padding:0 14px;background:var(--surface);list-style:none}
@@ -2341,7 +2343,7 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 .p-rule{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink)}
 .p-head .p-kick{font:500 11px/1.2 var(--ff-m);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;max-width:none}
 .p-head .p-kick::before{content:"";display:inline-block;width:7px;height:7px;margin-right:10px;background:var(--ink);vertical-align:1px}
-.p-head .p-title{font:500 clamp(32px,4.4vw,56px)/1.02 var(--serif);letter-spacing:-.025em;margin:0;color:var(--ink)}
+.p-head .p-title{font:500 clamp(32px,4.4vw,56px)/1.02 var(--serif);letter-spacing:-.025em;margin:0;border:0;padding:0;color:var(--ink)}
 .pw{display:inline-block}
 .v7-kisaca p.p-lead,.p-lead{position:relative;z-index:1;display:flow-root;font:400 clamp(24px,2.7vw,34px)/1.3 var(--serif);letter-spacing:-.012em;color:var(--ink);max-width:30em;margin:0;text-wrap:pretty}
 .p-cap{float:left;font-size:4.55em;line-height:.8;font-weight:600;margin:.05em .09em 0 -.03em;color:var(--ink)}

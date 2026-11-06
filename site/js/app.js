@@ -5051,9 +5051,11 @@ function methodExtras() {
   var arts = e.a.map(function (i) { return ART[i]; });
   var lo = arts.slice().sort(function (x, y) { return x.v - y.v; })[0], hi = arts.filter(function (x) { return x.s !== lo.s; }).sort(function (x, y) { return y.v - x.v; })[0] || lo;
   var cmp = compareHeads(artOf(e, pair[0]), artOf(e, pair[1]));
-  var step = function (n, t, body) { return '<li class="xwalk-s"><span class="num xwalk-n">' + n + "</span><div><h3>" + t + "</h3>" + body + "</div></li>"; };
-  var ex = '<section class="sec xwalk"><h2>Bir olayın yolculuğu</h2>' +
-    '<p class="sub">Yöntem, kurallar listesinden önce bir örnekle: “' + esc(e.t) + "” olayı, toplamadan split karta kadar.</p><ol class=\"xwalk-l\">" +
+  /* the steps as the broadsheet split accordion (pSplits markup; bodies hold links and the split card, so panels are focusable divs) */
+  var step = function (n, t, body) { return '<div class="panel mid xwalk-s' + (n === "01" ? " on" : "") + '" tabindex="0"><span class="p-no">' + n + '</span><span class="p-giant" aria-hidden="true">' + +n + "</span>" +
+    '<div class="p-body"><h3 class="p-ttl">' + t + '</h3><div class="p-txt">' + body + "</div></div></div>"; };
+  var ex = '<section class="sec xwalk">' + pHead("Nasıl çalışır", "Bir olayın yolculuğu") +
+    '<p class="sub">Yöntem, kurallar listesinden önce bir örnekle: “' + esc(e.t) + "” olayı, toplamadan split karta kadar.</p><div class=\"p-splits xwalk-l\" data-m=\"splits\">" +
     step("01", "Toplama", "<p>Kurumların site haritalarından " + e.n + " başlık, " + e.s.length + " kurum. İlk haber " + fmtDT(e.f) + ", son haber " + fmtDT(e.l) + ".</p>") +
     step("02", "Kümeleme", "<p>Başlıklar ortak kelimeleriyle aynı olaya bağlandı: <span class=\"mono\">" + esc((e.c || []).join(" · ")) + "</span>. 48 saat içinde, en az beş kurum.</p>") +
     step("03", "Puanlama", "<p>En yalın başlık " + esc(srcName(lo.s)) + " (<span class=\"num\">" + lo.v + "</span>), en yüklü başlık " + esc(srcName(hi.s)) +
@@ -5062,7 +5064,7 @@ function methodExtras() {
       (e.bs ? "Kör nokta kuralını karşılıyor." : "Kör nokta kuralını karşılamıyor.") + "</p>") +
     step("05", "Split kart", "<p>Varsayılan çift en soldaki (" + esc(srcName(pair[0])) + ") ve en sağdaki (" + esc(srcName(pair[1])) + ") kurum. Ortak kelimeler: <b>" +
       esc(cmp.shared.join(" ") || "yok") + "</b>. İşaretli kelimeler ekler alınarak karşılaştırılır (İspanya’da = İspanya’nın).</p>" + splitCard(e) +
-      '<p class="xsmall" style="margin-top:8px"><a class="lnk" href="#/olay?e=' + e.i + '">Olayın sayfası →</a></p>') + "</ol>" +
+      '<p class="xsmall" style="margin-top:8px"><a class="lnk" href="#/olay?e=' + e.i + '">Olayın sayfası →</a></p>') + "</div>" +
     '<div class="xpromise"><p class="xwm">Manşet bütün kalır.</p><p>Hiçbir başlık kısaltılmaz, hiçbir kelime silinmez.</p></div></section>';
   var fix = '<section class="sec" id="sfix"><h2>Düzeltme iste</h2><p class="sub">Hatalı bir küme, yanlış bir yerleşim, yanlış bir işaret ya da yanlış bir özet gördüğünüzde bildirin: ' +
     "ne yanlış, neye dayanarak. Düzeltme talebi göndermek bir değişikliği garanti etmez ve kaydı kendiliğinden değiştirmez.</p>" + fixLink("genel", "yontem", "Yöntem") + "</section>";

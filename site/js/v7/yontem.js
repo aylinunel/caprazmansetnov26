@@ -4,7 +4,7 @@
 var YM_TOC = [["veri", "Veri"], ["olay", "Olay tespiti"], ["dil", "Yüklü dil"], ["anlati", "Anlatı kodlaması"], ["yz", "Bilişsel inceleme (YZ)"],
   ["yzicerik", "YZ ile üretilen içerik"], ["turkiye", "Türkiye bağlamı"], ["kavramlar", "Kavram kütüphanesi"], ["sozluk", "Sözlük"], ["kapsama", "Kapsama"], ["sinir", "Sınırlılıklar"], ["kaynak", "Kaynaklar"]];
 function glossaryHTML() {
-  return "<dl class=\"v7-gloss\">" + Object.keys(GLOSSARY).sort(trCmp).map(function (k) { return "<dt>" + esc(k) + "</dt><dd>" + esc(GLOSSARY[k]) + "</dd>"; }).join("") + "</dl>";
+  return '<dl class="v7-gloss" data-m="cascade">' + Object.keys(GLOSSARY).sort(trCmp).map(function (k) { return "<div><dt>" + esc(k) + "</dt><dd>" + esc(GLOSSARY[k]) + "</dd></div>"; }).join("") + "</dl>";
 }
 var YM_TIER = { detected: "Kural saptıyor", codable: "İnsan kodlaması", reference: "Okur davranışı" };
 
@@ -201,9 +201,9 @@ function kaynakHtml(refs) {
 
 function pgYontem7(params) {
   var M = methodSecs(), X = methodExtras();
-  var h2 = function (id, t, ai) { return '<h2 id="' + id + '">' + t + (ai ? " " + yzBadge() : "") + "</h2>"; };
+  var h2 = function (id, t, ai) { var h = pHead("Nasıl çalışır", t, id); return ai ? h.replace("</h2>", " " + yzBadge() + "</h2>") : h; };
   return '<div class="wrap page ym"><div class="phead"><div class="eyebrow">Nasıl çalışır</div><h1>Nasıl çalışır</h1>' +
-    '<p class="lede">Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.</p>' +
+    pLead("Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.") +
     '<nav class="xtoc" aria-label="Bölümler">' + YM_TOC.map(function (t) { return '<a href="#/yontem?s=' + t[0] + '">' + t[1] + "</a>"; }).join("") + "</nav></div>" +
     X.walk + '<article class="xpaper">' + M.intro +
     h2("veri", "Veri") + M.veri + h2("olay", "Olay tespiti") + M.olay + h2("dil", "Yüklü dil puanlayıcısı") + M.dil + h2("anlati", "Anlatı kodlaması") + M.anlati +
