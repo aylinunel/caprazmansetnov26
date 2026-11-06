@@ -188,9 +188,12 @@ test("pNums: screenshot sentence", () => {
   assert.deepEqual(L.pNums("Jandarmanın 32 ilde FETÖ'ye yönelik düzenlediği operasyonlarda 72 şüpheli yakalandı, bunlardan 41'i tutuklandı."),
     [{ n: 32, label: "il" }, { n: 72, label: "şüpheli" }, { n: 41, label: "tutuklama" }]);
 });
-test("pNums: rejects scores, years, ordinals, decimals, ranges, ages; needs 2 hits", () => {
-  for (const s of ["4-1 kazandı ve 3 kişi", "2030'a kadar 5 kişi", "4. dönemi 2 kişi", "18,3 milyar ve 7 kişi", "57-58'i ve 9 kişi", "14 yaşındaki 3 kişi", "11'leri ve 4 kişi"])
-    assert.deepEqual(L.pNums(s), [], s);
+test("pNums: each rejected pattern is dropped even with two valid hits beside it", () => {
+  const ok = [{ n: 3, label: "kişi" }, { n: 2, label: "ölü" }];
+  for (const s of ["4-1 il ve 3 kişi ve 2 ölü", "2030'a kadar 5 kişi", "4. il ve 3 kişi ve 2 ölü", "11'leri ve 3 kişi ve 2 ölü", "18,3 il ve 3 kişi ve 2 ölü", "57-58'i il ve 3 kişi ve 2 ölü", "14 yaşındaki 3 kişi ve 2 ölü"])
+    assert.deepEqual(L.pNums(s), s.startsWith("2030") ? [] : ok, s);
+  assert.deepEqual(L.pNums("2030'a kadar 5 kişi ve 2 ölü"), [{ n: 5, label: "kişi" }, { n: 2, label: "ölü" }]);
+  assert.deepEqual(L.pNums("kazandı 3 kişi"), [], "needs 2 hits");
   assert.deepEqual(L.pNums("3,5 kişi ve 2 ölü"), [], "decimal is not a count");
   assert.deepEqual(L.pNums("5 ölü, 12 yaralı, 3 kayıp, 9 gözaltına alındı"), [{ n: 5, label: "ölü" }, { n: 12, label: "yaralı" }, { n: 3, label: "kayıp" }]);
 });
@@ -205,7 +208,7 @@ const DIFF2 = "Gözaltı sayısı kurumlara göre değişiyor (trthaber, diken, 
 
 test("pSplitPoints: w10-s5316 gives 4 panels with blocs", () => {
   const p = L.pSplitPoints(DIFF1, OUT);
-  assert.deepEqual(p.map((x) => x.bloc), ["mid", "right", "mid", "right"]);
+  assert.deepEqual(p.map((x) => x.bloc), ["right", "right", "right", "right"]);
   assert.deepEqual(p.map((x) => x.outlets.length), [8, 6, 4, 2]);
   assert.deepEqual(p[0].outlets, ["hurriyet", "aksam", "trthaber", "tgrt", "ntv", "aa", "birgun", "ahaber"]);
   assert.equal(p[3].word, "sözde yardım kuruluşlarına finans");
@@ -219,7 +222,7 @@ test("pSplitPoints: w8-s1652 keeps ';' inside parentheses", () => {
   assert.deepEqual(p[0].outlets.sort(), ["dirilis", "diken", "sabah", "star", "takvim", "trthaber", "tele1"].sort());
   assert.deepEqual(p[1].outlets, ["haberturk", "dirilis"]);
   assert.deepEqual(p[2].outlets, ["ntv", "ahaber", "takvim"]);
-  assert.deepEqual(p.map((x) => x.bloc), ["mid", "right", "mid"]);
+  assert.deepEqual(p.map((x) => x.bloc), ["right", "right", "right"]);
 });
 test("pSplitPoints: names, slugs, folded spellings, 've', 'diğerleri'", () => {
   const p = L.pSplitPoints("TRT Haber, ahaber ve habertürk 5 kişi dedi; birgun ve tele1 başka dedi; diğerleri sustu", OUT);
@@ -234,4 +237,10 @@ test("pSplitPoints: caps at 5 panels", () => {
 });
 test("pSplitPoints: no separator → one mid panel", () => {
   assert.deepEqual(L.pSplitPoints("tek cümle", []), [{ text: "tek cümle", outlets: [], bloc: "mid", word: "" }]);
+});
+test("pSplitPoints: panel bloc is the majority, ties and empty are mid", () => {
+  const O = [["a", "right"], ["b", "right"], ["c", "left"]].map(([s, bloc]) => ({ s, name: s, bloc }));
+  assert.equal(L.pSplitPoints("a, b, c", O)[0].bloc, "right");
+  assert.equal(L.pSplitPoints("a ve c", O)[0].bloc, "mid");
+  assert.equal(L.pSplitPoints("hiçbiri", O)[0].bloc, "mid");
 });

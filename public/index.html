@@ -11093,8 +11093,10 @@ function pSplitPoints(text, outlets) {
   panels.forEach(function (p) { p.o.forEach(function (o) { named[o.s] = 1; }); });
   return panels.map(function (p) {
     var os = p.others ? (outlets || []).filter(function (o) { return !named[o.s]; }) : p.o;
-    var blocs = os.map(function (o) { return o.bloc; });
-    return { text: p.text, outlets: os.map(function (o) { return o.s; }), bloc: blocs.length && blocs.every(function (b) { return b === blocs[0]; }) ? blocs[0] : "mid", word: p.word };
+    var c = { left: 0, right: 0, mid: 0 };
+    os.forEach(function (o) { c[o.bloc]++; });
+    var top = Object.keys(c).sort(function (a, b) { return c[b] - c[a]; });
+    return { text: p.text, outlets: os.map(function (o) { return o.s; }), bloc: os.length && c[top[0]] > c[top[1]] ? top[0] : "mid", word: p.word };
   });
 }
 
