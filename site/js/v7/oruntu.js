@@ -61,7 +61,7 @@ function orBars(rows, max) {
   }).join("") + "</div>";
 }
 function orEnd(list) {
-  return '<section class="or-ex"><h2>Örnek olaylar</h2><p class="or-exs">Bu sayfadaki örüntülerden üçünü gösteren olaylar.</p><div class="xcards">' + cards(list) + "</div></section>";
+  return '<section class="or-ex">' + pHead("Örüntüler", "Örnek olaylar") + '<p class="or-exs">Bu sayfadaki örüntülerden üçünü gösteren olaylar.</p><div class="xcards">' + cards(list) + "</div></section>";
 }
 function orPage(q, finds, ex) {
   var t = OR_PAGES[q];

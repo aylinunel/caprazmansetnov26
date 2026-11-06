@@ -184,7 +184,8 @@ function motionNums(el) {
 MOTION_K.scene = function (el, first) {
   var claim = el.querySelector(".v7-claim"), viz = el.querySelector(".v7-viz"), g6 = viz && viz.querySelector(".g6-box");
   if (!claim || !viz) return;
-  var top = function () { var n = document.querySelector(".navbar"); return (n ? n.offsetHeight : 64) + 16; };
+  /* below the sticky nav and the sticky section tabs (.subnav) */
+  var top = function () { var b = 64; [].forEach.call(document.querySelectorAll(".navbar,.subnav"), function (n) { b = Math.max(b, n.getBoundingClientRect().bottom); }); return b + 16; };
   if (innerWidth >= 901) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
     end: function () { return "bottom " + (top() + claim.offsetHeight + 24) + "px"; }, pin: claim, pinSpacing: false, toggleClass: "is-pin" });
   if (g6 && !(first && motionInView(g6))) gsap.from(g6, { scale: .86, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: g6, start: "top 85%" } });

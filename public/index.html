@@ -1833,8 +1833,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .or-wn{font-family:var(--ff-m);font-size:11px;color:var(--ink2)}
 .or-wd{font-family:var(--ff-m);font-size:9.5px;color:var(--muted);white-space:nowrap}
 .or-how{margin:10px 0 6px;padding-left:18px;display:grid;gap:6px;font-size:13.5px;line-height:1.5;color:var(--ink2)}
-.or-ex{margin:36px 0 10px;border-top:1px solid var(--line);padding-top:18px}
-.or-ex h2{font-family:var(--ff-d);font-size:22px;margin:0 0 4px}
+.or-ex{margin:36px 0 10px}
 .or-exs{margin:0 0 12px;font-size:14px;color:var(--ink2)}
 .or .fig{padding-top:6px;border-top:0}
 @media (max-width:640px){.or-two{grid-template-columns:minmax(0,1fr)}.or-tr{grid-template-columns:minmax(76px,110px) repeat(var(--c),minmax(0,1fr));gap:4px}.or-wd{font-size:8.5px;writing-mode:vertical-rl;transform:rotate(180deg)}.or-claim{font-size:19px}.or .v7-claim{font-size:19px}}
@@ -2405,7 +2404,7 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 :root[data-theme="dark"] .cc-glare{--g:var(--ink)}
 /* finding scene: the claim pins over its chart (desktop), so it carries the page colour */
 .v7-find[data-m] .v7-claim{position:relative;z-index:2;background:var(--paper)}
-.v7-claim.is-pin{box-shadow:0 1px 0 var(--line),0 -24px 0 var(--paper)}
+.v7-claim.is-pin{box-shadow:0 1px 0 var(--line),0 -48px 0 var(--paper)}
 .sc-n{font-variant-numeric:tabular-nums}
 section.v7-how{position:relative;overflow-x:clip;margin:0;font-size:inherit}
 .wrap.page.v7-home{padding-inline:24px}
@@ -12396,7 +12395,8 @@ function motionNums(el) {
 MOTION_K.scene = function (el, first) {
   var claim = el.querySelector(".v7-claim"), viz = el.querySelector(".v7-viz"), g6 = viz && viz.querySelector(".g6-box");
   if (!claim || !viz) return;
-  var top = function () { var n = document.querySelector(".navbar"); return (n ? n.offsetHeight : 64) + 16; };
+  /* below the sticky nav and the sticky section tabs (.subnav) */
+  var top = function () { var b = 64; [].forEach.call(document.querySelectorAll(".navbar,.subnav"), function (n) { b = Math.max(b, n.getBoundingClientRect().bottom); }); return b + 16; };
   if (innerWidth >= 901) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
     end: function () { return "bottom " + (top() + claim.offsetHeight + 24) + "px"; }, pin: claim, pinSpacing: false, toggleClass: "is-pin" });
   if (g6 && !(first && motionInView(g6))) gsap.from(g6, { scale: .86, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: g6, start: "top 85%" } });
@@ -12896,7 +12896,7 @@ function orBars(rows, max) {
   }).join("") + "</div>";
 }
 function orEnd(list) {
-  return '<section class="or-ex"><h2>Örnek olaylar</h2><p class="or-exs">Bu sayfadaki örüntülerden üçünü gösteren olaylar.</p><div class="xcards">' + cards(list) + "</div></section>";
+  return '<section class="or-ex">' + pHead("Örüntüler", "Örnek olaylar") + '<p class="or-exs">Bu sayfadaki örüntülerden üçünü gösteren olaylar.</p><div class="xcards">' + cards(list) + "</div></section>";
 }
 function orPage(q, finds, ex) {
   var t = OR_PAGES[q];
