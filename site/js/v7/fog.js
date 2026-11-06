@@ -156,7 +156,7 @@ function fogMount(root) {
   var mo = new MutationObserver(retheme); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   offs.push(function () { mo.disconnect(); });
   var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) { mq.addEventListener("change", retheme); offs.push(function () { mq.removeEventListener("change", retheme); }); }
-  var rz = function () { if (alive()) { size(); } };
+  var rz = function () { if (alive()) size(); };
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
   set("--k", ".5"); set("--k2", ".5"); set("--kt", "0"); set("--turn", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();

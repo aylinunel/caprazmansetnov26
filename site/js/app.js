@@ -6779,7 +6779,9 @@ try {
   if (!sessionStorage.getItem("cm-intro")) {
     sessionStorage.setItem("cm-intro", "1");
     introEl.classList.add("intro");
-    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) { introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); } });
+    var introDone = function () { if (!introEl.classList.contains("intro")) return; introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); };
+    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introDone(); });
+    setTimeout(introDone, 2000); /* fallback if animationend never fires (reduced motion, hidden tab) */
   }
 } catch (err) {}
 addEventListener("hashchange", route);
