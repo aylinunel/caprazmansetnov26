@@ -24,12 +24,11 @@ function pCommon(leftText, sharedText, rightText) {
   return '<div class="p-common" data-m="common">' + side(leftText, "pc-l") + '<p class="pc-band">' + esc(sharedText) + "</p>" + side(rightText, "pc-r") + "</div>";
 }
 
-/* Split accordion from pSplitPoints output: one panel per point; giant key word (else the first number in the point, else the
-   panel number) in the side colour. */
+/* Split accordion from pSplitPoints output: one panel per point; giant key word (first quoted phrase, else none) in the side colour. */
 function pSplits(points) {
   return '<div class="p-splits" data-m="splits">' + (points || []).map(function (p, i) {
-    var no = (i < 9 ? "0" : "") + (i + 1), big = p.word || (p.text.match(/(?:^|\s)(\d+)(?![^\s'’.,;:]|[.,]\d)/) || [0, no])[1];
-    return '<button type="button" class="panel ' + p.bloc + (i ? "" : " on") + '">' + (big === no ? "" : '<span class="p-no">' + no + "</span>") + '<span class="p-giant" aria-hidden="true">' + esc(big) + "</span>" +
+    var no = (i < 9 ? "0" : "") + (i + 1);
+    return '<button type="button" class="panel ' + p.bloc + (i ? "" : " on") + '"><span class="p-no">' + no + "</span>" + (p.word ? '<span class="p-giant" aria-hidden="true">' + esc(p.word) + "</span>" : "") +
       '<span class="p-body"><span class="p-txt">' + esc(p.text) + "</span>" + (p.outlets.length ? '<span class="p-chips">' + p.outlets.map(function (s) {
         return '<span class="p-chip"><i class="v7-ld ' + bloc(s) + '"></i>' + esc(srcName(s)) + "</span>";
       }).join("") + "</span>" : "") + "</span></button>";

@@ -99,15 +99,17 @@ MOTION_K.head = function (el, first) {
 MOTION_K.lead = function (el, first) {
   if (first && motionInView(el)) return;
   gsap.from(el.querySelector(".p-cap"), { scale: 0, rotate: -12, transformOrigin: "40% 80%", duration: 1.2, ease: "back.out(1.7)", scrollTrigger: { trigger: el, start: "top 85%" } });
-  gsap.fromTo(motionWords(el), { opacity: .22 }, { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: el, start: "top 82%", end: "bottom 40%", scrub: .6 } });
+  gsap.fromTo(motionWords(el), { opacity: .5 }, { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: el, start: "top 82%", end: "bottom 40%", scrub: .6 } });
 };
-/* Desktop pins the tickets' block (their parent: head, lead, tickets) while the counters scrub; phone counts once on enter. */
+/* Desktop pins the tickets' block (their parent: head, lead, tickets) just under the sticky nav while the counters scrub;
+   phone counts once on enter. Past the end every counter shows its exact value. */
 MOTION_K.tickets = function (el, first) {
-  if (first && motionInView(el)) return;
-  var sec = el.parentNode, wide = innerWidth >= 901;
-  var tl = gsap.timeline({ scrollTrigger: wide ? { trigger: sec, start: "center center", end: "+=100%", pin: sec, scrub: .8 } : { trigger: el, start: "top 85%" } });
-  tl.from(el.querySelectorAll(".tix"), { y: 90, rotateX: -55, transformPerspective: 900, transformOrigin: "50% 100%", opacity: 0, duration: .5, stagger: .12, ease: "power3.out" }, 0);
-  [].forEach.call(el.querySelectorAll(".tix-n"), function (b) {
+  var sec = el.parentNode, wide = innerWidth >= 901, ns = [].slice.call(el.querySelectorAll(".tix-n"));
+  var exact = function () { ns.forEach(function (b) { b.textContent = b.dataset.n; }); };
+  var top = function () { var n = document.querySelector(".navbar"); return "top " + ((n ? n.offsetHeight : 64) + 24) + "px"; };
+  var tl = gsap.timeline({ onComplete: exact, scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: exact } : { trigger: el, start: "top 85%" } });
+  if (!(first && motionInView(el))) tl.from(el.querySelectorAll(".tix"), { y: 90, rotateX: -55, transformPerspective: 900, transformOrigin: "50% 100%", opacity: 0, duration: .5, stagger: .12, ease: "power3.out" }, 0);
+  ns.forEach(function (b) {
     var o = { v: 0 };
     tl.to(o, { v: +b.dataset.n, duration: wide ? 1 : 2, ease: wide ? "none" : "power2.out", onUpdate: function () { b.textContent = Math.round(o.v); } }, wide ? .15 : 0);
   });

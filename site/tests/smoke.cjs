@@ -318,13 +318,14 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       [ctx, page] = await open(`kisaca ${w}`);
       await page.setViewportSize({ width: w, height: w === 390 ? 844 : 800 });
       await page.goto(url("#/olay?e=s4374")); await sleep(3000);
+      const tfProbe = () => page.evaluate(() => ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean)
+        .map((e) => { const s = getComputedStyle(e); return [s.transform, s.filter, s.willChange].join(" "); })
+        .filter((s) => s !== "none none auto"));
       const k = await page.evaluate(() => ({
         lead: document.querySelectorAll(".v7-kisaca [data-m=lead]").length,
         panels: document.querySelectorAll("[data-m=splits] .panel").length,
-        tf: ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean)
-          .map((e) => { const s = getComputedStyle(e); return [s.transform, s.filter, s.willChange].join(" "); })
-          .filter((s) => s !== "none none auto"),
         hs: document.documentElement.scrollWidth > innerWidth }));
+      k.tf = await tfProbe();
       if (k.lead !== 1) fails.push(`kisaca ${w}: ${k.lead} [data-m=lead] in .v7-kisaca`);
       if (k.panels < 2) fails.push(`kisaca ${w}: ${k.panels} split panels`);
       if (k.tf.length) fails.push(`kisaca ${w}: transformed ancestor ${k.tf.join(" | ")}`);
@@ -332,11 +333,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await page.evaluate(() => { location.hash = "#/olay?e=s5316"; }); await sleep(1500);
       const t = await page.evaluate(() => document.querySelectorAll("[data-m=tickets] .tix").length);
       if (t !== 3) fails.push(`kisaca ${w}: s5316 has ${t} tickets, want 3`);
+      const tf2 = await tfProbe();
+      if (tf2.length) fails.push(`kisaca ${w}: transformed ancestor after navigation ${tf2.join(" | ")}`);
+      /* scroll in steps past the ticket block: every counter ends on its exact figure */
+      for (let i = 0; i < 12; i++) { await page.mouse.wheel(0, 350); await sleep(250); }
+      await sleep(2500);
+      const cnt = await page.evaluate(() => [...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== b.dataset.n).map((b) => b.textContent + "≠" + b.dataset.n));
+      if (cnt.length) fails.push(`kisaca ${w}: counters past the block ${cnt.join(" ")}`);
       await page.evaluate(() => { location.hash = "#/olay?e=s5450"; }); await sleep(1500);
       const n = await page.evaluate(() => [".v7-kisaca [data-m=lead]", "[data-m=tickets]", "[data-m=splits]"].map((s) => document.querySelectorAll(s).length).join(","));
       if (n !== "1,0,0") fails.push(`kisaca ${w}: uncoded event s5450 lead,tickets,splits = ${n}, want 1,0,0`);
       await ctx.close();
     }
+    /* cold load straight onto the event: the ticket block still pins */
+    [ctx, page] = await open("kisaca cold");
+    await page.goto(url("#/olay?e=s5316")); await sleep(3000);
+    if (!await page.evaluate(() => typeof ScrollTrigger !== "undefined" && ScrollTrigger.getAll().some((t) => t.pin))) fails.push("kisaca cold: no pinned ScrollTrigger on #/olay?e=s5316");
+    await ctx.close();
     /* (b) three hash changes within 300 ms of a cold load: one Lenis, no errors */
     [ctx, page] = await open("motion b");
     await page.goto(url("#/")); await page.waitForSelector("#view");

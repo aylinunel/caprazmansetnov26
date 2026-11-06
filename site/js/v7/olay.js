@@ -26,18 +26,16 @@ function olayCommon(e) {
 /* "Kısaca": the coded summary as broadsheet components (YZ badge when agent-coded), else one generated lead. */
 function olayKisaca(e) {
   var nk = NBYEV[e.i], n = nk && narrOk(nk) && D.N[nk], q = (n && n.q) || {};
-  var pair = SPLITPAIR[e.i] || defaultPair(e), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
   if (q.happened || q.agree || q.differ) {
-    var ln = function (x) { return SRC[x.s] && SRC[x.s].lean != null ? SRC[x.s].lean : 50; };
-    if (a && b && ln(b) < ln(a)) { var t = a; a = b; b = t; }
-    var said = function (x) { return a && b ? "“" + x.t + "” — " + srcName(x.s) : ""; };
+    var side = function (c) { return e.s.filter(function (s) { return bloc(s) === c; }).map(srcName).join(", "); };
     var outs = e.s.map(function (s) { var c = bloc(s); return { s: s, name: srcName(s), bloc: c === "none" ? "mid" : c }; });
     var inner = pGlass(6) +
       (q.happened ? '<div class="p-ne">' + pHead("Kısaca", "Ne oldu") + pLead(q.happened) + pTickets(pNums(q.happened)) + "</div>" : "") +
-      (q.agree ? pHead("Kısaca", "Ortak nokta") + pCommon(said(a), q.agree, said(b)) : "") +
+      (q.agree ? pHead("Kısaca", "Ortak nokta") + pCommon(side("left"), q.agree, side("right")) : "") +
       (q.differ ? pHead("Kısaca", "Ayrışan nokta") + pSplits(pSplitPoints(q.differ, outs)) : "");
     return '<section class="sec v7-kisaca">' + (n.status === "agent_coded" ? '<div class="yz">' + yzBadge() + inner + "</div>" : inner) + "</section>";
   }
+  var pair = SPLITPAIR[e.i] || defaultPair(e), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
   if (!a || !b) return '<section class="sec v7-kisaca"><h2>Kısaca</h2>' + pLead(e.s.length + " kurum bu olayı verdi.") + "</section>";
   var far = a.v >= b.v ? a : b, many = olayCommon(e), txt;
   if (many.length >= 2) txt = "Kurumların çoğu “" + many.slice(0, 3).join(" ") + "” dedi; yüklü dili en yüksek başlık " + srcName(far.s) + " kurumundan.";

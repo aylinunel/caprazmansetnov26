@@ -2343,7 +2343,7 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 .v7-kisaca .yz{position:relative}
 .v7-kisaca .yz>.yz-badge{position:absolute;top:16px;right:0;z-index:2}
 .p-head{position:relative;z-index:1;margin:64px 0 22px;padding-top:16px}
-.p-glass+.p-ne>.p-head,.p-glass+.p-head{margin-top:8px}
+.p-ne>.p-head,.p-glass+.p-head{margin-top:8px}
 .p-rule{position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink)}
 .p-head .p-kick{font:500 11px/1.2 var(--ff-m);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;max-width:none}
 .p-head .p-kick::before{content:"";display:inline-block;width:7px;height:7px;margin-right:10px;background:var(--ink);vertical-align:1px}
@@ -12154,12 +12154,11 @@ function pCommon(leftText, sharedText, rightText) {
   return '<div class="p-common" data-m="common">' + side(leftText, "pc-l") + '<p class="pc-band">' + esc(sharedText) + "</p>" + side(rightText, "pc-r") + "</div>";
 }
 
-/* Split accordion from pSplitPoints output: one panel per point; giant key word (else the first number in the point, else the
-   panel number) in the side colour. */
+/* Split accordion from pSplitPoints output: one panel per point; giant key word (first quoted phrase, else none) in the side colour. */
 function pSplits(points) {
   return '<div class="p-splits" data-m="splits">' + (points || []).map(function (p, i) {
-    var no = (i < 9 ? "0" : "") + (i + 1), big = p.word || (p.text.match(/(?:^|\s)(\d+)(?![^\s'’.,;:]|[.,]\d)/) || [0, no])[1];
-    return '<button type="button" class="panel ' + p.bloc + (i ? "" : " on") + '">' + (big === no ? "" : '<span class="p-no">' + no + "</span>") + '<span class="p-giant" aria-hidden="true">' + esc(big) + "</span>" +
+    var no = (i < 9 ? "0" : "") + (i + 1);
+    return '<button type="button" class="panel ' + p.bloc + (i ? "" : " on") + '"><span class="p-no">' + no + "</span>" + (p.word ? '<span class="p-giant" aria-hidden="true">' + esc(p.word) + "</span>" : "") +
       '<span class="p-body"><span class="p-txt">' + esc(p.text) + "</span>" + (p.outlets.length ? '<span class="p-chips">' + p.outlets.map(function (s) {
         return '<span class="p-chip"><i class="v7-ld ' + bloc(s) + '"></i>' + esc(srcName(s)) + "</span>";
       }).join("") + "</span>" : "") + "</span></button>";
@@ -12274,15 +12273,17 @@ MOTION_K.head = function (el, first) {
 MOTION_K.lead = function (el, first) {
   if (first && motionInView(el)) return;
   gsap.from(el.querySelector(".p-cap"), { scale: 0, rotate: -12, transformOrigin: "40% 80%", duration: 1.2, ease: "back.out(1.7)", scrollTrigger: { trigger: el, start: "top 85%" } });
-  gsap.fromTo(motionWords(el), { opacity: .22 }, { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: el, start: "top 82%", end: "bottom 40%", scrub: .6 } });
+  gsap.fromTo(motionWords(el), { opacity: .5 }, { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: el, start: "top 82%", end: "bottom 40%", scrub: .6 } });
 };
-/* Desktop pins the tickets' block (their parent: head, lead, tickets) while the counters scrub; phone counts once on enter. */
+/* Desktop pins the tickets' block (their parent: head, lead, tickets) just under the sticky nav while the counters scrub;
+   phone counts once on enter. Past the end every counter shows its exact value. */
 MOTION_K.tickets = function (el, first) {
-  if (first && motionInView(el)) return;
-  var sec = el.parentNode, wide = innerWidth >= 901;
-  var tl = gsap.timeline({ scrollTrigger: wide ? { trigger: sec, start: "center center", end: "+=100%", pin: sec, scrub: .8 } : { trigger: el, start: "top 85%" } });
-  tl.from(el.querySelectorAll(".tix"), { y: 90, rotateX: -55, transformPerspective: 900, transformOrigin: "50% 100%", opacity: 0, duration: .5, stagger: .12, ease: "power3.out" }, 0);
-  [].forEach.call(el.querySelectorAll(".tix-n"), function (b) {
+  var sec = el.parentNode, wide = innerWidth >= 901, ns = [].slice.call(el.querySelectorAll(".tix-n"));
+  var exact = function () { ns.forEach(function (b) { b.textContent = b.dataset.n; }); };
+  var top = function () { var n = document.querySelector(".navbar"); return "top " + ((n ? n.offsetHeight : 64) + 24) + "px"; };
+  var tl = gsap.timeline({ onComplete: exact, scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: exact } : { trigger: el, start: "top 85%" } });
+  if (!(first && motionInView(el))) tl.from(el.querySelectorAll(".tix"), { y: 90, rotateX: -55, transformPerspective: 900, transformOrigin: "50% 100%", opacity: 0, duration: .5, stagger: .12, ease: "power3.out" }, 0);
+  ns.forEach(function (b) {
     var o = { v: 0 };
     tl.to(o, { v: +b.dataset.n, duration: wide ? 1 : 2, ease: wide ? "none" : "power2.out", onUpdate: function () { b.textContent = Math.round(o.v); } }, wide ? .15 : 0);
   });
@@ -12607,18 +12608,16 @@ function olayCommon(e) {
 /* "Kısaca": the coded summary as broadsheet components (YZ badge when agent-coded), else one generated lead. */
 function olayKisaca(e) {
   var nk = NBYEV[e.i], n = nk && narrOk(nk) && D.N[nk], q = (n && n.q) || {};
-  var pair = SPLITPAIR[e.i] || defaultPair(e), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
   if (q.happened || q.agree || q.differ) {
-    var ln = function (x) { return SRC[x.s] && SRC[x.s].lean != null ? SRC[x.s].lean : 50; };
-    if (a && b && ln(b) < ln(a)) { var t = a; a = b; b = t; }
-    var said = function (x) { return a && b ? "“" + x.t + "” — " + srcName(x.s) : ""; };
+    var side = function (c) { return e.s.filter(function (s) { return bloc(s) === c; }).map(srcName).join(", "); };
     var outs = e.s.map(function (s) { var c = bloc(s); return { s: s, name: srcName(s), bloc: c === "none" ? "mid" : c }; });
     var inner = pGlass(6) +
       (q.happened ? '<div class="p-ne">' + pHead("Kısaca", "Ne oldu") + pLead(q.happened) + pTickets(pNums(q.happened)) + "</div>" : "") +
-      (q.agree ? pHead("Kısaca", "Ortak nokta") + pCommon(said(a), q.agree, said(b)) : "") +
+      (q.agree ? pHead("Kısaca", "Ortak nokta") + pCommon(side("left"), q.agree, side("right")) : "") +
       (q.differ ? pHead("Kısaca", "Ayrışan nokta") + pSplits(pSplitPoints(q.differ, outs)) : "");
     return '<section class="sec v7-kisaca">' + (n.status === "agent_coded" ? '<div class="yz">' + yzBadge() + inner + "</div>" : inner) + "</section>";
   }
+  var pair = SPLITPAIR[e.i] || defaultPair(e), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
   if (!a || !b) return '<section class="sec v7-kisaca"><h2>Kısaca</h2>' + pLead(e.s.length + " kurum bu olayı verdi.") + "</section>";
   var far = a.v >= b.v ? a : b, many = olayCommon(e), txt;
   if (many.length >= 2) txt = "Kurumların çoğu “" + many.slice(0, 3).join(" ") + "” dedi; yüklü dili en yüksek başlık " + srcName(far.s) + " kurumundan.";
