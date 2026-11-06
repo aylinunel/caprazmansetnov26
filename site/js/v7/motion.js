@@ -102,17 +102,16 @@ MOTION_K.lead = function (el, first) {
   gsap.fromTo(motionWords(el), { opacity: .5 }, { opacity: 1, stagger: .1, ease: "none", scrollTrigger: { trigger: el, start: "top 82%", end: "bottom 40%", scrub: .6 } });
 };
 /* Desktop pins the tickets' block (their parent: head, lead, tickets) just under the sticky nav while the counters scrub;
-   phone counts once on enter. Past the end every counter shows its exact value. */
+   phone counts once on enter. Counters count only inside the range: at progress 0 and 1 they show their exact value. */
 MOTION_K.tickets = function (el, first) {
-  var sec = el.parentNode, wide = innerWidth >= 901, ns = [].slice.call(el.querySelectorAll(".tix-n"));
-  var exact = function () { ns.forEach(function (b) { b.textContent = b.dataset.n; }); };
+  var sec = el.parentNode, wide = innerWidth >= 901, ns = [].slice.call(el.querySelectorAll(".tix-n")), os = ns.map(function () { return { v: 0 }; });
+  var tl, show = function () { if (!tl) return; var p = tl.progress(); ns.forEach(function (b, i) { b.textContent = p > 0 && p < 1 ? Math.round(os[i].v) : b.dataset.n; }); };
   var top = function () { var n = document.querySelector(".navbar"); return "top " + ((n ? n.offsetHeight : 64) + 24) + "px"; };
-  var tl = gsap.timeline({ onComplete: exact, scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: exact } : { trigger: el, start: "top 85%" } });
+  tl = gsap.timeline({ onUpdate: show, onComplete: show, onReverseComplete: show,
+    scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: show, onLeaveBack: show } : { trigger: el, start: "top 85%" } });
   if (!(first && motionInView(el))) tl.from(el.querySelectorAll(".tix"), { y: 90, rotateX: -55, transformPerspective: 900, transformOrigin: "50% 100%", opacity: 0, duration: .5, stagger: .12, ease: "power3.out" }, 0);
-  ns.forEach(function (b) {
-    var o = { v: 0 };
-    tl.to(o, { v: +b.dataset.n, duration: wide ? 1 : 2, ease: wide ? "none" : "power2.out", onUpdate: function () { b.textContent = Math.round(o.v); } }, wide ? .15 : 0);
-  });
+  ns.forEach(function (b, i) { tl.to(os[i], { v: +b.dataset.n, duration: wide ? 1 : 2, ease: wide ? "none" : "power2.out" }, wide ? .15 : 0); });
+  show();
 };
 MOTION_K.common = function (el, first) {
   if (first && motionInView(el)) return;

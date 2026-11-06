@@ -340,6 +340,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await sleep(2500);
       const cnt = await page.evaluate(() => [...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== b.dataset.n).map((b) => b.textContent + "≠" + b.dataset.n));
       if (cnt.length) fails.push(`kisaca ${w}: counters past the block ${cnt.join(" ")}`);
+      /* and back above the block: no reversed "0" left behind */
+      for (let i = 0; i < 16; i++) { await page.mouse.wheel(0, -350); await sleep(250); }
+      await sleep(2500);
+      const back = await page.evaluate(() => [scrollY, ...[...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== b.dataset.n).map((b) => b.textContent + "≠" + b.dataset.n)]);
+      if (back.length > 1) fails.push(`kisaca ${w}: counters back above the block (scrollY ${back[0]}) ${back.slice(1).join(" ")}`);
       await page.evaluate(() => { location.hash = "#/olay?e=s5450"; }); await sleep(1500);
       const n = await page.evaluate(() => [".v7-kisaca [data-m=lead]", "[data-m=tickets]", "[data-m=splits]"].map((s) => document.querySelectorAll(s).length).join(","));
       if (n !== "1,0,0") fails.push(`kisaca ${w}: uncoded event s5450 lead,tickets,splits = ${n}, want 1,0,0`);
