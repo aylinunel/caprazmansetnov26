@@ -145,7 +145,7 @@ function fogMount(root) {
   var cta = el.querySelector(".fh-cta");
   if (cta) cta.addEventListener("click", function (ev) {
     var t = document.getElementById("bu-hafta"); if (!t) return;
-    ev.preventDefault(); if (MOTION.lenis) MOTION.lenis.scrollTo("#bu-hafta"); else t.scrollIntoView({ block: "start" });
+    ev.preventDefault(); if (MOTION.lenis) MOTION.lenis.scrollTo("#bu-hafta"); else t.scrollIntoView({ block: "start", behavior: "smooth" });
   });
   /* Off-screen: stop. Theme change: re-read the colours (the CSS side follows the tokens by itself). */
   if ("IntersectionObserver" in window) {
