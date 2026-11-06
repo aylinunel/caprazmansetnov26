@@ -2315,7 +2315,8 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
   .xfixlink::before{margin-right:4px}
   .chip,.v7-out,.xsp-h a,.v7-outlets a{min-height:44px!important}
   .chip,.v7-out{min-width:44px}
-  .xsp-h a,.v7-outlets a{display:flex;align-items:center}
+  .v7-outlets a{display:flex;align-items:center}
+  .xsp-h a{display:block}
   summary{display:flex;align-items:center;min-height:44px}
   details p>a:only-child{display:inline-flex;align-items:center;min-height:44px}
   .xtopic-h>a{min-width:44px}
