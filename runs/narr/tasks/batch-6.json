@@ -1,0 +1,962 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s5326",
+   "week": "w10",
+   "title": "Son kullanma tarihi geçmiş kanser ilaçlarını piyasaya süren 22 şüpheli gözaltında",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Tarihi geçmiş ilaçları yeniden piyasaya süren 22 şüpheli 11 ilde gözaltına alındı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son kullanma tarihi geçmiş kanser ilaçlarıyla vurgun: 22 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Son kullanma tarihi geçmiş kanser ilaçlarında 11 ilde 22 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Son kullanma tarihi geçmiş kanser ilaçlarına yönelik soruşturma: Bakan Gürlek duyurdu"
+    },
+    {
+     "s": "star",
+     "hl": "Tarihi geçmiş kanser ilaçlarını satan vicdansızlara operasyon! 3'ü kamu görevlisi 24 isim tespit edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Tarihi geçmiş kanser ilaçlarını piyasaya sürenlere operasyon"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Tarihi geçmiş kanser ilaçlarını piyasaya süren çeteye operasyon! Çok sayıda gözaltı var"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Akın Gürlek duyurdu... Tarihi geçmiş kanser ilaçlarında 650 milyon TL'lik vurgun iddiası: 11 ilde operasyon, 22 gözaltı!"
+    },
+    {
+     "s": "mynet",
+     "hl": "Tarihi geçmiş kanser ilaçlarını yeniden piyasaya sürmüşler! 650 milyon TL'lik işlem hacmi tespit edildi, çok sayıda gözaltı var"
+    },
+    {
+     "s": "karar",
+     "hl": "Tarihi geçmiş kanser ilaçlarını yeniden sattılar: 650 milyon liralık vurgun, 22 gözaltı"
+    },
+    {
+     "s": "aa",
+     "hl": "Tarihi geçmiş kanser ilaçlarını yeniden piyasaya süren şüphelilere yönelik operasyonda 22 kişi gözaltına alındı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Son kullanma tarihi geçmiş kanser ilaçlarını piyasaya süren 22 şüpheli gözaltında"
+    }
+   ]
+  },
+  {
+   "event": "s5412",
+   "week": "w10",
+   "title": "Belçika'da hükümet krizi! Başbakan De Wever istifasını Kral'a sundu",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Belçika'da hükümet krizi patlak verdi: Başbakan istifasını sundu"
+    },
+    {
+     "s": "star",
+     "hl": "Belçika'da hükümet krizi! Başbakan De Wever istifasını Kral'a sundu"
+    },
+    {
+     "s": "aksam",
+     "hl": "Belçika'da siyasi kriz derinleşiyor! Başbakan istifasını sundu"
+    },
+    {
+     "s": "ntv",
+     "hl": "Belçika'da bütçe krizi. Başbakan De Wever istifa etti, Kral süreci erteledi"
+    },
+    {
+     "s": "aa",
+     "hl": "Belçika Başbakanı De Wever, Kral Philippe'e istifasını sundu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Belçika'da hükümet krizi! Başbakan istifasını sundu, Kral kabul etmedi"
+    },
+    {
+     "s": "takvim",
+     "hl": "Belçika'da 10 milyar euroluk bütçe krizi! Başbakan Bart De Wever istifa etti Kral Philippe kararı erteledi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Belçika'da bütçe krizi: Başbakan Bart De Wever istifa etti"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Belçika'da siyasi deprem! Başbakan Bart De Wever istifa etti"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Belçika Başbakanı De Wever, Kral Philippe'e istifasını sundu"
+    },
+    {
+     "s": "karar",
+     "hl": "Belçika’da hükümet istifasını sundu: Kral Philippe kararı askıya aldı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Belçika’da hükümet krizi kapıda: Başbakan istifayı sundu! Gözler Kral Philippe’de"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Belçika'da bütçe anlaşmazlığı hükümeti sarstı! Başbakan De Wever istifasını Kral Philippe'e sundu"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Belçika Başbakanı De Wever istifasını sundu"
+    }
+   ]
+  },
+  {
+   "event": "s5278",
+   "week": "w10",
+   "title": "Fenerbahçe'de Sergio Conceiçao kararı çıktı",
+   "headlines": [
+    {
+     "s": "yenisafak",
+     "hl": "Sergio Conceiçao nasıl bir teknik adam ve Fenerbahçe'de ne yapar?"
+    },
+    {
+     "s": "sabah",
+     "hl": "Conceiçao ile masada"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fenerbahçe, Sergio Conceiçao’ya resmi teklif yaptı"
+    },
+    {
+     "s": "tele1",
+     "hl": "Fenerbahçe'de Sergio Conceiçao kararı çıktı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fenerbahçe, Sergio Conceiçao'ya 1,5 yıllık sözleşme teklif etti"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Fenerbahçe, Conceiçao ile anlaştı: İstanbul'a geliyor"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Fenerbahçe'de Sergio Conceiçao kararı: Teklif ortaya çıktı..."
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Teklifin detayları ortaya çıktı! Fenerbahçe'de Conceiçao kararı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Sergio Conceiçao'nun oyun planı: Fenerbahçe'de bu sistemi kullanacak"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fenerbahçe'de Conceiçao'da pürüz çıktı: Emre Belözoğlu adım adım Fenerbahçe'ye!"
+    },
+    {
+     "s": "mynet",
+     "hl": "Sergio Conceiçao yerine Emre Belözoğlu! Fenerbahçe'de sürpriz gelişme"
+    },
+    {
+     "s": "akit",
+     "hl": "Fenerbahçe’de teknik direktör krizi: Conceiçao’da pürüz çıktı gözler Belözoğlu’nda"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fenerbahçe'de Conceiçao ile görüşmeler iptal! Aziz Yıldırım'dan Emre Belözoğlu hamlesi"
+    }
+   ]
+  },
+  {
+   "event": "s5070",
+   "week": "w10",
+   "title": "Bağcılar'da 4 bina tahliye edildi",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Bağcılar'da inşaat çalışması çevrede çatlak oluşturdu, 4 bina tedbiren tahliye edildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Bağcılar'da inşaat çalışmaları sırasında 4 bina tedbiren boşaltıldı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Bağcılar'da 4 bina tahliye edildi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Bağcılar'da inşaat alanı çevresindeki 4 bina tahliye edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Bağcılar'da inşaat çalışması sonrası binalarda çatlaklar oluştu: 4 bina tahliye edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Bağcılar'da çatlak paniği! 4 apartman tahliye edildi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "İstanbul'da inşaatın çevresindeki çatlaklar oluşan 4 bina tahliye edildi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Bağcılar’da inşaatın çevresindeki çatlaklar oluşan 4 bina tahliye edildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Bağcılar’da inşaatın çevresindeki çatlaklar oluşan 4 bina tahliye edildi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Bağcılar'da inşaat alanının çevresindeki 4 bina tahliye edildi"
+    },
+    {
+     "s": "karar",
+     "hl": "Bağcılar’da inşaat çalışması sonrası binalarda çatlaklar oluştu 4 bina tahliye edildi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Bağcılar'da inşaat çalışması sonrası çökme tehlikesi! 4 apartman tahliye edildi"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Bağcılar'da panik! İnşaat çevresindeki 4 binaya acil tahliye"
+    },
+    {
+     "s": "mynet",
+     "hl": "Bağcılar’da 5 bina tahliye edildi"
+    }
+   ]
+  },
+  {
+   "event": "s5233",
+   "week": "w10",
+   "title": "Emre Belözoğlu'ndan flaş Fenerbahçe açıklaması!",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Belözoğlu, Beşiktaş beraberliği sonrası Fenerbahçe için 'o göreve talip olunmaz' dedi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Emre Belözoğlu'ndan Beşiktaş maçında 11 değişiklik!"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe açıklaması: \"Göreve talip olunmaz, layık olunur\""
+    },
+    {
+     "s": "star",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe açıklaması! \"Herkesin kendi içinde istediği bir yer\""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe sorusuna yanıt: 'O göreve talip olunmaz...'"
+    },
+    {
+     "s": "sabah",
+     "hl": "Emre Belözoğlu’ndan Fenerbahçe açıklaması! Teklif geldi mi?"
+    },
+    {
+     "s": "haberler",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe sorusuna yanıt"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe'ye yeşil ışık! Teknik direktörlük sorusuna cevap verdi: \"Herkesin orada olmak istediği bir yer\""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Emre Belözoğlu'ndan flaş Fenerbahçe açıklaması!"
+    },
+    {
+     "s": "onedio",
+     "hl": "Emre Belözoğlu Beşiktaş Maçı Sonrası Fenerbahçe İddialarına Yanıt Verdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe sorusuna yanıt: O göreve talip olunmaz!"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Emre Belözoğlu: Fenerbahçe'de o göreve talip olunmaz, o göreve layık görülürsünüz"
+    },
+    {
+     "s": "mynet",
+     "hl": "Emre Belözoğlu'ndan Fenerbahçe teknik direktörlüğü için resmi açıklama!"
+    }
+   ]
+  },
+  {
+   "event": "s5068",
+   "week": "w10",
+   "title": "Antalya-Alanya Otoyolu ile 2,5 saatlik yol 36 dakikaya düşecek",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Antalya ile Alanya arasında kara yoluyla ulaşım 36 dakikaya düşecek"
+    },
+    {
+     "s": "sabah",
+     "hl": "Antalya-Alanya arası 114 dakika kısalacak: 2,5 saatlik yol 36 dakikaya düşecek"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Antalya-Alanya arası 36 dakikaya düşüyor"
+    },
+    {
+     "s": "ahaber",
+     "hl": "2,5 saatlik yol 36 dakikaya düşecek! 23 milyar TL zamandan, 900 milyon TL akaryakıttan tasarruf"
+    },
+    {
+     "s": "takvim",
+     "hl": "Antalya-Alanya otoyolu ile 2,5 saatlik yol 36 dakikaya düşüyor! Yıllık 23,9 milyar lira tasarruf sağlanacak"
+    },
+    {
+     "s": "star",
+     "hl": "122 kilometrelik dev otoyol! 2,5 saatlik yolculuk 36 dakikaya düşecek"
+    },
+    {
+     "s": "akit",
+     "hl": "Hem tasarruf hem jet ulaşım: 2 buçuk saatlik yol 36 dakikaya düşecek!"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "2,5 saatlik yol 36 dakikaya düşecek"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Antalya-Alanya arası 36 dakikaya düşecek"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Antalya-Alanya Otoyolu ile 2,5 saatlik yol 36 dakikaya düşecek"
+    },
+    {
+     "s": "aksam",
+     "hl": "Güneyde 122 km'lik otoyol inşası! 2,5 saatlik yol 36 dakikaya düşecek"
+    },
+    {
+     "s": "ntv",
+     "hl": "2,5 saatlik yol 36 dakikaya düşecek"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Yıllık 23,9 milyar TL'lik tasarruf! Bakan Uraloğlu açıkladı: Antalya-Alanya arası 2,5 saatten 36 dakikaya düşecek"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Antalya-Alanya arası 114 dakika kısalacak! 2,5 saatlik yol 36 dakikaya düşecek"
+    }
+   ]
+  },
+  {
+   "event": "s5277",
+   "week": "w10",
+   "title": "11 ilde siber suç operasyonu: 86 şüpheli tutuklandı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Siber suçlarla mücadele operasyonlarında 86 şüpheli tutuklandı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "11 ilde siber suç operasyonunda 120 şüpheli yakalandı, 86'sı tutuklandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "11 il merkezli siber suç operasyonu: 86 şüpheli tutuklandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "11 ilde siber suç operasyonu: 86 şüpheli tutuklandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Siber operasyon: 86 tutuklama!"
+    },
+    {
+     "s": "takvim",
+     "hl": "11 il merkezli siber suç operasyonu: 120 şüpheliden 86'sı tutuklanarak cezaevine gönderildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Ankara- 11 ilde siber suçlarla mücadele operasyonu: 86 tutuklama"
+    },
+    {
+     "s": "sabah",
+     "hl": "İçişleri Bakanlığı duyurdu: 11 ilde dev siber operasyon: 120 şüpheli yakalandı, 86 tutuklama"
+    },
+    {
+     "s": "ahaber",
+     "hl": "11 ilde siber suç operasyonu! 86 kişi tutuklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İçişleri duyurdu... 11 ilde 'siber' operasyon: 86 tutuklama"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Siber suçlarla mücadelede 11 ilde operasyon: 86 tutuklama"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Siber suçlarla mücadele operasyonlarında 86 şüpheli tutuklandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "11 ilde siber suç operasyonu: 86 tutuklama"
+    },
+    {
+     "s": "ntv",
+     "hl": "11 ilde siber suç operasyonu: 86 tutuklama"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "11 ilde siber suçlarla mücadele operasyonu! 86 şüpheli tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s5568",
+   "week": "w10",
+   "title": "Tenerife’nin futbolcusu Jesus de Miguel hayatını kaybetti",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Tenerife Kulübü, Jesus de Miguel Alameda'nın Andorra maçında öldüğünü açıkladı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İspanya'dan acı haber: Kaleciyle çarpışan futbolcu Jesus De Miguel hayatını kaybetti!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Kaleciyle çarpışan İspanyol futbolcu Jesus de Miguel hayatını kaybetti! Acı haberi kulübü duyurdu"
+    },
+    {
+     "s": "birgun",
+     "hl": "Tenerife futbolcusu Jesus de Miguel sahada aldığı darbe sonucu hayatını kaybetti"
+    },
+    {
+     "s": "ntv",
+     "hl": "Rakibi faul yaptı, kalbi durdu. Jesus de Miguel maç sonunda hayatını kaybetti"
+    },
+    {
+     "s": "akit",
+     "hl": "Futbol dünyası şokta! Sert faule maruz kalan Jesus de Miguel hayatını kaybetti"
+    },
+    {
+     "s": "onedio",
+     "hl": "Jesús de Miguel Hayatını Kaybetti: Kaleciyle Çarpışan Tenerifeli Forvet 30 Yaşında Yaşama Veda Etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Tenerife Andorra maçı ertelendi mi, maçta ne oldu? Jesus de Miguel hayatını kaybetti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Tenerife futbolcusu Jesus de Miguel Alameda rakip kaleciyle çarpıştığı maçta öldü"
+    },
+    {
+     "s": "aa",
+     "hl": "Kaleci ile çarpıştığı pozisyonda kalbi duran İspanyol futbolcu Jesus de Miguel hayatını kaybetti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Jesus de Miguel hayatını kaybetti, Tenerife yasta"
+    },
+    {
+     "s": "takvim",
+     "hl": "İspanya 2. Ligi'nde kaleciyle çarpışan futbolcu Jesús de Miguel hayatını kaybetti: İşte o görüntüler"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Sahada korkunç ölüm! Göğsüne gelen diz sonrası Jesus de Miguel hayatını kaybetti"
+    },
+    {
+     "s": "star",
+     "hl": "Futbol dünyasını yasa boğan haber! Jesus de Miguel hayatını kaybetti"
+    },
+    {
+     "s": "diken",
+     "hl": "Kaleciyle çarpıştıktan sonra kalbi duran İspanyol futbolcu Jesus de Miguel öldü"
+    }
+   ]
+  },
+  {
+   "event": "s5322",
+   "week": "w10",
+   "title": "Sarıgül ailesine yönelik kara para soruşturmasında 10 şüpheli adliyeye sevk edildi",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Sarıgül ailesi kara para dosyasında 10 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Sarıgül ailesine yönelik kara para soruşturmasında 10 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Sarıgül ailesine yönelik soruşturmada 10 kişi adliyede"
+    },
+    {
+     "s": "aksam",
+     "hl": "Sarıgül soruşturmasında yeni gelişme: 10 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Sarıgül soruşturması: 10 şüpheli adliyede"
+    },
+    {
+     "s": "akit",
+     "hl": "Sarıgül ailesine yönelik soruşturma derinleşiyor! Kara para aklamada 10 şüpheli adliyede"
+    },
+    {
+     "s": "karar",
+     "hl": "Sarıgül ailesine yönelik soruşturmada 10 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Sarıgül soruşturmasında 10 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Sarıgül ailesine düzenlenen 2. dalgada operasyonun 10 şüphelisi adliyede"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Sarıgül soruşturmasında 10 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Sarıgül ailesine yönelik soruşturmada dört şüpheli tutuklandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Sarıgül ailesine yönelik soruşturmada yeni gelişme: 4 tutuklama, 7 adli kontrol"
+    }
+   ]
+  }
+ ]
+}

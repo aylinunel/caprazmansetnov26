@@ -1,0 +1,702 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s5080",
+   "week": "w10",
+   "title": "Gençlerbirliği, Alanyaspor'u 5-0 yendi",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Alanyaspor, 6 maçtır yenemediği Gençlerbirliği'ne yarın konuk olacak"
+    },
+    {
+     "s": "haberler",
+     "hl": "Gençlerbirliği, yarın 6 maçtır yenilmediği Alanyaspor'u konuk edecek"
+    },
+    {
+     "s": "star",
+     "hl": "Gençlerbirliği'nin konuğu Alanyaspor"
+    },
+    {
+     "s": "aksam",
+     "hl": "Gençlerbirliği evinde Alanyaspor'u ağırlayacak"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Alanyaspor, Gençlerbirliği maçının hazırlıklarını tamamladı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Alanyaspor Gençlerbirliği maçına hazır"
+    },
+    {
+     "s": "aa",
+     "hl": "Gençlerbirliği, Alanyaspor'u 5-0 yendi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "İşte muhtemel 11! Gençlerbirliği Alanyaspor maçı hangi kanalda, canlı yayın nerede izlenir, saat kaçta?"
+    },
+    {
+     "s": "birgun",
+     "hl": "Gençlerbirliği - Alanyaspor maçı saat kaçta, hangi kanalda? Muhtemel 11'ler"
+    },
+    {
+     "s": "sabah",
+     "hl": "Gençlerbirliği, Alanyaspor'a gol yağdırdı!"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Gençlerbirliği, Alanyaspor'u 5-0 yendi"
+    }
+   ]
+  },
+  {
+   "event": "s5351",
+   "week": "w10",
+   "title": "Fon soruşturmasında 37 kişi 18 milyar 340 milyon TL iade etti",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Fon soruşturmasında 37 kişi 18 milyar 340 milyon TL iade etti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fon soruşturmasında 37 kişi 18 milyar 340 milyon TL iade etti"
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında yeni gelişme: 18,3 milyar TL tahsil edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Milyarlarca lira geri döndü! Fon soruşturmasında 37 kişi parasını iade etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fon soruşturmasında yeni gelişme! 37 kişiden 18 milyar 340 milyon TL tahsil edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Fon soruşturmasında 37 kişi daha parasını iade etti: 18,3 milyar lira toplandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Fon soruşturmasında yeni gelişme: 37 kişi parasını iade etti, 18,3 milyar lira toplandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "İstanbul'da fon soruşturmasında 37 kişiden 18 milyar 340 milyon TL tahsil edildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fon soruşturmasında 37 kişi parasını iade etti: Geri ödenen miktar belli oldu"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fon soruşturmasında 18.3 milyar TL iade edildi"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fon Soruşturmasında 37 Kişi Parasını İade Etti: TMSF Hesabında 18,3 Milyar Lira Toplandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Fon soruşturmasında incelemeler sürüyor! 37 kişiden 18 milyar 340 milyon liralık iade"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fon soruşturmasında 37 kişi 18,3 milyar TL iade etti: Toplam kazancın sadece yüzde 9,8'i"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fon soruşturması. 37 kişinin iade ettiği tutar 18 milyar lirayı geçti"
+    }
+   ]
+  },
+  {
+   "event": "s5281",
+   "week": "w10",
+   "title": "İstanbul'da okullar tatil mi? 4 Kasım Çarşamba yarın İstanbul'da okullar tatil mi?",
+   "headlines": [
+    {
+     "s": "cnnturk",
+     "hl": "YARIN OKULLAR TATİL Mİ 2 KASIM? Pazartesi Okul Var Mı, Tatil Mi? Gözler İstanbul Valiliği ve MEB Açıklamalarında..."
+    },
+    {
+     "s": "milligazete",
+     "hl": "Antalya'da yarın okullar tatil mi? 3 Kasım Salı ders var mı, yağış uyarısı ne, Valilik ne dedi?"
+    },
+    {
+     "s": "haberler",
+     "hl": "COP31 Antalya okullar tatil mi? Antalya okullar 3 gün tatil mi, COP31 ne zaman, COP31 nedir?"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yarın okullar tatil mi? 3 Kasım Edirne, Tekirdağ, Antalya ve İstanbul'da okullar tatil mi, ders var mı? Sağanak sonrası gözler valilik açıklamalarında"
+    },
+    {
+     "s": "sabah",
+     "hl": "Yarın okullar tatil mi? Sağanak yağış sonrası İstanbul Valiliği uyarısı!"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Bugün okullar tatil mi? 3 Kasım son dakika valilik açıklamaları gündemde!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "4 Kasım'da okullar tatil mi? İstanbul Valiliği açıklama yaptı mı, yarın ders işlenecek mi?"
+    },
+    {
+     "s": "karar",
+     "hl": "4 Kasım Çarşamba okullar tatil mi? İstanbul, İzmir, Antalya ve Muğla'da yarın ders var mı? Son durumu AKOM açıkladı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Yarın Okullar Tatil mi? 4 Kasım Çarşamba İstanbul, Ankara ve İzmir'de Okul Var mı?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Bugün okullar tatil mi? 4 Kasım Çarşamba günü İstanbul'da okul var mı, yok mu, ders yapılacak mı?"
+    },
+    {
+     "s": "takvim",
+     "hl": "4 Kasım Çarşamba okullar tatil mi? MEB takvimi ve valilik açıklamalarında son durum ne?"
+    }
+   ]
+  },
+  {
+   "event": "s5639",
+   "week": "w10",
+   "title": "Dirk Kuyt'tan Liverpool maçı açıklaması: Çok iyi bir planımız var",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Fenerbahçe'den ayrılacak mı? Dirk Kuyt'tan açıklama"
+    },
+    {
+     "s": "sabah",
+     "hl": "Dirk Kuyt'tan ayrılık cevabı: “Bu tür konuşmalara girmiyorum”"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Liverpool maçı öncesi Dirk Kuyt'tan dikkat çeken açıklama: 'Çok iyi bir plan hazırladık...'"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Dirk Kuyt'tan ayrılık cevabı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Dirk Kuyt'tan Liverpool maçı açıklaması: Çok iyi bir planımız var"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fenerbahçe'den ayrılacak mı? Dirk Kuyt'tan açıklama"
+    },
+    {
+     "s": "birgun",
+     "hl": "Dirk Kuyt: “Liverpool maçı için çok iyi bir planımız var”"
+    },
+    {
+     "s": "aksam",
+     "hl": "Dirk Kuyt'tan Liverpool'a gözdağı: Yarınki maçta bunu göreceksiniz"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Dirk Kuyt'tan ayrılık cevabı: Geleceğine ilişkin konuştu"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Dirk Kuyt'tan Fenerbahçe'deki geleceğiyle ilgili açıklama! Liverpool maçı öncesinde konuştu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fenerbahçe'de Dirk Kuyt'tan Liverpool maçı öncesi mesaj: \"Çok iyi bir planımız var\""
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Dirk Kuyt: Yarın için çok iyi bir planımız var"
+    }
+   ]
+  },
+  {
+   "event": "s5137",
+   "week": "w10",
+   "title": "Rusya: Zelenskiy ararsa Putin telefonu açacak",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Rusya: Zelenskiy'nin araması halinde Putin telefonu açacak"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Uşakov, Zelenskiy'i Moskova'ya çağırdı, ararsa Putin'in telefonu açacağını söyledi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Kremlin Danışmanı Uşakov, Zelenskiy ararsa Putin'in telefonu açacağını söyledi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Rusya: Zelenski'nin araması halinde Putin telefonu açacak"
+    },
+    {
+     "s": "aksam",
+     "hl": "Zelenski'nin teklifine Rusya'dan yanıt: \"Aranması halinde Putin telefonu açar\""
+    },
+    {
+     "s": "mynet",
+     "hl": "Rusya'dan dikkat çeken açıklama! \"Zelenskiy'nin araması halinde Putin telefonu açacak\""
+    },
+    {
+     "s": "milliyet",
+     "hl": "Rusya ve Ukrayna arasında 'telefon' diplomasisi! Kremlin 'Zelenskiy ararsa, Putin telefonu açar mı?' sorusuna yanıt verdi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Rusya’dan Ukrayna’ya yeşil ışık: “Zelenskiy ararsa Putin telefonu açar”"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Rusya: Zelenskiy'nin araması halinde Putin telefonu açacak"
+    },
+    {
+     "s": "star",
+     "hl": "Moskova kapıyı araladı: Zelenski ararsa Putin telefonu açar"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Rusya: Zelenskiy ararsa Putin telefonu açacak"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Uşakov: Zelenskiy'nin araması halinde Putin telefonu açacak"
+    },
+    {
+     "s": "karar",
+     "hl": "Kremlin: Zelenskiy ararsa Putin telefonu açacak"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Kremlin'den Ukrayna'ya yeşil ışık: \"Zelenski ararsa Putin telefonu açar\""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Zelenskiy ararsa telefonu Putin açacak"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Kremlin: Zelenski'nin araması halinde Putin telefonu açacak"
+    }
+   ]
+  }
+ ]
+}

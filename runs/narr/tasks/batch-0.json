@@ -1,0 +1,814 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s1519",
+   "week": "w7",
+   "title": "İstanbul Boğazı'nda sürüklenen gemi kurtarıldı",
+   "headlines": [
+    {
+     "s": "ntv",
+     "hl": "Didim açıklarında sürüklenen teknedeki 2 kişi kurtarıldı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Çanakkale Boğazı’nda sürüklenen teknedeki 2 kişi kurtarıldı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İstanbul Boğazı'nda gemi sürüklendi: İstikametinin tersine döndü"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İstanbul Boğazı'nda sürüklenen gemi kurtarıldı"
+    },
+    {
+     "s": "star",
+     "hl": "İstanbul Boğazı'nda korkutan anlar: Arızalanan dev gemi kontrolsüzce sürüklendi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İstanbul Boğazı'nda panik anları! Kuru yük gemisi kıyıya sürüklendi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İstanbul Boğazı'nda sürüklenen gemi kurtarıldı"
+    },
+    {
+     "s": "karar",
+     "hl": "İstanbul Boğazı'nda gemi arızası: Sürüklenerek ters döndü"
+    },
+    {
+     "s": "dirilis",
+     "hl": "İstanbul Boğazı'nda sürüklenen konteyner gemisi kurtarıldı"
+    }
+   ]
+  },
+  {
+   "event": "s1508",
+   "week": "w7",
+   "title": "Suudi Arabistan'ın başkenti Riyad'da patlama sesleri",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Suudi Arabistan'ın başkenti Riyad'da saldırı uyarısı sonrası 3 ayrı patlama sesi duyuldu"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Suudi Arabistan'da patlama sesleri duyuldu"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Suudi Arabistan'ın başkenti Riyad'da patlama sesleri"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Riyad'da 3 patlama sesi duyuldu - Güncel Dünya Haberleri"
+    },
+    {
+     "s": "ntv",
+     "hl": "Husilerin Suudi Arabistan'a saldırıları sürüyor. 3 ayrı patlama sesi duyuldu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Riyad'da 'tehlike alarmı' verildi: 3 ayrı patlama sesi duyuldu"
+    },
+    {
+     "s": "mynet",
+     "hl": "Suudi Arabistan'ın başkenti Riyad'da alarm! Husiler: \"Havalimanını vurduk\""
+    },
+    {
+     "s": "star",
+     "hl": "Suudi Arabistan'da patlama sesleri"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Suudi Arabistan'ın başkenti Riyad'da patlama sesleri duyuldu, hava saldırısı tehdidi içeren uyarı..."
+    }
+   ]
+  },
+  {
+   "event": "s1497",
+   "week": "w7",
+   "title": "Cibuti açıklarında göçmen faciası! Tekne battı: 15'i çocuk 139 ölü, 84 kayıp",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Cibuti açıklarında göçmen teknesi battı: 109 ölü, 116 kayıp"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cibuti açıklarında göçmen faciası: 15'i çocuk, en az 109 can kaybı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Cibuti'de facia: 15'i çocuk 109 ölü, 116 kayıp"
+    },
+    {
+     "s": "takvim",
+     "hl": "Cibuti açıklarında göçmen faciası! Tekne battı: 15'i çocuk 139 ölü, 84 kayıp"
+    },
+    {
+     "s": "karar",
+     "hl": "Cibuti açıklarında umuda yolculuk faciayla bitti: 109 ölü, 116 kayıp"
+    },
+    {
+     "s": "star",
+     "hl": "Cibuti açıklarında gemi faciası: 109 ölü, 116 kişi aranıyor"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Cibuti açıklarında gemi faciası: 109 kişi hayatını kaybetti"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Cibuti açıklarında gemi alabora oldu: 109 kişi öldü ve 116'dan fazla kişi kayıp"
+    },
+    {
+     "s": "sabah",
+     "hl": "Cibuti açıklarında göçmen teknesi battı: 139 ölü, 84 kayıp"
+    }
+   ]
+  },
+  {
+   "event": "s3611",
+   "week": "w7",
+   "title": "Hakem Mehmet Türkmen'e UEFA Konferans Ligi'nde görev",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "UEFA Konferans Ligi heyecanı başlıyor!"
+    },
+    {
+     "s": "star",
+     "hl": "UEFA Konferans Ligi'nde ilk hafta maçları yarın!"
+    },
+    {
+     "s": "karar",
+     "hl": "Mehmet Türkmen'e UEFA Konferans Ligi'nde görev"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "UEFA'dan Mehmet Türkmen'e görev!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Trabzonspor, UEFA Konferans Ligi'ne Finlandiya'da zaferle başladı"
+    },
+    {
+     "s": "diken",
+     "hl": "UEFA Konferans Ligi: Trabzonspor deplasmanda dört golle galip"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Konferans Ligi'nde yeni sezon 10 maçla başladı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Konferans Ligi'nde ilk hafta bitti! Sürpriz sonuçlar damga vurdu"
+    }
+   ]
+  },
+  {
+   "event": "s3692",
+   "week": "w7",
+   "title": "Trabzonspor'da Paul Onuachu şoku! Gol attı ve sakatlandı",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "Trabzonspor'da Paul Onuachu şoku! Gol attı ve sakatlandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Trabzonspor'da kötü haber: Paul Onuachu oyuna devam edemedi!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Trabzonspor'da sakatlık şoku, golü attı oyundan çıktı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Trabzonspor'da Paul Onuachu şoku! Golünü attı, oyundan çıktı..."
+    },
+    {
+     "s": "haberturk",
+     "hl": "Trabzonspor'da sakatlık şoku: Paul Onuachu - Trabzonspor Haberler - HT Spor"
+    },
+    {
+     "s": "karar",
+     "hl": "Onuachu’dan Trabzonspor’a kötü haber: Golünü attı sakatlandı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Trabzonspor'a Onuachu'dan kötü haber! İlk maçta sakatlandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Trabzon'a şok! Onuachu golünü attı sakatlandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Trabzonspor'a Beşiktaş maçı öncesi Onuachu şoku!"
+    }
+   ]
+  },
+  {
+   "event": "s3593",
+   "week": "w7",
+   "title": "UEFA Şampiyonlar Ligi'nde gecenin sonuçları!",
+   "headlines": [
+    {
+     "s": "star",
+     "hl": "Şampiyonlar Ligi'nde gecenin sonuçları belli oldu!"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Şampiyonlar Ligi’nde ikinci hafta maçları oynandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "UEFA Şampiyonlar Ligi'nde sürpriz sonuçlar!"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Şampiyonlar Ligi'nde büyük sürprizler! Devler Ligi'nde gecenin sonuçları"
+    },
+    {
+     "s": "takvim",
+     "hl": "Şampiyonlar Ligi'nde 9 maçta 32 gol! Gecenin sonuçları"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İşte UEFA Şampiyonlar Ligi'nde günün sonuçları"
+    },
+    {
+     "s": "haberturk",
+     "hl": "UEFA Şampiyonlar Ligi'nde gecenin sonuçları!"
+    },
+    {
+     "s": "karar",
+     "hl": "Şampiyonlar Ligi'nde tarihin en gollü haftası yaşandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "UEFA Şampiyonlar Ligi'nde tarihi rekor. Turnuvada böylesi olmamıştı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Şampiyonlar Ligi'nde haftanın 11'i belli oldu! Fenerbahçe ve Galatasaray..."
+    }
+   ]
+  },
+  {
+   "event": "s1618",
+   "week": "w7",
+   "title": "Etimesgut Belediyesi soruşturmasında 2 başkan yardımcısı dahil 7 kişi tutuklandı",
+   "headlines": [
+    {
+     "s": "turkiyegz",
+     "hl": "Etimesgut Belediyesi'ne soruşturma: 2 başkan yardımcısı dahil 7 tutuklama"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika: Etimesgut Belediyesi soruşturmasında 7 kişi tutuklandı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Etimesgut Belediyesi yolsuzluk soruşturmasında iki başkan yardımcısının da aralarında bulunduğu 7 kişi..."
+    },
+    {
+     "s": "ahaber",
+     "hl": "Etimesgut Belediyesi'nde rüşvet ve ihale operasyonu: 2 başkan yardımcısı tutuklandı!"
+    },
+    {
+     "s": "star",
+     "hl": "Etimesgut Belediyesi'ne yolsuzluk soruşturması! Başkan yardımcıları dahil 7 tutuklama"
+    },
+    {
+     "s": "mynet",
+     "hl": "Etimesgut Belediyesi'ne soruşturmada yeni gelişme! Tutuklandılar"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Etimesgut Belediyesi soruşturmasında 2 başkan yardımcısı dahil 7 kişi tutuklandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Etimesgut Belediyesi'ne yönelik \"yolsuzluk\" soruşturmasında 7 şüpheli tutuklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Etimesgut Belediyesi'ne operasyon: Belediye başkan yardımcıları da aralarında 7 kişi tutuklandı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Etimesgut Belediyesine yönelik &quot;yolsuzluk&quot; soruşturmasında 7 şüpheli tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s3562",
+   "week": "w7",
+   "title": "Galatasaray, Barcelona'ya mağlup oldu",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "Galatasaray, Şampiyonlar Ligi'nde Barcelona'ya 4-1 mağlup oldu: İkinci maçında da puan alamadı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Galatasaray'dan Barcelona'ya dostluk yemeği! - Galatasaray Haberler - HT Spor"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Galatasaray'ın gençleri Barcelona'ya mağlup oldu"
+    },
+    {
+     "s": "mynet",
+     "hl": "UEFA Gençlik Ligi'nde Galatasaray Barcelona'ya diş geçiremedi!"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Galatasaray'ın gençleri Barcelona'ya kaybetti!"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA | Galatasaray sonunu getiremedi! Barcelona'ya 4 golle kaybeti..."
+    },
+    {
+     "s": "ntv",
+     "hl": "Galatasaray, Barcelona'ya diş geçiremedi. Sarı-kırmızılılar, 5 gollü maçta kaybetti"
+    },
+    {
+     "s": "diken",
+     "hl": "UEFA Şampiyonlar Ligi: Galatasaray, Barcelona'ya 4-1 mağlup"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Galatasaray, Barcelona'ya 4-1 yenildi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Galatasaray, Barcelona'ya 4-1 yenildi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Galatasaray, Barcelona'ya mağlup oldu"
+    },
+    {
+     "s": "star",
+     "hl": "MAÇ SONUCU: Galatasaray 1-4 Barcelona"
+    }
+   ]
+  },
+  {
+   "event": "s1509",
+   "week": "w7",
+   "title": "Beyaz Saray, ABD'nin Atina Büyükelçisi Guilfoyle'un istifasını istedi",
+   "headlines": [
+    {
+     "s": "trthaber",
+     "hl": "Trump, ABD'nin Yunanistan Büyükelçisi Guilfoyle'u görevden almayı değerlendiriyor"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Trump’tan Atina Büyükelçisi Guilfoyle’u görevden alma sinyali geldi: Hakkındaki iddialar inceleniyor"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Beyaz Saray, Atina Büyükelçisi Guilfoyle'u görevden alacak: İstifasını istedik"
+    },
+    {
+     "s": "karar",
+     "hl": "Beyaz Saray, Atina Büyükelçisi Guilfoyle'un istifasının istendiğini açıkladı"
+    },
+    {
+     "s": "star",
+     "hl": "ABD'nin Atina Büyükelçisi Guilfoyle'nun istifası istendi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Beyaz Saray, Atina Büyükelçisinin istifasının istendiğini açıkladı!"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Beyaz Saray, ABD'nin Atina Büyükelçisi Guilfoyle'un istifasını istedi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Trump hükümeti ABD'nin Yunanistan Büyükelçisi Guilfoyle'dan istifasını istedi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Uygunsuz hediye iddiaları sonrası: ABD’nin Yunanistan Büyükelçisi Guilfoyle istifa etti"
+    }
+   ]
+  }
+ ]
+}

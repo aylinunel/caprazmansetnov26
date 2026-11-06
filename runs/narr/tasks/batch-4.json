@@ -1,0 +1,994 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s4660",
+   "week": "w9",
+   "title": "Kadıköy'de otobüste bir yolcu biber gazı sıktı",
+   "headlines": [
+    {
+     "s": "takvim",
+     "hl": "Kadıköy'de otobüste tartıştığı kadın yolcuya biber gazı sıktı: O anlar kamerada"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Tartışma büyüdü, İETT'nin içine biber gazı sıkıp kaçtı: O anlar kamerada"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Kadıköy'de otobüste bir yolcu biber gazı sıktı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Kadıköy'de otobüste biber gazlı kavga! Yolcular panikle dışarı kaçtı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Pes artık dedirten anlar: Otobüste biber gazı sıktı"
+    },
+    {
+     "s": "akit",
+     "hl": "Otobüste bir anda ortalık karıştı! Yolculara biber gazı sıkıp kaçtı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "İstanbul'da otobüste korku dolu anlar! Kadına vurduğu öne sürülen şahıs yolculara biber gazı sıktı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Kadıköy'de otobüste biber gazlı saldırı: Nefessiz kalan yolcular karakola sığındı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Kadıköy'de otobüste dehşet anları: Kadına vurdu, ardından otobüsün içine biber gazı sıktı!"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Kadıköy'de İETT otobüsünde panik: Kadına vurdu, yolculara biber gazı sıkıp kaçtı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Kadıköy'de otobüste biber gazlı saldırı!"
+    },
+    {
+     "s": "star",
+     "hl": "Otobüste biber gazı dehşeti! Yolculara saldırıp kayıplara karıştı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Otobüste maganda terörü kamerada: Biber gazı sıkıp kaçtı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kadıköy'de otobüste dehşet anları: Yolcuya yumruk atan zanlı biber gazı sıkarak kaçtı"
+    }
+   ]
+  },
+  {
+   "event": "s4844",
+   "week": "w9",
+   "title": "ABD Dışişleri Bakanı Rubio: Türkiye'nin Karadeniz'de tahıl sevkiyatı için ateşkes teklifini değerlendiriyoruz",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Rubio, Türkiye'nin Karadeniz'de tahıl sevkiyatı için ateşkes teklifini değerlendirdiklerini söyledi"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Rubio, Afrika'yı etkileyen tahıl sevkiyatı için kısmi ateşkes önerisini inceliyor"
+    },
+    {
+     "s": "haberler",
+     "hl": "Rubio, Türkiye'nin Karadeniz tahıl sevkiyatı için kısmi ateşkes önerisini değerlendiriyor"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Rubio: Türkiye’nin Karadeniz’de tahıl sevkiyatı için ateşkes teklifini değerlendiriyoruz"
+    },
+    {
+     "s": "sabah",
+     "hl": "Karadeniz'deki kriz için Ankara devrede: ABD Dışişleri Bakanı Rubio açıkladı! \"Türkiye'nin teklifini değerlendiriyoruz\""
+    },
+    {
+     "s": "birgun",
+     "hl": "Rubio'dan açıklama: Türkiye'nin Karadeniz'de tahıl sevkiyatı için ateşkes teklifi değerlendiriliyor"
+    },
+    {
+     "s": "ntv",
+     "hl": "Karadeniz'de tahıl sevkiyatı ateşkesi umudu. Rubio: Türkiye'nin teklifini değerlendiriyoruz"
+    },
+    {
+     "s": "mynet",
+     "hl": "Rubio, Türkiye'nin Karadeniz'de tahıl sevkiyatı için ateşkes teklifini değerlendirdiklerini söyledi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Karadeniz'deki kriz için Ankara devrede! ABD Dışişleri Bakanı Rubio: Türkiye'nin teklifini değerlendiriyoruz"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "ABD duyurdu: Türkiye'nin teklifini değerlendiriyoruz"
+    },
+    {
+     "s": "akit",
+     "hl": "Türkiye ABD'ye ne teklif etti? Rubio: Teklifi değerlendiriyoruz"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Karadeniz'de tahıl ateşkesi umudu! ABD, Türkiye'nin önerisini değerlendiriyor"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "ABD Dışişleri Bakanı Rubio'dan Karadeniz açıklaması: Türkiye'nin teklifini inceliyoruz"
+    }
+   ]
+  },
+  {
+   "event": "s5050",
+   "week": "w9",
+   "title": "Küçükçekmece'de düğünde bıçaklı kavga: 1 ölü",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Küçükçekmece'de düğündeki tartışma bıçaklı kavgaya dönüştü, bir kişi hayatını kaybetti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Küçükçekmece'de düğünde bıçaklanan kişi hastanede hayatını kaybetti"
+    },
+    {
+     "s": "akit",
+     "hl": "Küçükçekmece’de düğündeki kavga can aldı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Küçükçekmece'de düğünde bıçaklı kavga: 1 ölü"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Küçükçekmece’de düğünde dehşet! Boğazından bıçaklanan kişi hayatını kaybetti"
+    },
+    {
+     "s": "star",
+     "hl": "Küçükçekmece'de düğünde bıçaklı kavga: 1 ölü"
+    },
+    {
+     "s": "ntv",
+     "hl": "İstanbul Küçükçekmece'de düğünde bıçaklı kavga: 1 ölü"
+    },
+    {
+     "s": "takvim",
+     "hl": "Küçükçekmece’de düğün salonunda bıçaklı kavga: Boğazından bıçaklanan genç hayatını kaybetti"
+    },
+    {
+     "s": "karar",
+     "hl": "Küçükçekmece’de düğün kana bulandı: 1 kişi bıçaklanarak öldürüldü"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İstanbul Küçükçekmece'de düğün salonunda bıçaklı kavga: 1 ölü"
+    },
+    {
+     "s": "birgun",
+     "hl": "Küçükçekmece'de düğün salonunda bıçaklı saldırı: 1 ölü"
+    },
+    {
+     "s": "mynet",
+     "hl": "Küçükçekmece’de düğün salonundaki bıçaklı kavgada yeni gelişme: Şüpheli yakalandı"
+    }
+   ]
+  },
+  {
+   "event": "s4848",
+   "week": "w9",
+   "title": "İstanbul Maratonu'nda rekor kırıldı!",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "48. İstanbul Maratonu yarın koşulacak"
+    },
+    {
+     "s": "aa",
+     "hl": "48. İstanbul Maratonu bugün koşulacak"
+    },
+    {
+     "s": "haberler",
+     "hl": "48. İstanbul Maratonu yarın koşulacak"
+    },
+    {
+     "s": "birgun",
+     "hl": "İstanbul Maratonu yarın 48. kez koşulacak"
+    },
+    {
+     "s": "ntv",
+     "hl": "48. İstanbul Maratonu'na geri sayım. 12 milyon lira para ödülü"
+    },
+    {
+     "s": "akit",
+     "hl": "48. İstanbul Maratonu için start verildi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "48. İstanbul Maratonu'nda parkur rekoru geldi! İşte para ödülü"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "48. İstanbul Maratonu başladı"
+    },
+    {
+     "s": "star",
+     "hl": "48. İstanbul Maratonu'nda rekor galibiyet"
+    },
+    {
+     "s": "tgrt",
+     "hl": "48. İstanbul Maratonu'nda kazananlar belli oldu: 7 yıllık rekor kırıldı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "48. İstanbul Maratonu'nda rekorla gelen zafer"
+    },
+    {
+     "s": "milligazete",
+     "hl": "48. İstanbul Maratonu'nda erkekler kategorisinde rekor kırıldı! Zirve Kenyalının atletin"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İstanbul Maratonu'nda rekor kırıldı!"
+    },
+    {
+     "s": "onedio",
+     "hl": "48. İstanbul Maratonu'nda Erkeklerde Rekor Süre, Kadınlarda Etiyopyalı Baze Kazandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "48. kez İstanbul Maratonu"
+    }
+   ]
+  },
+  {
+   "event": "s4436",
+   "week": "w9",
+   "title": "Efsane boksör Mike Tyson İstanbul'a geldi",
+   "headlines": [
+    {
+     "s": "haberler",
+     "hl": "Mike Tyson kimdir? Tuzlu Kahve'ye konuk olan Mike Tyson kaç yaşında, nereli, evli mi?"
+    },
+    {
+     "s": "star",
+     "hl": "Dünyaca ünlü boksör Mike Tyson İstanbul'da"
+    },
+    {
+     "s": "akit",
+     "hl": "Mike Tyson İstanbul'a geldi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Mike Tyson, İstanbul'a geldi: Süper Lig cevabı dikkat çekti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Mike Tyson İstanbul’da! Dikkat çeken Galatasaray-Fenerbahçe cevabı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Dünyaca ünlü boksör Mike Tyson İstanbul’da"
+    },
+    {
+     "s": "karar",
+     "hl": "Efsane boksör Mike Tyson İstanbul’da"
+    },
+    {
+     "s": "takvim",
+     "hl": "Dünyaca ünlü boksör Mike Tyson dizi projesi için İstanbul'a geldi: Türkiye'de olmaktan mutluyum"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Mike Tyson İstanbul'da: İlk açıklamasını yaptı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Mike Tyson Tuzlu Kahve için İstanbul’a geldi: Mike Tyson kimdir, kaç yaşında, Müslüman mı?"
+    },
+    {
+     "s": "ntv",
+     "hl": "Mike Tyson İstanbul'da: \"Türkiye'de bulunmaktan çok mutluyum\""
+    },
+    {
+     "s": "tgrt",
+     "hl": "Tuzlu Kahve dizisine katılan efsane boksör Mike Tyson’ın karakteri belli oldu!"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Efsane boksör Mike Tyson İstanbul'a geldi"
+    }
+   ]
+  },
+  {
+   "event": "s4371",
+   "week": "w9",
+   "title": "SPK'dan nitelikli yatırımcı kararı: 50 milyon liraya çıkarıldı",
+   "headlines": [
+    {
+     "s": "bloomberght",
+     "hl": "Nitelikli yatırımcı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "SPK'dan nitelikli yatırımcı kararı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "SPK’dan kritik nitelikli yatırımcı kararı: 50 milyon TL’ye yükseltildi"
+    },
+    {
+     "s": "mynet",
+     "hl": "SPK'dan nitelikli yatırımcı kararı: 50 milyon TL'ye yükseltildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "SPK düğmeye bastı! Nitelikli yatırımcı limiti 50 milyon liraya yükseldi"
+    },
+    {
+     "s": "aa",
+     "hl": "SPK, nitelikli yatırımcılar için belirlenen finansal varlık toplamını 50 milyon liraya çıkardı"
+    },
+    {
+     "s": "aksam",
+     "hl": "SPK'dan nitelikli yatırımcı kararı: 50 milyon liraya çıkarıldı"
+    },
+    {
+     "s": "star",
+     "hl": "Nitelikli yatırımcı olmanın şartı değişti! SPK, varlık sınırını 50 milyon liraya çıkardı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Nitelikli yatırımcıda finansal varlık şartı 50 milyon lira oldu"
+    },
+    {
+     "s": "ntv",
+     "hl": "Nitelikli yatırımcı limiti 50 milyon liraya yükseldi"
+    },
+    {
+     "s": "diken",
+     "hl": "Nitelikli yatırımcı limiti 50 milyon liraya yükseltildi"
+    },
+    {
+     "s": "karar",
+     "hl": "SPK'dan fon krizi sürerken kritik karar: Nitelikli yatırımcı sınırı 50 milyon liraya çıkarıldı"
+    },
+    {
+     "s": "tele1",
+     "hl": "SPK'dan nitelikli yatırımcı kararı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "SPK'dan nitelikli yatırımcılar için yeni karar! Finansal varlık şartı 50 milyon TL oldu"
+    }
+   ]
+  },
+  {
+   "event": "s4857",
+   "week": "w9",
+   "title": "Kanuni'nin Mimar Sinan'a yaptırdığı Şam'daki Süleymaniye Tekkesi yeniden açıldı! 14 yıl sonra ilk ezan okundu",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Suriye'nin başkenti Şam'da tarihi Süleymaniye Tekkesi restore edilerek yeniden açıldı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Osmanlı mirası Süleymaniye Tekkesi Şam'da ibadete döndü: Camide 14 yıl sonra ezan sesi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Kanuni'nin Mimar Sinan'a yaptırdığı Şam'daki Süleymaniye Tekkesi yeniden açıldı! 14 yıl sonra ilk ezan okundu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Şam'da tarihi açılış! Osmanlı yadigârı Süleymaniye Tekkesi hizmette: 14 yıl sonra ilk ezan"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Suriye'nin başkenti Şam'da tarihi Süleymaniye Tekkesi restore edilerek yeniden açıldı"
+    },
+    {
+     "s": "star",
+     "hl": "Kanuni döneminde Mimar Sinan'a yaptırıldı! Tarihi Süleymaniye Tekkesi yeniden açıldı: Türkiye'ye teşekkür ederiz"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Suriye'nin başkenti Şam'da tarihi Süleymaniye Tekkesi restore edilerek yeniden açıldı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Suriye'nin başkenti Şam'da tarihi Süleymaniye Tekkesi restore edilerek yeniden açıldı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Şam'daki tarihi Osmanlı mirası ihya edildi: Mimar Sinan eseri Süleymaniye Tekkesi törenle yeniden açıldı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Şam'da Kanuni Sultan Süleyman'ın Mimar Sinan'a yaptırdığı Süleymaniye Tekkesi 14 yıl sonra yeniden açıldı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "14 yıl sonra ilk ezan: Şam'daki tarihi Süleymaniye Tekkesi restore edilerek yeniden ibadete açıldı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "14 yıl sonra ilk ezan! Kanuni'nin Şam'a mirası Süleymaniye Külliyesi dualarla açıldı"
+    },
+    {
+     "s": "akit",
+     "hl": "Mimar Sinan'ın Şam’daki eseri açıldı! Süleymaniye Külliyesi'nde 15 yıl sonra ilk namaz"
+    }
+   ]
+  },
+  {
+   "event": "s4374",
+   "week": "w9",
+   "title": "Bolu Belediyesi'ne operasyon! Başkan Yardımcısı Rasim Özdemir dahil 4 kişi gözaltında",
+   "headlines": [
+    {
+     "s": "tele1",
+     "hl": "Bolu Belediyesi'ne operasyon 4 gözaltı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Bolu Belediyesi'ne operasyon: Belediye Başkan Yardımcısı dahil 4 kişi gözaltında"
+    },
+    {
+     "s": "haberler",
+     "hl": "Bolu Belediyesi operasyonunda Başkan Yardımcısı Özdemir dahil 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Bolu Belediyesi’ne operasyon: Başkan Yardımcısı dahil 4 gözaltı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Bolu Belediyesi'ne şafak operasyonu! Belediye başkan yardımcısı dahil 4 gözaltı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Bolu Belediyesi'ne şafak operasyonu: Belediye Başkan Yardımcısı dahil 4 gözaltı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Bolu Belediyesi'ne operasyon: 4 gözaltı"
+    },
+    {
+     "s": "star",
+     "hl": "Bolu'da belediyeye şafak operasyonu! Başkan Yardımcısı da gözaltına alınanlar arasında"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Bolu Belediyesi'ne şafak operasyonu: Başkan Yardımcısı Rasim Özdemir de gözaltına alındı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Bolu Belediyesi’nde ihale ve zimmet soruşturması! Başkan Yardımcısı Rasim Özdemir tutuklandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Bolu Belediyesi'ne operasyon! Başkan Yardımcısı Rasim Özdemir dahil 4 kişi gözaltında"
+    },
+    {
+     "s": "mynet",
+     "hl": "Bolu Belediyesi'ne yeni operasyon! Başkan yardımcısı dahil 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Bolu Belediyesi'ne şafak operasyonu: 4 gözaltı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Bolu Belediyesi’ne şafak operasyonu: 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "karar",
+     "hl": "Bolu Belediyesine operasyon: Belediye başkan yardımcısı dahil 4 kişi gözaltında"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Bolu Belediyesi’ne operasyon! Başkan yardımcısı gözaltında"
+    },
+    {
+     "s": "diken",
+     "hl": "Bakırköy Belediyesi'ne soruşturma: Beş başkan yardımcısı dahil 58 gözaltı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Bolu Belediyesi'ne operasyon. Belediye Başkan Yardımcısı dahil dört kişi adliyede"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Bolu Belediyesi soruşturmasında Başkan Yardımcısı Özdemir dahil 3 şüpheli tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s4570",
+   "week": "w9",
+   "title": "Kırıkkale'de işçileri taşıyan midibüs devrildi! 14 kişi yaralandı",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "GÜNCELLEME - Kırıkkale'de midibüsün devrildiği kazada 15 kişi yaralandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Kırıkkale'de can pazarı: İşçileri taşıyan servis aracı devrildi, 14 yaralı!"
+    },
+    {
+     "s": "haberler",
+     "hl": "Kırıkkale'de işçileri taşıyan midibüs devrildi, 1'i ağır 15 kişi yaralandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Kırıkkale'de midibüsün devrildiği kazada 14 kişi yaralandı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Kırıkkale'de feci kaza! İşçileri taşıyan servis devrildi: Çok sayıda yaralı var"
+    },
+    {
+     "s": "sabah",
+     "hl": "Kırıkkale'de işçi servisi devrildi: 1'i ağır 15 yaralı | Video"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Sağanak sonrası feci kaza, Kırıkkale’de işçi servisi devrildi! 15 yaralı"
+    },
+    {
+     "s": "star",
+     "hl": "Kırıkkale'de feci kaza! İşçileri taşıyan servis devrildi: 15 yaralı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Kırıkkale'de işçi midibüsü devrildi! 15 yaralı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Kırıkkale'de midibüs devrildi: 1'i ağır 15 işçi yaralandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Kırıkkale’de işçileri taşıyan servis devrildi: 15 yaralı!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Kırıkkale'de işçileri taşıyan midibüs devrildi. 15 yaralı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Kırıkkale'de servis midibüsü devrildi: 14 yaralı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Kırıkkale'de servis midibüsü devrildi: Çok sayıda yaralı var!"
+    },
+    {
+     "s": "takvim",
+     "hl": "Kırıkkale'de işçileri taşıyan midibüs devrildi: 1'i ağır 15 kişi yaralandı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Kırıkkale'de işçileri taşıyan midibüs devrildi: 15 yaralı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kırıkkale'de işçileri taşıyan midibüs devrildi! 14 kişi yaralandı"
+    }
+   ]
+  }
+ ]
+}

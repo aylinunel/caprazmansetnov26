@@ -1,0 +1,886 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s1652",
+   "week": "w8",
+   "title": "Yasa dışı üreme hücresi ticaretine operasyon; 36 gözaltı",
+   "headlines": [
+    {
+     "s": "trthaber",
+     "hl": "14 ilde &quot;yasa dışı üreme hücresi ticareti&quot; operasyonu: 36 gözaltı"
+    },
+    {
+     "s": "star",
+     "hl": "Yasa dışı üreme hücresi ticareti! 14 ilde operasyon... 53 şüpheli hakkında işlem başlatıldı"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA | Yasa dışı üreme hücresi ticareti operasyonu! 14 ilde 53 gözaltı kararı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Yasa dışı üreme hücresi operasyonu. Kadınları fotoğraftan seçmişler, saç renkleri bile yazılmış"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Son dakika haberi: Bakan Gürlek duyurdu: Yasa dışı üreme hücresi ticaretine operasyon!"
+    },
+    {
+     "s": "ahaber",
+     "hl": "14 ilde yasa dışı üreme hücresi ticareti operasyonu! Çeteyi aldatılan eşin CİMER ihbarı çökertti"
+    },
+    {
+     "s": "diken",
+     "hl": "Üreme hücresi operasyonu: 36 gözaltı"
+    },
+    {
+     "s": "tele1",
+     "hl": "Yasa dışı üreme hücresi ticaretine operasyon; 36 gözaltı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Akın Gürlek duyurdu: Üreme hücresi ticareti operasyonunda 36 gözaltı"
+    },
+    {
+     "s": "takvim",
+     "hl": "14 ilde yasa dışı üreme hücresi ticaretine operasyon! 41 gözaltı, 2 milyon euroluk ağ"
+    }
+   ]
+  },
+  {
+   "event": "s3913",
+   "week": "w8",
+   "title": "A Milli Takım'da Sergen Yalçın'ın ekibi belli oldu!",
+   "headlines": [
+    {
+     "s": "milligazete",
+     "hl": "Sergen Yalçın'ın Milli Takımdaki maaşı ne kadar, Sergen Yalçın'ın maaşı belli oldu mu?"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sergen Yalçın’ın ekibi belli oldu! Hepsi Süper Lig’den"
+    },
+    {
+     "s": "karar",
+     "hl": "Sergen Yalçın'ın Milli Takım'daki teknik heyeti belli oldu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Sergen Yalçın'ın imza töreninin tarihi belli oldu"
+    },
+    {
+     "s": "mynet",
+     "hl": "Sergen Yalçın'ın milli takımdan alacağı maaş belli oldu! Tazminatı da var"
+    },
+    {
+     "s": "haberturk",
+     "hl": "A Milli Takım'da Sergen Yalçın dönemi: İmza töreni düzenlendi!"
+    },
+    {
+     "s": "star",
+     "hl": "Sergen Yalçın imzayı attı! A Milli Takım'da yeni dönem resmen başladı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "A Milli Takım'da Sergen Yalçın dönemi resmen başladı"
+    },
+    {
+     "s": "sabah",
+     "hl": "A Milli Takım'da Sergen Yalçın'ın ekibi belli oldu!"
+    },
+    {
+     "s": "ntv",
+     "hl": "A Milli Takım'da yeni dönem. Sergen Yalçın'ın ekibi açıklandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "A Milli Futbol Takımı Teknik Direktörü Sergen Yalçın'ın ekibi belli oldu: Listede hangi isimler var?"
+    },
+    {
+     "s": "diken",
+     "hl": "Sergen Yalçın'ın teknik ekibi belli oldu"
+    }
+   ]
+  },
+  {
+   "event": "s3875",
+   "week": "w8",
+   "title": "Galatasaray-Fenerbahçe derbisinin tarihi değişmedi",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Galatasaray – Fenerbahçe derbisinin tarihi değişebilir!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Galatasaray-Fenerbahçe derbisinin tarihi değişebilir"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Derbinin tarihi mi değişecek? Galatasaray-Fenerbahçe maçı için kritik karar bekleniyor"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sürpriz gelişme! Galatasaray-Fenerbahçe maçının tarihi değişiyor"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Galatasaray-Fenerbahçe derbisinde sürpriz tarih değişikliği"
+    },
+    {
+     "s": "karar",
+     "hl": "Gözler TFF’nin toplantısında: Galatasaray-Fenerbahçe derbisinin tarihi değişebilir"
+    },
+    {
+     "s": "takvim",
+     "hl": "Gözler TFF'de! Galatasaray - Fenerbahçe derbisinin kararında değişiklik bekleniyor"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Galatasaray - Fenerbahçe derbisinin tarihi değişmedi!"
+    },
+    {
+     "s": "mynet",
+     "hl": "Galatasaray - Fenerbahçe derbisinin tarihi için son karar verildi!"
+    },
+    {
+     "s": "star",
+     "hl": "Galatasaray-Fenerbahçe derbisinin tarihi değişmedi"
+    }
+   ]
+  },
+  {
+   "event": "s4070",
+   "week": "w8",
+   "title": "Barcelona-Real Madrid maçı hangi kanalda, ne zaman, saat kaçta? Arda Güler El Clasico'da ilk 11'de mi?",
+   "headlines": [
+    {
+     "s": "milligazete",
+     "hl": "Barcelona Real Madrid maçı tarihi (El Clasico 2026 hangi gün) Saat kaçta? Hangi kanalda? Arda Güler oynayacak mı?"
+    },
+    {
+     "s": "birgun",
+     "hl": "Barcelona-Real Madrid maçı ne zaman, saat kaçta, hangi kanalda? Arda Güler oynayacak mı? El Clasico için geri sayım başladı!"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Barcelona-Real Madrid maçı ne zaman saat kaçta, hangi kanalda, şifresiz mi, şifreli mi? La Liga'da El Clasico için nefesler tutuldu! Arda Güler ilk 11'de oynayacak mı?"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Barcelona - Real Madrid İLK 11 || Barcelona - Real Madrid maç kadrosu belli oldu mu, Arda Güler oynayacak mı, kimler eksik?"
+    },
+    {
+     "s": "sabah",
+     "hl": "El Clasico heyecanı başlıyor! Barcelona - Real Madrid maçı saat kaçta, hangi kanalda?"
+    },
+    {
+     "s": "ntv",
+     "hl": "Barcelona-Real Madrid maçı ne zaman, saat kaçta, hangi kanalda? Arda Güler, Lamine Yamal'a karşı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Barcelona-Real Madrid maçı hangi kanalda, nereden izlenir? Arda Güler ilk 11'de mi?"
+    },
+    {
+     "s": "mynet",
+     "hl": "Camp Nou’da dev gece! Barcelona-Real Madrid canlı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Barcelona Real Madrid canlı nereden izlenir, şifresiz mi? Arda Güler ilk 11'de mi? İLK OLABİLİR..."
+    },
+    {
+     "s": "star",
+     "hl": "MAÇ SONUCU: Barcelona 1-2 Real Madrid"
+    }
+   ]
+  },
+  {
+   "event": "s4176",
+   "week": "w8",
+   "title": "Beşiktaş Başakşehir maçına hazır",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Beşiktaş, Başakşehir maçının hazırlıklarına başladı! - Son Dakika Beşiktaş Haberleri - Habertürk Spor"
+    },
+    {
+     "s": "sabah",
+     "hl": "Beşiktaş, Başakşehir maçının hazırlıklarına başladı"
+    },
+    {
+     "s": "star",
+     "hl": "Beşiktaş, Başakşehir maçına hazırlanıyor"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Beşiktaş Başakşehir maçına hazır"
+    },
+    {
+     "s": "haberler",
+     "hl": "Beşiktaş Başakşehir ilk 11’ler açıklandı! SON DAKİKA Beşiktaş Başakşehir maç kadrosunda kimler var?"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Beşiktaş Başakşehir CANLI nereden izlenir? Maç başlıyor"
+    },
+    {
+     "s": "birgun",
+     "hl": "Beşiktaş, Başakşehir’i Oh ve Olaitan’ın golleriyle geçti"
+    },
+    {
+     "s": "aksam",
+     "hl": "MAÇ SONUCU: Beşiktaş 2-0 Başakşehir"
+    },
+    {
+     "s": "ntv",
+     "hl": "Beşiktaş, Başakşehir engelini ikinci yarıda aştı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Beşiktaş, Başakşehir’i 2-0 mağlup etti!"
+    },
+    {
+     "s": "karar",
+     "hl": "Kartal uçuşa geçti! Beşiktaş, Başakşehir'i iki golle devirdi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Beşiktaş, Başakşehir'i 2 golle geçti"
+    }
+   ]
+  },
+  {
+   "event": "s3991",
+   "week": "w8",
+   "title": "Son dakika: Mustafa Sarıgül'ün koruması gözaltına alındı",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "Mustafa Sarıgül'ün korumasıyla olan videosuna 200 bin dolarlık sahte rapor iddiası"
+    },
+    {
+     "s": "takvim",
+     "hl": "Sarıgül'ün videodaki koruması gözaltında! 200 bin dolarlık sahte montaj raporu iddiası"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA | Mustafa Sarıgül’ün o koruması gözaltına alındı! Kara para dosyasında 200 bin dolarlık \"Montaj raporu\" skandalı"
+    },
+    {
+     "s": "star",
+     "hl": "Kara para soruşturmasında yeni gelişme: Sarıgül'ün koruması gözaltında"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SON DAKİKA... Mustafa Sarıgül’ün koruması gözaltına alındı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Son dakika: Mustafa Sarıgül'ün koruması gözaltına alındı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... Mustafa Sarıgül'ün koruması gözaltına alındı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Mustafa Sarıgül'ün koruması gözaltına alındı"
+    },
+    {
+     "s": "tele1",
+     "hl": "Mustafa Sarıgül'ün koruması gözaltına alındı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Mustafa Sarıgül'ün koruması gözaltına alındı! Kara para soruşturmasında yeni gelişme"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Mustafa Sarıgül'ün yakın koruması Ömer D. gözaltına alındı"
+    }
+   ]
+  },
+  {
+   "event": "s1812",
+   "week": "w8",
+   "title": "Fon soruşturmasında yeni gelişme: 15 şüpheli daha tutuklandı",
+   "headlines": [
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında yeni gelişme: Tutuklu sayısı yükseldi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Fon soruşturmasında yeni gelişme: 15 şüpheli daha tutuklandı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında 15 şüpheli daha tutuklandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturmasında 15 şüpheli daha tutuklandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fon soruşturmasında yeni tutuklama dalgası! 15 kişi cezaevinde"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fon soruşturmasında yeni gelişme"
+    },
+    {
+     "s": "sabah",
+     "hl": "'Daltonlar' suç örgütü soruşturmasında 15 şüpheli tutuklandı!"
+    },
+    {
+     "s": "birgun",
+     "hl": "'Daltonlar' soruşturmasında 15 şüpheli tutuklandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Fon soruşturmasında 15 şüpheli daha tutuklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "'Daltonlar' soruşturmasında yeni gelişme: 15 tutuklama"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Fon soruşturmasında 15 tutuklama daha"
+    }
+   ]
+  },
+  {
+   "event": "s4474",
+   "week": "w9",
+   "title": "Gölcük'te MHP’li belediye meclis üyesi silahlı saldırıda hayatını kaybetti",
+   "headlines": [
+    {
+     "s": "haberler",
+     "hl": "Gölcük'te MHP’li belediye meclis üyesi silahlı saldırıda hayatını kaybetti"
+    },
+    {
+     "s": "birgun",
+     "hl": "MHP'li belediye meclis üyesi Saral, silahlı saldırıda öldürüldü"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "MHP'li belediye meclis üyesine silahlı saldırı: Hayatını kaybetti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Tartışma kanlı bitti; MHP'li meclis üyesi silahlı saldırıda hayatını kaybetti"
+    },
+    {
+     "s": "akit",
+     "hl": "MHP'li meclis üyesi silahlı saldırıda hayatını kaybetti"
+    },
+    {
+     "s": "karar",
+     "hl": "MHP'li Belediye Meclis Üyesi silahlı saldırıda öldürüldü"
+    },
+    {
+     "s": "tgrt",
+     "hl": "MHP'li meclis üyesi Murat Saral silahlı saldırıda öldürüldü"
+    },
+    {
+     "s": "takvim",
+     "hl": "Gölcük'te MHP'li Meclis Üyesi Murat Saral silahlı saldırı sonucu hayatını kaybetti"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kocaeli'de MHP’li meclis üyesi tartışmada öldürüldü"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Kocaeli’de MHP’li belediye meclis üyesi silahlı saldırıda hayatını kaybetti"
+    },
+    {
+     "s": "ntv",
+     "hl": "MHP'li belediye meclis üyesi silahlı saldırıda öldürüldü"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Kocaeli'de silahlı saldırı! MHP'li meclis üyesi Murat Saral öldürüldü"
+    },
+    {
+     "s": "haberturk",
+     "hl": "MHP'li meclis üyesinin katili arkadaşı çıktı Silahlı saldırıda hayatını kaybeden MHP'li meclis üyesi son yolculuğuna uğurlandı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Gölcük'te MHP'li meclis üyesi Saral'ı vuran Uzuner İznik'te yakalanıp tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s4259",
+   "week": "w9",
+   "title": "Galatasaray-Fenerbahçe derbisi sonrası saha karıştı!",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "26 Ekim 2026 İstanbul'da metro seferleri uzatıldı mı? Galatasaray-Fenerbahçe derbisi nedeniyle metrolar kaça kadar açık?"
+    },
+    {
+     "s": "karar",
+     "hl": "Galatasaray-Fenerbahçe derbisine özel ek metro seferleri"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Galatasaray-Fenerbahçe derbisi öncesi metro düzenlemesi: Seferler uzatıldı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Galatasaray-Fenerbahçe derbisi için metro seferlerine düzenleme"
+    },
+    {
+     "s": "haberler",
+     "hl": "Galatasaray-Fenerbahçe derbisi için olay skor tahmini! Tam 7 gol çıkacak"
+    },
+    {
+     "s": "mynet",
+     "hl": "Caner Erkin'den Galatasaray-Fenerbahçe derbisi için çarpıcı tahmin!"
+    },
+    {
+     "s": "onedio",
+     "hl": "Galatasaray-Fenerbahçe Derbisi Başladı: Zirve Yolunda Kritik Derbi (Canlı)"
+    },
+    {
+     "s": "sabah",
+     "hl": "Galatasaray-Fenerbahçe derbisi karıştı! Abdülkerim ve Lukaku birbirine girdi..."
+    },
+    {
+     "s": "ahaber",
+     "hl": "Galatasaray-Fenerbahçe derbisi sonrası arbede! İki takım birbirine girdi"
+    },
+    {
+     "s": "diken",
+     "hl": "Derbi biter bitmez kavga çıktı: İki futbolcuya kırmızı kart"
+    },
+    {
+     "s": "takvim",
+     "hl": "Seyrantepe'de arbede! Galatasaray - Fenerbahçe derbisi bitti oyuncular birbirine girdi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Galatasaray-Fenerbahçe derbisi sonrası saha karıştı! Mert Hakan Yandaş polisle tartıştı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Galatasaray-Fenerbahçe derbisinde saha karıştı! Cem Dizdar yorumladı"
+    }
+   ]
+  }
+ ]
+}

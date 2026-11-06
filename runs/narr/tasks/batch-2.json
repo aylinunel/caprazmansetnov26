@@ -1,0 +1,846 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s1723",
+   "week": "w8",
+   "title": "Meta'ya 25 milyar dolarlık ceza",
+   "headlines": [
+    {
+     "s": "sozcu",
+     "hl": "ABD mahkemesinden Meta'ya 25 milyar dolar ceza"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Kullanıcıları gizlilik konusunda yanılttığı için Meta'ya 25 milyar dolar ceza verildi"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Meta'ya kullanıcı gizliliği ihlali nedeniyle 25 milyar dolar ceza"
+    },
+    {
+     "s": "sabah",
+     "hl": "ABD'de mahkemeden Meta'ya 25 milyar dolarlık ceza"
+    },
+    {
+     "s": "takvim",
+     "hl": "ABD'den Meta'ya 25 milyar dolarlık ceza! Türk kullanıcılarının verileri de tehlikede mi?"
+    },
+    {
+     "s": "ntv",
+     "hl": "Meta'ya 25 milyar dolarlık gizlilik cezası"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Meta'ya 25 milyar dolar ceza davasında kritik karar"
+    },
+    {
+     "s": "diken",
+     "hl": "Cambridge Analytica skandalı: Meta'ya 25 milyar dolar ceza"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Meta'ya 25 milyar dolar ceza! 'Facebook, kullanıcılarını gizlilik konusunda kasten yanılttı'"
+    },
+    {
+     "s": "mynet",
+     "hl": "ABD'de mahkeme, kullanıcıları gizlilik konusunda yanılttığı için Meta'ya 25 milyar dolar ceza verdi"
+    }
+   ]
+  },
+  {
+   "event": "s4179",
+   "week": "w8",
+   "title": "Şarkıcı Nev son yolculuğuna uğurlandı: Cenazeye Süleyman Soylu da katıldı",
+   "headlines": [
+    {
+     "s": "mynet",
+     "hl": "Aliağa eski Belediye Başkanı Ali Ayhan Bayrak son yolculuğuna uğurlandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Şarkıcı Nev son yolculuğuna uğurlandı! Tabutu başında gözyaşları sel oldu..."
+    },
+    {
+     "s": "haberturk",
+     "hl": "Ünlü şarkıcı Nev son yolculuğuna uğurlandı - Magazin Haber - HT Magazin"
+    },
+    {
+     "s": "takvim",
+     "hl": "57 yaşında vefat eden Şarkıcı Nev son yolculuğuna uğurlandı! Acılı ağabeyinin cenazedeki sözleri..."
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Ünlü şarkıcı Nev son yolculuğuna uğurlanıyor! Cenazeye Süleyman Soylu da katıldı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Süleyman Soylu arkadaşı Nev'i son yolculuğuna uğurladı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Şarkıcı Nev son yolculuğuna uğurlandı. Tabutu başında gözyaşları sel oldu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Şarkıcı Nev son yolculuğuna uğurlandı: Cenazeye Süleyman Soylu da katıldı"
+    },
+    {
+     "s": "karar",
+     "hl": "Şarkıcı Nev son yolculuğuna uğurlandı: Süleyman Soylu da cenazeye katıldı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Nev son yolculuğuna uğurlandı! Türk müziğinde hüzünlü veda!"
+    }
+   ]
+  },
+  {
+   "event": "s4161",
+   "week": "w8",
+   "title": "Engin Altan Düzyatan'ın acı günü! 87 yaşında hayatını kaybeden babası Mevlan Düzyatan son yolculuğuna uğurlandı",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Engin Altan Düzyatan'ın acı günü"
+    },
+    {
+     "s": "sabah",
+     "hl": "Engin Altan Düzyatan baba acısıyla sarsıldı!"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Ünlü oyuncu Engin Altan Düzyatan'ın acı günü: Babası Mevlan Düzyatan hayatını kaybetti"
+    },
+    {
+     "s": "takvim",
+     "hl": "Oyuncu Engin Altan Düzyatan baba acısıyla sarsıldı! Mevlan Düzyatan yaşamını yitirdi!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Engin Altan Düzyatan'ın acı günü. Mevlan Düzyatan hayatını kaybetti"
+    },
+    {
+     "s": "mynet",
+     "hl": "Engin Altan Düzyatan'ın acı günü! Babasını kaybetti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Engin Altan Düzyatan'ın babası kimdir? Mevlan Düzyatan neden öldü? Hastalığı neydi? Cenazesi nerede?"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Engin Altan Düzyatan'ın acı günü"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Usta oyuncu Engin Altan Düzyatan'ın acı günü! Dostları yalnız bırakmadı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "En acı görev! Engin Altan Düzyatan babasını toprağa verdi"
+    },
+    {
+     "s": "karar",
+     "hl": "Engin Altan Düzyatan'ın acı günü! 87 yaşında hayatını kaybeden babası Mevlan Düzyatan son yolculuğuna uğurlandı"
+    }
+   ]
+  },
+  {
+   "event": "s1815",
+   "week": "w8",
+   "title": "Suç örgütü lideri Necati Arabacı'ya 15 yıl 6 ay hapis",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "Necati Coşkun Arabacı’ya 15 yıl 6 ay hapis cezası"
+    },
+    {
+     "s": "diken",
+     "hl": "Suç örgütü lideri Necati Arabacı'ya 15 yıl 6 ay hapis"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Coşkun Necati Arabacı'ya 15 yıl 6 ay hapis"
+    },
+    {
+     "s": "star",
+     "hl": "Suç örgütü davası! Coşkun Necati Arabacı'nın cezası belli oldu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Suç örgütü lideri Necati Arabacı'nın cezası belli oldu"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cehennem Melekleri suç örgütü lideri Necati Arabacı'nın cezası belli oldu"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İzmir'de yargılanan Necati Arabacı'ya suç örgütü davasında hapis cezası verildi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Cehennem Melekleri suç örgütü lideri Necati Arabacı hakkında karar"
+    },
+    {
+     "s": "takvim",
+     "hl": "Cehennem Necati lakaplı Coşkun Necati Arabacı'ya 15 yıl hapis"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Necati Arabacı'nın serveti ne kadar, eşi kim? Cehennem Necati'nin mal varlığı, ailesi ve hayatı"
+    }
+   ]
+  },
+  {
+   "event": "s4049",
+   "week": "w8",
+   "title": "Kadir İnanır'ın vasiyet krizinde Jülide Kural sessizliğini bozdu!",
+   "headlines": [
+    {
+     "s": "ntv",
+     "hl": "Jülide Kural'dan Kadir İnanır'ın vasiyetiyle ilgili ilk açıklama. \"Toprağa vereli 4 ay bile olmadı\""
+    },
+    {
+     "s": "karar",
+     "hl": "Jülide Kural, Kadir İnanır'ın vasiyeti hakkında ilk kez konuştu: Bu insani ve vicdani bir sorumluluk"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Jülide Kural'dan Kadir İnanır'ın vasiyetiyle ilgili ilk açıklama - Son dakika magazin haberleri... - Magazin Haber - HT Magazin"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Kadir İnanır'ın servetini bıraktığı hayat arkadaşı sessizliğini bozdu"
+    },
+    {
+     "s": "sabah",
+     "hl": "Jülide Kural sessizliğini bozdu! Henüz 4 ay bile geçmemişken…"
+    },
+    {
+     "s": "mynet",
+     "hl": "5 milyon dolarlık servet paylaşılamadı! Jülide Kural Kadir İnanır'ın vasiyetiyle ilgili son noktayı koydu"
+    },
+    {
+     "s": "takvim",
+     "hl": "Miras krizi patlak verdi! Jülide Kural Kadir İnanır’ın vasiyet tartışmalarına son noktayı koydu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kadir İnanır'ın vasiyet tartışmalarına Jülide Kural'dan yazılı açıklama"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Sessizliğini bozdu... Kadir İnanır'ın hayat arkadaşı Jülide Kural'dan 'vasiyet' açıklaması"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Kadir İnanır'ın vasiyet krizinde Jülide Kural sessizliğini bozdu!"
+    }
+   ]
+  },
+  {
+   "event": "s4132",
+   "week": "w8",
+   "title": "Çankırı'da otomobil uçuruma yuvarlandı: 4 ölü, 1 yaralı",
+   "headlines": [
+    {
+     "s": "trthaber",
+     "hl": "Çankırı'da otomobil uçuruma yuvarlandı: 4 ölü, 1 yaralı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Çankırı'da korkunç kaza! Araç uçuruma yuvarlandı: 4 ölü, 1 yaralı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Çankırı'da uçuruma yuvarlanan otomobilde 4 kişi öldü, 1 kişi yaralandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Çankırı'da otomobil uçuruma yuvarlandı: 4 ölü, 1 yaralı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Çankırı'da uçuruma yuvarlanan otomobilde 4 kişi öldü, 1 kişi yaralandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Çankırı’da uçuruma yuvarlanan otomobilde 4 kişi can verdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Çankırı’da facia! Uçuruma yuvarlanan otomobilde 4 kişi can verdi"
+    },
+    {
+     "s": "karar",
+     "hl": "Çankırı'da otomobil uçuruma yuvarlandı: 4 ölü, 1 yaralı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Çankırı Bayramören'de uçuruma yuvarlanan otomobilde 4 ölü"
+    },
+    {
+     "s": "birgun",
+     "hl": "Çankırı'da otomobil uçuruma yuvarlandı: 4 kişi öldü, 1 kişi yaralandı"
+    }
+   ]
+  },
+  {
+   "event": "s1660",
+   "week": "w8",
+   "title": "Volkswagen'den 660 bin çalışanına \"2030'a kadar sıfır zam\" planı",
+   "headlines": [
+    {
+     "s": "sozcu",
+     "hl": "Volkswagen 660 bin çalışanının maaşını 4 yıl boyunca dondurmaya hazırlanıyor"
+    },
+    {
+     "s": "karar",
+     "hl": "Volkswagen’den 660 bin çalışanı için 2030’a kadar sıfır zam planı"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Volkswagen'den 660 bin çalışana '2030'a kadar sıfır zam' planı"
+    },
+    {
+     "s": "diken",
+     "hl": "Volkswagen işçilere 2030'a kadar sıfır zam planlıyormuş: 'Sert direniriz'"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Volkswagen'den 660 bin çalışanına \"2030'a kadar sıfır zam\" planı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Volkswagen’de 660 bin çalışanı ilgilendiren plan: Maaşlar 2030’a kadar dondurulabilir"
+    },
+    {
+     "s": "mynet",
+     "hl": "Volkswagen'de çalışanlara kötü haber! Maaşlar 2030’a kadar dondurulabilir"
+    },
+    {
+     "s": "ahaber",
+     "hl": "2030'a kadar sıfır zam planı! Dev şirketten yüz binlerce çalışanını şoke eden hamle: Gözler kasım ayına..."
+    },
+    {
+     "s": "takvim",
+     "hl": "Volkswagen'de kriz: 660 bin çalışana maaş dondurma planı"
+    },
+    {
+     "s": "sabah",
+     "hl": "2030'a kadar işçilere \"sıfır zam\" planı sızdı! Binlerce çalışanın maaşı 4 yıl boyunca dondurulacak"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Volkswagen'den 660 bin işçiye şok: 2030'a dek zam yok"
+    }
+   ]
+  },
+  {
+   "event": "s3975",
+   "week": "w8",
+   "title": "İzmir'de 2 bin yıllık Zeus heykel başı ele geçirildi",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "İzmir'de 2 bin yıllık Zeus heykeli ele geçirildi: 3 şüpheli gözaltında"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İzmir'de 'tarihi eser' operasyonu: 2 bin yıllık Zeus heykel başı ele geçirildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İzmir'de 2 bin yıllık Zeus heykel başı ele geçirildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "İzmir'de 2 bin yıllık Zeus heykel başı ele geçirildi!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Roma dönemine ait 2 bin yıllık Zeus heykel başı ele geçirildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "2 bin yıllık Zeus heykel başı ele geçirildi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "2 bin yıllık Zeus heykel başı ele geçirildi"
+    },
+    {
+     "s": "star",
+     "hl": "İzmir'de tarihi eser baskını! 2 bin yıllık Zeus heykeli bulundu"
+    },
+    {
+     "s": "karar",
+     "hl": "İzmir’de 2 bin yıllık Zeus heykel başı ele geçirildi"
+    },
+    {
+     "s": "mynet",
+     "hl": "İzmir'de bulundu! 2 bin yıllık Zeus heykeli ele geçirildi"
+    },
+    {
+     "s": "diken",
+     "hl": "İzmir'de Zeus heykeli başı bulundu: Üç kişi tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s4043",
+   "week": "w8",
+   "title": "KPSS ORTAÖĞRETİM SINAV SAATİ: 2026 KPSS ortaöğretim sınavı ne zaman, bugün mü, yarın mı? KPSS ortaöğretim sınavı saat kaçta başlayacak?",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "2026 KPSS Ortaöğretim sınavı ne zaman, saat kaçta? KPSS Ortaöğretim sınav giriş belgesi nasıl ve nereden alınır?"
+    },
+    {
+     "s": "sabah",
+     "hl": "KPSS Ortaöğretim sınavı ne zaman, saat kaçta? İşte 2026 KPSS lise giriş belgesi sorgulama ekranı"
+    },
+    {
+     "s": "takvim",
+     "hl": "2026 KPSS Ortaöğretim saat kaçta? Giriş belgesi ve sonuç tarihi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "KPSS Ortaöğretim ne zaman, saat kaçta? 2026 KPSS Lise sınav giriş belgesi nereden, nasıl alınır?"
+    },
+    {
+     "s": "trthaber",
+     "hl": "2026-KPSS Ortaöğretim yarın yapılacak"
+    },
+    {
+     "s": "milligazete",
+     "hl": "KPSS Ortaöğretim kaç soru, kaç dakika? 2026 ÖSYM sınav süresi ve soru dağılımı! 25 Ekim KPSS Ortaöğretim sınav saati"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "KPSS sınavı saat kaçta başlıyor? 2026-KPSS Ortaöğretim sınavı kaçta bitecek?"
+    },
+    {
+     "s": "aa",
+     "hl": "KPSS Ortaöğretim yapıldı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika... KPSS Ortaöğretim yapıldı"
+    },
+    {
+     "s": "karar",
+     "hl": "2026-KPSS Ortaöğretim sınavı başladı"
+    }
+   ]
+  }
+ ]
+}

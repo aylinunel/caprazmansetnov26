@@ -1,0 +1,1022 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s4790",
+   "week": "w9",
+   "title": "Ünlü şef Somer Sivrioğlu'nun restoranına kayyum atandı",
+   "headlines": [
+    {
+     "s": "sozcu",
+     "hl": "Ünlü şef Somer Sivrioğlu’nun restoranına kayyum atandı: Milyonluk borcu ortaya çıktı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Somer Sivrioğlu'nun işletmesinde kriz! Kayyum atandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Somer Sivrioğlu'nun restoranına kayyum atandı! Vergi borcu dudak uçuklattı"
+    },
+    {
+     "s": "karar",
+     "hl": "Somer Sivrioğlu'nun restoranına kayyum atandı: 72 milyonluk borç"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Ünlü şef Somer Sivrioğlu'nun restoranında kayyum şoku! Borcu ortaya çıktı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Somer Sivrioğlu'nun Avustralya'daki Restoranına Kayyum Atandı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Milyonluk vergi borcu ödenemedi! Somer Sivrioğlu'nun Sidney'deki restoranına kayyum atandı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Ünlü şef Somer Sivrioğlu'nun milyonluk borcu çıktı! Avustralya'daki restoranına kayyım atandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Ünlü şef Somer Sivrioğlu'nun restoranına kayyım atandı: Milyonluk borç ortaya çıktı!"
+    },
+    {
+     "s": "birgun",
+     "hl": "Ünlü şef Somer Sivrioğlu'nun restoranına kayyum atandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Somer Şef'in restoranına kayyum atandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Somer şefin restoranına kayyum atandı: Vergi borcu dudak uçuklattı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Somer Sivrioğlu'nun restoranına kayyum atandı! Milyonluk vergi borcu gündem oldu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Somer Sivrioğlu'nun Anason restoranı nerede? Vergi borcu kaç milyon dolar?"
+    },
+    {
+     "s": "aksam",
+     "hl": "Ünlü şefe, Sidney'de vergi şoku! Restoranına kayyum atandı"
+    }
+   ]
+  },
+  {
+   "event": "s4394",
+   "week": "w9",
+   "title": "Balıkesir'de işçi servis minibüsü ile hafif ticari araç kafa kafaya çarpıştı: 9 yaralı",
+   "headlines": [
+    {
+     "s": "haberler",
+     "hl": "Balıkesir Susurluk'ta işçi servisi ile hafif ticari araç çarpıştı, 9 kişi yaralandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Balıkesir'de işçi servis minibüsü ile hafif ticari araç çarpıştı: Yaralılar var!"
+    },
+    {
+     "s": "sabah",
+     "hl": "Balıkesir'de feci kaza! Servis minibüsü ile ticari araç çarpıştı: Yaralılar var!"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İşçi servisi ile hafif ticari araç kafa kafaya çarpıştı"
+    },
+    {
+     "s": "karar",
+     "hl": "Balıkesir’de işçi servisi ile hafif ticari araç kafa kafaya çarpıştı: 9 yaralı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Balıkesir'de feci kaza: 10 yaralı"
+    },
+    {
+     "s": "star",
+     "hl": "Balıkesir'de feci kaza! Ticari araçla minibüs çarpıştı: 10 yaralı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Balıkesir'de işçi servis minibüsü ile otomobil çarpıştı. 10 yaralı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Balıkesir'de hafif ticari araç ve minibüs çarpıştı: 10 kişi yaralandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Balıkesir'de işçi servisi ile hafif ticari araç kafa kafaya çarpıştı! Kazada 9 yaralı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Tır ile kamyonet kafa kafaya çarpıştı: 2 ağır yaralı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Tır ile kamyonet kafa kafaya çarpıştı: 2 ağır yaralı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İki araç kafa kafaya çarpıştı: Beş yaralı"
+    },
+    {
+     "s": "akit",
+     "hl": "Akçakoca’da iki araç kafa kafaya çarpıştı: 5 kişi yaralandı"
+    }
+   ]
+  },
+  {
+   "event": "s4784",
+   "week": "w9",
+   "title": "15 yaş altı sosyal medya yasağı başladı mı? 15 yaş altı sosyal medya yasağı yaş doğrulaması nasıl yapılacak?",
+   "headlines": [
+    {
+     "s": "karar",
+     "hl": "15 yaş altına sosyal medya yasağı yarın başlıyor: Kimlik değil yaş doğrulanacak"
+    },
+    {
+     "s": "tgrt",
+     "hl": "15 yaş altına sosyal medya yasağı yarın başlıyor: Hesaplar tek tek silinecek"
+    },
+    {
+     "s": "birgun",
+     "hl": "Sosyal medya yasağı başlıyor: Hesaplar kapatılacak"
+    },
+    {
+     "s": "onedio",
+     "hl": "Sosyal Medya Yasağı Başlıyor: Kimleri Kapsıyor, e-Devlet'ten Yaş Doğrulama Nasıl Yapılacak?"
+    },
+    {
+     "s": "dirilis",
+     "hl": "15 yaş altına sosyal medya yasağı yarın başlıyor!"
+    },
+    {
+     "s": "sabah",
+     "hl": "Sosyal medyada 15 yaş altı yasağı yarın başlıyor! Yaş doğrulaması nasıl yapılacak?"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Sosyal medyada 15 yaş altı yasağı başlıyor: Yaş doğrulaması nasıl yapılacak?"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Sosyal medyada 15 yaş altı çocuklara yasak başlıyor: Yaş doğrulaması nasıl yapılır?"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "15 yaş altı sosyal medya yasağı ne zaman başlayacak? e-Devlet yaş doğrulama süreci"
+    },
+    {
+     "s": "haberturk",
+     "hl": "15 yaş altı sosyal medya yasağı başladı! Yaş doğrulaması nasıl yapılır, sosyal medya yasağı hangi uygulamaları kapsayacak?"
+    },
+    {
+     "s": "haberler",
+     "hl": "Sosyal medya yaş doğrulaması nasıl yapılır? 1 Kasım sosyal medya yasağı hangi uygulamaları kapsayacak?"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "15 yaş altı sosyal medya yasağı ne zaman başlıyor? 15 yaş altı sosyal medya düzenlemesi maddeleri neler?"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Sosyal medyada 15 yaş sınırı yürürlüğe girdi, yaş doğrulaması e-Devlet'ten yapılacak"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "15 yaş altına sosyal medya bugünden itibaren yasak"
+    },
+    {
+     "s": "ntv",
+     "hl": "E-Devlet yaş doğrulaması yapma ekranı. Sosyal medya yaş doğrulaması nasıl ve nereden yapılacak?"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Bakan Göktaş duyurdu: Sosyal medya yasağı resmen başladı"
+    }
+   ]
+  },
+  {
+   "event": "s4551",
+   "week": "w9",
+   "title": "Daltonlar suç örgütüne 30 ilde operasyon: 85 gözaltı",
+   "headlines": [
+    {
+     "s": "star",
+     "hl": "''Daltonlar Suç Örgütü''ne eş zamanlı operasyon"
+    },
+    {
+     "s": "haberturk",
+     "hl": "\"Daltonlar\"a 30 ilde eş zamanlı operasyon"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Sosyal medyadan tetikçi ağı kuran suç örgütüne operasyon: 85 gözaltı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Daltonlar suç örgütüne 30 ilde operasyon: 85 gözaltı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Daltonlar suç örgütüne 30 ilde eş zamanlı operasyon: 85 gözaltı kararı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika... 'Daltonlar' suç örgütüne 30 ilde dev operasyon"
+    },
+    {
+     "s": "haberler",
+     "hl": "Daltonlar suç örgütüne operasyon! 85 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "birgun",
+     "hl": "İstanbul merkezli 30 ilde 'Daltonlar' suç örgütüne operasyon: 85 şüpheli gözaltında"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yeni nesil suç örgülerine operasyon: 85 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "karar",
+     "hl": "\"Daltonlar\"a 30 ilde eş zamanlı operasyon: 30’u çocuk yaşta 85 şüpheli gözaltında"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA | Daltonlar suç örgütüne büyük operasyon! 30 ilde 85 gözaltı var"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Daltonlar suç örgütüne operasyon! 30 ilde 85 kişi gözaltına alındı: Tetikçi ağı nasıl kuruldu?"
+    },
+    {
+     "s": "diken",
+     "hl": "30 ilde Daltonlar'a 'tetikçi' operasyonu: 30'u çocuk 85 gözaltı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "'Daltonlar' suç örgütüne 30 ilde eş zamanlı operasyon: 85 gözaltı"
+    },
+    {
+     "s": "aksam",
+     "hl": "\"Daltonlar Suç Örgütü\"ne yönelik operasyon! 85 şüpheli yakalandı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Daltonlar suç örgütüne 30 ilde eş zamanlı operasyon: 30'u çocuk 85 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Yeni nesil suç örgütüne 30 ilde operasyon: 85 gözaltı!"
+    },
+    {
+     "s": "ntv",
+     "hl": "30 ilde Daltonlar'a operasyon. 30'u çocuk 85 şüpheli gözaltında"
+    }
+   ]
+  },
+  {
+   "event": "s4971",
+   "week": "w9",
+   "title": "Galatasaray - Stuttgart",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Galatasaray, Stuttgart maçı hazırlıklarına başladı!"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Galatasaray, Stuttgart maçının hazırlıklarına başladı!"
+    },
+    {
+     "s": "star",
+     "hl": "Galatasaray, Stuttgart maçı hazırlıklarını sürdürdü"
+    },
+    {
+     "s": "aksam",
+     "hl": "Galatasaray'da Stuttgart mesaisi sürüyor"
+    },
+    {
+     "s": "mynet",
+     "hl": "Galatasaray, Stuttgart maçı hazırlıklarına devam etti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Galatasaray Stuttgart maçı saat kaçta ve hangi kanalda?"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Galatasaray Stuttgart maçı hazırlığını tamamladı, statü gereği eksikler var"
+    },
+    {
+     "s": "haberler",
+     "hl": "Galatasaray Stuttgart maçı ne zaman, saat kaçta? Galatasaray Stuttgart maçı nerede, hangi statta oynanacak?"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Galatasaray Stuttgart maçına hazır"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Galatasaray, Stuttgart maçı hazırlıklarını tamamladı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Galatasaray - Stuttgart Maçı Ne Zaman, Saat Kaçta ve Hangi Kanalda? Muhtemel 11'ler ve Eksikler"
+    },
+    {
+     "s": "karar",
+     "hl": "Galatasaray Stuttgart’ı ağırlıyor"
+    },
+    {
+     "s": "ntv",
+     "hl": "Şampiyonlar Ligi heyecanı. Galatasaray-Stuttgart maçı saat kaçta, hangi kanal yayınlayacak?"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Galatasaray-Stuttgart maçı hangi kanalda? İşte 11'ler"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Galatasaray-Stuttgart maçı için olay tahmin! Yapay zeka sonucu açıkladı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Galatasaray-Stuttgart maçı ne zaman? Galatasaray-Stuttgart maçı hangi kanalda yayınlanacak, saat kaçta? İşte Muhtemel 11'ler"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Galatasaray-Stuttgart maçı TRT 1'de"
+    },
+    {
+     "s": "birgun",
+     "hl": "Galatasaray-Stuttgart maçı saat kaçta, hangi kanalda? UEFA Gençlik Ligi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Galatasaray-Stuttgart maçı hangi kanalda, nerede izlenir? Şampiyonlar Ligi maçı şifresiz yayın bilgileri"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Galatasaray - Stuttgart Maçı Canlı Anlatım | Temsilcimiz, Devler Ligi sınavında"
+    }
+   ]
+  },
+  {
+   "event": "s4256",
+   "week": "w9",
+   "title": "İstanbul Barosu Başkanı Ümit Kocasakal oldu",
+   "headlines": [
+    {
+     "s": "birgun",
+     "hl": "İstanbul Barosu seçimleri: Ümit Kocasakal yeni başkan seçildi"
+    },
+    {
+     "s": "karar",
+     "hl": "İstanbul Barosu Başkanlık Seçimi ne zaman bitiyor? Ümit Kocasakal hangi gruptan, İbrahim Kaboğlu yeniden aday mı?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İstanbul Barosu seçimleri sonuçlandı: Ümit Kocasakal başkan seçildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İstanbul Barosu Başkanı Ümit Kocasakal oldu"
+    },
+    {
+     "s": "diken",
+     "hl": "İstanbul Barosu başkanlık seçimini Ümit Kocasakal kazandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İstanbul Barosu seçimleri: Kazanan Cumhuriyetçi Güç Birliği Grubu adayı Ümit Kocasakal oldu"
+    },
+    {
+     "s": "tgrt",
+     "hl": "İstanbul Barosu Başkanı Ümit Kocasakal kimdir, nereli? Ümit Kocasakal listesi"
+    },
+    {
+     "s": "sabah",
+     "hl": "İstanbul Barosu’nun yeni başkanı Ümit Kocasakal oldu! Kaboğlu dönemi resmen bitti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İstanbul Barosu’nun yeni başkanı Ümit Kocasakal oldu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "İstanbul Barosu Başkanı Ümit Kocasakal oldu"
+    },
+    {
+     "s": "mynet",
+     "hl": "İstanbul Barosunun yeni başkanı Ümit Kocasakal oldu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "İstanbul Barosu 2026 seçim sonuçları! Kim birinci oldu? Kocasakal kaç oy aldı? Kaboğlu kaç oyda kaldı?"
+    },
+    {
+     "s": "ntv",
+     "hl": "İstanbul Barosu başkanlığına Ümit Kocasakal seçildi"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul Barosu seçim sonuçları belli oldu! Ümit Kocasakal 10 bin 227 oyla başkan seçildi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İstanbul Barosu'nda başkanlık seçimini Ümit Kocasakal kazandı! 10 bin 227 oy aldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Ağıralioğlu, İstanbul Barosu Başkanı seçilen Kocasakal'a tebrik mesajı gönderdi"
+    }
+   ]
+  },
+  {
+   "event": "s5383",
+   "week": "w10",
+   "title": "Eski eşini 15 bıçak darbesiyle öldürdü",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Eski eşini 15 bıçak darbesiyle öldürdü"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Aksaray'da vahşet! Eski eşini 15 bıçak darbesiyle öldürdü"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Aksaray’da eski eşini 15 bıçak darbesiyle öldürdü"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Aksaray'da kadın cinayeti: Eski eşini 15 bıçak darbesiyle öldürdü"
+    },
+    {
+     "s": "ntv",
+     "hl": "Eski eşini 15 bıçak darbesiyle öldürdü"
+    },
+    {
+     "s": "sondakika",
+     "hl": "15 bıçak darbesiyle öldürdüğü eski eşi için bunu söyledi: Pişman değilim, ihanet ettiği için öldürdüm"
+    },
+    {
+     "s": "haberler",
+     "hl": "15 bıçak darbesiyle öldürdüğü eski eşi için bunu söyledi: Pişman değilim, ihanet ettiği için öldürdüm"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Eski eşini 15 bıçak darbesiyle öldürdü: Pişman değilim"
+    },
+    {
+     "s": "akit",
+     "hl": "15 bıçak darbesiyle eski eşini katleden şahıs; 'Pişman değilim'"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Eski eşini 15 bıçak darbesiyle öldürdü: Adliyede “Pişman değilim” dedi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Aksaray'da 15 bıçak darbesiyle eski eşini vahşice öldürdü: Katil zanlısının ifadesi pes dedirtti"
+    },
+    {
+     "s": "milliyet",
+     "hl": "15 bıçak darbesiyle eski eşini öldürdü! Korkunç savunma: Pişman değilim"
+    }
+   ]
+  },
+  {
+   "event": "s5169",
+   "week": "w10",
+   "title": "İstanbul'un ekim ayı enflasyonu açıklandı",
+   "headlines": [
+    {
+     "s": "sozcu",
+     "hl": "Son dakika... İstanbul'un ekim ayı enflasyonu belli oldu"
+    },
+    {
+     "s": "akit",
+     "hl": "İstanbul'un ekim ayı enflasyonu açıklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İTO verileri ortaya koydu: İstanbul'un ekim ayı enflasyonu belli oldu"
+    },
+    {
+     "s": "birgun",
+     "hl": "İTO verileri: İstanbul'un ekim ayı enflasyonu belli oldu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Ne gıda ne de yakıt! İstanbul’un Ekim ayı enflasyonu belli oldu, en çok ne zamlandı?"
+    },
+    {
+     "s": "milligazete",
+     "hl": "İstanbul'da ekim ayı enflasyonu açıklandı! Fiyatı en çok artan ürün grubu belli oldu"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "GÖZLER TÜİK VERİLERİNDE! Ekim ayı enflasyonu ne olur?"
+    },
+    {
+     "s": "takvim",
+     "hl": "Milyonların gözü TÜİK'te! Ekim ayı enflasyonu açıklanıyor"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Ekim ayı enflasyonu belli oldu! Milyonların maaşını etkileyecek! İşte TÜİK'in açıkladığı son rakamlar"
+    },
+    {
+     "s": "haberler",
+     "hl": "Ekim ayı enflasyon oranı 2026 SON DAKİKA! TÜİK Ekim enflasyon açıklandı mı? Ekim ayı enflasyonu yüzde kaç oldu?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Ekim enflasyonu açıklandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Son dakika: TÜİK Ekim 2026 enflasyon oranı ne kadar oldu? TEFE TÜFE ekim ayı enflasyon verileri"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Ekim enflasyonu açıklandı"
+    }
+   ]
+  },
+  {
+   "event": "s5531",
+   "week": "w10",
+   "title": "Nepal'de Everest yakınında iki helikopter çarpıştı, 1 turist öldü, 3 kişi yaralandı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Nepal'de Everest yakınında iki helikopter çarpıştı, 1 turist öldü, 3 kişi yaralandı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Everest'te iki helikopter havada çarpıştı! Olay anı kamerada"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Everest Dağı'nda iki helikopter çarpıştı: 1 kişi hayatını kaybetti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Nepal'de Everest yakınında iki helikopter çarpıştı, 1 turist öldü, 3 kişi yaralandı"
+    },
+    {
+     "s": "aa",
+     "hl": "Nepal'de iniş esnasında iki helikopterin çarpışması sonucu 1 kişi öldü, 3 kişi yaralandı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Everest’te Feci Helikopter Kazası: 1 Ölü, 3 Yaralı!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Everest Dağı'nda helikopterler böyle çarpıştı: 1 kişi öldü, 3 kişi yaralandı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Everest'te iki helikopter havada çarpıştı! Ölü ve yaralılar var"
+    },
+    {
+     "s": "onedio",
+     "hl": "Nepal'de Everest Yakınında İki Helikopter İnişte Çarpıştı: Hintli Turist Hayatını Kaybetti, 3 Kişi Yaralandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Nepal'de iki helikopter havada çarpıştı! | Video"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Turistik bölgede can pazarı: İki helikopter havada çarpıştı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Nepal'de helikopter kazası: 1 ölü, 3 yaralı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Everest'te helikopter faciası! 4 bin 200 metrede iki helikopter çarpıştı 1 ölü, 2 yaralı"
+    }
+   ]
+  }
+ ]
+}

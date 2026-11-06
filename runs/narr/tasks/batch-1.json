@@ -1,0 +1,846 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s3520",
+   "week": "w7",
+   "title": "KuPS Kuopio Trabzonspor MAÇ SONUCU - İşte KuPS Kuopio Trabzonspor maçı özeti ve golleri (Konferans Ligi) - Trabzonspor Haberler - HT Spor",
+   "headlines": [
+    {
+     "s": "sozcu",
+     "hl": "Trabzonspor KuPS hazırlıklarını sürdürdü"
+    },
+    {
+     "s": "star",
+     "hl": "Trabzonspor, KuPS Kuopio maçının hazırlıklarına devam etti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Trabzonspor, KuPS Kuopio maçının hazırlıklarını sürdürdü"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Trabzonspor, UEFA Konferans Ligi'nde KuPS Kuopio ile deplasmanda karşılaşacak!"
+    },
+    {
+     "s": "karar",
+     "hl": "Trabzonspor yarın deplasmanda KuPS Kuopio karşısında"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "KuPS Kuopio - Trabzonspor maçı ne zaman, saat kaçta, hangi kanalda? Şifresiz mi?"
+    },
+    {
+     "s": "takvim",
+     "hl": "Fırtına 3 puanla başladı! Trabzonspor Konferans Ligi'nde KuPS Kuopio'yu 4-2 yendi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Trabzonspor KuPS Kuopio'yu 4-2 yenerek 3 puanla başladı"
+    },
+    {
+     "s": "ntv",
+     "hl": "KuPS Kuopio-Trabzonspor maçı ne zaman, saat kaçta ve hangi kanalda? Avrupa'da hedef galibiyet"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Trabzonspor KuPS Kuopio'yu 4 golle geçti"
+    }
+   ]
+  },
+  {
+   "event": "s3529",
+   "week": "w7",
+   "title": "Trabzonspor-Beşiktaş maçı öncesi deplasman yasağı kaldırıldı",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Trabzonspor'dan Beşiktaş maçı açıklaması: \"Deplasmana yasak kaldırılsın\""
+    },
+    {
+     "s": "star",
+     "hl": "Trabzonspor'dan deplasman yasağı çağrısı!"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Beşiktaş'tan Trabzonspor'un talebine destek: 'Deplasman yasağı kaldırılsın'"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Trabzonspor ve Beşiktaş'tan 'Deplasman yasağı kaldırılsın' talebi! - Son Dakika Beşiktaş Haberleri - Habertürk Spor"
+    },
+    {
+     "s": "ntv",
+     "hl": "Trabzonspor'dan Beşiktaş maçı öncesi çağrı. \"Deplasman yasağı kalksın.\""
+    },
+    {
+     "s": "mynet",
+     "hl": "Trabzonspor - Beşiktaş derbisinde 6 yıllık deplasman yasağı sona erdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Trabzonspor-Beşiktaş derbisinde deplasman yasağı kaldırıldı: Beşiktaş taraftarı 6 yıl sonra Trabzon'a..."
+    },
+    {
+     "s": "milligazete",
+     "hl": "Trabzonspor - Beşiktaş maçında deplasman yasağı kalktı mı? Beşiktaş taraftarı Trabzon deplasmanında olacak mı?"
+    },
+    {
+     "s": "karar",
+     "hl": "Trabzonspor ile Beşiktaş arasındaki deplasman yasağı sona erdi"
+    }
+   ]
+  },
+  {
+   "event": "s1565",
+   "week": "w7",
+   "title": "İstanbul Fatih'te 14 yaşındaki bir çocuk su birikintisinde elektrik akımına kapılarak hayatını kaybetti",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Akıma kapılan çocuk, hayatını kaybetti!"
+    },
+    {
+     "s": "karar",
+     "hl": "İstanbul'da feci ölüm: Su birikintisine basan 14 yaşındaki çocuk elektrik akımına kapıldı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... İstanbul’da sağanak faciası: 14 yaşındaki çocuk elektrik akımına kapılarak hayatını kaybetti"
+    },
+    {
+     "s": "star",
+     "hl": "Akıma kapılan 14 yaşındaki çocuk hayatını kaybetti"
+    },
+    {
+     "s": "diken",
+     "hl": "Fatih'te su birikintisinde elektrik akımına kapılan çocuk hayatını kaybetti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Fatih'te bastığı su birikintisinde elektrik akımına kapılan çocuk hayatını kaybetti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "İstanbul Fatih'te 14 yaşındaki bir çocuk su birikintisinde elektrik akımına kapılarak hayatını kaybetti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Balat'ta su birikintisine basan 14 yaşındaki çocuk hayatını kaybetti"
+    },
+    {
+     "s": "ntv",
+     "hl": "Su birikintisinde elektrik akımına kapılan çocuk hayatını kaybetti"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Fatih'te bir çocuk selde elektrik akımına kapılarak öldü"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İstanbul Fatih'te su birikintisinde elektrik akımına kapılan çocuk hayatını kaybetti: Hikayesi yürek..."
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fatih'te elektrik akımına kapılarak hayatını kaybeden genç hafız son yolculuğuna uğurlandı"
+    }
+   ]
+  },
+  {
+   "event": "s1586",
+   "week": "w7",
+   "title": "Murat Ağırel, Aylin Kotil ve Ömer Sarıgül gözaltına alındı: Emir Sarıgül hakkında da gözaltı kararı",
+   "headlines": [
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | Murat Ağırel gözaltına alındı! Aylin Kotil, Emir Sarıgül ve Ömer Sarıgül de var"
+    },
+    {
+     "s": "karar",
+     "hl": "Murat Ağırel, Aylin Kotil ve Ömer Sarıgül gözaltına alındı: Emir Sarıgül hakkında da gözaltı kararı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Murat Ağırel ve Emir Sarıgül hakkında gözaltı talimatı! İstanbul'da 6 şüpheliye soruşturma"
+    },
+    {
+     "s": "star",
+     "hl": "İstanbul'da kara para aklama soruşturması! Murat Ağırel, Emir Sarıgül, Ömer Sarıgül ve Aylin Kotil'e gözaltı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Aylin Kotil kimdir, aslen nereli, neden gözaltına alındı?"
+    },
+    {
+     "s": "ntv",
+     "hl": "Aylin Kotil, Emir Sarıgül ve Ömer Sarıgül'e gözaltı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "SON DAKİKA HABERİ: Para aklama soruşturması: Oğul Sarıgüller, Aylin Kotil ve Ağırel de gözaltında"
+    },
+    {
+     "s": "diken",
+     "hl": "Murat Ağırel, Ömer ve Emir Sarıgül dahil altı gözaltı kararı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Aylin Kotil kimdir? Aylin Kotil kaç yaşında ve nereli? Aylin Kotil neden gözaltına alındı?"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Aylin Kotil kimin eski eşi, Mustafa Sarıgül ile evli miydi, kaç çocuğu var, Ömer ve Emir Sarıgül kim, neden gündemde?"
+    }
+   ]
+  },
+  {
+   "event": "s3521",
+   "week": "w7",
+   "title": "Samsunspor Bjelica ile imzaladı",
+   "headlines": [
+    {
+     "s": "milligazete",
+     "hl": "Emre Bayraktar kimdir, kaç yaşında, nereli, Samsunspor'un yeni hocası mı, daha önce hangi takımlarda çalıştı?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Samsunspor, Nenad Bjelica ile anlaşmaya vardı! - Süper Lig Haberleri - Habertürk Spor"
+    },
+    {
+     "s": "sabah",
+     "hl": "Samsunspor'da Nenad Bjelica dönemi başlıyor!"
+    },
+    {
+     "s": "star",
+     "hl": "Samsunspor, teknik direktör Nenad Bjelica ile anlaştı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Samsunspor, Thorsten Fink'in ardından Nenad Bjelica ile sezon sonuna kadar prensip anlaşmasına vardı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Nenad Bjelica, Samsunspor'a imzayı attı"
+    },
+    {
+     "s": "karar",
+     "hl": "Samsunspor Nenad Bjelica ile sözleşme imzaladı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Samsunspor Bjelica ile imzaladı"
+    }
+   ]
+  },
+  {
+   "event": "s1624",
+   "week": "w7",
+   "title": "Cumhurbaşkanı Erdoğan açıkladı: Sağlık Bakanlığına 38 bin personel alınacak",
+   "headlines": [
+    {
+     "s": "trthaber",
+     "hl": "Cumhurbaşkanı Erdoğan: Sağlıkta 38 bin personel alınacak"
+    },
+    {
+     "s": "sabah",
+     "hl": "Başkan Erdoğan müjdeyi verdi: 38 bin hekim dışı personel alacağız"
+    },
+    {
+     "s": "star",
+     "hl": "Cumhurbaşkanı Erdoğan müjdeyi verdi: Sağlıkta 38 bin personel ilanına çıkacağız"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Cumhurbaşkanı Erdoğan müjdeyi verdi: 38 bin sağlıkçı alınacak"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cumhurbaşkanı Erdoğan: 2026 yılı bitmeden 38 bin hekim dışı personel alacağız"
+    },
+    {
+     "s": "birgun",
+     "hl": "Erdoğan açıkladı: Sağlık Bakanlığı 38 bin hekim dışı personel alacak"
+    },
+    {
+     "s": "mynet",
+     "hl": "Cumhurbaşkanı Erdoğan duyurdu: '38 bin personel alınacak'"
+    },
+    {
+     "s": "sozcu",
+     "hl": "2026 yılı bitmeden 38 bin hekim dışı personel alınacak"
+    },
+    {
+     "s": "karar",
+     "hl": "Cumhurbaşkanı Erdoğan açıkladı: Sağlık Bakanlığına 38 bin personel alınacak"
+    },
+    {
+     "s": "diken",
+     "hl": "Sağlık Bakanlığı 38 bin hekim dışı personel alacak"
+    },
+    {
+     "s": "haberturk",
+     "hl": "SAĞLIK BAKANLIĞI 38 BİN HEKİM DIŞI PERSONEL ALIMI YAPACAK! 2026 Sağlık Bakanlığı hekim dışı personel alımı ne zaman, başvuru şartları nelerdir ve kadro-branş dağılımı nasıl olacak?"
+    }
+   ]
+  },
+  {
+   "event": "s1610",
+   "week": "w7",
+   "title": "31 bin 54 sözleşmeli sağlık personeli alınacak! Karar Resmi Gazete'de",
+   "headlines": [
+    {
+     "s": "trthaber",
+     "hl": "31 bin 54 sağlık personelinin istihdamına ilişkin karar Resmi Gazete'de"
+    },
+    {
+     "s": "ntv",
+     "hl": "31 bin sözleşmeli sağlık personeli alınacak. Karar Resmi Gazete'de yayınlandı"
+    },
+    {
+     "s": "star",
+     "hl": "Resmi Gazete'de yayımlandı: 31 bin sözleşmeli sağlık personeli için hizmet birimleri belli oldu"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "2027'de 31 bin 54 sözleşmeli sağlık personeli istihdam edilecek"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Sözleşmeli 31 bin 54 sağlık personeli istihdamına ilişkin karar Resmi Gazete'de"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Sözleşmeli 31 bin sağlık personeli istihdamı, Resmi Gazete'de"
+    },
+    {
+     "s": "sozcu",
+     "hl": "31 bin 54 sözleşmeli sağlık personeli alınacak! Karar Resmi Gazete'de"
+    },
+    {
+     "s": "mynet",
+     "hl": "31 bin 54 sağlık personelinin istihdamına dair karar Resmi Gazete'de"
+    },
+    {
+     "s": "takvim",
+     "hl": "31 bin 54 sözleşmeli sağlık personeli alımı kararı Resmi Gazete'de! Kadro dağılımı belli oldu"
+    },
+    {
+     "s": "karar",
+     "hl": "Resmî Gazete'de yayımlandı: 31 bin 54 sağlık personeli istihdam edilecek!"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Cumhurbaşkanı Erdoğan imzaladı: Sözleşmeli sağlık personeli alınacak"
+    },
+    {
+     "s": "sabah",
+     "hl": "Resmi Gazete'de yayımlandı! Sözleşmeli 31 bin 54 sağlık personeli alınacak"
+    }
+   ]
+  },
+  {
+   "event": "s3607",
+   "week": "w7",
+   "title": "Beşiktaş Avrupa Ligi'nde Hoffenheim deplasmanında",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Beşiktaş, UEFA Avrupa Ligi'nde Hoffenheim'a konuk olacak!"
+    },
+    {
+     "s": "karar",
+     "hl": "Beşiktaş yarın Hoffenheim deplasmanında"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Beşiktaş Avrupa Ligi'nde Hoffenheim deplasmanında"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Beşiktaş, UEFA Avrupa Ligi’nde Hoffenheim’a konuk olacak: Kartal’da 3 eksik!"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Beşiktaş Avrupa Ligi’nde Hoffenheim’e konuk olacak: Alman takımlarıyla 15. randevu"
+    },
+    {
+     "s": "star",
+     "hl": "Zorlu maç öncesi tek eksik! Beşiktaş, Hoffenheim deplasmanında"
+    },
+    {
+     "s": "takvim",
+     "hl": "Avrupa Kartal'ı sahnede! Beşiktaş Hoffenheim'i Almanya'da 3-2 ile devirdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Beşiktaş, UEFA Avrupa Ligi'nin 2. haftasında Hoffenheim'ı Almanya deplasmanında 3-2 mağlup ederek puanını..."
+    },
+    {
+     "s": "milligazete",
+     "hl": "Beşiktaş deplasmanda Hoffenheim’ı devirdi!"
+    },
+    {
+     "s": "diken",
+     "hl": "UEFA Avrupa Ligi: Beşiktaş, Hoffenheim'ı 3-2 yendi"
+    }
+   ]
+  },
+  {
+   "event": "s1799",
+   "week": "w8",
+   "title": "Bağcılar'da zincirleme kaza! Yaralılar var",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "SON DAKİKA HABERİ: İstanbul Bağcılar'da zincirleme kaza! Yaralılar var"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İstanbul Bağcılar'da zincirleme trafik kazası: Yaralılar var"
+    },
+    {
+     "s": "takvim",
+     "hl": "Bağcılar'da 5 araçlı zincirleme kaza! 2 kişi yaralandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İstanbul'da zincirleme kaza! Yaralılar var, 3 şerit kapatıldı"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA... İstanbul Bağcılar'da zincirleme kaza! Hafriyat kamyonu ve TIR çarpıştı: 3 şerit trafiğe kapatıldı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Bağcılar'da zincirleme kabus! Hafriyat kamyonu ve TIR birbirine girdi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Bağcılar'da zincirleme kaza: 2 kişi yaralandı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "İstanbul'da zincirleme kaza! Yaralılar var, ekipler bölgede"
+    },
+    {
+     "s": "ntv",
+     "hl": "Bağcılar’da zincirleme kaza. Yaralılar var, trafik kitlendi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İstanbul'da zincirleme kaza: 3 şerit trafiğe kapatıldı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Bağcılar'da zincirleme kaza!"
+    }
+   ]
+  }
+ ]
+}
