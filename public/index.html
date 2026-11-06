@@ -2423,14 +2423,15 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 }
 
 /* Intro zoom (once per session, class set by app.js on #app): grows from .92 with rounded corners over a blurred, side-tinted backdrop. Ends at transform:none. */
-body:has(#app.intro){background:radial-gradient(ellipse 70% 90% at 0% 100%,color-mix(in srgb,var(--left) 38%,var(--paper)),transparent 70%),radial-gradient(ellipse 70% 90% at 100% 0%,color-mix(in srgb,var(--right) 38%,var(--paper)),transparent 70%),var(--paper);overflow-x:hidden}
+body:has(#app.intro)::before{content:"";position:fixed;inset:-60px;z-index:-1;filter:blur(40px);background:radial-gradient(ellipse 70% 90% at 0% 100%,color-mix(in srgb,var(--left) 38%,var(--paper)),transparent 70%),radial-gradient(ellipse 70% 90% at 100% 0%,color-mix(in srgb,var(--right) 38%,var(--paper)),transparent 70%),var(--paper)}
+body:has(#app.intro){overflow-x:hidden}
 #app.intro{overflow:hidden;animation:cm-intro 1.4s cubic-bezier(.22,1,.36,1) both}
 @keyframes cm-intro{from{transform:scale(.92);border-radius:28px}to{transform:none;border-radius:0}}
-#app.intro .fh h1 i{display:inline-block;animation:cm-word .7s cubic-bezier(.22,1,.36,1) both}
-#app.intro .fh h1 .l1 i:nth-child(2){animation-delay:.45s}
-#app.intro .fh h1 .y i:nth-child(1){animation-delay:.6s}
-#app.intro .fh h1 .y i:nth-child(2){animation-delay:.7s}
-#app.intro .fh h1 .l1 i:nth-child(1){animation-delay:.3s}
+#app.intro .fh h1 .iw{display:inline-block;animation:cm-word .7s cubic-bezier(.22,1,.36,1) both}
+#app.intro .fh h1 .l1 .iw:nth-child(2){animation-delay:.45s}
+#app.intro .fh h1 .y .iw:nth-child(1){animation-delay:.6s}
+#app.intro .fh h1 .y .iw:nth-child(2){animation-delay:.7s}
+#app.intro .fh h1 .l1 .iw:nth-child(1){animation-delay:.3s}
 @keyframes cm-word{from{opacity:0;filter:blur(12px);transform:translateY(.35em)}to{opacity:1;filter:blur(0);transform:none}}
 
 </style>
@@ -12049,7 +12050,7 @@ function fogHero(e) {
     '<div class="fh-sky" aria-hidden="true"><i class="fh-sk l"></i><i class="fh-sk r"></i></div>' +
     (sets ? '<div class="fh-home"><div class="fh-card' + (a.t.length + b.t.length > 180 ? " fh-long" : "") + '">' + sets + "</div></div>" : "") +
     '<div class="fh-tilt" aria-hidden="true"></div><canvas class="fh-fog" aria-hidden="true"></canvas>' +
-    '<div class="fh-ui"><h1><span class="l1"><i>Aynı</i> <i>olay,</i></span> <span class="y"><i>farklı</i> <i>manşet.</i></span></h1>' +
+    '<div class="fh-ui"><h1><span class="l1"><span class="iw">Aynı</span> <span class="iw">olay,</span></span> <span class="y"><span class="iw">farklı</span> <span class="iw">manşet.</span></span></h1>' +
     "<p class=\"fh-sub\">Türk medyasının aynı olayı nasıl farklı anlattığını yan yana koyuyoruz. Hüküm vermiyoruz; farkı ölçüyoruz.</p>" +
     '<div class="fh-dock">' + btns + '<a class="fh-cta" href="#bu-hafta">Bu haftanın ayrışmalarını gör ↓</a></div></div></section>';
 }
@@ -13926,7 +13927,7 @@ try {
   if (!sessionStorage.getItem("cm-intro")) {
     sessionStorage.setItem("cm-intro", "1");
     introEl.classList.add("intro");
-    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introEl.classList.remove("intro"); });
+    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) { introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); } });
   }
 } catch (err) {}
 addEventListener("hashchange", route);

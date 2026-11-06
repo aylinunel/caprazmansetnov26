@@ -393,6 +393,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     [ctx, page] = await open("kisaca cold");
     await page.goto(url("#/olay?e=s5316")); await sleep(3000);
     if (!await page.evaluate(() => typeof ScrollTrigger !== "undefined" && ScrollTrigger.getAll().some((t) => t.pin))) fails.push("kisaca cold: no pinned ScrollTrigger on #/olay?e=s5316");
+    /* cold load: the first ready-path mount must not slide the page in */
+    [ctx, page] = await open("cold no slide");
+    await page.goto(url("#/olay?e=s5316")); await page.waitForFunction(() => window.ScrollTrigger && ScrollTrigger.getAll().length, null, { timeout: 15000 }); await sleep(100);
+    const ns = await page.evaluate(() => { const s = getComputedStyle(document.getElementById("view")); return s.opacity + " " + s.transform; });
+    if (ns !== "1 none") fails.push(`cold #/olay?e=s5316 ~100 ms after motion starts: #view ${ns}, want "1 none"`);
     await ctx.close();
     /* intro: class on #app at first paint of a cold #/ (empty sessionStorage), gone after ~2 s with no transform/filter left;
        a reload in the same session has no intro; home -> event still pins */

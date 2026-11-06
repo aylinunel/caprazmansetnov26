@@ -6774,7 +6774,7 @@ try {
   if (!sessionStorage.getItem("cm-intro")) {
     sessionStorage.setItem("cm-intro", "1");
     introEl.classList.add("intro");
-    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introEl.classList.remove("intro"); });
+    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) { introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); } });
   }
 } catch (err) {}
 addEventListener("hashchange", route);
