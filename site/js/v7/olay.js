@@ -23,24 +23,30 @@ function olayCommon(e) {
   });
   return Object.keys(cnt).filter(function (k) { return cnt[k] * 2 > n; }).sort(function (x, y) { return cnt[y] - cnt[x] || form[y].length - form[x].length; }).map(function (k) { return form[k]; });
 }
-/* "Kısaca": the coded summary (YZ badge when agent-coded), else one generated line. */
+/* "Kısaca": the coded summary as broadsheet components (YZ badge when agent-coded), else one generated lead. */
 function olayKisaca(e) {
   var nk = NBYEV[e.i], n = nk && narrOk(nk) && D.N[nk], q = (n && n.q) || {};
-  var rows = [["Ne oldu", q.happened], ["Ortak nokta", q.agree], ["Ayrışan nokta", q.differ]].filter(function (x) { return x[1]; });
-  if (rows.length) {
-    var inner = rows.map(function (x) { return "<h3>" + x[0] + "</h3><p>" + esc(x[1]) + "</p>"; }).join("");
-    return '<section class="sec v7-kisaca">' + (n.status === "agent_coded" ? '<div class="yz"><h2>Kısaca ' + yzBadge() + "</h2>" + inner + "</div>" : "<h2>Kısaca</h2>" + inner) + "</section>";
-  }
   var pair = SPLITPAIR[e.i] || defaultPair(e), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
-  if (!a || !b) return '<section class="sec v7-kisaca"><h2>Kısaca</h2><p>' + e.s.length + " kurum bu olayı verdi.</p></section>";
+  if (q.happened || q.agree || q.differ) {
+    var ln = function (x) { return SRC[x.s] && SRC[x.s].lean != null ? SRC[x.s].lean : 50; };
+    if (a && b && ln(b) < ln(a)) { var t = a; a = b; b = t; }
+    var said = function (x) { return a && b ? "“" + x.t + "” — " + srcName(x.s) : ""; };
+    var outs = e.s.map(function (s) { var c = bloc(s); return { s: s, name: srcName(s), bloc: c === "none" ? "mid" : c }; });
+    var inner = pGlass(6) +
+      (q.happened ? '<div class="p-ne">' + pHead("Kısaca", "Ne oldu") + pLead(q.happened) + pTickets(pNums(q.happened)) + "</div>" : "") +
+      (q.agree ? pHead("Kısaca", "Ortak nokta") + pCommon(said(a), q.agree, said(b)) : "") +
+      (q.differ ? pHead("Kısaca", "Ayrışan nokta") + pSplits(pSplitPoints(q.differ, outs)) : "");
+    return '<section class="sec v7-kisaca">' + (n.status === "agent_coded" ? '<div class="yz">' + yzBadge() + inner + "</div>" : inner) + "</section>";
+  }
+  if (!a || !b) return '<section class="sec v7-kisaca"><h2>Kısaca</h2>' + pLead(e.s.length + " kurum bu olayı verdi.") + "</section>";
   var far = a.v >= b.v ? a : b, many = olayCommon(e), txt;
-  if (many.length >= 2) txt = "Kurumların çoğu “" + esc(many.slice(0, 3).join(" ")) + "” dedi; yüklü dili en yüksek başlık " + esc(srcName(far.s)) + " kurumundan.";
+  if (many.length >= 2) txt = "Kurumların çoğu “" + many.slice(0, 3).join(" ") + "” dedi; yüklü dili en yüksek başlık " + srcName(far.s) + " kurumundan.";
   else {
     var sh = compareHeads(a, b).shared.slice(0, 3);
-    txt = esc(srcName(a.s)) + " ve " + esc(srcName(b.s)) + (sh.length ? " ortak olarak “" + esc(sh.join(" ")) + "” dedi; " : " arasında ortak kelime yok; ") +
-      "bu ikisinden yüklü dili yüksek olan " + esc(srcName(far.s)) + " kurumunun başlığı.";
+    txt = srcName(a.s) + " ve " + srcName(b.s) + (sh.length ? " ortak olarak “" + sh.join(" ") + "” dedi; " : " arasında ortak kelime yok; ") +
+      "bu ikisinden yüklü dili yüksek olan " + srcName(far.s) + " kurumunun başlığı.";
   }
-  return '<section class="sec v7-kisaca"><h2>Kısaca</h2><p>' + txt + "</p></section>";
+  return '<section class="sec v7-kisaca"><h2>Kısaca</h2>' + pLead(txt) + "</section>";
 }
 
 function olayDeep(key, title, body) {

@@ -307,7 +307,36 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     for (const h of ["#/olay?e=s4374", "#/kurum?s=takvim", "#/"]) { await page.evaluate((x) => { location.hash = x; }, h); await sleep(1500); }
     const after = await nST(page);
     if (fresh < 0 || after !== fresh) fails.push(`motion a: ScrollTrigger count fresh ${fresh}, after round trip ${after}`);
+    /* the event page really registers ScrollTriggers, so the round-trip count above is a real leak check */
+    await page.evaluate(() => { location.hash = "#/olay?e=s4374"; }); await sleep(1500);
+    await page.mouse.wheel(0, 1500); await sleep(1200);
+    const onEvent = await nST(page);
+    if (!(onEvent > 0)) fails.push(`motion a: ScrollTrigger count on the event page is ${onEvent}`);
     await ctx.close();
+    /* Broadsheet Kısaca: components present, readable fallback without a coded narrative, no transformed pin ancestor */
+    for (const w of [1280, 390]) {
+      [ctx, page] = await open(`kisaca ${w}`);
+      await page.setViewportSize({ width: w, height: w === 390 ? 844 : 800 });
+      await page.goto(url("#/olay?e=s4374")); await sleep(3000);
+      const k = await page.evaluate(() => ({
+        lead: document.querySelectorAll(".v7-kisaca [data-m=lead]").length,
+        panels: document.querySelectorAll("[data-m=splits] .panel").length,
+        tf: ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean)
+          .map((e) => { const s = getComputedStyle(e); return [s.transform, s.filter, s.willChange].join(" "); })
+          .filter((s) => s !== "none none auto"),
+        hs: document.documentElement.scrollWidth > innerWidth }));
+      if (k.lead !== 1) fails.push(`kisaca ${w}: ${k.lead} [data-m=lead] in .v7-kisaca`);
+      if (k.panels < 2) fails.push(`kisaca ${w}: ${k.panels} split panels`);
+      if (k.tf.length) fails.push(`kisaca ${w}: transformed ancestor ${k.tf.join(" | ")}`);
+      if (k.hs) fails.push(`kisaca ${w}: horizontal scroll`);
+      await page.evaluate(() => { location.hash = "#/olay?e=s5316"; }); await sleep(1500);
+      const t = await page.evaluate(() => document.querySelectorAll("[data-m=tickets] .tix").length);
+      if (t !== 3) fails.push(`kisaca ${w}: s5316 has ${t} tickets, want 3`);
+      await page.evaluate(() => { location.hash = "#/olay?e=s5450"; }); await sleep(1500);
+      const n = await page.evaluate(() => [".v7-kisaca [data-m=lead]", "[data-m=tickets]", "[data-m=splits]"].map((s) => document.querySelectorAll(s).length).join(","));
+      if (n !== "1,0,0") fails.push(`kisaca ${w}: uncoded event s5450 lead,tickets,splits = ${n}, want 1,0,0`);
+      await ctx.close();
+    }
     /* (b) three hash changes within 300 ms of a cold load: one Lenis, no errors */
     [ctx, page] = await open("motion b");
     await page.goto(url("#/")); await page.waitForSelector("#view");
