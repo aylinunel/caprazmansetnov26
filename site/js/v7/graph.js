@@ -29,7 +29,6 @@ function g6Tok() {
   return t;
 }
 function g6Bloc(t, s) { var b = bloc(s); return b === "left" ? t.left : b === "right" ? t.right : b === "none" ? t.line2 : t.mid; }
-function g6Calm() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 
 /* Build every unmounted box under root; drop graphs whose box left the page. */
 function g6Mount(root) {
@@ -45,11 +44,11 @@ function g6Build(el) {
   el.innerHTML = "";
   var spec = G6K[el.getAttribute("data-g6")](el.getAttribute("data-arg") || "", g6Tok());
   if (!spec) { el.classList.add("g6-fail"); return; }
-  var calm = g6Calm(), h = spec.height || (innerWidth < 640 ? 380 : 480);
+  var h = spec.height || (innerWidth < 640 ? 380 : 480);
   el.style.height = h + "px";
   if (spec.opts.width) el.style.width = spec.opts.width + "px";
   var graph = new G6.Graph(Object.assign({
-    container: el, height: h, autoFit: "view", padding: 24, autoResize: true, animation: !calm,
+    container: el, height: h, autoFit: "view", padding: 24, autoResize: true, animation: true,
     behaviors: ["drag-element", { type: "zoom-canvas", trigger: ["Control"] },
       { type: "hover-activate", degree: 1, state: "active", inactiveState: "inactive" }]
   }, spec.opts));
@@ -60,7 +59,7 @@ function g6Build(el) {
   graph.on("edge:pointerenter", function (e) { var d = graph.getEdgeData(e.target.id), ne = e.nativeEvent || {}; if (d && d.data.tip) tipOn({ clientX: ne.clientX, clientY: ne.clientY }, d.data.tip); });
   graph.on("edge:pointerleave", tipOff);
   graph.on("node:click", function (e) { var d = graph.getNodeData(e.target.id); tipOff(); if (d && d.data.go) location.hash = d.data.go.replace(/^#/, ""); });
-  graph.render().then(function () { if (spec.after) spec.after(graph, calm, el); else if (graph.getOptions().autoFit) graph.fitView(); }).catch(function () {});
+  graph.render().then(function () { if (spec.after) spec.after(graph, el); else if (graph.getOptions().autoFit) graph.fitView(); }).catch(function () {});
   G6S.push({ el: el, graph: graph });
 }
 /* Theme toggle repaints the canvas graphs. */
@@ -229,11 +228,10 @@ G6K.spread = function (arg, t) {
   return { height: Hh, opts: { data: { nodes: nodes, edges: edges }, autoFit: null, autoResize: false, padding: 0, width: W,
     node: g6NodeStyle(t), edge: g6EdgeStyle(t, { type: "line" }), layout: null,
     behaviors: [{ type: "hover-activate", degree: 1, state: "active", inactiveState: "inactive" }] },
-    after: function (graph, calm, el) {
+    after: function (graph, el) {
       var ax = document.createElement("div"); ax.className = "g6-axis"; ax.style.width = W + "px";
       ax.innerHTML = ticks.map(function (m) { return '<span style="left:' + X(m) + 'px">' + (m ? dur5(m) : "ilk") + "</span>"; }).join("");
       el.insertAdjacentElement("afterend", ax);
-      if (calm) return;
       /* Replay the order of publication: nodes fade in at their real relative times (compressed to ~3 s). */
       nodes.forEach(function (n) { graph.setElementVisibility(n.id, n.data.order ? "hidden" : "visible", false); });
       edges.forEach(function (x) { graph.setElementVisibility(graph.getEdgeData().filter(function (d) { return d.target === x.target; })[0].id, "hidden", false); });

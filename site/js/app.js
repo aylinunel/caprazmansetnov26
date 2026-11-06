@@ -131,7 +131,6 @@ function startAcid(cv) {
     "uGrain","uGrainIntensity","uLightMode"].forEach(function (n) { U[n] = gl.getUniformLocation(pr, n); });
 
   var mouse = [0, 0], mActive = 0, raf = 0, t0 = performance.now(), alive = true;
-  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
   function size() {
     var dpr = Math.min(devicePixelRatio || 1, 1.6);
@@ -141,7 +140,7 @@ function startAcid(cv) {
   function draw(now) {
     if (!alive) return;
     size();
-    var t = reduce ? 2.4 : (now - t0) / 1000;
+    var t = (now - t0) / 1000;
     gl.uniform2f(U.iResolution, cv.width, cv.height);
     gl.uniform1f(U.iTime, t);
     gl.uniform1f(U.uSpeed, CFG.speed); gl.uniform1f(U.uWaveDepth, CFG.waveDepth);
@@ -155,11 +154,11 @@ function startAcid(cv) {
     gl.uniform3fv(U.uColor3, CFG.color3);
     gl.uniform2f(U.uMouse, mouse[0], mouse[1]);
     gl.uniform1f(U.uMouseStrength, CFG.mouseStrength); gl.uniform1f(U.uMouseRadius, CFG.mouseRadius);
-    gl.uniform1f(U.uEnableMouse, reduce ? 0 : 1); gl.uniform1f(U.uMouseActive, mActive);
+    gl.uniform1f(U.uEnableMouse, 1); gl.uniform1f(U.uMouseActive, mActive);
     gl.uniform1f(U.uGrain, CFG.grain); gl.uniform1f(U.uGrainIntensity, CFG.grainIntensity);
     gl.uniform1f(U.uLightMode, 0);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
-    if (!reduce) raf = requestAnimationFrame(draw);
+    raf = requestAnimationFrame(draw);
   }
   function onMove(e) {
     var r = cv.getBoundingClientRect();
@@ -173,7 +172,7 @@ function startAcid(cv) {
      business burning a laptop battery behind an article the reader is reading. */
   var io = new IntersectionObserver(function (es) {
     var vis = es[0].isIntersecting;
-    if (vis && !raf && !reduce) { t0 = performance.now() - 2400; raf = requestAnimationFrame(draw); }
+    if (vis && !raf) { t0 = performance.now() - 2400; raf = requestAnimationFrame(draw); }
     if (!vis && raf) { cancelAnimationFrame(raf); raf = 0; }
   }, { threshold: 0 });
   io.observe(cv);
@@ -5969,7 +5968,6 @@ function v3foilHTML(inner) {
 function v3foilStart(el, mode) {
   if (V3.foilStop) V3.foilStop();
   if (!el) return;
-  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ptr = { x: 0.5, y: 0.5 }, frame = null;
   function set(k, v) { el.style.setProperty(k, v); }
   function progress() {
@@ -5997,7 +5995,6 @@ function v3foilStart(el, mode) {
     schedule();
   }
   apply();
-  if (still) { V3.foilStop = null; return; }
   addEventListener("pointermove", onMove, { passive: true });
   addEventListener("scroll", schedule, { passive: true });
   addEventListener("resize", schedule, { passive: true });

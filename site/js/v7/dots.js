@@ -7,7 +7,6 @@ var DM_LIVE = [];
 function dmHash(a, b) { var s = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return s - Math.floor(s); }
 function dmSmooth(a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
 function dmMix(t, on, off, dur) { return dmSmooth(on, on + dur, t) * (1 - dmSmooth(off, off + dur, t)); }
-function dmCalm() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 function dmColor(v) {
   var p = dmColor.p || (dmColor.p = document.body.appendChild(Object.assign(document.createElement("i"), { hidden: true, style: "transition:none!important;animation:none!important" })));
   p.style.color = ""; p.style.color = v; p.hidden = false; var c = getComputedStyle(p).color; p.hidden = true; return c;
@@ -63,18 +62,18 @@ function dmMount(root) {
     var S = cv._dm = dmMake(cv, cv.getAttribute("data-dm"), d);
     DM_LIVE.push(S);
     var loop = S.loop = function () {
-      if (!S.alive || !S.vis || S.raf || dmCalm()) return;
-      S.raf = requestAnimationFrame(function (now) { S.raf = 0; if (now - (S.last || 0) >= 33) { S.last = now; S.render((now - S.t0) / 1000); } if (!dmCalm()) loop(); });
+      if (!S.alive || !S.vis || S.raf) return;
+      S.raf = requestAnimationFrame(function (now) { S.raf = 0; if (now - (S.last || 0) >= 33) { S.last = now; S.render((now - S.t0) / 1000); } loop(); });
     };
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { S.vis = es[0].isIntersecting; if (S.vis) loop(); }).observe(cv);
-    var go = function () { S.g = null; S.size(); S.render(dmCalm() ? 1 : 0); loop(); };
+    var go = function () { S.g = null; S.size(); S.render(0); loop(); };
     var sample = "İŞĞÜÖÇışğüöç";
     if (document.fonts && document.fonts.load) Promise.all([document.fonts.load("700 40px Inter", sample), document.fonts.load("800 40px Inter", sample)]).then(go, go); else requestAnimationFrame(go);
   });
 }
-if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render(dmCalm() ? 1 : (performance.now() - S.t0) / 1000); }); });
-addEventListener("resize", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render(dmCalm() ? 1 : (performance.now() - S.t0) / 1000); }); });
-new MutationObserver(function () { DM_LIVE.forEach(function (S) { S.g = null; S.render(dmCalm() ? 1 : (performance.now() - S.t0) / 1000); }); })
+if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render((performance.now() - S.t0) / 1000); }); });
+addEventListener("resize", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render((performance.now() - S.t0) / 1000); }); });
+new MutationObserver(function () { DM_LIVE.forEach(function (S) { S.g = null; S.render((performance.now() - S.t0) / 1000); }); })
   .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
 function dmWords(text, marks) {
@@ -97,9 +96,9 @@ function dmHeads(root) {
 }
 
 /* Feed cards: while a card is hovered, focused or (touch) first-tapped, each highlighted word dissolves into dots and re-forms once.
-   Nothing runs while idle or under reduced motion. */
+   Nothing runs while idle. */
 function dmWordFx(mk) {
-  if (mk._fx || dmCalm()) return;
+  if (mk._fx) return;
   var W = mk.offsetWidth, H = mk.offsetHeight; if (!W || !H) return;
   var step = Math.max(2, Math.round(H / 9)), cols = Math.max(1, Math.ceil(W / step)), rows = Math.max(1, Math.ceil(H / step)), DPR = Math.min(2, devicePixelRatio || 1);
   var F = document.createElement("canvas"), fc = F.getContext("2d", { willReadFrequently: true }), cv = document.createElement("canvas"), ctx = cv.getContext("2d"), cs = getComputedStyle(mk), ink = cs.color;

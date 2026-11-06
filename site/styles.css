@@ -214,7 +214,6 @@
 .cm3-foil-l.glare{z-index:5;
   background:radial-gradient(circle at var(--glare-x) var(--glare-y),rgba(226,235,242,.34) 0%,rgba(205,218,228,.14) 9%,rgba(226,237,246,.08) 22%,transparent 36%);
   filter:var(--highlight-filter);mix-blend-mode:screen;opacity:var(--glare-opacity);will-change:background}
-@media (prefers-reduced-motion:reduce){.cm3-foil-l{will-change:auto}}
 
 /* The sticker on the home hero: a press-badge for the event shown, pinned to the split card's corner */
 .cm3-attn .xhero-r{position:relative}
@@ -982,8 +981,6 @@ table.nm td{min-width:124px;line-height:1.45}
 .rq-b[data-on="1"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .pri{width:3px;border-radius:2px;align-self:stretch}
 
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;
-  transition-duration:.01ms!important}}
 
 /* ================================================== 2.0 reader layer ===
    Built on v1's tokens. Ground News is the reference for the reading
@@ -1571,7 +1568,6 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
 .xhud{display:none}
 .xpm-s::before{width:4px}
 
-@media (prefers-reduced-motion:reduce){mark.mw,.xsp-p.top,.xsp-p.bot{animation:none}}
 @media print{.navbar,.subnav,.xfixlink,.xsp-ctl{display:none}body{background:#fff}.xsp-band{transform:none}}
 
 .xh1{font-size:clamp(32px,4vw,48px);max-width:32ch}
@@ -1703,7 +1699,6 @@ th{color:var(--ink);border-bottom-width:3px}
   border-radius:8px;padding:10px 12px;font:400 13px/1.45 var(--ff-b);box-shadow:var(--shadow-pop);animation:glin .15s ease}
 .gl-pop a{display:inline-block;min-height:24px;color:var(--ink);font-weight:600;white-space:nowrap}
 @keyframes glin{from{opacity:0}to{opacity:1}}
-@media (prefers-reduced-motion:reduce){.gl-pop{animation:none}}
 .v7-gloss dt{font-weight:600;margin-top:12px}
 .v7-gloss dd{margin:2px 0 0;color:var(--ink2)}
 .v7-how summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--ff-m);font-size:12.5px;
@@ -2010,7 +2005,6 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .vz-lx{grid-column:2;position:relative;height:20px;font-family:var(--ff-m);font-size:10.5px;color:var(--muted);margin-right:8px}
 .vz-lx span{position:absolute;top:4px;transform:translateX(-50%);white-space:nowrap}
 .vz-lx span:first-child{transform:none}.vz-lx span:last-child{transform:translateX(-100%)}
-@media (prefers-reduced-motion:reduce){.vz-r{transition:none!important}}
 
 /* ===== 7.0 · Kindred hero ===== */
 .dm-band{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 60%);mask-image:linear-gradient(to right,transparent 0,#000 60%)}
@@ -2082,10 +2076,10 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
   .fh-toggle b{font-size:16px}.fh-toggle small{font-size:12px}
   .fh-cap{max-width:360px;font-size:13px;margin-top:12px}
 }
-@media (prefers-reduced-motion:reduce){.fh-home{transition:none}}
 
 /* 7.0 · Kindred style */
 :root{
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --paper:#f7f7f5; --surface:#ffffff; --raise:#fcfcfb; --sunk:#efefec;
   --line:#e5e5e1; --line2:#cfcfca; --ink:#111111; --ink2:#3a3a3a; --muted:#686868; --mist:#9a9a9a;
   --left:#E11D48; --right:#2563EB; --mid:#79839A;

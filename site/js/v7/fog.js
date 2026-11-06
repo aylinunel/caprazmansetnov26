@@ -126,7 +126,7 @@ function fogMount(root) {
   el._down = down;
   var alive = function () { if (S.dead) return false; if (document.body.contains(el)) return true; down(); return false; };
   var loop = function () {
-    if (S.raf || !S.vis || !alive() || dmCalm()) return;
+    if (S.raf || !S.vis || !alive()) return;
     S.raf = requestAnimationFrame(function (now) {
       S.raf = 0; if (!alive()) return;
       if (now - S.last >= 32) { S.last = now; frame(now); }
@@ -137,7 +137,6 @@ function fogMount(root) {
   var pick = function (n) {
     if (n === S.target && S.queued === null) return;
     bt.forEach(function (b, i) { b.setAttribute("aria-pressed", i === n ? "true" : "false"); });
-    if (dmCalm()) { S.target = n; S.k = n; S.animating = false; S.queued = null; show(n); still(); return; }
     if (S.animating) S.queued = n; else begin(n, performance.now());
     loop();
   };
@@ -145,18 +144,18 @@ function fogMount(root) {
   var cta = el.querySelector(".fh-cta");
   if (cta) cta.addEventListener("click", function (ev) {
     var t = document.getElementById("bu-hafta"); if (!t) return;
-    ev.preventDefault(); t.scrollIntoView({ behavior: dmCalm() ? "auto" : "smooth", block: "start" });
+    ev.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   /* Off-screen: stop. Theme change: re-read the colours (the CSS side follows the tokens by itself). */
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) { if (!alive()) return; S.vis = es[0].isIntersecting; if (S.vis) loop(); }); io.observe(el);
     offs.push(function () { io.disconnect(); });
   }
-  var retheme = function () { if (!alive()) return; S.dark = fogDark() ? 1 : 0; if (dmCalm() || !S.vis) still(); };
+  var retheme = function () { if (!alive()) return; S.dark = fogDark() ? 1 : 0; if (!S.vis) still(); };
   var mo = new MutationObserver(retheme); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   offs.push(function () { mo.disconnect(); });
   var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) { mq.addEventListener("change", retheme); offs.push(function () { mq.removeEventListener("change", retheme); }); }
-  var rz = function () { if (alive()) { size(); if (dmCalm()) frame(performance.now()); } };
+  var rz = function () { if (alive()) { size(); } };
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
   set("--k", "0"); set("--k2", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();

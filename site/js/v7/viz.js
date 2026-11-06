@@ -11,7 +11,6 @@ function vzTable(headers, rows) {
   return '<div class="scroller"><table class="v7-dt"><thead><tr>' + headers.map(function (h) { return '<th scope="col">' + glossTerms(esc(h)) + "</th>"; }).join("") +
     "</tr></thead><tbody>" + rows.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + esc(String(c)) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
 }
-function vzCalm() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 /* 95 % Wilson interval for k of n. */
 function vzWilson(k, n) {
   if (!n) return [0, 0];
@@ -68,15 +67,14 @@ function vzRows(rows, o) {
   var axis = '<div class="vz-r vz-ax" aria-hidden="true"><span class="vz-l">' + esc(o.axisL || "") + '</span><span class="vz-t">' +
     ticks.map(function (t) { return '<span style="left:' + pc(t) + '">' + fmt(t) + "</span>"; }).join("") +
     (o.refAll ? '<span class="vz-allt" style="left:' + pc(o.refAll.v) + '">' + esc(o.refAll.label) + "</span>" : "") + "</span><span></span></div>";
-  return '<div class="vz' + (vzCalm() ? "" : " vz-anim") + '" style="--lw:' + (o.lw || 170) + "px;--vw:" + (o.vw || 74) + 'px">' + body + axis + "</div>" +
+  return '<div class="vz vz-anim" style="--lw:' + (o.lw || 170) + "px;--vw:" + (o.vw || 74) + 'px">' + body + axis + "</div>" +
     (o.axis ? '<p class="vz-axt">' + o.axis + "</p>" : "");
 }
 /* Re-render a vzRows host and slide rows from their old place to the new one (sort changes read as motion). */
 function vzSwap(host, html) {
-  var old = {}, calm = vzCalm();
-  if (!calm) [].forEach.call(host.querySelectorAll(".vz-r[data-k]"), function (r) { old[r.getAttribute("data-k")] = r.getBoundingClientRect().top; });
+  var old = {};
+  [].forEach.call(host.querySelectorAll(".vz-r[data-k]"), function (r) { old[r.getAttribute("data-k")] = r.getBoundingClientRect().top; });
   host.innerHTML = html;
-  if (calm) return;
   [].forEach.call(host.querySelectorAll(".vz-r[data-k]"), function (r) {
     var k = r.getAttribute("data-k"); if (old[k] == null) return;
     var d = old[k] - r.getBoundingClientRect().top; if (!d) return;

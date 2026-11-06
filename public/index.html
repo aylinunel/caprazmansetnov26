@@ -7,7 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20160%20160%22%20width%3D%22160%22%20height%3D%22160%22%20role%3D%22img%22%20aria-label%3D%22Small-size%20mark%3A%20%C3%87%20with%20a%20wider%20cut%2C%20for%2016%20to%2024%20pixel%20use%22%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22%231B1813%22%3E%3C/rect%3E%3Cpath%20d%3D%22M65%2064.9%2041.2%2069.1Q41.2%2067.9%2041.2%2066.6Q41.2%2056.7%2043.7%2047.9Q46.2%2039.1%2051.5%2032.4Q56.7%2025.8%2065%2022Q73.3%2018.2%2084.9%2018.2Q95%2018.2%20102.2%2021.1Q109.5%2023.9%20113.9%2028.9Q118.3%2033.9%20120%2040.3Q121.7%2046.8%20120.9%2053.8L100%2056.3Q100.3%2050.3%2098.5%2045.9Q96.8%2041.6%2093.2%2039.2Q89.6%2036.8%2084.2%2036.8Q79.6%2036.8%2076%2038.6Q72.4%2040.5%2070%2044.1Q67.5%2047.7%2066.3%2053.1Q65.1%2058.2%2065%2064.9Z%22%20fill%3D%22%23F5F0E3%22%3E%3C/path%3E%3Cpath%20d%3D%22M70%20114.5Q64.6%20113.6%2060.2%20111.6Q51.8%20107.8%2046.5%20101.1Q41.2%2094.4%2038.7%2085.8Q37.8%2082.4%2037.2%2078.9L60.6%2074.8Q61.1%2079%2062.3%2082.6Q64.6%2089.4%2069.2%2093.1Q73.8%2096.8%2080.8%2096.8Q87.2%2096.8%2090.9%2093.8Q94.7%2090.9%2096.2%2085.7Q97.7%2080.5%2097.2%2074.1L118.6%2075.9Q119.3%2083.6%20117.5%2090.7Q115.8%2097.8%20111.2%20103.4Q106.7%20109%2099.1%20112.2Q92.7%20114.9%2083.9%20115.3L83.5%20118.1Q88.5%20118.1%2092.1%20119Q95.8%20120%2097.8%20122.2Q99.8%20124.4%2099.8%20128.1Q99.8%20133.9%2095.8%20137Q91.9%20140.2%2085.6%20141.2Q79.4%20142.3%2072.8%20141.4Q66.2%20140.5%2060.9%20137.9L64.1%20126Q66.1%20127.3%2069.7%20128.3Q73.2%20129.3%2076.9%20129.7Q80.7%20130.1%2083.2%20129.3Q85.8%20128.6%2085.8%20126.3Q85.8%20125.6%2085.3%20124.8Q84.7%20123.9%2083%20123.3Q81.4%20122.7%2078%20122.4Q74.6%20122.1%2068.9%20122.4Z%22%20fill%3D%22%23F5F0E3%22%3E%3C/path%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
 <style>
 /* Çapraz Manşet 3.0 additions */
@@ -226,7 +226,6 @@
 .cm3-foil-l.glare{z-index:5;
   background:radial-gradient(circle at var(--glare-x) var(--glare-y),rgba(226,235,242,.34) 0%,rgba(205,218,228,.14) 9%,rgba(226,237,246,.08) 22%,transparent 36%);
   filter:var(--highlight-filter);mix-blend-mode:screen;opacity:var(--glare-opacity);will-change:background}
-@media (prefers-reduced-motion:reduce){.cm3-foil-l{will-change:auto}}
 
 /* The sticker on the home hero: a press-badge for the event shown, pinned to the split card's corner */
 .cm3-attn .xhero-r{position:relative}
@@ -994,8 +993,6 @@ table.nm td{min-width:124px;line-height:1.45}
 .rq-b[data-on="1"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .pri{width:3px;border-radius:2px;align-self:stretch}
 
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;
-  transition-duration:.01ms!important}}
 
 /* ================================================== 2.0 reader layer ===
    Built on v1's tokens. Ground News is the reference for the reading
@@ -1583,7 +1580,6 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
 .xhud{display:none}
 .xpm-s::before{width:4px}
 
-@media (prefers-reduced-motion:reduce){mark.mw,.xsp-p.top,.xsp-p.bot{animation:none}}
 @media print{.navbar,.subnav,.xfixlink,.xsp-ctl{display:none}body{background:#fff}.xsp-band{transform:none}}
 
 .xh1{font-size:clamp(32px,4vw,48px);max-width:32ch}
@@ -1715,7 +1711,6 @@ th{color:var(--ink);border-bottom-width:3px}
   border-radius:8px;padding:10px 12px;font:400 13px/1.45 var(--ff-b);box-shadow:var(--shadow-pop);animation:glin .15s ease}
 .gl-pop a{display:inline-block;min-height:24px;color:var(--ink);font-weight:600;white-space:nowrap}
 @keyframes glin{from{opacity:0}to{opacity:1}}
-@media (prefers-reduced-motion:reduce){.gl-pop{animation:none}}
 .v7-gloss dt{font-weight:600;margin-top:12px}
 .v7-gloss dd{margin:2px 0 0;color:var(--ink2)}
 .v7-how summary{display:inline-flex;align-items:center;min-height:44px;cursor:pointer;font-family:var(--ff-m);font-size:12.5px;
@@ -2022,7 +2017,6 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .vz-lx{grid-column:2;position:relative;height:20px;font-family:var(--ff-m);font-size:10.5px;color:var(--muted);margin-right:8px}
 .vz-lx span{position:absolute;top:4px;transform:translateX(-50%);white-space:nowrap}
 .vz-lx span:first-child{transform:none}.vz-lx span:last-child{transform:translateX(-100%)}
-@media (prefers-reduced-motion:reduce){.vz-r{transition:none!important}}
 
 /* ===== 7.0 · Kindred hero ===== */
 .dm-band{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 60%);mask-image:linear-gradient(to right,transparent 0,#000 60%)}
@@ -2094,10 +2088,10 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
   .fh-toggle b{font-size:16px}.fh-toggle small{font-size:12px}
   .fh-cap{max-width:360px;font-size:13px;margin-top:12px}
 }
-@media (prefers-reduced-motion:reduce){.fh-home{transition:none}}
 
 /* 7.0 · Kindred style */
 :root{
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --paper:#f7f7f5; --surface:#ffffff; --raise:#fcfcfb; --sunk:#efefec;
   --line:#e5e5e1; --line2:#cfcfca; --ink:#111111; --ink2:#3a3a3a; --muted:#686868; --mist:#9a9a9a;
   --left:#E11D48; --right:#2563EB; --mid:#79839A;
@@ -4210,7 +4204,6 @@ function startAcid(cv) {
     "uGrain","uGrainIntensity","uLightMode"].forEach(function (n) { U[n] = gl.getUniformLocation(pr, n); });
 
   var mouse = [0, 0], mActive = 0, raf = 0, t0 = performance.now(), alive = true;
-  var reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
   function size() {
     var dpr = Math.min(devicePixelRatio || 1, 1.6);
@@ -4220,7 +4213,7 @@ function startAcid(cv) {
   function draw(now) {
     if (!alive) return;
     size();
-    var t = reduce ? 2.4 : (now - t0) / 1000;
+    var t = (now - t0) / 1000;
     gl.uniform2f(U.iResolution, cv.width, cv.height);
     gl.uniform1f(U.iTime, t);
     gl.uniform1f(U.uSpeed, CFG.speed); gl.uniform1f(U.uWaveDepth, CFG.waveDepth);
@@ -4234,11 +4227,11 @@ function startAcid(cv) {
     gl.uniform3fv(U.uColor3, CFG.color3);
     gl.uniform2f(U.uMouse, mouse[0], mouse[1]);
     gl.uniform1f(U.uMouseStrength, CFG.mouseStrength); gl.uniform1f(U.uMouseRadius, CFG.mouseRadius);
-    gl.uniform1f(U.uEnableMouse, reduce ? 0 : 1); gl.uniform1f(U.uMouseActive, mActive);
+    gl.uniform1f(U.uEnableMouse, 1); gl.uniform1f(U.uMouseActive, mActive);
     gl.uniform1f(U.uGrain, CFG.grain); gl.uniform1f(U.uGrainIntensity, CFG.grainIntensity);
     gl.uniform1f(U.uLightMode, 0);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
-    if (!reduce) raf = requestAnimationFrame(draw);
+    raf = requestAnimationFrame(draw);
   }
   function onMove(e) {
     var r = cv.getBoundingClientRect();
@@ -4252,7 +4245,7 @@ function startAcid(cv) {
      business burning a laptop battery behind an article the reader is reading. */
   var io = new IntersectionObserver(function (es) {
     var vis = es[0].isIntersecting;
-    if (vis && !raf && !reduce) { t0 = performance.now() - 2400; raf = requestAnimationFrame(draw); }
+    if (vis && !raf) { t0 = performance.now() - 2400; raf = requestAnimationFrame(draw); }
     if (!vis && raf) { cancelAnimationFrame(raf); raf = 0; }
   }, { threshold: 0 });
   io.observe(cv);
@@ -10048,7 +10041,6 @@ function v3foilHTML(inner) {
 function v3foilStart(el, mode) {
   if (V3.foilStop) V3.foilStop();
   if (!el) return;
-  var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ptr = { x: 0.5, y: 0.5 }, frame = null;
   function set(k, v) { el.style.setProperty(k, v); }
   function progress() {
@@ -10076,7 +10068,6 @@ function v3foilStart(el, mode) {
     schedule();
   }
   apply();
-  if (still) { V3.foilStop = null; return; }
   addEventListener("pointermove", onMove, { passive: true });
   addEventListener("scroll", schedule, { passive: true });
   addEventListener("resize", schedule, { passive: true });
@@ -11162,7 +11153,6 @@ function g6Tok() {
   return t;
 }
 function g6Bloc(t, s) { var b = bloc(s); return b === "left" ? t.left : b === "right" ? t.right : b === "none" ? t.line2 : t.mid; }
-function g6Calm() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 
 /* Build every unmounted box under root; drop graphs whose box left the page. */
 function g6Mount(root) {
@@ -11178,11 +11168,11 @@ function g6Build(el) {
   el.innerHTML = "";
   var spec = G6K[el.getAttribute("data-g6")](el.getAttribute("data-arg") || "", g6Tok());
   if (!spec) { el.classList.add("g6-fail"); return; }
-  var calm = g6Calm(), h = spec.height || (innerWidth < 640 ? 380 : 480);
+  var h = spec.height || (innerWidth < 640 ? 380 : 480);
   el.style.height = h + "px";
   if (spec.opts.width) el.style.width = spec.opts.width + "px";
   var graph = new G6.Graph(Object.assign({
-    container: el, height: h, autoFit: "view", padding: 24, autoResize: true, animation: !calm,
+    container: el, height: h, autoFit: "view", padding: 24, autoResize: true, animation: true,
     behaviors: ["drag-element", { type: "zoom-canvas", trigger: ["Control"] },
       { type: "hover-activate", degree: 1, state: "active", inactiveState: "inactive" }]
   }, spec.opts));
@@ -11193,7 +11183,7 @@ function g6Build(el) {
   graph.on("edge:pointerenter", function (e) { var d = graph.getEdgeData(e.target.id), ne = e.nativeEvent || {}; if (d && d.data.tip) tipOn({ clientX: ne.clientX, clientY: ne.clientY }, d.data.tip); });
   graph.on("edge:pointerleave", tipOff);
   graph.on("node:click", function (e) { var d = graph.getNodeData(e.target.id); tipOff(); if (d && d.data.go) location.hash = d.data.go.replace(/^#/, ""); });
-  graph.render().then(function () { if (spec.after) spec.after(graph, calm, el); else if (graph.getOptions().autoFit) graph.fitView(); }).catch(function () {});
+  graph.render().then(function () { if (spec.after) spec.after(graph, el); else if (graph.getOptions().autoFit) graph.fitView(); }).catch(function () {});
   G6S.push({ el: el, graph: graph });
 }
 /* Theme toggle repaints the canvas graphs. */
@@ -11362,11 +11352,10 @@ G6K.spread = function (arg, t) {
   return { height: Hh, opts: { data: { nodes: nodes, edges: edges }, autoFit: null, autoResize: false, padding: 0, width: W,
     node: g6NodeStyle(t), edge: g6EdgeStyle(t, { type: "line" }), layout: null,
     behaviors: [{ type: "hover-activate", degree: 1, state: "active", inactiveState: "inactive" }] },
-    after: function (graph, calm, el) {
+    after: function (graph, el) {
       var ax = document.createElement("div"); ax.className = "g6-axis"; ax.style.width = W + "px";
       ax.innerHTML = ticks.map(function (m) { return '<span style="left:' + X(m) + 'px">' + (m ? dur5(m) : "ilk") + "</span>"; }).join("");
       el.insertAdjacentElement("afterend", ax);
-      if (calm) return;
       /* Replay the order of publication: nodes fade in at their real relative times (compressed to ~3 s). */
       nodes.forEach(function (n) { graph.setElementVisibility(n.id, n.data.order ? "hidden" : "visible", false); });
       edges.forEach(function (x) { graph.setElementVisibility(graph.getEdgeData().filter(function (d) { return d.target === x.target; })[0].id, "hidden", false); });
@@ -11440,7 +11429,6 @@ function vzTable(headers, rows) {
   return '<div class="scroller"><table class="v7-dt"><thead><tr>' + headers.map(function (h) { return '<th scope="col">' + glossTerms(esc(h)) + "</th>"; }).join("") +
     "</tr></thead><tbody>" + rows.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + esc(String(c)) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
 }
-function vzCalm() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 /* 95 % Wilson interval for k of n. */
 function vzWilson(k, n) {
   if (!n) return [0, 0];
@@ -11497,15 +11485,14 @@ function vzRows(rows, o) {
   var axis = '<div class="vz-r vz-ax" aria-hidden="true"><span class="vz-l">' + esc(o.axisL || "") + '</span><span class="vz-t">' +
     ticks.map(function (t) { return '<span style="left:' + pc(t) + '">' + fmt(t) + "</span>"; }).join("") +
     (o.refAll ? '<span class="vz-allt" style="left:' + pc(o.refAll.v) + '">' + esc(o.refAll.label) + "</span>" : "") + "</span><span></span></div>";
-  return '<div class="vz' + (vzCalm() ? "" : " vz-anim") + '" style="--lw:' + (o.lw || 170) + "px;--vw:" + (o.vw || 74) + 'px">' + body + axis + "</div>" +
+  return '<div class="vz vz-anim" style="--lw:' + (o.lw || 170) + "px;--vw:" + (o.vw || 74) + 'px">' + body + axis + "</div>" +
     (o.axis ? '<p class="vz-axt">' + o.axis + "</p>" : "");
 }
 /* Re-render a vzRows host and slide rows from their old place to the new one (sort changes read as motion). */
 function vzSwap(host, html) {
-  var old = {}, calm = vzCalm();
-  if (!calm) [].forEach.call(host.querySelectorAll(".vz-r[data-k]"), function (r) { old[r.getAttribute("data-k")] = r.getBoundingClientRect().top; });
+  var old = {};
+  [].forEach.call(host.querySelectorAll(".vz-r[data-k]"), function (r) { old[r.getAttribute("data-k")] = r.getBoundingClientRect().top; });
   host.innerHTML = html;
-  if (calm) return;
   [].forEach.call(host.querySelectorAll(".vz-r[data-k]"), function (r) {
     var k = r.getAttribute("data-k"); if (old[k] == null) return;
     var d = old[k] - r.getBoundingClientRect().top; if (!d) return;
@@ -11713,7 +11700,6 @@ var DM_LIVE = [];
 function dmHash(a, b) { var s = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return s - Math.floor(s); }
 function dmSmooth(a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
 function dmMix(t, on, off, dur) { return dmSmooth(on, on + dur, t) * (1 - dmSmooth(off, off + dur, t)); }
-function dmCalm() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 function dmColor(v) {
   var p = dmColor.p || (dmColor.p = document.body.appendChild(Object.assign(document.createElement("i"), { hidden: true, style: "transition:none!important;animation:none!important" })));
   p.style.color = ""; p.style.color = v; p.hidden = false; var c = getComputedStyle(p).color; p.hidden = true; return c;
@@ -11769,18 +11755,18 @@ function dmMount(root) {
     var S = cv._dm = dmMake(cv, cv.getAttribute("data-dm"), d);
     DM_LIVE.push(S);
     var loop = S.loop = function () {
-      if (!S.alive || !S.vis || S.raf || dmCalm()) return;
-      S.raf = requestAnimationFrame(function (now) { S.raf = 0; if (now - (S.last || 0) >= 33) { S.last = now; S.render((now - S.t0) / 1000); } if (!dmCalm()) loop(); });
+      if (!S.alive || !S.vis || S.raf) return;
+      S.raf = requestAnimationFrame(function (now) { S.raf = 0; if (now - (S.last || 0) >= 33) { S.last = now; S.render((now - S.t0) / 1000); } loop(); });
     };
     if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { S.vis = es[0].isIntersecting; if (S.vis) loop(); }).observe(cv);
-    var go = function () { S.g = null; S.size(); S.render(dmCalm() ? 1 : 0); loop(); };
+    var go = function () { S.g = null; S.size(); S.render(0); loop(); };
     var sample = "İŞĞÜÖÇışğüöç";
     if (document.fonts && document.fonts.load) Promise.all([document.fonts.load("700 40px Inter", sample), document.fonts.load("800 40px Inter", sample)]).then(go, go); else requestAnimationFrame(go);
   });
 }
-if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render(dmCalm() ? 1 : (performance.now() - S.t0) / 1000); }); });
-addEventListener("resize", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render(dmCalm() ? 1 : (performance.now() - S.t0) / 1000); }); });
-new MutationObserver(function () { DM_LIVE.forEach(function (S) { S.g = null; S.render(dmCalm() ? 1 : (performance.now() - S.t0) / 1000); }); })
+if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render((performance.now() - S.t0) / 1000); }); });
+addEventListener("resize", function () { DM_LIVE.forEach(function (S) { S.g = null; S.render((performance.now() - S.t0) / 1000); }); });
+new MutationObserver(function () { DM_LIVE.forEach(function (S) { S.g = null; S.render((performance.now() - S.t0) / 1000); }); })
   .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
 function dmWords(text, marks) {
@@ -11803,9 +11789,9 @@ function dmHeads(root) {
 }
 
 /* Feed cards: while a card is hovered, focused or (touch) first-tapped, each highlighted word dissolves into dots and re-forms once.
-   Nothing runs while idle or under reduced motion. */
+   Nothing runs while idle. */
 function dmWordFx(mk) {
-  if (mk._fx || dmCalm()) return;
+  if (mk._fx) return;
   var W = mk.offsetWidth, H = mk.offsetHeight; if (!W || !H) return;
   var step = Math.max(2, Math.round(H / 9)), cols = Math.max(1, Math.ceil(W / step)), rows = Math.max(1, Math.ceil(H / step)), DPR = Math.min(2, devicePixelRatio || 1);
   var F = document.createElement("canvas"), fc = F.getContext("2d", { willReadFrequently: true }), cv = document.createElement("canvas"), ctx = cv.getContext("2d"), cs = getComputedStyle(mk), ink = cs.color;
@@ -11984,7 +11970,7 @@ function fogMount(root) {
   el._down = down;
   var alive = function () { if (S.dead) return false; if (document.body.contains(el)) return true; down(); return false; };
   var loop = function () {
-    if (S.raf || !S.vis || !alive() || dmCalm()) return;
+    if (S.raf || !S.vis || !alive()) return;
     S.raf = requestAnimationFrame(function (now) {
       S.raf = 0; if (!alive()) return;
       if (now - S.last >= 32) { S.last = now; frame(now); }
@@ -11995,7 +11981,6 @@ function fogMount(root) {
   var pick = function (n) {
     if (n === S.target && S.queued === null) return;
     bt.forEach(function (b, i) { b.setAttribute("aria-pressed", i === n ? "true" : "false"); });
-    if (dmCalm()) { S.target = n; S.k = n; S.animating = false; S.queued = null; show(n); still(); return; }
     if (S.animating) S.queued = n; else begin(n, performance.now());
     loop();
   };
@@ -12003,18 +11988,18 @@ function fogMount(root) {
   var cta = el.querySelector(".fh-cta");
   if (cta) cta.addEventListener("click", function (ev) {
     var t = document.getElementById("bu-hafta"); if (!t) return;
-    ev.preventDefault(); t.scrollIntoView({ behavior: dmCalm() ? "auto" : "smooth", block: "start" });
+    ev.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" });
   });
   /* Off-screen: stop. Theme change: re-read the colours (the CSS side follows the tokens by itself). */
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (es) { if (!alive()) return; S.vis = es[0].isIntersecting; if (S.vis) loop(); }); io.observe(el);
     offs.push(function () { io.disconnect(); });
   }
-  var retheme = function () { if (!alive()) return; S.dark = fogDark() ? 1 : 0; if (dmCalm() || !S.vis) still(); };
+  var retheme = function () { if (!alive()) return; S.dark = fogDark() ? 1 : 0; if (!S.vis) still(); };
   var mo = new MutationObserver(retheme); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   offs.push(function () { mo.disconnect(); });
   var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) { mq.addEventListener("change", retheme); offs.push(function () { mq.removeEventListener("change", retheme); }); }
-  var rz = function () { if (alive()) { size(); if (dmCalm()) frame(performance.now()); } };
+  var rz = function () { if (alive()) { size(); } };
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
   set("--k", "0"); set("--k2", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();
