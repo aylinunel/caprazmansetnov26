@@ -1,6 +1,6 @@
 # Broadsheet in motion: dynamic page body and full çapraz manşet hero
 
-Date: 2026-11-06 · Status: approved in conversation (sections 1–2), spec awaiting owner review
+Date: 2026-11-06 · Status: approved in conversation (sections 1–2); senior-engineer reviewed (approve with changes, folded in §11); awaiting owner review
 Applies to: `site/` in caprazmansetnov26 and the published "Çapraz Manşet 8.0" artifact
 
 ## 1. Intent
@@ -40,12 +40,13 @@ Markup is built by `fogHero(e)` in `site/js/v7/fog.js`; the WebGL fog and the 3D
 - **Labels below.** The two outlet buttons (`.fh-toggle`, name · side · yerleşim) stay. Initial state:
   neutral, neither pressed, both headlines equal.
 - **Click a label:** fog, sky and the centre band tint to that side's hue (`--left` / `--right`) over
-  ≈ 0.6 s (fog via a new tint uniform; CSS gradient fallback when WebGL is unavailable). The clicked
+  ≈ 0.6 s. No new uniform: the existing `K` uniform already blends warm↔cool, so targets become 0.5 neutral / 0 / 1, mapped by **bloc, not position** (`SPLITPAIR` can put the right-bloc outlet first). CSS gradient fallback when WebGL is unavailable. The clicked
   headline comes forward (`translateZ`, slight scale, full saturation); the other recedes, greys and
   fades to ≈ 0.55. Clicking the pressed label again returns to neutral; clicking the other swaps with a
   slight `rotateY` turn.
-- **Intro zoom (first load of a session):** `#app` starts at scale 0.92 with 28 px corners over a
-  blurred, side-tinted backdrop and grows to full screen (1.4 s, expo.inOut). "Aynı olay, farklı
+- **Intro zoom (first load of a session):** pure CSS keyframes from first paint (not GSAP, which
+  arrives later): `#app` starts at scale 0.92 with 28 px corners over a blurred, side-tinted backdrop
+  and grows to full screen (1.4 s), ending at `transform:none`. "Aynı olay, farklı
   manşet." reveals word by word from blur; the toggle and CTA follow.
 - **Scroll:** hero title parallaxes up (yPercent −60), the card sinks slightly, glass squares flicker.
 
@@ -56,15 +57,19 @@ Markup is built by `fogHero(e)` in `site/js/v7/fog.js`; the WebGL fog and the 3D
   Loader: `motionLoad()` in a new `site/js/v7/motion.js`, same pattern as `G6_SRC` in `graph.js`.
 - **Smooth scroll:** one Lenis instance (duration 1.25, expo ease) driven by `gsap.ticker`;
   `lenis.on("scroll", ScrollTrigger.update)`; in-page `#` links use `lenis.scrollTo`.
-- **Lifecycle:** `motionMount(root)` runs from the existing post-render hook (`app.js` ≈ line 4290,
-  beside `g6Mount`/`dmMount`/`fogMount`). Each mount creates a `gsap.context(root)`; `motionUnmount()`
+- **Lifecycle:** `motionUnmount()` runs at the top of `route()` before `#app.innerHTML` is replaced;
+  `motionMount(view)` runs after `v3After(...)` (≈ app.js:6454), the last pass that changes the page.
+  One debounced `ResizeObserver` on `#view` calls `ScrollTrigger.refresh()` (feed "more", `<details>`,
+  font swap). Each mount creates a `gsap.context(root)`; `motionUnmount()`
   reverts the previous context (kills its ScrollTriggers and tweens) before the next route renders.
 - **Before libraries arrive:** components render at their final, readable state (no `opacity:0`
   waiting); the first mount after load animates from that state.
-- **Page turn between routes:** outgoing view `rotateY(-8deg) translateZ(-120px)` + fade (0.45 s),
-  incoming view slides in from `x: 40` (0.6 s); scroll resets via `lenis.scrollTo(0, {immediate:true})`.
-- **Reduced motion:** not honoured (owner decision). Remove the guards at `app.js:134`, `app.js:5972`
-  and every `@media (prefers-reduced-motion)` block in `styles.css`.
+- **Page turn between routes:** incoming view only (the old view is replaced synchronously and cannot
+  animate out): slides in from `x: 40` + fade (0.6 s), `clearProps:"transform"`. Scroll reset
+  (app.js:6225) becomes `lenis.scrollTo(0,{immediate:true,force:true})` when Lenis exists.
+- **Reduced motion:** not honoured (owner decision). Delete (not stub) `reduce` at app.js:134 and
+  5972, `dmCalm` (dots.js), `g6Calm` (graph.js), `vzCalm` (viz.js) and their branches, and the six
+  `@media (prefers-reduced-motion)` blocks in `styles.css`.
 
 ## 4. Body components (section 2, approved)
 
@@ -82,7 +87,7 @@ styled in a new "Broadsheet" block of `site/styles.css`. Each has a `data-m="<ki
 | Finding scene | wraps existing `findingBlock` | Claim in Newsreader, chart below | Claim pins while chart rows draw in sequence with scroll; key numbers count up |
 | Card cascade | wraps feed/event/outlet cards | Existing cards + dot effect | Staggered rise; pointer-driven 3D tilt (±8°) with light glare |
 | Glass field | `pGlass(n)` | Frosted squares near section heads, side-tinted | Flicker yoyo (opacity 1→0.15, random delays); parallax drift |
-| Footer mark | footer in `core.js` | Three dots + Ç mark + ring | Dots bounce, merge, mark strokes in, ring draws (Petalyx footer sequence) |
+| Footer mark | `footer2()` in `app.js` | Three dots + Ç mark + ring | Dots bounce, merge, mark strokes in, ring draws (Petalyx footer sequence) |
 
 ### Number extraction (for tickets)
 `pNums(text)` in `logic.js` (pure, testable): finds Turkish count phrases such as "72 şüpheli",
@@ -123,8 +128,10 @@ majority bloc of its outlets. Unparseable text falls back to one panel with the 
 | `site/js/v7/press.js` (new) | Component markup helpers (§4) |
 | `site/js/v7/logic.js` | `pNums`, `pSplitPoints` (pure) |
 | `site/js/v7/fog.js` | Hero layout (both headlines + centre band), tint state, tint uniform |
-| `site/js/v7/olay.js`, `home.js`, `kurum.js`, `oruntu.js`, `yontem.js`, `ilan.js`, `core.js` | Use the components (§5); footer mark |
-| `site/js/app.js` | Call `motionUnmount` before render and `motionMount` after; remove reduced-motion guards |
+| `site/js/v7/olay.js`, `home.js`, `kurum.js`, `oruntu.js`, `yontem.js`, `ilan.js` | Use the components (§5) |
+| `site/js/v7/dots.js`, `graph.js`, `viz.js` | Delete `dmCalm`/`g6Calm`/`vzCalm` branches |
+| `public/vendor/` | Local copies of gsap, ScrollTrigger, lenis (G6 precedent); CDN is the fallback |
+| `site/js/app.js` | `motionUnmount` at top of `route()`, `motionMount` after `v3After`; Lenis scroll reset; `footer2()` mark; remove reduced-motion guards |
 | `site/styles.css` | Broadsheet block; remove reduced-motion blocks |
 | `site/head.html` | Newsreader |
 | `pipeline/capraz_pipeline/site.py` | Add `press`, `motion` to `V7_ORDER` (after `fog`) |
@@ -158,3 +165,47 @@ majority bloc of its outlets. Unparseable text falls back to one panel with the 
   Note for that plan: motion libraries load after first paint and are excluded from the 120 KB
   cold-home gate by owner decision; the 2.5 s hero gate still applies.
 - New content, copy or claims: components re-present existing text only.
+
+## 11. Senior-engineer review (2026-11-06): binding changes
+
+Full review: approve with changes. Items already merged above (mount point, incoming-only page turn,
+CSS intro, reuse of `K`, full reduced-motion list, footer location). The rest:
+
+1. **No transformed ancestors.** `#app`, `#view`, `main` carry no transform/filter/will-change after
+   the intro and page turn, or ScrollTrigger pins break. Smoke asserts it after load and after a navigation.
+2. **Hero state machine.** Start `S.k=.5`; keep the sink/dip clock as the "turn"; delete `show()`,
+   `swapped` and `.fh-set{visibility:hidden}` so both headlines stay visible; `is-on` drives only
+   forward/recede; each button's `--on` follows `aria-pressed`. Fixed hero height (`100svh − 64px`)
+   leaves ≈ 434 px at 390×844 → smoke checks the card ends above the dock at 390 and 1280.
+3. **Lenis.** `anchors:false` (routes are `#/…`); only `#bu-hafta` uses `lenis.scrollTo`.
+   `data-lenis-prevent` on `.mdl-box`, `.xfix-f`, `.cm3-dlg`, `.kp` and the 640 px scroll box. Copy
+   the lenis.css rules into `styles.css` (artifact CSP allows no external stylesheets).
+4. **`pNums` contract.** Whitelist nouns (kişi, şüpheli, gözaltı, tutuklama, il, ölü, yaralı, kayıp)
+   with case suffixes stripped; verb map (tutuklandı→tutuklama, gözaltına alındı→gözaltı). Reject and
+   test as negatives: scores "4-1", years "2030'a", ordinals "4. dönemi", "11'leri", decimals
+   "18,3 milyar", ranges "57-58'i", ages "14 yaşındaki". Tickets render only with ≥ 2 hits. No side tint.
+5. **`pSplitPoints` contract.** Split on `;` only outside parentheses. Detect outlets anywhere in a
+   segment by slug or name via `trFold` (so "TRT Haber", "ahaber", "habertürk"/"haberturk", lists joined
+   by "," and "ve", and "diğerleri" are handled); point text stays as written. Giant word = first quoted
+   phrase, else none. Max 5 panels. Fixtures: w10-s5316 (4 panels), w8-s1652 (`;` in parentheses),
+   from `data/reference/narratives-7.json`.
+6. **Escaping.** Custom word splitter works on DOM text nodes (keeps glossary buttons and `mark`),
+   never on HTML strings. Helpers take plain text and `esc()` internally; `*Html` parameters accept only
+   `glossTerms`/`markText` output; ticket labels and chips use `esc(srcName())`.
+7. **Libraries.** Exact URLs: `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js`,
+   `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js` (after gsap),
+   `https://unpkg.com/lenis@1.1.13/dist/lenis.min.js` (global `Lenis`). Local `public/vendor/` copies
+   first so the offline smoke test runs motion. Slide-in components get `overflow-x:clip`.
+8. **First mount after load:** skip elements already in view so they don't flash to their start state.
+
+### Task order (each ends with a senior-engineer review gate)
+| # | Task | Gate checks |
+|---|---|---|
+| 1 | Remove reduced motion; Newsreader + `--serif` | grep finds no `reduced-motion` / `Calm(`; Turkish glyphs render |
+| 2 | `pNums`, `pSplitPoints` + tests | real-narrative fixtures incl. negatives |
+| 3 | `motion.js`: loader, Lenis, lifecycle (no components) | mount/unmount in `route()`; modals scroll; scroll resets; offline fallback; no leaks over hash navigation |
+| 4 | `press.js` components + CSS on event Kısaca | escaping rule; readable without libraries; no transformed pin ancestor; no horizontal scroll at 390 |
+| 5 | Hero both-headlines + tint (`fog.js`) | state machine per item 2; layout fits; no-WebGL fallback |
+| 6 | CSS intro + incoming page turn | no leftover transform; pins work after navigation |
+| 7 | Other pages (one commit each) + footer mark | existing finding/table smoke checks and every route pass |
+| 8 | Performance trace + screenshots | no task > 50 ms at 4× CPU throttle |
