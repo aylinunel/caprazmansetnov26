@@ -257,7 +257,7 @@ The stage-by-stage description is in [`pipeline/README.md`](pipeline/README.md) 
 <summary><b>The experimental AI review (BiasGuard)</b></summary>
 
 ```bash
-python -m biasguard.news inputs --build dist/capraz-7/build --run runs/bg --top 150
+python -m biasguard.news inputs --build dist/capraz-8/build --run runs/bg --top 150
 ```
 
 ```bash
@@ -273,7 +273,7 @@ python -m biasguard.news tasks --run runs/bg --stage review
 Run the advocate and skeptic agents, then:
 
 ```bash
-python -m biasguard.news apply --run runs/bg --out dist/capraz-7/build/biasguard.json
+python -m biasguard.news apply --run runs/bg --out dist/capraz-8/build/biasguard.json
 ```
 
 Each of the most widely covered events is reviewed as one case: every outlet's first headline and lede

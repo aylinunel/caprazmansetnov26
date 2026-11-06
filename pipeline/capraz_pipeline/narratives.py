@@ -1,6 +1,6 @@
 """Anlatı haritası weeks after the hand-coded period (Yöntem § 6, same rules).
 
-    python -m capraz_pipeline.narratives candidates --build ../dist/capraz-7/build --out ../runs/narr
+    python -m capraz_pipeline.narratives candidates --build ../dist/capraz-8/build --out ../runs/narr
     (coding agents write ../runs/narr/coded/<event>.json; see runs/narr/PROMPT.md)
     python -m capraz_pipeline.narratives finalize --out ../runs/narr      -> data/reference/narratives-7.json
 

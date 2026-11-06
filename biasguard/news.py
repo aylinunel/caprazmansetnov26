@@ -6,9 +6,9 @@ cover it. Reviewer outputs come from files (written by Claude Code reviewer agen
 other reviewer that follows ``prompts()``); the engine's own quote, condition and evidence-type
 gates decide every verdict.
 
-    python -m biasguard.news inputs  --build dist/capraz-7/build --run runs/2026-11-04 --top 150
+    python -m biasguard.news inputs  --build dist/capraz-8/build --run runs/2026-11-04 --top 150
     python -m biasguard.news tasks   --run runs/2026-11-04 --stage select|review --batch 10
-    python -m biasguard.news apply   --run runs/2026-11-04 --out dist/capraz-7/build/biasguard.json
+    python -m biasguard.news apply   --run runs/2026-11-04 --out dist/capraz-8/build/biasguard.json
 
 A missing or invalid reviewer file never counts as a negative: the event is
 ``analysis_incomplete`` (some output present) or ``not_attempted`` (none).
