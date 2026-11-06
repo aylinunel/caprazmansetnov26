@@ -1,107 +1,261 @@
-# Scalable architecture for Çapraz Manşet — DRAFT for principal-architect review
+# Scalable architecture for Çapraz Manşet
 
-Status: draft (pre-review) · Date: 2026-11-06 · Slug: scalable-architecture
+Status: **council-approved recommendation, awaiting owner decision** · Date: 2026-11-06 · Slug: `scalable-architecture`
+
+Decision council: Principal Architect (chair), Design Critic 1 (phone reader), Design Critic 2 (system & contract).
+Process: draft → three independent reviews → one voting round on ten contested points → this record.
+Dissent is recorded where a vote was not unanimous.
 
 ## 1. Requirements
 
-Functional (unchanged): collect headlines from ~37 Turkish outlets; group them into events; score, classify,
-code and analyse; experimental AI review (BiasGuard); a public site with the hero, weekly splits, event and
-outlet pages, four Örüntüler question pages, networks and charts; an owner-only review desk.
+**Functional (unchanged).** The system:
+- collects headlines from about 37 Turkish outlets;
+- groups them into events;
+- scores, classifies, codes and analyses them;
+- runs the experimental AI review (BiasGuard);
+- publishes the site (hero, weekly splits, event pages, outlet pages, Örüntüler, networks);
+- serves the owner-only review desk.
 
-Non-functional (owner, 2026-11-06):
-- **Live daily, growing archive**: a scheduled daily run; archive grows ≥ 1 year (≈ 1.5M headlines, ≈ 30k events, ≈ 600k ledes per year at today's rate of ~3.8k headlines/day).
-- **Hosting: static-only now, full backend later.** No server short term; the design must not need a rewrite when a backend arrives.
-- Efficiency first: phone readers on mobile data are the primary audience (spec §1).
-- Keep the editorial gate: hand-coded/supplied material unchanged and labelled; machine output labelled; AI output labelled YZ.
+**Non-functional (set by the owner):**
+- **Runs daily and the archive keeps growing.** One year is about 1.5M headlines and 30k events (about 3.9k headlines a day).
+- **Static hosting now, a full back end later.** The back end must not force a rewrite of the site.
+- **Efficiency comes first.** Phone readers on mobile data are the main audience.
+- **The editorial gate stays.** Hand-coded material is unchanged and labelled; machine output is labelled *otomatik*; AI output is labelled *YZ*.
 
-## 2. Current landscape (measured)
+**Reader budgets (CI gates):**
 
-| Area | Today | Problem at 1 year |
+| Gate | Limit |
+|---|---|
+| Cold home page (HTML, CSS, home JS and `home.json`) | ≤ 120 KB gz |
+| Hero split visible on slow 4G | ≤ 2.5 s |
+| One event page | ≤ 150 KB gz after the manifest |
+
+All sizes in this record are gzip transfer sizes.
+
+## 2. Measured landscape (verified against the code)
+
+- **Client data.** `loader.js` downloads every `a-*.bin` pack before the first render: about 17 MB gz and 245,935 rows. `core.bin` also carries every event's member list, which would be about 10 MB at 30k events. `app.js` and v7 scan the full `D.A` array about 27 times. A year's archive would mean 100 MB or more, which no phone can handle.
+- **Client code.** One 941 KB HTML file with all the JS and CSS inline. Nothing is cached separately from the data.
+- **Pipeline.** Score and classify are already cached per day (`DayCache`, ADR-0002). These stages still cost more as the window grows:
+  - `classify.train`
+  - global `cluster.cluster` and its TF-IDF fit over every title
+  - wording TF-IDF and GSDMM topics
+  - PCA, plus Mantel and Spearman tests at 9,999 permutations
+  - `store.homes()`, which reads the whole archive on every ingest
+- **Correctness gap.** Several event fields depend on the whole window:
+  - `bs` and `ns` use an `active` value computed over the whole window;
+  - keywords and the clustering weights also come from the whole window.
+
+  So old events change as the archive grows, which defeats immutable files and stable ids.
+- **State gap.** Event-id state (`events-members.json`) is written to `out/`, so a fresh CI checkout resets the ids. There is also no scheduled job and no persistent store in CI.
+- **BiasGuard coupling.** `biasguard/news.py` reads the packs and `core.E`. Reviews carry no membership hash, so a review that no longer matches its event goes unnoticed.
+
+## 3. Options considered
+
+**A: static data contract (chosen).**
+- The pipeline computes every number the site shows.
+- It publishes small, versioned JSON files at the paths a future back end will serve.
+- Pages fetch only what they display.
+
+**B: static files plus in-browser analytics (rejected).**
+- Parquet files queried in the browser with DuckDB-WASM.
+- Rejected because it downloads 3–6 MB of WASM before the first chart, needs range requests (the artifact host can't serve them), and adds a third copy of the analysis logic.
+
+**C: back end now (rejected).**
+- Breaks the owner's static-hosting constraint.
+- Adds database and server operations for a one-person project, while the workload is batch anyway.
+
+## 4. Decision
+
+### 4.1 Modules: three (unanimous)
+
+| Module | Owns | Produces |
 |---|---|---|
-| Client data | every visit downloads all article packs (a-*.bin ≈ 17 MB gz, 245,935 rows) and decodes them into memory; ledes ≈ 17 MB more on demand; 23 full-array scans in app.js compute findings at page load | ≈ 100 MB+ download, hundreds of MB heap, multi-second scans: unusable on phones |
-| Client code | one 941 KB HTML page, all CSS + ≈ 13.5k lines JS inline, parsed on every visit | grows with every feature; no caching of code separate from data |
-| Pipeline | day-partitioned store (good); every build recomputes all stages over the full window; clustering windowed in 48 h blocks (good); event ids reconciled with the previous build | daily full rebuild grows linearly (≈ 12 min first run at 9 weeks → hours at a year) |
-| Analyses | computed partly in the pipeline, partly re-derived in the browser from raw articles | duplicated logic (Python and JS), browser cost |
-| BiasGuard | batch over top events, agents run by hand | fine as batch; needs a queue for daily new events |
-| Publishing | `site.py` assembles one HTML + packs; artifact hosting needs base64 (+33 %) | all-or-nothing publish, no versioning or rollback |
+| `pipeline/` | the day store, analysis, run state, the BiasGuard queue | tables and per-event summaries in `state/` and the store |
+| `publish/` | the public data contract, manifest, checks and budgets | static files under `/api/v1/` |
+| `site/` | pages, design system and charts | reads `/api/v1/` only, through one `data.get(kind, key)` module |
 
-## 3. Key trade-offs
+Collection stays in its own repo. The collector's files are the input.
 
-- **Build time vs runtime**: precompute everything a page shows (static) vs query on demand (backend). Short term must be build-time.
-- **File count vs request count**: one file per event (30k+ files/year; Cloudflare Pages caps a deploy at 20,000 files) vs weekly shards (≈ 52/year, fewer requests, larger downloads).
-- **Simplicity vs flexibility**: plain JSON shards (zero client deps) vs Parquet + DuckDB-WASM in the browser (ad-hoc queries, but 3–6 MB WASM and HTTP range requests that artifact hosting doesn't support).
-- **Incremental vs full recompute**: incremental daily runs need stable state (event ids, cluster boundaries) and a periodic full rebuild to correct drift.
+**Rules:**
+- The site never reads raw articles.
+- `publish/` is the only thing that writes public data.
+- The scorer stays as shared JS in `shared/analysis/rules.cjs` (ADR-0002).
+- Findings and aggregates move to Python.
+- `logic.js` keeps view logic only.
+- Adding an outlet is a data-only change.
 
-## 4. Options
+### 4.2 Public data contract (`/api/v1`)
 
-### A. Recommended — "Static data contract": incremental pipeline + analytical store + sharded, API-shaped static files
-
-```
-collector ─▶ ingest(day) ─▶ store (Parquet partitions by day; DuckDB file as the analytical store)
-                │
-     incremental stages per new day (+ 48 h overlap for clustering)
-     score · classify · cluster → events (stable ids) · topics
-                │
-     aggregates from per-day / per-event summaries (cheap, not from raw rows)
-                │
-     BiasGuard queue (new events above threshold) ──▶ reviews (async, never blocks publish)
-                │
-     publisher: writes the PUBLIC DATA CONTRACT as files under /api/v1/… (versioned dir + manifest pointer)
-                │
-     static site (route-split ES modules) fetches only what the page needs
-```
-
-Public data contract (same paths a future backend will serve):
-
-| Path | Content | Size target |
+| Path | Contents | Budget |
 |---|---|---|
-| `/api/v1/manifest.json` | build id, window, counts, shard list, hashes | < 5 KB, no-cache |
-| `/api/v1/home.json` | hero split, weekly splits feed, how-it-works numbers, agenda network | < 150 KB |
-| `/api/v1/outlets.json` | registry + per-outlet summary metrics | < 50 KB |
-| `/api/v1/findings/{page}.json` | precomputed finding blocks: claim numbers, chart rows, table rows, how-text inputs | < 200 KB each |
-| `/api/v1/events/{yyyy-ww}.json` | event list rows for one ISO week (title, outlets, p, cov, bs, topics) | ≈ 100–300 KB |
-| `/api/v1/event/{yyyy-ww}.json` | event details for one week: headlines, pairs, timing, narrative coding, reviews | ≈ 0.5–1.5 MB |
-| `/api/v1/outlet/{slug}.json` | outlet page: Kısaca inputs, recent splits, findings, top headlines | < 150 KB |
-| `/api/v1/ledes/{yyyy-ww}.json` | ledes, only when a page asks | on demand |
-| `/api/v1/search/{prefix}.json` | prefix-sharded search index (folded Turkish tokens → event ids) | small shards |
+| `manifest.json` (no-cache) | `build` id; window; frozen-vocabulary version; the 72-hour cutoff; file names with their hashes | < 5 KB |
+| `home.json` | everything the hero and the first six feed cards draw (precomputed `compareHeads`, `splitCard`, `whatDiffers`); how-it-works numbers; the agenda network | < 100 KB |
+| `outlets.json` | outlet registry and summary metrics | < 50 KB |
+| `findings/{page}.json` | finding blocks: claim, chart rows, table rows, how-text inputs, date range covered | < 200 KB |
+| `events/{yyyy-ww}.json` | event list rows for one ISO week | about 100 KB |
+| `event/{yyyy-mm-dd}.json` | detail for events first published that day (about 80) | ≤ 150 KB, hard gate |
+| `event-deep/{yyyy-mm-dd}.json` | created only when a day's file fails its budget: the publisher moves narrative, pairs, timing and reviews here, and the page fetches it when a `<details>` opens | on demand |
+| `outlet/{slug}.json` | outlet page | < 150 KB |
+| `ledes/{yyyy-mm-dd}.json` | ledes, only when a page asks | on demand |
+| `aliases.json` | old event id → new id after merges and splits | small |
+| `reviews-overlay.json` (no-cache) | YZ rejections and corrections | small |
+| `status.json` | stage times, counts, freshness, LLM calls and cost | small |
 
-- Files are content-hashed and immutable; only `manifest.json` changes per publish → CDN-friendly, atomic, instant rollback (repoint manifest).
-- The browser never loads the full archive; analyses are computed once in the pipeline (single implementation, Python), the site renders them.
-- Weekly shards keep file count ≈ 3 × 52/year + 33 outlets + search shards — far under host limits.
-- Front end: bundled with esbuild into route-level ES modules (home, events, event, outlet, patterns, method, notices) + shared core; CSS split per route; G6 and WebGL fog stay lazy.
-- Later backend: implement the same `/api/v1` paths over DuckDB/Postgres; the client switches `API_BASE`. Search and archive queries move server-side first.
+**How every file is built:**
+- Each file carries `build` and a JSON Schema version.
+- Each block carries `src` from the existing labels (`el` / `otomatik` / `YZ`).
+- YZ blocks also carry a `review` status.
+- File names are content-hashed. Unchanged data keeps its name, because writers produce identical bytes for identical data (`mtime=0`, sorted output).
+- The schemas live in `shared/contract/*.schema.json`. Python validates every file against them before publishing.
+- Generated JSDoc `@typedef`s plus `// @ts-check` give the plain-JS site types without a build step.
+- A Node CI test validates fixture files.
 
-Failure modes: daily run fails → manifest still points at last good build (site unchanged), alert; clustering boundary drift → 48 h overlap re-cluster + weekly full rebuild of the last 4 weeks + monthly full rebuild; BiasGuard/LLM outage → queue backlog, publish proceeds with "not reviewed yet"; a shard fails to load → that section shows an inline error and retry, other sections render; schema change → `/api/v2` alongside v1.
+### 4.3 Event identity and URLs (one-way door)
 
-### B. Static + in-browser analytics (Parquet over HTTP + DuckDB-WASM)
-Ship Parquet partitions; the browser queries them with DuckDB-WASM. Pros: arbitrary queries, one data format end-to-end. Cons: 3–6 MB WASM before first chart on phones, range requests unsupported by artifact hosting, analysis logic moves into SQL in the browser (third implementation). Good for a researcher tool, wrong for everyday phone readers.
+- **Ids:** `s<n>` ids are kept and never reused.
+- **Day:** each event gets the day it was first published, and that day never moves.
+- **URL:** `#/olay/2026-11-06/s1234`. A cold deep link costs one fetch after the manifest.
+- **Old links:** old `#/olay?e=` links resolve through a small redirect index during migration.
+- **Merges and splits:** these write `aliases.json` and a map from old ids to new ones.
+- **Id registry:** lives in a persisted `state/` folder, not in `out/`.
 
-### C. Backend now (Postgres + API + server rendering)
-Pros: fastest path to search and personalised features. Cons: contradicts the short-term static constraint, adds ops (DB, server, backups, uptime) for a one-person project, and the analytical workload is batch anyway.
+### 4.4 Incremental daily run
 
-## 5. Recommended bounded contexts (modular monolith, one repo)
+- **Clustering:**
+  - The TF-IDF vocabulary and weights are frozen on a reference period and refitted monthly.
+  - Only the last 72 hours are re-clustered; older events are closed.
+- **Late articles:** a late article joins a closed event when it is similar enough to the event's most typical headline. Otherwise it waits for the monthly rebuild. Both cases are counted.
+- **Frozen values:**
+  - Each event's `active`, `bs` and `ns` are frozen using the 28 days ending on the event's day.
+  - The numbers shown on the hero and feed cards are frozen too, so a reader who returns the next day sees the same counts.
+- **Training:** `classify.train` runs again only when the labels or the model version change.
+- **Aggregates are built from a per-event summary table (about 30k rows), never from raw headlines:**
 
-| Context | Owns | Interface out |
+  | Aggregate | How it is computed |
+  |---|---|
+  | φ correlations | additive 2×2 counts, updated daily |
+  | Medians, PCA, permutation tests | weekly, over fixed windows (12 weeks and all time); each finding shows its date range |
+  | GSDMM topics | fitted monthly; new headlines assigned daily |
+
+- **Ingest:** `store.homes()` becomes an incremental index.
+- **Recorded every run:** the frozen-vocabulary version, the 72-hour cutoff and the 28-day window, in `manifest.json` and `runs/<date>.json`.
+
+### 4.5 Run state and the daily job
+
+- **Where state lives:** the store, `state/`, models and the DayCache live on a `data` branch, the same pattern the collector's `backfill-data` branch already uses. GitHub release assets hold only large model files.
+- **Daily GitHub Actions run:**
+  1. restore
+  2. ingest
+  3. incremental build
+  4. check against the schemas
+  5. publish checks
+  6. publish
+  7. save state
+- **Publish checks.** Publishing is blocked unless all of these pass:
+  - every file matches its schema;
+  - the headline count is within ±40 % of the 7-day median;
+  - every active outlet is present;
+  - fewer than 2 % of event ids changed;
+  - the size budgets pass;
+  - the deploy stays under the host's file limit.
+
+  If a check fails, the live site stays on the last good build.
+- **Overlapping runs:** a `concurrency` group stops two runs from overlapping.
+- **Failures:** a failed run sends an email, and the job fails when the data is more than 36 hours old.
+- **Freshness note:** the site shows a plain date line, "Son güncelleme: 5 Kasım", not a warning.
+
+### 4.6 Rollback and caching
+
+- **Pages or Cloudflare:**
+  - Keep the hashed files of the last 7 manifests, so readers on an older manifest don't hit 404s.
+  - Unchanged files keep their names, so the extra file count stays small.
+  - Rollback means pointing at the previous manifest, or using the host's own rollback.
+- **Artifact edition (511-file limit):**
+  - It holds a rolling 90 days.
+  - Rollback means republishing the previous Actions artifact.
+- **Browser:**
+  - Files fetched during a session are cached in memory, so back and forward cost nothing.
+  - Routes become async, with a skeleton for each section and an inline error with retry.
+
+### 4.7 Editorial decisions and BiasGuard
+
+- **Decisions file.** `data/reference/decisions.jsonl` is append-only and is the source of truth.
+  - The daily run reads it.
+  - A rejection made on the desk triggers a `workflow_dispatch` job that republishes only `reviews-overlay.json`, so rejected YZ output leaves public pages within minutes.
+  - The browser never holds a token.
+- **BiasGuard:**
+  - reads the store, not the packs;
+  - takes new events above the threshold from a queue;
+  - has a daily LLM cost cap recorded in `status.json`;
+  - stores an event membership hash with each review, so a review that no longer matches its event is caught;
+  - never blocks a publish: pages show "henüz incelenmedi" (not reviewed yet).
+
+### 4.8 Front end
+
+- **Now:**
+  - Move the inline JS and CSS into cacheable external files.
+  - Add a `<noscript>` line and the hero headline pair as static text in the HTML shell.
+  - Fog, G6 and ledes load after the first paint.
+  - Fog, G6 and ledes are skipped when the reader has data saving (`saveData`) or reduced motion on.
+- **Deferred, with a trigger:**
+  - Split the code per route once home JS goes over 60 KB gz after the data move.
+  - Add a full prerendered `index.html`, built in Node from the existing v7 render functions, only if the 2.5-second gate fails.
+- **Search:** no index in v1. `/ara` filters the week lists and outlets already loaded, and says plainly which weeks it searched. Full-archive search arrives with the back end.
+
+### 4.9 Back end later
+
+- It serves the same `/api/v1` paths from DuckDB or Postgres, reading the store, and the site switches only its API base URL.
+- Search and full-archive queries move there first.
+- DuckDB is added as a query engine over the store files, not as a new store.
+
+## 5. Migration order (no big bang)
+
+| Step | Change | Notes |
 |---|---|---|
-| Collection | feeds, sitemaps, raw runs | raw run files |
-| Store | day partitions (Parquet), DuckDB analytical file, ids | tables: articles, events, memberships, scores |
-| Analysis | score, classify, cluster/events, topics, aggregates (incremental) | tables + summaries |
-| Review | BiasGuard queue + editorial decisions (owner) | review tables, labelled YZ |
-| Publishing | public data contract `/api/v1`, manifest, versions | static files (later: API) |
-| Presentation | site modules, design system, charts | consumes `/api/v1` only |
+| 0 | Move the id state out of `out/`, persist the store on the `data` branch, and add the scheduled daily full rebuild | Gives about 2 months of headroom: full rebuilds stay workable to about 500k headlines |
+| 1 | Freeze the event fields, the day keys and the new URL scheme, with `aliases.json` | **Risky** |
+| 2 | Add the schemas and the `/api/v1` writer alongside the packs, with tests that the Python findings match the JS findings | |
+| 3 | Move pages over (home first, then events, event, outlet, findings), point BiasGuard at the store, add the overlay, and stop shipping packs | |
+| 4 | Incremental clustering and aggregates, with the weekly and monthly rebuilds | **Risky** |
+| 5 | External JS and CSS files now; per-route split when its trigger fires | |
+| 6 | Back end behind the same contract | |
 
-Rule: Presentation never reads raw articles; Publishing is the only producer of public data.
+**One-way doors:**
+- the event URL and id scheme;
+- the contract schemas, once anything links to or reads them.
 
-## 6. Migration path (no big bang)
+The store format, hashing, bundling and DuckDB can all be undone.
 
-1. Publishing: add the `/api/v1` writer next to today's packs; site keeps working.
-2. Presentation: move pages one by one to contract files (home first: biggest win), delete their full-archive scans; when the last page moves, stop shipping article packs.
-3. Front end: introduce esbuild + route modules (mechanical split of v7/*.js, app.js last).
-4. Analysis: incremental daily mode (new days + overlap), weekly/monthly rebuilds; DuckDB/Parquet store.
-5. Scheduler: daily GitHub Actions run → publish → manifest swap.
-6. Later: backend serving the same contract; search first.
+## 6. Vote record
 
-## 7. Open questions for review
-- Weekly vs daily shards for event details at 1-year scale?
-- DuckDB file vs Parquet-only store?
-- Where do editorial decisions (owner review desk) live in static-only mode (artifact db vs repo file)?
+| # | Point | Architect | Critic 1 | Critic 2 | Result |
+|---|---|---|---|---|---|
+| 1 | Day in the URL | adopt | adopt | adopt | unanimous |
+| 2 | Keep 7 manifests' files | amend: keep 1 | adopt | adopt (artifact edition: redeploy) | majority: 7 on Pages; redeploy for the artifact edition |
+| 3 | Event detail | one daily file with a budget gate | one daily file with a gate | always two tiers | majority: one file; automatic split to `event-deep` over budget |
+| 4 | Corrections | JSONL plus overlay | both | both, one source | unanimous |
+| 5 | Prerender and budget | budget plus noscript; defer prerender | same | budget; prerender via Node or defer | unanimous: budget gate, prerender deferred |
+| 6 | Search | none | one `search.json` | none (filter on the client) | majority: none in v1. **Dissent (Critic 1):** a silent miss on an old event is worse than no box, so `/ara` must say which weeks it searched |
+| 7 | Three modules | adopt | adopt | adopt | unanimous |
+| 8 | Shared JS scorer; findings in Python | adopt | adopt | adopt | unanimous |
+| 9 | Types | JSON Schema plus JSDoc | TS (for the gate) | JSON Schema plus generated JSDoc | majority: JSDoc; Critic 1's gate concern is met by schema checks before publish |
+| 10 | Provenance, `status.json`, LLM cap, 36 h | adopt | adopt (plain date line) | adopt (reuse existing labels) | unanimous, with both amendments |
+
+**Correction during the council.** Critic 2 caught that step 0's headroom is about 2 months, not the 4 the architect first estimated (245,935 headlines after 9 weeks, about 3.9k a day).
+
+## 7. Risks
+
+1. Event fields that depend on the window, and drifting TF-IDF weights, silently change old events. Mitigation: step 1, plus the publish check that blocks when 2 % or more of ids change.
+2. Ids get lost if state stays in `out/`. Mitigation: step 0.
+3. Dropping the packs breaks BiasGuard and any finding not yet moved. Mitigation: drop the packs last (step 3), with parity tests.
+4. The artifact edition's 511-file limit. Mitigation: a rolling 90 days.
+5. `homes()` and the 9,999-permutation tests dominate daily runtime. Mitigation: an incremental index and weekly fixed-window runs.
+6. Unattended runs publish partial data. Mitigation: the publish checks, `status.json`, alerts and the freshness line.
+7. Over-building delays the change readers actually feel. Mitigation: steps 0–3 come first; the deferred items each have a trigger.
+
+## 8. Owner decisions needed
+
+- Which time window each finding covers: last 12 weeks, all time, or both.
+- Approval of the new event URL scheme (a one-way door).
+- The monthly LLM budget for BiasGuard (sets the daily cap).
