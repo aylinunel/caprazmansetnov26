@@ -377,6 +377,7 @@ Every number on the site is computed from the data at page load. Nothing is type
 |---|---|---|
 | Logic | `node --test site/tests/logic.test.cjs` | 21 tests: redirect table, weekly splits, "what differs" rules, outlet summary bands, Turkish suffixes, glossary wrapping |
 | Smoke | `node site/tests/smoke.cjs public <outDir> [routes…]` | every route at 1280 px and 390 px, light and dark: no console errors, no horizontal scroll, event-page section order, no statistical jargon in finding claims, a table for every chart, 44 px touch targets, glossary keyboard access, the hero toggle, feed behaviour, chart labels never clipped |
+| Perf | `node site/tests/perf.cjs public [route]` | scrolls a route top to bottom at 4x CPU throttle; fails on any long task over 50 ms |
 | Pipeline | `cd pipeline && python -m unittest discover -s tests` | offline pipeline tests |
 
 ---
