@@ -4848,10 +4848,11 @@ function pgSource(q) {
   var evs = orEvents(), mine = evs.filter(function (e) { return e.s.indexOf(k) >= 0; }), dl = kuDil(k), rr = rank5Rows().filter(function (x) { return x.s === k; })[0];
   var kis = outletKisaca({ name: p.n, events: mine.length, total: evs.length, mean: dl && dl.row.mean, blocMean: dl && dl.bl, placed: placed,
     nb: rr ? rr.nb.slice(0, 2).map(srcName) : [] });
-  h += '<section class="sec v7-kisaca"><h2>Kısaca</h2><ul class="v7-brief">' + kis.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></section>";
+  h += '<section class="sec v7-kisaca">' + pHead(p.n, "Kısaca") + pLead(kis.join(" ")) +
+    pTickets([{ n: v3haberCount(k, st.n), label: "haber" }, { n: mine.length, label: "olay" }]) + "</section>";
   var rs = recentSplits(evs, k, { bloc: function (s) { return SRC[s] && SRC[s].lean != null ? bloc(s) : "none"; },
     load: function (e, s) { var a = artOf(e, s); return a ? a.v : null; }, min: 20 });
-  if (rs.length) h += '<section class="sec"><h2>Son ayrışan başlıkları</h2><p class="sub">Bu kurumun, karşı yerleşimdeki bir kurumla başlık dilinin en çok ayrıştığı son beş olay.</p><div class="v7-fg">' +
+  if (rs.length) h += '<section class="sec">' + pHead(p.n, "Son ayrışan başlıkları") + '<p class="sub">Bu kurumun, karşı yerleşimdeki bir kurumla başlık dilinin en çok ayrıştığı son beş olay.</p><div class="v7-fg" data-m="cascade">' +
     rs.map(function (x) {
       var a = artOf(x.e, k), b = artOf(x.e, x.other);
       return '<a class="v7-fc" href="#/olay?e=' + x.e.i + '"><h3 class="v7-fc-t">' + esc(storyLabel(x.e, 90)) + "</h3>" + splitCard(x.e, [k, x.other], { small: true, link: false }) +

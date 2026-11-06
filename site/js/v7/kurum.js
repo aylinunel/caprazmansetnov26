@@ -63,6 +63,6 @@ function kurumFindings7(s) {
     viz: fig("cfirst", "ilk veren payı · bu kurum ve kurumların ortancası"),
     read: "Nokta bu kurum, dikey çizgi kurumların ortancası (" + orPc(fs.med) + "). " + kuLink("hiz", "hiz-ilk", "Bütün kurumlarla ilk veren payı →"),
     table: vzTable(["", "İlk veren payı"], [[name, orPc(fs.v)], ["Kurumların ortancası", orPc(fs.med)]]) });
-  return '<div class="v7-kurum-lines">' + blocks + '<section class="sec v7-more"><h2>Diğer sayılar</h2><ul class="or-how">' +
+  return '<div class="v7-kurum-lines">' + blocks + '<section class="sec v7-more">' + pHead(name, "Diğer sayılar") + '<ul class="or-how">' +
     L.map(function (x) { return "<li" + (x.indexOf("yz-badge") >= 0 ? ' class="yz"' : "") + ">" + x + "</li>"; }).join("") + "</ul></section></div>";
 }

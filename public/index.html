@@ -2403,6 +2403,10 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 .cc-glare{position:absolute;left:50%;top:50%;width:120%;aspect-ratio:1;border-radius:50%;pointer-events:none;opacity:0;--g:var(--raise);
   background:radial-gradient(closest-side,color-mix(in srgb,var(--g) 55%,transparent),transparent)}
 :root[data-theme="dark"] .cc-glare{--g:var(--ink)}
+/* finding scene: the claim pins over its chart (desktop), so it carries the page colour */
+.v7-find[data-m] .v7-claim{position:relative;z-index:2;background:var(--paper)}
+.v7-claim.is-pin{box-shadow:0 1px 0 var(--line),0 -24px 0 var(--paper)}
+.sc-n{font-variant-numeric:tabular-nums}
 section.v7-how{position:relative;overflow-x:clip;margin:0;font-size:inherit}
 .wrap.page.v7-home{padding-inline:24px}
 /* glass field near the section heads */
@@ -9030,10 +9034,11 @@ function pgSource(q) {
   var evs = orEvents(), mine = evs.filter(function (e) { return e.s.indexOf(k) >= 0; }), dl = kuDil(k), rr = rank5Rows().filter(function (x) { return x.s === k; })[0];
   var kis = outletKisaca({ name: p.n, events: mine.length, total: evs.length, mean: dl && dl.row.mean, blocMean: dl && dl.bl, placed: placed,
     nb: rr ? rr.nb.slice(0, 2).map(srcName) : [] });
-  h += '<section class="sec v7-kisaca"><h2>Kısaca</h2><ul class="v7-brief">' + kis.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></section>";
+  h += '<section class="sec v7-kisaca">' + pHead(p.n, "Kısaca") + pLead(kis.join(" ")) +
+    pTickets([{ n: v3haberCount(k, st.n), label: "haber" }, { n: mine.length, label: "olay" }]) + "</section>";
   var rs = recentSplits(evs, k, { bloc: function (s) { return SRC[s] && SRC[s].lean != null ? bloc(s) : "none"; },
     load: function (e, s) { var a = artOf(e, s); return a ? a.v : null; }, min: 20 });
-  if (rs.length) h += '<section class="sec"><h2>Son ayrışan başlıkları</h2><p class="sub">Bu kurumun, karşı yerleşimdeki bir kurumla başlık dilinin en çok ayrıştığı son beş olay.</p><div class="v7-fg">' +
+  if (rs.length) h += '<section class="sec">' + pHead(p.n, "Son ayrışan başlıkları") + '<p class="sub">Bu kurumun, karşı yerleşimdeki bir kurumla başlık dilinin en çok ayrıştığı son beş olay.</p><div class="v7-fg" data-m="cascade">' +
     rs.map(function (x) {
       var a = artOf(x.e, k), b = artOf(x.e, x.other);
       return '<a class="v7-fc" href="#/olay?e=' + x.e.i + '"><h3 class="v7-fc-t">' + esc(storyLabel(x.e, 90)) + "</h3>" + splitCard(x.e, [k, x.other], { small: true, link: false }) +
@@ -11234,13 +11239,13 @@ function yzBlock(innerHtml, title) {
   return '<section class="yz">' + (title ? "<h3>" + esc(title) + " " + yzBadge() + "</h3>" : "") + innerHtml + "</section>";
 }
 
-/* One finding: claim, picture, how to read it, why it matters, how it was measured.
+/* One finding (a broadsheet finding scene, MOTION_K.scene): claim, picture, how to read it, why it matters, how it was measured.
    f = {id, claim, viz, read, means, example (event id|null), how, table}; all html except example. Missing parts are omitted. */
 function findingBlock(f) {
   var why = f.means || f.example ? '<details class="v7-why"><summary>Neden önemli?</summary>' + (f.means ? '<p class="v7-means">' + glossTerms(f.means) + "</p>" : "") +
     (f.example ? '<p><a href="#/olay?e=' + encodeURIComponent(f.example) + '">Bir örnek olay →</a></p>' : "") + "</details>" : "";
   var tbl = f.table ? '<details class="v7-tbl"><summary>Tabloyu göster</summary>' + f.table + "</details>" : "";
-  return '<section class="v7-find" id="' + esc(f.id || "") + '"><p class="v7-claim">' + glossTerms(f.claim || "") + "</p>" +
+  return '<section class="v7-find" data-m="scene" id="' + esc(f.id || "") + '"><p class="v7-claim">' + glossTerms(f.claim || "") + "</p>" +
     '<div class="v7-viz">' + (f.viz || "") + "</div>" + (f.read ? '<p class="v7-read">' + f.read + "</p>" : "") + why +
     (f.how || tbl ? '<details class="v7-how"><summary>Nasıl ölçtük?</summary>' + (f.how || "") + tbl + "</details>" : "") + "</section>";
 }
@@ -13682,7 +13687,7 @@ function kurumFindings7(s) {
     viz: fig("cfirst", "ilk veren payı · bu kurum ve kurumların ortancası"),
     read: "Nokta bu kurum, dikey çizgi kurumların ortancası (" + orPc(fs.med) + "). " + kuLink("hiz", "hiz-ilk", "Bütün kurumlarla ilk veren payı →"),
     table: vzTable(["", "İlk veren payı"], [[name, orPc(fs.v)], ["Kurumların ortancası", orPc(fs.med)]]) });
-  return '<div class="v7-kurum-lines">' + blocks + '<section class="sec v7-more"><h2>Diğer sayılar</h2><ul class="or-how">' +
+  return '<div class="v7-kurum-lines">' + blocks + '<section class="sec v7-more">' + pHead(name, "Diğer sayılar") + '<ul class="or-how">' +
     L.map(function (x) { return "<li" + (x.indexOf("yz-badge") >= 0 ? ' class="yz"' : "") + ">" + x + "</li>"; }).join("") + "</ul></section></div>";
 }
 
