@@ -3,7 +3,7 @@
 ## Active features
 | Slug | Description | Status |
 |---|---|---|
-| [scalable-architecture](scalable-architecture.md) | Static data contract (`/api/v1`), incremental daily pipeline, durable run state, reader budgets | Council-approved, awaiting owner |
+| [scalable-architecture](scalable-architecture.md) | Static data contract (`/api/v1`), incremental daily pipeline, durable run state, reader budgets | Approved (council + owner) |
 
 ## Cross-cutting principles
 - Readers never download the archive: the pipeline computes, `publish/` writes the contract, the site renders.

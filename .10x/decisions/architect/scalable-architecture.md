@@ -1,6 +1,6 @@
 # Scalable architecture for Çapraz Manşet
 
-Status: **council-approved recommendation, awaiting owner decision** · Date: 2026-11-06 · Slug: `scalable-architecture`
+Status: **approved by council and owner** · Date: 2026-11-06 · Slug: `scalable-architecture`
 
 Decision council: Principal Architect (chair), Design Critic 1 (phone reader), Design Critic 2 (system & contract).
 Process: draft → three independent reviews → one voting round on ten contested points → this record.
@@ -254,8 +254,23 @@ The store format, hashing, bundling and DuckDB can all be undone.
 6. Unattended runs publish partial data. Mitigation: the publish checks, `status.json`, alerts and the freshness line.
 7. Over-building delays the change readers actually feel. Mitigation: steps 0–3 come first; the deferred items each have a trigger.
 
-## 8. Owner decisions needed
+## 8. Owner decisions (2026-11-06)
 
-- Which time window each finding covers: last 12 weeks, all time, or both.
-- Approval of the new event URL scheme (a one-way door).
-- The monthly LLM budget for BiasGuard (sets the daily cap).
+- **Findings window: all data compiled.** Every finding covers the whole archive. This supersedes the "12 weeks and all time" windows in §4.4.
+  - Medians and p75 lead-lag come from per event × outlet rows; φ from additive 2×2 counts; PCA from per-outlet aggregates. All are recomputed daily.
+  - Mantel and Spearman tests run on outlet × outlet matrices, so their cost does not grow with the archive.
+  - Wording similarity is stored as outlet-pair sums when each event closes.
+  - GSDMM and TF-IDF are refitted monthly. New headlines are assigned to topics daily. The topic-id map lives in `state/`, with aliases.
+  - On phones each claim shows "n olay · <date>'ten beri"; `computedAt` and per-outlet n sit in the how-text fold. The stamp fields are in the schema.
+  - Effect sizes come first, in plain Turkish. `findings-history.json` is append-only and loads only on request.
+  - The monthly refit passes the same publish checks as the daily run.
+- **Event URL `#/olay/{day}/s<n>`: approved.**
+- **BiasGuard budget (council recommendation): $50–100 a month on a mid-tier model, with a $5 daily cap.**
+  - One event costs about 54k tokens in and 4k out. About 300 events a month, which comes to roughly $80 a month (about $55 with the catalog cached) at an assumed $3/$15 per MTok.
+  - A top-tier model would need $300–450 a month.
+  - Review rule: once, at close (72 h); 12 or more outlets with both blocs covered; top 10 a day, at most 15; re-review if membership changes by more than 20 %.
+  - When the cap is hit, events queue and show "henüz incelenmedi" (event page only). Events dropped after 7 days show "incelenmedi".
+  - The queue and review keys live in `state/`. Measured token usage is logged per call, and the cap is checked before each call. The catalog goes first in the prompt so caching applies.
+  - Kill switch: if the measured month yields about 0 supported findings, spending pauses and the owner gets a report.
+
+Plan page: https://claude.ai/artifact/LJr9GicPyfhJuRuotwN4tq
