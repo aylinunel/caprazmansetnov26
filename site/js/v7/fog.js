@@ -1,6 +1,7 @@
-/* v7 fog hero: the lead event's split card as the moving layer of a Lumen-Roof style hero. Clicking the other outlet sinks the card into
-   a WebGL2 fog, swaps the headline at the deepest point and lets it rise again; sky, fog and UI shift from warm red-grey to cool blue-grey.
-   fogHero(e) builds the markup; fogMount(root) starts the clock on .fh. State lives in CSS variables on the .fh element (--k --k2 --dip --sink). */
+/* v7 fog hero: the lead event's two headlines side by side with the shared words between them. It loads neutral (K = .5); clicking an
+   outlet sinks the card into a WebGL2 fog with a slight turn and tints sky, fog and band toward that outlet's bloc (left 0, right 1);
+   clicking it again returns to neutral.
+   fogHero(e) builds the markup; fogMount(root) starts the clock on .fh. State lives in CSS variables on the .fh element (--k --k2 --kt --turn --dip --sink). */
 var FOG_SINK = 240, FOG_RISE = 820, FOG_DEPTH = .27;
 var FOG_FS = "#version 300 es\nprecision highp float;\n" +
   "uniform vec2 R;uniform float T,S,K,D;out vec4 O;\n" +
@@ -38,30 +39,30 @@ function fogSmooth(a, b, x) { x = Math.min(1, Math.max(0, (x - a) / (b - a))); r
 
 function fogHero(e) {
   var pair = e && (SPLITPAIR[e.i] || defaultPair(e)), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
-  var sets = "", btns = "", cap = "", band = "";
+  var sets = "", btns = "", band = "";
   if (a && b) {
     var cmp = compareHeads(a, b), shared = cmp.shared.join(" ");
-    var one = function (art, marks, cls, on) {
+    var one = function (art, marks, cls) {
       var bl = bloc(art.s), w = SIDE[bl], c = bl === "left" ? "var(--left)" : bl === "right" ? "var(--right)" : "var(--mid)", ln = SRC[art.s] && SRC[art.s].lean;
-      return '<div class="fh-set ' + cls + (on ? " is-on" : "") + '" style="--lean:' + c + '"><p class="fh-lab">' + esc(srcName(art.s).toLocaleUpperCase("tr")) + " · " +
+      return '<div class="fh-set ' + cls + '" style="--lean:' + c + '"><p class="fh-lab">' + esc(srcName(art.s).toLocaleUpperCase("tr")) + " · " +
         esc(w.toLocaleUpperCase("tr")) + (ln != null ? " " + ln : "") + '</p><p class="fh-h">' + markText(art.t, marks) + "</p></div>";
     };
-    var btn = function (art, on) {
-      var ln = SRC[art.s] && SRC[art.s].lean;
-      return '<button type="button" aria-pressed="' + (on ? "true" : "false") + '"><b>' + esc(srcName(art.s)) + " · " + esc(SIDE[bloc(art.s)]) + "</b><small>yerleşim " + (ln != null ? ln : "—") + "</small></button>";
+    var btn = function (art) {
+      var ln = SRC[art.s] && SRC[art.s].lean, bl = bloc(art.s);
+      /* K target by bloc, not position: SPLITPAIR can put the right-bloc outlet first */
+      return '<button type="button" aria-pressed="false" data-k="' + (bl === "left" ? 0 : bl === "right" ? 1 : .5) + '"><b>' + esc(srcName(art.s)) + " · " + esc(SIDE[bl]) + "</b><small>yerleşim " + (ln != null ? ln : "—") + "</small></button>";
     };
-    sets = one(a, cmp.markA, "l", true) + one(b, cmp.markB, "r", false);
-    band = '<div class="fh-band" aria-hidden="true"><span class="fh-bl">ORTAK OLAN</span><span class="fh-bw">' + (shared ? esc(shared) : "ortak kelime yok") + "</span></div>";
-    btns = '<div class="fh-toggle" role="group" aria-label="Hangi kurumun başlığı">' + btn(a, true) + btn(b, false) + "</div>";
-    cap = shared ? '<p class="fh-cap">Ortak olan: ' + esc(shared) + "</p>" : "";
+    band = '<div class="fh-band"><span class="fh-bl">ORTAK OLAN</span><span class="fh-bw">' + (shared ? esc(shared) : "ortak kelime yok") + "</span></div>";
+    sets = one(a, cmp.markA, "l") + band + one(b, cmp.markB, "r");
+    btns = '<div class="fh-toggle" role="group" aria-label="Hangi kurumun başlığı">' + btn(a) + btn(b) + "</div>";
   }
   return '<section class="fh' + (sets ? "" : " empty") + '"' + (e ? ' data-e="' + esc(e.i) + '"' : "") + ' aria-label="Çapraz Manşet">' +
     '<div class="fh-sky" aria-hidden="true"><i class="fh-sk l"></i><i class="fh-sk r"></i></div>' +
-    (sets ? '<div class="fh-home"><div class="fh-card">' + sets + band + "</div></div>" : "") +
+    (sets ? '<div class="fh-home"><div class="fh-card' + (a.t.length + b.t.length > 180 ? " fh-long" : "") + '">' + sets + "</div></div>" : "") +
     '<div class="fh-tilt" aria-hidden="true"></div><canvas class="fh-fog" aria-hidden="true"></canvas>' +
     '<div class="fh-ui"><h1><span class="l1">Aynı olay,</span> <span class="y">farklı manşet.</span></h1>' +
     "<p class=\"fh-sub\">Türk medyasının aynı olayı nasıl farklı anlattığını yan yana koyuyoruz. Hüküm vermiyoruz; farkı ölçüyoruz.</p>" +
-    '<div class="fh-dock">' + btns + cap + '<a class="fh-cta" href="#bu-hafta">Bu haftanın ayrışmalarını gör ↓</a></div></div></section>';
+    '<div class="fh-dock">' + btns + '<a class="fh-cta" href="#bu-hafta">Bu haftanın ayrışmalarını gör ↓</a></div></div></section>';
 }
 
 function fogMount(root) {
@@ -70,7 +71,7 @@ function fogMount(root) {
   if (!el || el._fh) return;
   FOG_LIVE = el;
   var cv = el.querySelector(".fh-fog"), bt = [].slice.call(el.querySelectorAll(".fh-toggle button")), sets = [el.querySelector(".fh-set.l"), el.querySelector(".fh-set.r")];
-  var S = el._fh = { k: 0, target: 0, from: 0, start: 0, queued: null, swapped: true, animating: false, vis: true, last: 0, raf: 0, dark: fogDark() ? 1 : 0, still: 0 };
+  var S = el._fh = { k: .5, target: .5, from: .5, start: 0, on: -1, queued: null, animating: false, vis: true, last: 0, raf: 0, dark: fogDark() ? 1 : 0, still: 0 };
   var gl = null, U = {};
   try { gl = cv.getContext("webgl2", { alpha: true, premultipliedAlpha: true, antialias: false }); } catch (x) { gl = null; }
   if (gl) {
@@ -88,19 +89,17 @@ function fogMount(root) {
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
   };
   var set = function (n, v) { el.style.setProperty(n, v); };
-  var show = function (n) { if (sets[0]) sets[0].classList.toggle("is-on", !n); if (sets[1]) sets[1].classList.toggle("is-on", !!n); };
   var draw = function (now, s) {
     if (!gl) return;
     gl.uniform2f(U.R, cv.width, cv.height); gl.uniform1f(U.T, now / 1000); gl.uniform1f(U.S, s); gl.uniform1f(U.K, S.k); gl.uniform1f(U.D, S.dark);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   };
-  /* The reference clock: sink, swap at the deepest point, rise; k (sky, fog) and k2 (type) follow on smoothsteps. */
+  /* The turn clock: sink, rise; k (sky, fog, band) and k2 (type) follow on smoothsteps. */
   var frame = function (now) {
     var d = now - S.start, y = 0, s = 0, dip = 0, k2 = S.k;
     if (S.animating) {
       if (d < FOG_SINK) { var x0 = d / FOG_SINK; y = x0 * x0 * (3 - 2 * x0) * FOG_DEPTH; }
       else {
-        if (!S.swapped) { S.swapped = true; show(S.target); }
         var x1 = Math.min(1, Math.max(0, (d - FOG_SINK) / FOG_RISE)); y = Math.pow(1 - x1, 3.4) * FOG_DEPTH;
       }
       s = fogSmooth(0, FOG_SINK * .92, d) * (1 - fogSmooth(FOG_SINK + 70, FOG_SINK + FOG_RISE * .92, d));
@@ -112,10 +111,10 @@ function fogMount(root) {
         if (S.queued !== null && S.queued !== S.target) { var q = S.queued; S.queued = null; begin(q, now); } else S.queued = null;
       }
     }
-    set("--sink", (y * innerHeight).toFixed(1) + "px"); set("--k", S.k.toFixed(3)); set("--k2", k2.toFixed(3)); set("--dip", dip.toFixed(3)); set("--surge", s.toFixed(3));
+    set("--sink", (y * innerHeight).toFixed(1) + "px"); set("--k", S.k.toFixed(3)); set("--k2", k2.toFixed(3)); set("--dip", dip.toFixed(3)); set("--surge", s.toFixed(3)); set("--kt", (Math.abs(S.k - .5) * 2).toFixed(3));
     draw(now, s);
   };
-  var begin = function (n, now) { S.target = n; S.from = S.k; S.start = now; S.swapped = false; S.animating = true; };
+  var begin = function (n, now) { S.target = n; S.from = S.k; S.start = now; S.animating = true; set("--turn", (n - S.k).toFixed(2)); };
   var offs = [], down = function () {
     if (S.dead) return; S.dead = true; S.vis = false;
     if (S.raf) cancelAnimationFrame(S.raf);
@@ -134,17 +133,19 @@ function fogMount(root) {
     });
   };
   var still = function () { S.dark = fogDark() ? 1 : 0; size(); frame(performance.now()); };
-  var pick = function (n) {
-    if (n === S.target && S.queued === null) return;
-    bt.forEach(function (b, i) { b.setAttribute("aria-pressed", i === n ? "true" : "false"); });
-    if (S.animating) S.queued = n; else begin(n, performance.now());
+  /* Click a label: it comes forward and tints toward its bloc; click it again: back to neutral. */
+  var pick = function (i) {
+    var on = S.on = S.on === i ? -1 : i, t = on < 0 ? .5 : +bt[on].getAttribute("data-k");
+    bt.forEach(function (b, j) { b.setAttribute("aria-pressed", j === on ? "true" : "false"); });
+    sets.forEach(function (x, j) { if (x) { x.classList.toggle("is-on", j === on); x.classList.toggle("is-off", on >= 0 && j !== on); } });
+    if (S.animating) S.queued = t; else if (t !== S.k) begin(t, performance.now());
     loop();
   };
   bt.forEach(function (b, i) { b.addEventListener("click", function () { pick(i); }); });
   var cta = el.querySelector(".fh-cta");
   if (cta) cta.addEventListener("click", function (ev) {
     var t = document.getElementById("bu-hafta"); if (!t) return;
-    ev.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" });
+    ev.preventDefault(); if (MOTION.lenis) MOTION.lenis.scrollTo("#bu-hafta"); else t.scrollIntoView({ block: "start" });
   });
   /* Off-screen: stop. Theme change: re-read the colours (the CSS side follows the tokens by itself). */
   if ("IntersectionObserver" in window) {
@@ -157,6 +158,6 @@ function fogMount(root) {
   var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) { mq.addEventListener("change", retheme); offs.push(function () { mq.removeEventListener("change", retheme); }); }
   var rz = function () { if (alive()) { size(); } };
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
-  set("--k", "0"); set("--k2", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
+  set("--k", ".5"); set("--k2", ".5"); set("--kt", "0"); set("--turn", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();
 }

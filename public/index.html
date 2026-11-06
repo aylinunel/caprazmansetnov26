@@ -2029,7 +2029,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .phead>*:not(canvas){position:relative;z-index:1}
 
 /* 7.0 · fog hero */
-.fh{--u:min(calc(100vw/1600),calc(100vh/900));--k:0;--k2:0;--dip:0;--sink:0px;--surge:0;
+.fh{--u:min(calc(100vw/1600),calc(100vh/900));--k:.5;--k2:.5;--kt:0;--turn:0;--dip:0;--sink:0px;--surge:0;
   --fl1:#f7e9e4;--fl2:#e9d2cd;--fr1:#e4ebf8;--fr2:#c3cee4;--fogl:#e3d2cf;--fogr:#cbd5e8;
   position:relative;height:calc(100svh - 64px);min-height:560px;overflow:hidden;isolation:isolate;background:var(--paper)}
 :root[data-theme="dark"] .fh{--fl1:#3a2628;--fl2:#1c1213;--fr1:#27304a;--fr2:#0f1522;--fogl:#241719;--fogr:#141c2e}
@@ -2038,20 +2038,26 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .fh-sk{display:block;filter:blur(calc(30*var(--u)));transform:scale(1.12)}
 .fh-sk.l{background:radial-gradient(ellipse 60% 70% at 18% 78%,var(--fl2),transparent 70%),radial-gradient(ellipse 55% 60% at 82% 20%,var(--fl1),transparent 72%),var(--fl1)}
 .fh-sk.r{opacity:var(--k);background:radial-gradient(ellipse 60% 70% at 82% 78%,var(--fr2),transparent 70%),radial-gradient(ellipse 55% 60% at 18% 20%,var(--fr1),transparent 72%),var(--fr1)}
-.fh-home{display:flex;align-items:center;justify-content:center;padding:calc(285*var(--u)) calc(40*var(--u)) calc(270*var(--u));will-change:transform;transform:translate3d(0,var(--sink),0)}
-.fh-card{position:relative;display:grid;width:100%;max-width:calc(1100*var(--u));background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:calc(18*var(--u));
-  padding:0 0 calc(30*var(--u));box-shadow:0 calc(30*var(--u)) calc(70*var(--u)) rgba(0,0,0,.14)}
-.fh-set{grid-area:1/1;position:relative;visibility:hidden;padding:calc(34*var(--u)) calc(48*var(--u)) calc(26*var(--u)) calc(58*var(--u))}
-.fh-set.is-on{visibility:visible}
+.fh-home{display:flex;align-items:center;justify-content:center;padding:calc(250*var(--u)) calc(40*var(--u)) calc(200*var(--u));will-change:transform;transform:translate3d(0,var(--sink),0);perspective:calc(1600*var(--u))}
+/* Billboard: left headline · ORTAK OLAN band · right headline. --turn (set per click) and --dip (the sink clock) give the slight rotateY. */
+.fh-card{--hue:color-mix(in srgb,var(--left) calc((1 - var(--k))*100%),var(--right));position:relative;display:grid;grid-template-columns:1fr calc(210*var(--u)) 1fr;gap:calc(22*var(--u));
+  width:100%;max-width:calc(1300*var(--u));transform-style:preserve-3d;transform:rotateY(calc(var(--dip)*var(--turn)*9deg))}
+.fh-set{position:relative;overflow:hidden;padding:calc(30*var(--u)) calc(34*var(--u)) calc(30*var(--u)) calc(42*var(--u));background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:calc(18*var(--u));
+  box-shadow:0 calc(30*var(--u)) calc(70*var(--u)) rgba(0,0,0,.14);filter:grayscale(0);transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s,filter .6s}
+.fh-set.is-on{transform:translateZ(calc(60*var(--u))) scale(1.02)}
+.fh-set.is-off{opacity:.55;filter:grayscale(1)}
 .fh-set::before{content:"";position:absolute;left:0;top:0;bottom:0;width:calc(6*var(--u));min-width:4px;background:var(--lean)}
-.fh-lab{font-family:var(--ff-m);font-size:max(11px,calc(15*var(--u)));letter-spacing:.12em;color:var(--muted);margin:0 0 calc(14*var(--u))}
-.fh-h{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:500;font-size:calc(46*var(--u));line-height:1.22;letter-spacing:-.02em;margin:0;overflow-wrap:anywhere}
-.fh-band{position:absolute;left:-4%;right:-4%;bottom:calc(-30*var(--u));padding:calc(12*var(--u)) 9%;background:#111;color:var(--hl);transform:rotate(-2.5deg);
-  display:flex;align-items:baseline;gap:calc(16*var(--u));box-shadow:0 calc(10*var(--u)) calc(30*var(--u)) rgba(0,0,0,.25)}
-:root[data-theme="dark"] .fh-band{background:#000;outline:1px solid var(--line2)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fh-band{background:#000;outline:1px solid var(--line2)}}
-.fh-bl{flex:none;font-family:var(--ff-m);font-size:max(11px,calc(14*var(--u)));letter-spacing:.16em;color:#bdbdb7}
-.fh-bw{font-weight:600;font-size:max(15px,calc(28*var(--u)));line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.fh-lab{font-family:var(--ff-m);font-size:max(11px,calc(14*var(--u)));letter-spacing:.12em;color:var(--muted);margin:0 0 calc(14*var(--u))}
+.fh-h{font-family:var(--serif);font-weight:500;font-size:calc(36*var(--u));line-height:1.16;letter-spacing:-.012em;margin:0;overflow-wrap:anywhere;text-wrap:pretty}
+.fh-long .fh-h{font-size:calc(29*var(--u))}
+.fh-set mark.mw{color:inherit;background-image:linear-gradient(color-mix(in srgb,var(--lean) 20%,transparent),color-mix(in srgb,var(--lean) 20%,transparent));box-shadow:inset 0 -2px 0 var(--lean);border-radius:3px}
+/* Frosted band: glass over the sky, tinted toward the clicked side by --kt (0 neutral, 1 full). */
+.fh-band{align-self:center;display:flex;flex-direction:column;align-items:center;gap:calc(10*var(--u));padding:calc(22*var(--u)) calc(16*var(--u));text-align:center;color:var(--ink);
+  border:1px solid color-mix(in srgb,var(--hue) calc(var(--kt)*60%),rgba(255,255,255,.45));border-radius:calc(16*var(--u));
+  background:color-mix(in srgb,var(--hue) calc(var(--kt)*26%),color-mix(in srgb,var(--surface) 42%,transparent));
+  -webkit-backdrop-filter:blur(calc(16*var(--u))) saturate(1.3);backdrop-filter:blur(calc(16*var(--u))) saturate(1.3);box-shadow:0 calc(14*var(--u)) calc(40*var(--u)) rgba(0,0,0,.12)}
+.fh-bl{font-family:var(--ff-m);font-size:max(11px,calc(13*var(--u)));letter-spacing:.16em;color:var(--ink2)}
+.fh-bw{font-family:var(--serif);font-weight:600;font-size:max(15px,calc(26*var(--u)));line-height:1.18;overflow-wrap:anywhere}
 .fh-tilt{pointer-events:none;-webkit-backdrop-filter:blur(calc(9*var(--u)));backdrop-filter:blur(calc(9*var(--u)));
   -webkit-mask-image:linear-gradient(transparent 70%,#000 92%);mask-image:linear-gradient(transparent 70%,#000 92%)}
 .fh-fog{pointer-events:none}
@@ -2068,14 +2074,13 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
   background:rgba(120,132,140,.34);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(calc(14*var(--u)));backdrop-filter:blur(calc(14*var(--u)))}
 .fh-toggle button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(3*var(--u));min-width:0;padding:0 6px;border:0;background:none;cursor:pointer;
   border-radius:calc(13*var(--u));color:var(--ink2);overflow:hidden;font-family:var(--ff-b)}
-.fh-toggle button:nth-child(1){--on:calc(1 - var(--k))}
-.fh-toggle button:nth-child(2){--on:var(--k)}
-.fh-toggle button::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,#f7f8dc,#e2ee9f 90%);box-shadow:inset 0 0 calc(18*var(--u)) rgba(255,255,255,.65);opacity:var(--on)}
+.fh-toggle button{--on:0}
+.fh-toggle button[aria-pressed="true"]{--on:1}
+.fh-toggle button::before{transition:opacity .6s;content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,#f7f8dc,#e2ee9f 90%);box-shadow:inset 0 0 calc(18*var(--u)) rgba(255,255,255,.65);opacity:var(--on)}
 .fh-toggle b,.fh-toggle small{position:relative;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:color-mix(in srgb,#1c2316 calc(var(--on)*100%),var(--ink2))}
 .fh-toggle b{font-size:max(14px,calc(23*var(--u)));font-weight:500;letter-spacing:-.012em}
 .fh-toggle small{font-family:var(--ff-m);font-size:max(11px,calc(15*var(--u)));opacity:.8}
 .fh-toggle button:focus-visible{outline:2px solid var(--ink);outline-offset:-4px}
-.fh-cap{margin:calc(20*var(--u)) 0 0;max-width:calc(900*var(--u));min-width:min(100%,300px);text-align:center;font-size:max(13px,calc(16.4*var(--u)));line-height:1.3;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .fh-cta{margin-top:calc(14*var(--u));min-height:44px;display:inline-flex;align-items:center;padding:0 8px;font-size:max(14px,calc(17*var(--u)));font-weight:500;color:var(--ink);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line2)}
 .fh-cta:hover{text-decoration-color:var(--ink)}
 .fh.empty .fh-dock{margin-top:calc(60*var(--u))}
@@ -2083,16 +2088,23 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
   .fh{--u:1px}
   .fh h1{margin-top:34px;padding:0 16px;font-size:clamp(34px,10.4vw,56px)}
   .fh-sub{padding:0 20px;max-width:420px;font-size:14px}
-  .fh-home{padding:196px 16px 214px}
-  .fh-card{max-width:none}
-  .fh-set{padding:20px 18px 18px 26px}
-  .fh-h{font-size:clamp(19px,5.6vw,26px)}
-  .fh-band{padding:8px 7%;gap:10px;bottom:-22px}
+  .fh-home{padding:200px 16px 150px}
+  .fh-card{max-width:none;grid-template-columns:1fr 150px 1fr;gap:12px}
+  .fh-set{padding:16px 16px 16px 22px;border-radius:14px}
+  .fh-lab{margin-bottom:8px}
+  .fh-h{font-size:19px}
+  .fh-long .fh-h{font-size:16px}
+  .fh-band{padding:14px 10px}
   .fh-bw{font-size:16px}
   .fh-dock{width:100%;padding:0 16px 14px}
   .fh-toggle{width:100%;max-width:440px;height:74px;min-width:0}
   .fh-toggle b{font-size:16px}.fh-toggle small{font-size:12px}
-  .fh-cap{max-width:360px;font-size:13px;margin-top:12px}
+}
+@media (max-width:760px){
+  .fh-card{grid-template-columns:1fr;gap:8px}
+  .fh-h{font-size:clamp(16px,4.6vw,19px)}
+  .fh-long .fh-h{font-size:15px}
+  .fh-band{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:4px 10px;padding:7px 12px;border-radius:12px}
 }
 
 /* 7.0 · Kindred style */
@@ -2200,15 +2212,10 @@ h2,h3,.sec>h2,.xpaper h2,.find h3,.xcard h3,.xcard h2{letter-spacing:-.02em}
 .xutil.xnav-pill:hover{background:var(--ink2);color:var(--paper);transform:translateY(-1px)}
 
 /* fog hero: tokens instead of literals, colour follows --k / --k2 */
-.fh-band{background:var(--band);color:var(--hl)}
-:root[data-theme="dark"] .fh-band{background:var(--band)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .fh-band{background:var(--band)}}
-.fh-bl{color:var(--band-mute)}
 .fh-toggle b,.fh-toggle small{color:color-mix(in srgb,var(--on-hl) calc(var(--on)*100%),var(--ink2))}
-.fh-set::before{background:color-mix(in srgb,var(--left) calc((1 - var(--k))*100%),var(--right))}
-.fh-lab{color:color-mix(in srgb,color-mix(in srgb,var(--left) calc((1 - var(--k))*100%),var(--right)) 45%,var(--ink2))}
-.fh h1 .y{color:color-mix(in srgb,color-mix(in srgb,var(--left) calc((1 - var(--k))*100%),var(--right)) 14%,var(--ink))}
-.fh h1 .l1{color:color-mix(in srgb,color-mix(in srgb,var(--left) calc((1 - var(--k2))*100%),var(--right)) 18%,var(--muted))}
+.fh-lab{color:color-mix(in srgb,var(--lean) 45%,var(--ink2))}
+.fh h1 .y{color:color-mix(in srgb,color-mix(in srgb,var(--left) calc((1 - var(--k))*100%),var(--right)) calc(var(--kt)*14%),var(--ink))}
+.fh h1 .l1{color:color-mix(in srgb,color-mix(in srgb,var(--left) calc((1 - var(--k2))*100%),var(--right)) calc(var(--kt)*18%),var(--muted))}
 
 /* Task 3 · navigation: search field, subtitles, Kurumlar view switch, topic chips */
 .navtools .xsearch.navq{width:210px;margin:0;padding:0;border:0;background:none;font-size:14px}
@@ -2329,7 +2336,6 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 @media (max-width:760px){li>a[target=_blank]:first-child{display:inline-flex;align-items:center;min-height:44px;min-width:44px}}
 
 /* final fixes */
-.fh-cap{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
 .mobtheme{display:none}
 @media (max-width:1080px){.xutil.xnav-pill{display:inline-flex;align-items:center;min-height:44px}}
 @media (max-width:760px){
@@ -11965,9 +11971,10 @@ function dmFeedWatch(root) {
   document.addEventListener("focusin", function (e) { var c = e.target.closest && e.target.closest(".v7-fc"); if (c) dmCardFx(c); });
 })();
 
-/* v7 fog hero: the lead event's split card as the moving layer of a Lumen-Roof style hero. Clicking the other outlet sinks the card into
-   a WebGL2 fog, swaps the headline at the deepest point and lets it rise again; sky, fog and UI shift from warm red-grey to cool blue-grey.
-   fogHero(e) builds the markup; fogMount(root) starts the clock on .fh. State lives in CSS variables on the .fh element (--k --k2 --dip --sink). */
+/* v7 fog hero: the lead event's two headlines side by side with the shared words between them. It loads neutral (K = .5); clicking an
+   outlet sinks the card into a WebGL2 fog with a slight turn and tints sky, fog and band toward that outlet's bloc (left 0, right 1);
+   clicking it again returns to neutral.
+   fogHero(e) builds the markup; fogMount(root) starts the clock on .fh. State lives in CSS variables on the .fh element (--k --k2 --kt --turn --dip --sink). */
 var FOG_SINK = 240, FOG_RISE = 820, FOG_DEPTH = .27;
 var FOG_FS = "#version 300 es\nprecision highp float;\n" +
   "uniform vec2 R;uniform float T,S,K,D;out vec4 O;\n" +
@@ -12005,30 +12012,30 @@ function fogSmooth(a, b, x) { x = Math.min(1, Math.max(0, (x - a) / (b - a))); r
 
 function fogHero(e) {
   var pair = e && (SPLITPAIR[e.i] || defaultPair(e)), a = pair && artOf(e, pair[0]), b = pair && artOf(e, pair[1]);
-  var sets = "", btns = "", cap = "", band = "";
+  var sets = "", btns = "", band = "";
   if (a && b) {
     var cmp = compareHeads(a, b), shared = cmp.shared.join(" ");
-    var one = function (art, marks, cls, on) {
+    var one = function (art, marks, cls) {
       var bl = bloc(art.s), w = SIDE[bl], c = bl === "left" ? "var(--left)" : bl === "right" ? "var(--right)" : "var(--mid)", ln = SRC[art.s] && SRC[art.s].lean;
-      return '<div class="fh-set ' + cls + (on ? " is-on" : "") + '" style="--lean:' + c + '"><p class="fh-lab">' + esc(srcName(art.s).toLocaleUpperCase("tr")) + " · " +
+      return '<div class="fh-set ' + cls + '" style="--lean:' + c + '"><p class="fh-lab">' + esc(srcName(art.s).toLocaleUpperCase("tr")) + " · " +
         esc(w.toLocaleUpperCase("tr")) + (ln != null ? " " + ln : "") + '</p><p class="fh-h">' + markText(art.t, marks) + "</p></div>";
     };
-    var btn = function (art, on) {
-      var ln = SRC[art.s] && SRC[art.s].lean;
-      return '<button type="button" aria-pressed="' + (on ? "true" : "false") + '"><b>' + esc(srcName(art.s)) + " · " + esc(SIDE[bloc(art.s)]) + "</b><small>yerleşim " + (ln != null ? ln : "—") + "</small></button>";
+    var btn = function (art) {
+      var ln = SRC[art.s] && SRC[art.s].lean, bl = bloc(art.s);
+      /* K target by bloc, not position: SPLITPAIR can put the right-bloc outlet first */
+      return '<button type="button" aria-pressed="false" data-k="' + (bl === "left" ? 0 : bl === "right" ? 1 : .5) + '"><b>' + esc(srcName(art.s)) + " · " + esc(SIDE[bl]) + "</b><small>yerleşim " + (ln != null ? ln : "—") + "</small></button>";
     };
-    sets = one(a, cmp.markA, "l", true) + one(b, cmp.markB, "r", false);
-    band = '<div class="fh-band" aria-hidden="true"><span class="fh-bl">ORTAK OLAN</span><span class="fh-bw">' + (shared ? esc(shared) : "ortak kelime yok") + "</span></div>";
-    btns = '<div class="fh-toggle" role="group" aria-label="Hangi kurumun başlığı">' + btn(a, true) + btn(b, false) + "</div>";
-    cap = shared ? '<p class="fh-cap">Ortak olan: ' + esc(shared) + "</p>" : "";
+    band = '<div class="fh-band"><span class="fh-bl">ORTAK OLAN</span><span class="fh-bw">' + (shared ? esc(shared) : "ortak kelime yok") + "</span></div>";
+    sets = one(a, cmp.markA, "l") + band + one(b, cmp.markB, "r");
+    btns = '<div class="fh-toggle" role="group" aria-label="Hangi kurumun başlığı">' + btn(a) + btn(b) + "</div>";
   }
   return '<section class="fh' + (sets ? "" : " empty") + '"' + (e ? ' data-e="' + esc(e.i) + '"' : "") + ' aria-label="Çapraz Manşet">' +
     '<div class="fh-sky" aria-hidden="true"><i class="fh-sk l"></i><i class="fh-sk r"></i></div>' +
-    (sets ? '<div class="fh-home"><div class="fh-card">' + sets + band + "</div></div>" : "") +
+    (sets ? '<div class="fh-home"><div class="fh-card' + (a.t.length + b.t.length > 180 ? " fh-long" : "") + '">' + sets + "</div></div>" : "") +
     '<div class="fh-tilt" aria-hidden="true"></div><canvas class="fh-fog" aria-hidden="true"></canvas>' +
     '<div class="fh-ui"><h1><span class="l1">Aynı olay,</span> <span class="y">farklı manşet.</span></h1>' +
     "<p class=\"fh-sub\">Türk medyasının aynı olayı nasıl farklı anlattığını yan yana koyuyoruz. Hüküm vermiyoruz; farkı ölçüyoruz.</p>" +
-    '<div class="fh-dock">' + btns + cap + '<a class="fh-cta" href="#bu-hafta">Bu haftanın ayrışmalarını gör ↓</a></div></div></section>';
+    '<div class="fh-dock">' + btns + '<a class="fh-cta" href="#bu-hafta">Bu haftanın ayrışmalarını gör ↓</a></div></div></section>';
 }
 
 function fogMount(root) {
@@ -12037,7 +12044,7 @@ function fogMount(root) {
   if (!el || el._fh) return;
   FOG_LIVE = el;
   var cv = el.querySelector(".fh-fog"), bt = [].slice.call(el.querySelectorAll(".fh-toggle button")), sets = [el.querySelector(".fh-set.l"), el.querySelector(".fh-set.r")];
-  var S = el._fh = { k: 0, target: 0, from: 0, start: 0, queued: null, swapped: true, animating: false, vis: true, last: 0, raf: 0, dark: fogDark() ? 1 : 0, still: 0 };
+  var S = el._fh = { k: .5, target: .5, from: .5, start: 0, on: -1, queued: null, animating: false, vis: true, last: 0, raf: 0, dark: fogDark() ? 1 : 0, still: 0 };
   var gl = null, U = {};
   try { gl = cv.getContext("webgl2", { alpha: true, premultipliedAlpha: true, antialias: false }); } catch (x) { gl = null; }
   if (gl) {
@@ -12055,19 +12062,17 @@ function fogMount(root) {
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
   };
   var set = function (n, v) { el.style.setProperty(n, v); };
-  var show = function (n) { if (sets[0]) sets[0].classList.toggle("is-on", !n); if (sets[1]) sets[1].classList.toggle("is-on", !!n); };
   var draw = function (now, s) {
     if (!gl) return;
     gl.uniform2f(U.R, cv.width, cv.height); gl.uniform1f(U.T, now / 1000); gl.uniform1f(U.S, s); gl.uniform1f(U.K, S.k); gl.uniform1f(U.D, S.dark);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
   };
-  /* The reference clock: sink, swap at the deepest point, rise; k (sky, fog) and k2 (type) follow on smoothsteps. */
+  /* The turn clock: sink, rise; k (sky, fog, band) and k2 (type) follow on smoothsteps. */
   var frame = function (now) {
     var d = now - S.start, y = 0, s = 0, dip = 0, k2 = S.k;
     if (S.animating) {
       if (d < FOG_SINK) { var x0 = d / FOG_SINK; y = x0 * x0 * (3 - 2 * x0) * FOG_DEPTH; }
       else {
-        if (!S.swapped) { S.swapped = true; show(S.target); }
         var x1 = Math.min(1, Math.max(0, (d - FOG_SINK) / FOG_RISE)); y = Math.pow(1 - x1, 3.4) * FOG_DEPTH;
       }
       s = fogSmooth(0, FOG_SINK * .92, d) * (1 - fogSmooth(FOG_SINK + 70, FOG_SINK + FOG_RISE * .92, d));
@@ -12079,10 +12084,10 @@ function fogMount(root) {
         if (S.queued !== null && S.queued !== S.target) { var q = S.queued; S.queued = null; begin(q, now); } else S.queued = null;
       }
     }
-    set("--sink", (y * innerHeight).toFixed(1) + "px"); set("--k", S.k.toFixed(3)); set("--k2", k2.toFixed(3)); set("--dip", dip.toFixed(3)); set("--surge", s.toFixed(3));
+    set("--sink", (y * innerHeight).toFixed(1) + "px"); set("--k", S.k.toFixed(3)); set("--k2", k2.toFixed(3)); set("--dip", dip.toFixed(3)); set("--surge", s.toFixed(3)); set("--kt", (Math.abs(S.k - .5) * 2).toFixed(3));
     draw(now, s);
   };
-  var begin = function (n, now) { S.target = n; S.from = S.k; S.start = now; S.swapped = false; S.animating = true; };
+  var begin = function (n, now) { S.target = n; S.from = S.k; S.start = now; S.animating = true; set("--turn", (n - S.k).toFixed(2)); };
   var offs = [], down = function () {
     if (S.dead) return; S.dead = true; S.vis = false;
     if (S.raf) cancelAnimationFrame(S.raf);
@@ -12101,17 +12106,19 @@ function fogMount(root) {
     });
   };
   var still = function () { S.dark = fogDark() ? 1 : 0; size(); frame(performance.now()); };
-  var pick = function (n) {
-    if (n === S.target && S.queued === null) return;
-    bt.forEach(function (b, i) { b.setAttribute("aria-pressed", i === n ? "true" : "false"); });
-    if (S.animating) S.queued = n; else begin(n, performance.now());
+  /* Click a label: it comes forward and tints toward its bloc; click it again: back to neutral. */
+  var pick = function (i) {
+    var on = S.on = S.on === i ? -1 : i, t = on < 0 ? .5 : +bt[on].getAttribute("data-k");
+    bt.forEach(function (b, j) { b.setAttribute("aria-pressed", j === on ? "true" : "false"); });
+    sets.forEach(function (x, j) { if (x) { x.classList.toggle("is-on", j === on); x.classList.toggle("is-off", on >= 0 && j !== on); } });
+    if (S.animating) S.queued = t; else if (t !== S.k) begin(t, performance.now());
     loop();
   };
   bt.forEach(function (b, i) { b.addEventListener("click", function () { pick(i); }); });
   var cta = el.querySelector(".fh-cta");
   if (cta) cta.addEventListener("click", function (ev) {
     var t = document.getElementById("bu-hafta"); if (!t) return;
-    ev.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" });
+    ev.preventDefault(); if (MOTION.lenis) MOTION.lenis.scrollTo("#bu-hafta"); else t.scrollIntoView({ block: "start" });
   });
   /* Off-screen: stop. Theme change: re-read the colours (the CSS side follows the tokens by itself). */
   if ("IntersectionObserver" in window) {
@@ -12124,7 +12131,7 @@ function fogMount(root) {
   var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) { mq.addEventListener("change", retheme); offs.push(function () { mq.removeEventListener("change", retheme); }); }
   var rz = function () { if (alive()) { size(); } };
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
-  set("--k", "0"); set("--k2", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
+  set("--k", ".5"); set("--k2", ".5"); set("--kt", "0"); set("--turn", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();
 }
 

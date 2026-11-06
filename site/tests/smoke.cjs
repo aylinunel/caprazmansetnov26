@@ -178,7 +178,31 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     if (await page.$(".xtick")) fails.push(`${tag}: .xtick present`);
     if (route === "#/") {
       const g = await page.evaluate(() => { const b = [...document.querySelectorAll(".fh [role=group] button")]; return [b.length, b.filter((x) => x.getAttribute("aria-pressed") === "true").length, (document.querySelector(".fh-cta") || {}).textContent, document.querySelector(".fh-cta") && document.querySelector(".fh-cta").getAttribute("href"), !!document.getElementById("bu-hafta")]; });
-      if (g[0] !== 2 || g[1] !== 1) fails.push(`${tag}: .fh toggle has ${g[0]} buttons, ${g[1]} pressed`);
+      if (g[0] !== 2) fails.push(`${tag}: .fh toggle has ${g[0]} buttons`);
+      /* Hero: both headlines visible, neutral at load (none pressed, --k .5), a click tints toward the clicked outlet's bloc
+         (Sol 0, Sağ 1 — by bloc, not position), the other label swaps, clicking the pressed one returns to neutral; the card ends above the dock. */
+      const hero = async (lbl) => {
+        const st = () => page.evaluate(() => {
+          const sets = [...document.querySelectorAll(".fh-set")], bs = [...document.querySelectorAll(".fh [role=group] button")], box = (q) => document.querySelector(q).getBoundingClientRect();
+          return { vis: sets.map((x) => { const r = x.getBoundingClientRect(), c = getComputedStyle(x); return r.width > 0 && r.top >= 0 && r.bottom <= innerHeight && c.visibility === "visible" && +c.opacity >= .5; }),
+            on: sets.map((x) => x.classList.contains("is-on")), pressed: bs.map((b) => b.getAttribute("aria-pressed")),
+            side: bs.map((b) => /· Sol/.test(b.textContent) ? 0 : /· Sağ/.test(b.textContent) ? 1 : .5),
+            k: +getComputedStyle(document.querySelector(".fh")).getPropertyValue("--k"), card: box(".fh-card").bottom, dock: box(".fh-dock").top };
+        });
+        const check = (s, want, what) => {
+          if (s.vis.length !== 2 || !s.vis.every(Boolean)) fails.push(`${lbl} ${what}: both .fh-set not visible in the hero: ${s.vis}`);
+          if (!(s.card <= s.dock)) fails.push(`${lbl} ${what}: .fh-card bottom ${s.card} below .fh-dock top ${s.dock}`);
+          const k = want < 0 ? .5 : s.side[want];
+          if (s.pressed.join() !== [0, 1].map((i) => i === want ? "true" : "false").join() || s.on.join() !== [0, 1].map((i) => i === want).join() || Math.abs(s.k - k) > .01)
+            fails.push(`${lbl} ${what}: pressed ${s.pressed} is-on ${s.on} --k ${s.k}, want button ${want} and --k ${k}`);
+          return s;
+        };
+        const click = async (n) => { await page.click(`.fh [role=group] button:nth-child(${n})`); await sleep(1500); return st(); };
+        const s0 = check(await st(), -1, "load");
+        check(await click(1), 0, "click 1"); check(await click(2), 1, "click 2"); check(await click(2), -1, "click 2 again");
+        return s0;
+      };
+      if (g[0] === 2) await hero(tag);
       if (g[2] !== "Bu haftanın ayrışmalarını gör ↓" || g[3] !== "#bu-hafta" || !g[4]) fails.push(`${tag}: .fh-cta / #bu-hafta wrong: ${g}`);
       const fd = await page.evaluate(() => [document.querySelectorAll("#bu-hafta .v7-fc").length, !!document.querySelector("#bu-hafta h2"), !!document.querySelector(".v7-steps"), document.querySelectorAll(".v7-hgrid .v7-hc").length, document.documentElement.scrollWidth > innerWidth]);
       if (fd[0] > 6 || !fd[1] || !fd[2] || fd[3] !== 5) fails.push(`${tag}: homepage feed/steps/links wrong: ${fd}`);
@@ -207,12 +231,26 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await sleep(600); await page.evaluate(() => { location.hash = "#/"; }); await sleep(1500);
       const zero = await page.evaluate(() => { CM.data.E = window.__E; return [document.querySelectorAll("#bu-hafta .v7-fc").length, (document.querySelector("#bu-hafta .v7-fc-none") || {}).textContent, (document.querySelector("#bu-hafta .lnk") || {}).textContent, !document.querySelector("#feed-more") || document.querySelector("#feed-more").hidden]; });
       if (zero[0] !== 0 || zero[1] !== "Bu hafta iki taraftan da verilen olay yok" || zero[2] !== "Tüm olaylar →" || !zero[3]) fails.push(`${tag}: zero-event feed wrong: ${zero}`);
-      const b2 = await page.$(".fh [role=group] button:nth-child(2)");
-      if (b2) {
-        await b2.click(); await sleep(1200);
-        const on = await page.evaluate(() => [!!document.querySelector(".fh-set.r.is-on"), !document.querySelector(".fh-set.l.is-on"), document.querySelector(".fh [role=group] button:nth-child(2)").getAttribute("aria-pressed")]);
-        if (!on[0] || !on[1] || on[2] !== "true") fails.push(`${tag}: right set not on after click: ${on}`);
-        if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: horizontal scroll after fog switch`);
+      /* Longest headline pair among hero-eligible events (s3522, 288 chars, found over CM.data on 2026-11-06), staged as the week's lead. */
+      const LONG = "s3522";
+      await page.evaluate(([L0, h]) => { const E = window.__E, L = E.find((e) => e.i === L0), H = E.find((e) => e.i === h); window.__L = [L.f, L.p]; L.f = H.f; L.p = H.p + 1; CM.data.E = [L]; location.hash = "#/olaylar"; }, [LONG, hid[0]]);
+      await sleep(600); await page.evaluate(() => { location.hash = "#/"; }); await sleep(1500);
+      const staged = await page.evaluate(() => (document.querySelector(".fh") || {}).getAttribute && document.querySelector(".fh").getAttribute("data-e"));
+      if (staged !== LONG) fails.push(`${tag}: could not stage ${LONG} as the hero (got ${staged})`);
+      else { await hero(`${tag} ${LONG}`); await page.screenshot({ path: path.join(outDir, `hero-long-${w}-${theme}.png`) }); }
+      await page.evaluate(([L0]) => { const L = window.__E.find((e) => e.i === L0); [L.f, L.p] = window.__L; CM.data.E = window.__E; }, [LONG]);
+      if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: horizontal scroll after hero clicks`);
+      if (w === 1280 && theme === "light") {
+        /* The reader's pair on the event page, swapped so the right-bloc outlet comes first: the tint still follows the bloc. */
+        await page.evaluate((h) => { location.hash = "#/olay?e=" + h; }, hid[0]); await sleep(1500);
+        await page.evaluate(() => { const a = document.getElementById("spA"), b = document.getElementById("spB"), v = a.value; a.value = b.value; b.value = v; a.dispatchEvent(new Event("change")); });
+        await page.evaluate(() => { location.hash = "#/"; }); await sleep(1500);
+        const s0 = await hero(`${tag} swapped pair`);
+        if (s0.side.join() !== "1,0") fails.push(`${tag} swapped pair: hero buttons are not right bloc first: ${s0.side}`);
+        /* The CTA glides to #bu-hafta (Lenis when loaded) without touching the #/ route. */
+        await page.click(".fh-cta"); await sleep(2200);
+        const cta = await page.evaluate(() => [Math.round(document.getElementById("bu-hafta").getBoundingClientRect().top), location.hash, document.documentElement.classList.contains("lenis")]);
+        if (Math.abs(cta[0]) > 80 || cta[1] !== "#/" || !cta[2]) fails.push(`${tag}: .fh-cta did not glide to #bu-hafta with Lenis (top, hash, lenis): ${cta}`);
       }
     }
     for (const [er, js] of evals) if (er === route && !(await page.evaluate(js))) fails.push(`${tag}: eval false: ${js}`);
