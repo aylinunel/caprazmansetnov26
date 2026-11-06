@@ -176,6 +176,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await rows("");
       if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: ilan horizontal scroll after typing`);
     }
+    /* Broadsheet components each page must carry (spec §5), by route prefix */
+    const KINDS = { "#/": "head cascade splits tickets glass" };
+    const want = Object.keys(KINDS).find((p) => p.endsWith("=") ? route.startsWith(p) : route === p);
+    if (want) {
+      const miss = await page.evaluate((ks) => ks.split(" ").filter((k) => !document.querySelector(`#view [data-m=${k}]`)), KINDS[want]);
+      if (miss.length) fails.push(`${tag}: missing [data-m] ${miss.join(",")}`);
+    }
     if (await page.$(".xtick")) fails.push(`${tag}: .xtick present`);
     if (route === "#/") {
       const g = await page.evaluate(() => { const b = [...document.querySelectorAll(".fh [role=group] button")]; return [b.length, b.filter((x) => x.getAttribute("aria-pressed") === "true").length, (document.querySelector(".fh-cta") || {}).textContent, document.querySelector(".fh-cta") && document.querySelector(".fh-cta").getAttribute("href"), !!document.getElementById("bu-hafta")]; });
@@ -205,7 +212,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       };
       if (g[0] === 2) await hero(tag);
       if (g[2] !== "Bu haftanın ayrışmalarını gör ↓" || g[3] !== "#bu-hafta" || !g[4]) fails.push(`${tag}: .fh-cta / #bu-hafta wrong: ${g}`);
-      const fd = await page.evaluate(() => [document.querySelectorAll("#bu-hafta .v7-fc").length, !!document.querySelector("#bu-hafta h2"), !!document.querySelector(".v7-steps"), document.querySelectorAll(".v7-hgrid .v7-hc").length, document.documentElement.scrollWidth > innerWidth]);
+      const fd = await page.evaluate(() => [document.querySelectorAll("#bu-hafta .v7-fc").length, !!document.querySelector("#bu-hafta h2"), !!document.querySelector(".v7-how [data-m=splits]"), document.querySelectorAll(".v7-hgrid .v7-hc").length, document.documentElement.scrollWidth > innerWidth]);
       if (fd[0] > 6 || !fd[1] || !fd[2] || fd[3] !== 5) fails.push(`${tag}: homepage feed/steps/links wrong: ${fd}`);
       if (w === 390 && fd[4]) fails.push(`${tag}: home horizontal scroll`);
       const bt = await page.evaluate(() => document.body.innerText);
@@ -377,12 +384,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       /* scroll in steps past the ticket block: every counter ends on its exact figure */
       for (let i = 0; i < 12; i++) { await page.mouse.wheel(0, 350); await sleep(250); }
       await sleep(2500);
-      const cnt = await page.evaluate(() => [...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== b.dataset.n).map((b) => b.textContent + "≠" + b.dataset.n));
+      const cnt = await page.evaluate(() => [...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== (+b.dataset.n).toLocaleString("tr")).map((b) => b.textContent + "≠" + b.dataset.n));
       if (cnt.length) fails.push(`kisaca ${w}: counters past the block ${cnt.join(" ")}`);
       /* and back above the block: no reversed "0" left behind */
       for (let i = 0; i < 16; i++) { await page.mouse.wheel(0, -350); await sleep(250); }
       await sleep(2500);
-      const back = await page.evaluate(() => [scrollY, ...[...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== b.dataset.n).map((b) => b.textContent + "≠" + b.dataset.n)]);
+      const back = await page.evaluate(() => [scrollY, ...[...document.querySelectorAll(".tix-n")].filter((b) => b.textContent !== (+b.dataset.n).toLocaleString("tr")).map((b) => b.textContent + "≠" + b.dataset.n)]);
       if (back.length > 1) fails.push(`kisaca ${w}: counters back above the block (scrollY ${back[0]}) ${back.slice(1).join(" ")}`);
       await page.evaluate(() => { location.hash = "#/olay?e=s5450"; }); await sleep(1500);
       const n = await page.evaluate(() => [".v7-kisaca [data-m=lead]", "[data-m=tickets]", "[data-m=splits]"].map((s) => document.querySelectorAll(s).length).join(","));

@@ -2243,15 +2243,10 @@ h2,h3,.sec>h2,.xpaper h2,.find h3,.xcard h3,.xcard h2{letter-spacing:-.02em}
 .v7-fc mark.mw{position:relative}
 .v7-fc mark.mw.dm-fx{color:transparent;animation:none}
 canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
-.v7-steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.v7-steps li{display:grid;gap:6px;align-content:start;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
-.v7-steps .num{font-family:var(--ff-m);font-size:12px;color:var(--muted)}
-.v7-steps b{font-size:20px;font-weight:600}
-.v7-steps span:last-child{color:var(--ink2);font-size:15px;line-height:1.5}
 .v7-hgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .v7-hc{min-height:44px}
 .v7-hc span{color:var(--ink2);font-size:13.5px;line-height:1.5}
-@media (max-width:760px){.v7-fg,.v7-steps{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.v7-fg{grid-template-columns:minmax(0,1fr)}}
 #bu-hafta{scroll-margin-top:64px}
 .v7-fc-t{max-width:none}
 .v7-fm .xbtn[hidden]{display:none}
@@ -2358,6 +2353,8 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
   -webkit-mask:radial-gradient(circle 17px at 0 55%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 17px at 100% 55%,#0000 98%,#000) right/51% 100% no-repeat;
   mask:radial-gradient(circle 17px at 0 55%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 17px at 100% 55%,#0000 98%,#000) right/51% 100% no-repeat}
 .tix-n{align-self:end;padding-bottom:12px;font:600 clamp(36px,5vw,64px)/1 var(--serif);letter-spacing:-.03em;font-variant-numeric:tabular-nums lining-nums;color:var(--ink)}
+.tix{container-type:inline-size}
+.tix-n{font-size:min(clamp(36px,5vw,64px),calc(160cqw / var(--d,3)))}
 .tix-l{border-top:1.5px dashed color-mix(in srgb,var(--ink) 28%,transparent);margin:0 6px;padding-top:14px;font:500 11px var(--ff-m);letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
 /* ortak band: the two headlines slide in to a frosted shared sentence */
 .p-common{display:flex;align-items:center;overflow-x:clip;padding:26px 0;
@@ -2384,9 +2381,18 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 .p-body{position:absolute;left:24px;bottom:22px;width:max(calc(55cqw - 48px),calc(100% - 48px));opacity:0;transition:opacity .4s}
 .p-splits:not(:has(.panel:hover,.panel:focus-visible)) .panel.on .p-body,.p-splits .panel:hover .p-body,.p-splits .panel:focus-visible .p-body{opacity:1;transition-delay:.35s}
 .p-txt{display:block;font:400 clamp(17px,1.55vw,21px)/1.42 var(--serif);text-wrap:pretty}
+.p-ttl{display:block;margin-bottom:8px;font:600 clamp(20px,1.9vw,26px)/1.15 var(--serif);letter-spacing:-.01em}
 .p-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .p-chip{display:inline-flex;align-items:center;padding:4px 10px 4px 8px;border:1px solid var(--line2);border-radius:99px;background:var(--paper);
   font:500 10.5px var(--ff-m);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+/* card cascade (motion adds .cc and the glare) and the home sections that hold components */
+.v7-fgx{display:contents}
+.cc{position:relative;overflow:hidden}
+.cc-glare{position:absolute;left:50%;top:50%;width:120%;aspect-ratio:1;border-radius:50%;pointer-events:none;opacity:0;--g:var(--raise);
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--g) 55%,transparent),transparent)}
+:root[data-theme="dark"] .cc-glare{--g:var(--ink)}
+section.v7-how{position:relative;overflow-x:clip;margin:0;font-size:inherit}
+.wrap.page.v7-home{padding-inline:24px}
 /* glass field near the section heads */
 .p-glass{position:absolute;top:30px;right:60px;width:min(40%,440px);height:110px;pointer-events:none;z-index:0}
 .p-glass i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:5px;

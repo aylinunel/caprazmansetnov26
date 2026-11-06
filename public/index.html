@@ -2255,15 +2255,10 @@ h2,h3,.sec>h2,.xpaper h2,.find h3,.xcard h3,.xcard h2{letter-spacing:-.02em}
 .v7-fc mark.mw{position:relative}
 .v7-fc mark.mw.dm-fx{color:transparent;animation:none}
 canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
-.v7-steps{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
-.v7-steps li{display:grid;gap:6px;align-content:start;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
-.v7-steps .num{font-family:var(--ff-m);font-size:12px;color:var(--muted)}
-.v7-steps b{font-size:20px;font-weight:600}
-.v7-steps span:last-child{color:var(--ink2);font-size:15px;line-height:1.5}
 .v7-hgrid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .v7-hc{min-height:44px}
 .v7-hc span{color:var(--ink2);font-size:13.5px;line-height:1.5}
-@media (max-width:760px){.v7-fg,.v7-steps{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.v7-fg{grid-template-columns:minmax(0,1fr)}}
 #bu-hafta{scroll-margin-top:64px}
 .v7-fc-t{max-width:none}
 .v7-fm .xbtn[hidden]{display:none}
@@ -2370,6 +2365,8 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
   -webkit-mask:radial-gradient(circle 17px at 0 55%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 17px at 100% 55%,#0000 98%,#000) right/51% 100% no-repeat;
   mask:radial-gradient(circle 17px at 0 55%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 17px at 100% 55%,#0000 98%,#000) right/51% 100% no-repeat}
 .tix-n{align-self:end;padding-bottom:12px;font:600 clamp(36px,5vw,64px)/1 var(--serif);letter-spacing:-.03em;font-variant-numeric:tabular-nums lining-nums;color:var(--ink)}
+.tix{container-type:inline-size}
+.tix-n{font-size:min(clamp(36px,5vw,64px),calc(160cqw / var(--d,3)))}
 .tix-l{border-top:1.5px dashed color-mix(in srgb,var(--ink) 28%,transparent);margin:0 6px;padding-top:14px;font:500 11px var(--ff-m);letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
 /* ortak band: the two headlines slide in to a frosted shared sentence */
 .p-common{display:flex;align-items:center;overflow-x:clip;padding:26px 0;
@@ -2396,9 +2393,18 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 .p-body{position:absolute;left:24px;bottom:22px;width:max(calc(55cqw - 48px),calc(100% - 48px));opacity:0;transition:opacity .4s}
 .p-splits:not(:has(.panel:hover,.panel:focus-visible)) .panel.on .p-body,.p-splits .panel:hover .p-body,.p-splits .panel:focus-visible .p-body{opacity:1;transition-delay:.35s}
 .p-txt{display:block;font:400 clamp(17px,1.55vw,21px)/1.42 var(--serif);text-wrap:pretty}
+.p-ttl{display:block;margin-bottom:8px;font:600 clamp(20px,1.9vw,26px)/1.15 var(--serif);letter-spacing:-.01em}
 .p-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .p-chip{display:inline-flex;align-items:center;padding:4px 10px 4px 8px;border:1px solid var(--line2);border-radius:99px;background:var(--paper);
   font:500 10.5px var(--ff-m);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+/* card cascade (motion adds .cc and the glare) and the home sections that hold components */
+.v7-fgx{display:contents}
+.cc{position:relative;overflow:hidden}
+.cc-glare{position:absolute;left:50%;top:50%;width:120%;aspect-ratio:1;border-radius:50%;pointer-events:none;opacity:0;--g:var(--raise);
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--g) 55%,transparent),transparent)}
+:root[data-theme="dark"] .cc-glare{--g:var(--ink)}
+section.v7-how{position:relative;overflow-x:clip;margin:0;font-size:inherit}
+.wrap.page.v7-home{padding-inline:24px}
 /* glass field near the section heads */
 .p-glass{position:absolute;top:30px;right:60px;width:min(40%,440px);height:110px;pointer-events:none;z-index:0}
 .p-glass i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:5px;
@@ -12169,7 +12175,8 @@ function pLead(text) {
 function pTickets(nums) {
   if (!nums || !nums.length) return "";
   return '<div class="p-tix" data-m="tickets">' + nums.map(function (x) {
-    return '<div class="tix"><b class="tix-n" data-n="' + (+x.n) + '">' + (+x.n) + '</b><span class="tix-l">' + esc(x.label) + "</span></div>";
+    var t = (+x.n).toLocaleString("tr");
+    return '<div class="tix"><b class="tix-n" data-n="' + (+x.n) + '" style="--d:' + t.length + '">' + t + '</b><span class="tix-l">' + esc(x.label) + "</span></div>";
   }).join("") + "</div>";
 }
 
@@ -12179,12 +12186,13 @@ function pCommon(leftText, sharedText, rightText) {
   return '<div class="p-common" data-m="common">' + side(leftText, "pc-l") + '<p class="pc-band">' + esc(sharedText) + "</p>" + side(rightText, "pc-r") + "</div>";
 }
 
-/* Split accordion from pSplitPoints output: one panel per point; giant key word (first quoted phrase, else none) in the side colour. */
+/* Split accordion from pSplitPoints output (or steps: {bloc, word, title, text, outlets:[]}): one panel per point; giant key word
+   (first quoted phrase, else none) in the side colour; an optional bold title leads the text. */
 function pSplits(points) {
   return '<div class="p-splits" data-m="splits">' + (points || []).map(function (p, i) {
     var no = (i < 9 ? "0" : "") + (i + 1);
     return '<button type="button" class="panel ' + p.bloc + (i ? "" : " on") + '"><span class="p-no">' + no + "</span>" + (p.word ? '<span class="p-giant" aria-hidden="true">' + esc(p.word) + "</span>" : "") +
-      '<span class="p-body"><span class="p-txt">' + esc(p.text) + "</span>" + (p.outlets.length ? '<span class="p-chips">' + p.outlets.map(function (s) {
+      '<span class="p-body">' + (p.title ? '<b class="p-ttl">' + esc(p.title) + "</b>" : "") + '<span class="p-txt">' + esc(p.text) + "</span>" + (p.outlets.length ? '<span class="p-chips">' + p.outlets.map(function (s) {
         return '<span class="p-chip"><i class="v7-ld ' + bloc(s) + '"></i>' + esc(srcName(s)) + "</span>";
       }).join("") + "</span>" : "") + "</span></button>";
   }).join("") + "</div>";
@@ -12247,20 +12255,22 @@ function motionMount(root) {
 
 /* Runs MOTION_K for every [data-m] in root; one broken component only warns. */
 function motionEach(root, first) {
-  [].forEach.call(root.querySelectorAll("[data-m]"), function (el) {
+  var els = [].slice.call(root.querySelectorAll("[data-m]"));
+  if (root.matches("[data-m]")) els.unshift(root);
+  els.forEach(function (el) {
     var k = MOTION_K[el.dataset.m];
     try { if (k) k(el, first); } catch (err) { console.warn("motion:", el.dataset.m, err); }
   });
 }
 
 function motionRun(root, first) {
-  MOTION.ctx = gsap.context(function () { motionEach(root, first); }, root);
+  MOTION.ctx = gsap.context(function () { motionEach(root, first); var ft = document.querySelector("footer.xfoot"); if (ft) motionEach(ft, first); }, root);
   var t = 0;
   motionRO = new ResizeObserver(function () { clearTimeout(t); t = setTimeout(function () { ScrollTrigger.refresh(); }, 150); });
   motionRO.observe(document.getElementById("view"));
 }
 
-/* New [data-m] nodes written after the mount (feed "more"): animate them inside the current route's context. */
+/* New [data-m] nodes written after the mount (feed "more"): animate el (if it has data-m) and its [data-m] descendants inside the current route's context. */
 function motionAdd(el) {
   if (MOTION.ctx) MOTION.ctx.add(function () { motionEach(el, false); });
 }
@@ -12307,7 +12317,7 @@ MOTION_K.lead = function (el, first) {
    phone counts once on enter. Counters count only inside the range: at progress 0 and 1 they show their exact value. */
 MOTION_K.tickets = function (el, first) {
   var sec = el.parentNode, wide = innerWidth >= 901, ns = [].slice.call(el.querySelectorAll(".tix-n")), os = ns.map(function () { return { v: 0 }; });
-  var tl, show = function () { if (!tl) return; var p = tl.progress(); ns.forEach(function (b, i) { b.textContent = p > 0 && p < 1 ? Math.round(os[i].v) : b.dataset.n; }); };
+  var tl, show = function () { if (!tl) return; var p = tl.progress(); ns.forEach(function (b, i) { b.textContent = (p > 0 && p < 1 ? Math.round(os[i].v) : +b.dataset.n).toLocaleString("tr"); }); };
   var top = function () { var n = document.querySelector(".navbar"); return "top " + ((n ? n.offsetHeight : 64) + 24) + "px"; };
   tl = gsap.timeline({ onUpdate: show, onComplete: show, onReverseComplete: show,
     scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: show, onLeaveBack: show } : { trigger: el, start: "top 85%" } });
@@ -12328,7 +12338,7 @@ MOTION_K.splits = function (el, first) {
     ps.forEach(function (x) { x.classList.toggle("on", x === p); });
     gsap.fromTo(p.querySelector(".p-body"), { y: 16, filter: "blur(10px)" }, { y: 0, filter: "blur(0px)", duration: .8, delay: .2, ease: "power3.out", clearProps: "transform,filter" });
   };
-  ps.forEach(function (p) { ["mouseenter", "focus", "click"].forEach(function (t) { p.addEventListener(t, function () { on(p); }); }); });
+  ps.forEach(function (p) { ["mouseenter", "focusin", "click"].forEach(function (t) { p.addEventListener(t, function () { on(p); }); }); });
   if (!(first && motionInView(el))) gsap.from(ps, { yPercent: 14, opacity: 0, duration: 1, stagger: .09, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" } });
 };
 MOTION_K.glass = function (el) {
@@ -12336,6 +12346,67 @@ MOTION_K.glass = function (el) {
     gsap.to(g, { opacity: .15, duration: .6 + Math.random() * 1.4, delay: Math.random() * 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
     gsap.to(g, { y: -(30 + i * 22), ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
   });
+};
+/* Card cascade: cards rise in a stagger as they scroll in; mouse/pen tilt them ±8° in 3D with a light glare that follows the pointer.
+   Cascades re-rendered by innerHTML (ilan results) leave triggers on detached cards: those are killed here first. */
+MOTION_K.cascade = function (el, first) {
+  ScrollTrigger.getAll().forEach(function (t) { if (t.trigger && !t.trigger.isConnected) t.kill(); });
+  var cs = [].slice.call(el.children), hide = cs.filter(function (c) { return !(first && motionInView(c)); });
+  gsap.set(hide, { opacity: 0, y: 60 });
+  ScrollTrigger.batch(hide, { start: "top 94%", onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: .9, stagger: .09, ease: "power3.out", overwrite: true }); } });
+  cs.forEach(function (c) {
+    var g = document.createElement("i"), q = function (t, p) { return gsap.quickTo(t, p, { duration: .5, ease: "power3" }); };
+    g.className = "cc-glare"; g.setAttribute("aria-hidden", "true"); c.appendChild(g); c.classList.add("cc");
+    var rx = q(c, "rotationX"), ry = q(c, "rotationY"), gx = q(g, "x"), gy = q(g, "y");
+    gsap.set(g, { xPercent: -50, yPercent: -50 });
+    gsap.set(c, { transformPerspective: Math.max(800, c.offsetWidth * 2) });
+    c.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "touch") return;
+      var r = c.getBoundingClientRect(), u = (e.clientX - r.left) / r.width - .5, v = (e.clientY - r.top) / r.height - .5;
+      ry(u * 16); rx(-v * 16); gx(u * r.width); gy(v * r.height); gsap.to(g, { opacity: 1, duration: .3, overwrite: "auto" });
+    });
+    c.addEventListener("pointerleave", function () { rx(0); ry(0); gsap.to(g, { opacity: 0, duration: .5, overwrite: "auto" }); });
+  });
+};
+/* Wraps each count in el's text (1.234 · 42 · 3,5) in span.sc-n; skips years and day-of-month dates ("27 Ekim"). */
+var MOTION_MON = /^\s*(Ocak|Şubat|Mart|Nisan|Mayıs|Haziran|Temmuz|Ağustos|Eylül|Ekim|Kasım|Aralık)/;
+function motionNums(el) {
+  var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), ts = [], out = [], t, re = /\d{1,3}(?:\.\d{3})+(?:,\d+)?|\d+(?:,\d+)?/g;
+  while ((t = w.nextNode())) ts.push(t);
+  ts.forEach(function (t) {
+    var s = t.nodeValue, f = document.createDocumentFragment(), i = 0, n = out.length, m;
+    re.lastIndex = 0;
+    while ((m = re.exec(s))) {
+      if (/^\d{4}$/.test(m[0]) || MOTION_MON.test(s.slice(re.lastIndex)) || /\p{L}$/u.test(s.slice(0, m.index))) continue;
+      f.appendChild(document.createTextNode(s.slice(i, m.index)));
+      var sp = document.createElement("span"); sp.className = "sc-n"; sp.textContent = m[0]; f.appendChild(sp); out.push(sp); i = re.lastIndex;
+    }
+    if (out.length === n) return;
+    f.appendChild(document.createTextNode(s.slice(i))); t.parentNode.replaceChild(f, t);
+  });
+  return out;
+}
+/* Finding scene: on desktop the claim pins under the nav while its chart scrolls up beneath it; chart rows (and their bars) draw in
+   sequence with scroll and the claim's counts climb with them. Counts show their exact text outside the drawing range. A G6 network scales in instead. */
+MOTION_K.scene = function (el, first) {
+  var claim = el.querySelector(".v7-claim"), viz = el.querySelector(".v7-viz"), g6 = viz && viz.querySelector(".g6-box");
+  if (!claim || !viz) return;
+  var top = function () { var n = document.querySelector(".navbar"); return (n ? n.offsetHeight : 64) + 16; };
+  if (innerWidth >= 901) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
+    end: function () { return "bottom " + (top() + claim.offsetHeight + 24) + "px"; }, pin: claim, pinSpacing: false, toggleClass: "is-pin" });
+  if (g6 && !(first && motionInView(g6))) gsap.from(g6, { scale: .86, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: g6, start: "top 85%" } });
+  var rows = g6 ? [] : [].slice.call(viz.querySelectorAll(".vz-r:not(.vz-ax),.or-bar")), bars = viz.querySelectorAll(".vz-span,.or-bt i");
+  var ns = motionNums(claim), os = ns.map(function (b) { var t = b.textContent; return { v: 0, n: +t.replace(/\./g, "").replace(",", "."), d: (t.split(",")[1] || "").length, t: t }; });
+  var tl, show = function () {
+    var p = tl.progress();
+    ns.forEach(function (b, i) { var o = os[i]; b.textContent = p > 0 && p < 1 ? o.v.toLocaleString("tr", { minimumFractionDigits: o.d, maximumFractionDigits: o.d }) : o.t; });
+  };
+  tl = gsap.timeline({ onUpdate: show, scrollTrigger: { trigger: viz, start: "top 85%", end: "bottom 55%", scrub: .6, onLeave: show, onLeaveBack: show } });
+  if (!g6) tl.from(rows.length ? rows : viz, { opacity: 0, y: 24, duration: .4, stagger: .08, ease: "power2.out" }, 0);
+  if (bars.length) tl.from(bars, { scaleX: 0, transformOrigin: "0 50%", duration: .4, stagger: .08, ease: "power2.out" }, .1);
+  var d = Math.max(.6, tl.duration());
+  os.forEach(function (o) { tl.to(o, { v: o.n, duration: d, ease: "power1.out", onUpdate: function () { if (!o.d) o.v = Math.round(o.v); } }, 0); });
+  show();
 };
 
 /* Homepage: what the site does, one live card per function. Each card states the function in one line
@@ -12350,7 +12421,9 @@ var FEED = { list: [], shown: 0 };
 function feedMore() {
   var g = document.getElementById("feed-grid"), b = document.getElementById("feed-more");
   if (!g) return;
-  g.insertAdjacentHTML("beforeend", FEED.list.slice(FEED.shown, FEED.shown + 6).map(feedCard).join(""));
+  /* new cards go in their own cascade (display:contents keeps them in the grid) so the mounted one is left alone */
+  g.insertAdjacentHTML("beforeend", '<div class="v7-fgx" data-m="cascade">' + FEED.list.slice(FEED.shown, FEED.shown + 6).map(feedCard).join("") + "</div>");
+  motionAdd(g.lastElementChild);
   FEED.shown = Math.min(FEED.list.length, FEED.shown + 6);
   if (b) b.hidden = FEED.shown >= FEED.list.length;
   dmFeedWatch(g);
@@ -12360,25 +12433,26 @@ function feedHTML(lead) {
   FEED.list = weeklySplits(D.E, DAYS[DAYS.length - 1], { exclude: [lead.i], cov: covOf }).filter(function (e) { return defaultPair(e); });
   FEED.shown = Math.min(6, FEED.list.length);
   var all = '<a class="lnk" href="#/olaylar">Tüm olaylar →</a>';
-  return '<div class="wrap"><h2 class="v7-hh">Bu hafta en farklı anlatılan olaylar</h2>' + (FEED.list.length ?
-    '<div class="v7-fg" id="feed-grid">' + FEED.list.slice(0, 6).map(feedCard).join("") + "</div>" :
+  return '<div class="wrap">' + pHead("Olaylar", "Bu hafta en farklı anlatılan olaylar") + (FEED.list.length ?
+    '<div class="v7-fg" id="feed-grid" data-m="cascade">' + FEED.list.slice(0, 6).map(feedCard).join("") + "</div>" :
     '<p class="v7-fc-none">Bu hafta iki taraftan da verilen olay yok</p>') +
     '<div class="v7-fm"><button type="button" class="xbtn" id="feed-more"' + (FEED.shown >= FEED.list.length ? " hidden" : "") + ">Daha fazla göster</button>" + all + "</div></div>";
 }
 function pgHome7() {
   var top = weeklySplits(D.E, DAYS[DAYS.length - 1], { cov: covOf }).filter(function (e) { return defaultPair(e); });
   var lead = top[0] || leadEvent();
-  var step = function (n, t, l) { return '<li><span class="num">' + n + "</span><b>" + t + "</b><span>" + l + "</span></li>"; };
+  var step = function (n, t, l) { return { bloc: "mid", word: String(n), title: t, text: l, outlets: [] }; }, m = D.meta.counts;
   var deep = ["/olaylar", "/anlati", "/oruntu", "/kurumlar", "/yontem"].map(function (r) {
     var nv = NAV.filter(function (n) { return n[0] === r; })[0];
     return nv ? '<a class="v7-hc" href="#' + r + '"><b>' + esc(nv[1]) + "</b><span>" + esc(NAV_SUB[r]) + "</span></a>" : "";
   }).join("");
   var h = fogHero(lead) + '<section id="bu-hafta" class="v7-feed">' + feedHTML(lead) + '</section><div class="wrap page v7-home">';
-  h += '<section class="v7-how"><h2 class="v7-hh">Çapraz Manşet nasıl çalışır</h2><ol class="v7-steps">' +
-    step(1, "Karşılaştır", "Aynı olayın bütün başlıklarını yan yana koyarız.") +
-    step(2, "Fark et", "Kurumlar arasında ayrışan sözcükleri işaretleriz.") +
-    step(3, "Ölç", "Bu farkların haftalar boyunca tekrar edip etmediğini sayarız.") + "</ol></section>";
-  h += '<section><h2 class="v7-hh">Daha derine in</h2><div class="v7-hgrid">' + deep + "</div></section>";
+  h += '<section class="v7-how">' + pGlass(6) + '<div class="p-ne">' + pHead("Nasıl çalışır", "Çapraz Manşet nasıl çalışır") +
+    pTickets([{ n: m.articles, label: "başlık" }, { n: D.E.length, label: "olay" }, { n: D.meta.sources.length, label: "kurum" }]) + "</div>" + pSplits([
+    step(1, "Karşılaştır", "Aynı olayın bütün başlıklarını yan yana koyarız."),
+    step(2, "Fark et", "Kurumlar arasında ayrışan sözcükleri işaretleriz."),
+    step(3, "Ölç", "Bu farkların haftalar boyunca tekrar edip etmediğini sayarız.")]) + "</section>";
+  h += "<section>" + pHead("Çapraz Manşet", "Daha derine in") + '<div class="v7-hgrid">' + deep + "</div></section>";
   if (ADV && ADV.agenda) h += '<section class="v7-hnet"><div class="v7-hnet-t"><p class="eyebrow">Gündem ağı · ' + ADV.agenda.order.length + ' kurum</p><h2 class="v7-hh">Kim kiminle aynı haberleri seçiyor?</h2>' +
     '<p class="lede">Birlikte çok olay haber yapan kurumlar birbirine çekilir. Renk kayıt defterindeki yerleşim, büyüklük verilen olay sayısı. Bir kuruma ' + orTap() + ', komşuları öne çıksın.</p>' +
     '<a class="lnk" href="#/oruntu?q=secim&f=secim-gundem">Bulgunun tamamı →</a></div>' + g6Box("agenda", "", "Kurumların gündem benzerliği ağı") + "</section>";

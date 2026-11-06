@@ -14,7 +14,8 @@ function pLead(text) {
 function pTickets(nums) {
   if (!nums || !nums.length) return "";
   return '<div class="p-tix" data-m="tickets">' + nums.map(function (x) {
-    return '<div class="tix"><b class="tix-n" data-n="' + (+x.n) + '">' + (+x.n) + '</b><span class="tix-l">' + esc(x.label) + "</span></div>";
+    var t = (+x.n).toLocaleString("tr");
+    return '<div class="tix"><b class="tix-n" data-n="' + (+x.n) + '" style="--d:' + t.length + '">' + t + '</b><span class="tix-l">' + esc(x.label) + "</span></div>";
   }).join("") + "</div>";
 }
 
@@ -24,12 +25,13 @@ function pCommon(leftText, sharedText, rightText) {
   return '<div class="p-common" data-m="common">' + side(leftText, "pc-l") + '<p class="pc-band">' + esc(sharedText) + "</p>" + side(rightText, "pc-r") + "</div>";
 }
 
-/* Split accordion from pSplitPoints output: one panel per point; giant key word (first quoted phrase, else none) in the side colour. */
+/* Split accordion from pSplitPoints output (or steps: {bloc, word, title, text, outlets:[]}): one panel per point; giant key word
+   (first quoted phrase, else none) in the side colour; an optional bold title leads the text. */
 function pSplits(points) {
   return '<div class="p-splits" data-m="splits">' + (points || []).map(function (p, i) {
     var no = (i < 9 ? "0" : "") + (i + 1);
     return '<button type="button" class="panel ' + p.bloc + (i ? "" : " on") + '"><span class="p-no">' + no + "</span>" + (p.word ? '<span class="p-giant" aria-hidden="true">' + esc(p.word) + "</span>" : "") +
-      '<span class="p-body"><span class="p-txt">' + esc(p.text) + "</span>" + (p.outlets.length ? '<span class="p-chips">' + p.outlets.map(function (s) {
+      '<span class="p-body">' + (p.title ? '<b class="p-ttl">' + esc(p.title) + "</b>" : "") + '<span class="p-txt">' + esc(p.text) + "</span>" + (p.outlets.length ? '<span class="p-chips">' + p.outlets.map(function (s) {
         return '<span class="p-chip"><i class="v7-ld ' + bloc(s) + '"></i>' + esc(srcName(s)) + "</span>";
       }).join("") + "</span>" : "") + "</span></button>";
   }).join("") + "</div>";
