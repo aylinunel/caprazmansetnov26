@@ -2252,7 +2252,7 @@ function pgExplorer() {
     '<span class="mono" style="font-size:12px;color:var(--muted)">' + keys.length +
     " araç, bu dönem tetiklendi</span></div>";
 
-  h += '<div class="exp-grid"><div class="exp-list" id="explist">' +
+  h += '<div class="exp-grid"><div class="exp-list" id="explist" data-lenis-prevent>' +
     keys.filter(function (k) {
       if (!EXPQ) return true;
       var b = BREG[k] || BIA[k] || {};
@@ -3303,7 +3303,7 @@ var MODAL = null;
 function ensureModal() {
   if (MODAL) return MODAL;
   MODAL = el("div", "mdl");
-  MODAL.innerHTML = '<div class="mdl-bg" data-close></div><div class="mdl-box">' +
+  MODAL.innerHTML = '<div class="mdl-bg" data-close></div><div class="mdl-box" data-lenis-prevent>' +
     '<div class="mdl-hd"><button class="mdl-x" data-close aria-label="Kapat">×</button>' +
     '<h3 id="mdlT"></h3><div class="tr" id="mdlTr"></div>' +
     '<div style="margin-top:9px" id="mdlTier"></div></div>' +
@@ -4965,7 +4965,7 @@ var KP_GROUPS = [["left", "Sol"], ["mid", "Merkez"], ["right", "Sağ"], ["none",
 function outletPicker(id, href, w) {
   var by = { left: [], mid: [], right: [], none: [] };
   LIVE.forEach(function (s) { if (SRC[s]) by[SRC[s].lean != null ? bloc(s) : "none"].push(s); });
-  return '<div class="kp" id="' + id + '">' + KP_GROUPS.filter(function (g) { return by[g[0]].length; }).map(function (g) {
+  return '<div class="kp" id="' + id + '" data-lenis-prevent>' + KP_GROUPS.filter(function (g) { return by[g[0]].length; }).map(function (g) {
     var list = by[g[0]].sort(function (x, y) { var a = SRC[x].lean, b = SRC[y].lean; return (a == null ? 0 : a) - (b == null ? 0 : b) || trCmp(srcName(x), srcName(y)); });
     return '<div class="kp-g"><h3 class="kp-h"><i class="v7-ld ' + g[0] + '"></i>' + g[1] + ' <span class="num">' + list.length + '</span></h3><div class="kp-c">' + list.map(function (s) {
       var inner = '<i class="v7-ld ' + g[0] + '"></i>' + esc(srcName(s)), fold = ' data-n="' + esc(trFold(srcName(s))) + '"';
@@ -5002,7 +5002,7 @@ function openFix(kind, id, label) {
   var target = { olay: "Olay", kurum: "Kurum profili", ozet: "Özet", genel: "Genel" }[kind] || "Genel";
   var d = document.createElement("div");
   d.id = "xfix"; d.className = "xfix"; d.setAttribute("role", "dialog"); d.setAttribute("aria-modal", "true"); d.setAttribute("aria-labelledby", "xfix-h");
-  d.innerHTML = '<form class="xfix-f" novalidate><h2 id="xfix-h">Bir olgu yanlış mı?</h2>' +
+  d.innerHTML = '<form class="xfix-f" data-lenis-prevent novalidate><h2 id="xfix-h">Bir olgu yanlış mı?</h2>' +
     '<p class="xsmall">Hedef: <b>' + esc(target) + "</b>" + (label ? " · " + esc(label) : "") + "</p>" +
     '<label>Ne yanlış? <span class="xsmall">(zorunlu)</span><textarea name="what" rows="4" maxlength="1200" required></textarea></label>' +
     '<label>Kanıt bağlantısı <span class="xsmall">(isteğe bağlı, https://)</span><input name="url" type="url" inputmode="url" placeholder="https://"></label>' +
@@ -5560,7 +5560,7 @@ function v3openAppeal(btn) {
   var words = [], seen = {};
   [].forEach.call(sp.querySelectorAll("mark.mw"), function (m) { if (!seen[m.textContent]) { seen[m.textContent] = 1; words.push(m.textContent); } });
   var d = document.createElement("div");
-  d.className = "cm3-dlg"; d.setAttribute("data-cm3", "");
+  d.className = "cm3-dlg"; d.setAttribute("data-cm3", ""); d.setAttribute("data-lenis-prevent", "");
   d.innerHTML = '<form role="dialog" aria-modal="true" aria-labelledby="cm3a-h" novalidate>' +
     '<h2 id="cm3a-h">' + esc(t3("appealTitle")) + "</h2>" +
     '<p class="xsmall">' + esc(t3("appealScope")) + "</p>" +
@@ -6193,6 +6193,7 @@ function v3After(path, tab, params) {
 }
 
 function route() {
+  motionUnmount();
   v3readShadow();
   v3scrub();
   var raw = location.hash.replace(/^#/, "") || "/";
@@ -6219,7 +6220,7 @@ function route() {
     ? adminShell(tab) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + adminFoot()
     : navHTML(path, home, tab || (path === "/oruntu" ? params.q || "secim" : null)) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + footer2());
   closeModal();
-  scrollTo(0, 0);
+  if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); else scrollTo(0, 0);
   if (!admin) layoutPills();
   var onTab = document.querySelector(".subrow .subtab.on"); if (onTab && onTab.scrollIntoView) onTab.scrollIntoView({ inline: "center", block: "nearest" });
   if (home) { var cv = document.getElementById("acid"); if (cv) startAcid(cv); }
@@ -6449,6 +6450,7 @@ function route() {
   }
 
   v2After(path, tab, params); v2bAfter(path, tab, params); v2cAfter(path, tab, params); v3After(path, tab, params);
+  motionMount(document.getElementById("view"));
   var b3 = document.getElementById("burger"), mm = document.getElementById("mobmenu");
   if (b3) b3.onclick = function () {
     var open = mm.classList.toggle("open");

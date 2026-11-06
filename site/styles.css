@@ -1591,6 +1591,12 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
   --fibre:none;
 }
 html,body{overflow-x:clip}
+/* lenis@1.1.13 dist/lenis.css, inlined (the artifact CSP allows no external stylesheets) */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-smooth iframe{pointer-events:none}
 body{background-color:var(--paper);background-image:var(--grain),var(--fibre);background-size:180px 180px,300px 300px}
 
 /* ---- firmer edges and type */

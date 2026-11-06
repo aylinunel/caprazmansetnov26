@@ -1603,6 +1603,12 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
   --fibre:none;
 }
 html,body{overflow-x:clip}
+/* lenis@1.1.13 dist/lenis.css, inlined (the artifact CSP allows no external stylesheets) */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-smooth iframe{pointer-events:none}
 body{background-color:var(--paper);background-image:var(--grain),var(--fibre);background-size:180px 180px,300px 300px}
 
 /* ---- firmer edges and type */
@@ -6325,7 +6331,7 @@ function pgExplorer() {
     '<span class="mono" style="font-size:12px;color:var(--muted)">' + keys.length +
     " araç, bu dönem tetiklendi</span></div>";
 
-  h += '<div class="exp-grid"><div class="exp-list" id="explist">' +
+  h += '<div class="exp-grid"><div class="exp-list" id="explist" data-lenis-prevent>' +
     keys.filter(function (k) {
       if (!EXPQ) return true;
       var b = BREG[k] || BIA[k] || {};
@@ -7376,7 +7382,7 @@ var MODAL = null;
 function ensureModal() {
   if (MODAL) return MODAL;
   MODAL = el("div", "mdl");
-  MODAL.innerHTML = '<div class="mdl-bg" data-close></div><div class="mdl-box">' +
+  MODAL.innerHTML = '<div class="mdl-bg" data-close></div><div class="mdl-box" data-lenis-prevent>' +
     '<div class="mdl-hd"><button class="mdl-x" data-close aria-label="Kapat">×</button>' +
     '<h3 id="mdlT"></h3><div class="tr" id="mdlTr"></div>' +
     '<div style="margin-top:9px" id="mdlTier"></div></div>' +
@@ -9038,7 +9044,7 @@ var KP_GROUPS = [["left", "Sol"], ["mid", "Merkez"], ["right", "Sağ"], ["none",
 function outletPicker(id, href, w) {
   var by = { left: [], mid: [], right: [], none: [] };
   LIVE.forEach(function (s) { if (SRC[s]) by[SRC[s].lean != null ? bloc(s) : "none"].push(s); });
-  return '<div class="kp" id="' + id + '">' + KP_GROUPS.filter(function (g) { return by[g[0]].length; }).map(function (g) {
+  return '<div class="kp" id="' + id + '" data-lenis-prevent>' + KP_GROUPS.filter(function (g) { return by[g[0]].length; }).map(function (g) {
     var list = by[g[0]].sort(function (x, y) { var a = SRC[x].lean, b = SRC[y].lean; return (a == null ? 0 : a) - (b == null ? 0 : b) || trCmp(srcName(x), srcName(y)); });
     return '<div class="kp-g"><h3 class="kp-h"><i class="v7-ld ' + g[0] + '"></i>' + g[1] + ' <span class="num">' + list.length + '</span></h3><div class="kp-c">' + list.map(function (s) {
       var inner = '<i class="v7-ld ' + g[0] + '"></i>' + esc(srcName(s)), fold = ' data-n="' + esc(trFold(srcName(s))) + '"';
@@ -9075,7 +9081,7 @@ function openFix(kind, id, label) {
   var target = { olay: "Olay", kurum: "Kurum profili", ozet: "Özet", genel: "Genel" }[kind] || "Genel";
   var d = document.createElement("div");
   d.id = "xfix"; d.className = "xfix"; d.setAttribute("role", "dialog"); d.setAttribute("aria-modal", "true"); d.setAttribute("aria-labelledby", "xfix-h");
-  d.innerHTML = '<form class="xfix-f" novalidate><h2 id="xfix-h">Bir olgu yanlış mı?</h2>' +
+  d.innerHTML = '<form class="xfix-f" data-lenis-prevent novalidate><h2 id="xfix-h">Bir olgu yanlış mı?</h2>' +
     '<p class="xsmall">Hedef: <b>' + esc(target) + "</b>" + (label ? " · " + esc(label) : "") + "</p>" +
     '<label>Ne yanlış? <span class="xsmall">(zorunlu)</span><textarea name="what" rows="4" maxlength="1200" required></textarea></label>' +
     '<label>Kanıt bağlantısı <span class="xsmall">(isteğe bağlı, https://)</span><input name="url" type="url" inputmode="url" placeholder="https://"></label>' +
@@ -9633,7 +9639,7 @@ function v3openAppeal(btn) {
   var words = [], seen = {};
   [].forEach.call(sp.querySelectorAll("mark.mw"), function (m) { if (!seen[m.textContent]) { seen[m.textContent] = 1; words.push(m.textContent); } });
   var d = document.createElement("div");
-  d.className = "cm3-dlg"; d.setAttribute("data-cm3", "");
+  d.className = "cm3-dlg"; d.setAttribute("data-cm3", ""); d.setAttribute("data-lenis-prevent", "");
   d.innerHTML = '<form role="dialog" aria-modal="true" aria-labelledby="cm3a-h" novalidate>' +
     '<h2 id="cm3a-h">' + esc(t3("appealTitle")) + "</h2>" +
     '<p class="xsmall">' + esc(t3("appealScope")) + "</p>" +
@@ -10266,6 +10272,7 @@ function v3After(path, tab, params) {
 }
 
 function route() {
+  motionUnmount();
   v3readShadow();
   v3scrub();
   var raw = location.hash.replace(/^#/, "") || "/";
@@ -10292,7 +10299,7 @@ function route() {
     ? adminShell(tab) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + adminFoot()
     : navHTML(path, home, tab || (path === "/oruntu" ? params.q || "secim" : null)) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + footer2());
   closeModal();
-  scrollTo(0, 0);
+  if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); else scrollTo(0, 0);
   if (!admin) layoutPills();
   var onTab = document.querySelector(".subrow .subtab.on"); if (onTab && onTab.scrollIntoView) onTab.scrollIntoView({ inline: "center", block: "nearest" });
   if (home) { var cv = document.getElementById("acid"); if (cv) startAcid(cv); }
@@ -10522,6 +10529,7 @@ function route() {
   }
 
   v2After(path, tab, params); v2bAfter(path, tab, params); v2cAfter(path, tab, params); v3After(path, tab, params);
+  motionMount(document.getElementById("view"));
   var b3 = document.getElementById("burger"), mm = document.getElementById("mobmenu");
   if (b3) b3.onclick = function () {
     var open = mm.classList.toggle("open");
@@ -12045,6 +12053,67 @@ function fogMount(root) {
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
   set("--k", "0"); set("--k2", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();
+}
+
+/* v7 motion: GSAP + ScrollTrigger + Lenis, loaded on the first mount (local vendor/ copy first, CDN fallback).
+   route() calls motionUnmount() before it replaces the page and motionMount(view) after the last render pass.
+   A component puts data-m="kind" on its element and registers MOTION_K[kind] = function (el, first) {...};
+   first is true on the mount that runs when the libraries arrive (skip elements already in view then).
+   Until the libraries load, or if they never do, components stay in their final readable state. */
+var MOTION = { lenis: null, ctx: null, ready: false }, MOTION_K = {};
+var MOTION_SRC = [
+  ["vendor/gsap.min.js", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"],
+  ["vendor/ScrollTrigger.min.js", "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"],
+  ["vendor/lenis.min.js", "https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"]];
+var motionP = null, motionPend = null, motionRO = null;
+
+function motionLoad() {
+  if (motionP) return motionP;
+  var one = function (src, i) {
+    return new Promise(function (ok, no) {
+      var s = document.createElement("script");
+      s.src = src[i];
+      s.onload = ok;
+      s.onerror = function () { s.remove(); if (i + 1 < src.length) one(src, i + 1).then(ok, no); else no(); };
+      document.head.appendChild(s);
+    });
+  };
+  motionP = MOTION_SRC.reduce(function (p, src) { return p.then(function () { return one(src, 0); }); }, Promise.resolve()).then(function () {
+    gsap.registerPlugin(ScrollTrigger);
+    var l = MOTION.lenis = new Lenis({ duration: 1.25, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true, anchors: false });
+    l.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(function (t) { l.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    MOTION.ready = true;
+    var r = motionPend; motionPend = null;
+    if (r && r.isConnected) motionRun(r, true);
+    return true;
+  }, function () {
+    console.warn("motion: GSAP/Lenis unavailable, page stays static");
+    return false;
+  });
+  return motionP;
+}
+
+function motionMount(root) {
+  if (!MOTION.ready) { motionPend = root; motionLoad(); return; }
+  motionRun(root, false);
+}
+
+function motionRun(root, first) {
+  MOTION.ctx = gsap.context(function () {
+    [].forEach.call(root.querySelectorAll("[data-m]"), function (el) { var k = MOTION_K[el.dataset.m]; if (k) k(el, first); });
+  }, root);
+  var t = 0;
+  motionRO = new ResizeObserver(function () { clearTimeout(t); t = setTimeout(function () { ScrollTrigger.refresh(); }, 150); });
+  motionRO.observe(document.getElementById("view"));
+}
+
+function motionUnmount() {
+  motionPend = null;
+  if (MOTION.ctx) MOTION.ctx.revert();
+  if (motionRO) motionRO.disconnect();
+  MOTION.ctx = motionRO = null;
 }
 
 /* Homepage: what the site does, one live card per function. Each card states the function in one line

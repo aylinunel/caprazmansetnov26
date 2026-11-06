@@ -288,6 +288,53 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (!/^#\/kurum\?s=/.test(await page.evaluate(() => location.hash))) fails.push("touch: first tap on .or-dot did not navigate to #/kurum?s=..."); }
     await ctx.close();
   }
+  /* Motion runtime (GSAP, ScrollTrigger, Lenis): lifecycle, races, offline fallback, scroll boxes. */
+  {
+    const url = (r) => `http://127.0.0.1:${port}/index.html${r}`;
+    const open = async (tag, vh, offline) => {
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: vh || 800 } }), page = await ctx.newPage();
+      /* offline: the browser itself logs each aborted script as "Failed to load resource"; only app errors count */
+      if (offline) await page.route(/\/vendor\/(gsap|ScrollTrigger|lenis)|cdnjs\.cloudflare\.com|unpkg\.com/, (r) => r.abort());
+      page.on("pageerror", (e) => fails.push(`${tag}: pageerror ${e.message}`));
+      page.on("console", (m) => { if (m.type() === "error" && !(offline && /Failed to load resource/.test(m.text()))) fails.push(`${tag}: console ${m.text()}`); });
+      return [ctx, page];
+    };
+    const nST = (page) => page.evaluate(() => typeof ScrollTrigger === "undefined" ? -1 : ScrollTrigger.getAll().length);
+    /* (a) home -> event -> outlet -> home leaves as many ScrollTriggers as a fresh home load */
+    let [ctx, page] = await open("motion a");
+    await page.goto(url("#/")); await sleep(3000);
+    const fresh = await nST(page);
+    for (const h of ["#/olay?e=s4374", "#/kurum?s=takvim", "#/"]) { await page.evaluate((x) => { location.hash = x; }, h); await sleep(1500); }
+    const after = await nST(page);
+    if (fresh < 0 || after !== fresh) fails.push(`motion a: ScrollTrigger count fresh ${fresh}, after round trip ${after}`);
+    await ctx.close();
+    /* (b) three hash changes within 300 ms of a cold load: one Lenis, no errors */
+    [ctx, page] = await open("motion b");
+    await page.goto(url("#/")); await page.waitForSelector("#view");
+    for (const h of ["#/olaylar", "#/olay?e=s4374", "#/"]) { await page.evaluate((x) => { location.hash = x; }, h); await sleep(100); }
+    await sleep(3000);
+    if (await page.evaluate(() => document.querySelectorAll("html.lenis").length) !== 1) fails.push("motion b: html.lenis missing after quick hash changes");
+    await ctx.close();
+    /* (c) libraries blocked: the page still reads, without console errors */
+    [ctx, page] = await open("motion c", 800, true);
+    await page.goto(url("#/olay?e=s4374")); await sleep(3000);
+    const len = await page.evaluate(() => (document.getElementById("view") || {}).innerText.length || 0);
+    if (len <= 500) fails.push(`motion c: #view text ${len} chars with libraries blocked`);
+    await ctx.close();
+    /* (d) the wheel inside a dialog scrolls the dialog, not the page */
+    [ctx, page] = await open("motion d", 400);
+    await page.goto(url("#/olay?e=s4374")); await sleep(3000);
+    await page.click("[data-fix]"); await sleep(300);
+    const box = await page.$(".xfix-f"), bb = box && await box.boundingBox();
+    if (!bb) fails.push("motion d: .xfix-f did not open");
+    else {
+      const y0 = await page.evaluate(() => scrollY);
+      await page.mouse.move(bb.x + bb.width / 2, bb.y + bb.height / 2); await page.mouse.wheel(0, 300); await sleep(800);
+      const [st, y1] = await page.evaluate(() => [document.querySelector(".xfix-f").scrollTop, scrollY]);
+      if (!(st > 0) || y1 !== y0) fails.push(`motion d: wheel in .xfix-f scrolled box ${st}, page ${y0}->${y1}`);
+    }
+    await ctx.close();
+  }
   await browser.close(); srv.close();
   fails.forEach((f) => console.error("FAIL", f));
   console.log(fails.length ? `${fails.length} failure(s)` : "smoke ok");
