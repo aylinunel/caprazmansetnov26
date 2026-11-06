@@ -183,3 +183,55 @@ test("kuDat: letter names and spoken numbers", () => {
   assert.ok(k("T50").endsWith("T50’ye benziyor."));
   assert.ok(k("TELE1").endsWith("TELE1’e benziyor."));
 });
+
+test("pNums: screenshot sentence", () => {
+  assert.deepEqual(L.pNums("Jandarmanın 32 ilde FETÖ'ye yönelik düzenlediği operasyonlarda 72 şüpheli yakalandı, bunlardan 41'i tutuklandı."),
+    [{ n: 32, label: "il" }, { n: 72, label: "şüpheli" }, { n: 41, label: "tutuklama" }]);
+});
+test("pNums: rejects scores, years, ordinals, decimals, ranges, ages; needs 2 hits", () => {
+  for (const s of ["4-1 kazandı ve 3 kişi", "2030'a kadar 5 kişi", "4. dönemi 2 kişi", "18,3 milyar ve 7 kişi", "57-58'i ve 9 kişi", "14 yaşındaki 3 kişi", "11'leri ve 4 kişi"])
+    assert.deepEqual(L.pNums(s), [], s);
+  assert.deepEqual(L.pNums("3,5 kişi ve 2 ölü"), [], "decimal is not a count");
+  assert.deepEqual(L.pNums("5 ölü, 12 yaralı, 3 kayıp, 9 gözaltına alındı"), [{ n: 5, label: "ölü" }, { n: 12, label: "yaralı" }, { n: 3, label: "kayıp" }]);
+});
+
+const OUT = [["sondakika", "Son Dakika", "right"], ["hurriyet", "Hürriyet", "mid"], ["haberler", "Haberler.com", "mid"], ["aksam", "Akşam", "right"],
+  ["yenisafak", "Yeni Şafak", "right"], ["trthaber", "TRT Haber", "right"], ["star", "Star", "right"], ["tgrt", "TGRT Haber", "right"], ["ntv", "NTV", "mid"],
+  ["haberturk", "Habertürk", "right"], ["mynet", "Mynet", "right"], ["sabah", "Sabah", "right"], ["cumhuriyet", "Cumhuriyet", "left"], ["aa", "AA", "mid"],
+  ["birgun", "BirGün", "left"], ["karar", "Karar", "right"], ["ahaber", "A Haber", "right"], ["diken", "Diken", "left"], ["tele1", "Tele1", "left"],
+  ["dirilis", "Diriliş Postası", "right"], ["takvim", "Takvim", "right"]].map(([s, name, bloc]) => ({ s, name, bloc }));
+const DIFF1 = "hurriyet, aksam, trthaber, tgrt, ntv, aa, birgun ve ahaber 41 tutuklamayı; sondakika, yenisafak, star, haberturk, mynet ve karar 72 gözaltıyı öne çıkarıyor; haberler, yenisafak, mynet ve cumhuriyet İçişleri Bakanlığı duyurusunu anıyor; sabah 'sözde yardım kuruluşlarına finans' gerekçesini, ahaber 'ağır darbe' ifadesini ekliyor.";
+const DIFF2 = "Gözaltı sayısı kurumlara göre değişiyor (trthaber, diken, tele1, dirilis 36; takvim 41; sabah 53 gözaltı kararı; star 53 şüpheli); habertürk ve dirilis operasyonu Bakan Gürlek'in adıyla duyuruyor; ntv kadınların fotoğraftan seçildiği ayrıntıyı, ahaber aldatılan eşin CİMER ihbarını, takvim 2 milyon euroluk ağı öne çıkarıyor.";
+
+test("pSplitPoints: w10-s5316 gives 4 panels with blocs", () => {
+  const p = L.pSplitPoints(DIFF1, OUT);
+  assert.deepEqual(p.map((x) => x.bloc), ["mid", "right", "mid", "right"]);
+  assert.deepEqual(p.map((x) => x.outlets.length), [8, 6, 4, 2]);
+  assert.deepEqual(p[0].outlets, ["hurriyet", "aksam", "trthaber", "tgrt", "ntv", "aa", "birgun", "ahaber"]);
+  assert.equal(p[3].word, "sözde yardım kuruluşlarına finans");
+  assert.equal(p[0].word, "");
+  assert.equal(p[1].text, "sondakika, yenisafak, star, haberturk, mynet ve karar 72 gözaltıyı öne çıkarıyor");
+});
+test("pSplitPoints: w8-s1652 keeps ';' inside parentheses", () => {
+  const p = L.pSplitPoints(DIFF2, OUT);
+  assert.equal(p.length, 3);
+  assert.ok(p[0].text.startsWith("Gözaltı sayısı") && p[0].text.endsWith("53 şüpheli)"));
+  assert.deepEqual(p[0].outlets.sort(), ["dirilis", "diken", "sabah", "star", "takvim", "trthaber", "tele1"].sort());
+  assert.deepEqual(p[1].outlets, ["haberturk", "dirilis"]);
+  assert.deepEqual(p[2].outlets, ["ntv", "ahaber", "takvim"]);
+  assert.deepEqual(p.map((x) => x.bloc), ["mid", "right", "mid"]);
+});
+test("pSplitPoints: names, slugs, folded spellings, 've', 'diğerleri'", () => {
+  const p = L.pSplitPoints("TRT Haber, ahaber ve habertürk 5 kişi dedi; birgun ve tele1 başka dedi; diğerleri sustu", OUT);
+  assert.deepEqual(p[0].outlets, ["trthaber", "ahaber", "haberturk"]);
+  assert.deepEqual(p[1], { text: "birgun ve tele1 başka dedi", outlets: ["birgun", "tele1"], bloc: "left", word: "" });
+  assert.equal(p[2].outlets.length, OUT.length - 5);
+  assert.ok(!p[2].outlets.includes("birgun") && !p[2].outlets.includes("trthaber"));
+  assert.equal(p.length, 3);
+});
+test("pSplitPoints: caps at 5 panels", () => {
+  assert.equal(L.pSplitPoints("a; b; c; d; e; f; g", []).length, 5);
+});
+test("pSplitPoints: no separator → one mid panel", () => {
+  assert.deepEqual(L.pSplitPoints("tek cümle", []), [{ text: "tek cümle", outlets: [], bloc: "mid", word: "" }]);
+});

@@ -230,7 +230,47 @@ function glossTerms(html) {
   }).join("");
 }
 
+/* Headline-number tickets: "<n> <noun>" or "<n>'i tutuklandı", whitelist only (rejects scores, years, ordinals, decimals, ranges, ages). */
+var NUM_NOUN = "kisi|supheli|gozalti|tutuklama|il|olu|yarali|kayip";
+var NUM_LABEL = { kisi: "kişi", supheli: "şüpheli", gozalti: "gözaltı", tutuklama: "tutuklama", il: "il", olu: "ölü", yarali: "yaralı", kayip: "kayıp", tutuklandi: "tutuklama", "gozaltina alindi": "gözaltı" };
+function pNums(text) {
+  var re = new RegExp("(?<![\\d,.\\-–])(\\d+)(?:['’][a-z]*)?\\s+(?:(" + NUM_NOUN + ")(?:ler|lar)?(?:de|da|den|dan|e|a|i|in|yi|si|nin)?|(tutuklandi|gozaltina alindi))(?![a-z])", "g");
+  var f = trFold(text), out = [], m;
+  while ((m = re.exec(f))) out.push({ n: +m[1], label: NUM_LABEL[m[2] || m[3]] });
+  return out.length < 2 ? [] : out.slice(0, 3);
+}
+
+/* Split a "differs" sentence into <= 5 panels on ';' outside parentheses; each panel lists the outlets it names. */
+function pSplitPoints(text, outlets) {
+  var segs = [], depth = 0, cur = "";
+  String(text).split("").forEach(function (c) {
+    if (c === "(") depth++; else if (c === ")" && depth) depth--;
+    if (c === ";" && !depth) { segs.push(cur); cur = ""; } else cur += c;
+  });
+  segs.push(cur);
+  var keys = (outlets || []).map(function (o) {
+    return { o: o, re: [o.s, o.name].map(function (k) { return new RegExp("(?<![a-z0-9])" + trFold(k).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![a-z0-9])"); } ) };
+  });
+  var panels = segs.map(function (x) { return x.trim(); }).filter(Boolean).slice(0, 5).map(function (seg) {
+    var f = trFold(seg), hits = [];
+    keys.forEach(function (k) {
+      var at = k.re.map(function (r) { return f.search(r); }).filter(function (i) { return i >= 0; });
+      if (at.length) hits.push([Math.min.apply(null, at), k.o]);
+    });
+    var q = seg.match(/[“"‘]([^”"’]+)[”"’]|(?:^|\s)'([^']+)'(?=\s|[.,;:]|$)/);
+    return { text: seg, others: /(^|[^a-z])digerleri(?![a-z])/.test(f), o: hits.sort(function (a, b) { return a[0] - b[0]; }).map(function (h) { return h[1]; }), word: q ? q[1] || q[2] : "" };
+  });
+  if (!panels.length) panels = [{ text: String(text).trim(), others: false, o: [], word: "" }];
+  var named = {};
+  panels.forEach(function (p) { p.o.forEach(function (o) { named[o.s] = 1; }); });
+  return panels.map(function (p) {
+    var os = p.others ? (outlets || []).filter(function (o) { return !named[o.s]; }) : p.o;
+    var blocs = os.map(function (o) { return o.bloc; });
+    return { text: p.text, outlets: os.map(function (o) { return o.s; }), bloc: blocs.length && blocs.every(function (b) { return b === blocs[0]; }) ? blocs[0] : "mid", word: p.word };
+  });
+}
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
-    dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms };
+    dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints };
 }
