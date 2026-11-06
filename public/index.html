@@ -2422,6 +2422,17 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
   .p-glass{top:30px;right:48px;width:42%;height:90px}
 }
 
+/* Intro zoom (once per session, class set by app.js on #app): grows from .92 with rounded corners over a blurred, side-tinted backdrop. Ends at transform:none. */
+body:has(#app.intro){background:radial-gradient(ellipse 70% 90% at 0% 100%,color-mix(in srgb,var(--left) 38%,var(--paper)),transparent 70%),radial-gradient(ellipse 70% 90% at 100% 0%,color-mix(in srgb,var(--right) 38%,var(--paper)),transparent 70%),var(--paper);overflow-x:hidden}
+#app.intro{overflow:hidden;animation:cm-intro 1.4s cubic-bezier(.22,1,.36,1) both}
+@keyframes cm-intro{from{transform:scale(.92);border-radius:28px}to{transform:none;border-radius:0}}
+#app.intro .fh h1 i{display:inline-block;animation:cm-word .7s cubic-bezier(.22,1,.36,1) both}
+#app.intro .fh h1 .l1 i:nth-child(2){animation-delay:.45s}
+#app.intro .fh h1 .y i:nth-child(1){animation-delay:.6s}
+#app.intro .fh h1 .y i:nth-child(2){animation-delay:.7s}
+#app.intro .fh h1 .l1 i:nth-child(1){animation-delay:.3s}
+@keyframes cm-word{from{opacity:0;filter:blur(12px);transform:translateY(.35em)}to{opacity:1;filter:blur(0);transform:none}}
+
 </style>
 </head>
 <body>
@@ -12038,7 +12049,7 @@ function fogHero(e) {
     '<div class="fh-sky" aria-hidden="true"><i class="fh-sk l"></i><i class="fh-sk r"></i></div>' +
     (sets ? '<div class="fh-home"><div class="fh-card' + (a.t.length + b.t.length > 180 ? " fh-long" : "") + '">' + sets + "</div></div>" : "") +
     '<div class="fh-tilt" aria-hidden="true"></div><canvas class="fh-fog" aria-hidden="true"></canvas>' +
-    '<div class="fh-ui"><h1><span class="l1">Aynı olay,</span> <span class="y">farklı manşet.</span></h1>' +
+    '<div class="fh-ui"><h1><span class="l1"><i>Aynı</i> <i>olay,</i></span> <span class="y"><i>farklı</i> <i>manşet.</i></span></h1>' +
     "<p class=\"fh-sub\">Türk medyasının aynı olayı nasıl farklı anlattığını yan yana koyuyoruz. Hüküm vermiyoruz; farkı ölçüyoruz.</p>" +
     '<div class="fh-dock">' + btns + '<a class="fh-cta" href="#bu-hafta">Bu haftanın ayrışmalarını gör ↓</a></div></div></section>';
 }
@@ -12225,7 +12236,10 @@ function motionLoad() {
 }
 
 function motionMount(root) {
-  if (!MOTION.ready) { motionPend = root; motionLoad(); return; }
+  if (!MOTION.ready) { motionPend = root; MOTION.at = location.hash; motionLoad(); return; }
+  /* Incoming page: slides in on a real navigation (hash changed), not on the first render (that has the intro) or an in-page re-render. */
+  if (MOTION.at !== location.hash) gsap.from(root, { x: 40, opacity: 0, duration: .6, clearProps: "transform,opacity" });
+  MOTION.at = location.hash;
   motionRun(root, false);
 }
 
@@ -13906,6 +13920,15 @@ window.CM = { data: D, actorMatrix: actorMatrix, actorsOf: actorsOf,
 
 try { var t = localStorage.getItem("yh-theme");
   document.documentElement.setAttribute("data-theme", t || "light"); } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+/* Intro zoom: once per session, pure CSS from first paint; the class sits on #app so fragment (artifact) mode needs no <body> hook. */
+try {
+  var introEl = document.getElementById("app");
+  if (!sessionStorage.getItem("cm-intro")) {
+    sessionStorage.setItem("cm-intro", "1");
+    introEl.classList.add("intro");
+    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introEl.classList.remove("intro"); });
+  }
+} catch (err) {}
 addEventListener("hashchange", route);
 addEventListener("resize", function () { clearTimeout(window._lt); window._lt = setTimeout(layoutPills, 120); });
 route();

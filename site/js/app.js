@@ -6768,6 +6768,15 @@ window.CM = { data: D, actorMatrix: actorMatrix, actorsOf: actorsOf,
 
 try { var t = localStorage.getItem("yh-theme");
   document.documentElement.setAttribute("data-theme", t || "light"); } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+/* Intro zoom: once per session, pure CSS from first paint; the class sits on #app so fragment (artifact) mode needs no <body> hook. */
+try {
+  var introEl = document.getElementById("app");
+  if (!sessionStorage.getItem("cm-intro")) {
+    sessionStorage.setItem("cm-intro", "1");
+    introEl.classList.add("intro");
+    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introEl.classList.remove("intro"); });
+  }
+} catch (err) {}
 addEventListener("hashchange", route);
 addEventListener("resize", function () { clearTimeout(window._lt); window._lt = setTimeout(layoutPills, 120); });
 route();

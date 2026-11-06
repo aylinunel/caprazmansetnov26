@@ -39,7 +39,10 @@ function motionLoad() {
 }
 
 function motionMount(root) {
-  if (!MOTION.ready) { motionPend = root; motionLoad(); return; }
+  if (!MOTION.ready) { motionPend = root; MOTION.at = location.hash; motionLoad(); return; }
+  /* Incoming page: slides in on a real navigation (hash changed), not on the first render (that has the intro) or an in-page re-render. */
+  if (MOTION.at !== location.hash) gsap.from(root, { x: 40, opacity: 0, duration: .6, clearProps: "transform,opacity" });
+  MOTION.at = location.hash;
   motionRun(root, false);
 }
 

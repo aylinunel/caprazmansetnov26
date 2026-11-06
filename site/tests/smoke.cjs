@@ -31,6 +31,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     page.on("console", (m) => { if (m.type() === "error") fails.push(`${tag}: console ${m.text()}`); if (/Too many active WebGL contexts/.test(m.text())) fails.push(`${tag}: WebGL context leak: ${m.text()}`); });
     await page.goto(`http://127.0.0.1:${port}/index.html${route}`);
     await sleep(first ? 9000 : 2500); first = false;
+    await page.waitForFunction(() => !document.getElementById("app").classList.contains("intro"), null, { timeout: 6000 }).catch(() => {}); /* measure after the intro zoom */
     if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: horizontal scroll`);
     if (w === 390) {
       /* Touch targets: every a/button/[role=link]/summary in #view is >= 44x44, unless inline text in a paragraph (.lnk, .gl always allowed). */
@@ -356,9 +357,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       [ctx, page] = await open(`kisaca ${w}`);
       await page.setViewportSize({ width: w, height: w === 390 ? 844 : 800 });
       await page.goto(url("#/olay?e=s4374")); await sleep(3000);
-      const tfProbe = () => page.evaluate(() => ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean)
+      const tfProbe = async () => { await page.waitForFunction(() => !document.getElementById("app").classList.contains("intro"), null, { timeout: 6000 }).catch(() => {}); return page.evaluate(() => ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean)
         .map((e) => { const s = getComputedStyle(e); return [s.transform, s.filter, s.willChange].join(" "); })
-        .filter((s) => s !== "none none auto"));
+        .filter((s) => s !== "none none auto")); };
       const k = await page.evaluate(() => ({
         lead: document.querySelectorAll(".v7-kisaca [data-m=lead]").length,
         panels: document.querySelectorAll("[data-m=splits] .panel").length,
@@ -392,6 +393,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     [ctx, page] = await open("kisaca cold");
     await page.goto(url("#/olay?e=s5316")); await sleep(3000);
     if (!await page.evaluate(() => typeof ScrollTrigger !== "undefined" && ScrollTrigger.getAll().some((t) => t.pin))) fails.push("kisaca cold: no pinned ScrollTrigger on #/olay?e=s5316");
+    await ctx.close();
+    /* intro: class on #app at first paint of a cold #/ (empty sessionStorage), gone after ~2 s with no transform/filter left;
+       a reload in the same session has no intro; home -> event still pins */
+    [ctx, page] = await open("intro");
+    const introState = () => page.evaluate(() => ({ cls: document.getElementById("app").classList.contains("intro"),
+      tf: ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean).map((e) => { const s = getComputedStyle(e); return s.transform + " " + s.filter; }).filter((s) => s !== "none none") }));
+    await page.goto(url("#/"), { waitUntil: "commit" }); await page.waitForSelector("#app.intro", { timeout: 3000 }).catch(() => {});
+    if (!(await introState()).cls) fails.push("intro: #app.intro missing at first paint of a cold #/");
+    await sleep(2200);
+    const i1 = await introState();
+    if (i1.cls || i1.tf.length) fails.push(`intro: after 2.2 s class ${i1.cls}, transform/filter ${i1.tf.join(" | ")}`);
+    await page.reload(); await sleep(300);
+    if ((await introState()).cls) fails.push("intro: second load in the same session got the intro");
+    await sleep(2000);
+    await page.evaluate(() => { location.hash = "#/olay?e=s5316"; }); await sleep(2500);
+    const i2 = await page.evaluate(() => [document.querySelectorAll(".pin-spacer").length, getComputedStyle(document.getElementById("view")).transform]);
+    if (!i2[0] || i2[1] !== "none") fails.push(`intro: home -> event pin-spacers ${i2[0]}, #view transform ${i2[1]}`);
     await ctx.close();
     /* (b) three hash changes within 300 ms of a cold load: one Lenis, no errors */
     [ctx, page] = await open("motion b");
