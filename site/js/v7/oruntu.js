@@ -416,6 +416,15 @@ function orFindWords() {
     how: orHow([(e0 ? "Üstteki olayda en sakin ve en yüklü başlık arasında " + e0.p + " puan var. " : "") + "Seçim: en az 8 kurumun verdiği, puan aralığı en geniş " + list.length + " olay; çift = yerleşimi bilinen en sol ve en sağ kurumun başlığı.", "Sözcük işareti: iki başlık arasında ortak olmayan sözcükler (köke indirgenmiş eşleşme)."], "dil") };
 }
 
+/* Plain-language reading of the style scatter; axis names come from each component's strongest loadings. */
+function orStyleRead(P) {
+  var nm = function (l, sg) { var a = pcNames(l, sg, 2); return a.length ? "<b>" + a.map(esc).join("</b> ve <b>") + "</b>" : ""; };
+  var x = nm(P.load1, 1), yu = nm(P.load2, 1), yd = nm(P.load2, -1), v0 = Math.round(100 * P["var"][0]), v1 = Math.round(100 * P["var"][1]);
+  return "Her nokta bir kurum. Yatay eksen, kurumları en çok ayıran çerçeveleme yapılarının" + (x ? " (başta " + x + ")" : "") + " siyasi başlıklarda ne sıklıkla kullanıldığının birleşik puanıdır; sağdaki kurum bunları daha sık kullanır. " +
+    "Dikey eksen, ondan bağımsız ikinci örüntüdür" + (yu || yd ? ": " + (yu ? "yukarıdakiler " + yu + " yapılarını daha sık" : "") + (yu && yd ? ", " : "") + (yd ? "aşağıdakiler " + yd + " yapılarını daha sık" : "") + " kullanır" : "") +
+    "; farkların yalnızca %" + v1 + "’ini açıkladığı için (yatay eksen %" + v0 + ") yükseklik farklarını yatay farklar kadar ciddiye almayın. Renk, kurumun yerleşimidir.";
+}
+
 function orFindStyle() {
   var P = ADV.pca, pcSig = P.p1 < .05, side = P.rho1 > 0 ? "sağa" : "sola";
   return { id: "dil-uslup",
@@ -423,7 +432,7 @@ function orFindStyle() {
       : "Kurumların başlık yazma biçimi ile yelpazedeki yerleri arasında belirgin bir örtüşme görülmedi.",
     viz: fig("adv-b", "1. bileşen × 2. bileşen · nokta rengi yerleşim", { legend: legendHTML([{ c: "var(--left)", t: "sola yerleşik" }, { c: "var(--mid)", t: "merkez" }, { c: "var(--right)", t: "sağa yerleşik" }]) }) +
       '<p class="or-hint">Bir noktaya ' + orTap() + ': kurum, yerleşimi ve siyasi başlık sayısı görünür.</p>',
-    read: "Her nokta bir kurum; sağa gittikçe başlıklarında çerçeveleme yapıları daha sık. Renk kurumun yerleşimi.",
+    read: orStyleRead(P),
     table: vzTable(["Kurum", "Blok", "1. bileşen", "2. bileşen"], Object.keys(P.pts).sort(function (a, b) { return P.pts[b][0] - P.pts[a][0]; }).map(function (k) {
       return [srcName(k), SIDE[bloc(k)] || "—", dec(P.pts[k][0], 2), dec(P.pts[k][1], 2)]; })),
     means: (pcSig ? "Başlıkların yazılış biçimi kurumun yelpazedeki yeriyle birlikte değişiyor. " : "Bir ilişki görülmemesi, ilişkinin olmadığını değil, saptanamadığını gösterir. ") +

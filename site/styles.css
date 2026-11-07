@@ -1766,6 +1766,13 @@ th{color:var(--ink);border-bottom-width:3px}
 .v7-side h3:first-child{margin-top:0}
 .v7-side p{font-size:14.5px;line-height:1.55;margin:0 0 6px;color:var(--ink)}
 .v7-readbox,.v7-weekstrip{margin-top:30px}
+.v7-introbox{margin:0 0 26px}
+.v7-introbox .p-head{margin-top:0}
+.v7-intro{margin:8px 10px 0 0;display:inline-block;vertical-align:top;max-width:100%}
+.v7-intro[open]{display:block;margin-right:0}
+.v7-intro h3{font-family:var(--ff-d);font-size:16px;margin:14px 0 6px}
+.v7-intro ul,.v7-intro p{font-size:14.5px;line-height:1.55;color:var(--ink2);max-width:70ch}
+.v7-intro ul{margin:0;padding-left:20px;display:grid;gap:6px}
 .v7-readbox h2,.v7-weekstrip h2{font-family:var(--ff-d);font-size:20px;margin:0 0 10px}
 ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line-height:1.5;color:var(--ink2);max-width:70ch}
 .v7-wk{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
@@ -1984,7 +1991,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
   .vz-ax .vz-l{display:none}
 }
 /* distribution */
-.vz-dist{display:grid;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px}
+.vz-dist{display:grid;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px;border:1px solid var(--line);border-radius:8px;padding:16px 14px 10px 8px;background:var(--surface)}
 .vz-dy{position:relative;font-family:var(--ff-m);font-size:10.5px;color:var(--muted)}
 .vz-dy span{position:absolute;right:0;transform:translateY(50%)}
 .vz-dp{position:relative;height:200px;border-bottom:1px solid var(--line2);cursor:crosshair;touch-action:pan-y;user-select:none}
@@ -2005,7 +2012,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .vz-k-iqr{display:inline-block;width:16px;height:10px;background:var(--sunk);border:1px solid var(--line2)}
 .vz-pre{margin-top:10px}
 /* lines */
-.vz-line{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:8px}
+.vz-line{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:8px;border:1px solid var(--line);border-radius:8px;padding:16px 14px 10px 8px;background:var(--surface)}
 .vz-ly{position:relative;font-family:var(--ff-m);font-size:10.5px;color:var(--muted)}
 .vz-ly span{position:absolute;right:0;transform:translateY(50%)}
 .vz-lp{position:relative;height:200px;border-bottom:1px solid var(--line2);margin-right:8px}

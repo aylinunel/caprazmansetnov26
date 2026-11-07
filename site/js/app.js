@@ -4356,18 +4356,24 @@ function advHeat() {
   });
   return s;
 }
+/* Plain names of the structures that load most on one PCA axis, in the given direction (sign > 0 or < 0). */
+function pcNames(load, sign, n) {
+  return (load || []).filter(function (x) { return sign > 0 ? x[1] > 0 : x[1] < 0; }).slice(0, n).map(function (x) { var b = BIA[x[0]] || {}; return b.tr || b.en || x[0]; });
+}
 function advScatter() {
   var P = ADV.pca, pts = P.pts, ks = Object.keys(pts);
   var xs = ks.map(function (k) { return pts[k][0]; }), ys = ks.map(function (k) { return pts[k][1]; });
   var x0 = Math.min.apply(null, xs) - .6, x1 = Math.max.apply(null, xs) + .6;
   var y0 = Math.min.apply(null, ys) - .6, y1 = Math.max.apply(null, ys) + .6;
-  var w = 720, h = 420, pl = 40, pr = 20, pt = 20, pb = 44;
+  var w = 720, h = 440, pl = 40, pr = 20, pt = 20, pb = 64;
   var X = function (v) { return pl + (w - pl - pr) * (v - x0) / (x1 - x0); };
   var Y = function (v) { return h - pb - (h - pt - pb) * (v - y0) / (y1 - y0); };
   var s = svg(w, h);
   rule(s, pl, w - pr, Y(0)); vrule(s, X(0), pt, h - pb);
-  tx(s, w - pr, h - pb + 30, "1. bileşen · %" + Math.round(100 * P["var"][0]) + " → daha çok yapı", { role: "eb", anchor: "end", size: 9.5 });
-  tx(s, pl, pt - 6, "2. bileşen · %" + Math.round(100 * P["var"][1]), { role: "eb", size: 9.5 });
+  var ax = function (l, sg) { var a = pcNames(l, sg, 2).join(", "); return a ? ": " + a : ""; };
+  tx(s, pl, h - pb + 22, "→ yatay eksen · %" + Math.round(100 * P["var"][0]) + " · sağa: daha sık" + ax(P.load1, 1), { role: "eb", size: 9.5 });
+  tx(s, pl, pt - 6, "↑ dikey eksen · %" + Math.round(100 * P["var"][1]) + " · yukarı: daha sık" + ax(P.load2, 1), { role: "eb", size: 9.5 });
+  tx(s, pl, h - pb + 40, "↓ aşağı: daha sık" + ax(P.load2, -1), { role: "eb", size: 9.5 });
   var boxes = ks.map(function (k) { return { x0: X(pts[k][0]) - 8, x1: X(pts[k][0]) + 8, y0: Y(pts[k][1]) - 8, y1: Y(pts[k][1]) + 8 }; });
   var hit = function (b) { return boxes.some(function (o) { return b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0; }); };
   ks.sort(function (a, b) { return pts[a][0] - pts[b][0]; }).forEach(function (k) {
@@ -4655,7 +4661,7 @@ function svgURI(s) { return "data:image/svg+xml;charset=utf-8," + encodeURICompo
 /* ---------------------------------------------------------------- nav */
 var NAV; /* defined in v7/core.js */
 var SUB = {
-  "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
+  "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/anlati", null, "Anlatı haritası"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
   "/kurumlar": [["/kurumlar", "liste", "Kurumlar"], ["/kurumlar", "karsilastir", "Karşılaştır"], ["/kurumlar", "kayit", "Kayıt ve güven"]],
   "/bulgular": [["/bulgular", "veriler", "Veriler"], ["/bulgular", "yorumlar", "Yorumlar"], ["/bulgular", "ileri", "İleri analiz"]],
   "/yanlilik": [["/yanlilik", "kesif", "Yapılar"], ["/yanlilik", "cozumleyici", "Başlık çözümleyici"],
