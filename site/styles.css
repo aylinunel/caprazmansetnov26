@@ -1556,8 +1556,10 @@ mark.mw,.mw{color:#1B1813;background-color:transparent;background-image:linear-g
 .xfoot p{color:#BDB4A0;font-size:14px;line-height:1.55}
 .xfoot .num{color:#F5F0E3}
 .xfoot-logo{height:34px;width:auto;margin-bottom:12px}
-.xfoot-mark{display:block;width:64px;height:64px;margin-bottom:16px;color:var(--band-ink,#F5F0E3);overflow:visible}
-.xfoot-mark .fm-dots{opacity:0}
+.xfoot-lg{position:relative;display:inline-block;margin-bottom:12px}
+.xfoot-lg .xfoot-logo{display:block;margin:0}
+.xfoot-fx{position:absolute;left:-4px;top:-4px;width:42px;height:42px;overflow:visible;pointer-events:none}
+.xfoot-fx .fm-dots{opacity:0}
 .xfoot-d{font-family:var(--ff-d);font-size:18px;color:#F5F0E3!important}
 .xfoot .xwm{color:#F5F0E3;margin-top:16px}
 .xv1{display:inline-block!important;margin-top:14px;padding:8px 16px!important;border:1px solid #BDB4A0;border-radius:999px;font-size:14px}

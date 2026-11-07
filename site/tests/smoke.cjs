@@ -346,24 +346,34 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       return [ctx, page];
     };
     const nST = (page) => page.evaluate(() => typeof ScrollTrigger === "undefined" ? -1 : ScrollTrigger.getAll().length);
+    /* polls the ScrollTrigger count every 250 ms until it is > 0 and unchanged for 4 polls (cap 15 s); returns it */
+    const settle = async (page) => { let last = -2, same = 0; for (let i = 0; i < 60; i++) { const n = await nST(page); same = n === last ? same + 1 : 0; last = n; if (n > 0 && same >= 4) break; await sleep(250); } return last; };
     /* (a) home -> event -> outlet -> home leaves as many ScrollTriggers as a fresh home load */
     let [ctx, page] = await open("motion a");
-    await page.goto(url("#/")); await sleep(3000);
-    const fresh = await nST(page);
-    for (const h of ["#/olay?e=s4374", "#/kurum?s=takvim", "#/"]) { await page.evaluate((x) => { location.hash = x; }, h); await sleep(1500); }
-    const after = await nST(page);
+    await page.goto(url("#/")); const fresh = await settle(page);
+    for (const h of ["#/olay?e=s4374", "#/kurum?s=takvim", "#/"]) { await page.evaluate((x) => { location.hash = x; }, h); await settle(page); }
+    const after = await settle(page);
     if (fresh < 0 || after !== fresh) fails.push(`motion a: ScrollTrigger count fresh ${fresh}, after round trip ${after}`);
     /* the event page really registers ScrollTriggers, so the round-trip count above is a real leak check */
-    await page.evaluate(() => { location.hash = "#/olay?e=s4374"; }); await sleep(1500);
+    await page.evaluate(() => { location.hash = "#/olay?e=s4374"; }); await settle(page);
     await page.mouse.wheel(0, 1500); await sleep(1200);
-    const onEvent = await nST(page);
+    const onEvent = await settle(page);
     if (!(onEvent > 0)) fails.push(`motion a: ScrollTrigger count on the event page is ${onEvent}`);
+    await ctx.close();
+    /* ilan: after "more" re-renders the cascade and the page is scrolled to the bottom, no result card stays hidden */
+    [ctx, page] = await open("ilan more");
+    await page.goto(url("#/ilan")); await settle(page);
+    await page.click("#ilanmore"); await sleep(300);
+    await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight)); await settle(page);
+    const hiddenRows = () => page.evaluate(() => [...document.querySelectorAll(".v7-ilan-row")].filter((r) => +getComputedStyle(r).opacity < 1).length);
+    let hid = await hiddenRows(); for (let i = 0; i < 20 && hid; i++) { await sleep(250); hid = await hiddenRows(); } /* entering cards fade over ~1.5 s */
+    if (hid) fails.push(`ilan more: ${hid} result cards still hidden after scrolling to the bottom`);
     await ctx.close();
     /* Broadsheet Kısaca: components present, readable fallback without a coded narrative, no transformed pin ancestor */
     for (const w of [1280, 390]) {
       [ctx, page] = await open(`kisaca ${w}`);
       await page.setViewportSize({ width: w, height: w === 390 ? 844 : 800 });
-      await page.goto(url("#/olay?e=s4374")); await sleep(3000);
+      await page.goto(url("#/olay?e=s4374")); await settle(page);
       const tfProbe = async () => { await page.waitForFunction(() => !document.getElementById("app").classList.contains("intro"), null, { timeout: 6000 }).catch(() => {}); return page.evaluate(() => ["app", "view"].map((i) => document.getElementById(i)).concat([document.querySelector("main")]).filter(Boolean)
         .map((e) => { const s = getComputedStyle(e); return [s.transform, s.filter, s.willChange].join(" "); })
         .filter((s) => s !== "none none auto")); };
@@ -398,7 +408,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     }
     /* cold load straight onto the event: the ticket block still pins */
     [ctx, page] = await open("kisaca cold");
-    await page.goto(url("#/olay?e=s5316")); await sleep(3000);
+    await page.goto(url("#/olay?e=s5316")); await settle(page);
     if (!await page.evaluate(() => typeof ScrollTrigger !== "undefined" && ScrollTrigger.getAll().some((t) => t.pin))) fails.push("kisaca cold: no pinned ScrollTrigger on #/olay?e=s5316");
     /* cold load: the first ready-path mount must not slide the page in */
     [ctx, page] = await open("cold no slide");

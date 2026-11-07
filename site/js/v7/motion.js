@@ -144,9 +144,10 @@ MOTION_K.glass = function (el) {
    Cascades re-rendered by innerHTML (ilan results) leave triggers on detached cards: those are killed here first. */
 MOTION_K.cascade = function (el, first) {
   ScrollTrigger.getAll().forEach(function (t) { if (t.trigger && !t.trigger.isConnected) t.kill(); });
-  var cs = [].slice.call(el.children), hide = cs.filter(function (c) { return !(first && motionInView(c)); });
+  var cs = [].slice.call(el.children), hide = cs.filter(function (c) { return c.getBoundingClientRect().bottom > 0 && !(first && motionInView(c)); }); /* cards already scrolled past never get an onEnter: leave them visible */
   gsap.set(hide, { opacity: 0, y: 60 });
-  ScrollTrigger.batch(hide, { start: "top 94%", onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: .9, stagger: .09, ease: "power3.out", overwrite: true }); } });
+  ScrollTrigger.batch(hide, { start: "top 94%", onEnter: function (b) { gsap.to(b, { opacity: 1, y: 0, duration: .9, stagger: .09, ease: "power3.out", overwrite: true }); },
+    onLeave: function (b) { gsap.set(b, { opacity: 1, y: 0, overwrite: true }); } }); /* scrolled past in one jump: no onEnter, show them */
   cs.forEach(function (c) {
     var g = document.createElement("i"), q = function (t, p) { return gsap.quickTo(t, p, { duration: .5, ease: "power3" }); };
     g.className = "cc-glare"; g.setAttribute("aria-hidden", "true"); c.appendChild(g); c.classList.add("cc");
@@ -203,15 +204,16 @@ MOTION_K.scene = function (el, first) {
   show();
 };
 
-/* Footer mark: three dots bounce and merge into the centre, the Ç strokes in, then the ring draws. Final state = static SVG. */
+/* Footer mark: three dots bounce and merge on the centre of the real logo mark, the logo scales in, the ring draws around it.
+   The logo is hidden only here, so without the libraries it stays visible. */
 MOTION_K.foot = function (el, first) {
-  var d = [].slice.call(el.querySelectorAll(".fm-dots circle")), cx = [-22, 0, 22], ink = el.querySelectorAll(".fm-c,.fm-cd"), ring = el.querySelector(".fm-ring");
-  gsap.set(ink, { strokeDasharray: 1, strokeDashoffset: 1 }); gsap.set(ring, { strokeDasharray: 1, strokeDashoffset: 1 });
+  var d = [].slice.call(el.querySelectorAll(".fm-dots circle")), logo = el.querySelector(".xfoot-logo"), ring = el.querySelector(".fm-ring");
   gsap.set(el.querySelector(".fm-dots"), { opacity: 1 }); gsap.set(d, { transformOrigin: "50% 50%" });
+  gsap.set(ring, { strokeDasharray: 1, strokeDashoffset: 1 }); gsap.set(logo, { opacity: 0, scale: .6, transformOrigin: "17px 50%" });
   gsap.timeline({ scrollTrigger: { trigger: el, start: "top 95%" } })
-    .to(d, { y: -16, duration: .28, ease: "power2.out", stagger: .12, yoyo: true, repeat: 3 })
-    .to(d, { x: function (i) { return -cx[i]; }, duration: .5, ease: "power3.inOut" })
+    .to(d, { y: -14, duration: .28, ease: "power2.out", stagger: .12, yoyo: true, repeat: 3 })
+    .to(d, { x: function (i) { return [28, 0, -28][i]; }, duration: .5, ease: "power3.inOut" })
     .to(d, { scale: 0, opacity: 0, duration: .25 }, ">-.1")
-    .to(ink, { strokeDashoffset: 0, duration: .8, ease: "power2.inOut", stagger: .3 }, "<")
+    .to(logo, { opacity: 1, scale: 1, duration: .7, ease: "back.out(1.6)" }, "<")
     .to(ring, { strokeDashoffset: 0, duration: 1, ease: "power2.inOut" }, ">-.2");
 };

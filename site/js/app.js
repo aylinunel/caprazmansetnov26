@@ -5229,11 +5229,10 @@ function v5Method() {
 /* ---------------------------------------------------------------- footer */
 function footer2() {
   var m = D.meta.counts;
-  var mark = '<svg class="xfoot-mark" data-m="foot" viewBox="0 0 96 96" role="img" aria-label="Çapraz Manşet işareti" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">' +
-    '<circle class="fm-ring" cx="48" cy="48" r="44" pathLength="1"/><path class="fm-c" d="M64 36A19 19 0 1 0 64 60" pathLength="1"/><path class="fm-cd" d="M48 68v5q0 7-8 7" pathLength="1"/>' +
-    '<g class="fm-dots" fill="currentColor" stroke="none"><circle cx="26" cy="48" r="6"/><circle cx="48" cy="48" r="6"/><circle cx="70" cy="48" r="6"/></g></svg>';
   return '<footer class="foot xfoot"><div class="wrap"><div class="xfoot-g">' +
-    '<div>' + mark + '<img class="xfoot-logo" src="' + (LOGO.hd || "") + '" alt="Çapraz Manşet"><p class="xfoot-d">Aynı olay, farklı manşet.</p>' +
+    '<div><div class="xfoot-lg" data-m="foot"><img class="xfoot-logo" src="' + (LOGO.hd || "") + '" alt="Çapraz Manşet">' +
+    '<svg class="xfoot-fx" viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">' +
+    '<circle class="fm-ring" cx="50" cy="50" r="47" pathLength="1"/><g class="fm-dots" fill="currentColor" stroke="none"><circle cx="22" cy="50" r="7"/><circle cx="50" cy="50" r="7"/><circle cx="78" cy="50" r="7"/></g></svg></div><p class="xfoot-d">Aynı olay, farklı manşet.</p>' +
     '<p class="xwm">Manşet bütün kalır.</p><p class="xsmall">Hiçbir başlık kısaltılmaz, hiçbir kelime silinmez.</p>' +
     '<a class="xv1" href="' + V1URL + '" target="_blank" rel="noopener">Çapraz Manşet v1 · değişmeden kalır →</a></div>' +
     '<div><h4>Site</h4><a href="#/olaylar">Olaylar</a><a href="#/olaylar?t=kor">Kör noktalar</a><a href="#/anlati">Anlatı Haritası</a><a href="#/kurumlar">Kurumlar</a>' +
