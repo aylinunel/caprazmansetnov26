@@ -341,6 +341,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       const ctx = await browser.newContext({ viewport: { width: 1280, height: vh || 800 } }), page = await ctx.newPage();
       /* offline: the browser itself logs each aborted script as "Failed to load resource"; only app errors count */
       if (offline) await page.route(/\/vendor\/(gsap|ScrollTrigger|lenis)|cdnjs\.cloudflare\.com|unpkg\.com/, (r) => r.abort());
+      /* counts Lenis instances: wraps the global once the library script defines it */
+      await page.addInitScript(() => { let L; window.__lenisCount = 0; Object.defineProperty(window, "Lenis", { configurable: true, get: () => L, set: (v) => { L = class extends v { constructor(...a) { super(...a); window.__lenisCount++; } }; } }); });
       page.on("pageerror", (e) => fails.push(`${tag}: pageerror ${e.message}`));
       page.on("console", (m) => { if (m.type() === "error" && !(offline && /Failed to load resource/.test(m.text()))) fails.push(`${tag}: console ${m.text()}`); });
       return [ctx, page];
@@ -441,7 +443,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     await page.goto(url("#/")); await page.waitForSelector("#view");
     for (const h of ["#/olaylar", "#/olay?e=s4374", "#/"]) { await page.evaluate((x) => { location.hash = x; }, h); await sleep(100); }
     await sleep(3000);
-    if (await page.evaluate(() => document.querySelectorAll("html.lenis").length) !== 1) fails.push("motion b: html.lenis missing after quick hash changes");
+    const lc = await page.evaluate(() => window.__lenisCount);
+    if (lc !== 1) fails.push(`motion b: ${lc} Lenis instances after quick hash changes, want 1`);
     await ctx.close();
     /* (c) libraries blocked: the page still reads, without console errors */
     [ctx, page] = await open("motion c", 800, true);

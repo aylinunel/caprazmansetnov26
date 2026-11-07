@@ -71,7 +71,7 @@ function fogMount(root) {
   if (!el || el._fh) return;
   FOG_LIVE = el;
   var cv = el.querySelector(".fh-fog"), bt = [].slice.call(el.querySelectorAll(".fh-toggle button")), sets = [el.querySelector(".fh-set.l"), el.querySelector(".fh-set.r")];
-  var S = el._fh = { k: .5, target: .5, from: .5, start: 0, on: -1, queued: null, animating: false, vis: true, last: 0, raf: 0, dark: fogDark() ? 1 : 0, still: 0 };
+  var S = el._fh = { k: .5, target: .5, from: .5, start: 0, on: -1, queued: null, animating: false, vis: true, last: 0, raf: 0, dark: fogDark() ? 1 : 0 };
   var gl = null, U = {};
   try { gl = cv.getContext("webgl2", { alpha: true, premultipliedAlpha: true, antialias: false }); } catch (x) { gl = null; }
   if (gl) {

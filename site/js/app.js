@@ -5963,7 +5963,7 @@ function v3coverage() {
    Port of the IridescentFoil component (React + CSS module) to this page: the same layers
    (foil, film, pearl, content, shine, glare) and the same custom properties, updated from
    scroll and pointer in one requestAnimationFrame. Yellow is left out of the foil, because
-   on this site yellow only ever marks a differing word. Reduced motion: static foil. */
+   on this site yellow only ever marks a differing word. */
 function v3clamp(v, a, b) { return Math.min(Math.max(v, a), b); }
 function v3foilHTML(inner) {
   return '<div class="cm3-foil" data-foil><span aria-hidden="true" class="cm3-foil-l foil"></span><span aria-hidden="true" class="cm3-foil-l film"></span>' +
@@ -6780,6 +6780,7 @@ try {
     sessionStorage.setItem("cm-intro", "1");
     introEl.classList.add("intro");
     var introDone = function () { if (!introEl.classList.contains("intro")) return; introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); };
+    setTimeout(introDone, 6000); /* unconditional backstop: the class can never stick */
     introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introDone(); });
     /* fallback if animationend never fires (hidden tab / animation cancelled): armed when the animation starts, so a slow first load cannot cut the zoom short */
     introEl.addEventListener("animationstart", function (e) { if (e.target === introEl) setTimeout(introDone, 2000); });

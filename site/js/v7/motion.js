@@ -28,8 +28,8 @@ function motionLoad() {
     gsap.ticker.add(function (t) { l.raf(t * 1000); });
     gsap.ticker.lagSmoothing(0);
     var r = motionPend; motionPend = null;
-    if (r && r.isConnected) motionRun(r, true);
     MOTION.ready = true;
+    if (r && r.isConnected) try { motionRun(r, true); } catch (e) { console.warn("motion: first run failed", e); }
     return true;
   }, function () {
     console.warn("motion: GSAP/Lenis unavailable, page stays static");
@@ -99,7 +99,7 @@ MOTION_K.head = function (el, first) {
   gsap.timeline({ scrollTrigger: { trigger: el, start: "top 88%" } })
     .from(el.querySelector(".p-rule"), { scaleX: 0, transformOrigin: "0 50%", duration: 1, ease: "power3.inOut" })
     .from(ch, { opacity: 0, duration: .01, stagger: .045 }, .25)
-    .from(motionWords(el.querySelector(".p-title")), { y: "0.6em", opacity: 0, filter: "blur(8px)", duration: .9, stagger: .06, ease: "power3.out" }, .35);
+    .from(motionWords(el.querySelector(".p-title")), { y: "0.6em", opacity: 0, filter: "blur(8px)", clearProps: "filter", duration: .9, stagger: .06, ease: "power3.out" }, .35);
 };
 MOTION_K.lead = function (el, first) {
   if (first && motionInView(el)) return;

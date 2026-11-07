@@ -158,7 +158,7 @@
 
 /* ===================== Iridescent foil sticker (port of IridescentFoil.module.css) =====================
    Same layer stack and custom properties. Changes for this site: no yellow stops (yellow marks
-   differing words only), theme switch on [data-theme] and prefers-color-scheme, static under reduced motion. */
+   differing words only), theme switch on [data-theme] and prefers-color-scheme. */
 .cm3-foil{
   --pointer-x:50%;--pointer-y:50%;--foil-shift:0%;--foil-y-shift:0%;--glare-x:50%;--glare-y:50%;
   --shine-angle:135deg;--shine-opacity:.62;--shine-opacity-scale:1;--film-opacity:.34;
