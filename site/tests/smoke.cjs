@@ -177,11 +177,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: ilan horizontal scroll after typing`);
     }
     /* Broadsheet components each page must carry (spec §5), by route prefix */
-    const KINDS = { "#/": "head cascade splits tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/yontem": "head lead splits cascade", "#/ilan": "head tickets scene cascade" };
+    const KINDS = { "#/": "head cascade splits tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/ilan": "head tickets scene cascade" };
     const want = Object.keys(KINDS).find((p) => p.endsWith("=") ? route.startsWith(p) : route === p);
     if (want) {
       const miss = await page.evaluate((ks) => ks.split(" ").filter((k) => !document.querySelector(`#view [data-m=${k}]`)), KINDS[want]);
       if (miss.length) fails.push(`${tag}: missing [data-m] ${miss.join(",")}`);
+    }
+    if (route.startsWith("#/yontem")) {
+      /* methodology page: no motion hooks, no drop cap / accordion / glass, numbered h2s, a table of contents */
+      const q = await page.evaluate(() => ({ m: document.querySelectorAll("#view [data-m]").length, bad: document.querySelectorAll("#view .p-cap,#view .p-splits,#view .p-glass,#view .panel.xwalk-s").length,
+        h2: [...document.querySelectorAll(".xpaper>h2.ym-h")].every((h, i) => h.textContent.startsWith((i + 1) + ".")) && document.querySelectorAll(".xpaper>h2.ym-h").length === 12, toc: document.querySelectorAll(".ym-toc a").length }));
+      if (q.m || q.bad) fails.push(`${tag}: yontem has motion/press components ${JSON.stringify(q)}`);
+      if (!q.h2 || q.toc !== 12) fails.push(`${tag}: yontem numbered headings / toc wrong ${JSON.stringify(q)}`);
     }
     if (await page.$(".xtick")) fails.push(`${tag}: .xtick present`);
     if (route === "#/") {

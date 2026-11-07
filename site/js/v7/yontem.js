@@ -4,7 +4,7 @@
 var YM_TOC = [["veri", "Veri"], ["olay", "Olay tespiti"], ["dil", "Yüklü dil"], ["anlati", "Anlatı kodlaması"], ["yz", "Bilişsel inceleme (YZ)"],
   ["yzicerik", "YZ ile üretilen içerik"], ["turkiye", "Türkiye bağlamı"], ["kavramlar", "Kavram kütüphanesi"], ["sozluk", "Sözlük"], ["kapsama", "Kapsama"], ["sinir", "Sınırlılıklar"], ["kaynak", "Kaynaklar"]];
 function glossaryHTML() {
-  return '<dl class="v7-gloss" data-m="cascade">' + Object.keys(GLOSSARY).sort(trCmp).map(function (k) { return "<div><dt>" + esc(k) + "</dt><dd>" + esc(GLOSSARY[k]) + "</dd></div>"; }).join("") + "</dl>";
+  return '<dl class="v7-gloss">' + Object.keys(GLOSSARY).sort(trCmp).map(function (k) { return "<div><dt>" + esc(k) + "</dt><dd>" + esc(GLOSSARY[k]) + "</dd></div>"; }).join("") + "</dl>";
 }
 var YM_TIER = { detected: "Kural saptıyor", codable: "İnsan kodlaması", reference: "Okur davranışı" };
 
@@ -200,12 +200,13 @@ function kaynakHtml(refs) {
 }
 
 function pgYontem7(params) {
-  var M = methodSecs(), X = methodExtras();
-  var h2 = function (id, t, ai) { var h = pHead("Nasıl çalışır", t, id); return ai ? h.replace("</h2>", " " + yzBadge() + "</h2>") : h; };
-  return '<div class="wrap page ym"><div class="phead"><div class="eyebrow">Nasıl çalışır</div><h1>Nasıl çalışır</h1>' +
-    pLead("Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.") +
-    '<nav class="xtoc" aria-label="Bölümler">' + YM_TOC.map(function (t) { return '<a href="#/yontem?s=' + t[0] + '">' + t[1] + "</a>"; }).join("") + "</nav></div>" +
-    X.walk + '<article class="xpaper">' + M.intro +
+  var M = methodSecs(), X = methodExtras(), n = 0;
+  /* Plain numbered section heading; ids stay the deep-link anchors. */
+  var h2 = function (id, t, ai) { n++; return '<h2 class="ym-h" id="' + id + '"><span class="n">' + n + ".</span> " + esc(t) + (ai ? " " + yzBadge() : "") + "</h2>"; };
+  return '<div class="wrap page ym ym-plain"><div class="phead"><div class="eyebrow">Nasıl çalışır</div><h1>Nasıl çalışır</h1>' +
+    '<p class="sub">Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.</p></div>' +
+    '<nav class="ym-toc" aria-label="İçindekiler"><b>İçindekiler</b><ol>' + YM_TOC.map(function (t) { return '<li><a href="#/yontem?s=' + t[0] + '">' + t[1] + "</a></li>"; }).join("") + "</ol></nav>" +
+    '<article class="xpaper">' + M.intro + X.walk +
     h2("veri", "Veri") + M.veri + h2("olay", "Olay tespiti") + M.olay + h2("dil", "Yüklü dil puanlayıcısı") + M.dil + h2("anlati", "Anlatı kodlaması") + M.anlati +
     h2("yz", "Bilişsel inceleme", 1) + yzBlock(yzMethodHtml()) + h2("yzicerik", "Yapay zekâ ile üretilen içerik", 1) + yzBlock(yzIcerikHtml()) +
     h2("turkiye", "Türkiye bağlamı") + '<p>Başlık analizi için İngilizce dünyada geliştirilmiş birçok varsayım Türkçede çalışmaz. Her uyarlama için sorunu, ne yaptığımızı ve sınırını yazdık; rakamlar kodun ve verinin kendisinden okunur.</p>' +
@@ -213,6 +214,14 @@ function pgYontem7(params) {
     h2("kavramlar", "Kavram kütüphanesi") + conceptLibrary() +
     h2("sozluk", "Sözlük") + glossaryHTML() + h2("kapsama", "Kapsama") + kapsamaHTML() +
     h2("sinir", "Sınırlılıklar") + M.sinir + h2("kaynak", "Kaynaklar") + kaynakHtml(M.refs) + "</article>" + X.fix + "</div>";
+}
+
+/* /yontem is a methodology page: no motion hooks, and sub-headings lose the old "2.1" prefixes (sections are renumbered 1–12). */
+function ymPlain(root) {
+  [].forEach.call(root.querySelectorAll("[data-m]"), function (e) { e.removeAttribute("data-m"); });
+  [].forEach.call(root.querySelectorAll(".ym h3"), function (h) {
+    var t = h.firstChild; if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/^\d\.\d /, "");
+  });
 }
 
 /* After render: scroll to the section (old numeric anchors accepted), wire the concept search, highlight ?k=. */
