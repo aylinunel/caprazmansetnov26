@@ -9,10 +9,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const root = path.resolve(siteDir);
   const srv = http.createServer((q, s) => {
     const f = path.join(root, decodeURIComponent(q.url.split("?")[0]).replace(/\/$/, "/index.html"));
-    if (!f.startsWith(root) || !fs.existsSync(f)) { s.writeHead(404); return s.end(); }
+    if (!f.startsWith(root) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { s.writeHead(404); return s.end(); }
     s.writeHead(200, { "content-type": TYPES[path.extname(f)] || "application/octet-stream" }); s.end(fs.readFileSync(f));
   }).listen(0);
-  const browser = await chromium.launch();
+  let browser, bad = [];
+  try {
+  browser = await chromium.launch();
   const page = await (await browser.newContext({ viewport: { width: 1280, height: 800 } })).newPage();
   await page.goto(`http://127.0.0.1:${srv.address().port}/index.html${route}`);
   await sleep(9000); /* boot is heavy and not what we measure */
@@ -24,10 +26,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   await page.mouse.move(640, 400);
   for (let i = 0; i < 40; i++) { await page.mouse.wheel(0, 300); await sleep(120); }
   await sleep(500);
+  if (!((await page.evaluate(() => scrollY)) > 0)) throw new Error("scroll loop did not move the page (scrollY=0)");
   const lt = await page.evaluate(() => window.__lt);
-  const bad = lt.filter((d) => d > 50);
+  bad = lt.filter((d) => d > 50);
   console.log(`${route}: long tasks=${lt.length} max=${Math.max(0, ...lt)}ms over50=[${bad.join(", ")}]`);
-  await browser.close(); srv.close();
+  } finally { if (browser) await browser.close(); srv.close(); }
   if (bad.length) { console.log("perf FAIL"); process.exit(1); }
   console.log("perf ok");
-})();
+})().catch((e) => { console.log("perf ERROR: " + e.message); process.exit(1); });

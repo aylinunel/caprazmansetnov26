@@ -6781,7 +6781,8 @@ try {
     introEl.classList.add("intro");
     var introDone = function () { if (!introEl.classList.contains("intro")) return; introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); };
     introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introDone(); });
-    setTimeout(introDone, 2000); /* fallback if animationend never fires (reduced motion, hidden tab) */
+    /* fallback if animationend never fires (hidden tab / animation cancelled): armed when the animation starts, so a slow first load cannot cut the zoom short */
+    introEl.addEventListener("animationstart", function (e) { if (e.target === introEl) setTimeout(introDone, 2000); });
   }
 } catch (err) {}
 addEventListener("hashchange", route);

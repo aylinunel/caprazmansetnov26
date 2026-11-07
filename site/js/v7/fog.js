@@ -85,7 +85,7 @@ function fogMount(root) {
   if (!gl) cv.classList.add("fh-fog-css");
   var size = function () {
     if (!gl) return;
-    var cw = el.clientWidth || 1, ch = el.clientHeight || 1, w = Math.round(Math.min(cw, 960)), h = Math.max(1, Math.round(w * ch / cw));
+    var cw = el.clientWidth || 1, ch = el.clientHeight || 1, w = Math.round(Math.min(cw, 480)), h = Math.max(1, Math.round(w * ch / cw));
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
   };
   var set = function (n, v) { el.style.setProperty(n, v); };

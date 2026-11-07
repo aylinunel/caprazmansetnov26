@@ -110,7 +110,7 @@ MOTION_K.lead = function (el, first) {
    phone counts once on enter. Counters count only inside the range: at progress 0 and 1 they show their exact value. */
 MOTION_K.tickets = function (el, first) {
   var sec = el.parentNode, wide = innerWidth >= 901, ns = [].slice.call(el.querySelectorAll(".tix-n")), os = ns.map(function () { return { v: 0 }; });
-  var tl, show = function () { if (!tl) return; var p = tl.progress(); ns.forEach(function (b, i) { b.textContent = (p > 0 && p < 1 ? Math.round(os[i].v) : +b.dataset.n).toLocaleString("tr"); }); };
+  var nf = new Intl.NumberFormat("tr"), tl, show = function () { if (!tl) return; var p = tl.progress(); ns.forEach(function (b, i) { b.textContent = nf.format(p > 0 && p < 1 ? Math.round(os[i].v) : +b.dataset.n); }); };
   var top = function () { var n = document.querySelector(".navbar"); return "top " + ((n ? n.offsetHeight : 64) + 24) + "px"; };
   tl = gsap.timeline({ onUpdate: show, onComplete: show, onReverseComplete: show,
     scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: show, onLeaveBack: show } : { trigger: el, start: "top 85%" } });
@@ -192,9 +192,10 @@ MOTION_K.scene = function (el, first) {
   if (g6 && !(first && motionInView(g6))) gsap.from(g6, { scale: .86, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: g6, start: "top 85%" } });
   var rows = g6 ? [] : [].slice.call(viz.querySelectorAll(".vz-r:not(.vz-ax),.or-bar")), bars = viz.querySelectorAll(".vz-span,.or-bt i");
   var ns = motionNums(claim), os = ns.map(function (b) { var t = b.textContent; return { v: 0, n: +t.replace(/\./g, "").replace(",", "."), d: (t.split(",")[1] || "").length, t: t }; });
+  var nfs = {}, nf = function (d) { return nfs[d] || (nfs[d] = new Intl.NumberFormat("tr", { minimumFractionDigits: d, maximumFractionDigits: d })); };
   var tl, show = function () {
     var p = tl.progress();
-    ns.forEach(function (b, i) { var o = os[i]; b.textContent = p > 0 && p < 1 ? o.v.toLocaleString("tr", { minimumFractionDigits: o.d, maximumFractionDigits: o.d }) : o.t; });
+    ns.forEach(function (b, i) { var o = os[i]; b.textContent = p > 0 && p < 1 ? nf(o.d).format(o.v) : o.t; });
   };
   tl = gsap.timeline({ onUpdate: show, scrollTrigger: { trigger: viz, start: "top 85%", end: "bottom 55%", scrub: .6, onLeave: show, onLeaveBack: show } });
   if (!g6) tl.from(rows.length ? rows : viz, { opacity: 0, y: 24, duration: .4, stagger: .08, ease: "power2.out" }, 0);
