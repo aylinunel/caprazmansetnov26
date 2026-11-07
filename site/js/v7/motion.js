@@ -202,3 +202,16 @@ MOTION_K.scene = function (el, first) {
   os.forEach(function (o) { tl.to(o, { v: o.n, duration: d, ease: "power1.out", onUpdate: function () { if (!o.d) o.v = Math.round(o.v); } }, 0); });
   show();
 };
+
+/* Footer mark: three dots bounce and merge into the centre, the Ç strokes in, then the ring draws. Final state = static SVG. */
+MOTION_K.foot = function (el, first) {
+  var d = [].slice.call(el.querySelectorAll(".fm-dots circle")), cx = [-22, 0, 22], ink = el.querySelectorAll(".fm-c,.fm-cd"), ring = el.querySelector(".fm-ring");
+  gsap.set(ink, { strokeDasharray: 1, strokeDashoffset: 1 }); gsap.set(ring, { strokeDasharray: 1, strokeDashoffset: 1 });
+  gsap.set(el.querySelector(".fm-dots"), { opacity: 1 }); gsap.set(d, { transformOrigin: "50% 50%" });
+  gsap.timeline({ scrollTrigger: { trigger: el, start: "top 95%" } })
+    .to(d, { y: -16, duration: .28, ease: "power2.out", stagger: .12, yoyo: true, repeat: 3 })
+    .to(d, { x: function (i) { return -cx[i]; }, duration: .5, ease: "power3.inOut" })
+    .to(d, { scale: 0, opacity: 0, duration: .25 }, ">-.1")
+    .to(ink, { strokeDashoffset: 0, duration: .8, ease: "power2.inOut", stagger: .3 }, "<")
+    .to(ring, { strokeDashoffset: 0, duration: 1, ease: "power2.inOut" }, ">-.2");
+};
