@@ -993,7 +993,6 @@ table.nm td{min-width:124px;line-height:1.45}
 .rq-b[data-on="1"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .pri{width:3px;border-radius:2px;align-self:stretch}
 
-
 /* ================================================== 2.0 reader layer ===
    Built on v1's tokens. Ground News is the reference for the reading
    surfaces: one repeated story card, a coverage bar that always carries its
@@ -2079,8 +2078,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .fh-toggle{position:relative;display:grid;grid-template-columns:1fr 1fr;width:calc(524*var(--u));min-width:min(100%,360px);height:calc(86*var(--u));min-height:64px;padding:calc(2*var(--u));border-radius:calc(16*var(--u));overflow:hidden;
   background:rgba(120,132,140,.34);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(calc(14*var(--u)));backdrop-filter:blur(calc(14*var(--u)))}
 .fh-toggle button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:calc(3*var(--u));min-width:0;padding:0 6px;border:0;background:none;cursor:pointer;
-  border-radius:calc(13*var(--u));color:var(--ink2);overflow:hidden;font-family:var(--ff-b)}
-.fh-toggle button{--on:0}
+  border-radius:calc(13*var(--u));color:var(--ink2);overflow:hidden;font-family:var(--ff-b);--on:0}
 .fh-toggle button[aria-pressed="true"]{--on:1}
 .fh-toggle button::before{transition:opacity .6s;content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,#f7f8dc,#e2ee9f 90%);box-shadow:inset 0 0 calc(18*var(--u)) rgba(255,255,255,.65);opacity:var(--on)}
 .fh-toggle b,.fh-toggle small{position:relative;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:color-mix(in srgb,#1c2316 calc(var(--on)*100%),var(--ink2))}
@@ -2327,7 +2325,8 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
   .xfixlink::before{margin-right:4px}
   .chip,.v7-out,.xsp-h a,.v7-outlets a{min-height:44px!important}
   .chip,.v7-out{min-width:44px}
-  .xsp-h a,.v7-outlets a{display:flex;align-items:center}
+  .v7-outlets a{display:flex;align-items:center}
+  .xsp-h a{display:block}
   summary{display:flex;align-items:center;min-height:44px}
   details p>a:only-child{display:inline-flex;align-items:center;min-height:44px}
   .xtopic-h>a{min-width:44px}
@@ -2444,10 +2443,10 @@ body:has(#app.intro){overflow-x:hidden}
 #app.intro{overflow:hidden;animation:cm-intro 1.4s cubic-bezier(.22,1,.36,1) both}
 @keyframes cm-intro{from{transform:scale(.92);border-radius:28px}to{transform:none;border-radius:0}}
 #app.intro .fh h1 .iw{display:inline-block;animation:cm-word .7s cubic-bezier(.22,1,.36,1) both}
+#app.intro .fh h1 .l1 .iw:nth-child(1){animation-delay:.3s}
 #app.intro .fh h1 .l1 .iw:nth-child(2){animation-delay:.45s}
 #app.intro .fh h1 .y .iw:nth-child(1){animation-delay:.6s}
 #app.intro .fh h1 .y .iw:nth-child(2){animation-delay:.7s}
-#app.intro .fh h1 .l1 .iw:nth-child(1){animation-delay:.3s}
 @keyframes cm-word{from{opacity:0;filter:blur(12px);transform:translateY(.35em)}to{opacity:1;filter:blur(0);transform:none}}
 
 </style>
@@ -12167,7 +12166,7 @@ function fogMount(root) {
   var mo = new MutationObserver(retheme); mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   offs.push(function () { mo.disconnect(); });
   var mq = matchMedia("(prefers-color-scheme: dark)"); if (mq.addEventListener) { mq.addEventListener("change", retheme); offs.push(function () { mq.removeEventListener("change", retheme); }); }
-  var rz = function () { if (alive()) { size(); } };
+  var rz = function () { if (alive()) size(); };
   addEventListener("resize", rz); offs.push(function () { removeEventListener("resize", rz); });
   set("--k", ".5"); set("--k2", ".5"); set("--kt", "0"); set("--turn", "0"); set("--dip", "0"); set("--sink", "0px"); set("--surge", "0");
   size(); frame(performance.now()); loop();
@@ -14034,7 +14033,9 @@ try {
   if (!sessionStorage.getItem("cm-intro")) {
     sessionStorage.setItem("cm-intro", "1");
     introEl.classList.add("intro");
-    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) { introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); } });
+    var introDone = function () { if (!introEl.classList.contains("intro")) return; introEl.classList.remove("intro"); window.ScrollTrigger && ScrollTrigger.refresh(); };
+    introEl.addEventListener("animationend", function (e) { if (e.target === introEl) introDone(); });
+    setTimeout(introDone, 2000); /* fallback if animationend never fires (reduced motion, hidden tab) */
   }
 } catch (err) {}
 addEventListener("hashchange", route);
