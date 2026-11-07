@@ -272,7 +272,13 @@ test("alias matching: hits, suffixes, false positives", () => {
   assert.deepEqual(m("Çay için dem zamanı"), []);
   assert.deepEqual(m("Tıp fakültesi ve tip değişikliği"), []);
   assert.deepEqual(m("Bu deva değil, saadet zinciri"), []);
-  assert.deepEqual(m("ABD'de Demokrat Parti adayı Yeni Parti kuracak"), []);
+  assert.deepEqual(m("ABD'de Demokrat Parti adayı Yeni Parti kuracak"), ["yep"]);
+  assert.deepEqual(m("Murat Cem Akpınar"), []);
+  assert.deepEqual(m("AKPM Başkanı konuştu"), []);
+  assert.deepEqual(m("AKP'li vekil istifa etti"), ["akp"]);
+  assert.deepEqual(m("YENİ Partili Murat Emir"), ["yep"]);
+  assert.deepEqual(m("YENİ PARTİ kuruldu"), ["yep"]);
+  assert.deepEqual(m("Bakan yeni parti kurdu"), []);
 });
 test("mentionStats, mentionShares and n<10 suppression", () => {
   const c = L.compileAliases([{ s: "chp" }, { s: "mhp" }]);

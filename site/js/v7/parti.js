@@ -6,21 +6,12 @@ var PT_NOTE = "<b>Parti yerleşimleri</b> ideolojik tanımlardan türetilmiştir
   "İkisi ayrı kaynaklardır ve bu sitede bağımsız olarak doğrulanmamıştır. Bir yayının bir partiye yakın düşmesi, ona ait olduğunu ya da onun sözcülüğünü yaptığını göstermez; " +
   "yalnızca iki ayrı kaynağın onları altı eksende benzer yerlere koyduğunu gösterir.";
 
-function ptCss() {
-  if (document.getElementById("pt-css")) return;
-  var st = document.createElement("style"); st.id = "pt-css";
-  st.textContent = ".pt-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;padding-bottom:6px}.pt-scroll svg{display:block;max-width:none}" +
-    ".pt-hint{display:none;font:500 11px var(--ff-m);color:var(--muted);margin:4px 0 0}.pt-pc{overflow-x:auto}.pt-pc svg{min-width:720px;display:block}" +
-    "@media (max-width:640px){.pt-hint{display:block}}.pt-sub{font:500 11px var(--ff-m);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px}" +
-    ".pt-note{margin:30px 0 0}.pt-chips{margin-top:2px}";
-  document.head.appendChild(st);
-}
 function ptPc(x) { return "%" + dec(100 * x, 1); }
 function ptName(s) { var p = (D.P || []).filter(function (x) { return x.s === s; })[0]; return p ? p.n : s; }
 function ptHow(lines) { return '<ul class="or-how">' + lines.map(function (l) { return "<li>" + l + "</li>"; }).join("") + "</ul>"; }
 function ptLeanSort(a, b) { return a.lean - b.lean || (a.n < b.n ? -1 : 1); }
 
-/* One pass over the data, cached. */
+/* Cheap part (distances), cached; the headline scan is separate (ptMent) so the tab can paint first. */
 function ptData() {
   if (PT) return PT;
   var parties = D.P.filter(function (p) { return hasAxes(p); }).sort(ptLeanSort);
@@ -31,11 +22,17 @@ function ptData() {
     var rk = partyRank(o, parties); near[o.s] = rk;
     dist[o.s] = {}; rk.forEach(function (x) { dist[o.s][x.p.s] = x.d; });
   });
-  var comp = compileAliases(parties), mp = comp.map(function (c) { return c.s; });
-  var mOuts = outs.filter(function (o) { return polOf(o.s).length >= 20; });
+  PT = { parties: parties, outs: outs, dist: dist, near: near };
+  return PT;
+}
+/* Headline scan over ~190k political headlines (prefiltered); adds mention fields to the same object. */
+function ptMent() {
+  var d = ptData(); if (d.stats) return d;
+  var parties = d.parties, comp = compileAliases(parties), mp = comp.map(function (c) { return c.s; });
+  var mOuts = d.outs.filter(function (o) { return polOf(o.s).length >= 20; });
   var rows = []; mOuts.forEach(function (o) { polOf(o.s).forEach(function (a) { rows.push({ s: a.s, t: a.t, v: a.v }); }); });
   var stats = mentionStats(rows, comp), shares = mentionShares(stats, mp, bloc);
-  var tot = {}, ps = 0, pn = 0, any = 0, sum = {};
+  var tot = {}, ps = 0, pn = 0, any = 0;
   mp.forEach(function (p) { tot[p] = { c: 0, sum: 0 }; });
   mOuts.forEach(function (o) {
     var st = stats[o.s]; if (!st) return;
@@ -44,9 +41,9 @@ function ptData() {
   });
   rows.forEach(function (r) { ps += r.v || 0; });
   var mparties = parties.filter(function (p) { return tot[p.s]; });
-  PT = { parties: parties, outs: outs, dist: dist, near: near, mOuts: mOuts, mparties: mparties, stats: stats, shares: shares, tot: tot, pn: pn, any: any,
-    mean: pn ? ps / pn : 0, top: mparties.slice().sort(function (a, b) { return tot[b.s].c - tot[a.s].c; }) };
-  return PT;
+  d.mOuts = mOuts; d.mparties = mparties; d.stats = stats; d.shares = shares; d.tot = tot; d.pn = pn; d.any = any; d.mean = pn ? ps / pn : 0;
+  d.top = mparties.slice().sort(function (a, b) { return tot[b.s].c - tot[a.s].c; });
+  return d;
 }
 
 /* Outlet × party grid as an SVG string. o: {rows:[{label, lean}], cols:[{label, lean}], cell(ri, ci) -> {txt, t (0..1), tip, ring} | null, label}. */
@@ -63,7 +60,7 @@ function ptHeat(o) {
     o.cols.forEach(function (c, ci) {
       var x = lw + ci * cw, cell = o.cell(ri, ci);
       if (!cell) { g += '<rect x="' + x + '" y="' + y + '" width="' + (cw - 2) + '" height="' + (rh - 2) + '" rx="2" fill="var(--line)" fill-opacity=".35"/>'; return; }
-      g += '<g tabindex="0"' + vzTipAttr(cell.tip) + '><rect x="' + x + '" y="' + y + '" width="' + (cw - 2) + '" height="' + (rh - 2) + '" rx="2" fill="var(--seq4)" fill-opacity="' +
+      g += '<g' + vzTipAttr(cell.tip) + '><rect x="' + x + '" y="' + y + '" width="' + (cw - 2) + '" height="' + (rh - 2) + '" rx="2" fill="var(--seq4)" fill-opacity="' +
         (.1 + .85 * cell.t).toFixed(2) + '"' + (cell.ring ? ' stroke="var(--ink)" stroke-width="2"' : "") + "/>" +
         '<text x="' + (x + (cw - 2) / 2) + '" y="' + (y + rh / 2 + 3.5) + '" text-anchor="middle" font-size="10.5" font-family="var(--ff-m)" fill="var(--ink)" stroke="var(--paper)" stroke-width="2.4" paint-order="stroke">' + esc(cell.txt) + "</text></g>";
     });
@@ -102,7 +99,7 @@ function ptClose(d) {
     return [o.n].concat(d.parties.map(function (p) { return dec(d.dist[o.s][p.s], 1); }));
   }));
   return { top: top, cnt: cnt, best: best, find: findingBlock({ id: "parti-yakin",
-    claim: "Altı eksende " + d.outs.length + " kurumun " + cnt[top] + " tanesine en yakın parti " + ptName(top) + "; en yakın kurum–parti çifti " + best.o.n + " ile " + best.p.n + " (mesafe " + dec(best.d, 1) + ").",
+    claim: "Altı eksende " + d.outs.length + " kurumun " + cnt[top] + " tanesine en yakın parti " + esc(ptName(top)) + "; en yakın kurum–parti çifti " + esc(best.o.n) + " ile " + esc(best.p.n) + " (mesafe " + dec(best.d, 1) + ").",
     viz: viz,
     read: "<b>Nasıl okunur.</b> Mesafe, bir kurumun ve bir partinin altı eksendeki (ekonomik, toplumsal, laik–dindar, devlet rolü, milliyetçi–çoğulcu, gelenek–kozmopolit) konumları arasındaki düz çizgi uzaklığıdır; küçük sayı benzer profil demektir. Satırlar sola yerleşikten sağa yerleşiğe, sütunlar sol partiden sağ partiye dizilir.",
     how: ptHow(["Mesafe = √(Σ (kurum − parti)²), altı eksen, her eksen 0–100. Mümkün en büyük değer 245.", "Parti konumları ideolojik tanımlardan türetilmiştir, oy davranışından değil; kurum konumları sağlanan kayıt defterinden gelir. Hiçbiri bu sitede bağımsız doğrulanmadı.",
@@ -122,7 +119,7 @@ function ptAxes(d) {
   }));
   return findingBlock({ id: "parti-eksen",
     claim: "Kurumlar altı eksenden en çok " + L(so[0]) + " ekseninde dağılıyor, en az " + L(so[so.length - 1]) + " ekseninde; partilerde en geniş aralık " + L(sp[0]) + " ekseninde.",
-    viz: '<div class="pt-pc" id="pt-pc" tabindex="0" role="region" aria-label="Altı eksenli çizgi grafiği; kurumlar ve partiler"></div>' +
+    viz: '<div class="pt-pc" id="pt-pc" tabindex="0" role="region" aria-label="Altı eksenli çizgi grafiği; kurumlar ve partiler"></div><p class="pt-hint">Grafik yatay kaydırılır →</p>' +
       vzKey([{ c: "var(--left)", t: "sola yerleşik" }, { c: "var(--mid)", t: "merkez" }, { c: "var(--right)", t: "sağa yerleşik" }]),
     read: "<b>Nasıl okunur.</b> Her çizgi, bir kurumun (ince, düz) ya da partinin (kalın, kesikli, sağ uçta adı yazılı) altı eksendeki yerini birleştirir. Çizgileri üst üste binen kurumlar ve partiler o eksenlerde benzer konumdadır; çizginin bir eksende ani kırılması, tek bir sol–sağ çizgisinin gizlediği ayrımdır. Bir çizginin üzerine gelince o öne çıkar; kurum çizgisine tıklayınca kurum sayfası açılır.",
     how: ptHow(["Eksenler: " + PCAX.map(function (a) { return a[1]; }).join(", ") + "; hepsi 0–100.", "Aralık = o eksendeki en büyük ile en küçük konum arasındaki fark.", "Parti konumları ideolojik tanımlardan, kurum konumları sağlanan kayıt defterinden gelir; oy ya da içerik ölçümü değildir. Yakınlık bağlılık değildir."]) +
@@ -155,11 +152,11 @@ function ptMention(d) {
   }));
   var excl = D.P.filter(function (p) { return !PARTI_ALIAS[p.s]; }).map(function (p) { return p.n; });
   return findingBlock({ id: "parti-anma",
-    claim: "Siyasi başlıkların " + ptPc(d.any / d.pn) + " kadarı (" + orN(d.any) + " / " + orN(d.pn) + ") bir partiyi adıyla anıyor; en sık anılan " + top.n + " (" + orN(d.tot[top.s].c) + " başlık). Siyasi başlıklardaki payı: sola yerleşik kurumlarda " + ptPc(rate("left")) + ", sağa yerleşiklerde " + ptPc(rate("right")) + ".",
+    claim: "Siyasi başlıkların " + ptPc(d.any / d.pn) + " kadarı (" + orN(d.any) + " / " + orN(d.pn) + ") bir partiyi adıyla anıyor; en sık anılan " + esc(top.n) + " (" + orN(d.tot[top.s].c) + " başlık). Siyasi başlıklardaki payı: sola yerleşik kurumlarda " + ptPc(rate("left")) + ", sağa yerleşiklerde " + ptPc(rate("right")) + ".",
     viz: ctl + '<div id="pt-mrows">' + ptMRows(d, PT_SEL) + "</div>" + vzKey([{ c: "var(--ink)", t: "kurum" }, { kind: "t", t: "kendi bloğunun toplu oranı" }]),
     read: "<b>Nasıl okunur.</b> Bir parti seçin; her satır bir kurum, nokta o kurumun siyasi başlıklarında partinin adının geçme oranıdır. Dikey çizgi kurumun kendi bloğunun (sol, merkez, sağ) toplu oranıdır: nokta çizginin sağındaysa kurum bu partiyi bloğundan daha sık anıyor. Anmak ne olumlu ne olumsuz bir tutumdur; yalnızca adın başlıkta geçtiğini gösterir.",
-    how: ptHow(["Payda: siyasi başlıklar (sitenin siyasi bayrağı taşıyan haberleri), en az 20 siyasi başlığı olan " + d.mOuts.length + " kurum, " + orN(d.pn) + " başlık.", "Eşleştirme: partinin adı ve kısaltması, harf duyarsız ve Türkçe karakterden bağımsız, sözcük sınırlarıyla; ‘CHP’li’ gibi ekler kabul edilir. ‘DEM’, ‘TİP’, ‘DEVA’ gibi sıradan sözcüklerle çakışan kısaltmalar yalnızca büyük harfle yazıldığında sayılır.",
-      "Bilerek dışarıda bırakılanlar: " + excl.join(", ") + " (adları sıradan sözcük ya da başka bir ülkenin partisiyle karışıyor). Lider adları sayılmadı; yalnızca parti adı geçen başlıklar sayıldı. Bu nedenle sayılar alt sınırdır.",
+    how: ptHow(["Payda: siyasi başlıklar (sitenin siyasi bayrağı taşıyan haberleri), en az 20 siyasi başlığı olan " + d.mOuts.length + " kurum, " + orN(d.pn) + " başlık.", "Eşleştirme: partinin adı ve kısaltması, harf duyarsız ve Türkçe karakterden bağımsız, sözcük sınırlarıyla; ‘CHP’li’ gibi ekler kabul edilir, ama kısaltma sözcüğün içinde kalıyorsa (Akpınar) sayılmaz. ‘DEM’, ‘TİP’, ‘DEVA’ ve ‘Yeni Parti’ gibi sıradan sözcüklerle çakışan adlar yalnızca büyük harfle yazıldığında sayılır.",
+      "Bilerek dışarıda bırakılanlar: " + excl.map(esc).join(", ") + " (başka bir ülkenin partisiyle karışıyor). Lider adları sayılmadı; yalnızca parti adı geçen başlıklar sayıldı. Bu nedenle sayılar alt sınırdır.",
       "Bir başlık birden çok partiyi anıyorsa her birine sayılır."]) + '<p class="pt-sub">Tablo</p>', table: tbl });
 }
 
@@ -169,6 +166,7 @@ function ptTone(d) {
   var rows = d.mOuts.filter(function (o) { return cols.some(function (p) { return toneCell(d.stats[o.s].m[p.s], PT_MIN).mean !== null; }); });
   var vals = [], hid = 0, cells = 0;
   d.mOuts.forEach(function (o) { cols.forEach(function (p) { var c = d.stats[o.s].m[p.s]; if (!c) return; cells++; var t = toneCell(c, PT_MIN); if (t.mean === null) hid++; else vals.push(t.mean); }); });
+  if (!vals.length) return findingBlock({ id: "parti-ton", claim: "Her hücrede en az " + PT_MIN + " başlık gerektiği için bu dönemde gösterilecek ton verisi yok.", viz: "" });
   var mx = Math.max.apply(null, vals), mn = Math.min.apply(null, vals);
   var pooled = cols.map(function (p) { var t = toneCell(d.tot[p.s], 30); return { p: p, m: t.mean, n: t.n }; }).filter(function (x) { return x.m !== null; }).sort(function (a, b) { return b.m - a.m; });
   var heat = ptHeat({ label: "Parti adı geçen başlıklarda ortalama yüklü dil puanı, kurum ve parti başına", rows: rows.map(function (o) { return { label: o.n, lean: o.lean }; }),
@@ -182,9 +180,10 @@ function ptTone(d) {
   var tbl = vzTable(["Kurum"].concat(cols.map(function (p) { return p.n; })), rows.map(function (o) {
     return [o.n].concat(cols.map(function (p) { var c = d.stats[o.s].m[p.s], t = toneCell(c, PT_MIN); return t.mean === null ? (c ? "— (n=" + c.c + ")" : "—") : dec(t.mean, 1) + " (n=" + t.n + ")"; }));
   })) + vzTable(["Parti", "Ortalama puan", "Başlık"], pooled.map(function (x) { return [x.p.n, dec(x.m, 1), orN(x.n)]; }));
+  if (!pooled.length) return findingBlock({ id: "parti-ton", claim: "Hiçbir parti için yeterli başlık (en az 30) yok; ton karşılaştırması gösterilmiyor.", viz: viz, table: tbl });
   var hi = pooled[0], lo2 = pooled[pooled.length - 1];
   return findingBlock({ id: "parti-ton",
-    claim: "Parti adı geçen siyasi başlıklarda ortalama yüklü dil puanı " + hi.p.n + " için en yüksek (" + dec(hi.m, 1) + "), " + lo2.p.n + " için en düşük (" + dec(lo2.m, 1) + "); tüm siyasi başlıkların ortalaması " + dec(d.mean, 1) + ".",
+    claim: "Parti adı geçen siyasi başlıklarda ortalama yüklü dil puanı " + esc(hi.p.n) + " için en yüksek (" + dec(hi.m, 1) + "), " + esc(lo2.p.n) + " için en düşük (" + dec(lo2.m, 1) + "); tüm siyasi başlıkların ortalaması " + dec(d.mean, 1) + " (kurum karışımına bağlı).",
     viz: viz,
     read: "<b>Nasıl okunur.</b> Her hücre, bir kurumun o partinin adını içeren siyasi başlıklarının ortalama yüklü dil puanıdır (0–100; koyu hücre daha yüklü). Aynı sütunda koyu ve açık hücreler varsa kurumlar aynı partiden farklı bir dille söz ediyor demektir. Boş hücre ‘az haber’ demektir, ‘sakin’ değil.",
     how: ptHow(["Puan: sitenin kural tabanlı yüklü dil puanı (başlık başına 0–100); her başlığın puanı o başlıkta adı geçen her partiye yazılır.", "<b>" + PT_MIN + "’dan az başlıklı hücreler gösterilmez</b>: " + orN(cells) + " dolu hücrenin " + orN(hid) + " tanesi bu yüzden boş. Partiler için genel ortalama en az 30 başlık ister; sütun gösterimi için en az 3 kurumda görünür hücre gerekir.",
@@ -220,19 +219,22 @@ function ptOwn(d) {
 }
 
 /* ------------------------------------------------ page */
+function ptLate(d) {
+  return pTickets([{ n: d.pn, label: "incelenen siyasi başlık" }, { n: d.any, label: "parti adı geçen başlık" }]) +
+    pHead("3 · Kim kimi anıyor", "Başlıklarda parti adları", "parti-3") + ptMention(d) +
+    pHead("4 · Ton", "Hangi partiden hangi dille söz ediliyor", "parti-4") + ptTone(d) +
+    pHead("5 · Sahiplik", "Sahiplik ve en yakın parti", "parti-5") + ptOwn(d) +
+    '<div class="note pt-note">' + PT_NOTE + "</div>";
+}
 function pgParti() {
-  ptCss();
   var d = ptData(), c = ptClose(d);
   var h = '<div class="wrap page or"><div class="phead"><div class="eyebrow">Kurumlar › Partiler</div><h1>Kurumlar ve partiler: yakınlık, anma, ton</h1>' +
     '<p class="lede">Kurumların ve ' + d.parties.length + ' partinin aynı altı eksendeki yerleşimlerini yan yana koyuyor, sonra siyasi başlıklarda hangi partinin ne sıklıkla ve hangi dille anıldığına bakıyoruz.</p></div>';
   h += pLead("Hiçbiri bir kurumun bir partiyle bağlantılı olduğunu göstermez: parti konumları ideolojik tanımlardan, kurum konumları sağlanan kayıt defterinden gelir ve ikisi de bu sitede doğrulanmadı. Yakın olmak, bağlı olmak değildir.");
-  h += pTickets([{ n: d.outs.length, label: "kurum, altı eksende yerleşik" }, { n: d.parties.length, label: "parti" }, { n: d.pn, label: "incelenen siyasi başlık" }, { n: d.any, label: "parti adı geçen başlık" }]);
+  h += pTickets([{ n: d.outs.length, label: "kurum, altı eksende yerleşik" }, { n: d.parties.length, label: "parti" }]);
   h += pHead("1 · Yakınlık", "Hangi kurum hangi partiye yakın", "parti-1") + c.find;
   h += pHead("2 · Altı eksen", "Kurumlar ve partiler altı eksende", "parti-2") + ptAxes(d);
-  h += pHead("3 · Kim kimi anıyor", "Başlıklarda parti adları", "parti-3") + ptMention(d);
-  h += pHead("4 · Ton", "Hangi partiden hangi dille söz ediliyor", "parti-4") + ptTone(d);
-  h += pHead("5 · Sahiplik", "Sahiplik ve en yakın parti", "parti-5") + ptOwn(d);
-  h += '<div class="note pt-note">' + PT_NOTE + "</div></div>";
+  h += '<div id="pt-late" aria-busy="true"><p class="pt-skel">Başlıklar taranıyor…</p></div></div>';
   return h;
 }
 
@@ -244,6 +246,12 @@ function wireParti() {
     s.setAttribute("aria-label", "Altı eksenli çizgi grafiği: kurumlar ve partiler"); box.appendChild(s);
   }
   wireGo(root);
+  var late = document.getElementById("pt-late");
+  if (late && late.getAttribute("aria-busy")) setTimeout(function () {
+    var box2 = document.getElementById("pt-late"); if (!box2 || !box2.getAttribute("aria-busy")) return;
+    box2.innerHTML = ptLate(ptMent()); box2.removeAttribute("aria-busy"); wireGo(box2);
+    if (typeof motionAdd === "function") motionAdd(box2);
+  }, 0);
   if (!root._pt) {
     root._pt = 1;
     root.addEventListener("click", function (ev) {

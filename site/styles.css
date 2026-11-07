@@ -2436,3 +2436,10 @@ body:has(#app.intro){overflow-x:hidden}
 #app.intro .fh h1 .y .iw:nth-child(1){animation-delay:.6s}
 #app.intro .fh h1 .y .iw:nth-child(2){animation-delay:.7s}
 @keyframes cm-word{from{opacity:0;filter:blur(12px);transform:translateY(.35em)}to{opacity:1;filter:blur(0);transform:none}}
+
+/* Kurumlar › Partiler (v7/parti.js) */
+.pt-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;padding-bottom:6px}.pt-scroll svg{display:block;max-width:none}
+.pt-hint{display:none;font:500 11px var(--ff-m);color:var(--muted);margin:4px 0 0}.pt-pc{overflow-x:auto}.pt-pc svg{min-width:720px;display:block}
+@media (max-width:640px){.pt-hint{display:block}}
+.pt-sub{font:500 11px var(--ff-m);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 6px}
+.pt-note{margin:30px 0 0}.pt-chips{margin-top:2px}.pt-skel{min-height:240px;color:var(--muted);font:500 12px var(--ff-m)}

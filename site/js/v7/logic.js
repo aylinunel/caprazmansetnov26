@@ -295,36 +295,41 @@ function nearestParty(outlet, parties, ax) { var r = partyRank(outlet, parties, 
 
 /* Party aliases. Folded phrases need word boundaries; every phrase may take a short Turkish suffix (partisi, CHPli);
    "cs" (case-sensitive, original text) is for short names that are also ordinary words (DEM = "dem", TİP = "tip", DEVA = "deva").
-   Ambiguous names with no safe form (Yeni Parti, Demokrat Parti = also the US Democrats) are left out on purpose. */
+   "cx" = case-sensitive phrases (Yeni Parti is also an everyday phrase in lower case). Acronyms of 4 letters or fewer take no letter suffix (AKP does not match Akpınar), only "AKP'li".
+   Demokrat Parti (also the US Democrats) is left out on purpose. */
 var PARTI_ALIAS = {
   akp: { f: ["ak parti", "akp"]  }, chp: { f: ["chp"] }, mhp: { f: ["mhp"] }, iyi: { f: ["iyi parti"]  },
   dem: { f: ["dem parti"], cs: ["DEM"]  }, hdp: { f: ["hdp"] }, zafer: { f: ["zafer partisi", "zafer partili"] },
   yrp: { f: ["yeniden refah", "yrp"] }, anahtar: { f: ["anahtar parti"]  }, tip: { f: ["turkiye isci partisi"], cs: ["TİP"] },
   tkp: { f: ["tkp"] }, hudapar: { f: ["huda par", "huda-par", "hudapar"]  }, saadet: { f: ["saadet partisi", "saadet partili"] },
   bbp: { f: ["bbp", "buyuk birlik partisi"] }, dsp: { f: ["dsp"] }, deva: { f: ["deva partisi", "deva partili"], cs: ["DEVA"] },
-  gelecek: { f: ["gelecek partisi", "gelecek partili"] }
+  gelecek: { f: ["gelecek partisi", "gelecek partili"] }, yep: { f: [], cx: ["Yeni Parti", "YENİ Parti", "YENİ PARTİ"] }
 };
 var ALN = "a-z0-9";
 
 function aliasEscape(t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 
-/* Compiled matchers for the parties that have a safe alias list. */
+/* Compiled matchers for the parties that have a safe alias list; .pre is one cheap prefilter on the folded text. */
 function compileAliases(parties) {
-  var out = [];
+  var out = [], pre = [];
   (parties || []).forEach(function (p) {
     var a = PARTI_ALIAS[p.s]; if (!a) return;
     var fold = a.f.map(function (t) {
-      return new RegExp("(^|[^" + ALN + "])" + aliasEscape(t) + "[" + ALN + "]{0,6}" + "(?![" + ALN + "])");
+      return new RegExp("(^|[^" + ALN + "])" + aliasEscape(t) + (t.length <= 4 ? "" : "[" + ALN + "]{0,6}") + "(?![" + ALN + "])");
     });
     var cs = (a.cs || []).map(function (t) { return new RegExp("(^|[^\\p{L}\\p{N}])" + aliasEscape(t) + "(?![\\p{L}\\p{N}])", "u"); });
-    out.push({ s: p.s, fold: fold, cs: cs });
+    var cx = (a.cx || []).length ? [new RegExp("(^|[^\\p{L}\\p{N}])(?:" + a.cx.map(aliasEscape).join("|") + ")\\p{L}{0,6}(?![\\p{L}\\p{N}])", "u")] : [];
+    a.f.concat(a.cs || [], a.cx || []).forEach(function (t) { pre.push(aliasEscape(trFold(t))); });
+    out.push({ s: p.s, fold: fold, cs: cs.concat(cx) });
   });
+  out.pre = pre.length ? new RegExp(pre.join("|")) : null;
   return out;
 }
 
 /* Slugs of the parties a headline names. */
 function matchParties(text, compiled) {
   var f = trFold(text), raw = String(text == null ? "" : text), hit = [];
+  if (compiled.pre && !compiled.pre.test(f)) return hit;
   compiled.forEach(function (c) {
     if (c.fold.some(function (r) { return r.test(f); }) || c.cs.some(function (r) { return r.test(raw); })) hit.push(c.s);
   });
