@@ -486,7 +486,7 @@ var SECTIONS = [
     ["akis", "Size özel"], ["denge", "Haber dengem"], ["takip", "Takip ettiklerim"]] },
   { p: "/anlati", label: "Anlatı", fn: pgAnlati },
   { p: "/kurumlar", label: "Kurumlar", fn: pgSources, tabs: [
-    ["liste", "Kurumlar"], ["karsilastir", "Karşılaştır"], ["kayit", "Kayıt ve güven"]] },
+    ["liste", "Kurumlar"], ["karsilastir", "Karşılaştır"], ["partiler", "Partiler"], ["kayit", "Kayıt ve güven"]] },
   { p: "/yanlilik", label: "Çerçeveleme", fn: pgBias, tabs: [
     ["kesif", "Araç tezgâhı"], ["cozumleyici", "Çözümleyici"],
     ["bicimler", "Üretim aşamaları"], ["turkiye", "Türkiye bağlamı"]] },
@@ -1174,6 +1174,7 @@ function pgSources(q) {
       function (m, t, l) { return '<h2 class="v7-subh">' + t + "</h2>" + (l || ""); });
   };
   if (tab === "liste" && q.v === "harita") return h + pgMap(q, kurumSwitch("harita")) + "</div>";
+  if (tab === "partiler") return pgParti();
 
   if (tab === "liste") {
     h += '<div class="phead"><div class="eyebrow">Genel bakış</div>' +
@@ -1571,8 +1572,9 @@ var MAPFILTER = { party: 1, print: 1, tv: 1, online: 1 };
    is what makes that visible. */
 var PCAX = [["eco", "Ekonomik"], ["soc", "Toplumsal"], ["sec", "Laik–dindar"],
             ["st", "Devlet rolü"], ["nat", "Milliyetçi–çoğulcu"], ["cul", "Gelenek–kozmopolit"]];
-function parallelCoords() {
-  var w = 880, h = 420, padL = 58, padR = 58, padT = 46, padB = 50;
+function parallelCoords(o) {
+  o = o || {};
+  var w = 880, h = 420, padL = 58, padR = o.parties ? 118 : 58, padT = 46, padB = 50;
   var s = svg(w, h), iw = w - padL - padR, ih = h - padT - padB;
   var ax = function (i) { return padL + iw * i / (PCAX.length - 1); };
   var Y = function (v) { return padT + ih - ih * v / 100; };
@@ -1589,13 +1591,20 @@ function parallelCoords() {
     g.textContent = v; s.appendChild(g);
   });
   var lines = [];
-  D.S.forEach(function (m) {
+  /* Outlets (thin, solid) and, with o.parties, parties (thick, dashed, named at the right end). */
+  var ents = D.S.filter(function (m) { return !o.liveOnly || STAT[m.s]; }).map(function (m) { return { e: m, party: false }; });
+  if (o.parties) D.P.forEach(function (p) { ents.push({ e: p, party: true }); });
+  var ends = [];
+  ents.forEach(function (x) {
+    var m = x.e;
     var ok = PCAX.every(function (a) { return m[a[0]] != null; });
     if (!ok) return;
+    var base = x.party ? 1 : .55;
     var pts = PCAX.map(function (a, i) { return ax(i) + "," + Y(m[a[0]]); }).join(" ");
     var pl = mk("polyline", { points: pts, class: "pc-line", stroke: lean(m.lean),
-      "stroke-opacity": ".55" });
-    bindTip(pl, "<span class='k'>" + esc(m.n) + "</span>" +
+      "stroke-opacity": base });
+    if (x.party) { pl.setAttribute("stroke-width", "3"); pl.setAttribute("stroke-dasharray", "7 4"); ends.push({ y: Y(m.cul), n: m.n, c: lean(m.lean) }); }
+    bindTip(pl, "<span class='k'>" + esc(m.n) + (x.party ? " (parti)" : "") + "</span>" +
       PCAX.map(function (a) { return a[1] + " " + m[a[0]]; }).join(" · "));
     pl.addEventListener("pointerenter", function () {
       lines.forEach(function (o) { if (o !== pl) o.classList.add("dim"); });
@@ -1603,14 +1612,22 @@ function parallelCoords() {
     });
     pl.addEventListener("pointerleave", function () {
       lines.forEach(function (o) { o.classList.remove("dim"); });
-      pl.setAttribute("stroke-opacity", ".55");
+      pl.setAttribute("stroke-opacity", base);
     });
-    pl.addEventListener("click", function () { go("/kurum?s=" + m.s); });
-    pl.style.cursor = "pointer";
+    if (!x.party) pl.addEventListener("click", function () { go("/kurum?s=" + m.s); });
+    pl.style.cursor = x.party ? "default" : "pointer";
     lines.push(pl); s.appendChild(pl);
   });
+  /* Party names at the right end, pushed apart so they do not overlap. */
+  ends.sort(function (a, b) { return a.y - b.y; });
+  ends.forEach(function (e, i) { if (i && e.y < ends[i - 1].y + 10.5) e.y = ends[i - 1].y + 10.5; });
+  ends.forEach(function (e) {
+    var t = mk("text", { x: padL + iw + 8, y: e.y + 3.5, fill: e.c, "font-size": 10, "font-family": "var(--ff-m)", "font-weight": 600 });
+    t.textContent = e.n; s.appendChild(t);
+  });
   var lg = mk("text", { x: padL, y: h - 14, fill: "var(--muted)", "font-size": 10.5 });
-  lg.textContent = "Her çizgi bir kurum · rengi kayıt defterindeki yerleşimi · üzerine gelin";
+  lg.textContent = o.parties ? "İnce düz çizgi: kurum · kalın kesikli çizgi: parti · renk: sol–sağ yerleşim · üzerine gelin"
+    : "Her çizgi bir kurum · rengi kayıt defterindeki yerleşimi · üzerine gelin";
   s.appendChild(lg);
   return s;
 }
@@ -4656,7 +4673,7 @@ function svgURI(s) { return "data:image/svg+xml;charset=utf-8," + encodeURICompo
 var NAV; /* defined in v7/core.js */
 var SUB = {
   "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
-  "/kurumlar": [["/kurumlar", "liste", "Kurumlar"], ["/kurumlar", "karsilastir", "Karşılaştır"], ["/kurumlar", "kayit", "Kayıt ve güven"]],
+  "/kurumlar": [["/kurumlar", "liste", "Kurumlar"], ["/kurumlar", "karsilastir", "Karşılaştır"], ["/kurumlar", "partiler", "Partiler"], ["/kurumlar", "kayit", "Kayıt ve güven"]],
   "/bulgular": [["/bulgular", "veriler", "Veriler"], ["/bulgular", "yorumlar", "Yorumlar"], ["/bulgular", "ileri", "İleri analiz"]],
   "/yanlilik": [["/yanlilik", "kesif", "Yapılar"], ["/yanlilik", "cozumleyici", "Başlık çözümleyici"],
     ["/yanlilik", "bicimler", "Üretim aşamaları"], ["/yanlilik", "turkiye", "Türkiye bağlamı"]],
@@ -6344,6 +6361,7 @@ function route() {
   if (path === "/olay") { var vw = $("#view"); if (vw) wireDevices(vw); }
 
   if (path === "/kurumlar" && tab === "liste" && params.v === "harita") renderAtlas();
+  if (path === "/kurumlar" && tab === "partiler") wireParti();
   if (path === "/harita" && tab === "atlas") {
     put("pcoord", parallelCoords());
     var nnBox = $("#nn");

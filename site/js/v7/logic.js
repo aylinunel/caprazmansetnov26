@@ -186,7 +186,7 @@ function whatDiffers(e, narr) {
   if (e.p >= 20) return "Birinde daha yüklü bir dil var";
   return "Aynı olay, farklı sözcükler";
 }
-var KURUM_TABS = { liste: 1, karsilastir: 1, kayit: 1 };
+var KURUM_TABS = { liste: 1, karsilastir: 1, partiler: 1, kayit: 1 };
 
 function redirectRoute(path, params) {
   params = params || {};
@@ -272,7 +272,108 @@ function pSplitPoints(text, outlets) {
   });
 }
 
+/* ---- parti: outlet × party closeness, mentions, tone (pure) ---- */
+var PARTI_AX = ["eco", "soc", "sec", "st", "nat", "cul"];
+
+function hasAxes(e, ax) { ax = ax || PARTI_AX; return !!e && ax.every(function (a) { return typeof e[a] === "number"; }); }
+
+/* Euclidean distance over the six axes; null when either side lacks an axis. */
+function axisDist(a, b, ax) {
+  ax = ax || PARTI_AX;
+  if (!hasAxes(a, ax) || !hasAxes(b, ax)) return null;
+  var s = 0; ax.forEach(function (k) { s += (a[k] - b[k]) * (a[k] - b[k]); });
+  return Math.sqrt(s);
+}
+
+/* Parties ranked nearest first: [{p, d}]. */
+function partyRank(outlet, parties, ax) {
+  return (parties || []).map(function (p) { return { p: p, d: axisDist(outlet, p, ax) }; })
+    .filter(function (x) { return x.d !== null; })
+    .sort(function (x, y) { return x.d - y.d || (x.p.s < y.p.s ? -1 : 1); });
+}
+function nearestParty(outlet, parties, ax) { var r = partyRank(outlet, parties, ax); return r.length ? r[0] : null; }
+
+/* Party aliases. Folded phrases need word boundaries; every phrase may take a short Turkish suffix (partisi, CHPli);
+   "cs" (case-sensitive, original text) is for short names that are also ordinary words (DEM = "dem", TİP = "tip", DEVA = "deva").
+   Ambiguous names with no safe form (Yeni Parti, Demokrat Parti = also the US Democrats) are left out on purpose. */
+var PARTI_ALIAS = {
+  akp: { f: ["ak parti", "akp"]  }, chp: { f: ["chp"] }, mhp: { f: ["mhp"] }, iyi: { f: ["iyi parti"]  },
+  dem: { f: ["dem parti"], cs: ["DEM"]  }, hdp: { f: ["hdp"] }, zafer: { f: ["zafer partisi", "zafer partili"] },
+  yrp: { f: ["yeniden refah", "yrp"] }, anahtar: { f: ["anahtar parti"]  }, tip: { f: ["turkiye isci partisi"], cs: ["TİP"] },
+  tkp: { f: ["tkp"] }, hudapar: { f: ["huda par", "huda-par", "hudapar"]  }, saadet: { f: ["saadet partisi", "saadet partili"] },
+  bbp: { f: ["bbp", "buyuk birlik partisi"] }, dsp: { f: ["dsp"] }, deva: { f: ["deva partisi", "deva partili"], cs: ["DEVA"] },
+  gelecek: { f: ["gelecek partisi", "gelecek partili"] }
+};
+var ALN = "a-z0-9";
+
+function aliasEscape(t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+/* Compiled matchers for the parties that have a safe alias list. */
+function compileAliases(parties) {
+  var out = [];
+  (parties || []).forEach(function (p) {
+    var a = PARTI_ALIAS[p.s]; if (!a) return;
+    var fold = a.f.map(function (t) {
+      return new RegExp("(^|[^" + ALN + "])" + aliasEscape(t) + "[" + ALN + "]{0,6}" + "(?![" + ALN + "])");
+    });
+    var cs = (a.cs || []).map(function (t) { return new RegExp("(^|[^\\p{L}\\p{N}])" + aliasEscape(t) + "(?![\\p{L}\\p{N}])", "u"); });
+    out.push({ s: p.s, fold: fold, cs: cs });
+  });
+  return out;
+}
+
+/* Slugs of the parties a headline names. */
+function matchParties(text, compiled) {
+  var f = trFold(text), raw = String(text == null ? "" : text), hit = [];
+  compiled.forEach(function (c) {
+    if (c.fold.some(function (r) { return r.test(f); }) || c.cs.some(function (r) { return r.test(raw); })) hit.push(c.s);
+  });
+  return hit;
+}
+
+/* Per outlet: n headlines, any = headlines naming at least one party, and per party {c: headlines naming it, sum: score total}. rows: [{s, t, v}]; only rows given are counted. */
+function mentionStats(rows, compiled) {
+  var out = {};
+  rows.forEach(function (r) {
+    var o = out[r.s] || (out[r.s] = { n: 0, any: 0, m: {} });
+    o.n++;
+    var hit = matchParties(r.t, compiled); if (hit.length) o.any++;
+    hit.forEach(function (p) {
+      var c = o.m[p] || (o.m[p] = { c: 0, sum: 0 }); c.c++; c.sum += r.v || 0;
+    });
+  });
+  return out;
+}
+
+/* Share of an outlet's headlines naming a party, against the pooled rate of its bloc (outlet itself included).
+   blocOf: slug -> "left"|"mid"|"right"|"none". Returns {s: {party: {rate, bloc, c, n}}}. */
+function mentionShares(stats, parties, blocOf) {
+  var tot = {};
+  Object.keys(stats).forEach(function (s) {
+    var b = blocOf(s), t = tot[b] || (tot[b] = { n: 0, m: {} });
+    t.n += stats[s].n;
+    Object.keys(stats[s].m).forEach(function (p) { t.m[p] = (t.m[p] || 0) + stats[s].m[p].c; });
+  });
+  var out = {};
+  Object.keys(stats).forEach(function (s) {
+    var b = tot[blocOf(s)]; out[s] = {};
+    parties.forEach(function (p) {
+      var c = stats[s].m[p] ? stats[s].m[p].c : 0;
+      out[s][p] = { c: c, n: stats[s].n, rate: stats[s].n ? c / stats[s].n : 0, bloc: b && b.n ? (b.m[p] || 0) / b.n : 0 };
+    });
+  });
+  return out;
+}
+
+/* Mean score of headlines naming a party; null (hidden) under min headlines. */
+function toneCell(cell, min) {
+  min = min == null ? 10 : min;
+  if (!cell || cell.c < min) return { n: cell ? cell.c : 0, mean: null };
+  return { n: cell.c, mean: cell.sum / cell.c };
+}
+
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
-    dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints };
+    dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints,
+    axisDist: axisDist, partyRank: partyRank, nearestParty: nearestParty, compileAliases: compileAliases, matchParties: matchParties, mentionStats: mentionStats, mentionShares: mentionShares, toneCell: toneCell, PARTI_ALIAS: PARTI_ALIAS };
 }
