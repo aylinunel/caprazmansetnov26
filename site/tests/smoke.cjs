@@ -177,7 +177,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: ilan horizontal scroll after typing`);
     }
     /* Broadsheet components each page must carry (spec §5), by route prefix */
-    const KINDS = { "#/": "head cascade splits tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/yontem": "head lead splits cascade" };
+    const KINDS = { "#/": "head cascade splits tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/yontem": "head lead splits cascade", "#/ilan": "head tickets scene cascade" };
     const want = Object.keys(KINDS).find((p) => p.endsWith("=") ? route.startsWith(p) : route === p);
     if (want) {
       const miss = await page.evaluate((ks) => ks.split(" ").filter((k) => !document.querySelector(`#view [data-m=${k}]`)), KINDS[want]);
