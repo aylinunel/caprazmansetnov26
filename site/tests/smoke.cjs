@@ -262,6 +262,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       }
     }
     for (const [er, js] of evals) if (er === route && !(await page.evaluate(js))) fails.push(`${tag}: eval false: ${js}`);
+    if (route.startsWith("#/kurumlar?t=partiler")) { /* Partiler: five findings, a table twin for every chart, heatmap scrolls inside its own box */
+      const r = await page.evaluate(() => {
+        const ids = ["parti-yakin", "parti-eksen", "parti-anma", "parti-ton", "parti-sahip"], f = ids.map((i) => document.getElementById(i));
+        return { missing: ids.filter((_, i) => !f[i]), noTable: ids.filter((_, i) => f[i] && !f[i].querySelector("table.v7-dt")),
+          noChart: ids.filter((_, i) => f[i] && !f[i].querySelector(".v7-viz svg, .v7-viz .vz")), pc: !!document.querySelector("#pt-pc svg polyline"),
+          heat: [...document.querySelectorAll(".pt-scroll")].every((e) => getComputedStyle(e).overflowX === "auto") };
+      });
+      if (r.missing.length || r.noTable.length || r.noChart.length || !r.pc || !r.heat) fails.push(`${tag}: partiler ${JSON.stringify(r)}`);
+    }
     if (await page.$(".v7-empty-bug")) fails.push(`${tag}: .v7-empty-bug present`);
     await page.screenshot({ path: path.join(outDir, `${route.replace(/[^a-z0-9]+/gi, "_")}-${w}-${theme}.png`) });
     for (const [cr, sel] of clicks) if (cr === route) {

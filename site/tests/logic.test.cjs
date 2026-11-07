@@ -244,3 +244,51 @@ test("pSplitPoints: panel bloc is the majority, ties and empty are mid", () => {
   assert.equal(L.pSplitPoints("a ve c", O)[0].bloc, "mid");
   assert.equal(L.pSplitPoints("hiçbiri", O)[0].bloc, "mid");
 });
+
+test("axisDist and nearestParty", () => {
+  const ax = (eco, soc, sec, st, nat, cul) => ({ eco, soc, sec, st, nat, cul });
+  const o = ax(50, 50, 50, 50, 50, 50);
+  assert.equal(L.axisDist(o, ax(53, 54, 50, 50, 50, 50)), 5);
+  assert.equal(L.axisDist(o, { eco: 1 }), null);
+  const ps = [{ s: "far", ...ax(0, 0, 0, 0, 0, 0) }, { s: "near", ...ax(52, 50, 50, 50, 50, 50) }, { s: "gap", eco: 50 }];
+  const n = L.nearestParty(o, ps);
+  assert.equal(n.p.s, "near"); assert.equal(n.d, 2);
+  assert.equal(L.partyRank(o, ps).length, 2);
+  assert.equal(L.nearestParty({ eco: 1 }, ps), null);
+});
+test("alias matching: hits, suffixes, false positives", () => {
+  const P = ["akp", "chp", "dem", "tip", "deva", "zafer", "yep", "dp", "saadet"].map((s) => ({ s }));
+  const c = L.compileAliases(P);
+  const m = (t) => L.matchParties(t, c).sort();
+  assert.deepEqual(m("CHP'li belediye başkanı gözaltına alındı"), ["chp"]);
+  assert.deepEqual(m("AK Parti ile CHP arasında gerilim"), ["akp", "chp"]);
+  assert.deepEqual(m("AK PARTİ'den açıklama"), ["akp"]);
+  assert.deepEqual(m("DEM Parti heyeti Bahçeli ile görüştü"), ["dem"]);
+  assert.deepEqual(m("Zafer Partisi Genel Başkanı konuştu"), ["zafer"]);
+  assert.deepEqual(m("TİP milletvekili önerge verdi"), ["tip"]);
+  /* false positives */
+  assert.deepEqual(m("Kachpa ve archpoint haberi"), []);
+  assert.deepEqual(m("Milli takım büyük zafer kazandı"), []);
+  assert.deepEqual(m("Çay için dem zamanı"), []);
+  assert.deepEqual(m("Tıp fakültesi ve tip değişikliği"), []);
+  assert.deepEqual(m("Bu deva değil, saadet zinciri"), []);
+  assert.deepEqual(m("ABD'de Demokrat Parti adayı Yeni Parti kuracak"), ["yep"]);
+  assert.deepEqual(m("Murat Cem Akpınar"), []);
+  assert.deepEqual(m("AKPM Başkanı konuştu"), []);
+  assert.deepEqual(m("AKP'li vekil istifa etti"), ["akp"]);
+  assert.deepEqual(m("YENİ Partili Murat Emir"), ["yep"]);
+  assert.deepEqual(m("YENİ PARTİ kuruldu"), ["yep"]);
+  assert.deepEqual(m("Bakan yeni parti kurdu"), []);
+});
+test("mentionStats, mentionShares and n<10 suppression", () => {
+  const c = L.compileAliases([{ s: "chp" }, { s: "mhp" }]);
+  const rows = [{ s: "a", t: "CHP açıklama", v: 40 }, { s: "a", t: "Hava durumu", v: 0 }, { s: "b", t: "CHP ve MHP", v: 20 }, { s: "b", t: "Spor", v: 0 }];
+  const st = L.mentionStats(rows, c);
+  assert.deepEqual(st.a, { n: 2, any: 1, m: { chp: { c: 1, sum: 40 } } });
+  assert.equal(st.b.m.mhp.c, 1);
+  const sh = L.mentionShares(st, ["chp", "mhp"], () => "left");
+  assert.equal(sh.a.chp.rate, 0.5); assert.equal(sh.a.chp.bloc, 0.5); assert.equal(sh.a.mhp.rate, 0);
+  assert.deepEqual(L.toneCell({ c: 9, sum: 90 }), { n: 9, mean: null });
+  assert.deepEqual(L.toneCell({ c: 10, sum: 100 }), { n: 10, mean: 10 });
+  assert.deepEqual(L.toneCell(undefined), { n: 0, mean: null });
+});
