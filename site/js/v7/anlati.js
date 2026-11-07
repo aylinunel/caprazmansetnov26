@@ -19,8 +19,8 @@ function v7Intro() {
     "<li>Kurumların yerleşimi dışarıdan sağlanmıştır ve doğrulanmamıştır.</li>" +
     "<li>Harita, kurumların ayrıştığı olayları bilerek seçer; bu olaylar tipik değildir. Her olayın haritası yoktur ve editör incelemesinde kaldırılanlar gösterilmez.</li>" +
     '</ul><p><a class="lnk" href="#/yontem?s=anlati">Anlatı kodlamasının ayrıntıları →</a></p></details>';
-  return '<section class="v7-introbox"><div class="phead">' + pHead("Anlatı haritası", "Aynı olay, kurum kurum farklı anlatılıyor") +
-    pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") + src + how + lim + "</div></section>";
+  return '<div class="phead"><div class="eyebrow">Anlatı haritası</div><h1>Aynı olay, kurum kurum farklı anlatılıyor</h1></div>' +
+    '<section class="v7-introbox">' + pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönünü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") + src + how + lim + "</section>";
 }
 
 function v7Weeks() {
@@ -168,7 +168,7 @@ function pgAnlati(q) {
   var key = q.n && wk.keys.indexOf(q.n) >= 0 ? q.n : wk.keys[0], n = D.N[key], e = EV[n.ev], tab = q.v === "tablo", net = q.v === "ag";
   V7VIEW = tab ? "tablo" : net ? "ag" : "";
   var title = narrName(key, 140), ai = n.status === "agent_coded";
-  var h = '<div class="wrap page v7-an">' + v7Intro() + "<h1>" + esc(title) + "</h1>";
+  var h = '<div class="wrap page v7-an">' + v7Intro() + '<h2 class="v7-evt">' + esc(title) + "</h2>";
   h += v7WeekBar(weeks, wk.k);
   h += '<div class="v7-events" role="group" aria-label="Olay">' + wk.keys.map(function (k) {
     return '<button type="button" class="chip" data-w="' + wk.k + '" data-n="' + k + '" aria-pressed="' + (k === key) + '">' + esc(narrName(k, 44)) + "</button>";
