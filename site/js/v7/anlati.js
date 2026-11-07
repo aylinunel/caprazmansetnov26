@@ -19,8 +19,8 @@ function v7Intro() {
     "<li>Kurumların yerleşimi dışarıdan sağlanmıştır ve doğrulanmamıştır.</li>" +
     "<li>Harita, kurumların ayrıştığı olayları bilerek seçer; bu olaylar tipik değildir. Her olayın haritası yoktur ve editör incelemesinde kaldırılanlar gösterilmez.</li>" +
     '</ul><p><a class="lnk" href="#/yontem?s=anlati">Anlatı kodlamasının ayrıntıları →</a></p></details>';
-  return '<section class="v7-introbox">' + pHead("Anlatı haritası", "Aynı olay, kurum kurum farklı anlatılıyor") +
-    pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") + src + how + lim + "</section>";
+  return '<section class="v7-introbox"><div class="phead">' + pHead("Anlatı haritası", "Aynı olay, kurum kurum farklı anlatılıyor") +
+    pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") + src + how + lim + "</div></section>";
 }
 
 function v7Weeks() {

@@ -4365,15 +4365,13 @@ function advScatter() {
   var xs = ks.map(function (k) { return pts[k][0]; }), ys = ks.map(function (k) { return pts[k][1]; });
   var x0 = Math.min.apply(null, xs) - .6, x1 = Math.max.apply(null, xs) + .6;
   var y0 = Math.min.apply(null, ys) - .6, y1 = Math.max.apply(null, ys) + .6;
-  var w = 720, h = 440, pl = 40, pr = 20, pt = 20, pb = 64;
+  var w = 720, h = 420, pl = 40, pr = 20, pt = 20, pb = 44;
   var X = function (v) { return pl + (w - pl - pr) * (v - x0) / (x1 - x0); };
   var Y = function (v) { return h - pb - (h - pt - pb) * (v - y0) / (y1 - y0); };
   var s = svg(w, h);
   rule(s, pl, w - pr, Y(0)); vrule(s, X(0), pt, h - pb);
-  var ax = function (l, sg) { var a = pcNames(l, sg, 2).join(", "); return a ? ": " + a : ""; };
-  tx(s, pl, h - pb + 22, "→ yatay eksen · %" + Math.round(100 * P["var"][0]) + " · sağa: daha sık" + ax(P.load1, 1), { role: "eb", size: 9.5 });
-  tx(s, pl, pt - 6, "↑ dikey eksen · %" + Math.round(100 * P["var"][1]) + " · yukarı: daha sık" + ax(P.load2, 1), { role: "eb", size: 9.5 });
-  tx(s, pl, h - pb + 40, "↓ aşağı: daha sık" + ax(P.load2, -1), { role: "eb", size: 9.5 });
+  tx(s, w - pr, h - pb + 30, "→ yatay eksen · %" + Math.round(100 * P["var"][0]), { role: "eb", anchor: "end", size: 11 });
+  tx(s, pl, pt - 6, "↑ dikey eksen · %" + Math.round(100 * P["var"][1]), { role: "eb", size: 11 });
   var boxes = ks.map(function (k) { return { x0: X(pts[k][0]) - 8, x1: X(pts[k][0]) + 8, y0: Y(pts[k][1]) - 8, y1: Y(pts[k][1]) + 8 }; });
   var hit = function (b) { return boxes.some(function (o) { return b.x0 < o.x1 && b.x1 > o.x0 && b.y0 < o.y1 && b.y1 > o.y0; }); };
   ks.sort(function (a, b) { return pts[a][0] - pts[b][0]; }).forEach(function (k) {

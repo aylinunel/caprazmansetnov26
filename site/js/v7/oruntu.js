@@ -425,13 +425,21 @@ function orStyleRead(P) {
     "; farkların yalnızca %" + v1 + "’ini açıkladığı için (yatay eksen %" + v0 + ") yükseklik farklarını yatay farklar kadar ciddiye almayın. Renk, kurumun yerleşimidir.";
 }
 
+function orStyleAxes(P) {
+  var j = function (l, sg) { return pcNames(l, sg, 2).map(esc).join(", "); }, r = [];
+  if (j(P.load1, 1)) r.push("<b>Yatay eksen</b>, sağa doğru: " + j(P.load1, 1) + " daha sık");
+  if (j(P.load2, 1)) r.push("<b>Dikey eksen</b>, yukarı doğru: " + j(P.load2, 1) + " daha sık");
+  if (j(P.load2, -1)) r.push("aşağı doğru: " + j(P.load2, -1) + " daha sık");
+  return r.length ? '<p class="or-axes">' + r.join(" · ") + "</p>" : "";
+}
+
 function orFindStyle() {
   var P = ADV.pca, pcSig = P.p1 < .05, side = P.rho1 > 0 ? "sağa" : "sola";
   return { id: "dil-uslup",
     claim: pcSig ? "Kurumların başlık yazma biçimi yelpazedeki yerleriyle örtüşüyor: <b>" + side + " yerleşik</b> kurumlar çerçeveleme yapılarını daha sık kullananlar tarafında toplanıyor."
       : "Kurumların başlık yazma biçimi ile yelpazedeki yerleri arasında belirgin bir örtüşme görülmedi.",
     viz: fig("adv-b", "1. bileşen × 2. bileşen · nokta rengi yerleşim", { legend: legendHTML([{ c: "var(--left)", t: "sola yerleşik" }, { c: "var(--mid)", t: "merkez" }, { c: "var(--right)", t: "sağa yerleşik" }]) }) +
-      '<p class="or-hint">Bir noktaya ' + orTap() + ': kurum, yerleşimi ve siyasi başlık sayısı görünür.</p>',
+      orStyleAxes(P) + '<p class="or-hint">Bir noktaya ' + orTap() + ': kurum, yerleşimi ve siyasi başlık sayısı görünür.</p>',
     read: orStyleRead(P),
     table: vzTable(["Kurum", "Blok", "1. bileşen", "2. bileşen"], Object.keys(P.pts).sort(function (a, b) { return P.pts[b][0] - P.pts[a][0]; }).map(function (k) {
       return [srcName(k), SIDE[bloc(k)] || "—", dec(P.pts[k][0], 2), dec(P.pts[k][1], 2)]; })),

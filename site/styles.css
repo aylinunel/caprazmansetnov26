@@ -1800,6 +1800,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .or-panel{margin-top:12px;border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:10px 14px;min-width:0}
 .or-panel p{margin:0}
 .or-hint{font-size:13px;color:var(--muted);margin:8px 0 0}
+.or-axes{font-size:13px;line-height:1.5;color:var(--ink2);margin:10px 0 0}
 .or-list{list-style:none;margin:8px 0 0;padding:0}
 .or-li{display:flex;gap:6px 14px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:8px 2px;border-bottom:1px solid var(--line);cursor:pointer;min-height:44px}
 .or-li:last-child{border-bottom:0}
@@ -1991,7 +1992,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
   .vz-ax .vz-l{display:none}
 }
 /* distribution */
-.vz-dist{display:grid;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px;border:1px solid var(--line);border-radius:8px;padding:16px 14px 10px 8px;background:var(--surface)}
+.vz-dist{display:grid;grid-template-columns:40px minmax(0,1fr);grid-template-rows:auto auto;column-gap:8px;border:1px solid var(--line2);border-radius:8px;padding:16px 14px 10px 8px;background:var(--surface)}
 .vz-dy{position:relative;font-family:var(--ff-m);font-size:10.5px;color:var(--muted)}
 .vz-dy span{position:absolute;right:0;transform:translateY(50%)}
 .vz-dp{position:relative;height:200px;border-bottom:1px solid var(--line2);cursor:crosshair;touch-action:pan-y;user-select:none}
@@ -2012,7 +2013,7 @@ ol.v7-read{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line
 .vz-k-iqr{display:inline-block;width:16px;height:10px;background:var(--sunk);border:1px solid var(--line2)}
 .vz-pre{margin-top:10px}
 /* lines */
-.vz-line{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:8px;border:1px solid var(--line);border-radius:8px;padding:16px 14px 10px 8px;background:var(--surface)}
+.vz-line{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:8px;border:1px solid var(--line2);border-radius:8px;padding:16px 14px 10px 8px;background:var(--surface)}
 .vz-ly{position:relative;font-family:var(--ff-m);font-size:10.5px;color:var(--muted)}
 .vz-ly span{position:absolute;right:0;transform:translateY(50%)}
 .vz-lp{position:relative;height:200px;border-bottom:1px solid var(--line2);margin-right:8px}
