@@ -32,7 +32,7 @@ function pgHome7() {
   var lead = top[0] || leadEvent();
   var step = function (n, t, l) { return { bloc: "mid", word: String(n), title: t, text: l, outlets: [] }; }, m = D.meta.counts;
   var deep = ["/olaylar", "/anlati", "/oruntu", "/kurumlar", "/yontem"].map(function (r) {
-    var nv = NAV.filter(function (n) { return n[0] === r; })[0];
+    var nv = r === "/anlati" ? ["", "Anlatı haritası"] : NAV.filter(function (n) { return n[0] === r; })[0];
     return nv ? '<a class="v7-hc" href="#' + r + '"><b>' + esc(nv[1]) + "</b><span>" + esc(NAV_SUB[r]) + "</span></a>" : "";
   }).join("");
   var h = fogHero(lead) + '<section id="bu-hafta" class="v7-feed">' + feedHTML(lead) + '</section><div class="wrap page v7-home">';

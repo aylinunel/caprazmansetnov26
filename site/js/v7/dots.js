@@ -29,7 +29,7 @@ function dmMake(cv, mode, data) {
   S.render = function (tt) {
     if (!S.g && !S.size()) return;
     var g = S.g, W = g.W, H = g.H, cols = g.cols, rows = g.rows, t = ((tt % LOOP) + LOOP) % LOOP, a = 2 * Math.PI * t / LOOP, tick = Math.floor(t * 7);
-    var reach = (.012 * Math.sin(a) + .004 * Math.sin(2 * a + 1.3)) * W, sc = 1 + .025 * Math.sin(a + .9), px = Math.min(H * .62, W * .12);
+    var reach = (.012 * Math.sin(a) + .004 * Math.sin(2 * a + 1.3)) * W, sc = 1 + .025 * Math.sin(a + .9), px = Math.min(H * .45, W * .085);
     fc.setTransform(1, 0, 0, 1, 0, 0); fc.fillStyle = "#fff"; fc.fillRect(0, 0, cols, rows);
     fc.setTransform(cols / W, 0, 0, rows / H, 0, 0); fc.translate(W, H / 2); fc.rotate(-.012 * Math.sin(a + 2.1)); fc.scale(sc, sc); fc.translate(-W - reach, -H / 2);
     fc.font = DM_FONT.replace("{px}", px); fc.fillStyle = "#2a2a2a"; fc.textAlign = "right"; fc.textBaseline = "alphabetic";

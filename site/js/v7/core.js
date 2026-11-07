@@ -1,7 +1,7 @@
 /* v7 core: navigation, YZ marker and the finding block (inlined into app.js IIFE after logic.js). */
 
-/* Navigation: five sections; Bulgular and Çerçeveleme fold into Örüntüler/Yöntem via redirectRoute. */
-NAV = [["/anlati", "Anlatı haritası", []], ["/olaylar", "Olaylar", ["/olay", "/konu"]], ["/oruntu", "Örüntüler", []],
+/* Navigation: four sections (Anlatı haritası is a sub-tab of Olaylar); Bulgular and Çerçeveleme fold into Örüntüler/Yöntem via redirectRoute. */
+NAV = [["/olaylar", "Olaylar", ["/olay", "/konu", "/anlati"]], ["/oruntu", "Örüntüler", []],
   ["/kurumlar", "Kurumlar", ["/kurum"]], ["/yontem", "Nasıl çalışır", []]];
 SUB["/oruntu"] = [["/oruntu", "secim", "Kim neyi haber yapıyor"], ["/oruntu", "dil", "Nasıl anlatıyor"],
   ["/oruntu", "anlati", "Kimi sorumlu tutuyor"], ["/oruntu", "hiz", "Kim önce veriyor"]];

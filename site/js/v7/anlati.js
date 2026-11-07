@@ -1,8 +1,27 @@
 /* v7 Anlatı: the homepage. A map of how outlets told one event: rows = outlets, columns = narrative dimensions. */
-var V7_PURPOSE = "Çapraz Manşet, Türk medyasının aynı olayı nasıl farklı anlattığını yan yana gösterir: kim neyi seçti, kimi sorumlu tuttu, hangi sözcüğü kullandı.";
-var V7_READ = ["Her satır bir kurum; soldan sağa, kayıt defterindeki yerleşim sırasıyla.",
-  "Aynı renk, aynı seçim: iki kurum aynı aktörü sorumlu tutuyorsa hücreleri aynı renktedir.",
-  "Bir sütun başlığına tıklayın: kurumlar o boyuttaki seçimlerine göre gruplanır."];
+/* Intro on /anlati: what the map is, where its data comes from, how to read each view, what it cannot show. */
+function v7Intro() {
+  var src = '<details class="v7-how v7-intro"><summary>Veri nereden geliyor?</summary><p>Her kurumun o olaydaki başlığı dokuz boyutta kodlanır: ' +
+    NORD.map(function (d) { return NDL[d].toLocaleLowerCase("tr"); }).join(", ") + ". Kimi haftalar elle, kimi haftalar yapay zekâ ile kodlanmıştır; hangisi olduğu her haritanın üstünde yazar (YZ rozeti). " +
+    'Boyutlar çerçeveleme kuramından türetilmiştir. <a class="lnk" href="#/yontem?s=anlati">Yöntem →</a></p></details>';
+  var how = '<details class="v7-how v7-intro"><summary>Nasıl okunur</summary>' +
+    "<h3>Üç görünüm</h3><ul>" +
+    "<li><b>Akış:</b> Her çizgi bir kurum. Çizgi, kurumun seçtiği değerlerin kutularından sırayla geçer; aynı kutudan geçen kurumlar aynı seçimi yapmıştır. Çizginin rengi kurumun yerleşimini gösterir (sola yerleşik kırmızı, sağa yerleşik mavi).</li>" +
+    "<li><b>Ağ:</b> Daireler kurum, kareler bir boyuttaki seçimdir (çerçeve, sorumlu, çözüm…). Kurum, seçtiği karelere bağlanır; çok seçimi paylaşan kurumlar birbirine yakın durur. Karenin büyüklüğü o seçimi yapan kurum sayısıdır.</li>" +
+    "<li><b>Tablo:</b> Her satır bir kurum, her sütun bir boyut; satırlar yerleşim sırasındadır. Bir sütun başlığına tıklarsanız kurumlar o boyuttaki seçimlerine göre gruplanır. Kurumun adına tıklarsanız olaydaki başlığı açılır.</li></ul>" +
+    "<h3>Renkler ve boyutlar</h3><p>Boyutlar, bir başlığın hangi yönünü kodladığımızdır (yukarıdaki dokuz boyut). " +
+    "Her olayda yalnızca o olay için odak olarak işaretlenen boyutlar gösterilir. Tabloda ve akışta bir boyutun her değeri kendi rengini alır; aynı boyutta aynı renk aynı seçim demektir, renkler boyutlar arasında bir anlam taşımaz ve iyi ya da kötü demek değildir. " +
+    "“Başlıkta yok”, başlığın o boyutta bir şey söylemediği anlamına gelir.</p></details>";
+  var lim = '<details class="v7-how v7-intro"><summary>Neyi göstermez?</summary><ul>' +
+    "<li>Yalnızca başlıkları ve spotları kapsar; haber metninin tamamı okunmamıştır.</li>" +
+    "<li>Her kurum için tek bir başlık kodlanır; kurumun o olay hakkındaki bütün yayınını temsil etmez.</li>" +
+    "<li>Anlatı kodlaması tek kodlayıcıyla yapılmıştır; yapay zekâ ile kodlanan haftalarda insan kodlayıcı yoktur ve kodlayıcılar arası uyum ölçülmemiştir.</li>" +
+    "<li>Kurumların yerleşimi dışarıdan sağlanmıştır ve doğrulanmamıştır.</li>" +
+    "<li>Harita, kurumların ayrıştığı olayları bilerek seçer; bu olaylar tipik değildir. Her olayın haritası yoktur ve editör incelemesinde kaldırılanlar gösterilmez.</li>" +
+    '</ul><p><a class="lnk" href="#/yontem?s=anlati">Anlatı kodlamasının ayrıntıları →</a></p></details>';
+  return '<section class="v7-introbox"><div class="phead">' + pHead("Anlatı haritası", "Aynı olay, kurum kurum farklı anlatılıyor") +
+    pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") + src + how + lim + "</div></section>";
+}
 
 function v7Weeks() {
   return NW.filter(function (w) { return w.k !== "v1"; }).map(function (w) {
@@ -134,7 +153,7 @@ function v7WeekBar(weeks, cur) {
 function pgAnlati(q) {
   q = q || {};
   var weeks = v7Weeks(), full = weeks.filter(function (w) { return w.keys.length; });
-  var purpose = '<p class="v7-purpose">' + esc(V7_PURPOSE) + "</p>";
+  var purpose = v7Intro();
   if (!full.length) return '<div class="wrap page v7-an">' + purpose + '<h1 class="v7-emptyh">Bu hafta için gösterilecek olay yok.</h1></div>';
   var latest = full[full.length - 1];
   var byN = q.n && D.N[q.n] ? full.filter(function (w) { return w.k === D.N[q.n].w; })[0] : null;
@@ -149,7 +168,7 @@ function pgAnlati(q) {
   var key = q.n && wk.keys.indexOf(q.n) >= 0 ? q.n : wk.keys[0], n = D.N[key], e = EV[n.ev], tab = q.v === "tablo", net = q.v === "ag";
   V7VIEW = tab ? "tablo" : net ? "ag" : "";
   var title = narrName(key, 140), ai = n.status === "agent_coded";
-  var h = '<div class="wrap page v7-an"><p class="v7-purpose">' + esc(V7_PURPOSE) + "</p><h1>" + esc(title) + "</h1>";
+  var h = '<div class="wrap page v7-an">' + v7Intro() + "<h1>" + esc(title) + "</h1>";
   h += v7WeekBar(weeks, wk.k);
   h += '<div class="v7-events" role="group" aria-label="Olay">' + wk.keys.map(function (k) {
     return '<button type="button" class="chip" data-w="' + wk.k + '" data-n="' + k + '" aria-pressed="' + (k === key) + '">' + esc(narrName(k, 44)) + "</button>";
@@ -163,7 +182,6 @@ function pgAnlati(q) {
       "Aynı kutudan geçen çizgiler aynı seçimi yapmıştır. Bir çizgiye " + orTap() + ": kurumun seçimleri görünür.</p>" +
       '<p class="v7-leg"><span class="left">sola yerleşik</span><span class="mid">merkez</span><span class="right">sağa yerleşik</span></p>') +
     "</div></div>" + v7Body(n, e);
-  h += '<section class="v7-readbox"><h2>Nasıl okunur</h2><ol class="v7-read">' + V7_READ.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ol></section>";
   var top = latest.keys.map(function (k) { return EV[D.N[k].ev]; }).filter(Boolean)
     .sort(function (a, b) { return b.s.length - a.s.length; }).slice(0, 3);
   h += '<section class="v7-weekstrip"><h2>Bu hafta <span class="v7-cnt">' + esc(latest.l) + "</span></h2><div class=\"v7-wk\">" + top.map(function (x) {
