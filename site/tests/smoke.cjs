@@ -188,7 +188,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       const q = await page.evaluate(() => ({ m: document.querySelectorAll("#view [data-m]").length, bad: document.querySelectorAll("#view .p-cap,#view .p-splits,#view .p-glass,#view .panel.xwalk-s").length,
         h2: [...document.querySelectorAll(".xpaper>h2.ym-h")].every((h, i) => h.textContent.startsWith((i + 1) + ".")) && document.querySelectorAll(".xpaper>h2.ym-h").length === 12, toc: document.querySelectorAll(".ym-toc a").length }));
       if (q.m || q.bad) fails.push(`${tag}: yontem has motion/press components ${JSON.stringify(q)}`);
-      if (!q.h2 || q.toc !== 12) fails.push(`${tag}: yontem numbered headings / toc wrong ${JSON.stringify(q)}`);
+      if (!q.h2 || q.toc !== 13) fails.push(`${tag}: yontem numbered headings / toc wrong ${JSON.stringify(q)}`);
     }
     if (await page.$(".xtick")) fails.push(`${tag}: .xtick present`);
     if (route === "#/") {

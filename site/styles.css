@@ -2440,7 +2440,7 @@ body:has(#app.intro){overflow-x:hidden}
 /* ---- /yontem: methodology layout (scoped; one reading column, no cards, no motion) ---- */
 .ym-plain{--ym-w:690px}
 .ym-plain .phead .sub{max-width:var(--ym-w);margin:12px 0 0;color:var(--ink2);font-size:16.5px;line-height:1.6}
-.ym-plain .ym-toc,.ym-plain .xpaper,.ym-plain>.sec{max-width:var(--ym-w);margin-left:auto;margin-right:auto}
+.ym-plain .ym-toc,.ym-plain .xpaper,.ym-plain>.sec{max-width:var(--ym-w);margin-left:0;margin-right:auto}
 .ym-plain .xpaper{padding-bottom:24px}
 .ym-plain .ym-toc{margin-top:0;margin-bottom:8px;padding:0 0 18px;border-bottom:1px solid var(--line);font-size:14.5px}
 .ym-plain .ym-toc b{display:block;font-family:var(--ff-m);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
@@ -2448,7 +2448,7 @@ body:has(#app.intro){overflow-x:hidden}
 .ym-plain .ym-toc li{padding:3px 0;break-inside:avoid;color:var(--muted);font-variant-numeric:tabular-nums}
 .ym-plain .ym-toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2)}
 .ym-plain .ym-toc a:hover{border-bottom-color:var(--ink)}
-@media (max-width:600px){.ym-plain .ym-toc ol{columns:1}}
+@media (max-width:600px){.ym-plain .ym-toc ol{columns:2;column-gap:1.2em;padding-left:1.6em;font-size:14px}}
 .ym-plain .xpaper>*{max-width:none}
 .ym-plain .xpaper p,.ym-plain .xpaper li,.ym-plain .xpaper dd{font-size:16.5px;line-height:1.75;color:var(--ink2)}
 .ym-plain .xpaper ul,.ym-plain .xpaper ol{padding-left:1.4em;margin:0 0 1em}
@@ -2490,7 +2490,7 @@ body:has(#app.intro){overflow-x:hidden}
 .ym-plain .v7-concept h3{margin:0 0 2px!important;font-size:17px}
 .ym-plain .v7-concept .v7-cb{font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer}
 .ym-plain .v7-concept p{margin:0 0 .5em;font-size:15.5px}
-.ym-plain .v7-gloss{display:block}
+.ym-plain .v7-gloss{display:block;margin:0 0 1em}
 .ym-plain .v7-gloss>div{background:none;border:0;border-radius:0;box-shadow:none;padding:11px 0;border-top:1px solid var(--line);transform:none!important;opacity:1!important}
 .ym-plain .v7-gloss dt{font-weight:600;color:var(--ink)}
 .ym-plain .v7-gloss dd{margin:2px 0 0}
@@ -2506,3 +2506,4 @@ body:has(#app.intro){overflow-x:hidden}
 .ym-plain .xpaper .card .tag{border:0;background:none;padding:0;color:var(--muted);white-space:nowrap}
 @media (max-width:600px){.ym-plain .ym-toc a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}.ym-plain .ym-toc li{padding:0}}
 @media (max-width:600px){.ym-plain .ym-toc a{border-bottom:0}}
+.ym-plain .ym-toc li.x0{list-style:none}

@@ -205,7 +205,7 @@ function pgYontem7(params) {
   var h2 = function (id, t, ai) { n++; return '<h2 class="ym-h" id="' + id + '"><span class="n">' + n + ".</span> " + esc(t) + (ai ? " " + yzBadge() : "") + "</h2>"; };
   return '<div class="wrap page ym ym-plain"><div class="phead"><div class="eyebrow">Nasıl çalışır</div><h1>Nasıl çalışır</h1>' +
     '<p class="sub">Çapraz Manşet’in veri toplama, olay tespiti, ölçüm ve çözümleme adımlarının, Türkiye’ye uyarlamaların ve yapay zekâ ile üretilen her parçanın dökümü.</p></div>' +
-    '<nav class="ym-toc" aria-label="İçindekiler"><b>İçindekiler</b><ol>' + YM_TOC.map(function (t) { return '<li><a href="#/yontem?s=' + t[0] + '">' + t[1] + "</a></li>"; }).join("") + "</ol></nav>" +
+    '<nav class="ym-toc" aria-label="İçindekiler"><b>İçindekiler</b><ol>' + [["cm3method", "İşlem hattı ve durum"]].concat(YM_TOC).map(function (t, i) { return '<li' + (i ? "" : ' value="0" class="x0"') + '><a href="#/yontem?s=' + t[0] + '">' + t[1] + "</a></li>"; }).join("") + "</ol></nav>" +
     '<article class="xpaper">' + M.intro + X.walk +
     h2("veri", "Veri") + M.veri + h2("olay", "Olay tespiti") + M.olay + h2("dil", "Yüklü dil puanlayıcısı") + M.dil + h2("anlati", "Anlatı kodlaması") + M.anlati +
     h2("yz", "Bilişsel inceleme", 1) + yzBlock(yzMethodHtml()) + h2("yzicerik", "Yapay zekâ ile üretilen içerik", 1) + yzBlock(yzIcerikHtml()) +

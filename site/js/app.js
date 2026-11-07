@@ -6454,6 +6454,7 @@ function route() {
   }
 
   v2After(path, tab, params); v2bAfter(path, tab, params); v2cAfter(path, tab, params); v3After(path, tab, params);
+  /* must run before motionMount, which reads [data-m] */
   if (path === "/yontem") ymPlain(document.getElementById("view"));
   motionMount(document.getElementById("view"));
   var b3 = document.getElementById("burger"), mm = document.getElementById("mobmenu");
