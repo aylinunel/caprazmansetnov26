@@ -251,7 +251,7 @@ function anSankey(key) {
   var tbl = vzTable(["Kurum", "Yerleşim"].concat(dims.map(anDim)), orderOutlets(n.rows, v7Lean).map(function (r) {
     return [srcName(r.s), SIDE[bloc(r.s)]].concat(dims.map(function (d) { return lab(anVal(r, d)); }));
   }));
-  return findingBlock({ id: "an-flow", claim: claim,
+  return findingBlock({ id: "an-flow", nopin: true, claim: claim,
     viz: vzKey([{ t: "sola yerleşik", c: "var(--left)" }, { t: "merkez", c: "var(--mid)" }, { t: "sağa yerleşik", c: "var(--right)" }]) + '<div class="an-skbox" tabindex="0" role="region" aria-label="Akış şeması, yatay kaydırılabilir">' + s + "</div>",
     read: "Soldan sağa: " + esc(dims.map(anDim).join(" → ")) + ". Şerit kalınlığı o yolu izleyen kurum sayısı, rengi kurumların yerleşimi. Bir şeride " + orTap() + ": kurumlar görünür." + (swap ? " " + swap : ""),
     means: "Aynı çerçeveden çıkıp farklı sorumlulara giden şeritler, olayın aynı türden bir hikâye sayılsa bile başka bir adrese bağlandığını gösterir.",
@@ -279,7 +279,7 @@ function anMatrix(key) {
   var far = rows.slice().sort(function (a, b) { return M.alone[b.s] - M.alone[a.s] || trCmp(srcName(a.s), srcName(b.s)); })[0];
   var claim = M.alone[far.s] ? esc(srcName(far.s)) + " bu olayı en farklı anlatan kurum: dokuz boyutun " + M.alone[far.s] + " tanesinde seçimini başka hiçbir kurum yapmadı." :
     "Bu olayda hiçbir kurum tek başına kalan bir seçim yapmadı.";
-  return '<section class="v7-find an-mxf" data-m="scene" id="an-matrix"><p class="v7-claim">' + claim + '</p><div class="v7-viz">' +
+  return '<section class="v7-find an-mxf" data-m="scene" data-nopin id="an-matrix"><p class="v7-claim">' + claim + '</p><div class="v7-viz">' +
     '<p class="an-mleg"><span class="an-cell" style="--c:' + NPAL[0] + '">aynı renk</span> aynı seçim (en az iki kurum) <span class="an-cell an-solo">kesik çerçeve</span> yalnız bu kurum <span class="an-cell an-no">—</span> başlıkta yok</p>' +
     '<div class="an-mbox" tabindex="0" role="region" aria-label="Kurum ve dokuz boyut tablosu, yatay kaydırılabilir"><table class="an-mx"><caption class="an-vh">Her kurumun bu olaydaki dokuz boyut kodu</caption><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div></div>" +
     '<p class="v7-read">Satırlar yerleşim sırasında (soldan sağa), sütunlar dokuz boyut; “odak” işaretli sütunlar olayın kurumları ayıran boyutlarıdır. Bir hücreye ' + orTap() + ": aynı seçimi yapan kurumlar parlar. “Yalnız” sütunu, kurumun kimsenin paylaşmadığı seçim sayısıdır.</p></section>";

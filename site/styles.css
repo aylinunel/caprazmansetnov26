@@ -2405,7 +2405,7 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 :root[data-theme="dark"] .cc-glare{--g:var(--ink)}
 /* finding scene: the claim pins over its chart (desktop), so it carries the page colour */
 .v7-find[data-m] .v7-claim{position:relative;z-index:2;background:var(--paper)}
-.v7-claim.is-pin{box-shadow:0 1px 0 var(--line),0 -48px 0 var(--paper)}
+.v7-claim.is-pin{background:var(--paper);box-shadow:0 1px 0 var(--line),0 -48px 0 var(--paper);z-index:3}
 .sc-n{font-variant-numeric:tabular-nums}
 section.v7-how{position:relative;overflow-x:clip;margin:0;font-size:inherit}
 .wrap.page.v7-home{padding-inline:24px}
