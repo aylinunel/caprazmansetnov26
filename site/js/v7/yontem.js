@@ -216,17 +216,93 @@ function pgYontem7(params) {
     h2("sinir", "Sınırlılıklar") + M.sinir + h2("kaynak", "Kaynaklar") + kaynakHtml(M.refs) + "</article>" + X.fix + "</div>";
 }
 
-/* /yontem is a methodology page: no motion hooks, and sub-headings lose the old "2.1" prefixes (sections are renumbered 1–12). */
+/* /yontem is a methodology page: no motion hooks, sub-headings lose the old "2.1" prefixes (sections are renumbered 1–12),
+   and the article is cut into chapter panels (one visible at a time) beside a sticky chapter list. Runs after every v3 injection. */
+var YM_CH0 = ["cm3method", "İşlem hattı ve durum"];
 function ymPlain(root) {
   [].forEach.call(root.querySelectorAll("[data-m]"), function (e) { e.removeAttribute("data-m"); });
   [].forEach.call(root.querySelectorAll(".ym h3"), function (h) {
     var t = h.firstChild; if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/^\d\.\d /, "");
   });
+  var art = root.querySelector("article.xpaper"), toc = root.querySelector(".ym-toc"), wrap = root.querySelector(".ym-plain");
+  if (!art || !toc || art.querySelector(".ym-panel")) return;
+  var chs = [YM_CH0].concat(YM_TOC), panels = [], cur, mk = function (i) {
+    cur = document.createElement("section"); cur.className = "ym-panel"; cur.setAttribute("data-ch", chs[i][0]); cur.hidden = true;
+    cur.innerHTML = '<div class="ym-body"></div>'; panels.push(cur); return cur;
+  };
+  mk(0);
+  var h0 = document.createElement("h2"); h0.className = "ym-h ym-ch0"; h0.tabIndex = -1; h0.textContent = YM_CH0[1];
+  cur.insertBefore(h0, cur.firstChild);
+  [].slice.call(art.children).forEach(function (c) {
+    if (c.matches("h2.ym-h")) { mk(panels.length); cur.insertBefore(c, cur.firstChild); c.tabIndex = -1; }
+    else cur.querySelector(".ym-body").appendChild(c);
+  });
+  var fix = root.querySelector("#sfix"); if (fix) cur.querySelector(".ym-body").appendChild(fix);
+  /* Desktop grid: cut each chapter body into blocks at its h3s; wide things (tables, figures, glossary, steps, lists of cards) get a block of their own. */
+  var WIDE = ".scroller,table,figure,.v7-gloss,.v7-tr,.v7-cl,.v7-cl-ctl,.vz,.refs,.ym-steps,.abs,.xwalk,section.sec,.panel,[id^=c]:not(h3):not(p)";
+  panels.forEach(function (p) {
+    var body = p.querySelector(".ym-body"), kids = [].slice.call(body.childNodes), blk = null, narrow = 0, out = [];
+    var open = function (wide) { blk = document.createElement("section"); blk.className = "ym-blk" + (wide ? " ym-wide" : ""); out.push(blk); if (!wide) narrow++; };
+    kids.forEach(function (c) {
+      var el = c.nodeType === 1, wide = el && c.matches(WIDE) && !c.matches("h3,p,ul,ol");
+      if (!el && !(c.textContent || "").trim()) { if (blk) blk.appendChild(c); return; } /* whitespace never opens a block */
+      if (el && !c.textContent.trim() && !c.querySelector("img,svg,canvas,table,input,select")) { if (blk) blk.appendChild(c); return; }
+      if (wide) { open(true); blk.appendChild(c); blk = null; return; }
+      if (!blk || (el && c.matches("h3"))) open(false);
+      blk.appendChild(c);
+    });
+    /* consecutive narrow blocks share a row grid (--n tracks); wide blocks sit between rows */
+    var row = null;
+    out.forEach(function (b) {
+      if (b.classList.contains("ym-wide")) { row = null; body.appendChild(b); return; }
+      if (!row) { row = document.createElement("div"); row.className = "ym-row"; row.setAttribute("data-n", 0); body.appendChild(row); }
+      row.appendChild(b); row.setAttribute("data-n", row.children.length);
+      row.style.setProperty("--n", row.children.length);
+    });
+    if (narrow === 1) body.classList.add("ym-one");
+  });
+  panels.forEach(function (p, i) {
+    var pn = document.createElement("nav"); pn.className = "ym-pn"; pn.setAttribute("aria-label", "Bölümler arası");
+    var a = function (j, cls, lab) { return '<a class="' + cls + '" href="#/yontem?s=' + chs[j][0] + '"><span>' + lab + "</span><b>" + chs[j][1] + "</b></a>"; };
+    pn.innerHTML = (i ? a(i - 1, "prev", "← önceki") : "<i></i>") + (i < panels.length - 1 ? a(i + 1, "next", "sonraki →") : "<i></i>");
+    p.appendChild(pn); art.appendChild(p);
+  });
+  var sel = document.createElement("label"); sel.className = "ym-sel";
+  sel.innerHTML = '<span>Bölüm</span><select aria-label="Bölüm seç">' + chs.map(function (c, i) { return '<option value="' + c[0] + '">' + (i ? i + ". " : "") + c[1] + "</option>"; }).join("") + "</select>";
+  var lay = document.createElement("div"); lay.className = "ym-lay";
+  art.parentNode.insertBefore(lay, art); lay.appendChild(sel); lay.appendChild(toc); lay.appendChild(art);
+  [].forEach.call(toc.querySelectorAll("a"), function (a, i) { if (i) a.insertAdjacentHTML("afterbegin", '<span class="ym-no">' + i + ".</span> "); });
+}
+
+/* Show one chapter; id may be a chapter key or any anchor inside one. Returns the chapter key. */
+function ymOpen(id, focus) {
+  var ps = [].slice.call(document.querySelectorAll(".ym-panel")); if (!ps.length) return "";
+  var el = id && document.getElementById(id), p = ps.filter(function (x) { return x.getAttribute("data-ch") === id; })[0] || (el && el.closest(".ym-panel")) || ps[0];
+  var key = p.getAttribute("data-ch");
+  ps.forEach(function (x) { x.hidden = x !== p; });
+  [].forEach.call(document.querySelectorAll(".ym-toc a"), function (a) {
+    var on = a.getAttribute("href") === "#/yontem?s=" + key; a.classList.toggle("on", on);
+    if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+  });
+  var s = document.querySelector(".ym-sel select"); if (s) s.value = key;
+  if (focus) { var h = p.querySelector("h2"); if (h) h.focus({ preventScroll: true }); }
+  return key;
+}
+function ymGo(key) {
+  ymOpen(key, true);
+  try { history.pushState(null, "", "#/yontem?s=" + key); } catch (e) {}
+  var top = document.querySelector(".ym-lay").getBoundingClientRect().top + pageYOffset - 72;
+  window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
 }
 
 /* After render: scroll to the section (old numeric anchors accepted), wire the concept search, highlight ?k=. */
 function wireYontem(params) {
   var id = yontemAnchor(params.s) || (params.k ? "kavramlar" : ""), list = document.getElementById("clist");
+  if (document.querySelector(".ym-lay")) {
+    document.querySelector(".ym-lay").onclick = function (e) { var a = e.target.closest && e.target.closest(".ym-toc a, .ym-pn a"); if (!a) return; e.preventDefault(); ymGo(a.getAttribute("href").split("s=")[1]); };
+    document.querySelector(".ym-sel select").onchange = function () { ymGo(this.value); };
+    ymOpen(id, false);
+  }
   if (list) {
     var q = document.getElementById("cq"), tier = "all", cards = [].slice.call(list.querySelectorAll(".v7-concept"));
     var apply = function () {
@@ -248,7 +324,7 @@ function wireYontem(params) {
     });
     if (params.k) {
       var hit = cards.filter(function (c) { return c.getAttribute("data-k") === params.k || c.getAttribute("data-k") === bg7k(params.k); })[0];
-      if (hit) { hit.classList.add("on"); hit.setAttribute("aria-current", "true"); id = "kavramlar"; setTimeout(function () { hit.scrollIntoView({ block: "center" }); }, 40); return; }
+      if (hit) { hit.classList.add("on"); hit.setAttribute("aria-current", "true"); id = "kavramlar"; ymOpen(id, false); setTimeout(function () { hit.scrollIntoView({ block: "center" }); }, 40); return; }
     }
   }
   var tg = id && document.getElementById(id);

@@ -184,11 +184,31 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (miss.length) fails.push(`${tag}: missing [data-m] ${miss.join(",")}`);
     }
     if (route.startsWith("#/yontem")) {
-      /* methodology page: no motion hooks, no drop cap / accordion / glass, numbered h2s, a table of contents */
-      const q = await page.evaluate(() => ({ m: document.querySelectorAll("#view [data-m]").length, bad: document.querySelectorAll("#view .p-cap,#view .p-splits,#view .p-glass,#view .panel.xwalk-s").length,
-        h2: [...document.querySelectorAll(".xpaper>h2.ym-h")].every((h, i) => h.textContent.startsWith((i + 1) + ".")) && document.querySelectorAll(".xpaper>h2.ym-h").length === 12, toc: document.querySelectorAll(".ym-toc a").length }));
+      /* methodology page: no motion hooks; chapter panels (one visible), a 13-entry chapter nav, prev/next, deep links open their chapter */
+      const q = await page.evaluate(() => {
+        const ps = [...document.querySelectorAll(".ym-panel")], vis = ps.filter((p) => !p.hidden && p.offsetParent !== null);
+        const nums = [...document.querySelectorAll(".ym-panel>h2.ym-h:not(.ym-ch0)")];
+        return { m: document.querySelectorAll("#view [data-m]").length, bad: document.querySelectorAll("#view .p-cap,#view .p-splits,#view .p-glass,#view .panel.xwalk-s").length,
+          panels: ps.length, vis: vis.length, chap: vis[0] && vis[0].dataset.ch, toc: document.querySelectorAll(".ym-toc a").length,
+          on: [...document.querySelectorAll(".ym-toc a.on")].map((a) => a.getAttribute("href")),
+          h2: nums.length === 12 && nums.every((h, i) => h.textContent.startsWith((i + 1) + ".")),
+          pn: vis[0] ? vis[0].querySelectorAll(".ym-pn a").length : 0, nextHref: vis[0] && (vis[0].querySelector(".ym-pn .next") || {}).getAttribute && vis[0].querySelector(".ym-pn .next").getAttribute("href") };
+      });
       if (q.m || q.bad) fails.push(`${tag}: yontem has motion/press components ${JSON.stringify(q)}`);
-      if (!q.h2 || q.toc !== 13) fails.push(`${tag}: yontem numbered headings / toc wrong ${JSON.stringify(q)}`);
+      if (!q.h2 || q.toc !== 13 || q.panels !== 13 || q.vis !== 1 || q.on.length !== 1 || q.pn < 1) fails.push(`${tag}: yontem chapter layout wrong ${JSON.stringify(q)}`);
+      const wantCh = { "#/yontem": "cm3method", "#/yontem?s=sozluk": "sozluk", "#/yontem?s=kaynak": "kaynak" }[route];
+      if (wantCh && q.chap !== wantCh) fails.push(`${tag}: deep link opened ${q.chap}, wanted ${wantCh}`);
+      if (route === "#/yontem") {
+        if (q.chap === "cm3method" && (q.pn !== 1 || !/s=veri$/.test(q.nextHref || ""))) fails.push(`${tag}: first chapter should have only a next link to veri ${JSON.stringify(q)}`);
+        await page.evaluate(() => document.querySelector(".ym-pn .next").click()); await sleep(300);
+        const n2 = await page.evaluate(() => ({ chap: [...document.querySelectorAll(".ym-panel")].filter((p) => !p.hidden).map((p) => p.dataset.ch).join(), hash: location.hash, focus: document.activeElement && document.activeElement.tagName }));
+        if (n2.chap !== "veri" || n2.hash !== "#/yontem?s=veri" || n2.focus !== "H2") fails.push(`${tag}: next button ${JSON.stringify(n2)}`);
+      }
+      /* every legacy s= anchor still lands in a chapter that contains it */
+      if (route === "#/yontem?s=sozluk") {
+        const miss = await page.evaluate(() => ["cm3method", "cm3status", "skayit", "sv5", "s3", "s5", "sinir", "kaynak", "yz", "kavramlar", "sozluk", "veri", "olay", "dil", "anlati", "yzicerik", "turkiye", "kapsama"].filter((id) => { const e = document.getElementById(id); return e && !e.closest(".ym-panel"); }));
+        if (miss.length) fails.push(`${tag}: anchors outside a chapter ${miss.join(",")}`);
+      }
     }
     if (await page.$(".xtick")) fails.push(`${tag}: .xtick present`);
     if (route === "#/") {
