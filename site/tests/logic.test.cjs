@@ -292,3 +292,40 @@ test("mentionStats, mentionShares and n<10 suppression", () => {
   assert.deepEqual(L.toneCell({ c: 10, sum: 100 }), { n: 10, mean: 10 });
   assert.deepEqual(L.toneCell(undefined), { n: 0, mean: null });
 });
+test("anEmpty", () => {
+  for (const v of ["", null, "—", "Belirtilmiyor", "Başlıkta yok", "  "]) assert.equal(L.anEmpty(v), true, String(v));
+  assert.equal(L.anEmpty("Şüpheliler"), false);
+});
+test("narrHabits: skip and repeat against the other outlets in the same events", () => {
+  /* outlet a leaves blame empty in all 4 events, b/c never do; a always picks frame X, b picks X once */
+  const N = {};
+  for (let i = 0; i < 4; i++) N["e" + i] = { rows: [{ s: "a", frame: "X", blame: "" }, { s: "b", frame: i ? "Y" : "X", blame: "B" }, { s: "c", frame: "Z", blame: "B" }] };
+  const H = L.narrHabits(N, Object.keys(N), ["frame", "blame"]), a = H.find((h) => h.s === "a"), b = H.find((h) => h.s === "b");
+  assert.equal(a.n, 4);
+  assert.equal(a.skip.blame.k, 4); assert.equal(a.skip.blame.e, 0); assert.equal(a.skip.blame.z, 0); /* zero variance: no z */
+  assert.equal(a.rep.frame.val, "X"); assert.equal(a.rep.frame.k, 4); assert.equal(a.rep.frame.e, 0.5);
+  assert.equal(b.skip.blame.k, 0); assert.equal(b.skip.blame.e, 2); /* half of the others (a) are empty in each event */
+  assert.equal(b.rep.frame && b.rep.frame.val, "Y");
+  assert.deepEqual(L.narrHabits({ x: { rows: [{ s: "a" }] } }, ["x"]), []); /* one-outlet events have nobody to compare with */
+});
+test("narrFindings thresholds, kinds and order", () => {
+  const h = (s, n, rep, skip) => ({ s, n, rep, skip });
+  const H = [h("a", 20, { frame: { val: "X", k: 12, e: 4, v: 4, z: 4 } }, { blame: { k: 18, e: 10, v: 4, z: 4.5 } }),
+    h("b", 20, {}, { moral: { k: 2, e: 8, v: 4, z: -3 } }),
+    h("c", 20, { frame: { val: "Q", k: 5, e: 4.5, v: .01, z: 5 } }, {}), /* big z but < 8 points: dropped */
+    h("d", 5, { frame: { val: "X", k: 5, e: 0, v: 1, z: 9 } }, {})]; /* under minN */
+  const F = L.narrFindings(H, 10);
+  assert.deepEqual(F.map((f) => [f.s, f.kind, f.d]), [["a", "skip", "blame"], ["a", "rep", "frame"], ["b", "fill", "moral"]]);
+});
+test("narrTimeline counts per week and side", () => {
+  const N = { a: { rows: [{ s: "l", frame: "X" }, { s: "r", frame: "Y" }, { s: "r", frame: "" }] }, b: { rows: [{ s: "l", frame: "Y" }] } };
+  const T = L.narrTimeline(N, [{ k: "w1", l: "1", keys: ["a"] }, { k: "w2", l: "2", keys: ["b"] }], "frame", 1, (s) => (s === "l" ? "left" : "right"), true);
+  assert.deepEqual(T.vals, ["Y", ""]);
+  assert.equal(T.weeks[0].side.right.n, 2); assert.equal(T.weeks[0].side.right.c.Y, 1); assert.equal(T.weeks[0].side.right.c[""], 1);
+  assert.equal(T.weeks[1].side.left.c.Y, 1); assert.equal(T.weeks[0].side.left.c.X, undefined);
+});
+test("narrMatrix shared slots and alone counts", () => {
+  const M = L.narrMatrix([{ s: "a", frame: "X", blame: "P" }, { s: "b", frame: "X", blame: "Q" }, { s: "c", frame: "Z", blame: "" }], ["frame", "blame"]);
+  assert.deepEqual(M.slot.frame, { X: 0 }); assert.deepEqual(M.slot.blame, {});
+  assert.deepEqual(M.alone, { a: 1, b: 1, c: 1 }); /* P, Q and Z are each chosen by one outlet */
+});

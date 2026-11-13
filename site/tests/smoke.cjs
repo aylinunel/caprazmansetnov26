@@ -176,6 +176,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await rows("");
       if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: ilan horizontal scroll after typing`);
     }
+    if (route.startsWith("#/anlati")) {
+      const bad = await page.evaluate(() => {
+        const q = (s) => document.querySelector(s);
+        const ph = q(".phead"); if (!ph || ph.querySelector("p, details, section, .lede, .p-lead") || !ph.querySelector(".eyebrow") || !ph.querySelector("h1")) return "phead must hold only eyebrow + h1";
+        if (!q(".an-room .an-h") || document.querySelectorAll(".an-ideas>li").length < 3 || !q(".an-room .an-ex")) return "reading room incomplete";
+        const dd = [...document.querySelectorAll(".an-room details.an-dd summary")].map((s) => s.textContent).join("|");
+        if (dd !== "Veri nereden geliyor?|Dokuz boyut ne demek?|Nasıl okunur|Neyi göstermez?") return "deep-dives: " + dd;
+        for (const id of ["an-season", "an-time", "an-event", "an-matrix"]) if (!document.getElementById(id)) return "missing #" + id;
+        if (!q(".an-keys>li")) return "no key findings";
+        for (const id of ["an-rep", "an-skip", "an-timeline", "an-flow"]) { const f = document.getElementById(id); if (!f) return "missing #" + id; if (!f.querySelector(".v7-tbl table")) return `#${id} has no table twin`; }
+        if (!q("#an-flow svg .an-rb") || !q("#an-matrix table.an-mx td .an-cell") || !q("#an-time .an-led")) return "chart marks missing";
+        if (!q("#v7-flow svg, #v7-map table, .g6-box")) return "Akış/Ağ/Tablo view missing";
+        if (/NaN|undefined|\[object/.test(q("#view").textContent)) return "NaN/undefined on page";
+        return "";
+      });
+      if (bad) fails.push(`${tag}: anlati ${bad}`);
+    }
     /* Broadsheet components each page must carry (spec §5), by route prefix */
     const KINDS = { "#/": "head cascade splits tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/ilan": "head tickets scene cascade" };
     const want = Object.keys(KINDS).find((p) => p.endsWith("=") ? route.startsWith(p) : route === p);
