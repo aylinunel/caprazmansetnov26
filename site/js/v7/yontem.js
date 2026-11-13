@@ -238,6 +238,29 @@ function ymPlain(root) {
     else cur.querySelector(".ym-body").appendChild(c);
   });
   var fix = root.querySelector("#sfix"); if (fix) cur.querySelector(".ym-body").appendChild(fix);
+  /* Desktop grid: cut each chapter body into blocks at its h3s; wide things (tables, figures, glossary, steps, lists of cards) get a block of their own. */
+  var WIDE = ".scroller,table,figure,.v7-gloss,.v7-tr,.v7-cl,.v7-cl-ctl,.vz,.refs,.ym-steps,.abs,.xwalk,section.sec,.panel,[id^=c]:not(h3):not(p)";
+  panels.forEach(function (p) {
+    var body = p.querySelector(".ym-body"), kids = [].slice.call(body.childNodes), blk = null, narrow = 0, out = [];
+    var open = function (wide) { blk = document.createElement("section"); blk.className = "ym-blk" + (wide ? " ym-wide" : ""); out.push(blk); if (!wide) narrow++; };
+    kids.forEach(function (c) {
+      var el = c.nodeType === 1, wide = el && c.matches(WIDE) && !c.matches("h3,p,ul,ol");
+      if (!el && !(c.textContent || "").trim()) { if (blk) blk.appendChild(c); return; } /* whitespace never opens a block */
+      if (el && !c.textContent.trim() && !c.querySelector("img,svg,canvas,table,input,select")) { if (blk) blk.appendChild(c); return; }
+      if (wide) { open(true); blk.appendChild(c); blk = null; return; }
+      if (!blk || (el && c.matches("h3"))) open(false);
+      blk.appendChild(c);
+    });
+    /* consecutive narrow blocks share a row grid (--n tracks); wide blocks sit between rows */
+    var row = null;
+    out.forEach(function (b) {
+      if (b.classList.contains("ym-wide")) { row = null; body.appendChild(b); return; }
+      if (!row) { row = document.createElement("div"); row.className = "ym-row"; row.setAttribute("data-n", 0); body.appendChild(row); }
+      row.appendChild(b); row.setAttribute("data-n", row.children.length);
+      row.style.setProperty("--n", row.children.length);
+    });
+    if (narrow === 1) body.classList.add("ym-one");
+  });
   panels.forEach(function (p, i) {
     var pn = document.createElement("nav"); pn.className = "ym-pn"; pn.setAttribute("aria-label", "Bölümler arası");
     var a = function (j, cls, lab) { return '<a class="' + cls + '" href="#/yontem?s=' + chs[j][0] + '"><span>' + lab + "</span><b>" + chs[j][1] + "</b></a>"; };
