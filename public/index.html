@@ -2417,7 +2417,7 @@ canvas.dm-word{position:absolute;left:0;top:0;width:100%;height:100%;pointer-eve
 :root[data-theme="dark"] .cc-glare{--g:var(--ink)}
 /* finding scene: the claim pins over its chart (desktop), so it carries the page colour */
 .v7-find[data-m] .v7-claim{position:relative;z-index:2;background:var(--paper)}
-.v7-claim.is-pin{box-shadow:0 1px 0 var(--line),0 -48px 0 var(--paper)}
+.v7-claim.is-pin{background:var(--paper);box-shadow:0 1px 0 var(--line),0 -48px 0 var(--paper);z-index:3}
 .sc-n{font-variant-numeric:tabular-nums}
 section.v7-how{position:relative;overflow-x:clip;margin:0;font-size:inherit}
 .wrap.page.v7-home{padding-inline:24px}
@@ -2466,15 +2466,52 @@ body:has(#app.intro){overflow-x:hidden}
 /* ---- /yontem: methodology layout (scoped; one reading column, no cards, no motion) ---- */
 .ym-plain{--ym-w:690px}
 .ym-plain .phead .sub{max-width:var(--ym-w);margin:12px 0 0;color:var(--ink2);font-size:16.5px;line-height:1.6}
-.ym-plain .ym-toc,.ym-plain .xpaper,.ym-plain>.sec{max-width:var(--ym-w);margin-left:0;margin-right:auto}
-.ym-plain .xpaper{padding-bottom:24px}
-.ym-plain .ym-toc{margin-top:0;margin-bottom:8px;padding:0 0 18px;border-bottom:1px solid var(--line);font-size:14.5px}
+.ym-plain .xpaper{padding-bottom:24px;min-width:0}
+.ym-plain .ym-toc{margin:0;font-size:14.5px;display:none}
 .ym-plain .ym-toc b{display:block;font-family:var(--ff-m);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.ym-plain .ym-toc ol{margin:0;padding-left:1.7em;columns:2;column-gap:2.5em}
-.ym-plain .ym-toc li{padding:3px 0;break-inside:avoid;color:var(--muted);font-variant-numeric:tabular-nums}
-.ym-plain .ym-toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line2)}
-.ym-plain .ym-toc a:hover{border-bottom-color:var(--ink)}
-@media (max-width:600px){.ym-plain .ym-toc ol{columns:2;column-gap:1.2em;padding-left:1.6em;font-size:14px}}
+.ym-plain .ym-toc ol{margin:0;padding:0;list-style:none}
+.ym-plain .ym-toc li{padding:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.ym-plain .ym-toc a{display:block;padding:8px 10px 8px 12px;color:var(--ink2);text-decoration:none;border-left:2px solid transparent}
+.ym-plain .ym-toc a:hover{color:var(--ink);border-left-color:var(--line2)}
+.ym-plain .ym-toc a.on{color:var(--ink);font-weight:600;border-left-color:var(--ink)}
+.ym-plain .ym-no{display:inline-block;min-width:1.7em;font-family:var(--ff-m);font-size:12px;font-weight:400;color:var(--muted)}
+.ym-sel{position:sticky;top:76px;z-index:20;display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:8px 0;background:var(--paper);border-bottom:1px solid var(--line)}
+.ym-sel span{font-family:var(--ff-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ym-sel select{flex:1;min-width:0;min-height:44px;font:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line2);border-radius:4px;padding:0 10px}
+.ym-panel[hidden]{display:none}
+.ym-plain .xpaper dl.v7-gloss{margin:0 0 1em}
+.ym-plain .xpaper .eq{white-space:pre-wrap;overflow-wrap:anywhere}
+.ym-plain .ym-panel>h2.ym-h{margin:0 0 22px;padding-top:0;border-top:0;scroll-margin-top:90px;outline:none}
+.ym-plain .ym-panel>h2.ym-ch0{font-family:var(--serif);font-weight:500;font-size:27px;line-height:1.25;letter-spacing:-.01em}
+.ym-pn{display:flex;justify-content:space-between;gap:16px;margin-top:40px;padding-top:18px;border-top:1px solid var(--line2)}
+.ym-pn a{display:flex;flex-direction:column;gap:2px;min-height:44px;box-sizing:border-box;max-width:48%;padding:6px 0;color:var(--ink);text-decoration:none}
+.ym-pn a.next{margin-left:auto;text-align:right}
+.ym-pn a span{font-family:var(--ff-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.ym-pn a b{font-family:var(--serif);font-weight:500;font-size:18px;border-bottom:1px solid var(--line2);align-self:flex-start}
+.ym-pn a.next b{align-self:flex-end}
+.ym-pn a:hover b{border-bottom-color:var(--ink)}
+.ym-pn a:focus-visible,.ym-toc a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap.ym-plain{max-width:none;padding-left:clamp(16px,3vw,48px);padding-right:clamp(16px,3vw,48px)}
+@media (min-width:1000px){
+  .ym-plain .ym-lay{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0 56px;align-items:start}
+  .ym-sel{display:none}
+  .ym-plain .ym-toc{display:block;position:sticky;top:88px;max-height:calc(100vh - 110px);overflow:auto}
+  .ym-plain .ym-body{display:block}
+  .ym-plain .ym-row{display:grid;grid-template-columns:minmax(0,1fr);gap:36px 56px;align-items:start;margin:0 0 36px}
+  .ym-plain .ym-row:not([data-n="1"]){grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ym-plain .ym-blk>h3:first-child{margin-top:0}
+  .ym-plain .ym-blk{min-width:0;border-top:1px solid var(--line);padding-top:18px}
+  .ym-plain .ym-wide{margin:0 0 36px;border-top:0;padding-top:0}
+  .ym-plain .ym-body.ym-one .ym-blk:not(.ym-wide){max-width:80ch}
+  .ym-plain .ym-body .eq{white-space:pre-wrap;overflow-wrap:anywhere;overflow-x:auto}
+  .ym-plain .ym-body .v7-gloss{margin:0 0 1em;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px}
+  .ym-plain .ym-body .v7-gloss>div{break-inside:avoid}
+  .ym-plain .ym-body #clist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+  .ym-plain .ym-body .v7-tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+  .ym-plain .ym-body .v7-tr,.ym-plain .ym-body .v7-cl,.ym-plain .ym-body .v7-cl-ctl{max-width:none}
+}
+@media (min-width:1600px){.ym-plain .ym-row:not([data-n="1"]):not([data-n="2"]){grid-template-columns:repeat(3,minmax(0,1fr))}.ym-plain .ym-body .v7-gloss{grid-template-columns:repeat(4,minmax(0,1fr))}.ym-plain .ym-body #clist,.ym-plain .ym-body .v7-tr{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:999px){.ym-plain .ym-body .v7-tr,.ym-plain .ym-body .v7-cl{max-width:none}}
 .ym-plain .xpaper>*{max-width:none}
 .ym-plain .xpaper p,.ym-plain .xpaper li,.ym-plain .xpaper dd{font-size:16.5px;line-height:1.75;color:var(--ink2)}
 .ym-plain .xpaper ul,.ym-plain .xpaper ol{padding-left:1.4em;margin:0 0 1em}
@@ -2533,6 +2570,133 @@ body:has(#app.intro){overflow-x:hidden}
 @media (max-width:600px){.ym-plain .ym-toc a{display:inline-flex;align-items:center;min-height:44px;min-width:44px}.ym-plain .ym-toc li{padding:0}}
 @media (max-width:600px){.ym-plain .ym-toc a{border-bottom:0}}
 .ym-plain .ym-toc li.x0{list-style:none}
+
+/* ===== Anlatı haritası redesign (anlativ.js): reading room, season overview, timeline, ribbons, nine-dimension matrix. Kindred tokens only. */
+.an-room{margin:0 calc(50% - 50vw) 8px;background:var(--sunk);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0 48px}
+.an-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.an-kick{font:500 11px/1.2 var(--ff-m);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.an-kick::before{content:"";display:inline-block;width:7px;height:7px;margin-right:10px;background:var(--ink);vertical-align:1px}
+.an-room .an-h{font:500 clamp(30px,4.2vw,52px)/1.06 var(--serif);letter-spacing:-.025em;margin:0 0 26px;max-width:22ch;color:var(--ink);text-wrap:balance}
+.an-room .p-lead{font-size:clamp(20px,2.2vw,27px);max-width:36em;color:var(--ink2)}
+.an-ideas{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line2)}
+.an-ideas li{position:relative;padding:22px 26px 26px 0;border-bottom:1px solid var(--line)}
+.an-ideas li:not(:nth-child(3n+1)){padding-left:26px;border-left:1px solid var(--line)}
+.an-no{display:block;font:500 12px/1 var(--ff-m);letter-spacing:.14em;color:var(--muted);margin-bottom:14px}
+.an-ideas h3{font:500 21px/1.2 var(--serif);letter-spacing:-.01em;margin:0 0 8px;color:var(--ink)}
+.an-ideas p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.an-ex{margin:44px 0 0;padding:26px 26px 22px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.an-ex figcaption{display:grid;gap:6px;margin-bottom:20px}
+.an-ex figcaption .an-kick{margin:0}
+.an-ex figcaption b{font:500 24px/1.2 var(--serif);color:var(--ink)}
+.an-ex figcaption>span:last-child{font-size:14px;color:var(--ink2);line-height:1.55;max-width:75ch}
+.an-exg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.an-exc{border:1px solid var(--line);border-top:3px solid var(--c);border-radius:6px;padding:14px 16px;background:var(--raise);min-width:0}
+.an-exo{margin:0 0 10px;font-weight:600;font-size:15px;display:flex;align-items:center;gap:2px 7px;flex-wrap:wrap}
+.an-exo span{font:400 11px var(--ff-m);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.an-exh{font:400 16px/1.4 var(--serif);margin:0 0 10px;color:var(--ink)}
+.an-exc dl{margin:0;display:grid;gap:4px}
+.an-exc dt{font:500 10.5px/1.2 var(--ff-m);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.an-exc dd{margin:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.an-ec{display:inline-block;padding:4px 10px;border-radius:99px;background:var(--sunk);border:1px solid var(--line2);font-size:13.5px;color:var(--ink)}
+.an-ec.an-no,.an-cell.an-no{background:transparent;border-style:dashed;color:var(--muted);font-style:italic}
+.an-mk{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--paper);font:600 11.5px/1 var(--ff-m);flex:none}
+.an-exn{list-style:none;margin:18px 0 6px;padding:14px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 22px}
+.an-exn li{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.5;color:var(--ink2)}
+.an-exn b:not(.an-mk){color:var(--ink)}
+.an-ex .lnk{font-size:13px}
+.an-deep{margin:30px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;align-items:start}
+.an-dd{border-top:1px solid var(--line2)}
+.an-dd summary{list-style:none;cursor:pointer;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;font:500 18px/1.25 var(--serif);color:var(--ink)}
+.an-dd summary::-webkit-details-marker{display:none}
+.an-dd summary::after{content:"+";font:400 20px/1 var(--ff-m);color:var(--muted);transition:transform .2s}
+.an-dd[open] summary::after{transform:rotate(45deg)}
+.an-dd>div{padding:0 0 18px;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.an-dd>div p{margin:0 0 10px}
+.an-dd ul{margin:0 0 10px;padding-left:18px;display:grid;gap:6px}
+.an-dd ul.an-dl{list-style:none;padding:0;gap:0}
+.an-dl li{display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.an-dl b{font:500 11.5px/1.5 var(--ff-m);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.an-toc{display:flex;flex-wrap:wrap;gap:8px;margin:30px 0 0}
+.an-toc button{min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--line2);background:var(--surface);color:var(--ink);font:500 12.5px var(--ff-m);letter-spacing:.04em;cursor:pointer}
+.an-toc button::after{content:" ↓";color:var(--muted)}
+.an-toc button:hover{border-color:var(--ink)}
+.an-sec{scroll-margin-top:120px}
+.an-sub{font-size:15px;color:var(--ink2);max-width:70ch;margin:-6px 0 20px}
+.an-h3{font:500 22px/1.2 var(--serif);margin:0 0 12px;color:var(--ink)}
+.an-h4{font:500 11px var(--ff-m);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.an-sd{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);flex:none;margin-right:6px;vertical-align:1px}
+.an-kbox{border-top:1px solid var(--ink);padding-top:16px;margin-bottom:12px}
+.an-keys{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.an-keys li{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line)}
+.an-keys .an-no{font:500 22px/1 var(--serif);letter-spacing:0;color:var(--ink);margin:2px 0 0}
+.an-kk{margin:0 0 4px;font:500 10.5px/1.4 var(--ff-m);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.an-kt{margin:0;font-size:15px;line-height:1.5;color:var(--ink2)}
+.an-kt b{color:var(--ink)}
+.an-kt q{font-style:normal;color:var(--ink)}
+.an-tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 36px;margin-top:8px}
+.an-tp{min-width:0}
+.an-tscroll{overflow-x:auto}
+.an-tr{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:end;gap:8px;min-width:300px}
+.an-tc{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:2px}
+.an-th .an-tc i{font:400 10px/1 var(--ff-m);color:var(--muted);text-align:center;font-style:normal}
+.an-th{padding-bottom:4px;border-bottom:1px solid var(--line)}
+.an-tv{padding:6px 0 4px;border-bottom:1px solid var(--line)}
+.an-tl{margin:0 0 2px;font-size:13px;font-weight:600;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.an-ts{font:400 10.5px/1 var(--ff-m);color:var(--muted);display:flex;align-items:center;padding-bottom:2px}
+.an-led{position:relative;display:block;height:26px;background:radial-gradient(circle,var(--line2) .9px,transparent 1.3px) center bottom/6px 3.25px repeat-y;border-radius:2px;outline-offset:1px}
+.an-led::after{content:"";position:absolute;left:0;right:0;bottom:0;height:calc(var(--k)*3.25px);background:radial-gradient(circle,var(--c) 1.7px,transparent 2.1px) center bottom/6px 3.25px repeat-y}
+.an-led:hover,.an-led:focus-visible{background-color:color-mix(in srgb,var(--ink) 8%,transparent)}
+.an-tf{margin-top:6px}
+.an-tf .an-tc{display:block;position:relative;height:18px}
+.an-tf .an-tc b{position:absolute;left:calc(var(--a)/var(--n)*100%);right:0;top:0;border-top:1px dashed var(--ink2);padding-top:4px;font:400 10px var(--ff-m);color:var(--muted);letter-spacing:0;white-space:nowrap;text-align:right;overflow:visible}
+.an-skbox{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:14px 10px 6px}
+.an-sk{display:block;width:100%;min-width:760px;height:auto}
+.an-skh{font:500 10.5px var(--ff-m);letter-spacing:.12em;fill:var(--muted)}
+.an-rb{fill:var(--c);fill-opacity:.42;stroke:var(--surface);stroke-width:.6;transition:fill-opacity .15s}
+.an-rb:hover,.an-rb:focus-visible{fill-opacity:.85;outline:none}
+.an-sk:hover .an-rb:not(:hover){fill-opacity:.22}
+.an-nd{fill:var(--ink)}.an-nd0{fill:var(--line2)}
+.an-nl{font:500 13px var(--ff-b);fill:var(--ink)}.an-nl0{fill:var(--muted);font-style:italic}
+.an-nn{font:400 10.5px var(--ff-m);fill:var(--muted)}
+.an-halo{stroke:var(--surface);stroke-width:4px;paint-order:stroke fill;stroke-linejoin:round;pointer-events:none}
+.an-mleg{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:12.5px;color:var(--ink2);margin:0 0 10px}
+.an-mbox{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.an-mx{border-collapse:separate;border-spacing:0;width:100%;min-width:960px;font-size:12.5px}
+.an-mx th,.an-mx td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.an-mx thead th{background:var(--raise);font:inherit;text-transform:none;letter-spacing:0}
+.an-mx thead b{display:block;font:500 10.5px/1.3 var(--ff-m);letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+.an-mx thead span{display:block;font:400 10.5px var(--ff-m);color:var(--muted);margin-top:3px}
+.an-mx thead th.an-foc{box-shadow:inset 0 3px 0 var(--ink)}
+.an-mx .an-mo{position:sticky;left:0;z-index:1;background:var(--surface);font:600 13px var(--ff-b);white-space:nowrap;letter-spacing:0;text-transform:none;color:var(--ink);border-right:1px solid var(--line)}
+.an-mx thead .an-mo{z-index:2;background:var(--raise)}
+.an-mx tbody tr:last-child>*{border-bottom:0}
+.an-cell{display:inline-block;max-width:128px;padding:3px 8px;border-radius:5px;line-height:1.3;color:var(--ink);overflow-wrap:anywhere;
+  background:color-mix(in srgb,var(--c,var(--line2)) 16%,var(--surface));border:1px solid color-mix(in srgb,var(--c,var(--line2)) 60%,transparent);transition:box-shadow .15s,transform .15s}
+.an-cell.an-solo{background:var(--surface);border:1.5px dashed var(--ink2);font-weight:600}
+.an-cell.an-no{font-size:11.5px}
+.an-cell.an-hi{box-shadow:0 0 0 2px var(--ink);transform:translateY(-1px)}
+.an-mx .an-cell[data-d]{cursor:pointer}
+.an-ma{white-space:nowrap}
+.an-al{display:inline-flex;align-items:center;gap:6px;font:500 12px var(--ff-m);color:var(--ink)}
+.an-al i{display:inline-block;width:calc(var(--w)*40px + 2px);height:6px;border-radius:3px;background:var(--ink)}
+.an-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:900px){
+  .an-ideas,.an-exg,.an-exn{grid-template-columns:1fr}
+  .an-ideas li:not(:nth-child(3n+1)){padding-left:0;border-left:0}
+  .an-deep,.an-keys,.an-tgrid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .an-room{padding:40px 0 34px}
+  .an-wrap{padding:0 16px}
+  .an-ex{padding:18px 16px}
+  .an-dl li{grid-template-columns:1fr;gap:2px}
+  .an-tr{grid-template-columns:62px minmax(0,1fr)}
+}
+.an-sec .vz-l{display:block;overflow-wrap:normal}
+.an-sec .vz-l small{display:block;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.an-mx td{font-family:var(--ff-b);letter-spacing:0;text-transform:none}
+.an-mx .an-cell.an-no{border:0;padding:3px 4px;font-style:normal}
+.an-sec .vz-r{min-height:42px;padding:3px 0}
 
 </style>
 </head>
@@ -8602,7 +8766,6 @@ function v2bAfter(path, tab, params) {
       eb.textContent = nm + " · " + sn;
     });
   }
-  if (path === "/yontem") wireYontem(params);
 }
 
 /* ========================================================= 2.0 · bulgular
@@ -10752,7 +10915,7 @@ function route() {
 
   v2After(path, tab, params); v2bAfter(path, tab, params); v2cAfter(path, tab, params); v3After(path, tab, params);
   /* must run before motionMount, which reads [data-m] */
-  if (path === "/yontem") ymPlain(document.getElementById("view"));
+  if (path === "/yontem") { ymPlain(document.getElementById("view")); wireYontem(params); }
   motionMount(document.getElementById("view"));
   var b3 = document.getElementById("burger"), mm = document.getElementById("mobmenu");
   if (b3) b3.onclick = function () {
@@ -11137,6 +11300,104 @@ function blameByBloc(N, keys, bloc) {
     .sort(function (a, b) { return tot(b) - tot(a) || trCmp(a.value, b.value); });
 }
 
+/* ---- Anlatı haritası season aggregates. Empty = "başlıkta yok" (same test as the site's UNSET). */
+function anEmpty(v) { v = String(v == null ? "" : v).trim(); return !v || /belirtilmiyor|yok|^—$/i.test(v); }
+function anVal(r, d) { return anEmpty(r[d]) ? "" : String(r[d]).trim(); }
+
+/* Per outlet habits over many events, each against an event-matched expectation: in every event the outlet coded,
+   the share of the OTHER outlets doing the same thing (so a heavy diet of one kind of event is not read as a habit).
+   skip[d] = {k: events left empty, e: expected, v: variance}; rep[d] = same for the outlet's most-used value (used >= 3 times).
+   z = (k - e) / sqrt(v): how far above the matched expectation, in units of its spread (Poisson-binomial). */
+function narrHabits(N, keys, dims) {
+  dims = dims || V7_DIMS;
+  var by = {};
+  keys.forEach(function (key) {
+    var rows = (N[key] && N[key].rows) || [];
+    if (rows.length < 2) return;
+    rows.forEach(function (r) { (by[r.s] = by[r.s] || []).push({ r: r, rows: rows }); });
+  });
+  var z = function (o) { return o.v > 0 ? (o.k - o.e) / Math.sqrt(o.v) : 0; };
+  var leaveOut = function (x, test) {
+    var m = 0; x.rows.forEach(function (o) { if (o !== x.r && test(o)) m++; });
+    return m / (x.rows.length - 1);
+  };
+  return Object.keys(by).sort().map(function (s) {
+    var evs = by[s], skip = {}, rep = {};
+    dims.forEach(function (d) {
+      var sk = { k: 0, e: 0, v: 0 }, cnt = {};
+      evs.forEach(function (x) {
+        var p = leaveOut(x, function (o) { return !anVal(o, d); });
+        if (!anVal(x.r, d)) sk.k++; else cnt[anVal(x.r, d)] = (cnt[anVal(x.r, d)] || 0) + 1;
+        sk.e += p; sk.v += p * (1 - p);
+      });
+      sk.z = z(sk); skip[d] = sk;
+      Object.keys(cnt).filter(function (v) { return cnt[v] >= 3; }).forEach(function (val) {
+        var o = { val: val, k: cnt[val], e: 0, v: 0 };
+        evs.forEach(function (x) { var p = leaveOut(x, function (y) { return anVal(y, d) === val; }); o.e += p; o.v += p * (1 - p); });
+        o.z = z(o);
+        if (!rep[d] || o.z > rep[d].z) rep[d] = o;
+      });
+    });
+    return { s: s, n: evs.length, skip: skip, rep: rep };
+  });
+}
+
+/* Ranked findings: for each outlet with >= minN events, its strongest repeat and its most unusual empty rate (more often empty: "skip",
+   more often answered: "fill"), kept when clearly apart from the others in the same events (|z| >= 2 and >= 8 points). Sorted by |z|. */
+function narrFindings(habits, minN) {
+  minN = minN || 10;
+  var out = [];
+  habits.forEach(function (h) {
+    if (h.n < minN) return;
+    ["rep", "skip"].forEach(function (kind) {
+      var best = null;
+      Object.keys(h[kind]).forEach(function (d) { var o = h[kind][d]; if (!best || Math.abs(o.z) > Math.abs(best.o.z)) best = { d: d, o: o }; });
+      if (!best || Math.abs(best.o.z) < 2 || Math.abs(best.o.k - best.o.e) / h.n < .08) return;
+      var k = kind === "rep" ? (best.o.z > 0 ? "rep" : null) : best.o.z > 0 ? "skip" : "fill";
+      if (k) out.push({ s: h.s, kind: k, d: best.d, val: best.o.val || "", n: h.n, k: best.o.k, e: best.o.e, z: best.o.z });
+    });
+  });
+  return out.sort(function (a, b) { return Math.abs(b.z) - Math.abs(a.z) || trCmp(a.s, b.s); });
+}
+
+/* Week x side counts for one dimension: the `top` most-used values over all weeks (plus "" for empty when withEmpty).
+   -> {vals, weeks: [{k, l, coded, side: {left|mid|right|none: {n: rows, c: {val: count}}}}]} */
+function narrTimeline(N, weeks, dim, top, bloc, withEmpty) {
+  var tot = {};
+  weeks.forEach(function (w) { w.keys.forEach(function (k) { ((N[k] && N[k].rows) || []).forEach(function (r) { var v = anVal(r, dim); if (v) tot[v] = (tot[v] || 0) + 1; }); }); });
+  var vals = Object.keys(tot).sort(function (a, b) { return tot[b] - tot[a] || trCmp(a, b); }).slice(0, top);
+  if (withEmpty) vals.push("");
+  return { vals: vals, weeks: weeks.map(function (w) {
+    var side = {};
+    ["left", "mid", "right", "none"].forEach(function (b) { side[b] = { n: 0, c: {} }; });
+    w.keys.forEach(function (k) {
+      ((N[k] && N[k].rows) || []).forEach(function (r) {
+        var b = side[bloc(r.s)] || side.none, v = anVal(r, dim);
+        b.n++; if (vals.indexOf(v) >= 0) b.c[v] = (b.c[v] || 0) + 1;
+      });
+    });
+    return { k: w.k, l: w.l, coded: w.coded, side: side };
+  }) };
+}
+
+/* Values of one dimension in one event: shared (>= 2 outlets) values get a colour slot by size; singletons and empties none.
+   -> {val: {n, slot}} and per outlet the number of dimensions where it stands alone. */
+function narrMatrix(rows, dims) {
+  var cnt = {}, alone = {};
+  dims.forEach(function (d) {
+    var c = cnt[d] = {};
+    rows.forEach(function (r) { var v = anVal(r, d); if (v) c[v] = (c[v] || 0) + 1; });
+  });
+  var slot = {};
+  dims.forEach(function (d) {
+    slot[d] = {};
+    Object.keys(cnt[d]).filter(function (v) { return cnt[d][v] > 1; }).sort(function (a, b) { return cnt[d][b] - cnt[d][a] || trCmp(a, b); })
+      .forEach(function (v, i) { slot[d][v] = i; });
+  });
+  rows.forEach(function (r) { alone[r.s] = dims.filter(function (d) { var v = anVal(r, d); return v && cnt[d][v] === 1; }).length; });
+  return { cnt: cnt, slot: slot, alone: alone };
+}
+
 function firstSentence(t) { t = String(t || "").trim(); var i = t.indexOf(". "); return i < 0 ? t : t.slice(0, i + 1); }
 
 function yzText(f, review) {
@@ -11438,7 +11699,7 @@ function toneCell(cell, min) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
+  module.exports = { anEmpty: anEmpty, narrHabits: narrHabits, narrFindings: narrFindings, narrTimeline: narrTimeline, narrMatrix: narrMatrix, trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
     dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints,
     axisDist: axisDist, partyRank: partyRank, nearestParty: nearestParty, compileAliases: compileAliases, matchParties: matchParties, mentionStats: mentionStats, mentionShares: mentionShares, toneCell: toneCell, PARTI_ALIAS: PARTI_ALIAS };
 }
@@ -11467,7 +11728,7 @@ function findingBlock(f) {
   var why = f.means || f.example ? '<details class="v7-why"><summary>Neden önemli?</summary>' + (f.means ? '<p class="v7-means">' + glossTerms(f.means) + "</p>" : "") +
     (f.example ? '<p><a href="#/olay?e=' + encodeURIComponent(f.example) + '">Bir örnek olay →</a></p>' : "") + "</details>" : "";
   var tbl = f.table ? '<details class="v7-tbl"><summary>Tabloyu göster</summary>' + f.table + "</details>" : "";
-  return '<section class="v7-find" data-m="scene" id="' + esc(f.id || "") + '"><p class="v7-claim">' + glossTerms(f.claim || "") + "</p>" +
+  return '<section class="v7-find" data-m="scene"' + (f.nopin ? " data-nopin" : "") + ' id="' + esc(f.id || "") + '"><p class="v7-claim">' + glossTerms(f.claim || "") + "</p>" +
     '<div class="v7-viz">' + (f.viz || "") + "</div>" + (f.read ? '<p class="v7-read">' + f.read + "</p>" : "") + why +
     (f.how || tbl ? '<details class="v7-how"><summary>Nasıl ölçtük?</summary>' + (f.how || "") + tbl + "</details>" : "") + "</section>";
 }
@@ -12621,7 +12882,8 @@ MOTION_K.scene = function (el, first) {
   if (!claim || !viz) return;
   /* below the sticky nav and the sticky section tabs (.subnav) */
   var top = function () { var b = 64; [].forEach.call(document.querySelectorAll(".navbar,.subnav"), function (n) { b = Math.max(b, n.getBoundingClientRect().bottom); }); return b + 16; };
-  if (innerWidth >= 901) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
+  /* big tables/diagrams opt out (data-nopin): a pinned claim would cover their header rows */
+  if (innerWidth >= 901 && !el.hasAttribute("data-nopin")) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
     end: function () { return "bottom " + (top() + claim.offsetHeight + 24) + "px"; }, pin: claim, pinSpacing: false, toggleClass: "is-pin" });
   if (g6 && !(first && motionInView(g6))) gsap.from(g6, { scale: .86, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: g6, start: "top 85%" } });
   var rows = g6 ? [] : [].slice.call(viz.querySelectorAll(".vz-r:not(.vz-ax),.or-bar")), bars = viz.querySelectorAll(".vz-span,.or-bt i");
@@ -12704,28 +12966,9 @@ function pgHome7() {
 }
 
 /* v7 Anlatı: the homepage. A map of how outlets told one event: rows = outlets, columns = narrative dimensions. */
-/* Intro on /anlati: what the map is, where its data comes from, how to read each view, what it cannot show. */
+/* Intro on /anlati: the dotted header (eyebrow + title only), then the reading-room explainer (anlativ.js). */
 function v7Intro() {
-  var src = '<details class="v7-how v7-intro"><summary>Veri nereden geliyor?</summary><p>Her kurumun o olaydaki başlığı dokuz boyutta kodlanır: ' +
-    NORD.map(function (d) { return NDL[d].toLocaleLowerCase("tr"); }).join(", ") + ". Kimi haftalar elle, kimi haftalar yapay zekâ ile kodlanmıştır; hangisi olduğu her haritanın üstünde yazar (YZ rozeti). " +
-    'Boyutlar çerçeveleme kuramından türetilmiştir. <a class="lnk" href="#/yontem?s=anlati">Yöntem →</a></p></details>';
-  var how = '<details class="v7-how v7-intro"><summary>Nasıl okunur</summary>' +
-    "<h3>Üç görünüm</h3><ul>" +
-    "<li><b>Akış:</b> Her çizgi bir kurum. Çizgi, kurumun seçtiği değerlerin kutularından sırayla geçer; aynı kutudan geçen kurumlar aynı seçimi yapmıştır. Çizginin rengi kurumun yerleşimini gösterir (sola yerleşik kırmızı, sağa yerleşik mavi).</li>" +
-    "<li><b>Ağ:</b> Daireler kurum, kareler bir boyuttaki seçimdir (çerçeve, sorumlu, çözüm…). Kurum, seçtiği karelere bağlanır; çok seçimi paylaşan kurumlar birbirine yakın durur. Karenin büyüklüğü o seçimi yapan kurum sayısıdır.</li>" +
-    "<li><b>Tablo:</b> Her satır bir kurum, her sütun bir boyut; satırlar yerleşim sırasındadır. Bir sütun başlığına tıklarsanız kurumlar o boyuttaki seçimlerine göre gruplanır. Kurumun adına tıklarsanız olaydaki başlığı açılır.</li></ul>" +
-    "<h3>Renkler ve boyutlar</h3><p>Boyutlar, bir başlığın hangi yönünü kodladığımızdır (yukarıdaki dokuz boyut). " +
-    "Her olayda yalnızca o olay için odak olarak işaretlenen boyutlar gösterilir. Tabloda ve akışta bir boyutun her değeri kendi rengini alır; aynı boyutta aynı renk aynı seçim demektir, renkler boyutlar arasında bir anlam taşımaz ve iyi ya da kötü demek değildir. " +
-    "“Başlıkta yok”, başlığın o boyutta bir şey söylemediği anlamına gelir.</p></details>";
-  var lim = '<details class="v7-how v7-intro"><summary>Neyi göstermez?</summary><ul>' +
-    "<li>Yalnızca başlıkları ve spotları kapsar; haber metninin tamamı okunmamıştır.</li>" +
-    "<li>Her kurum için tek bir başlık kodlanır; kurumun o olay hakkındaki bütün yayınını temsil etmez.</li>" +
-    "<li>Anlatı kodlaması tek kodlayıcıyla yapılmıştır; yapay zekâ ile kodlanan haftalarda insan kodlayıcı yoktur ve kodlayıcılar arası uyum ölçülmemiştir.</li>" +
-    "<li>Kurumların yerleşimi dışarıdan sağlanmıştır ve doğrulanmamıştır.</li>" +
-    "<li>Harita, kurumların ayrıştığı olayları bilerek seçer; bu olaylar tipik değildir. Her olayın haritası yoktur ve editör incelemesinde kaldırılanlar gösterilmez.</li>" +
-    '</ul><p><a class="lnk" href="#/yontem?s=anlati">Anlatı kodlamasının ayrıntıları →</a></p></details>';
-  return '<div class="phead"><div class="eyebrow">Anlatı haritası</div><h1>Aynı olay, kurum kurum farklı anlatılıyor</h1></div>' +
-    '<section class="v7-introbox">' + pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönünü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") + src + how + lim + "</section>";
+  return '<div class="phead"><div class="eyebrow">Anlatı haritası</div><h1>Aynı olay, kurum kurum farklı anlatılıyor</h1></div>' + anRoom();
 }
 
 function v7Weeks() {
@@ -12873,7 +13116,8 @@ function pgAnlati(q) {
   var key = q.n && wk.keys.indexOf(q.n) >= 0 ? q.n : wk.keys[0], n = D.N[key], e = EV[n.ev], tab = q.v === "tablo", net = q.v === "ag";
   V7VIEW = tab ? "tablo" : net ? "ag" : "";
   var title = narrName(key, 140), ai = n.status === "agent_coded";
-  var h = '<div class="wrap page v7-an">' + v7Intro() + '<h2 class="v7-evt">' + esc(title) + "</h2>";
+  var h = '<div class="wrap page v7-an">' + v7Intro() + anSeason() + anTimeline() +
+    '<section class="an-sec an-evs" id="an-event">' + pHead("Olay olay", "Bir olay seçin, kurumları yan yana okuyun") + '<h2 class="v7-evt">' + esc(title) + "</h2>";
   h += v7WeekBar(weeks, wk.k);
   h += '<div class="v7-events" role="group" aria-label="Olay">' + wk.keys.map(function (k) {
     return '<button type="button" class="chip" data-w="' + wk.k + '" data-n="' + k + '" aria-pressed="' + (k === key) + '">' + esc(narrName(k, 44)) + "</button>";
@@ -12886,7 +13130,7 @@ function pgAnlati(q) {
       '<div class="v7-scroll"><div id="v7-flow" data-key="' + esc(key) + '"></div></div><p class="v7-note">Her çizgi bir kurum; rengi kurumun yerleşimini gösterir. ' +
       "Aynı kutudan geçen çizgiler aynı seçimi yapmıştır. Bir çizgiye " + orTap() + ": kurumun seçimleri görünür.</p>" +
       '<p class="v7-leg"><span class="left">sola yerleşik</span><span class="mid">merkez</span><span class="right">sağa yerleşik</span></p>') +
-    "</div></div>" + v7Body(n, e);
+    "</div></div>" + anSankey(key) + anMatrix(key) + "</section>" + v7Body(n, e);
   var top = latest.keys.map(function (k) { return EV[D.N[k].ev]; }).filter(Boolean)
     .sort(function (a, b) { return b.s.length - a.s.length; }).slice(0, 3);
   h += '<section class="v7-weekstrip"><h2>Bu hafta <span class="v7-cnt">' + esc(latest.l) + "</span></h2><div class=\"v7-wk\">" + top.map(function (x) {
@@ -12905,6 +13149,7 @@ function v7ViewBar(w, key, tab) {
 }
 function wireAnlati(root) {
   if (!root) return;
+  anWire(root);
   var fl = root.querySelector("#v7-flow");
   if (fl && !fl.firstChild) {
     var nf = D.N[fl.getAttribute("data-key")], keep = NFOC;
@@ -12941,6 +13186,308 @@ function wireAnlati(root) {
   var out = function (ev) { if (ev.target.closest && ev.target.closest(".v7-pill")) same(null); };
   root.addEventListener("mouseover", over); root.addEventListener("focusin", over);
   root.addEventListener("mouseout", out); root.addEventListener("focusout", out);
+}
+
+/* v7 Anlatı haritası, part two: the reading-room explainer, the season overview (repeats and skips per outlet), the narrative
+   timeline, and two per-event views (frame → blame → solution ribbons, outlet × nine-dimension matrix). Aggregation is in logic.js. */
+var AN_SC = { left: "var(--left)", mid: "var(--mid)", right: "var(--right)", none: "var(--mist)" };
+var AN_MIN = 15; /* events an outlet needs before the season overview says anything about it */
+function anPct(x) { return "%" + Math.round(100 * x); }
+function anDim(d) { return NDL[d] || d; }
+function anSide(s) { var b = bloc(s); return '<i class="an-sd" style="--c:' + AN_SC[b] + '" aria-hidden="true"></i>'; }
+
+/* ---------------------------------------------------------------- reading room */
+var AN_DIMTXT = {
+  frame: "Olayın hangi tür hikâye olarak sunulduğu: adli süreç mi, ekonomi mi, yas mı? (Entman: sorun tanımı)",
+  hero: "Başlığın öznesi; hikâyenin merkezine koyduğu kişi ya da kurum. (Anlatı Politika Çerçevesi: karakter)",
+  blame: "Olaydan kimin sorumlu gösterildiği. (Entman: nedensel yorum)",
+  cause: "Olayın neden olduğu söyleniyor. (Entman: nedensel yorum)",
+  cons: "Başlığın öne çıkardığı sonuç: gözaltı, istifa, fiyat artışı… (Entman: sorun tanımı)",
+  aff: "Olaydan kimin etkilendiği; hikâyenin kurbanı. (Anlatı Politika Çerçevesi: karakter)",
+  sol: "Başlığın doğal ya da gerekli gösterdiği çözüm. (Entman: çözüm önerisi)",
+  moral: "Olayın hangi değer üzerinden tartıldığı: adalet, hesap verebilirlik, kamu düzeni… (Entman: ahlaki değerlendirme)",
+  start: "Hikâyenin hangi andan başlatıldığı; neyin öncesi sayıldığı. (Entman: nedensel yorum)"
+};
+
+/* A real coded event, two or three outlets side by side, with numbered callouts. */
+function anExample() {
+  var key = D.N.girne ? "girne" : Object.keys(D.N)[0], n = D.N[key];
+  if (!n || !(n.rows || []).length) return "";
+  var rows = orderOutlets(n.rows, v7Lean), pick = [], seen = {};
+  ["left", "right", "mid", "none"].forEach(function (b) {
+    var r = rows.filter(function (x) { return bloc(x.s) === b && !seen[anVal(x, "frame")]; })[0];
+    if (r && pick.length < 3) { pick.push(r); seen[anVal(r, "frame")] = 1; }
+  });
+  rows.forEach(function (r) { if (pick.length < 3 && pick.indexOf(r) < 0 && !seen[anVal(r, "frame")]) { pick.push(r); seen[anVal(r, "frame")] = 1; } });
+  pick = orderOutlets(pick, v7Lean);
+  var gapAt = pick.map(function (r) { return !anVal(r, "blame"); }).indexOf(true), mk = function (i) { return '<b class="an-mk" aria-hidden="true">' + i + "</b>"; };
+  var chip = function (r, d, i) {
+    var v = anVal(r, d);
+    return "<dt>" + esc(anDim(d)) + "</dt><dd>" + (v ? '<span class="an-ec">' + esc(v) + "</span>" : '<span class="an-ec an-no">başlıkta yok</span>') + (i ? mk(i) : "") + "</dd>";
+  };
+  var cards = pick.map(function (r, j) {
+    return '<div class="an-exc" style="--c:' + AN_SC[bloc(r.s)] + '"><p class="an-exo">' + anSide(r.s) + esc(srcName(r.s)) + ' <span>' + esc(SIDE[bloc(r.s)]) + "</span></p>" +
+      (r.hl ? '<p class="an-exh">“' + esc(r.hl) + "”</p>" : "") + "<dl>" + chip(r, "frame", j === 0 ? 1 : 0) +
+      chip(r, "blame", j === 0 ? 2 : j === gapAt ? 3 : 0) + "</dl></div>";
+  }).join("");
+  var notes = "<li>" + mk(1) + "<span><b>Çerçeve</b> olayın hangi hikâyeye bağlandığıdır. Burada üç kurum aynı olayı üç ayrı tür hikâye olarak veriyor.</span></li>" +
+    "<li>" + mk(2) + "<span><b>Sorumlu tutulan</b> başlığın parmakla gösterdiğidir. Aynı olgu, farklı bir adres.</span></li>" +
+    (gapAt >= 0 ? "<li>" + mk(3) + "<span><b>Başlıkta yok</b>: başlık bu soruya yanıt vermiyor. Susmak da kodlanır; sezon özeti bunu sayar.</span></li>" : "");
+  return '<figure class="an-ex"><figcaption><span class="an-kick">Bir örnek · elle kodlandı</span><b>' + esc(narrName(key, 90)) + "</b>" +
+    (n.q && n.q.agree ? "<span>Ortak nokta: " + esc(n.q.agree) + "</span>" : "") + '</figcaption><div class="an-exg">' + cards + '</div><ol class="an-exn">' + notes + "</ol>" +
+    (n.ev && EV[n.ev] ? '<p><a class="lnk" href="#/olay?e=' + encodeURIComponent(n.ev) + '">Olayın bütün başlıkları →</a></p>' : "") + "</figure>";
+}
+
+function anRoom() {
+  var ag = NW.filter(function (w) { return w.coded === "agent"; }).map(function (w) { return w.l; });
+  var ideas = [
+    ["Olgular ortak, hikâye değil", "Kurumlar çoğu olayda ne olduğu konusunda uzlaşır. Ayrıştıkları yer, olayın hangi hikâyenin parçası yapıldığıdır: kimin suçlu, kimin kurban, neyin çözüm sayıldığı."],
+    ["Dokuz soru, her başlığa aynı", "Her kurumun başlığı aynı dokuz soruyla okunur: çerçeve, merkezdeki aktör, sorumlu, neden, sonuç, etkilenen kesim, çözüm, ahlaki çerçeve ve hikâyenin başlangıcı."],
+    ["Susmak da bir seçim", "“Başlıkta yok”, başlığın o soruya yanıt vermediği anlamına gelir. Bir kurumun sezon boyunca hangi soruyu sürekli boş bıraktığı da bir örüntüdür."],
+    ["Sezon önce, olay sonra", "Sayfa iki ölçekte okunur: önce bütün sezon (kim neyi tekrarlıyor, hangi çerçeve ne zaman yükseliyor), sonra tek bir olay ve o olaydaki her kurum."],
+    ["Renk yerleşimi gösterir", "Kırmızı sola yerleşik, mavi sağa yerleşik, gri merkez kurumlardır. Renk iyi ya da kötü demek değildir; yerleşim dışarıdan sağlanmıştır."],
+    ["Karşılaştırma aynı olayda", "Bir kurumun alışkanlığı, aynı olayları veren öteki kurumlarla kıyaslanır. Böylece bir kurumun daha çok mahkeme haberi vermesi, “adli çerçeveyi seviyor” diye okunmaz."]
+  ];
+  var dd = function (t, body) { return '<details class="an-dd"><summary>' + esc(t) + "</summary><div>" + body + "</div></details>"; };
+  var src = "<p>Her hafta en çok kurumun verdiği olaylar ve kurumlar arası farkın büyük olduğu adaylar ön elemeden geçirildi; içlerinden anlatısal ayrışma taşıyanlar kodlandı. " +
+    "Her kurumun o olaydaki başlığı (ve varsa spotu) dokuz boyutta kodlanır; başlığın desteklemediği boyut boş bırakılır ve “başlıkta yok” olarak gösterilir.</p>" +
+    "<p>Kimi haftalar elle, kimi haftalar yapay zekâ ile kodlanmıştır" + (ag.length ? " (yapay zekâ: " + esc(ag.join(", ")) + ")" : "") + "; hangisi olduğu her haritanın üstünde YZ rozetiyle yazar. " +
+    'Boyutlar çerçeveleme kuramından türetilmiştir. <a class="lnk" href="#/yontem?s=anlati">Yöntem →</a></p>';
+  var dims = '<ul class="an-dl">' + NORD.map(function (d) { return "<li><b>" + esc(anDim(d)) + "</b><span>" + esc(AN_DIMTXT[d]) + "</span></li>"; }).join("") + "</ul>";
+  var how = "<ul><li><b>Sezon özeti:</b> Her kurum için en çok tekrarladığı seçim ve en sık boş bıraktığı boyut; içi dolu nokta kurumun kendisi, boş nokta aynı olaylardaki öteki kurumlar.</li>" +
+    "<li><b>Zaman çizgisi:</b> Haftalar soldan sağa; her sütundaki ışıklı nokta sayısı, o hafta o tarafın başlıklarında bu seçimin payıdır.</li>" +
+    "<li><b>Akış, Ağ, Tablo:</b> Seçilen olay için üç görünüm. Akışta her çizgi bir kurumdur; ağda kurumlar paylaştıkları seçimlerle birbirine bağlanır; tabloda bir sütun başlığına tıklayıp kurumları gruplayabilirsiniz.</li>" +
+    "<li><b>Çerçeve → sorumlu → çözüm:</b> Şerit kalınlığı o yolu izleyen kurum sayısıdır, rengi kurumların yerleşimidir.</li>" +
+    "<li><b>Dokuz boyut matrisi:</b> Aynı renk aynı seçim demektir (en az iki kurum); kesik çerçeveli hücreyi yalnız o kurum seçmiştir. Renkler boyutlar arasında anlam taşımaz.</li></ul>";
+  var lim = "<ul><li>Yalnızca başlıkları ve spotları kapsar; haber metninin tamamı okunmamıştır.</li>" +
+    "<li>Her kurum için tek bir başlık kodlanır; kurumun o olay hakkındaki bütün yayınını temsil etmez.</li>" +
+    "<li>Anlatı kodlaması tek kodlayıcıyla yapılmıştır; yapay zekâ ile kodlanan haftalarda insan kodlayıcı yoktur ve kodlayıcılar arası uyum ölçülmemiştir. Zaman çizgisindeki bir kayma kodlama yönteminin değişmesinden de gelebilir.</li>" +
+    "<li>Kurumların yerleşimi dışarıdan sağlanmıştır ve doğrulanmamıştır.</li>" +
+    "<li>Harita, kurumların ayrıştığı olayları bilerek seçer; bu olaylar tipik değildir. Sezon özeti de yalnız bu olaylardan hesaplanır. Her olayın haritası yoktur ve editör incelemesinde kaldırılanlar gösterilmez.</li>" +
+    "<li>Değerler serbest metindir; yalnız birebir aynı yazılan seçimler “aynı” sayılır.</li></ul>" +
+    '<p><a class="lnk" href="#/yontem?s=anlati">Anlatı kodlamasının ayrıntıları →</a></p>';
+  return '<section class="an-room" aria-labelledby="an-room-h"><div class="an-wrap">' +
+    '<p class="an-kick">Okuma odası · nasıl okunur</p><h2 class="an-h" id="an-room-h">Bir olay, dokuz soru. Başlıklar aynı olguyu nasıl farklı hikâyelere çeviriyor?</h2>' +
+    pLead("Bu harita, bir olayı veren her kurumun başlığının hangi yönünü öne çıkardığını yan yana koyar: olayı nasıl çerçeveledi, kimi sorumlu tuttu, hangi çözümü meşru gösterdi.") +
+    '<ol class="an-ideas" data-m="cascade">' + ideas.map(function (x, i) {
+      return '<li><b class="an-no">0' + (i + 1) + "</b><h3>" + esc(x[0]) + "</h3><p>" + esc(x[1]) + "</p></li>";
+    }).join("") + "</ol>" + anExample() +
+    '<div class="an-deep">' + dd("Veri nereden geliyor?", src) + dd("Dokuz boyut ne demek?", dims) + dd("Nasıl okunur", how) + dd("Neyi göstermez?", lim) + "</div>" +
+    '<nav class="an-toc" aria-label="Bu sayfada"><button type="button" data-go-id="an-season">Sezon özeti</button><button type="button" data-go-id="an-time">Zaman çizgisi</button>' +
+    '<button type="button" data-go-id="an-event">Olay olay</button></nav></div></section>';
+}
+
+/* ---------------------------------------------------------------- season overview */
+var AN_CACHE = null;
+function anSeasonData() {
+  if (AN_CACHE) return AN_CACHE;
+  var weeks = v7Weeks(), keys = [].concat.apply([], weeks.map(function (w) { return w.keys; }));
+  var hab = narrHabits(D.N, keys);
+  AN_CACHE = { weeks: weeks, keys: keys, hab: hab, find: narrFindings(hab, AN_MIN) };
+  return AN_CACHE;
+}
+function anFindText(f) {
+  var o = esc(srcName(f.s)), d = esc(anDim(f.d)), ex = esc(anPct(f.e / f.n));
+  if (f.kind === "rep") return "<b>" + o + "</b>, " + d.toLocaleLowerCase("tr") + " olarak en sık <q>" + esc(f.val) + "</q> seçiyor: " + f.k + "/" + f.n + " olayda (" + anPct(f.k / f.n) + "). Aynı olaylardaki öteki kurumlarda bu oran " + ex + ".";
+  if (f.kind === "skip") return "<b>" + o + "</b> başlıklarında <q>" + d + "</q> öteki kurumlardan daha sık boş kalıyor: " + f.k + "/" + f.n + " olayda (" + anPct(f.k / f.n) + ") başlıkta yok. Aynı olaylardaki öteki kurumlarda " + ex + ".";
+  return "<b>" + o + "</b> başlıkları <q>" + d + "</q> sorusunu öteki kurumlardan daha sık yanıtlıyor: " + (f.n - f.k) + "/" + f.n + " olayda (" + anPct((f.n - f.k) / f.n) + "). Aynı olaylardaki öteki kurumlarda " + anPct((f.n - f.e) / f.n) + ".";
+}
+var AN_KIND = { rep: "tekrarlıyor", skip: "atlıyor", fill: "dolduruyor" };
+function anSeason() {
+  var S = anSeasonData(), hab = S.hab.filter(function (h) { return h.n >= AN_MIN; });
+  if (!hab.length) return "";
+  var best = function (h, kind, abs) {
+    var b = null; Object.keys(h[kind]).forEach(function (d) { var o = h[kind][d], z = abs ? Math.abs(o.z) : o.z; if (!b || z > b.z) b = { d: d, o: o, z: z }; }); return b;
+  };
+  var keys = S.find.slice(0, 8), fRep = S.find.filter(function (f) { return f.kind === "rep"; })[0], fSkip = S.find.filter(function (f) { return f.kind !== "rep"; })[0];
+  var list = keys.length ? '<ol class="an-keys">' + keys.map(function (f, i) {
+    return '<li class="' + bloc(f.s) + '"><b class="an-no">' + (i + 1) + '</b><div><p class="an-kk">' + anSide(f.s) + esc(AN_KIND[f.kind]) + " · " + esc(anDim(f.d)) +
+      '</p><p class="an-kt">' + anFindText(f) + "</p></div></li>";
+  }).join("") + "</ol>" : '<p class="v7-note">Bu ölçütle hiçbir kurumda öteki kurumlardan belirgin biçimde ayrılan bir alışkanlık bulunmadı.</p>';
+  /* chart A: each outlet's strongest repeat; chart B: each outlet's most unusual empty rate (either way) */
+  var rep = hab.map(function (h) { var b = best(h, "rep"); return b && { h: h, d: b.d, o: b.o }; }).filter(Boolean)
+    .sort(function (a, b) { return (b.o.k - b.o.e) / b.h.n - (a.o.k - a.o.e) / a.h.n || b.o.z - a.o.z; });
+  var skp = hab.map(function (h) { var b = best(h, "skip", true); return { h: h, d: b.d, o: b.o }; })
+    .sort(function (a, b) { return (b.o.k - b.o.e) / b.h.n - (a.o.k - a.o.e) / a.h.n || b.o.z - a.o.z; });
+  var row = function (x, sub) {
+    var p = x.o.k / x.h.n, e = x.o.e / x.h.n, c = AN_SC[bloc(x.h.s)];
+    return { k: x.h.s, label: srcName(x.h.s), sub: sub, pts: [{ v: e, hollow: true, c: "var(--ink2)" }, { v: p, c: c, big: true }], span: "pts", val: anPct(p),
+      tip: "<b>" + esc(srcName(x.h.s)) + "</b><br>" + esc(sub) + "<br>" + x.o.k + "/" + x.h.n + " olay (" + anPct(p) + ")<br>Aynı olaylarda öteki kurumlar: " + anPct(e) };
+  };
+  var axis = { min: 0, max: 1, fmt: function (v) { return anPct(v); }, lw: 230, vw: 52 };
+  var key = vzKey([{ t: "kurumun kendisi (renk: yerleşim)", c: "var(--ink)" }, { t: "aynı olaylarda öteki kurumlar", kind: "o", c: "var(--ink2)" }]);
+  var TOP = 12; /* chart shows the 12 clearest; the table twin lists every outlet */
+  skp.sort(function (a, b) { return Math.abs(b.o.k - b.o.e) / b.h.n - Math.abs(a.o.k - a.o.e) / a.h.n; });
+  var rRows = rep.slice(0, TOP).map(function (x) { return row(x, anDim(x.d) + ": " + x.o.val); });
+  var sRows = skp.slice(0, TOP).map(function (x) { return row(x, anDim(x.d) + " · başlıkta yok"); });
+  var tbl = function (xs, head, val) {
+    return vzTable(["Kurum", "Yerleşim", "Olay", head, "Kurum", "Öteki kurumlar"], xs.map(function (x) {
+      return [srcName(x.h.s), SIDE[bloc(x.h.s)], x.h.n, val(x), x.o.k + "/" + x.h.n + " (" + anPct(x.o.k / x.h.n) + ")", anPct(x.o.e / x.h.n)];
+    }));
+  };
+  var how = "<p>Yalnız en az " + AN_MIN + " olayı kodlanan kurumlar. Her kurumun payı, <b>aynı olaylardaki</b> öteki kurumların payıyla karşılaştırılır; böylece bir kurumun daha çok belli tür olay vermesi alışkanlık sayılmaz. " +
+    "Tekrar için bir değerin en az üç olayda birebir aynı yazılmış olması gerekir. Anahtar bulgular listesine, farkın en az 8 puan olduğu ve olaydan olaya oynamanın açıklayamayacağı kadar büyük olduğu (beklenen dağılımın iki katı) durumlar girer; sıralama bu güvene göredir.</p>";
+  return '<section class="an-sec" id="an-season">' + pHead("Sezon özeti", "Kim neyi tekrarlıyor, neyi atlıyor?") +
+    '<p class="an-sub">' + S.keys.length + " kodlanmış olay, " + S.weeks.filter(function (w) { return w.keys.length; }).length + " hafta. Her kurum kendi olaylarında, aynı olayları veren öteki kurumlarla karşılaştırıldı.</p>" +
+    '<div class="an-kbox"><h3 class="an-h3">Anahtar bulgular</h3>' + list + "</div>" +
+    findingBlock({ id: "an-rep", claim: fRep ? esc(srcName(fRep.s)) + " en belirgin tekrarı yapıyor: " + esc(anDim(fRep.d).toLocaleLowerCase("tr")) + " olarak “" + esc(fRep.val) + "”, " + anPct(fRep.k / fRep.n) + " (aynı olaylarda öteki kurumlarda " + anPct(fRep.e / fRep.n) + ")." : "Hiçbir kurumun tekrarı öteki kurumlardan belirgin biçimde ayrılmıyor.",
+      viz: key + vzRows(rRows, axis), read: "Farkı en büyük " + Math.min(TOP, rep.length) + " kurum (hepsi tabloda). Her satır bir kurum ve en çok tekrarladığı seçim. Dolu nokta boş noktadan ne kadar sağdaysa kurum o seçimi öteki kurumlardan o kadar sık yapıyor.",
+      means: "Bir kurumun aynı olay türünde hep aynı çerçeveyi ya da aynı aktörü seçmesi, okurun o tür olayları hep aynı hikâyeyle görmesi demektir.", how: how,
+      table: tbl(rep, "Tekrar", function (x) { return anDim(x.d) + ": " + x.o.val; }) }) +
+    findingBlock({ id: "an-skip", claim: fSkip ? esc(srcName(fSkip.s)) + " başlıklarında “" + esc(anDim(fSkip.d)) + "” öteki kurumlardan en belirgin biçimde " + (fSkip.kind === "skip" ? "daha sık boş kalıyor: " + anPct(fSkip.k / fSkip.n) + " (aynı olaylarda öteki kurumlarda " + anPct(fSkip.e / fSkip.n) + ")." : "daha sık dolu: " + anPct(1 - fSkip.k / fSkip.n) + " (aynı olaylarda öteki kurumlarda " + anPct(1 - fSkip.e / fSkip.n) + ").") : "Hiçbir kurumun boş bıraktığı boyutlar öteki kurumlardan belirgin biçimde ayrılmıyor.",
+      viz: key + vzRows(sRows, axis), read: "Farkı en büyük " + Math.min(TOP, skp.length) + " kurum (hepsi tabloda). Her satır bir kurum ve öteki kurumlardan en çok ayrıldığı boyut. Dolu nokta sağdaysa kurum o soruyu daha sık boş bırakıyor; soldaysa daha sık yanıtlıyor.",
+      means: "Başlıkta sorumlu ya da neden söylenmemesi okuru yorumsuz bırakır; sürekli boş kalan bir soru, kurumun o konuda konuşmamayı seçtiğini gösterebilir.", how: how,
+      table: tbl(skp, "Boyut", function (x) { return anDim(x.d); }) }) + "</section>";
+}
+
+/* ---------------------------------------------------------------- timeline */
+function anTimePanel(id, title, dim, top) {
+  var S = anSeasonData(), T = narrTimeline(D.N, S.weeks, dim, top, bloc, false), sides = ["left", "right"], max = 0;
+  T.weeks.forEach(function (w) { sides.forEach(function (b) { var s = w.side[b]; T.vals.forEach(function (v) { if (s.n) max = Math.max(max, (s.c[v] || 0) / s.n); }); }); });
+  max = max || 1;
+  var cols = T.weeks.length, yz = T.weeks.map(function (w) { return w.coded === "agent"; }), fy = yz.indexOf(true);
+  var head = '<div class="an-tr an-th"><span></span><span class="an-tc">' + T.weeks.map(function (w, i) {
+    return '<i title="' + esc(w.l) + '">' + (i + 1) + "</i>";
+  }).join("") + "</span></div>";
+  var body = T.vals.map(function (v) {
+    return '<div class="an-tv"><p class="an-tl">' + esc(v) + "</p>" + sides.map(function (b) {
+      return '<div class="an-tr"><span class="an-ts">' + '<i class="an-sd" style="--c:' + AN_SC[b] + '" aria-hidden="true"></i>' + esc(SIDE[b]) + '</span><span class="an-tc">' + T.weeks.map(function (w) {
+        var s = w.side[b], c = s.c[v] || 0, p = s.n ? c / s.n : 0, k = c ? Math.max(1, Math.round(8 * p / max)) : 0;
+        return '<i class="an-led" style="--k:' + k + ";--c:" + AN_SC[b] + '"' + vzTipAttr("<b>" + esc(v) + "</b><br>" + esc(w.l) + " · " + esc(SIDE[b]) + "<br>" + c + "/" + s.n + " başlık (" + anPct(p) + ")") + ' tabindex="0"></i>';
+      }).join("") + "</span></div>";
+    }).join("") + "</div>";
+  }).join("");
+  var foot = fy >= 0 ? '<div class="an-tr an-tf" aria-hidden="true"><span></span><span class="an-tc" style="--a:' + fy + '"><b>YZ ile kodlandı</b></span></div>' : "";
+  var rows = [];
+  T.weeks.forEach(function (w) { ["left", "mid", "right"].forEach(function (b) { var s = w.side[b]; T.vals.forEach(function (v) { rows.push([w.l, SIDE[b], v, (s.c[v] || 0) + "/" + s.n, s.n ? anPct((s.c[v] || 0) / s.n) : "—"]); }); }); });
+  return { html: '<div class="an-tp" id="' + id + '" style="--n:' + cols + '"><h3 class="an-h3">' + esc(title) + '</h3><div class="an-tscroll">' + head + body + foot + "</div></div>", rows: rows, max: max };
+}
+function anTimeline() {
+  var S = anSeasonData();
+  if (S.weeks.filter(function (w) { return w.keys.length; }).length < 2) return "";
+  var fr = anTimePanel("an-tfr", "Çerçeveler", "frame", 5), bl = anTimePanel("an-tbl", "Sorumlu tutulanlar", "blame", 5);
+  /* claim: the biggest single-week share of a frame other than the plain-report frame on one side */
+  var T = narrTimeline(D.N, S.weeks, "frame", 5, bloc, false), pk = null;
+  T.weeks.forEach(function (w) { ["left", "right"].forEach(function (b) { var s = w.side[b]; T.vals.slice(1).forEach(function (v) { var p = s.n >= 10 ? (s.c[v] || 0) / s.n : 0; if (!pk || p > pk.p) pk = { p: p, v: v, w: w, b: b }; }); }); });
+  var ORD = ["ilk", "ikinci", "üçüncü", "dördüncü", "beşinci", "altıncı", "yedinci", "sekizinci", "dokuzuncu", "onuncu", "on birinci", "on ikinci", "on üçüncü", "on dördüncü"];
+  /* the week is named in words: a date in the claim would be counted up by the scene motion */
+  var claim = pk && pk.p ? "Çerçeve olarak “" + esc(pk.v) + "” en yüksek noktasına sezonun " + (ORD[T.weeks.indexOf(pk.w)] || "") + " haftasında " + esc(SIDE[pk.b].toLocaleLowerCase("tr")) + " kurumlarda ulaştı: başlıkların " + anPct(pk.p) + "." :
+    "Çerçevelerin haftadan haftaya dağılımı.";
+  var tbl = '<h4 class="an-h4">Çerçeveler</h4>' + vzTable(["Hafta", "Yerleşim", "Çerçeve", "Başlık", "Pay"], fr.rows) +
+    '<h4 class="an-h4">Sorumlu tutulanlar</h4>' + vzTable(["Hafta", "Yerleşim", "Sorumlu tutulan", "Başlık", "Pay"], bl.rows);
+  return '<section class="an-sec" id="an-time">' + pHead("Zaman çizgisi", "Hangi çerçeve ne zaman yükseldi?") +
+    findingBlock({ id: "an-timeline", claim: claim,
+      viz: vzKey([{ t: "sola yerleşik", c: "var(--left)" }, { t: "sağa yerleşik", c: "var(--right)" }]) + '<div class="an-tgrid">' + fr.html + bl.html + "</div>",
+      read: "Sütunlar haftalardır (1 = " + esc(S.weeks[0].l) + (pk && pk.p ? "; zirve haftası " + (T.weeks.indexOf(pk.w) + 1) + " = " + esc(pk.w.l) : "") + "). Her sütundaki ışıklı nokta sayısı, o hafta o taraftaki başlıklarda bu seçimin payıdır; en uzun sütun panelin en yüksek payıdır (çerçeveler " + anPct(fr.max) + ", sorumlular " + anPct(bl.max) + "). Bir noktaya " + orTap() + ": sayılar görünür.",
+      means: "Bir çerçevenin yükselmesi çoğu zaman o hafta hangi olayların gündemde olduğunu yansıtır; iki tarafın aynı hafta farklı çerçevelere yaslanması ise aynı gündemin iki ayrı hikâyeyle anlatıldığını gösterir.",
+      how: "<p>Sezonun en sık beş çerçevesi ve en sık beş sorumlusu. Her hafta, o taraftaki kurumların kodlanan bütün başlıkları paydadır; merkez kurumlar tabloda. Yapay zekâ ile kodlanan haftalarda kodlama yöntemi değiştiği için o haftalardaki kaymalar kısmen yöntemden gelebilir; değerler serbest metindir, yalnız birebir aynı yazılanlar birlikte sayılır.</p>",
+      table: tbl }) + "</section>";
+}
+
+/* ---------------------------------------------------------------- event: frame → blame → solution ribbons */
+function anFlowDims(n) {
+  var all = function (d) { return n.rows.every(function (r) { return !anVal(r, d); }); };
+  var used = ["frame", "blame", "sol"], extra = (n.focus || []).concat(NORD).filter(function (d) { return used.indexOf(d) < 0 && !all(d); }), swap = [];
+  var dims = used.map(function (d) { if (!all(d) || !extra.length) return d; var to = extra.shift(); swap.push([d, to]); return to; });
+  return { dims: dims, swap: swap };
+}
+function anSankey(key) {
+  var n = D.N[key]; if (!n || n.rows.length < 2) return "";
+  var F = anFlowDims(n), dims = F.dims, U = 15, G = 14, W = 900, NW_ = 10, LM = 190, RM = 190, sides = ["left", "mid", "right", "none"];
+  var cols = dims.map(function (d) {
+    var c = {}; n.rows.forEach(function (r) { var v = anVal(r, d); c[v] = (c[v] || 0) + 1; });
+    return Object.keys(c).sort(function (a, b) { return (a === "") - (b === "") || c[b] - c[a] || trCmp(a, b); }).map(function (v) { return { v: v, n: c[v] }; });
+  });
+  var slot = function (nd) { return Math.max(nd.n * U, 30); }, colH = function (c) { return c.reduce(function (a, nd) { return a + slot(nd) + G; }, -G); };
+  var H = Math.max.apply(null, cols.map(colH)) + 48, X = function (i) { return LM + i * (W - LM - RM - NW_) / (dims.length - 1); };
+  cols.forEach(function (c) { var y = 34 + (H - 42 - colH(c)) / 2; c.forEach(function (nd) { nd.y = y + (slot(nd) - nd.n * U) / 2; nd.out = nd.y; nd["in"] = nd.y; y += slot(nd) + G; }); });
+  var at = function (i, v) { return cols[i].filter(function (x) { return x.v === v; })[0]; };
+  var lab = function (v) { return v ? (v.length > 26 ? v.slice(0, 25) + "…" : v) : "başlıkta yok"; };
+  var s = '<svg class="an-sk" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(dims.map(anDim).join(" → ") + " akışı, şerit rengi kurum yerleşimi") + '">';
+  dims.forEach(function (d, i) {
+    s += '<text class="an-skh" x="' + (i === 0 ? X(0) + NW_ : i === dims.length - 1 ? X(i) : X(i) + NW_ / 2) + '" y="14" text-anchor="' + (i === 0 ? "end" : i === dims.length - 1 ? "start" : "middle") + '">' + esc(anDim(d).toLocaleUpperCase("tr")) + "</text>";
+  });
+  for (var i = 0; i < dims.length - 1; i++) {
+    var g = {};
+    n.rows.forEach(function (r) { var k = anVal(r, dims[i]) + "\u0001" + anVal(r, dims[i + 1]) + "\u0001" + bloc(r.s); (g[k] = g[k] || []).push(r.s); });
+    var links = Object.keys(g).map(function (k) { var p = k.split("\u0001"); return { a: at(i, p[0]), b: at(i + 1, p[1]), side: p[2], s: g[k] }; });
+    var si = function (l) { return sides.indexOf(l.side); };
+    links.sort(function (x, y) { return cols[i + 1].indexOf(x.b) - cols[i + 1].indexOf(y.b) || si(x) - si(y); }).forEach(function (l) { l.y0 = l.a.out; l.a.out += l.s.length * U; });
+    links.sort(function (x, y) { return cols[i].indexOf(x.a) - cols[i].indexOf(y.a) || si(x) - si(y); }).forEach(function (l) { l.y1 = l.b["in"]; l.b["in"] += l.s.length * U; });
+    var x0 = X(i) + NW_, x1 = X(i + 1), mx = (x0 + x1) / 2;
+    links.forEach(function (l) {
+      var h = l.s.length * U, a = l.y0, b = l.y1;
+      s += '<path class="an-rb" d="M' + x0 + "," + a + "C" + mx + "," + a + " " + mx + "," + b + " " + x1 + "," + b + "L" + x1 + "," + (b + h) + "C" + mx + "," + (b + h) + " " + mx + "," + (a + h) + " " + x0 + "," + (a + h) + 'Z" style="--c:' + AN_SC[l.side] + '" tabindex="0"' +
+        vzTipAttr("<b>" + esc(anDim(dims[i])) + ":</b> " + esc(lab(l.a.v)) + "<br><b>" + esc(anDim(dims[i + 1])) + ":</b> " + esc(lab(l.b.v)) + "<br>" + l.s.length + " kurum · " + esc(SIDE[l.side]) + "<br>" + esc(l.s.map(srcName).join(", "))) + "></path>";
+    });
+  }
+  cols.forEach(function (c, i) {
+    var last = i === dims.length - 1, mid = i > 0 && !last;
+    c.forEach(function (nd) {
+      var h = nd.n * U, tx = i === 0 ? X(0) - 8 : last ? X(i) + NW_ + 8 : X(i) + NW_ + 6, an = i === 0 ? "end" : "start", ty = nd.y + h / 2;
+      s += '<rect class="an-nd' + (nd.v ? "" : " an-nd0") + '" x="' + X(i) + '" y="' + nd.y + '" width="' + NW_ + '" height="' + h + '" rx="2"><title>' + esc(lab(nd.v) + " · " + nd.n + " kurum") + "</title></rect>" +
+        '<text class="an-nl' + (nd.v ? "" : " an-nl0") + (mid ? " an-halo" : "") + '" x="' + tx + '" y="' + (ty - 1) + '" text-anchor="' + an + '">' + esc(lab(nd.v)) + "</text>" +
+        '<text class="an-nn' + (mid ? " an-halo" : "") + '" x="' + tx + '" y="' + (ty + 12) + '" text-anchor="' + an + '">' + nd.n + " kurum</text>";
+    });
+  });
+  s += "</svg>";
+  var swap = F.swap.map(function (x) { return "Bu olayda hiçbir başlık “" + esc(anDim(x[0])) + "” sorusuna yanıt vermiyor; yerine “" + esc(anDim(x[1])) + "” gösteriliyor."; }).join(" ");
+  /* claim: the widest single path */
+  var paths = {};
+  n.rows.forEach(function (r) { var k = dims.map(function (d) { return lab(anVal(r, d)); }).join(" → "); (paths[k] = paths[k] || []).push(r.s); });
+  var pk = Object.keys(paths).sort(function (a, b) { return paths[b].length - paths[a].length; }), top = pk[0];
+  var claim = Object.keys(paths).length === 1 ? "Bütün kurumlar aynı yolu izliyor: " + esc(top) + "." :
+    n.rows.length + " kurum " + pk.length + " ayrı yoldan anlatıyor; en kalabalık yol " + paths[top].length + " kurumla “" + esc(top) + "”.";
+  var tbl = vzTable(["Kurum", "Yerleşim"].concat(dims.map(anDim)), orderOutlets(n.rows, v7Lean).map(function (r) {
+    return [srcName(r.s), SIDE[bloc(r.s)]].concat(dims.map(function (d) { return lab(anVal(r, d)); }));
+  }));
+  return findingBlock({ id: "an-flow", nopin: true, claim: claim,
+    viz: vzKey([{ t: "sola yerleşik", c: "var(--left)" }, { t: "merkez", c: "var(--mid)" }, { t: "sağa yerleşik", c: "var(--right)" }]) + '<div class="an-skbox" tabindex="0" role="region" aria-label="Akış şeması, yatay kaydırılabilir">' + s + "</div>",
+    read: "Soldan sağa: " + esc(dims.map(anDim).join(" → ")) + ". Şerit kalınlığı o yolu izleyen kurum sayısı, rengi kurumların yerleşimi. Bir şeride " + orTap() + ": kurumlar görünür." + (swap ? " " + swap : ""),
+    means: "Aynı çerçeveden çıkıp farklı sorumlulara giden şeritler, olayın aynı türden bir hikâye sayılsa bile başka bir adrese bağlandığını gösterir.",
+    how: "<p>Her kurumun bu olaydaki tek başlığının üç boyuttaki kodu. Boş kodlar “başlıkta yok” düğümünde toplanır. Değerler serbest metindir; yalnız birebir aynı yazılanlar aynı düğüme gider.</p>", table: tbl });
+}
+
+/* ---------------------------------------------------------------- event: outlet × nine dimensions */
+function anMatrix(key) {
+  var n = D.N[key]; if (!n || n.rows.length < 2) return "";
+  var rows = orderOutlets(n.rows, v7Lean), M = narrMatrix(rows, NORD), foc = n.focus || [];
+  var head = '<tr><th scope="col" class="an-mo">Kurum</th>' + NORD.map(function (d) {
+    var k = Object.keys(M.cnt[d]).length;
+    return '<th scope="col"' + (foc.indexOf(d) >= 0 ? ' class="an-foc"' : "") + "><b>" + esc(anDim(d)) + "</b><span>" + (k ? k + " farklı yanıt" : "hep boş") + (foc.indexOf(d) >= 0 ? " · odak" : "") + "</span></th>";
+  }).join("") + '<th scope="col" class="an-ma"><b>Yalnız</b><span>tek başına</span></th></tr>';
+  var mx = Math.max.apply(null, rows.map(function (r) { return M.alone[r.s]; })) || 1;
+  var body = rows.map(function (r) {
+    return '<tr><th scope="row" class="an-mo">' + anSide(r.s) + esc(srcName(r.s)) + "</th>" + NORD.map(function (d) {
+      var v = anVal(r, d);
+      if (!v) return '<td><span class="an-cell an-no" title="başlıkta yok">—</span><span class="an-vh">başlıkta yok</span></td>';
+      var sl = M.slot[d][v], lbl = srcName(r.s) + ": " + anDim(d) + " — " + v + (sl == null ? " (yalnız bu kurum)" : " (" + M.cnt[d][v] + " kurum)");
+      return '<td><span class="an-cell' + (sl == null ? " an-solo" : "") + '" data-d="' + d + '" data-v="' + esc(v) + '"' + (sl == null ? "" : ' style="--c:' + NPAL[sl % NPAL.length] + '"') +
+        ' title="' + esc(lbl) + '">' + esc(v.length > 42 ? v.slice(0, 41) + "…" : v) + "</span></td>";
+    }).join("") + '<td class="an-ma"><span class="an-al" style="--w:' + (M.alone[r.s] / mx) + '"><i></i>' + M.alone[r.s] + "</span></td></tr>";
+  }).join("");
+  var far = rows.slice().sort(function (a, b) { return M.alone[b.s] - M.alone[a.s] || trCmp(srcName(a.s), srcName(b.s)); })[0];
+  var claim = M.alone[far.s] ? esc(srcName(far.s)) + " bu olayı en farklı anlatan kurum: dokuz boyutun " + M.alone[far.s] + " tanesinde seçimini başka hiçbir kurum yapmadı." :
+    "Bu olayda hiçbir kurum tek başına kalan bir seçim yapmadı.";
+  return '<section class="v7-find an-mxf" data-m="scene" data-nopin id="an-matrix"><p class="v7-claim">' + claim + '</p><div class="v7-viz">' +
+    '<p class="an-mleg"><span class="an-cell" style="--c:' + NPAL[0] + '">aynı renk</span> aynı seçim (en az iki kurum) <span class="an-cell an-solo">kesik çerçeve</span> yalnız bu kurum <span class="an-cell an-no">—</span> başlıkta yok</p>' +
+    '<div class="an-mbox" tabindex="0" role="region" aria-label="Kurum ve dokuz boyut tablosu, yatay kaydırılabilir"><table class="an-mx"><caption class="an-vh">Her kurumun bu olaydaki dokuz boyut kodu</caption><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div></div>" +
+    '<p class="v7-read">Satırlar yerleşim sırasında (soldan sağa), sütunlar dokuz boyut; “odak” işaretli sütunlar olayın kurumları ayıran boyutlarıdır. Bir hücreye ' + orTap() + ": aynı seçimi yapan kurumlar parlar. “Yalnız” sütunu, kurumun kimsenin paylaşmadığı seçim sayısıdır.</p></section>";
+}
+
+function anWire(root) {
+  var mark = function (el) {
+    [].forEach.call(root.querySelectorAll(".an-cell.an-hi"), function (x) { x.classList.remove("an-hi"); });
+    if (el) [].forEach.call(root.querySelectorAll(".an-mx .an-cell[data-d]"), function (x) {
+      if (x.getAttribute("data-d") === el.getAttribute("data-d") && x.getAttribute("data-v") === el.getAttribute("data-v")) x.classList.add("an-hi");
+    });
+  };
+  root.addEventListener("mouseover", function (ev) { var c = ev.target.closest && ev.target.closest(".an-mx .an-cell[data-d]"); mark(c); });
+  root.addEventListener("click", function (ev) {
+    var c = ev.target.closest && ev.target.closest(".an-mx .an-cell[data-d]"); if (c) mark(c);
+    var b = ev.target.closest && ev.target.closest("[data-go-id]"), t = b && document.getElementById(b.getAttribute("data-go-id"));
+    if (t) t.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+  });
 }
 
 /* v7 Olay: the single event page. Header, narrative map, split card + all headlines, cognitive review, timing, outlets. */
@@ -14448,17 +14995,93 @@ function pgYontem7(params) {
     h2("sinir", "Sınırlılıklar") + M.sinir + h2("kaynak", "Kaynaklar") + kaynakHtml(M.refs) + "</article>" + X.fix + "</div>";
 }
 
-/* /yontem is a methodology page: no motion hooks, and sub-headings lose the old "2.1" prefixes (sections are renumbered 1–12). */
+/* /yontem is a methodology page: no motion hooks, sub-headings lose the old "2.1" prefixes (sections are renumbered 1–12),
+   and the article is cut into chapter panels (one visible at a time) beside a sticky chapter list. Runs after every v3 injection. */
+var YM_CH0 = ["cm3method", "İşlem hattı ve durum"];
 function ymPlain(root) {
   [].forEach.call(root.querySelectorAll("[data-m]"), function (e) { e.removeAttribute("data-m"); });
   [].forEach.call(root.querySelectorAll(".ym h3"), function (h) {
     var t = h.firstChild; if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/^\d\.\d /, "");
   });
+  var art = root.querySelector("article.xpaper"), toc = root.querySelector(".ym-toc"), wrap = root.querySelector(".ym-plain");
+  if (!art || !toc || art.querySelector(".ym-panel")) return;
+  var chs = [YM_CH0].concat(YM_TOC), panels = [], cur, mk = function (i) {
+    cur = document.createElement("section"); cur.className = "ym-panel"; cur.setAttribute("data-ch", chs[i][0]); cur.hidden = true;
+    cur.innerHTML = '<div class="ym-body"></div>'; panels.push(cur); return cur;
+  };
+  mk(0);
+  var h0 = document.createElement("h2"); h0.className = "ym-h ym-ch0"; h0.tabIndex = -1; h0.textContent = YM_CH0[1];
+  cur.insertBefore(h0, cur.firstChild);
+  [].slice.call(art.children).forEach(function (c) {
+    if (c.matches("h2.ym-h")) { mk(panels.length); cur.insertBefore(c, cur.firstChild); c.tabIndex = -1; }
+    else cur.querySelector(".ym-body").appendChild(c);
+  });
+  var fix = root.querySelector("#sfix"); if (fix) cur.querySelector(".ym-body").appendChild(fix);
+  /* Desktop grid: cut each chapter body into blocks at its h3s; wide things (tables, figures, glossary, steps, lists of cards) get a block of their own. */
+  var WIDE = ".scroller,table,figure,.v7-gloss,.v7-tr,.v7-cl,.v7-cl-ctl,.vz,.refs,.ym-steps,.abs,.xwalk,section.sec,.panel,[id^=c]:not(h3):not(p)";
+  panels.forEach(function (p) {
+    var body = p.querySelector(".ym-body"), kids = [].slice.call(body.childNodes), blk = null, narrow = 0, out = [];
+    var open = function (wide) { blk = document.createElement("section"); blk.className = "ym-blk" + (wide ? " ym-wide" : ""); out.push(blk); if (!wide) narrow++; };
+    kids.forEach(function (c) {
+      var el = c.nodeType === 1, wide = el && c.matches(WIDE) && !c.matches("h3,p,ul,ol");
+      if (!el && !(c.textContent || "").trim()) { if (blk) blk.appendChild(c); return; } /* whitespace never opens a block */
+      if (el && !c.textContent.trim() && !c.querySelector("img,svg,canvas,table,input,select")) { if (blk) blk.appendChild(c); return; }
+      if (wide) { open(true); blk.appendChild(c); blk = null; return; }
+      if (!blk || (el && c.matches("h3"))) open(false);
+      blk.appendChild(c);
+    });
+    /* consecutive narrow blocks share a row grid (--n tracks); wide blocks sit between rows */
+    var row = null;
+    out.forEach(function (b) {
+      if (b.classList.contains("ym-wide")) { row = null; body.appendChild(b); return; }
+      if (!row) { row = document.createElement("div"); row.className = "ym-row"; row.setAttribute("data-n", 0); body.appendChild(row); }
+      row.appendChild(b); row.setAttribute("data-n", row.children.length);
+      row.style.setProperty("--n", row.children.length);
+    });
+    if (narrow === 1) body.classList.add("ym-one");
+  });
+  panels.forEach(function (p, i) {
+    var pn = document.createElement("nav"); pn.className = "ym-pn"; pn.setAttribute("aria-label", "Bölümler arası");
+    var a = function (j, cls, lab) { return '<a class="' + cls + '" href="#/yontem?s=' + chs[j][0] + '"><span>' + lab + "</span><b>" + chs[j][1] + "</b></a>"; };
+    pn.innerHTML = (i ? a(i - 1, "prev", "← önceki") : "<i></i>") + (i < panels.length - 1 ? a(i + 1, "next", "sonraki →") : "<i></i>");
+    p.appendChild(pn); art.appendChild(p);
+  });
+  var sel = document.createElement("label"); sel.className = "ym-sel";
+  sel.innerHTML = '<span>Bölüm</span><select aria-label="Bölüm seç">' + chs.map(function (c, i) { return '<option value="' + c[0] + '">' + (i ? i + ". " : "") + c[1] + "</option>"; }).join("") + "</select>";
+  var lay = document.createElement("div"); lay.className = "ym-lay";
+  art.parentNode.insertBefore(lay, art); lay.appendChild(sel); lay.appendChild(toc); lay.appendChild(art);
+  [].forEach.call(toc.querySelectorAll("a"), function (a, i) { if (i) a.insertAdjacentHTML("afterbegin", '<span class="ym-no">' + i + ".</span> "); });
+}
+
+/* Show one chapter; id may be a chapter key or any anchor inside one. Returns the chapter key. */
+function ymOpen(id, focus) {
+  var ps = [].slice.call(document.querySelectorAll(".ym-panel")); if (!ps.length) return "";
+  var el = id && document.getElementById(id), p = ps.filter(function (x) { return x.getAttribute("data-ch") === id; })[0] || (el && el.closest(".ym-panel")) || ps[0];
+  var key = p.getAttribute("data-ch");
+  ps.forEach(function (x) { x.hidden = x !== p; });
+  [].forEach.call(document.querySelectorAll(".ym-toc a"), function (a) {
+    var on = a.getAttribute("href") === "#/yontem?s=" + key; a.classList.toggle("on", on);
+    if (on) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+  });
+  var s = document.querySelector(".ym-sel select"); if (s) s.value = key;
+  if (focus) { var h = p.querySelector("h2"); if (h) h.focus({ preventScroll: true }); }
+  return key;
+}
+function ymGo(key) {
+  ymOpen(key, true);
+  try { history.pushState(null, "", "#/yontem?s=" + key); } catch (e) {}
+  var top = document.querySelector(".ym-lay").getBoundingClientRect().top + pageYOffset - 72;
+  window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
 }
 
 /* After render: scroll to the section (old numeric anchors accepted), wire the concept search, highlight ?k=. */
 function wireYontem(params) {
   var id = yontemAnchor(params.s) || (params.k ? "kavramlar" : ""), list = document.getElementById("clist");
+  if (document.querySelector(".ym-lay")) {
+    document.querySelector(".ym-lay").onclick = function (e) { var a = e.target.closest && e.target.closest(".ym-toc a, .ym-pn a"); if (!a) return; e.preventDefault(); ymGo(a.getAttribute("href").split("s=")[1]); };
+    document.querySelector(".ym-sel select").onchange = function () { ymGo(this.value); };
+    ymOpen(id, false);
+  }
   if (list) {
     var q = document.getElementById("cq"), tier = "all", cards = [].slice.call(list.querySelectorAll(".v7-concept"));
     var apply = function () {
@@ -14480,7 +15103,7 @@ function wireYontem(params) {
     });
     if (params.k) {
       var hit = cards.filter(function (c) { return c.getAttribute("data-k") === params.k || c.getAttribute("data-k") === bg7k(params.k); })[0];
-      if (hit) { hit.classList.add("on"); hit.setAttribute("aria-current", "true"); id = "kavramlar"; setTimeout(function () { hit.scrollIntoView({ block: "center" }); }, 40); return; }
+      if (hit) { hit.classList.add("on"); hit.setAttribute("aria-current", "true"); id = "kavramlar"; ymOpen(id, false); setTimeout(function () { hit.scrollIntoView({ block: "center" }); }, 40); return; }
     }
   }
   var tg = id && document.getElementById(id);
