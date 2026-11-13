@@ -4968,6 +4968,20 @@ function renderCompare() {
   box.innerHTML = h;
   v3decorateSplits(box);
 }
+/* Sandboxed frames (the claude.ai artifact) block form submission before any submit handler runs, so search-on-Enter and the
+   dialog "Gönder" buttons did nothing there. Every form here is handled in JS, so turn Enter and submit-button clicks into a
+   plain submit event and never let the browser submit. */
+function formSubmit(f) { if (f) f.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })); }
+document.addEventListener("keydown", function (ev) {
+  var t = ev.target;
+  if (ev.key !== "Enter" || ev.isComposing || !t || t.tagName !== "INPUT" || !t.form || /^(button|submit|checkbox|radio)$/.test(t.type)) return;
+  ev.preventDefault(); formSubmit(t.form);
+}, true);
+document.addEventListener("click", function (ev) {
+  var b = ev.target.closest && ev.target.closest('button[type="submit"], button:not([type]), input[type="submit"]');
+  if (!b || !b.form) return;
+  ev.preventDefault(); formSubmit(b.form);
+}, true);
 /* Collapsed rows on the outlet page fill on first open: 12 most loaded headlines (marked words explained), 6 events with most outlets. */
 document.addEventListener("toggle", function (ev) {
   var d = ev.target; if (!d.matches || !d.matches("details[data-lazy]") || !d.open) return;
@@ -6216,7 +6230,21 @@ function v3After(path, tab, params) {
   } else if (!V3.shadow && bar) bar.remove();
 }
 
+/* Back/forward return to where the reader was: the scroll position is kept on the current history entry (links open new entries
+   with no state, so they still start at the top). */
+var SCROLL_T = 0;
+addEventListener("scroll", function () {
+  clearTimeout(SCROLL_T);
+  SCROLL_T = setTimeout(function () { try { history.replaceState({ y: Math.round(scrollY) }, ""); } catch (e) {} }, 150);
+}, { passive: true });
+/* While the phone menu is open the page behind it must not scroll (smooth scroll paused, document locked). */
+function menuLock(on) {
+  document.documentElement.classList.toggle("menu-lock", !!on);
+  if (MOTION.lenis) { if (on) MOTION.lenis.stop(); else MOTION.lenis.start(); }
+}
 function route() {
+  menuLock(false);
+  var backY = history.state && typeof history.state.y === "number" ? history.state.y : 0;
   motionUnmount();
   v3readShadow();
   v3scrub();
@@ -6478,10 +6506,13 @@ function route() {
   /* must run before motionMount, which reads [data-m] */
   if (path === "/yontem") { ymPlain(document.getElementById("view")); wireYontem(params); }
   motionMount(document.getElementById("view"));
+  if (backY > 0) { var goBack = function () { if (MOTION.lenis) MOTION.lenis.scrollTo(backY, { immediate: true, force: true }); else scrollTo(0, backY); };
+    goBack(); setTimeout(goBack, 400); }
   var b3 = document.getElementById("burger"), mm = document.getElementById("mobmenu");
   if (b3) b3.onclick = function () {
     var open = mm.classList.toggle("open");
     b3.setAttribute("aria-expanded", open ? "true" : "false");
+    menuLock(open);
   };
   [].slice.call(document.querySelectorAll("#theme, .theme-t")).forEach(function (th) { th.onclick = function () {
     var cur2 = document.documentElement.getAttribute("data-theme");

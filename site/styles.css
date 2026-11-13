@@ -2685,3 +2685,6 @@ body:has(#app.intro){overflow-x:hidden}
 .an-mx td{font-family:var(--ff-b);letter-spacing:0;text-transform:none}
 .an-mx .an-cell.an-no{border:0;padding:3px 4px;font-style:normal}
 .an-sec .vz-r{min-height:42px;padding:3px 0}
+
+/* phone menu open: the page behind does not scroll */
+html.menu-lock,html.menu-lock body{overflow:hidden}

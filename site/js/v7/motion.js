@@ -113,7 +113,7 @@ MOTION_K.tickets = function (el, first) {
   var nf = new Intl.NumberFormat("tr"), tl, show = function () { if (!tl) return; var p = tl.progress(); ns.forEach(function (b, i) { b.textContent = nf.format(p > 0 && p < 1 ? Math.round(os[i].v) : +b.dataset.n); }); };
   var top = function () { var n = document.querySelector(".navbar"); return "top " + ((n ? n.offsetHeight : 64) + 24) + "px"; };
   tl = gsap.timeline({ onUpdate: show, onComplete: show, onReverseComplete: show,
-    scrollTrigger: wide ? { trigger: sec, start: top, end: "+=100%", pin: sec, scrub: .8, onLeave: show, onLeaveBack: show } : { trigger: el, start: "top 85%" } });
+    scrollTrigger: wide ? { trigger: sec, start: top, end: "+=45%", pin: sec, scrub: .5, onLeave: show, onLeaveBack: show } : { trigger: el, start: "top 85%" } });
   if (!(first && motionInView(el))) tl.from(el.querySelectorAll(".tix"), { y: 90, rotateX: -55, transformPerspective: 900, transformOrigin: "50% 100%", opacity: 0, duration: .5, stagger: .12, ease: "power3.out" }, 0);
   ns.forEach(function (b, i) { tl.to(os[i], { v: +b.dataset.n, duration: wide ? 1 : 2, ease: wide ? "none" : "power2.out" }, wide ? .15 : 0); });
   show();
