@@ -77,6 +77,104 @@ function blameByBloc(N, keys, bloc) {
     .sort(function (a, b) { return tot(b) - tot(a) || trCmp(a.value, b.value); });
 }
 
+/* ---- Anlatı haritası season aggregates. Empty = "başlıkta yok" (same test as the site's UNSET). */
+function anEmpty(v) { v = String(v == null ? "" : v).trim(); return !v || /belirtilmiyor|yok|^—$/i.test(v); }
+function anVal(r, d) { return anEmpty(r[d]) ? "" : String(r[d]).trim(); }
+
+/* Per outlet habits over many events, each against an event-matched expectation: in every event the outlet coded,
+   the share of the OTHER outlets doing the same thing (so a heavy diet of one kind of event is not read as a habit).
+   skip[d] = {k: events left empty, e: expected, v: variance}; rep[d] = same for the outlet's most-used value (used >= 3 times).
+   z = (k - e) / sqrt(v): how far above the matched expectation, in units of its spread (Poisson-binomial). */
+function narrHabits(N, keys, dims) {
+  dims = dims || V7_DIMS;
+  var by = {};
+  keys.forEach(function (key) {
+    var rows = (N[key] && N[key].rows) || [];
+    if (rows.length < 2) return;
+    rows.forEach(function (r) { (by[r.s] = by[r.s] || []).push({ r: r, rows: rows }); });
+  });
+  var z = function (o) { return o.v > 0 ? (o.k - o.e) / Math.sqrt(o.v) : 0; };
+  var leaveOut = function (x, test) {
+    var m = 0; x.rows.forEach(function (o) { if (o !== x.r && test(o)) m++; });
+    return m / (x.rows.length - 1);
+  };
+  return Object.keys(by).sort().map(function (s) {
+    var evs = by[s], skip = {}, rep = {};
+    dims.forEach(function (d) {
+      var sk = { k: 0, e: 0, v: 0 }, cnt = {};
+      evs.forEach(function (x) {
+        var p = leaveOut(x, function (o) { return !anVal(o, d); });
+        if (!anVal(x.r, d)) sk.k++; else cnt[anVal(x.r, d)] = (cnt[anVal(x.r, d)] || 0) + 1;
+        sk.e += p; sk.v += p * (1 - p);
+      });
+      sk.z = z(sk); skip[d] = sk;
+      Object.keys(cnt).filter(function (v) { return cnt[v] >= 3; }).forEach(function (val) {
+        var o = { val: val, k: cnt[val], e: 0, v: 0 };
+        evs.forEach(function (x) { var p = leaveOut(x, function (y) { return anVal(y, d) === val; }); o.e += p; o.v += p * (1 - p); });
+        o.z = z(o);
+        if (!rep[d] || o.z > rep[d].z) rep[d] = o;
+      });
+    });
+    return { s: s, n: evs.length, skip: skip, rep: rep };
+  });
+}
+
+/* Ranked findings: for each outlet with >= minN events, its strongest repeat and its most unusual empty rate (more often empty: "skip",
+   more often answered: "fill"), kept when clearly apart from the others in the same events (|z| >= 2 and >= 8 points). Sorted by |z|. */
+function narrFindings(habits, minN) {
+  minN = minN || 10;
+  var out = [];
+  habits.forEach(function (h) {
+    if (h.n < minN) return;
+    ["rep", "skip"].forEach(function (kind) {
+      var best = null;
+      Object.keys(h[kind]).forEach(function (d) { var o = h[kind][d]; if (!best || Math.abs(o.z) > Math.abs(best.o.z)) best = { d: d, o: o }; });
+      if (!best || Math.abs(best.o.z) < 2 || Math.abs(best.o.k - best.o.e) / h.n < .08) return;
+      var k = kind === "rep" ? (best.o.z > 0 ? "rep" : null) : best.o.z > 0 ? "skip" : "fill";
+      if (k) out.push({ s: h.s, kind: k, d: best.d, val: best.o.val || "", n: h.n, k: best.o.k, e: best.o.e, z: best.o.z });
+    });
+  });
+  return out.sort(function (a, b) { return Math.abs(b.z) - Math.abs(a.z) || trCmp(a.s, b.s); });
+}
+
+/* Week x side counts for one dimension: the `top` most-used values over all weeks (plus "" for empty when withEmpty).
+   -> {vals, weeks: [{k, l, coded, side: {left|mid|right|none: {n: rows, c: {val: count}}}}]} */
+function narrTimeline(N, weeks, dim, top, bloc, withEmpty) {
+  var tot = {};
+  weeks.forEach(function (w) { w.keys.forEach(function (k) { ((N[k] && N[k].rows) || []).forEach(function (r) { var v = anVal(r, dim); if (v) tot[v] = (tot[v] || 0) + 1; }); }); });
+  var vals = Object.keys(tot).sort(function (a, b) { return tot[b] - tot[a] || trCmp(a, b); }).slice(0, top);
+  if (withEmpty) vals.push("");
+  return { vals: vals, weeks: weeks.map(function (w) {
+    var side = {};
+    ["left", "mid", "right", "none"].forEach(function (b) { side[b] = { n: 0, c: {} }; });
+    w.keys.forEach(function (k) {
+      ((N[k] && N[k].rows) || []).forEach(function (r) {
+        var b = side[bloc(r.s)] || side.none, v = anVal(r, dim);
+        b.n++; if (vals.indexOf(v) >= 0) b.c[v] = (b.c[v] || 0) + 1;
+      });
+    });
+    return { k: w.k, l: w.l, coded: w.coded, side: side };
+  }) };
+}
+
+/* Values of one dimension in one event: shared (>= 2 outlets) values get a colour slot by size; singletons and empties none.
+   -> {val: {n, slot}} and per outlet the number of dimensions where it stands alone. */
+function narrMatrix(rows, dims) {
+  var cnt = {}, alone = {};
+  dims.forEach(function (d) {
+    var c = cnt[d] = {};
+    rows.forEach(function (r) { var v = anVal(r, d); if (v) c[v] = (c[v] || 0) + 1; });
+  });
+  var slot = {};
+  dims.forEach(function (d) {
+    slot[d] = {};
+    Object.keys(cnt[d]).filter(function (v) { return cnt[d][v] > 1; }).sort(function (a, b) { return cnt[d][b] - cnt[d][a] || trCmp(a, b); })
+      .forEach(function (v, i) { slot[d][v] = i; });
+  });
+  rows.forEach(function (r) { alone[r.s] = dims.filter(function (d) { var v = anVal(r, d); return v && cnt[d][v] === 1; }).length; });
+  return { cnt: cnt, slot: slot, alone: alone };
+}
+
 function firstSentence(t) { t = String(t || "").trim(); var i = t.indexOf(". "); return i < 0 ? t : t.slice(0, i + 1); }
 
 function yzText(f, review) {
@@ -378,7 +476,7 @@ function toneCell(cell, min) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
+  module.exports = { anEmpty: anEmpty, narrHabits: narrHabits, narrFindings: narrFindings, narrTimeline: narrTimeline, narrMatrix: narrMatrix, trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
     dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints,
     axisDist: axisDist, partyRank: partyRank, nearestParty: nearestParty, compileAliases: compileAliases, matchParties: matchParties, mentionStats: mentionStats, mentionShares: mentionShares, toneCell: toneCell, PARTI_ALIAS: PARTI_ALIAS };
 }

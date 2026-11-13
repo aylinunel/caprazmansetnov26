@@ -187,7 +187,8 @@ MOTION_K.scene = function (el, first) {
   if (!claim || !viz) return;
   /* below the sticky nav and the sticky section tabs (.subnav) */
   var top = function () { var b = 64; [].forEach.call(document.querySelectorAll(".navbar,.subnav"), function (n) { b = Math.max(b, n.getBoundingClientRect().bottom); }); return b + 16; };
-  if (innerWidth >= 901) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
+  /* big tables/diagrams opt out (data-nopin): a pinned claim would cover their header rows */
+  if (innerWidth >= 901 && !el.hasAttribute("data-nopin")) ScrollTrigger.create({ trigger: claim, start: function () { return "top " + top() + "px"; }, endTrigger: viz,
     end: function () { return "bottom " + (top() + claim.offsetHeight + 24) + "px"; }, pin: claim, pinSpacing: false, toggleClass: "is-pin" });
   if (g6 && !(first && motionInView(g6))) gsap.from(g6, { scale: .86, opacity: 0, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: g6, start: "top 85%" } });
   var rows = g6 ? [] : [].slice.call(viz.querySelectorAll(".vz-r:not(.vz-ax),.or-bar")), bars = viz.querySelectorAll(".vz-span,.or-bt i");
