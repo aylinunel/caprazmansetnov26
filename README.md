@@ -14,7 +14,7 @@ It does not judge who is right. It shows who wrote what, and how.
 
 ## What is new in 8.1
 
-The collector ([`aylinunel/turkish-news-scraper`](https://github.com/aylinunel/turkish-news-scraper), 72-publisher registry) now supplies 51 outlets through 13 November. Every analysis was recomputed and the site has a page, **8.1’de yeni** (`#/yenilikler`), comparing each result with 8.0. `python -m capraz_pipeline.whatsnew --old <8.0 core.bin> --new <8.1 core.bin>` regenerates it. Anlatı haritası covers 1–13 November (AI-coded, marked YZ); BiasGuard still reviews only the 8.0 events. A Parti is a minor party and never ranks as an outlet's nearest party.
+The collector ([`aylinunel/turkish-news-scraper`](https://github.com/aylinunel/turkish-news-scraper), 72-publisher registry) now supplies 51 outlets through 13 November. Every analysis was recomputed and the site has a page, **8.1’de yeni** (`#/yenilikler`), comparing each result with 8.0. `python -m capraz_pipeline.whatsnew --old <8.0 core.bin> --new <8.1 core.bin>` regenerates it. Anlatı haritası covers 1–13 November (AI-coded, marked YZ); BiasGuard still reviews only the 8.0 events. A Parti is a minor party and never ranks as an outlet's nearest party. Anlatı haritası is its own topic (`#/anlati`: Nasıl okunur, Sezon haritası, Olay haritası); bias names from the AI review carry a short inline explanation.
 
 ---
 
