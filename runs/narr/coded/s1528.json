@@ -1,0 +1,142 @@
+{
+ "q": {
+  "happened": "İstanbul'da M5 Üsküdar-Sultanbeyli metro hattında kablo kaynaklı patlama yaşandı, seferler aksadı ve sonra normale döndü.",
+  "agree": "M5 hattında bir arıza ya da patlama olduğu ortak.",
+  "differ": "Sabah, Mynet, Evrensel ve Yeni Yaşam 'kablo patlaması' nedenini veriyor; A Haber ve Takvim 'patlama sesleri', 'panik' diliyle dramatik kuruyor; TRT Haber yalnızca 'arıza' diyor; Cumhuriyet, Milli Gazete ve Habertürk durum sorusu soruyor; Diken seferlerin normale döndüğünü başlığa taşıyor.",
+  "care": "'Patlama' ile 'arıza' sözcükleri arasındaki seçim, olayın tehlike ve panik mi yoksa sıradan teknik aksaklık mı olarak okunacağını belirler."
+ },
+ "rows": [
+  {
+   "s": "sabah",
+   "frame": "Metro arızası",
+   "hero": "",
+   "blame": "",
+   "cause": "Kablo patlaması",
+   "cons": "Seferler aksadı",
+   "aff": "Yolcular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Arıza",
+   "hero": "",
+   "blame": "",
+   "cause": "Arıza",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Patlama paniği",
+   "hero": "",
+   "blame": "",
+   "cause": "Patlama, duman",
+   "cons": "Seferler durduruldu",
+   "aff": "Yolcular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Patlama paniği",
+   "hero": "",
+   "blame": "",
+   "cause": "Patlama",
+   "cons": "Seferler aksadı",
+   "aff": "Yolcular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Metro arızası",
+   "hero": "",
+   "blame": "",
+   "cause": "Kablo patlaması",
+   "cons": "Yolcu dumandan etkilendi",
+   "aff": "Dumandan etkilenen yolcu",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Metro arızası",
+   "hero": "",
+   "blame": "",
+   "cause": "Kablo patlaması",
+   "cons": "Seferler durdu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Durum sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Hat kapandı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "yeniyasam",
+   "frame": "Metro arızası",
+   "hero": "",
+   "blame": "",
+   "cause": "Kablo arızası",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Metro arızası",
+   "hero": "",
+   "blame": "",
+   "cause": "Patlama",
+   "cons": "Seferler normale döndü",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Durum sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "Arıza",
+   "cons": "Seferler normale döndü mü",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Durum sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Seferler normale döndü mü",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

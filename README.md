@@ -12,6 +12,12 @@ It does not judge who is right. It shows who wrote what, and how.
 
 ---
 
+## What is new in 8.1
+
+The collector ([`aylinunel/turkish-news-scraper`](https://github.com/aylinunel/turkish-news-scraper), 72-publisher registry) now supplies 51 outlets through 13 November. Every analysis was recomputed and the site has a page, **8.1’de yeni** (`#/yenilikler`), comparing each result with 8.0. `python -m capraz_pipeline.whatsnew --old <8.0 core.bin> --new <8.1 core.bin>` regenerates it. Anlatı haritası covers 1–13 November (AI-coded, marked YZ); BiasGuard still reviews only the 8.0 events. A Parti is a minor party and never ranks as an outlet's nearest party.
+
+---
+
 ## Contents
 
 **For everyone**
@@ -42,9 +48,9 @@ It does not judge who is right. It shows who wrote what, and how.
 
 ## In one minute
 
-1. **We collect** every headline that about 37 Turkish news outlets publish (245,935 headlines from 33
-   outlets between 1 September and 3 November 2026).
-2. **We group** headlines that report the same thing into **events** (5,341 of them).
+1. **We collect** every headline that about 37 Turkish news outlets publish (388,760 headlines from 51
+   outlets between 1 September and 13 November 2026; 8.0 had 245,935 from 33 outlets).
+2. **We group** headlines that report the same thing into **events** (9,230 of them).
 3. **We compare** how each outlet wrote its headline: which words differ, how loaded the language is,
    who is blamed, who reported first.
 4. **We publish** one website that shows this per event, per outlet, per party and as season-long patterns,
@@ -82,12 +88,12 @@ It is written for three kinds of readers at once:
 
 | | |
 |---|---|
-| **Window** | 1 September – 3 November 2026 (Türkiye time) |
-| **Headlines** | 245,935 from 33 outlets (181,274 with a lede), no sampling |
-| **Events** | 5,341 groups of headlines about the same thing (5,201 automatic, 140 hand-checked) |
+| **Window** | 1 September – 13 November 2026 (Türkiye time) |
+| **Headlines** | 388,760 from 51 outlets (240,683 with a lede), no sampling |
+| **Events** | 9,230 groups of headlines about the same thing (9,090 automatic, 140 hand-checked) |
 | **Parties** | 19 parties placed on the same six ideological axes as the outlets |
 | **Placement** | each outlet's 0–100 position in a supplied registry: below 45 is left, above 55 is right (not independently verified) |
-| **Validation** | event clustering pair-F1 0.845 against hand-made reference events; event-topic micro-F1 0.755 (`docs/build-report.json`) |
+| **Validation** | event clustering pair-F1 0.847 against hand-made reference events; event-topic micro-F1 0.755 (`docs/build-report.json`) |
 
 ---
 

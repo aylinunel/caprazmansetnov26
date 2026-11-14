@@ -387,7 +387,8 @@ function axisDist(a, b, ax) {
 function partyRank(outlet, parties, ax) {
   return (parties || []).map(function (p) { return { p: p, d: axisDist(outlet, p, ax) }; })
     .filter(function (x) { return x.d !== null; })
-    .sort(function (x, y) { return x.d - y.d || (x.p.s < y.p.s ? -1 : 1); });
+    /* a party flagged minor (A Parti: small, axes set at the centre) never outranks a major one as "nearest" */
+    .sort(function (x, y) { return (x.p.minor ? 1 : 0) - (y.p.minor ? 1 : 0) || x.d - y.d || (x.p.s < y.p.s ? -1 : 1); });
 }
 function nearestParty(outlet, parties, ax) { var r = partyRank(outlet, parties, ax); return r.length ? r[0] : null; }
 
@@ -398,7 +399,7 @@ function nearestParty(outlet, parties, ax) { var r = partyRank(outlet, parties, 
 var PARTI_ALIAS = {
   akp: { f: ["ak parti", "akp"]  }, chp: { f: ["chp"] }, mhp: { f: ["mhp"] }, iyi: { f: ["iyi parti"]  },
   dem: { f: ["dem parti"], cs: ["DEM"]  }, hdp: { f: ["hdp"] }, zafer: { f: ["zafer partisi", "zafer partili"] },
-  yrp: { f: ["yeniden refah", "yrp"] }, anahtar: { f: ["anahtar parti"]  }, tip: { f: ["turkiye isci partisi"], cs: ["TİP"] },
+  yrp: { f: ["yeniden refah", "yrp"] }, anahtar: { f: ["a parti", "anahtar parti"]  }, tip: { f: ["turkiye isci partisi"], cs: ["TİP"] },
   tkp: { f: ["tkp"] }, hudapar: { f: ["huda par", "huda-par", "hudapar"]  }, saadet: { f: ["saadet partisi", "saadet partili"] },
   bbp: { f: ["bbp", "buyuk birlik partisi"] }, dsp: { f: ["dsp"] }, deva: { f: ["deva partisi", "deva partili"], cs: ["DEVA"] },
   gelecek: { f: ["gelecek partisi", "gelecek partili"] }, yep: { f: [], cx: ["Yeni Parti", "YENİ Parti", "YENİ PARTİ"] }

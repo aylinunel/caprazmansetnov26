@@ -1,0 +1,1551 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s9022",
+   "week": "w11",
+   "title": "Cumhurbaşkanı Erdoğan'dan COP31'de yoğun diplomasi trafiği",
+   "headlines": [
+    {
+     "s": "hurriyet",
+     "hl": "COP31 Zirvesi… Cumhurbaşkanı Erdoğan’dan diplomasi trafiği"
+    },
+    {
+     "s": "ahaber",
+     "hl": "CANLI | Başkan Erdoğan'dan Antalya COP31'de diplomasi trafiği: Liderlerle görüştü"
+    },
+    {
+     "s": "aksam",
+     "hl": "Bakan Şimşek'ten COP31'de diplomasi trafiği"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Cumhurbaşkanı Erdoğan'dan diplomasi trafiği"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31'de diplomasi trafiği! Kritik görüşmeler peş peşe"
+    },
+    {
+     "s": "sabah",
+     "hl": "Başkan Erdoğan'dan COP31'de diplomasi trafiği: Devlet liderleriyle peş peşe görüşmeler..."
+    },
+    {
+     "s": "haber7",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31 diplomasisi! Antalya'da liderlerle görüşme trafiği"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31 zirvesi kapsamında Antalya'da diplomasi trafiği"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31'de yoğun diplomasi trafiği"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31'de diplomasi trafiği! Guterres ve dünya liderleriyle görüştü"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Cumhurbaşkanı Erdoğan'dan diplomasi trafiği"
+    },
+    {
+     "s": "aa",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31 kapsamında diplomasi trafiği"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Antalya’da diplomasi trafiği"
+    },
+    {
+     "s": "takvim",
+     "hl": "COP31 Zirvesi'nde diplomasi trafiği: Başkan Erdoğan liderler zirvesi alanında konukları karşıladı"
+    },
+    {
+     "s": "anka",
+     "hl": "Dışişleri Bakanı Fidan'dan Antalya'da diplomasi trafiği"
+    },
+    {
+     "s": "star",
+     "hl": "Bakan Fidan'dan COP31'de diplomasi trafiği"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31'de diplomasi trafiği: Mekke İttifakı dayanışmayı güçlendirdi"
+    },
+    {
+     "s": "akit",
+     "hl": "Liderlerle art arda görüşmeler gerçekleştirdi: Erdoğan'dan COP31’de yoğun diplomasi trafiği"
+    },
+    {
+     "s": "t24",
+     "hl": "Cumhurbaşkanı Erdoğan'dan COP31'de diplomasi trafiği: Peş peşe liderlerle görüştü"
+    },
+    {
+     "s": "sondakika",
+     "hl": "GRAFİKLİ - Cumhurbaşkanı Erdoğan'dan COP31 Liderler Zirvesi'nde yoğun diplomasi trafiği"
+    },
+    {
+     "s": "haberler",
+     "hl": "GRAFİKLİ - Cumhurbaşkanı Erdoğan'dan COP31 Liderler Zirvesi'nde yoğun diplomasi trafiği"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Erdoğan'dan COP31'de yoğun diplomasi trafiği! Peş peşe kritik görüşmeler gerçekleştirdi"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Cumhurbaşkanı Erdoğan'nın COP31 Liderler Zirvesi'nde diplomasi trafiği"
+    }
+   ]
+  },
+  {
+   "event": "s9218",
+   "week": "w11",
+   "title": "İran'dan Arjantin'e misilleme: Deniz ve hava kuvvetlerini 'terör örgütü' ilan etti",
+   "headlines": [
+    {
+     "s": "haberler",
+     "hl": "İran, Arjantin'in deniz ve hava kuvvetlerini mütekabiliyet gereği terör örgütü saydı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Tahran'dan karşı hamle geldi! Terör örgütü ilan etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "İran'dan Arjantin'e misilleme"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İran'dan Arjantin'e karşı tepki: Deniz ve hava kuvvetlerini \"terör örgütü\" ilan etti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İran'dan Arjantin'e misilleme: Deniz ve hava kuvvetlerini 'terör örgütü' ilan etti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İran'dan Arjantin'e sert yanıt: Deniz ve hava kuvvetlerini terörist ilan etti"
+    },
+    {
+     "s": "karar",
+     "hl": "İran'dan misilleme: Deniz ve hava kuvvetlerini \"terör örgütü\" ilan etti"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "İran'dan Arjantin'e rest! Ordunun iki kanadını 'terör örgütü' ilan etti"
+    },
+    {
+     "s": "milliyet",
+     "hl": "İran'dan Arjantin'e misilleme: Deniz ve hava kuvvetlerine yeni tanımlama"
+    },
+    {
+     "s": "takvim",
+     "hl": "İran'dan Arjantin hamlesi: Deniz ve hava kuvvetlerini terör örgütü ilan etti"
+    },
+    {
+     "s": "tele1",
+     "hl": "İran, Arjantin Deniz ve Hava Kuvvetleri'ni terör örgütü ilan etti"
+    },
+    {
+     "s": "dha",
+     "hl": "İran, Arjantin Deniz ve Hava Kuvvetleri'ni terör örgütü ilan etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "İran, Arjantin'in deniz ve hava kuvvetlerini \"terör örgütü\" ilan etti"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İran, Arjantin'in deniz ve hava kuvvetlerini \"terör örgütü\" ilan etti"
+    },
+    {
+     "s": "diken",
+     "hl": "Misilleme: İran Arjantin'in deniz ve hava kuvvetlerini 'terör örgütü' ilan etti"
+    },
+    {
+     "s": "akit",
+     "hl": "İran’dan Siyonist dostu Arjantin’e misilleme! Terör örgütü ilan ettiler"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "İran’dan misilleme: Arjantin'in deniz ve hava kuvvetlerini \"terör örgütü\" ilan etti"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "İran'dan misilleme: Arjantin ordusu 'terör örgütü' ilan edildi"
+    }
+   ]
+  },
+  {
+   "event": "s8449",
+   "week": "w11",
+   "title": "Emine Erdoğan'dan COP31 Liderler Zirvesi paylaşımı",
+   "headlines": [
+    {
+     "s": "memurlar",
+     "hl": "COP31 �klim Zirvesi Antalya'da Ba�l�yor"
+    },
+    {
+     "s": "dha",
+     "hl": "COP31 Liderler Zirvesi öncesi Antalya'da trafik uyarısı"
+    },
+    {
+     "s": "aa",
+     "hl": "Emine Erdoğan, COP31 Liderler Zirvesi'ne katılan liderler ve eşleriyle yakından ilgilendi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Antalya'da COP31 Liderler Zirvesi için trafik düzenlemesi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Başkan Erdoğan COP31 Liderler Zirvesi Açılış Programı'na katılacak"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "COP31 Liderler Zirvesi, Cumhurbaşkanı Erdoğan'ın ev sahipliğinde başlıyor"
+    },
+    {
+     "s": "haberturk",
+     "hl": "COP31 Liderler Zirvesi başlıyor"
+    },
+    {
+     "s": "bianet",
+     "hl": "COP31 Liderler Zirvesi’nde akredite basına sınırlı erişim"
+    },
+    {
+     "s": "agos",
+     "hl": "Paşinyan COP31 Liderler Zirvesi için Türkiye’de"
+    },
+    {
+     "s": "sozcu",
+     "hl": "COP31 liderler zirvesi bugün başlıyor: Anahtar kelime 'elektrifikasyon'"
+    },
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | COP31 Liderler Zirvesi! 6 kıtadan dünya liderleri Antalya'da"
+    },
+    {
+     "s": "akit",
+     "hl": "COP31 Liderler Zirvesi başladı! Erdoğan liderleri karşıladı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Cumhurbaşkanı Erdoğan, COP31 Liderler Zirvesi'nde 102 lideri ağırlayacak"
+    },
+    {
+     "s": "sondakika",
+     "hl": "COP31 LİDERLER ZİRVESİ - Brezilya Devlet Başkanı Lula da Silva, Liderler Zirvesi'nin açılışında konuştu:"
+    },
+    {
+     "s": "tele1",
+     "hl": "COP31 Liderler Zirvesi başlıyor"
+    },
+    {
+     "s": "posta",
+     "hl": "COP31 Liderler Zirvesi başlıyor"
+    },
+    {
+     "s": "anka",
+     "hl": "KKTC Cumhurbaşkanı Erhürman, COP31 Liderler Zirvesi'ne katıldı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Dünyanın gözü Antalya'da! COP31'de liderler zirvesi başladı"
+    },
+    {
+     "s": "star",
+     "hl": "Antalya'da iklim zirvesi! Emine Erdoğan'dan COP31 paylaşımı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Emine Erdoğan'dan COP31 paylaşımı: Küresel iş birliği vurgusu yaptı!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Emine Erdoğan, COP31 Liderler Zirvesi'ne katılan liderler ve eşlerini tek tek karşıladı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Emine Erdoğan, COP31'e katılan liderler ve eşleriyle yakından ilgilendi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Emine Erdoğan, COP31 Liderler Zirvesi'ne katılan liderler ve eşleriyle yakından ilgilendi"
+    },
+    {
+     "s": "vatan",
+     "hl": "Emine Erdoğan, COP31 Liderler Zirvesi'ne katılan liderler ve eşleriyle yakından ilgilendi"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Emine Erdoğan, COP31 Liderler Zirvesi'ne katılan liderler ve eşleriyle yakından ilgilendi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Yılmaz'dan COP31 Liderler Zirvesi'nde yoğun görüşme trafiği"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "COP31 Liderler Zirvesi tamamlandı! Bakan Fidan'dan dikkat çeken mesaj"
+    }
+   ]
+  },
+  {
+   "event": "s9963",
+   "week": "w11",
+   "title": "Türkiye Sigorta fon kazancını TMSF'ye iade etti",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Türkiye Sigorta AŞ 1 milyar 599 milyon 887 bin 908 TL'yi TMSF'ye iade etti"
+    },
+    {
+     "s": "sol",
+     "hl": "Türkiye Sigorta da fon kazancını TMSF'ye iade etti: 1,6 milyar liralık ödeme"
+    },
+    {
+     "s": "haberler",
+     "hl": "Türkiye Sigorta AŞ 1 milyar 599 milyon 887 bin 908 TL'yi TMSF'ye iade etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fon soruşturması: Türkiye Sigorta'dan TMSF'ye fon kazancı iadesi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Türkiye Sigorta fon kazancını TMSF'ye iade etti"
+    },
+    {
+     "s": "haber7",
+     "hl": "Türkiye Sigorta'dan son dakika kararı: Fon kazancını TMSF'ye iade etti"
+    },
+    {
+     "s": "t24",
+     "hl": "Türkiye Sigorta'dan fon iadesi"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Türkiye Sigorta'dan TMSF'ye 1,6 milyar TL'lik gönüllü iade"
+    },
+    {
+     "s": "diken",
+     "hl": "Türkiye Sigorta fon kazancını TMSF'ye iade etti: 1,6 milyar lira"
+    },
+    {
+     "s": "mynet",
+     "hl": "Türkiye Sigorta duyurdu: Elde edilen fon kazancı TMSF'ye iade edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon vurgunu soruşturması: Türkiye Sigorta'dan TMSF'ye fon kazancı iadesi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Türkiye Sigorta fon kazancını TMSF'ye iade etti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Türkiye Sigorta fon kazancını TMSF'ye iade etti: Tutar belli oldu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "TMSF iade hesabı açmıştı: Türkiye Sigorta ‘fon Kazancı’nı iade etti"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Türkiye Sigorta fon kazancını TMSF'ye iade etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Türkiye Sigorta, fon kazancından 1,6 milyar lirayı TMSF'ye iade etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Türkiye Sigorta fon kazancını iade etti: İşte TMSF'ye yatırılan tutar"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Türkiye Sigorta'dan TMSF'ye 1,6 milyar TL'lik fon kazancı iadesi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Türkiye Sigorta'dan TMSF'ye 1,6 milyar liralık fon iadesi"
+    },
+    {
+     "s": "akit",
+     "hl": "Türkiye Sigorta’dan tarihi adımı 1 milyar 599 milyon TL’yi aşan fon kazancını TMSF’ye iade etti!"
+    }
+   ]
+  },
+  {
+   "event": "s8820",
+   "week": "w11",
+   "title": "Atatürk için 09.05'te hayat durdu",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Bursa'da 10 Kasım'da saat 09.05'te araçlar durdu, vatandaşlar saygı duruşunda bulundu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Atatürk'ün sonsuzluğa uğurlanışının 88. yılı... Saat 09.05’te zaman durdu!"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Kırıkkale'de saat 09.05'te hayat durdu: Atatürk saygıyla anıldı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Hayatın durduğu an: Saat 09.05"
+    },
+    {
+     "s": "tgrt",
+     "hl": "COP31'de saat 09.05'te hayat durdu! Dünya, Atatürk için saygı duruşunda"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Türkiye Atatürk'ü anıyor: Saat 09.05'te hayat durdu"
+    },
+    {
+     "s": "mynet",
+     "hl": "Herkes işini gücünü bırakıp araçtan indi! Saat 09.05'te Türkiye'de hayat durdu: 10 Kasım'da Atatürk'ü böyle andık"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Türkiye Ata'sını anıyor: Saat 09.05'te zaman durdu"
+    },
+    {
+     "s": "t24",
+     "hl": "Saat 09.05’te hayat durdu: Türkiye, Mustafa Kemal Atatürk’ü saygı duruşuyla andı Galeri"
+    },
+    {
+     "s": "sabah",
+     "hl": "Atatürk'ün vefatının 88. yılı: Saat 09.05’te Türkiye'de hayat durdu!"
+    },
+    {
+     "s": "posta",
+     "hl": "Türkiye Atatürk'ü anıyor: Saat 09.05'te hayat durdu! İşte 10 Kasım'dan kareler"
+    },
+    {
+     "s": "birgun",
+     "hl": "Atatürk için 09.05'te hayat durdu"
+    },
+    {
+     "s": "star",
+     "hl": "Saat 09.05'te hayat durdu! 81 ilde sirenler Atatürk için çaldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Trabzon'da 09.05'te hayat durdu, vatandaşlar Atatürk için saygı duruşuna geçti"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul'da saat 09.05'te hayat durdu! Köprülerde, yollarda ve meydanlarda Atatürk'e saygı duruşu"
+    },
+    {
+     "s": "karar",
+     "hl": "Saat 09.05'te hayat durdu: Atatürk aramızdan ayrılışının 88'inci yılında anılıyor"
+    },
+    {
+     "s": "anka",
+     "hl": "Büyük Önder Atatürk'ü anıyoruz... Malatya’da saat 09.05’te sirenler çaldı, zaman durdu"
+    },
+    {
+     "s": "10haber",
+     "hl": "Saat 09.05’te zaman durdu"
+    }
+   ]
+  },
+  {
+   "event": "s8597",
+   "week": "w11",
+   "title": "İzmir'deki fabrika patlamasında can kaybı 10'a yükseldi",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Son dakika haberi: İzmir'deki HABAŞ Demir Çelik fabrikasında patlama! Can kaybı 17'ye yükseldi! Enkaz altında 4 kişi var"
+    },
+    {
+     "s": "takvim",
+     "hl": "İzmir'deki HABAŞ fabrikasında şiddetli patlama: Can kaybı 18'e yükseldi! Gözaltı sayısı 12'ye çıktı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "İzmir'deki fabrika patlamasında can kaybı 10'a yükseldi"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "İzmir'deki fabrika patlamasında son durum: 17 ölü, 12 yaralı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İzmir'deki fabrika patlamasında son durum! 3 ölü, 14 yaralı, 10 kişi enkaz altında"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "İzmir'deki fabrika patlamasında acı bekleyiş"
+    },
+    {
+     "s": "haberler",
+     "hl": "İzmir'deki fabrika patlamasında can kaybı 10'a yükseldi! 5 kişi gözaltında"
+    },
+    {
+     "s": "anka",
+     "hl": "İzmir'deki fabrika patlamasında can kaybı 10'a yükseldi: 4 işçi aranıyor"
+    },
+    {
+     "s": "akit",
+     "hl": "İzmir'deki fabrika patlamasında vefat sayısı 17'ye yükseldi"
+    },
+    {
+     "s": "birgun",
+     "hl": "İzmir'de fabrikada patlama: Can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İzmir'deki fabrika patlamasında can kaybı 18'e yükseldi: Vefat eden işçilerin kimliği belli oldu"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "İzmir'deki HABAŞ faciasında can kaybı 18'e çıktı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "İzmir'deki demir çelik fabrikasında patlama: Can kaybı 18'e yükseldi! 11 gözaltı kararı"
+    },
+    {
+     "s": "sol",
+     "hl": "HABAŞ'taki işçi katliamında can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... İzmir'de HABAŞ Demir Çelik Fabrikası'nda patlama: Can kaybı 18'e yükseldi!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "İzmir'de demir-çelik fabrikasında patlama: Can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "HABAŞ katliamında can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "karar",
+     "hl": "HABAŞ'taki faciada can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "t24",
+     "hl": "İzmir'deki fabrika patlamasında ölen işçilerin sayısı 18'e yükseldi; HABAŞ Yönetim Kurulu Başkanı dahil 11 kişiye gözaltı!"
+    },
+    {
+     "s": "aksam",
+     "hl": "İzmir'deki patlamada 11 gözaltı kararı: Can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "mynet",
+     "hl": "İzmir'deki fabrika patlamasında bir acı haber daha! Kayıp işçinin cansız bedeni bulundu, can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "İzmir Aliağa'daki HABAŞ patlamasında can kaybı 18'e yükseldi!"
+    },
+    {
+     "s": "bianet",
+     "hl": "HABAŞ patlamasında can kaybı 18’e yükseldi"
+    },
+    {
+     "s": "star",
+     "hl": "Aliağa'da fabrikadaki patlama! Can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "HABAŞ'ta kayıp işçinin kimliği belirlendi, can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İzmir'deki fabrika patlamasında can kaybı 18'e yükseldi"
+    },
+    {
+     "s": "posta",
+     "hl": "İzmir'deki faciada can kaybı 18'e yükseldi! İşçilerin hikayeleri yürek burktu"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "İzmir'deki HABAŞ demir çelikte patlama: Can kaybı 18'e çıktı, 11 gözaltı"
+    }
+   ]
+  },
+  {
+   "event": "s9110",
+   "week": "w11",
+   "title": "İspanya'da konut krizi ve ücret artışı talebiyle 14 yıl sonra genel grev",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "İspanya’da 14 yıl sonra ilk ortak genel grev: Konut ve insanca ücret talebiyle iş bırakacaklar"
+    },
+    {
+     "s": "haberler",
+     "hl": "İspanya'da 14 yıl sonra konut ve maaş artışı talebiyle 24 saatlik genel grev başladı"
+    },
+    {
+     "s": "aa",
+     "hl": "İspanya'da sendikalar konut krizine çözüm ve maaş artışı talebiyle genel greve gitti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İspanya'da 14 yıl sonra ilk genel grev: Talepler ücret artışı ve konut hakkı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İspanya'da konut krizine çözüm ve maaş isyanı: Genel grev başladı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "İspanya'da kira ve konut krizi 14 yıl sonra ilk genel grevi başlattı"
+    },
+    {
+     "s": "karar",
+     "hl": "İspanya'da konut krizi ve ücret artışı talebiyle 14 yıl sonra genel grev"
+    },
+    {
+     "s": "sol",
+     "hl": "İspanya'da 14 yıl sonra genel grev: Konut krizi işçileri sokağa çıkardı"
+    },
+    {
+     "s": "ntv",
+     "hl": "2014'ten bu yana ilk. İspanya'da konut krizine karşı genel grev"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İspanya'da 14 yıl sonra genel grev! İşçiler konut krizi ve hayat pahalılığına karşı sokakta"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "İspanya'da 14 yıl sonra genel grevde konut ve ücret talebi"
+    },
+    {
+     "s": "diken",
+     "hl": "İspanya'da konut krizine karşı genel grev: En az 30 gözaltı"
+    },
+    {
+     "s": "birgun",
+     "hl": "İspanya'da genel grev: Halk konut kiralarının yüksekliğine ve hayat pahalılığına karşı sokakta"
+    },
+    {
+     "s": "aksam",
+     "hl": "İspanya'da genel grev: Göstericiler sokakları ateşe verdi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İspanya'da genel grev: Binlerce kişi katıldı"
+    },
+    {
+     "s": "anka",
+     "hl": "İspanya'da 14 yıl sonra ilk genel grev: 4 milyon kişi konut krizine karşı iş bıraktı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "İspanya'da 14 yıl sonra genel grev: 4 milyon kişi katıldı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "İspanya'da tarihi grev: 4 milyon kişi alanlarda"
+    }
+   ]
+  },
+  {
+   "event": "s9760",
+   "week": "w11",
+   "title": "Outlook çöktü mü, neden açılmıyor? 13 Kasım Microsoft Outlook, Teams ve Microsoft 365 erişim sorunu",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Outlook ve Teams'e erişilemedi: Microsoft kesintinin nedenini açıkladı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Hotmail çöktü mü, Microsoft Outlook çöktü mü, Microsoft'ta sorun mu var?"
+    },
+    {
+     "s": "onedio",
+     "hl": "Microsoft Outlook, Teams ve 365 Hizmetlerinde Dünya Genelinde Kesinti Yaşandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Microsoft hizmetlerinde kesinti: Outlook ve Teams’e erişim sorunları yaşanıyor"
+    },
+    {
+     "s": "akit",
+     "hl": "Microsoft 365, Outlook ve Teams’te erişim sorunu"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Microsoft'ta küresel kesinti: Outlook ve Teams hizmetlerinde erişim sorunu yaşanıyor"
+    },
+    {
+     "s": "mynet",
+     "hl": "Outlook çöktü mü, Microsoft 365 neden açılmıyor? Microsoft'tan açıklama geldi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Microsoft'ta erişim sorunu! Outlook çöktü mü, Hotmail neden açılmıyor? 13 Kasım son durum"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Microsoft servislerinde büyük kesinti: Kullanıcılar Outlook ve Teams'te erişim sorunları yaşıyor"
+    },
+    {
+     "s": "diken",
+     "hl": "Microsoft uygulamalarında erişim sorunu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Teams ve Outlook çöktü mü, mailler neden açılmıyor? Microsoft'ta küresel kesinti"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Microsoft 365, Outlook ve Teams çöktü! 74 ülkede süren erişim sorunu OpenAI ve Anthropic'i de vurdu"
+    },
+    {
+     "s": "aksam",
+     "hl": "Outlook mail çöktü mü, neden açılmıyor? Outlook ne zaman düzelecek?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Outlook ve Teams neden çalışmıyor?"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Outlook çöktü mü, neden açılmıyor? 13 Kasım Microsoft Outlook, Teams ve Microsoft 365 erişim sorunu"
+    },
+    {
+     "s": "birgun",
+     "hl": "Outlook çöktü mü, neden çöktü? Microsoft uygulamalarında erişim sorunu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Microsoft Outlook düzeldi mi? Teams ne zaman açılacak? 13 Kasım 2016 Microsoft 365 ne zaman düzelecek?"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Microsoft kesintisi: Outlook ve Teams neden çalışmıyor?"
+    }
+   ]
+  },
+  {
+   "event": "s9471",
+   "week": "w11",
+   "title": "ABD Savunma Bakanı Hegseth'e nöbetçi askerden sert uyarı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "ABD'li Bakan Hegseth, Meçhul Asker Anıtı'nda nöbetçi askerden sessizlik uyarısı aldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "ABD Savunma Bakanı Hegseth, Meçhul Asker Anıtı'nda askerden sessizlik uyarısı aldı"
+    },
+    {
+     "s": "aa",
+     "hl": "Askeri anıtın yanında gürültü yapan ABD Savunma Bakanı Hegseth'e nöbetçi askerden \"sessiz olun\" uyarısı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "ABD Savunma Bakanı Hegseth'e nöbetçi askerden sert uyarı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Nöbetçi askerden ABD Savunma Bakanı Hegseth'e uyarı. \"Sessiz olun\""
+    },
+    {
+     "s": "star",
+     "hl": "Nöbetçi askerden Hegseth'e soğuk duş: Sessiz olun"
+    },
+    {
+     "s": "t24",
+     "hl": "ABD Savunma Bakanı Hegseth’e askerinden sert uyarı: Sessiz olun!"
+    },
+    {
+     "s": "10haber",
+     "hl": "ABD Savunma Bakanı Hegseth’e nöbetçi askerden sert uyarı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Anıttaki nöbetçi askerden Bakan Hegseth'e azar: Sessiz olun"
+    },
+    {
+     "s": "haber7",
+     "hl": "Hegseth'e nöbetçi askerden uyarı: Sessiz olun"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "ABD'de Gaziler Günü'nde Savunma Bakanı Hegseth'e 'Sessiz olun' uyarısı"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Hegseth, Arlington Ulusal Mezarlığı'nda gülünce nöbetçi asker tarafından uyarıldı"
+    },
+    {
+     "s": "mynet",
+     "hl": "ABD Savunma Bakanı Pete Hegseth'e nöbetçi askerden sert tepki! 'Sessiz ol'"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Askeri anıtın yanında gürültü yapan ABD Savunma Bakanına askerden \"sessiz olun\" uyarısı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Meçhul Asker Anıtı'nda kahkaha krizi: ABD Savunma Bakanı Hegseth'i nöbetçi asker azarladı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "ABD Savunma Bakanı Pete Hegseth'e nöbetçi askerden uyarı! Meçhul Asker Anıtı'nda kahkahalı sohbet krizi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "ABD Savunma Bakanı Hegseth'in anıttaki kahkahaları yarıda kesildi! Nöbetçi asker böyle azarladı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Nöbetçi askerden ABD Savunma Bakanı’na sert uyarı: Sessiz ol!"
+    }
+   ]
+  },
+  {
+   "event": "s8361",
+   "week": "w11",
+   "title": "Rojin Kabaiş'in amcasına saldırı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Rojin Kabaiş'in amcası, İstanbul'da yüzleri maskeli 4 kişinin saldırısına uğradı: Rojin davasını bırakın"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Rojin Kabaiş’in amcasına saldırı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Rojin Kabaiş'in amcasına saldırı: “Rojin davasını bırakın!”"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Rojin Kabaiş’in amcasına saldırdılar: “Davadan vazgeç” tehdidi"
+    },
+    {
+     "s": "t24",
+     "hl": "Rojin Kabaiş'in amcasına İstanbul'da maskeli dört kişiden saldırı: Ailenin avukatından açıklama"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Ailenin avukatı duyurdu... Rojin Kabaiş'in amcasına saldırı: 'Rojin davasını bırakın!'"
+    },
+    {
+     "s": "haberler",
+     "hl": "Rojin Kabaiş'in amcası, İstanbul'da yüzleri maskeli 4 kişinin saldırısına uğradı: Rojin davasını bırakın"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Rojin Kabaiş'in ailesine tehdit ve saldırı: Davayı bırakın!"
+    },
+    {
+     "s": "anka",
+     "hl": "Avukat Abdurrahman Karabulut: Rojin Kabaiş'in amcası, İstanbul'da yüzleri maskeli 4 kişinin saldırısına uğradı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Rojin Kabaiş'in amcasına saldırı! Saldırganlardan tehdit mesajı: Onu da senin gibi yapacağız"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Yüzleri maskeli 4 kişiden Rojin'in amcasına saldırı! \"Bu davayı bırakın\""
+    },
+    {
+     "s": "posta",
+     "hl": "Rojin Kabaiş’in amcasına maskeli saldırı: 'Rojin davasını bırakın'"
+    },
+    {
+     "s": "karar",
+     "hl": "Rojin Kabaiş'in amcasına maskeli saldırı: 'Rojin davasını bırakın"
+    },
+    {
+     "s": "bianet",
+     "hl": "Rojin Kabaiş'in amcasına saldırı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Avukat Karabulut: Rojin Kabaiş'in amcası, yüzleri maskeli 4 kişinin saldırısına uğradı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Rojin Kabaiş'in amcasına saldırı: Davadan vazgeçin"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Rojin Kabaiş davasında tehdit! Amcası İstanbul'da saldırıya uğradı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Rojin Kabaiş'in amcasına saldırı. Maskeli dört kişi \"Davayı bırakın\" diyerek dövdü"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Rojin Kabaiş'in amcasına maskeli saldırı: \"Davayı bırakın\" diyerek darp ettiler"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Rojin Kabaiş'in amcasına İstanbul'da saldırı: Davayı bırakın tehdidi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Rojin Kabaiş'in amcasına saldırı: 'Sıra Nizamettin'e de gelecek\""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Rojin Kabaiş’in amcasına 4 kişi saldırdı: \"Sıra Nizamettin Kabaiş’e de gelecek\""
+    },
+    {
+     "s": "akit",
+     "hl": "Maskeli 4 kişi Rojin Kabaiş’in amcasına saldırdı! Acılı babadan çarpıcı iddia"
+    },
+    {
+     "s": "10haber",
+     "hl": "Rojin Kabaiş dosyası: Amcası saldırıya uğradı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Rojin Kabaiş'in amcasının uğradığı saldırı hakkında neler biliniyor?"
+    },
+    {
+     "s": "aksam",
+     "hl": "Rojin Kabaiş'in ailesine \"Davadan çekilin\" yumruğu"
+    },
+    {
+     "s": "star",
+     "hl": "Rojin Kabaiş'in amcasına saldırı! \"Davayı bırakın\" tehdidi"
+    }
+   ]
+  },
+  {
+   "event": "s9166",
+   "week": "w11",
+   "title": "MSB'den Somali'ye 15 bin asker gönderileceği iddiasına yanıt",
+   "headlines": [
+    {
+     "s": "sol",
+     "hl": "'AKP Somali'ye 15 bin asker gönderecek' iddiası: Suriye'deki cihatçılar da mı listede?"
+    },
+    {
+     "s": "aa",
+     "hl": "MSB: Somali'ye 15 bin asker gönderileceği yönündeki iddialar gerçeği yansıtmamaktadır"
+    },
+    {
+     "s": "tgrt",
+     "hl": "'Türkiye, Somali'ye 15 bin asker gönderecek' iddiasına MSB'den açıklama geldi"
+    },
+    {
+     "s": "haberler",
+     "hl": "MSB'den Somali'ye 15 bin asker gönderileceği iddiasına yanıt"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "MSB: Somali'ye 15 bin asker gönderileceği iddiaları gerçeği yansıtmamaktadır"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "MSB'den Somali'ye 15 bin asker gönderileceği iddialarına yanıt: Gerçeği yansıtmıyor"
+    },
+    {
+     "s": "takvim",
+     "hl": "Somali'ye 15 bin asker gönderilecek mi? MSB iddiaları yalanladı! Yılkı Gözükara Sistemi envantere girdi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "MSB’den ‘Somali’ye 15 bin asker gönderilecek’ iddiasına cevap: Gerçek değil"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Somali'ye 15 bin asker gönderilecek mi? MSB'den açıklama geldi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "MSB'den Somali iddiasına yalanlama"
+    },
+    {
+     "s": "mynet",
+     "hl": "MSB'den 'Somali'ye asker gönderilecek' iddialarına yanıt!"
+    },
+    {
+     "s": "ntv",
+     "hl": "MSB'den \"Somali'ye 15 bin asker gönderilecek\" iddiasına yalanlama"
+    },
+    {
+     "s": "memurlar",
+     "hl": "MSB'den 15 bin asker iddiasına yanıt"
+    },
+    {
+     "s": "ahaber",
+     "hl": "MSB'den Somali'ye 15 bin asker gönderileceği iddialarına yalanlama"
+    },
+    {
+     "s": "sabah",
+     "hl": "Milli Savunma Bakanlığı Somali’ye 15 bin asker gönderileceği iddiasını yalanladı"
+    },
+    {
+     "s": "anka",
+     "hl": "MSB, Somali’ye 15 bin asker gönderileceği iddiasını yalanladı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... MSB'den Somali'ye 15 bin asker gönderileceği iddialarına açıklama!"
+    },
+    {
+     "s": "milligazete",
+     "hl": "MSB Somali açıklaması! Türkiye Somali'ye 15 bin asker mi gönderecek?"
+    },
+    {
+     "s": "t24",
+     "hl": "MSB'den Somali’ye 15 bin asker gönderileceği iddiasına yanıt"
+    },
+    {
+     "s": "aksam",
+     "hl": "Türkiye, Somali'ye 15 bin asker mi gönderecek? MSB'den iddiaya cevap"
+    },
+    {
+     "s": "10haber",
+     "hl": "MSB: Somali’ye 15 bin asker gönderileceği doğru değil"
+    },
+    {
+     "s": "trthaber",
+     "hl": "MSB: Somali’ye 15 bin asker gönderileceği iddiaları gerçeği yansıtmamaktadır"
+    },
+    {
+     "s": "posta",
+     "hl": "MSB'den Somali'ye 15 bin asker iddiasına yanıt"
+    },
+    {
+     "s": "star",
+     "hl": "\"Somali'ye 15 bin asker gönderilecek\" iddiasına MSB'den yalanlama"
+    },
+    {
+     "s": "akit",
+     "hl": "Somali'ye 15 bin asker gönderilecek mi? Yanıt geldi"
+    }
+   ]
+  },
+  {
+   "event": "s9211",
+   "week": "w11",
+   "title": "Merkez Bankası yıl sonu enflasyon tahminini yükseltti",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "Piyasaları yakından ilgilendiriyor: Merkez Bankası'nın yıl sonu enflasyon tahmini ne olacak?"
+    },
+    {
+     "s": "sondakika",
+     "hl": "TCMB yıl sonu enflasyon tahminini yükseltti, BIST 100 ilk yarıda yüzde 1,48 arttı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Merkez Bankası Enflasyon Raporu'nu açıkladı! 2026, 2027 ve 2028 enflasyon tahminleri yükseldi"
+    },
+    {
+     "s": "t24",
+     "hl": "Merkez Bankası 2026 ve 2027 yılı için enflasyon tahminlerini yükseltti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "TCMB enflasyon tahminlerini yükseltti"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Merkez Bankas� Y�l Sonu Enflasyon Tahminini Y�zde 29,5'E ��kard�"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Merkez Bankası tahminini yeniledi! İşte 2026 yıl sonu enflasyon tahmini"
+    },
+    {
+     "s": "haberler",
+     "hl": "TCMB Başkanı Karahan, 2026 yıl sonu enflasyon tahminini yüzde 29,5'e yükseltti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Merkez Bankası'nın yıl sonu enflasyon tahmini yükseldi"
+    },
+    {
+     "s": "onedio",
+     "hl": "Merkez Bankası 2026, 2027, 2028 Enflasyon Tahminlerini Açıkladı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fatih Karahan açıkladı! Merkez Bankası'ndan yeni enflasyon tahmini"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Merkez Bankası yıl sonu enflasyon tahminlerini bir kez daha yukarı çekti: Yüzde 29,5'e çıkarıldı"
+    },
+    {
+     "s": "posta",
+     "hl": "TCMB YIL SONU ENFLASYON RAPORU 2026 AÇIKLANDI MI, YÜZDE KAÇ OLDU? MERKEZ BANKASI YIL SONU ENFLASYON BEKLENTİSİ NE KADAR OLDU, YÜZDE KAÇ?"
+    },
+    {
+     "s": "diken",
+     "hl": "Merkez Bankası'nın yıl sonu enflasyon tahmini 29,5'e yükseldi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "TCMB enflasyon tahminlerini 18. kez yükseltti: 2026 sonu yüzde 29,5"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Merkez Bankası'nın yıl sonu enflasyon tahmini yükseldi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Merkez Bankası yıl sonu enflasyon tahminini açıkladı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Merkez Bankası’nın yıl sonu enflasyon tahmini 29,5’e yükseldi"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Merkez Bankası yıl sonu enflasyon tahminini yükseltti"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "İran savaşı hesapları bozdu: TCMB enflasyon tahminini yükseltti"
+    },
+    {
+     "s": "karar",
+     "hl": "Merkez Bankası enflasyon tahminini yükseltti: İşte emekli ve memur maaşlarında yeni zam hesabı"
+    },
+    {
+     "s": "anka",
+     "hl": "Merkez Bankası yıl sonu enflasyon tahminini yukarı yönlü güncelledi"
+    },
+    {
+     "s": "bianet",
+     "hl": "Merkez Bankası 2026 enflasyon tahminini yüzde 29,5’e yükseltti"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "TCMB yıl sonu enflasyon ve dolar tahminini yükseltti"
+    }
+   ]
+  }
+ ]
+}

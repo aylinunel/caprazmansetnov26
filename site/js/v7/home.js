@@ -42,6 +42,8 @@ function pgHome7() {
     step(1, "Karşılaştır", "Aynı olayın bütün başlıklarını yan yana koyarız.") +
     step(2, "Fark et", "Kurumlar arasında ayrışan sözcükleri işaretleriz.") +
     step(3, "Ölç", "Bu farkların haftalar boyunca tekrar edip etmediğini sayarız.") + "</ol></div></section>";
+  if (D.W81) h += '<section class="v7-yn-band"><a class="v7-hc" href="#/yenilikler"><b>8.1’de yeni</b><span>' + orN(m.articles) + " başlık, " + D.meta.sources.length +
+    " kurum, 13 Kasım’a kadar: eklenen veri hangi bulguları değiştirdi?</span></a></section>";
   h += "<section>" + pHead("Çapraz Manşet", "Daha derine in") + '<div class="v7-hgrid">' + deep + "</div></section>";
   if (ADV && ADV.agenda) h += '<section class="v7-hnet"><div class="v7-hnet-t"><p class="eyebrow">Gündem ağı · ' + ADV.agenda.order.length + ' kurum</p><h2 class="v7-hh">Kim kiminle aynı haberleri seçiyor?</h2>' +
     '<p class="lede">Birlikte çok olay haber yapan kurumlar birbirine çekilir. Renk kayıt defterindeki yerleşim, büyüklük verilen olay sayısı. Bir kuruma ' + orTap() + ', komşuları öne çıksın.</p>' +

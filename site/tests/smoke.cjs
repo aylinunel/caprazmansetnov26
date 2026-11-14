@@ -33,6 +33,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     await sleep(first ? 9000 : 2500); first = false;
     await page.waitForFunction(() => !document.getElementById("app").classList.contains("intro"), null, { timeout: 6000 }).catch(() => {}); /* measure after the intro zoom */
     if (w === 390 && await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) fails.push(`${tag}: horizontal scroll`);
+    /* a pin-spacer around most of the page goes stale when late sections grow it (footer overlapped content on Partiler) */
+    if (w === 1280 && await page.evaluate(() => [...document.querySelectorAll(".pin-spacer")].some((e) => e.offsetHeight > 0.6 * document.documentElement.scrollHeight))) fails.push(`${tag}: a pin spans most of the page`);
     if (w === 390) {
       /* Touch targets: every a/button/[role=link]/summary in #view is >= 44x44, unless inline text in a paragraph (.lnk, .gl always allowed). */
       const small = await page.evaluate(() => {

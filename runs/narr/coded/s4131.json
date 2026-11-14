@@ -1,0 +1,142 @@
+{
+ "q": {
+  "happened": "KPSS Ortaöğretim sınavı yapıldı; sonuçların ne zaman açıklanacağı merak konusu oldu.",
+  "agree": "Sınavın yapılması ve sonuç tarihi sorusu ortak.",
+  "differ": "AA, Hürriyet ve TRT Haber sınavın yapıldığını kısa duyururken; Sabah ÖSYM'yi öne çıkarıyor; diğer kurumlar sonuç sorgulama ve tarih arayışı çerçevesinde başlık atıyor, bazıları Ön Lisans ile Ortaöğretim'i karıştırıyor.",
+  "care": "Başlıkta sınav düzeyinin yanlış ya da karışık anılması, okurun hangi sonucu beklediği konusunda kafa karışıklığı yaratabilir."
+ },
+ "rows": [
+  {
+   "s": "haberturk",
+   "frame": "Sonuç sorgulama",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Sonuç tarihi",
+   "hero": "ÖSYM",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Sonuç sorgulama",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "aa",
+   "frame": "Olgu aktarımı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sınavın yapılması",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "hurriyet",
+   "frame": "Olgu aktarımı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sınavın yapılması",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "yenisafak",
+   "frame": "Sonuç tarihi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sınavın bitmesi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Olgu aktarımı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sınavın yapılması",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "onedio",
+   "frame": "Sonuç tarihi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "turkiyegz",
+   "frame": "Sonuç tarihi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberler",
+   "frame": "Sonuç tarihi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Sonuç tarihi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sonuç beklentisi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

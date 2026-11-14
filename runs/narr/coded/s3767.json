@@ -1,0 +1,142 @@
+{
+ "q": {
+  "happened": "Eski Türkiye güzeli Fatoş Seğmen'in kızı Alya Erdoğan hayatını kaybetti.",
+  "agree": "Alya Erdoğan'ın ölümü ortak.",
+  "differ": "Sabah, NTV, Habertürk, Mynet, 10haber, Karar ve Cumhuriyet haberi 'evlat acısı' ve önceki kayıp üzerinden duygusal kuruyor; Takvim ve Sözcü yalın aktarıyor; Milli Gazete ölüm nedenini, A Haber cenaze programını soruyor.",
+  "care": "Ölümün anne ve yas çerçevesinde mi yoksa olgu ya da ölüm nedeni çerçevesinde mi sunulması, haberin magazin mi yoksa bilgi haberi mi olarak okunacağını belirler."
+ },
+ "rows": [
+  {
+   "s": "sabah",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Ölüm",
+   "hero": "Alya Erdoğan",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": "Geçen yıl eşinin ölümü"
+  },
+  {
+   "s": "ahaber",
+   "frame": "Cenaze",
+   "hero": "Alya Erdoğan",
+   "blame": "",
+   "cause": "",
+   "cons": "Cenaze programı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Ölüm",
+   "hero": "Alya Erdoğan",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Ölüm nedeni sorusu",
+   "hero": "Alya Erdoğan",
+   "blame": "",
+   "cause": "Ölüm nedeni sorusu",
+   "cons": "Ölüm",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "10haber",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": "Eşinin ölümü"
+  },
+  {
+   "s": "karar",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": "Eşinin ölümü"
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Yas",
+   "hero": "Fatoş Seğmen",
+   "blame": "",
+   "cause": "",
+   "cons": "Ölüm",
+   "aff": "Fatoş Seğmen",
+   "sol": "",
+   "moral": "Evlat acısı",
+   "start": "Geçen yıl eşinin ölümü"
+  }
+ ]
+}

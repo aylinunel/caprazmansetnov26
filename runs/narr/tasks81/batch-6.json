@@ -1,0 +1,1559 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s9426",
+   "week": "w11",
+   "title": "Doktor Pelin Pınar'ın 8. kattan düşerek ölümünde sevgilisinin ifadesi ortaya çıktı",
+   "headlines": [
+    {
+     "s": "ahaber",
+     "hl": "İstanbul'da korkunç olay: 8. kattan düşen doktor Pelin Pınar'ın şüpheli ölümü"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Doktor Pelin Pınar'ın ölümünde acı detaylar! Düşük yaptı, 10 gün sonra nişanlanacaktı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "8.kattan düştü denilen Doktor Pelin Pınar'ın sır ölümü... Sevgilisi olay gecesi neler yaşandığını anlattı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Doktor Pelin Pınar'ın ölümünde acı detaylar! Düşük yaptı, 10 gün sonra nişanlanacaktı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Balkondan düşen Doktor Pelin Pınar'ın şüpheli ölümünde yeni detaylar! Sevgilisi olay anını anlattı"
+    },
+    {
+     "s": "ntv",
+     "hl": "İki günde iki kadın balkondan düştü. Doktor Pelin Pınar'ın sır ölümünde acı ayrıntılar"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Doktor Pelin Pınar, 8. kattan düşerek hayatını kaybetmişti! Sevgilisinin şüpheli olarak verdiği ifade ortaya çıktı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Doktor Pelin Pınar'ın sır ölümünde acı detaylar: Sevgilisinin ifadesi ortaya çıktı"
+    },
+    {
+     "s": "posta",
+     "hl": "Doktor Pelin'in şüpheli ölümünde sevgilisinin ifadesi ortaya çıktı! 'Yerde yatan karanlıkta cesedi gördüm'"
+    },
+    {
+     "s": "karar",
+     "hl": "Doktor Pelin Pınar’ın şüpheli ölümünde sevgilisinin ifadesi ortaya çıktı: Balkondan baktığımda yerdeki cesedi gördüm"
+    },
+    {
+     "s": "t24",
+     "hl": "Gaziosmanpaşa’da 8’inci kattan düşerek ölen doktor Pelin Pınar'ın sevgilisinin ifadesi: Lavabodaydım, dışarıdan düşme sesi ve bir çığlık geldi"
+    },
+    {
+     "s": "birgun",
+     "hl": "8. kattan 'düşen' doktor Pelin Pınar’ın ölümü: Şüpheli erkeğin ifadesi ortaya çıktı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Gaziosmanpaşa'da 8'inci kattan düşerek can vermişti: Doktor Pelin Pınar'ın sevgilisinin ifadesi ortaya çıktı"
+    },
+    {
+     "s": "star",
+     "hl": "Doktor Pelin'in şüpheli ölümü! Gözaltına alınan sevgilisinin ifadesi ortaya çıktı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Asistan hekim Pelin Pınar'ın şüpheli ölümünde yeni detaylar"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Doktor Pelin Pınar’ın şüpheli ölümü… Sevgilisi o geceyi anlattı! “Çığlık sesi geldi”"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul'da 27 yaşındaki doktor Pelin Pınar'ın şüpheli ölümü! Nişanına 10 gün kala 8. kattan düştü: Sevgilisinin ifadesi ortaya çıktı"
+    },
+    {
+     "s": "vatan",
+     "hl": "Doktor Pelin Pınar'ın şüpheli ölümü! Sevgilisi olay gecesini anlattı: Dikkat çeken AVM detayı"
+    }
+   ]
+  },
+  {
+   "event": "s8484",
+   "week": "w11",
+   "title": "İzmir'de demir çelik fabrikasında patlama: 17 ölü, 12 yaralı",
+   "headlines": [
+    {
+     "s": "sol",
+     "hl": "HABAŞ demir-çelik fabrikasında patlama: 17 işçi hayatını kaybetti, 1'si ağır 12 işçi yaralı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "İzmir Aliağa'da fabrika patlamasında 11 yaralı hastaneye kaldırıldı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "İzmir’de demir-çelik fabrikasında şiddetli patlama: Can kaybı 17'ye yükseldi! 5 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "İzmir'de demir çelik fabrikasında patlama: 10 kişi yaşamını yitirdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İzmir'de demir çelik fabrikasında şiddetli patlama! Can kaybı giderek artıyor"
+    },
+    {
+     "s": "haberler",
+     "hl": "İzmir'de demir çelik fabrikasında şiddetli patlama! Ölü ve yaralılar var"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "İzmir'de demir çelik fabrikasında patlama! Ölü sayısı 17'ye yükseldi, yaralılar var"
+    },
+    {
+     "s": "akit",
+     "hl": "İzmir'de demir-çelik fabrikasında şiddetli patlama"
+    },
+    {
+     "s": "takvim",
+     "hl": "İzmir Aliağa’daki HABAŞ fabrikasında patlama: 17 ölü, 12 yaralı"
+    },
+    {
+     "s": "aa",
+     "hl": "İzmir'de demir çelik fabrikasında patlama meydana geldi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İzmir’de demir çelik fabrikasında patlama: İşçiler yaralandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İzmir'de demir çelik fabrikasında yangın"
+    },
+    {
+     "s": "sabah",
+     "hl": "İzmir'de demir çelik fabrikasında patlama! | Video"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İzmir Demir Çelik Fabrikası’nda neden patlama oldu? İzmir Demir-Çelik Fabrikasında kaç kişi öldü, yaralandı?"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Aliağa’daki demir çelik fabrikasında patlama: 3 ölü, 14 yaralı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Demir çelik fabrikasında patlama: Altı ölü, 14 yaralı"
+    },
+    {
+     "s": "posta",
+     "hl": "SON DAKİKA: İZMİR ALİAĞA’DA DEMİR-ÇELİK FABRİKASINDA ŞİDDETLİ PATLAMA! HABAŞ OLAYI NEDİR, CAN KAYBI KAÇ OLDU, KAÇ KİŞİ ENKAZ ALTINDA? İZMİR HABAŞ NEDEN PATLAMA OLDU?"
+    },
+    {
+     "s": "diken",
+     "hl": "HABAŞ demir çelik fabrikasında patlama: Altı gözaltı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "HABAŞ demir çelik fabrikasında patlama: 6 kişi gözaltına alındı"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "İzmir Aliağa: HABAŞ demir çelik fabrikasında patlama"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İzmir'de demir çelik fabrikasında patlama: 17 ölü, 12 yaralı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Aliağa'da HABAŞ demir çelik fabrikasında patlama: 17 kişi öldü"
+    },
+    {
+     "s": "haber7",
+     "hl": "SON DAKİKA: İzmir'de demir çelik fabrikasında patlama! 17 ölü, 12 yaralı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Tablo ağırlaşıyor! İzmir'de çelik fabrikasında patlama: Ölü ve yaralılar var"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Demir çelik fabrikasında patlama: Bir yaralı daha hayatını kaybetti"
+    },
+    {
+     "s": "ntv",
+     "hl": "İzmir'de demir çelik fabrikasında patlama. Çok sayıda can kaybı var"
+    },
+    {
+     "s": "aksam",
+     "hl": "İzmir'de demir çelik fabrikasında patlama! 4 Cumhuriyet savcısı görevlendirildi"
+    }
+   ]
+  },
+  {
+   "event": "s8680",
+   "week": "w11",
+   "title": "Sarıgül soruşturmasında 11 şüpheli adli kontrolle serbest",
+   "headlines": [
+    {
+     "s": "takvim",
+     "hl": "Sarıgül ailesine yönelik kara para soruşturmasında yeni gelişme: Şişli MYO'dan 11 kişiye adli kontrol"
+    },
+    {
+     "s": "aa",
+     "hl": "İstanbul'daki kara para aklama soruşturmasında 11 şüpheliye adli kontrol kararı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Aklama soruşturmasında gözaltına alınan 11 şüpheli adli kontrolle serbest kaldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Sarıgül ailesi kara para soruşturmasında 11 şüpheli adli kontrolle serbest kaldı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Sarıgül soruşturması: Gözaltına alınan 11 kişi adli kontrolle serbest bırakıldı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Sarıgül soruşturmasında yeni gelişme: 11 şüpheli adli kontrol ile serbest bırakıldı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Şişli Meslek Yüksekokulu soruşturmasında 11 şüpheliye adli kontrolle tahliye"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Sarıgüller soruşturmasında yeni gelişme: 11 kişi serbest bırakıldı"
+    },
+    {
+     "s": "posta",
+     "hl": "İstanbul'da mal varlığı aklama soruşturması! 11 şüpheli adli kontrolle serbest"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Sarıgül soruşturmasında 11 şüpheli adli kontrolle serbest"
+    },
+    {
+     "s": "t24",
+     "hl": "Sarıgül soruşturmasında yeni gelişme: Gözaltına alınan 11 kişi adli kontrolle serbest bırakıldı"
+    },
+    {
+     "s": "karar",
+     "hl": "Mustafa Sarıgül soruşturmasında 11 kişiye adli kontrol"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Sarıgül soruşturmasında yeni gelişme: Gözaltına alınan 11 şüpheli adli kontrolle serbest bırakıldı"
+    },
+    {
+     "s": "akit",
+     "hl": "Sarıgül soruşturmasında 11 tahliye"
+    },
+    {
+     "s": "ntv",
+     "hl": "Sarıgül soruşturmasında yeni gelişme. 11 şüpheliye adli kontrol kararı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Sarıgül soruşturması: Gözaltına alınan 11 kişi için adli kontrol kararı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Sarıgül soruşturması: 11 kişi adli kontrolle serbest"
+    },
+    {
+     "s": "diken",
+     "hl": "Kara para soruşturması: 11 kişiye adli kontrol"
+    }
+   ]
+  },
+  {
+   "event": "s8755",
+   "week": "w11",
+   "title": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'e yönelik azil girişimini engelledi",
+   "headlines": [
+    {
+     "s": "akit",
+     "hl": "Hegseth için azil hamlesi yeniden Temsilciler Meclisinde"
+    },
+    {
+     "s": "birgun",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için resmen adım atıldı"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için 8 maddelik tasarı sunuldu"
+    },
+    {
+     "s": "diken",
+     "hl": "ABD'de Savunma Bakanı Hegseth'e azil kapısı aralanıyor"
+    },
+    {
+     "s": "trthaber",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için 8 madde Temsilciler Meclisi'ne sunuldu"
+    },
+    {
+     "s": "aksam",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için 8 madde Temsilciler Meclisi'ne sunuldu"
+    },
+    {
+     "s": "evrensel",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için 8 madde Temsilciler Meclisi'ne sunuldu"
+    },
+    {
+     "s": "dha",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için 8 madde Temsilciler Meclisi'ne sunuldu"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "ABD Savunma Bakanı Hegseth'in azli için 8 madde Temsilciler Meclisi'ne sunuldu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "ABD Savunma Bakanı Pete Hegseth'e azil girişimine Pentagon'dan sert tepki"
+    },
+    {
+     "s": "sondakika",
+     "hl": "ABD Temsilciler Meclisi, Hegseth azil girişimini 211 oyla engelledi"
+    },
+    {
+     "s": "haberler",
+     "hl": "ABD Meclisi, Hegseth'e yönelik azil girişimini engelleyen kararı 211 oyla kabul etti"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'e yönelik azil girişimini engelledi"
+    },
+    {
+     "s": "sabah",
+     "hl": "ABD Temsilciler Meclisi, Hegseth'e yönelik azil girişimini engelledi"
+    },
+    {
+     "s": "milliyet",
+     "hl": "ABD Savunma Bakanı Hegseth'e azil girişiminde kritik oylama sonuçlandı! 'Siyasi şov' demişti"
+    },
+    {
+     "s": "ahaber",
+     "hl": "ABD'de Pete Hegseth görevden alınmaktan kurtuldu! Temsilciler Meclisi'nden azil tasarısına ret"
+    },
+    {
+     "s": "t24",
+     "hl": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'e yönelik azil girişimini engelledi: Görevine devam edecek"
+    },
+    {
+     "s": "haber7",
+     "hl": "ABD Temsilciler Meclisi’nden Savunma Bakanı Hegseth'e yönelik azil girişimine engel"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "ABD'de Savunma Bakanı Hegseth hakkındaki azil girişimi engellendi"
+    },
+    {
+     "s": "aa",
+     "hl": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'e yönelik azil girişimini engelledi"
+    },
+    {
+     "s": "tele1",
+     "hl": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'e yönelik azil girişimini engelledi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'e yönelik azil girişimini engelledi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "ABD Temsilciler Meclisi'nden Hegseth kararı!"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "ABD Savunma Bakanı Hegseth hakkındaki azil girişimini Cumhuriyetçiler engelledi"
+    },
+    {
+     "s": "anka",
+     "hl": "ABD Temsilciler Meclisi, Savunma Bakanı Hegseth'in azledilmesini engelledi"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Hegseth'e azil girişimi engellendi"
+    }
+   ]
+  },
+  {
+   "event": "s8481",
+   "week": "w11",
+   "title": "Cumhurbaşkanı Erdoğan, BM Genel Sekreteri Guterres ile görüştü",
+   "headlines": [
+    {
+     "s": "karar",
+     "hl": "Krakow'da silahlı saldırı: BM Genel Sekreteri Guterres olayı kınadı"
+    },
+    {
+     "s": "aa",
+     "hl": "Cumhurbaşkanı Erdoğan, BM Genel Sekreteri Guterres ile görüştü"
+    },
+    {
+     "s": "haberler",
+     "hl": "BM Genel Sekreteri Guterres AA'ya konuştu: Birçok COP zirvesine katıldım ve Türkiye'nin COP organizasyonunun yüksek kalitesinden gerçekten çok etkilendim"
+    },
+    {
+     "s": "akit",
+     "hl": "BM Genel Sekreteri Guterres: İsrail işgalinin nihai hedefi ilhak!"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Cumhurbaşkanı Erdoğan, BM Genel Sekreteri Guterres ile Antalya'da görüştü"
+    },
+    {
+     "s": "milliyet",
+     "hl": "BM Genel Sekreteri Guterres'ten COP31'de Türkiye'ye övgü! 'Örnek alınmasını umuyorum'"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Türkiye'nin COP ev sahipliği BM Genel Sekreteri Guterres'i etkiledi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Cumhurbaşkanı Erdoğan Antalya'da! BM Genel Sekreteri Guterres ile görüştü"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA... Başkan Erdoğan BM Genel Sekreteri Guterres ile bir araya geldi"
+    },
+    {
+     "s": "haber7",
+     "hl": "Erdoğan COP31 zirvesinde BM Genel Sekreteri Guterres ile görüştü"
+    },
+    {
+     "s": "anka",
+     "hl": "Cumhurbaşkanı Erdoğan, BM Genel Sekreteri Guterres ile Antalya'da görüştü"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Cumhurbaşkanı Erdoğan COP31 Liderler Zirvesi için Antalya'da: BM Genel Sekreteri Guterres ile görüştü"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Başkan Erdoğan Antalya'da! BM Genel Sekreteri Guterres ile kritik görüşme"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İKLİM ZİRVESİ COP31 ANTALYA - Emine Erdoğan'dan BM Genel Sekreteri Guterres ile görüşmelerine ilişkin paylaşım:"
+    },
+    {
+     "s": "aksam",
+     "hl": "Emine Erdoğan'dan BM Genel Sekreteri Guterres ile görüşmelerine ilişkin paylaşım"
+    },
+    {
+     "s": "mynet",
+     "hl": "Emine Erdoğan'dan BM Genel Sekreteri Guterres'e teşekkür! Antalya'daki görüşmeden fotoğraflı paylaşım geldi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Emine Erdoğan’dan, BM Genel Sekreteri Guterres ile görüşmelerine ilişkin paylaşım"
+    },
+    {
+     "s": "posta",
+     "hl": "Emine Erdoğan’dan, BM Genel Sekreteri Guterres ile görüşmelerine ilişkin paylaşım"
+    },
+    {
+     "s": "tgrt",
+     "hl": "BM Genel Sekreteri Guterres'ten COP31'de kritik uyarı: Artık eyleme geçme zamanı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cumhurbaşkanı Erdoğan, BM Genel Sekreteri Guterres ile zeytin fidanı dikti"
+    },
+    {
+     "s": "star",
+     "hl": "COP31'de erken uyarı vurgusu! BM Genel Sekreteri Guterres: Hasarı yüzde 30'a kadar azaltabilir"
+    }
+   ]
+  },
+  {
+   "event": "s8606",
+   "week": "w11",
+   "title": "TSK'dan ihraç edilen 5 teğmene 4 yıla kadar hapis istemi",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Kılıçlı yemin sonrası 5 teğmene iftira suçundan 4 yıla kadar hapis istendi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İhraç edilen 5 teğmen hakkında 4 yıla kadar hapis istemi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "TSK'den ihraç edilen 5 teğmen hakkında iddianame: 4 yıla kadar hapis istemi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Kılıçlı yeminle ihraç edilen 5 teğmene iftira suçundan 4 yıla kadar hapis istendi"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Kılıçlı yemin nedeniyle ihraç edilen 5 teğmene hapis istemi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Kılıçlı yemin nedeniyle TSK'dan ihraç edilmişlerdi! 5 teğmene hapis istemi"
+    },
+    {
+     "s": "karar",
+     "hl": "TSK'dan ihraç edilen teğmenlere 'iftira' davası: 4 yıla kadar hapis istemi"
+    },
+    {
+     "s": "aksam",
+     "hl": "TSK'dan ihraç edilen 5 teğmen hakkında iddianame"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Kılıçlı yemin töreni yapan 5 teğmene iftira davası"
+    },
+    {
+     "s": "star",
+     "hl": "TSK'dan ihraç edilen 5 teğmen hakim karşısında! İddianame kabul edildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "TSK'dan ihraç edilen 5 teğmene 'iftira' davası"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Kılıçlı yemin nedeniyle ihraç edilen 5 teğmen hakkında istenen ceza belli oldu"
+    },
+    {
+     "s": "posta",
+     "hl": "TSK'dan ihraç edilen 5 teğmen hakkında iddianame! İşte istenen ceza"
+    },
+    {
+     "s": "sabah",
+     "hl": "TSK'den ihraç edilen 5 teğmen hakkında iddianame hazır! 4 yıla kadar hapis istemiyle dava açıldı"
+    },
+    {
+     "s": "onedio",
+     "hl": "TSK'dan İhraç Edilen 5 Teğmene İddianame Hazırlandı, 4 Yıla Kadar Hapis Cezası İstendi"
+    },
+    {
+     "s": "diken",
+     "hl": "İhraç edilen beş teğmenin hapsi istendi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İhraç teğmenlerin mesnetsiz iddialarına iftira davası: 5 teğmene 4 yıla kadar hapis istemi"
+    },
+    {
+     "s": "anka",
+     "hl": "TSK'dan ihraç edilen 5 teğmene 4 yıla kadar hapis istemi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "TSK'dan ihraç edilen 5 teğmen hakkında dava açıldı! 4 yıla kadar hapis istendi"
+    },
+    {
+     "s": "ntv",
+     "hl": "İhraç edilen beş eski teğmene dava"
+    },
+    {
+     "s": "takvim",
+     "hl": "TSK'dan ihraç edilen 5 eski teğmene dava... İddianame tamam: İftiradan yargılanacaklar"
+    }
+   ]
+  },
+  {
+   "event": "s9800",
+   "week": "w11",
+   "title": "Kişisel verileri mesajlaşma gruplarında satanlara 42 ilde operasyon: 79 kişi gözaltına alındı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "AVCI destekli operasyonda 42 ilde kişisel veri satanlar gözaltına alınıyor"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "AVCI ile 42 ilde dev kişisel veri operasyonu! 79 şüpheli yakalandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "42 ilde 'kişisel veri' operasyonu: 74 kişi gözaltına alındı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "İstanbul merkezli 42 ilde kişisel veri operasyonu: Çok sayıda gözaltı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "43 ilde kişisel veri operasyonu: 101 kişi gözaltına alındı"
+    },
+    {
+     "s": "haberler",
+     "hl": "İstanbul Emniyeti, 42 ilde kişisel veri satanlara eş zamanlı operasyon düzenledi"
+    },
+    {
+     "s": "aa",
+     "hl": "İstanbul merkezli 42 ilde kişisel verileri ele geçirenlere yönelik operasyonda 79 zanlı gözaltında"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "42 ilde dev siber operasyon: Kişisel verileri ele geçirip tehdit ve şantaj yaptılar! 79 şüpheli gözaltında"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Kişisel verileri ele geçirenlere 42 ilde operasyon"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Kişisel verileri mesajlaşma gruplarında satanlara 42 ilde operasyon: 79 kişi gözaltına alındı"
+    },
+    {
+     "s": "dha",
+     "hl": "İstanbul merkezli 42 ilde kişisel bilgileri satanlara operasyon: 79 gözaltı"
+    },
+    {
+     "s": "t24",
+     "hl": "İstanbul merkezli 42 ilde kişisel veri operasyonu: 74 gözaltı"
+    },
+    {
+     "s": "posta",
+     "hl": "Kişisel verileri ele geçirdiler! 42 ilde dev siber operasyon"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "42 ilde kişisel verileri ele geçirenlere operasyon: 74 kişi 'AVCI' projesiyle yakalandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Kişisel verileri ele geçirenlere 42 ilde eş zamanlı operasyon"
+    },
+    {
+     "s": "bianet",
+     "hl": "42 ilde ‘kişisel veri’ operasyonu: 79 kişi gözaltında"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul merkezli 42 ilde dev veri hırsızlığı operasyonu: 79 gözaltı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Kişisel verileri ele geçirenlere 42 ilde operasyon"
+    },
+    {
+     "s": "milligazete",
+     "hl": "42 ilde siber suç operasyonu: Kişisel verileri satışa çıkarmışlar!"
+    }
+   ]
+  },
+  {
+   "event": "s9864",
+   "week": "w11",
+   "title": "Cafer Mahiroğlu soruşturmasında 5 şüpheli tutuklandı",
+   "headlines": [
+    {
+     "s": "haberler",
+     "hl": "Cafer Mahiroğlu soruşturmasında gözaltına alınan 6 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Firari Cafer Mahiroğlu soruşturması! 6 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Cafer Mahiroğlu soruşturması: Gözaltına alınan 6 kişi adliyede"
+    },
+    {
+     "s": "star",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni gelişme: Şüpheliler adliyede"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Cafer Mahiroğlu soruşturmasında 6 şüpheliye tutuklama talebi"
+    },
+    {
+     "s": "aa",
+     "hl": "İş insanı Cafer Mahiroğlu'na yönelik soruşturmada gözaltına alınan 5 şüpheli tutuklandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Cafer Mahiroğlu soruşturmasında 6 kişi için tutuklama talebi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni gelişme"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalgada 8 şüpheliden 5'i tutuklandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Cafer Mahiroğlu soruşturmasında 6 şüpheliye tutuklama talebi"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Cafer Mahiroğlu soruşturmasında 6 şüpheliye tutuklama talebi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Halk TV'nin firari patronu Cafer Mahiroğlu soruşturmasında yeni gelişme: 6 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni gelişme: 5 kişi tutuklandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Cafer Mahiroğlu soruşturmasında 6 şüpheliye tutuklama talebi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Cafer Mahiroğlu'na yönelik soruşturmada 6 şüpheliye tutuklama talebi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Halk TV sahibi Mahiroğlu soruşturmasında yeni gelişme!"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni gelişme! 6 isme tutuklama talebi"
+    },
+    {
+     "s": "t24",
+     "hl": "Cafer Mahiroğlu soruşturmasında 5 kişi daha tutuklandı"
+    },
+    {
+     "s": "diken",
+     "hl": "Cafer Mahiroğlu soruşturması: Beş kişi tutuklandı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Cafer Mahiroğlu soruşturmasında 5 kişi daha tutuklandı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Cafer Mahiroğlu soruşturmasında 5 tutuklama"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Cafer Mahiroğlu soruşturmasında 5 tutuklama"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Cafer Mahiroğlu soruşturmasında beş tutuklama: Eski İzmir Büyükşehir yöneticisi de aralarında"
+    },
+    {
+     "s": "mynet",
+     "hl": "İş insanı Cafer Mahiroğlu'na yönelik soruşturmada gözaltına alınan 5 şüpheli tutuklandı"
+    },
+    {
+     "s": "dha",
+     "hl": "Cafer Mahiroğlu'na yönelik soruşturmada 5 şüpheli tutuklandı"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni gelişme: 5 şüpheli tutuklandı"
+    },
+    {
+     "s": "anka",
+     "hl": "Cafer Mahiroğlu soruşturmasında 5 tutuklama"
+    },
+    {
+     "s": "takvim",
+     "hl": "Halk TV sahibi Cafer Mahiroğlu soruşturmasında belediye ihaleleri ve milyonluk rüşvet pazarlığı! 5 tutuklama"
+    }
+   ]
+  },
+  {
+   "event": "s9365",
+   "week": "w11",
+   "title": "Sarıgül soruşturmasında yeni operasyon: 17 gözaltı kararı",
+   "headlines": [
+    {
+     "s": "milligazete",
+     "hl": "Sarıgül soruşturmasında sıcak gelişme! Emir Sarıgül adliyede"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Sarıgül ailesi soruşturmasında 16 kişi yakalandı, 18 kişiye gözaltı kararı çıktı"
+    },
+    {
+     "s": "sol",
+     "hl": "Sarıgül soruşturmasında 19 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Sarıgül soruşturmasında yeni operasyon: 17 gözaltı kararı"
+    },
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | Sarıgül ailesi soruşturmasında yeni gözaltılar var!"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Sarıgül ailesine yönelik soruşturmada yeni operasyon! 15 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Sarıgül soruşturmasında yeni operasyon: 19 şüpheliye gözaltı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Sarıgül soruşturmasında sıcak gelişme: 17 şüpheli hakkında gözaltı kararı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Mustafa Sarıgül soruşturması: 17 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "akit",
+     "hl": "Mustafa Sarıgül soruşturmasında sıcak gelişme: Çok sayıda kişi için gözaltı kararı verildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SON DAKİKA...Mustafa Sarıgül soruşturmasında yeni gelişme: Çok sayıda gözaltı kararı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Sarıgül soruşturmasında yeni dalga operasyon: 15 kişi gözaltına alındı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Sarıgül soruşturmasında 19 kişi hakkında gözaltı kararı verildi"
+    },
+    {
+     "s": "haber7",
+     "hl": "Sarıgüller soruşturmasında yeni operasyon! Çok sayıda gözaltı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Sarıgül ailesi soruşturmasında 18 kişiye gözaltı kararı verildi, 16 kişi yakalandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Sarıgül soruşturmasında yeni operasyon: 17 gözaltı kararı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Sarıgül soruşturması: 19 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "posta",
+     "hl": "Mustafa Sarıgül soruşturmasında yeni gelişme: 19 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Sarıgül soruşturması: 19 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Sarıgül soruşturmasında yeni operasyon: 15 kişi gözaltına alındı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Sarıgül soruşturmasında yeni dalga: 19 gözaltı kararı"
+    },
+    {
+     "s": "karar",
+     "hl": "Sarıgül ailesine operasyonda yeni dalga: 19 gözaltı kararı"
+    },
+    {
+     "s": "bianet",
+     "hl": "Sarıgül soruşturmasında yeni operasyon: 15 kişi gözaltına alındı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Sarıgül ailesi soruşturmasında yeni dalga! 15 kişi gözaltına alındı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Sarıgül soruşturması: Çok sayıda yeni gözaltı kararı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Kara para iddiasına yeni operasyon: Sarıgül soruşturmasında 19 gözaltı kararı"
+    }
+   ]
+  },
+  {
+   "event": "s9849",
+   "week": "w11",
+   "title": "15 Temmuz Şehitler Köprüsü'nde silahlı şahıs alarmı: Elinde bayraklarla aracının üzerine çıktı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde elinde tabancayla aracının üzerine çıkan kişi ikna edildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde hareketli anlar: Silahıyla aracın üzerine çıkan şahıs gözaltına alındı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Şehitler Köprüsü'nde hareketli anlar! Silahıyla aracın üzerine çıktı, polis alarmda"
+    },
+    {
+     "s": "mynet",
+     "hl": "Son dakika | 15 Temmuz Şehitler Köprüsü'nde dikkat çeken görüntüler! Elinde silah ve bayrakla aracın üzerine çıktı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SON DAKİKA... 15 Temmuz Şehitler Köprüsü’nde hareketli anlar! Silahla otomobilinin üzerine çıktı"
+    },
+    {
+     "s": "karar",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde İsrail karşıtı protesto: Silahıyla aracın üzerine çıktı, şüpheli gözaltında"
+    },
+    {
+     "s": "evrensel",
+     "hl": "15 Temmuz Şehitler Köprüsü trafiğe kapatıldı: Silahlı kişi aracının üzerine çıktı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde silahlı şahıs alarmı: Elinde bayraklarla aracının üzerine çıktı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde silahlı şahıs alarmı: 2 şerit trafiğe kapatıldı"
+    },
+    {
+     "s": "takvim",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde aracını durduran şahıs silah ve bayrakla slogan attı: İşte Takvim özel görüntüler"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde hareketli dakikalar! Elinde silah ve bayraklarla otomobilinin üzerine çıktı... Polis ekipleri tarafından ikna edilerek gözaltına alındı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Bir elinde bayrak bir elinde silah! 15 Temmuz Şehitler Köprüsü'nü birbirine kattı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde otomobilden inip üzerine çıktı, trafik yoğunluğu oluştu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde hareketli anlar: Aracının üzerine çıkıp bayraklarla slogan attı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde silahlı kişi alarmı! Elinde silahla aracın üzerine çıktı"
+    },
+    {
+     "s": "ntv",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde İstanbul trafiğini kilitleyen eylem"
+    },
+    {
+     "s": "posta",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde elinde silahla otomobilden inip üzerine çıktı! Bölgeye polisler sevk edildi"
+    },
+    {
+     "s": "star",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde elinde tabancayla aracının üzerine çıkan kişi ikna edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde elinde tabancayla aracının üzerine çıkan kişi ikna edildi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "15 Temmuz Şehitler Köprüsü'nde silahlı eylem: Trafik kilitlendi"
+    }
+   ]
+  },
+  {
+   "event": "s9484",
+   "week": "w11",
+   "title": "New York'ta bina çöktü: 2 ölü, 17 yaralı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "New York'ta çöken binanın enkazı altında kalan 8 kişi hayatını kaybetti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "New York'ta bir bina çöktü"
+    },
+    {
+     "s": "sabah",
+     "hl": "New York'ta bina çöktü: Enkazda arama çalışmaları sürüyor! En az bir kişi hayatını kaybetti..."
+    },
+    {
+     "s": "tgrt",
+     "hl": "New York'ta bina çöktü: Ölü ve yaralılar var"
+    },
+    {
+     "s": "trthaber",
+     "hl": "New York'ta bina çöktü"
+    },
+    {
+     "s": "milliyet",
+     "hl": "New York'ta bina çöktü"
+    },
+    {
+     "s": "ntv",
+     "hl": "New York'ta bina çöktü. En az iki kişi öldü"
+    },
+    {
+     "s": "akit",
+     "hl": "New York'ta korkunç olay! Bina çöktü, enkaz altında kalanlar var"
+    },
+    {
+     "s": "evrensel",
+     "hl": "New York'ta bina çöktü: En az 2 kişi hayatını kaybetti, enkaz altında kalanlar var"
+    },
+    {
+     "s": "birgun",
+     "hl": "New York'ta bina çöktü: 2 kişi hayatını kaybetti, 17 yaralı"
+    },
+    {
+     "s": "aksam",
+     "hl": "New York'ta bina çöktü: Ölü ve yaralılar var"
+    },
+    {
+     "s": "10haber",
+     "hl": "New York’ta bina çöktü, en az 1 ölü"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "New York'ta bina çöktü: Enkaz altında kalanlar var! Arama kurtarma çalışmaları başladı: 2 ölü, 17 yaralı"
+    },
+    {
+     "s": "dha",
+     "hl": "New York'ta bina çöktü: 2 ölü, 17 yaralı"
+    },
+    {
+     "s": "takvim",
+     "hl": "New York'ta bina çöktü: Enkaz altında kalanlar var! 1 kişi hayatını kaybetti"
+    },
+    {
+     "s": "star",
+     "hl": "New York'ta bina çöktü: Çok sayıda ölü var"
+    },
+    {
+     "s": "ahaber",
+     "hl": "New York'ta bina çöktü! 2 kişi hayatını kaybetti, enkaz altında kalanlar var"
+    },
+    {
+     "s": "dirilis",
+     "hl": "New York Brooklyn'de bina çöktü: 2 ölü, 17 yaralı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "New York'ta bina çöktü: 5 kişi öldü, 19 kişi yaralandı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "New York Brooklyn'de bina çöktü: 8 ölü, 17 yaralı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "ABD'de bina çöktü: 8 ölü 17 yaralı"
+    }
+   ]
+  },
+  {
+   "event": "s9799",
+   "week": "w11",
+   "title": "Fon Koordinasyon Kurulu: 119 fondaki 444 bin 893 yatırımcıya yaklaşık 161 Milyar TL ödeme yapıldı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "İletişim Başkanlığı: 444 bin 893 yatırımcıya yaklaşık 161 milyar lira ödeme yapılmıştır"
+    },
+    {
+     "s": "sondakika",
+     "hl": "İletişim Başkanlığı 119 fonda 444 bin 893 yatırımcıya yaklaşık 161 milyar lira ödedi"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Fon tasfiyesinde hesaplara 161 milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Fon tasfiyesinde 444 bin 893 yatırımcıya yaklaşık 161 milyar TL! 333 bin 493 yatırımcı net yatırım tutarının tamamını aldı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fon Koordinasyon Kurulu 10. kez toplandı: 161 milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Fon kurulu toplantısı sona erdi: Tasfiyelerde 161 milyar liralık ödeme yapıldı"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA! Fon tasfiyesinde 161 milyar TL ödeme: 333 bini aşkın yatırımcı tamamını aldı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Onuncu Fon Koordinasyon Kurulu toplantısı sona erdi: Yatırımcılara 161 milyar TL ödeme yapıldı!"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Tasfiye edilen 119 fonda yatırımcılara 161 milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "İletişim Başkanlığı 119 fonda yatırımcılara 161 milyar lira ödeme yapıldığını duyurdu"
+    },
+    {
+     "s": "anka",
+     "hl": "Fon Koordinasyon Kurulu onuncu kez toplandı... 444 bin 893 tekil yatırımcıya yaklaşık 161 Milyar TL ayni ve nakdi ödeme yapıldı"
+    },
+    {
+     "s": "akit",
+     "hl": "Fon kurulu toplantısı sonrası açıklama! 119 fonda 161 milyar liralık ödeme yapıldı"
+    },
+    {
+     "s": "diken",
+     "hl": "Fon vurgunu: 161 milyar lira ödeme yapıldı"
+    },
+    {
+     "s": "onedio",
+     "hl": "119 Fonda 444 Bini Aşkın Yatırımcıya 161 Milyar TL Ödeme Yapıldı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon Koordinasyon Kurulu 10. kez toplandı: '444 bin yatırımcıya 161 milyar TL ödeme yapıldı'"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Fon Koordinasyon Kurulu: 119 fondaki 444 bin 893 yatırımcıya yaklaşık 161 Milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "karar",
+     "hl": "Fon tasfiyesinde 161 milyar TL ödeme: 444 bin yatırımcıya ulaşıldı"
+    },
+    {
+     "s": "bianet",
+     "hl": "Fon tasfiyesinde 161 milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "posta",
+     "hl": "Fon Koordinasyon Kurulu: 119 fondaki 444 bin 893 yatırımcıya yaklaşık 161 Milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "vatan",
+     "hl": "Fon Koordinasyon Kurulu: 119 fondaki 444 bin 893 yatırımcıya yaklaşık 161 Milyar TL ödeme yapıldı"
+    },
+    {
+     "s": "star",
+     "hl": "Fon Koordinasyon Kurulu onuncu kez toplandı: 161 milyar lira ödeme yapıldı"
+    }
+   ]
+  }
+ ]
+}

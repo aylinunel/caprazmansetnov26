@@ -1,0 +1,166 @@
+{
+ "q": {
+  "happened": "Edirne'de Bulgaristanlı turistleri taşıyan tur otobüsü tırla çarpıştı, 10 kişi yaralandı.",
+  "agree": "Otobüs-tır çarpışması ve 10 yaralı ortak.",
+  "differ": "Sözcü ve Cumhuriyet'in başlığı otobüsün tıra çarptığını, yani otobüsü eylem öznesi olarak aktarırken; Habertürk, Star, TRT Haber ve TGRT iki aracın çarpıştığını yansıtıyor; Habertürk-dışı birçok kurum turistlerin Bulgar olduğunu belirtiyor; Akşam yaralı sayısını vermiyor.",
+  "care": "Başlıkta kazanın 'çarptı' mı 'çarpıştı' mı diye aktarılması, kusurun hangi araca ait olduğu izlenimini etkiler."
+ },
+ "rows": [
+  {
+   "s": "haberturk",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberler",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Bulgaristanlı turistler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "akit",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "Tur otobüsü",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Turistler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "Tur otobüsü",
+   "cause": "Arkadan çarpma",
+   "cons": "Yaralanma",
+   "aff": "Turistler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "Tur otobüsü",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yolcular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "Tur otobüsü",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Turistler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "aksam",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "tgrt",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "Tur otobüsü",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Bulgar turistler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Trafik kazası",
+   "hero": "",
+   "blame": "Tur otobüsü",
+   "cause": "",
+   "cons": "Yaralanma",
+   "aff": "Turistler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

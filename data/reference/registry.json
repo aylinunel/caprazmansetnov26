@@ -1,0 +1,362 @@
+[
+{
+"slug": "hurriyet",
+"name": "Hürriyet",
+"url": "https://www.hurriyet.com.tr"
+},
+{
+"slug": "mynet",
+"name": "Mynet",
+"url": "https://www.mynet.com"
+},
+{
+"slug": "sabah",
+"name": "Sabah",
+"url": "https://www.sabah.com.tr"
+},
+{
+"slug": "milliyet",
+"name": "Milliyet",
+"url": "https://www.milliyet.com.tr"
+},
+{
+"slug": "sozcu",
+"name": "Sözcü",
+"url": "https://www.sozcu.com.tr"
+},
+{
+"slug": "sondakika",
+"name": "Sondakika.com",
+"url": "https://www.sondakika.com"
+},
+{
+"slug": "haberturk",
+"name": "Habertürk",
+"url": "https://www.haberturk.com"
+},
+{
+"slug": "halktv",
+"name": "Halk TV",
+"url": "https://halktv.com.tr"
+},
+{
+"slug": "onedio",
+"name": "Onedio",
+"url": "https://onedio.com"
+},
+{
+"slug": "birgun",
+"name": "BirGün",
+"url": "https://www.birgun.net"
+},
+{
+"slug": "t24",
+"name": "T24",
+"url": "https://t24.com.tr"
+},
+{
+"slug": "ntv",
+"name": "NTV",
+"url": "https://www.ntv.com.tr"
+},
+{
+"slug": "karar",
+"name": "Karar",
+"url": "https://www.karar.com"
+},
+{
+"slug": "memurlar",
+"name": "Memurlar.net",
+"url": "https://www.memurlar.net"
+},
+{
+"slug": "yenisafak",
+"name": "Yeni Şafak",
+"url": "https://www.yenisafak.com"
+},
+{
+"slug": "haber7",
+"name": "Haber7",
+"url": "https://www.haber7.com"
+},
+{
+"slug": "bloomberght",
+"name": "Bloomberg HT",
+"url": "https://www.bloomberght.com"
+},
+{
+"slug": "cnnturk",
+"name": "CNN Türk",
+"url": "https://www.cnnturk.com"
+},
+{
+"slug": "akit",
+"name": "Yeni Akit",
+"url": "https://www.yeniakit.com.tr"
+},
+{
+"slug": "internethaber",
+"name": "İnternet Haber",
+"url": "https://www.internethaber.com"
+},
+{
+"slug": "aa",
+"name": "Anadolu Ajansı",
+"url": "https://www.aa.com.tr"
+},
+{
+"slug": "tv100",
+"name": "TV100",
+"url": "https://www.tv100.com"
+},
+{
+"slug": "ekonomim",
+"name": "Ekonomim",
+"url": "https://www.ekonomim.com"
+},
+{
+"slug": "nefes",
+"name": "Nefes",
+"url": "https://www.nefes.com.tr"
+},
+{
+"slug": "diken",
+"name": "Diken",
+"url": "https://www.diken.com.tr"
+},
+{
+"slug": "trthaber",
+"name": "TRT Haber",
+"url": "https://www.trthaber.com"
+},
+{
+"slug": "cumhuriyet",
+"name": "Cumhuriyet",
+"url": "https://www.cumhuriyet.com.tr"
+},
+{
+"slug": "ensonhaber",
+"name": "En Son Haber",
+"url": "https://www.ensonhaber.com"
+},
+{
+"slug": "aksam",
+"name": "Akşam",
+"url": "https://www.aksam.com.tr"
+},
+{
+"slug": "posta",
+"name": "Posta",
+"url": "https://www.posta.com.tr"
+},
+{
+"slug": "haberglobal",
+"name": "Haber Global",
+"url": "https://haberglobal.com.tr"
+},
+{
+"slug": "odatv",
+"name": "Oda TV",
+"url": "https://www.odatv.com"
+},
+{
+"slug": "gercekgundem",
+"name": "Gerçek Gündem",
+"url": "https://www.gercekgundem.com"
+},
+{
+"slug": "takvim",
+"name": "Takvim",
+"url": "https://www.takvim.com.tr"
+},
+{
+"slug": "ahaber",
+"name": "A Haber",
+"url": "https://www.ahaber.com.tr"
+},
+{
+"slug": "aydinlik",
+"name": "Aydınlık",
+"url": "https://www.aydinlik.com.tr"
+},
+{
+"slug": "star",
+"name": "Star",
+"url": "https://www.star.com.tr"
+},
+{
+"slug": "tgrt",
+"name": "TGRT Haber",
+"url": "https://www.tgrthaber.com"
+},
+{
+"slug": "dunya",
+"name": "Dünya",
+"url": "https://www.dunya.com"
+},
+{
+"slug": "turkiyegz",
+"name": "Türkiye Gazetesi",
+"url": "https://www.turkiyegazetesi.com.tr"
+},
+{
+"slug": "oksijen",
+"name": "Oksijen",
+"url": "https://gazeteoksijen.com"
+},
+{
+"slug": "f5haber",
+"name": "F5Haber",
+"url": "https://www.f5haber.com"
+},
+{
+"slug": "haberler",
+"name": "Haberler.com",
+"url": "https://www.haberler.com"
+},
+{
+"slug": "milligazete",
+"name": "Milli Gazete",
+"url": "https://www.milligazete.com.tr"
+},
+{
+"slug": "vatan",
+"name": "Vatan",
+"url": "https://www.gazetevatan.com"
+},
+{
+"slug": "dirilis",
+"name": "Diriliş Postası",
+"url": "https://www.dirilispostasi.com"
+},
+{
+"slug": "yeniasya",
+"name": "Yeni Asya",
+"url": "https://www.yeniasya.com.tr"
+},
+{
+"slug": "artigercek",
+"name": "Artı Gerçek",
+"url": "https://artigercek.com"
+},
+{
+"slug": "dha",
+"name": "Demirören Haber Ajansı",
+"url": "https://www.dha.com.tr"
+},
+{
+"slug": "yenicag",
+"name": "Yeni Çağ",
+"url": "https://www.yenicaggazetesi.com"
+},
+{
+"slug": "instacp",
+"name": "Instacp",
+"url": "https://www.instacp.com"
+},
+{
+"slug": "gazetelerdebugun",
+"name": "GazetelerdeBugün",
+"url": "https://www.gazetelerdebugun.com"
+},
+{
+"slug": "tele1",
+"name": "TELE1",
+"url": "https://www.tele1.com.tr"
+},
+{
+"slug": "turkgun",
+"name": "Türkgün",
+"url": "https://www.turkgun.com"
+},
+{
+"slug": "10haber",
+"name": "10Haber",
+"url": "https://10haber.net"
+},
+{
+"slug": "anka",
+"name": "ANKA Haber Ajansı",
+"url": "https://ankahaber.net"
+},
+{
+"slug": "gazetepencere",
+"name": "Gazete Pencere",
+"url": "https://www.gazetepencere.com"
+},
+{
+"slug": "kisadalga",
+"name": "Kısa Dalga",
+"url": "https://kisadalga.net"
+},
+{
+"slug": "nowhaber",
+"name": "NOW Haber",
+"url": "https://www.nowtv.com.tr/now-haber"
+},
+{
+"slug": "szctv",
+"name": "Sözcü TV",
+"url": "https://www.szctv.com.tr"
+},
+{
+"slug": "agos",
+"name": "Agos",
+"url": "https://www.agos.com.tr/tr"
+},
+{
+"slug": "bianet",
+"name": "bianet",
+"url": "https://bianet.org"
+},
+{
+"slug": "evrensel",
+"name": "Evrensel",
+"url": "https://www.evrensel.net"
+},
+{
+"slug": "jinnews",
+"name": "JINNEWS",
+"url": "https://jinnews.net"
+},
+{
+"slug": "mezopotamya",
+"name": "Mezopotamya Ajansı",
+"url": "https://mezopotamyaajansi.com"
+},
+{
+"slug": "sendika",
+"name": "Sendika.Org",
+"url": "https://www.sendika.org"
+},
+{
+"slug": "sol",
+"name": "soL Haber",
+"url": "https://haber.sol.org.tr"
+},
+{
+"slug": "yeniyasam",
+"name": "Yeni Yaşam",
+"url": "https://yeniyasamgazetesi10.com"
+},
+{
+"slug": "bbcturkce",
+"name": "BBC News Türkçe",
+"url": "https://www.bbc.com/turkce"
+},
+{
+"slug": "dwturkce",
+"name": "DW Türkçe",
+"url": "https://www.dw.com/tr"
+},
+{
+"slug": "medyascope",
+"name": "Medyascope",
+"url": "https://medyascope.tv"
+},
+{
+"slug": "teyit",
+"name": "Teyit",
+"url": "https://teyit.org"
+}
+]

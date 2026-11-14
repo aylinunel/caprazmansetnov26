@@ -1,0 +1,178 @@
+{
+ "q": {
+  "happened": "Eski Ulaştırma Bakanı Arif Ahmet Denizolgun'un ölümüyle ilgili yargılanan doktoru Nurettin Demirkol'a 2 yıl 6 ay hapis cezası verildi.",
+  "agree": "Doktor Demirkol'a hapis cezası verilmesi ortak.",
+  "differ": "Takvim, Sabah ve NTV cezanın süresini ve suçlamayı (NTV: yalan tanıklık) veriyor; Habertürk, A Haber ve Türkiye Gazetesi tahliyeyi ya da tutukluluğu öne çıkarıyor; BirGün ve TRT Haber duruşmayı hâkim karşısına çıkma olarak aktarıyor; Evrensel Denizolgun'u 'Süleymancıların eski lideri' diye tanıtıyor.",
+  "care": "Denizolgun'un kimliğinin ve suçlamanın başlıkta nasıl tanımlandığı, davanın bir ölüm şüphesi mi, bir cemaat meselesi mi yoksa yalan tanıklık davası mı olarak anlaşılacağını etkiler."
+ },
+ "rows": [
+  {
+   "s": "aa",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "Hapis cezası",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "Şüpheli ölüm",
+   "cons": "2 yıl 6 ay hapis",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "Hapis ve tahliye",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "birgun",
+   "frame": "Yargılama",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "Duruşma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Yargılama",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "Şüpheli ölüm",
+   "cons": "Duruşma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "tgrt",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "Ceza belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "Şüpheli ölüm",
+   "cons": "Hapis ve tahliye",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Yargılama",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "2 yıl 6 ay hapis",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "aksam",
+   "frame": "Dava kararı",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "Hapis cezası",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "Şüpheli ölüm",
+   "cons": "Ceza belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Cemaat lideri",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "2 yıl 6 ay hapis",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "turkiyegz",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "Şüpheli ölüm",
+   "cons": "Hapis cezası",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "Doktor Demirkol",
+   "cause": "Yalan tanıklık",
+   "cons": "2 yıl 6 ay hapis",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Şüpheli ölüm davası",
+   "hero": "Doktor Demirkol",
+   "blame": "",
+   "cause": "",
+   "cons": "Hapis cezası",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

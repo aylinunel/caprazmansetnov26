@@ -23,7 +23,8 @@ from pathlib import Path
 from .config import REPO
 
 WEEKS = [("w7", "11–17 Ekim", "2026-10-11", "2026-10-17"), ("w8", "18–24 Ekim", "2026-10-18", "2026-10-24"),
-         ("w9", "25–31 Ekim", "2026-10-25", "2026-10-31"), ("w10", "1–3 Kasım", "2026-11-01", "2026-11-03")]
+         ("w9", "25–31 Ekim", "2026-10-25", "2026-10-31"), ("w10", "1–7 Kasım", "2026-11-01", "2026-11-07"),
+         ("w11", "8–13 Kasım", "2026-11-08", "2026-11-13")]
 KEEP = 20  # most differentiated events shown per agent-coded week (S, § 6.3)
 DIMS = ["frame", "hero", "blame", "cause", "cons", "aff", "sol", "moral", "start"]
 WEIGHT = {"blame": 1.2, "sol": 1.2, "frame": 1.0, "cause": 1.0, "moral": 1.0, "start": 0.8, "aff": 0.8, "hero": 0.6, "cons": 0.5}
@@ -127,6 +128,9 @@ def merge(core: dict) -> None:
     cl = OUT.parent / "checklist-7.json"
     if cl.exists():
         core["CL"] = json.loads(cl.read_text())
+    wn = OUT.parent / "whatsnew-81.json"  # 8.1: 8.0 vs 8.1 findings (python -m capraz_pipeline.whatsnew)
+    if wn.exists():
+        core["W81"] = json.loads(wn.read_text())
     if OUT.exists():
         x = json.loads(OUT.read_text())
         core["N"] = {**core.get("N", {}), **x["N"]}

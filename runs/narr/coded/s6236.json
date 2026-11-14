@@ -1,0 +1,178 @@
+{
+ "q": {
+  "happened": "Halk TV'ye TMSF kayyım olarak atandı, polis operasyonuyla yayın durduruldu ve gözaltı kararları verildi.",
+  "agree": "Kayyım atanması ve yayının durdurulması ortak.",
+  "differ": "Sol, Evrensel, Karar, Cumhuriyet ve Sözcü 'baskın' ve 'şafak operasyonu' diliyle olayı basın özgürlüğüne müdahale olarak kuruyor, Anka Özgür Özel'in tepkisini ekliyor; Milli Gazete ve Dirilis 'operasyon' diye, Habertürk 'arama' ve 'neden' sorusuyla veriyor; Kisadalga ve Yeni Yaşam gözaltı sayılarını, Yeni Asya tepkileri öne çıkarıyor.",
+  "care": "'Baskın' ya da 'operasyon' sözcüğü, olayın basına yönelik bir müdahale mi yoksa olağan bir hukuki süreç mi olduğu algısını belirler."
+ },
+ "rows": [
+  {
+   "s": "sol",
+   "frame": "Basın özgürlüğü",
+   "hero": "Polis",
+   "blame": "Hükümet",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "Baskı",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Basın özgürlüğü",
+   "hero": "Polis",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "Baskı",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Basın özgürlüğü",
+   "hero": "TMSF",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "Baskı",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Basın özgürlüğü",
+   "hero": "TMSF",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Siyasi tepki",
+   "hero": "Özgür Özel",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "Kötülüğe karşı direniş",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Basın özgürlüğü",
+   "hero": "Polis",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "Baskı",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Kayyım",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Operasyon",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın kesildi",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Operasyon",
+   "hero": "",
+   "blame": "",
+   "cause": "Neden sorusu",
+   "cons": "Arama, kayyım",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "kisadalga",
+   "frame": "Kayyım",
+   "hero": "TMSF",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu, gözaltı",
+   "aff": "Halk TV çalışanları",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Operasyon",
+   "hero": "TMSF",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "bbcturkce",
+   "frame": "Kayyım",
+   "hero": "TMSF",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın durduruldu",
+   "aff": "Halk TV",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "yeniyasam",
+   "frame": "Kayyım",
+   "hero": "TMSF",
+   "blame": "",
+   "cause": "",
+   "cons": "Gözaltı kararı",
+   "aff": "Halk TV çalışanları",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "yeniasya",
+   "frame": "Tepki",
+   "hero": "Siyasiler, meslek örgütleri",
+   "blame": "",
+   "cause": "",
+   "cons": "Tepki",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

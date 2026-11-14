@@ -1,0 +1,142 @@
+{
+ "q": {
+  "happened": "Bulgaristan'da cumhurbaşkanı seçimi için oy verme işlemi başladı; Türkiye'de de 18 ilde 78 sandık kuruldu.",
+  "agree": "Seçimin yapılması ve sandık başına gidilmesi ortak.",
+  "differ": "AA, TRT Haber, Evrensel ve Mynet haberi düz seçim aktarımı olarak verirken; A Haber, Anka, BirGün ve Karar Türkiye'deki sandık sayısını öne çıkarıyor; Star 'seçim heyecanı' diyor, Takvim aday ve ayrıntılara yöneliyor.",
+  "care": "Başlıkta Türkiye'deki sandıklar öne çıktığında haber bir Bulgaristan iç seçimi olmaktan çok Türkiye bağlantılı bir olay gibi okunur."
+ },
+ "rows": [
+  {
+   "s": "aa",
+   "frame": "Olgu aktarımı",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Seçim heyecanı",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Türkiye'deki sandıklar",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "Türkiye'deki seçmenler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Olgu aktarımı",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Aday bilgisi",
+   "hero": "Adaylar",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "10haber",
+   "frame": "Olgu aktarımı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Türkiye'deki sandıklar",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "Türkiye'deki seçmenler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "birgun",
+   "frame": "Türkiye'deki sandıklar",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Sandık kurulması",
+   "aff": "Türkiye'deki seçmenler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Türkiye'deki sandıklar",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "Türkiye'deki seçmenler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Olgu aktarımı",
+   "hero": "Bulgaristan",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Olgu aktarımı",
+   "hero": "Seçmenler",
+   "blame": "",
+   "cause": "",
+   "cons": "Seçim",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

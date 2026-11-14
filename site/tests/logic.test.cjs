@@ -256,6 +256,11 @@ test("axisDist and nearestParty", () => {
   assert.equal(L.partyRank(o, ps).length, 2);
   assert.equal(L.nearestParty({ eco: 1 }, ps), null);
 });
+test("a minor party never ranks ahead of a major one", () => {
+  const o = { eco: 50, soc: 50, sec: 50, st: 50, nat: 50, cul: 50 };
+  const mk = (s, v, minor) => ({ s, minor, eco: v, soc: v, sec: v, st: v, nat: v, cul: v });
+  assert.equal(L.nearestParty(o, [mk("small", 50, true), mk("big", 80)]).p.s, "big");
+});
 test("alias matching: hits, suffixes, false positives", () => {
   const P = ["akp", "chp", "dem", "tip", "deva", "zafer", "yep", "dp", "saadet"].map((s) => ({ s }));
   const c = L.compileAliases(P);

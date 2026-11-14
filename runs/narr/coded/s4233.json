@@ -1,0 +1,166 @@
+{
+ "q": {
+  "happened": "Galatasaray, Süper Lig'de Fenerbahçe'yi 2-1 yendi ve liderliğini sürdürdü.",
+  "agree": "Derbide Galatasaray'ın kazandığı ortak.",
+  "differ": "AA ve TRT Haber maç öncesi haberi veriyor; Takvim, Anka, Milli Gazete ve NTV Osimhen'i öne çıkarıyor; Cumhuriyet U19 derbisini haber yapıyor; Sabah ve Haberler puan farkı ya da 'devirdi' diliyle sonucu aktarıyor.",
+  "care": "Kahramanlık dili ve hangi maçın anlatıldığı, haberin spor sonucu mu aktör odaklı mı okunduğunu belirler."
+ },
+ "rows": [
+  {
+   "s": "aa",
+   "frame": "Derbi öncesi",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": "Maç öncesi"
+  },
+  {
+   "s": "trthaber",
+   "frame": "Derbi öncesi",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": "Maç öncesi"
+  },
+  {
+   "s": "takvim",
+   "frame": "Derbi sonucu",
+   "hero": "Osimhen",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "Kahramanlık",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Derbi sonucu",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "tgrt",
+   "frame": "Derbi sonucu",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Gençler derbisi",
+   "hero": "Galatasaray U19",
+   "blame": "",
+   "cause": "",
+   "cons": "U19 galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Derbi sonucu",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Derbi sonucu",
+   "hero": "Osimhen",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "Kahramanlık",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Derbi sonucu",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberler",
+   "frame": "Derbi sonucu",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "Puan farkı 6",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Derbi sonucu",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Derbi sonucu",
+   "hero": "Osimhen",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "Kahramanlık",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Derbi sonucu",
+   "hero": "Osimhen",
+   "blame": "",
+   "cause": "",
+   "cons": "Galatasaray galibiyeti",
+   "aff": "",
+   "sol": "",
+   "moral": "Kahramanlık",
+   "start": ""
+  }
+ ]
+}

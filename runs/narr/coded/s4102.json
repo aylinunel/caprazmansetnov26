@@ -1,0 +1,190 @@
+{
+ "q": {
+  "happened": "İstanbul'da Cumhuriyet Bayramı tören provaları ve 29 Ekim töreni nedeniyle bazı yollar trafiğe kapatıldı.",
+  "agree": "Bazı yolların trafiğe kapanması ortak.",
+  "differ": "Çoğu kurum bayram provasını ve tarihleri belirtirken; Star, NTV, A Haber ve Sabah gerekçesiz 'dikkat' uyarısı ve alternatif güzergah çerçevesi kuruyor; Habertürk Valilik'i kaynak gösteriyor.",
+  "care": "Kapanmanın gerekçesi başlıkta yer almadığında okur olayı yalnızca bir trafik aksaklığı olarak görür."
+ },
+ "rows": [
+  {
+   "s": "karar",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "Bayram provası",
+   "cons": "Yol kapanışı",
+   "aff": "Sürücüler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "Bayram provası ve töreni",
+   "cons": "Yol kapanışı",
+   "aff": "Sürücüler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Sürücü uyarısı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "İstanbullular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Trafik düzenlemesi",
+   "hero": "Valilik",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "Sürücüler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Sürücü uyarısı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "İstanbullular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "Sürücüler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Sürücü uyarısı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "İstanbullular",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Sürücü uyarısı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yol kapanışı",
+   "aff": "Sürücüler",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "yenisafak",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "Bayram tören provası",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "aa",
+   "frame": "Trafik düzenlemesi",
+   "hero": "",
+   "blame": "",
+   "cause": "Bayram tören provası",
+   "cons": "Yol kapanışı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

@@ -1,0 +1,1947 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s4233",
+   "week": "w9",
+   "title": "Galatasaray, Fenerbahçe'yi 2-1 yendi",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Lider Galatasaray, Süper Lig'de yarın Fenerbahçe'yi ağırlayacak"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Derbi yarın: Galatasaray, yarın Fenerbahçe'yi ağırlayacak"
+    },
+    {
+     "s": "takvim",
+     "hl": "Kahraman Osimhen! Galatasaray derbide Fenerbahçe'yi 2-1 yendi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Günün ilk derbisinde Galatasaray, Fenerbahçe’yi devirdi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Dev derbide kazanan Galatasaray! Sarı-kırmızılılar, Fenerbahçe'yi 2-1 mağlup etti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "U19 derbisinde Galatasaray Fenerbahçe'yi devirdi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Derbide Galatasaray, Fenerbahçe'yi 2-1 mağlup etti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Dev derbide Osimhen şov: Galatasaray Fenerbahçe'yi 2 golle mağlup etti lider oldu"
+    },
+    {
+     "s": "diken",
+     "hl": "Galatasaray, Fenerbahçe'yi 2-1 yendi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Puan farkı 6! Dev derbide kazanan Galatasaray"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Dev derbide kazanan Galatasaray!"
+    },
+    {
+     "s": "anka",
+     "hl": "Galatasaray derbide Fenerbahçe'yi 2-1 mağlup etti; Osimhen'in golleriyle liderliğini sürdürdü"
+    },
+    {
+     "s": "ntv",
+     "hl": "Galatasaray, Fenerbahçe'yi süper yıldızı Osimhen ile devirdi"
+    }
+   ]
+  },
+  {
+   "event": "s7106",
+   "week": "w10",
+   "title": "Fatma Betül Sayan Kaya fon soruşturmasında tutuklandı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Fatma Betül Sayan Kaya ve eşi ifadeye çağrıldı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fon soruşturmasında Fatma Betül Sayan Kaya, İlyas Kaya ve İbrahim Ömer Gönül şüpheli sıfatıyla ifadeye çağrıldı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fatma Betül Sayan Kaya ve eşi ifadeye çağrıldı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fatma Betül Sayan Kaya Dahil Üç İsim İfadeye Çağrıldı"
+    },
+    {
+     "s": "karar",
+     "hl": "Fon soruşturmasında yeni gelişme: Fatma Betül Sayan Kaya ve eşi dahil 3 kişi ifadeye çağrıldı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Fon soruşturmasında yeni gelişme: Fatma Betül Sayan Kaya dahil 3 isim ifadeye çağrıldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fatma Betül Sayan Kaya ve eşi ifadeye çağrıldı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "'Fon' vurgununda yeni gelişme: Fatma Betül Sayan Kaya ve eşi ikinci kez ifadeye çağrıldı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fatma Betül Sayan Kaya, İlyas Kaya ve İbrahim Ömer Gönül fon soruşturmasında tekrar ifadeye çağrıldı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fatma Betül Sayan Kaya, İlyas Kaya ve İbrahim Ömer Gönül ifadeye çağrıldı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fatma Betül Sayan Kaya, eşi İlyas Kaya yeniden ifadeye çağrıldı"
+    },
+    {
+     "s": "akit",
+     "hl": "Fon soruşturmasında yeni gelişme: Fatma Betül Sayan Kaya ve eşi ikinci kez ifade verecek"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon vurgunu soruşturması: Fatma Betül Sayan Kaya, İlyas Kaya ve İbrahim Ömer Gönül ifadeye çağırıldı"
+    },
+    {
+     "s": "diken",
+     "hl": "Fatma Betül Sayan Kaya dahil üç kişi ifadeye çağrıldı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Fatma Betül Sayan Kaya ve eşi ifadeye çağrıldı!"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fon soruşturmasında sıcak gelişme! Fatma Betül Sayan ve iki isim yeniden ifadeye çağrıldı"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Fon soruşturmasında Fatma Betül Sayan Kaya ve iki şüpheli ifadeye çağrıldı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fon soruşturması. Fatma Betül Sayan Kaya, İlyas Kaya ve İbrahim Ömer Gönül ifadeye çağrıldı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Fatma Betül Sayan Kaya ‘şüpheli’ sıfatıyla ifadeye çağrıldı"
+    },
+    {
+     "s": "sol",
+     "hl": "Fatma Betül Sayan Kaya tutuklandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fon vurgunu soruşturması: Fatma Betül Sayan Kaya tutuklama istemiyle mahkemeye sevk edildi"
+    },
+    {
+     "s": "aa",
+     "hl": "Eski bakan Fatma Betül Sayan Kaya fon soruşturması kapsamında tutuklandı"
+    },
+    {
+     "s": "t24",
+     "hl": "Fon vurgunu: Görevden alınan AKP'li Fatma Betül Sayan Kaya hakkında tutuklama talebi!"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "AKP'li Fatma Betül Sayan Kaya ve eşi İlyas Kaya ikinci kez adliyede"
+    },
+    {
+     "s": "sabah",
+     "hl": "Fatma Betül Sayan Kaya ile eşi İlyas Kaya ifade vermek üzere adliyeye geldi"
+    },
+    {
+     "s": "bianet",
+     "hl": "Fatma Betül Sayan Kaya ikinci kez adliyede"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Fatma Betül Sayan Kaya ve eşi ifade için adliyede"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturmasında gelişme: Fatma Betül Sayan Kaya'ya tutuklama talebi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Fon soruşturması: Fatma Betül Sayan Kaya ve eşi adliyede"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Fatma Betül Sayan Kaya ile 2 şüpheli adliyede"
+    },
+    {
+     "s": "takvim",
+     "hl": "Fon soruşturmasında yeni gelişme: Fatma Betül Sayan Kaya hakkında tutuklama talebi"
+    },
+    {
+     "s": "posta",
+     "hl": "Sermaye piyasası soruşturması! Fatma Betül Sayan Kaya ve eşi İlyas Kaya adliyede"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Fatma Betül Sayan Kaya ve 2 şüpheli adliyede"
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında yeni gelişme: Fatma Betül Sayan Kaya tutuklama talebiyle mahkemeye sevk edildi"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Fatma Betül Sayan Kaya tutuklama talebiyle hakimliğe sevk edildi"
+    },
+    {
+     "s": "haber7",
+     "hl": "Fatma Betül Sayan Kaya tutuklandı! 2 isim şartlı serbest bırakıldı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Fatma Betül Sayan Kaya tutuklandı"
+    },
+    {
+     "s": "anka",
+     "hl": "Eski Bakan Fatma Betül Sayan Kaya tutuklandı"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Fon krizi: Fatma Betül Sayan Kaya tutuklandı"
+    },
+    {
+     "s": "vatan",
+     "hl": "SPK soruşturması: Fatma Betül Sayan Kaya tutuklandı!"
+    },
+    {
+     "s": "agos",
+     "hl": "AKP'li eski bakan Fatma Betül Sayan Kaya tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s7526",
+   "week": "w10",
+   "title": "İsrail'de hükümeti kurma görevi Eisenkot'a verildi",
+   "headlines": [
+    {
+     "s": "ntv",
+     "hl": "İsrail Cumhurbaşkanı, hükümet kurma görevi için Eisenkot'u işaret etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Eisenkot'tan hükümeti kurma mesajı"
+    },
+    {
+     "s": "aa",
+     "hl": "İsrail Cumhurbaşkanı Herzog'un, hükümet kurma yetkisini muhalefet lideri Eisenkot'a vereceği bildirildi"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Netanyahu’ya soğuk duş! İsrail'de hükümet kurma yetkisi Eisenkot'a verildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "İsrail Cumhurbaşkanı Herzog hükümeti kurma görevini Eisenkot'a verdi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İsrail'de hükümet kurma yetkisi Eisenkot'a verildi"
+    },
+    {
+     "s": "t24",
+     "hl": "İsrail Cumhurbaşkanı Herzog, hükümeti kurma görevini Gadi Eisenkot'a verdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Soykırımcı Netanyahu için yolun sonu! İsrail'de hükümeti kurma görevi Eisenkot'a verildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA I Tel Aviv basını duyurdu: Hükümet kurma görevi Eisenkot'a verildi! İsrail'de Netanyahu dönemi sona eriyor"
+    },
+    {
+     "s": "takvim",
+     "hl": "Katil Netanyahu dönemi bitiyor! İsrail'de hükümeti kurma görevi Gadi Eisenkot'a verildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "İsrail'de hükümet kurma yetkisi Eisenkot'a verildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...İsrail Cumhurbaşkanı hükümeti kurma görevini Netanyahu'nun rakibine verdi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İsrail Cumhurbaşkanı Herzog, hükümeti kurma görevini Netanyahu'nun rakibi Eisenkot'a verildi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "İsrail'de yeni hükümeti kurma görevi Eisenkot’a verildi"
+    },
+    {
+     "s": "onedio",
+     "hl": "İsrail'de Herzog Hükümet Kurma Görevini Netanyahu'nun Rakibi Eisenkot'a Verdi"
+    },
+    {
+     "s": "akit",
+     "hl": "Netanyahu dönemi bitiyor! Herzog hükümeti kurma görevini Gadi Ayzenkot'a verdi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Herzog hükümeti kurma görevini Gadi Eisenkot'a verdi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Netanyahu hükümeti sona erdi: Herzog hükümeti kurma görevini Eisenkot’a verdi"
+    },
+    {
+     "s": "star",
+     "hl": "İsrail Cumhurbaşkanı Herzog, hükümet kurma görevini Eisenkot'a verdi"
+    },
+    {
+     "s": "milliyet",
+     "hl": "İsrail Cumhurbaşkanı İsaac Herzog hükümet kurma görevini Eisenkot'a verdi"
+    },
+    {
+     "s": "haber7",
+     "hl": "Herzog, hükümet kurma yetkisini Eisenkot'a verdi! Netanyahu'dan darbe girişimi gibi çağrı"
+    },
+    {
+     "s": "posta",
+     "hl": "İsrail Cumhurbaşkanı İsaac Herzog hükümet kurma görevini Eisenkot'a verdi"
+    },
+    {
+     "s": "anka",
+     "hl": "İsrail Cumhurbaşkanı Herzog, hükümeti kurma yetkisini Eisenkot'a verme kararı aldı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Netanyahu'ya kötü haber! İsrail'de hükümet kurma görevi Eisenkot'a verildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İsrail’de hükümet kurma yetkisi muhalefet lideri Eisenkot’a verildi"
+    },
+    {
+     "s": "memurlar",
+     "hl": "İsrail'de Netanyahu dönemi bitiyor. Hükümet kurma görevi Eisenkot'a verildi"
+    },
+    {
+     "s": "diken",
+     "hl": "İsrail’de hükümeti kurma görevi Netanyahu’nun rakibi Eisenkot’a verildi"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | İsrail'de Netanyahu'ya büyük darbe! Hükümeti kurma görevi Eisenkot'a verildi"
+    },
+    {
+     "s": "sol",
+     "hl": "İsrail'de hükümeti kuracak isim belli oldu: Görev Eisenkot'a verildi"
+    },
+    {
+     "s": "dha",
+     "hl": "İsrail Cumhurbaşkanı Herzog, hükümeti kurma yetkisini Eisenkot'a verme kararı aldı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Netanyahu'ya ağır darbe! Hükümet kurma görevi Eisenkot'a"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "İsrail: Hükümeti kurma görevi Netanyahu'nun rakibine"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "İsrail'de hükümet kurma görevi muhalefet lideri Eisenkot'a veriliyor"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İsrail'de hükümeti kurma görevi Eisenkot'a verildi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Herzog, hükümeti kurma görevini muhalefet lideri Eisenkot'a verdi"
+    },
+    {
+     "s": "bianet",
+     "hl": "İsrail’de hükümeti kurma görevi Eisenkot'ta"
+    }
+   ]
+  },
+  {
+   "event": "s7923",
+   "week": "w10",
+   "title": "Fon soruşturmasında BDDK 3. Daire Başkanı Bilal Soysal tutuklandı",
+   "headlines": [
+    {
+     "s": "turkiyegz",
+     "hl": "Fon soruşturmasında 4 tutuklama daha! Eski SPK Başkan Vekili ve BDDK Daire Başkanı da listede"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Fon soruşturması: BDDK daire başkanı tutuklandı, tutuklu sayısı 118'e yükseldi"
+    },
+    {
+     "s": "sondakika",
+     "hl": "BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Fon soruşturmasında BDDK Daire Başkanı da tutuklandı"
+    },
+    {
+     "s": "haberler",
+     "hl": "BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SON DAKİKA | BDDK Daire Başkanı Bilal Soysal tutuklandı!"
+    },
+    {
+     "s": "haber7",
+     "hl": "Fon soruşturmasında BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fon soruşturmasında yeni gelişme! BDDK Uygulama 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "karar",
+     "hl": "Fon soruşturmasında BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "t24",
+     "hl": "Fon soruşturmasında BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fon soruşturmasında yeni gelişme: BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "'Fon' soruşturmasında BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Fon soruşturmasında yeni gelişme! BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fon Soruşturmasında Kritik Gelişme: BDDK Daire Başkanı Bilal Soysal Tutuklandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fon soruşturmasında yeni gelişme: BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon vurgunu soruşturması: BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "dha",
+     "hl": "Sermaye piyasası soruşturmasında BDDK 3. Daire Başkanı tutuklandı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Fon soruşturması: BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Fon soruşturması: BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "BDDK Daire Başkanı tutuklandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Fon soruşturmasında son dakika gelişme: BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "BDDK Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fon soruşturmasında yeni gelişme. BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Sermaye piyasası soruşturmasında BDDK 3. Daire Başkanı tutuklandı"
+    },
+    {
+     "s": "anka",
+     "hl": "BDDK 3. Daire Başkanı Bilal Soysal \"Fon Soruşturması\" kapsamında tutuklandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "star",
+     "hl": "BDDK 3. Daire Başkanı Bilal Soysal fon soruşturmasında tutuklandı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "BDDK Uygulama III. Daire Ba�kan� Bilal Soysal Tutukland�"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında BDDK daire başkanı tutuklandı"
+    },
+    {
+     "s": "diken",
+     "hl": "Fon soruşturması: BDDK daire başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Fon soruşturması! BDDK 3. Daire Başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Fon soygunu: BDDK daire başkanı Bilal Soysal tutuklandı"
+    },
+    {
+     "s": "posta",
+     "hl": "Sermaye piyasası soruşturmasında BDDK 3. Daire Başkanı tutuklandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fon soruşturmasında tutuklanan Bilal Soysal kim? BDDK Daire Başkanı'nın eğitimi, yaşı ve memleketi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "BDDK 3. Daire Başkanı tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s7854",
+   "week": "w10",
+   "title": "Polonya'da silahlı saldırı: 6 kişi öldü, 15 kişi yaralandı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Polonya'nın Krakov kentinde düzenlenen silahlı saldırıda 6 kişi öldü, 15 kişi yaralandı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Polonya'nın Krakow kentinde silahlı saldırıda en az 5 kişi öldü, en az 12 kişi yaralandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Polonya'nın Krakov kentinde silahlı saldırı: 5 kişi hayatını kaybetti, 10'dan fazla yaralı var"
+    },
+    {
+     "s": "takvim",
+     "hl": "Polonya'da yargı krizi sonrası silahlı saldırı: Çok sayıda ölü ve yaralı"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA | Polonya'da silahlı saldırı! Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Polonya'daki silahlı saldırıda 5 kişi öldü, 10 kişi yaralandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Polonya'da silahlı saldırı! Aracından insanlara ateş etti: Ölü ve yaralılar var"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Yargı krizinin ardından Polonya'da silahlı saldırı! Krakow'da ölü ve yaralılar var, güvenlik güçleri alarmda"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Polonya'da ağır silahlarla saldırı: En az altı ölü 15 yaralı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Polonya'da silahlı saldırı: 6 ölü, 3'ü polis 15 yaralı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Polonya'da silahlı saldırı! Ölü ve yaralılar var"
+    },
+    {
+     "s": "haberler",
+     "hl": "Krakov kent merkezinde silahlı saldırıda 5 kişi öldü, 10'dan fazla kişi yaralandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Polonya’da silahlı saldırı: Ölü ve yaralılar var"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Polonya'da silahlı saldırı şoku! 6 kişi öldü, 10'dan fazla kişi yaralandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Polonya'da silahlı saldırı: 6 kişi hayatını kaybetti"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Polonya’da silahlı saldırı: 5 kişi öldü, çok sayıda yaralı"
+    },
+    {
+     "s": "akit",
+     "hl": "Polonya'da kanlı saldırı: Çok sayıda ölü ve yaralılar var"
+    },
+    {
+     "s": "t24",
+     "hl": "Polonya'da silahlı saldırı: 6 kişi öldü, 15 kişi yaralandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Polonya'nın Krakov kentinde silahlı saldırı: 6 kişi hayatını kaybetti, 15 kişi yaralandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Polonya'da silahlı saldırı iddiası: 5 ölü, 10'dan fazla yaralı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Polonya'nın Krakow kentinde silahlı saldırı: Altı ölü, en az 10 yaralı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "6 kişi öldü, 10'dan fazla kişi yaralandı: Polonya’nın Krakov kentinde silahlı saldırı"
+    },
+    {
+     "s": "star",
+     "hl": "Polonya'da silahlı saldırı! Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "milliyet",
+     "hl": "SON DAKİKA HABERLERİ: Polonya'da silahlı saldırı: Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "anka",
+     "hl": "Polonya'nın Krakow kentinde silahlı saldırı: 6 kişi öldü, 15 kişi yaralandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Polonya'da silahlı saldırı: Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "diken",
+     "hl": "Polonya'da silahlı saldırı: Altı kişi öldü, çok sayıda yaralı var"
+    },
+    {
+     "s": "posta",
+     "hl": "Polonya'da silahlı saldırı! Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Krakov'daki silahlı saldırıda 5 kişi öldü, 10'dan fazla kişi yaralandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Polonya'da silahlı saldırı. Araçtan ateş açıldı, çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "aksam",
+     "hl": "Polonya'da silahlı saldırı dehşeti: Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "dha",
+     "hl": "Polonya'da silahlı saldırı: 6 ölü,15 yaralı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Krakov’da silahlı saldırı: 6 kişi öldü, 15 kişi yaralandı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Polonya'da silahlı saldırı: 6 kişi yaşamını yitirdi, 15 kişi yaralandı"
+    }
+   ]
+  },
+  {
+   "event": "s7791",
+   "week": "w10",
+   "title": "11 üniversiteye Rektör ataması Resmi Gazete'de",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "11 üniversiteye yeni rektör atandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "11 üniversiteye rektör ataması yapıldı! Resmi Gazete'de yayımlandı: İşte rektör ataması yapılan üniversiteler"
+    },
+    {
+     "s": "karar",
+     "hl": "Erdoğan’dan 11 üniversiteye rektör ataması: Kararlar Resmi Gazete’de"
+    },
+    {
+     "s": "tgrt",
+     "hl": "11 üniversiteye rektör ataması yapıldı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Atama kararları Resmi Gazete'de! 11 üniversitede rektör değişikliği"
+    },
+    {
+     "s": "haberturk",
+     "hl": "11 üniversiteye yeni rektör ataması"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Atamalar Resmi Gazete'de: 11 üniversiteye yeni rektör"
+    },
+    {
+     "s": "takvim",
+     "hl": "11 üniversiteye yeni rektör atandı! Başkan Erdoğan'ın imzasıyla Resmi Gazete'de yayımlandı"
+    },
+    {
+     "s": "haberler",
+     "hl": "11 üniversiteye rektör atandı"
+    },
+    {
+     "s": "anka",
+     "hl": "Resmi Gazete’de yayımlandı: 11 üniversiteye rektör ataması"
+    },
+    {
+     "s": "haber7",
+     "hl": "Resmi Gazete'de yayımlandı! 11 üniversiteye yeni rektör atandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Resmi Gazete kararları ve atamaları 7 Kasım 2026: Hangi üniversitelere rektör ataması yapıldı?"
+    },
+    {
+     "s": "diken",
+     "hl": "11 üniversiteye rektör atandı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "11 üniversiteye rektör ataması"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Cumhurbaşkanı Erdoğan'dan 11 üniversiteye rektör ataması"
+    },
+    {
+     "s": "sozcu",
+     "hl": "11 üniversiteye rektör atandı! İşte yeni rektörlerin isimleri"
+    },
+    {
+     "s": "posta",
+     "hl": "Resmi Gazete'de yayımlandı: 11 üniversiteye yeni rektör atandı"
+    },
+    {
+     "s": "akit",
+     "hl": "11 üniversiteye rektör ataması Resmi Gazete’de yayımlandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Erdoğan’dan 11 üniversiteye rektör ataması"
+    },
+    {
+     "s": "ntv",
+     "hl": "11 üniversiteye rektör atandı"
+    },
+    {
+     "s": "dha",
+     "hl": "11 üniversiteye Rektör ataması Resmi Gazete'de"
+    },
+    {
+     "s": "birgun",
+     "hl": "Resmi Gazete'de yayımlandı: Erdoğan 11 üniversiteye yeni rektör atadı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Resmi Gazete'de yayımlandı: 11 üniversiteye rektör atandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Başkan Erdoğan imzaladı... 11 üniversiteye yeni rektör"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "11 üniversiteye Rektör ataması Resmi Gazete'de"
+    },
+    {
+     "s": "memurlar",
+     "hl": "11 üniversiteye rektör atandı: 7'sinde isim değişti"
+    },
+    {
+     "s": "star",
+     "hl": "Karar Resmi Gazete'de: 11 üniversiteye yeni rektör atandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "11 üniversiteye yeni rektör atandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Resmi Gazete’de yayımlandı: 11 üniversiteye rektör ataması"
+    },
+    {
+     "s": "10haber",
+     "hl": "Cumhurbaşkanı Erdoğan, 11 üniversiteye rektör atadı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Cumhurbaşkanı Erdoğan'dan 11 üniversiteye yeni rektör ataması"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "11 üniversiteye rektör atandı"
+    },
+    {
+     "s": "aa",
+     "hl": "Cumhurbaşkanı Erdoğan, 11 üniversiteye rektör atadı"
+    }
+   ]
+  },
+  {
+   "event": "s7034",
+   "week": "w10",
+   "title": "Adli tıp raporu açıklandı: Kaşif Kozinoğlu'nun ölüm nedeni belli oldu",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Eski MİT görevlisi Kaşif Kozinoğlu'nun ölümüne ilişkin Adli Tıp raporu çıktı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Adli tıp raporu tamamlandı! İşte Kaşif Kozinoğlu'nun ölüm nedeni"
+    },
+    {
+     "s": "sol",
+     "hl": "Kaşif Kozinoğlu'nun Adli Tıp raporu savcılığa gönderildi: 'Ölüm nedeni kalp hastalığı'"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... 'Kaşif Kozinoğlu'nun ATK raporu gönderildi: 'Ölüm nedeni' açıklandı! Başsavcılık itiraz edecek"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kaşif Kozinoğlu'nun ölüm nedeni belli oldu! Adli Tıp raporuna itiraz"
+    },
+    {
+     "s": "birgun",
+     "hl": "Kozinoğlu'nun Adli Tıp raporu savcılıkta: Ölüm nedeni kalp hastalığı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Kaşif Kozinoğlu'nun ölüm nedeni açıklandı! ATK raporu ortaya çıktı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Adli Tıp Raporu ortaya çıktı! Kaşif Kozinoğlu'nun ölüm nedeni belli oldu"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika : Kaşif Kozinoğlu’nun ölüm nedeni belli oldu"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Adli Tıp'tan Kaşif Kozinoğlu raporu: Başsavcılık iki değerlendirmeye itiraz edecek"
+    },
+    {
+     "s": "karar",
+     "hl": "Eski MİT görevlisi Kaşif Kozinoğlu’nun 'ölüm nedeni' açıklandı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Adli tıp raporu tamamlandı! İşte Kaşif Kozinoğlu'nun ölüm nedeni"
+    },
+    {
+     "s": "mynet",
+     "hl": "Kaşif Kozinoğlu soruşturmasında Adli Tıp raporu açıklandı: Ölüm nedeni belli oldu"
+    },
+    {
+     "s": "takvim",
+     "hl": "Kaşif Kozinoğlu'nun ölüm nedeni açıklanmıştı! Başsavcılık rapordaki o sonuca itiraz edecek"
+    },
+    {
+     "s": "onedio",
+     "hl": "Kaşif Kozinoğlu'nun Kesin Ölüm Nedeni Belli Oldu"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Kaşif Kozinoğlu'nun ölüm nedeni belli oldu! Zehirlenme şüphesi aydınlatıldı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Kaşif Kozinoğlu'nun ölüm nedeni açıklandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Adli tıp raporu tamamlandı! İşte Kaşif Kozinoğlu'nun ölüm nedeni"
+    },
+    {
+     "s": "sabah",
+     "hl": "Kaşif Kozinoğlu soruşturmasında yeni gelişme! Adli Tıp raporu ortaya çıktı: İşte ölüm nedeni"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Kaşif Kozinoğlu'nun Adli Tıp raporu çıktı: Ölüm nedeni kalp hastalığı olarak tespit edildi"
+    },
+    {
+     "s": "star",
+     "hl": "Adli tıp raporu açıklandı: Kaşif Kozinoğlu'nun ölüm nedeni belli oldu"
+    },
+    {
+     "s": "anka",
+     "hl": "Adli Tıp Kurumu'ndan Kaşif Kozinoğlu'nun ölümüne ilişkin rapor: Ölüm kalp hastalığı sonucu meydana geldi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Kaşif Kozinoğlu’nun ölümüne ilişkin Adli Tıp raporu açıklandı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "SON DAKİKA HABERİ: Kaşif Kozinoğlu neden öldü? İşte adli tıp raporu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Kaşif Kozinoğlu'nun ölüm nedeni belli oldu! Antimon tespit edilmişti...Adli Tıp Kurumu son kararını açıkladı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Kaşif Kozinoğlu'nun ölümüyle ilgili Adli Tıp raporu çıktı"
+    },
+    {
+     "s": "diken",
+     "hl": "Adli Tıp: Kaşif Kozinoğlu kalp hastalığı nedeniyle öldü"
+    },
+    {
+     "s": "aksam",
+     "hl": "Kaşif Kozinoğlu soruşturmasında yeni gelişme... Ölüm nedeni açıklandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Kaşif Kozinoğlu'nun ölüm nedeni belli oldu"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Adli Tıp Kurumu'ndan Kaşif Kozinoğlu'nun ölümüne ilişkin rapor: Ölüm kalp hastalığı sonucu meydana geldi"
+    },
+    {
+     "s": "bianet",
+     "hl": "Kozinoğlu'nun ölümüne ilişkin Adli Tıp raporu: Savcılık itiraz edecek"
+    },
+    {
+     "s": "posta",
+     "hl": "Kaşif Kozinoğlu soruşturmasında flaş gelişme! Ölüm nedeni belli oldu"
+    }
+   ]
+  },
+  {
+   "event": "s7895",
+   "week": "w10",
+   "title": "Cumhurbaşkanı Erdoğan Azerbaycan'da",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Cumhurbaşkanı Erdoğan, bugün Azerbaycan'a gidecek"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Başkan Erdoğan Azerbaycan'da! Aliyev ile ikili görüşme"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Cumhurbaşkanı Erdoğan, yarın Azerbaycan'a gidecek"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan'a gidecek"
+    },
+    {
+     "s": "haberler",
+     "hl": "Cumhurbaşkanı Erdoğan, yarın Azerbaycan'a gidecek"
+    },
+    {
+     "s": "aksam",
+     "hl": "Aliyev davet etti! Başkan Erdoğan Azerbaycan'ı ziyaret edecek"
+    },
+    {
+     "s": "star",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan'ı ziyaret edecek"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Cumhurbaşkanı Erdoğan Aliyev'in davetiyle Azerbaycan'a gidiyor"
+    },
+    {
+     "s": "sabah",
+     "hl": "Başkan Erdoğan, Azerbaycan'a gidecek! Programı belli oldu"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Erdoğan, Azerbaycan kararını verdi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Cumhurbaşkanı Erdoğan, Azerbaycan'a gidecek"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Cumhurbaşkanı Erdoğan, yarın Azerbaycan'a gidecek"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Cumhurbaşkanı Erdoğan, yarın Azerbaycan'a gidecek"
+    },
+    {
+     "s": "diken",
+     "hl": "Erdoğan Azerbaycan yolcusu"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan yolcusu"
+    },
+    {
+     "s": "ntv",
+     "hl": "Cumhurbaşkanı Erdoğan bugün Azerbaycan'a gidecek"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Aliyev gelmedi ama Erdoğan Azerbaycan'a gidiyor"
+    },
+    {
+     "s": "t24",
+     "hl": "Cumhurbaşkanı Erdoğan bugün Aliyev'in daveti üzerine Azerbaycan'a gidecek"
+    },
+    {
+     "s": "akit",
+     "hl": "Başkan Erdoğan Azerbaycan'da! Aliyev karşıladı"
+    },
+    {
+     "s": "posta",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan'a gitti"
+    },
+    {
+     "s": "karar",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan'a gitti: Aliyev ile kritik görüşme"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Erdoğan gerilim sonrası Azerbaycan'da: Aliyev havalimanında karşıladı"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Erdoğan, Azerbaycan’a gitti"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Cumhurbaşkanı Erdoğan’dan Azerbaycan’a ziyaret"
+    },
+    {
+     "s": "haber7",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan'da: Aliyev havalimanında karşıladı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Pistte kol kola yürüdüler... Erdoğan Azerbaycan'da: Aliyev, havalimanında karşıladı"
+    },
+    {
+     "s": "dha",
+     "hl": "Cumhurbaşkanı Erdoğan, Azerbaycan'da"
+    },
+    {
+     "s": "10haber",
+     "hl": "Erdoğan Azerbaycan’da: Aliyev havalimanında karşıladı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Cumhurbaşkanı Erdoğan Azerbaycan'da Şuşa Kalesi'ni ziyaret etti"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Cumhurbaşkanı Erdoğan, Azerbaycan'da onuruna verilen yemeğe katıldı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Kardeşlik sofrası: Cumhurbaşkanı Erdoğan, Azerbaycan'da onuruna verilen yemeğe katıldı"
+    }
+   ]
+  },
+  {
+   "event": "s8005",
+   "week": "w10",
+   "title": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Tekirdağ Büyükşehir Başkanı Yüceer, delege krizi nedeniyle Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "sol",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Yüceer YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Yüceer, Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SON DAKİKA | Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "mynet",
+     "hl": "Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "t24",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, Yeni Parti’den istifa etti: Kurultay delegesi olarak yazılmamamı kabul etmiyorum"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Yeni Parti'de istifa depremi! Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer'den zehir zemberek sözlerle rest"
+    },
+    {
+     "s": "haberler",
+     "hl": "Tekirdağ Büyükşehir Başkanı Yüceer, delege krizi nedeniyle Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı, Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "haber7",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "diken",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "takvim",
+     "hl": "Yeni Parti’de \"iç hesaplaşma\" patladı! Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer istifa etti: Hizmet değil, koltuk derdine düştüler"
+    },
+    {
+     "s": "sabah",
+     "hl": "Son dakika: Candan Yüceer Yeni Parti’den istifa etti!"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Yüceer, Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, Yeni Parti’den istifa etti"
+    },
+    {
+     "s": "aksam",
+     "hl": "Yeni Parti'de deprem! Belediye Başkanı Yüceer istifa etti"
+    },
+    {
+     "s": "star",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "akit",
+     "hl": "Eski zihniyetli Yeni Parti’de deprem: Tekirdağ Belediye Başkanı istifa etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "anka",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "posta",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer Yeni Parti'den istifa etti"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Tekirdağ Büyükşehir Belediye Başkanı Candan Yüceer, Yeni Parti’den istifa etti"
+    },
+    {
+     "s": "bianet",
+     "hl": "Candan Yüceer YENİ Parti'den istifa etti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Candan Yüceer'in eşi kim, mesleği ne, siyasi kariyeri ve hayatı (Tekirdağ Büyükşehir Belediye Başkanı hayatı)"
+    }
+   ]
+  },
+  {
+   "event": "s7226",
+   "week": "w10",
+   "title": "Afyonkarahisar'da 8 kişiyi öldüren saldırgan yakalandı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldürüp, 1 kişiyi yaraladıktan sonra Eskişehir'de yakalanan zanlı sevk edildi"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Afyonkarahisar İhsaniye'de 5 kişiyi öldüren şüpheli kaçarken 2 kişiyi daha katletti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren saldırgan yakalandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Afyonkarahisar’da 5 kişiyi öldüren şahıs kırmızı bir araçla kaçmış"
+    },
+    {
+     "s": "haberler",
+     "hl": "Afyonkarahisar İhsaniye'de 5 kişiyi öldüren şüpheli 2 kişi daha öldürdü"
+    },
+    {
+     "s": "karar",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren saldırganın videosu ortaya çıktı: 3 ilde aranıyor"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren saldırgan yakalandı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Afyonkarahisar'da 8 kişiyi katleden saldırgan yakalandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Afyonkarahisar'da silahla 8 kişiyi öldüren şahıs yakalandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren katil Eskişehir'de yakalandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Afyonkarahisar'da 8 kişiyi katleden saldırgan yakalandı"
+    },
+    {
+     "s": "posta",
+     "hl": "8 kişiyi öldüren Afyonkarahisar canisi Eskişehir'de kıskıvrak yakalandı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Afyonkarahisar'da silahla 8 kişiyi öldüren saldırgan Eskişehir'de yakalandı - Afyonkarahisar Valiliğinden açıklama"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren zanlı Eskişehir yolunda yakalandı: Katliamın ve kaçışın detayları ortaya çıktı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Afyonkarahisar’da 8 kişiyi öldüren katil hakkında yeni detaylar: İşte geçmişi"
+    },
+    {
+     "s": "takvim",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren saldırganın iki genci \"Sizi de öldürürüm\" diye tehdit ettiği anlar ortaya çıktı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Afyon'da 8 kişiyi öldüren saldırganın ifadesi ortaya çıktı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren zanlının ifadesi ortaya çıktı!"
+    },
+    {
+     "s": "vatan",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren caninin ifadesi kan dondurdu! İşte cinayetlerin sebebi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren cani tutuklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... Afyonkarahisar'da 8 kişiyi öldüren Arif Sefa Özdemir tutuklandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Afyonkarahisar'da 8 kişiyi öldüren saldırgan tutuklandı!"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Afyon'da 8 kişiyi öldüren saldırganın ifadesi ortaya çıktı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Afyonkarahisar'da 8 kişiyi öldüren cani Arif Sefa Özdemir'in savcılık ifadesine ulaşıldı"
+    }
+   ]
+  },
+  {
+   "event": "s7298",
+   "week": "w10",
+   "title": "Bahçelievler'de inşaatta toprak kayması! 1 işçi kurtarıldı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Bahçelievler'de inşaatta toprak kayması! 1 işçi kurtarıldı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika... Bahçelievler'de inşaatta toprak kayması: Göçük altında kalan 1 işçinin cansız bedenine ulaşıldı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Son dakika | İşçiler göçük altında kaldı! Bahçelievler'de inşaatta toprak kayması: Acı haber geldi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Bahçelievler'de toprak kayması! 1 kişi hayatını kaybetti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Bahçelievler'de inşaatta toprak kayması: 1 işçinin cansız bedenine ulaşıldı, 1 işçi sağ kurtarıldı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Bahçelievler'deki inşaat göçüğünde acı haber: Toprak altında kalan işçi hayatını kaybetti"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Bahçelievler'de inşaatta toprak kayması: 1 işçiden acı haber! Vali Gül A Haber'de açıkladı: Gerekli soruşturma başlatıldı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Bahçelievler'de kazıda toprak kayması oldu, işçilerin göçük altında kaldığı öğrenildi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "İstanbul Bahçelievler'deki inşaat göçüğünden acı haber! 1 işçi hayatını kaybetti"
+    },
+    {
+     "s": "sol",
+     "hl": "Bahçelievler'de inşaat temelinde toprak kayması: Göçük altında kalan işçi hayatını kaybetti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "İstanbul Bahçelievler'de inşaatta toprak kayması! Göçük altındaki işçiler için zamanla yarışılıyor"
+    },
+    {
+     "s": "sabah",
+     "hl": "Bahçelievler'de inşaatta toprak kayması: Göçük altında kalanlar var! | Video"
+    },
+    {
+     "s": "dirilis",
+     "hl": "İstanbul Bahçelievler’de toprak kayması: İşçiler göçük altında!"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Bahçelievler'de inşaat temelinde toprak kayması: Göçük altındaki işçinin cansız bedenine ulaşıldı"
+    },
+    {
+     "s": "vatan",
+     "hl": "Son dakika! Bahçelievler'de inşaat temelinde toprak kayması: 2 kişi göçük altında kaldı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Bahçelievler'deki göçükte toprak altında kalan bir işçi kurtarıldı diğer işçi hayatını kaybetti"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Bahçelievler'de toprak altında kalan işçinin kurtarılma anı kamerada"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Bahçelievler'de inşaat göçüğünün altında kalan bir işçi kurtarıldı"
+    },
+    {
+     "s": "anka",
+     "hl": "Bahçelievler'deki toprak kaymasında ikinci işçinin cansız bedenine ulaşıldı"
+    },
+    {
+     "s": "diken",
+     "hl": "Bahçelievler'de inşaatta göçük: Bir işçi öldü"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Bahçelievler'de toprak altında kalan 2 işçiden 1'i hayatını kaybetti"
+    },
+    {
+     "s": "aksam",
+     "hl": "İnşaatta toprak kayması... Bahçelievler'den acı haber geldi"
+    },
+    {
+     "s": "star",
+     "hl": "Bahçelievler'de inşaatta toprak kayması! Bir işçiden acı haber"
+    },
+    {
+     "s": "ntv",
+     "hl": "Bahçelievler'de inşaatta toprak kayması. Bir işçi yaşamını yitirdi"
+    },
+    {
+     "s": "posta",
+     "hl": "Bahçelievler'de korkutan toprak kayması! 1 işçi kurtarıldı, 1 işçi yaşamını yitirdi"
+    }
+   ]
+  },
+  {
+   "event": "s6755",
+   "week": "w10",
+   "title": "Abdul el-Sayed, ABD'nin ilk Müslüman senatörü oldu",
+   "headlines": [
+    {
+     "s": "ntv",
+     "hl": "ABD'de seçim yarışı başlıyor. Salıncak eyalette Abdul el-Sayed kazanırsa ilk Müslüman senatör olacak"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Michigan anketlerine göre Abdul El-Sayed ABD'nin ilk Müslüman senatörü olabilir"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "ABD Senatosu'na seçilen ilk Müslüman Abdul El-Sayed kimdir?"
+    },
+    {
+     "s": "haberler",
+     "hl": "Michigan anketlerine göre Abdul El-Sayed ABD'nin ilk Müslüman senatörü olabilir"
+    },
+    {
+     "s": "akit",
+     "hl": "ABD'de ilk Müslüman senatör tarihi eşikte! Michigan anketlerinde Abdul El-Sayed zafere koşuyor!"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Abdul el-Sayed, ABD Senatosuna seçilen ilk Müslüman senatör oldu"
+    },
+    {
+     "s": "evrensel",
+     "hl": "ABD tarihinin ilk Müslüman senatörü seçildi: Abdul El-Sayed, Cumhuriyetçi Mike Rogers'ı yendi"
+    },
+    {
+     "s": "aa",
+     "hl": "2026 ABD ara seçimlerinde sandıktan zaferle çıkan Sayed, ABD'nin ilk Müslüman senatörü oldu"
+    },
+    {
+     "s": "diken",
+     "hl": "ABD'nin ilk Müslüman senatörü Abdul El-Sayed: Donald bana sadece 'senatör' diyebilirsin"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Abdul el-Sayed, ABD'nin ilk Müslüman senatörü oldu"
+    },
+    {
+     "s": "karar",
+     "hl": "ABD tarihinin ilk Müslüman senatörü El-Sayed: İnşallah'ı Elhamdülillah'a dönüştürdü"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "ABD'nin ilk Müslüman senatörü oldu! 'Salıncak eyalet' Michigan'da tarihi zafer"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Abdul el-Sayed kimdir? ABD'nin ilk Müslüman senatörü oldu"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "ABD'nin ilk Müslüman senatörü El-Sayed kimdir? Abdul El-Sayed aslen nereli?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "ABD'nin ilk Müslüman senatörü olan Sayed'den \"imkansızı başardık\" açıklaması"
+    },
+    {
+     "s": "sabah",
+     "hl": "7 Müslüman isim kongreye seçildi! ABD tarihinde bir ilk: Abdul el-Sayed Senatör oldu!"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Trump'ın tüm suçlamalarına rağmen kazandı: İlk Müslüman senatör Abdul El-Sayed seçildi!"
+    },
+    {
+     "s": "onedio",
+     "hl": "ABD'nin İlk Müslüman Senatörü Abdul El-Sayed Oldu: Michigan'da Mike Rogers'ı Yüzde 52'ye 46 Yendi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Abdul El-Sayed kimdir, kaç yaşında, aslen nereli? ABD'nin ilk Müslüman senatörünün hayatı ve siyasi kariyeri"
+    },
+    {
+     "s": "anka",
+     "hl": "ABD'nin ilk Müslüman senatörü seçildi: Demokratlar Kongrede üstünlüğü sağladı"
+    },
+    {
+     "s": "aksam",
+     "hl": "İsrail lobisine rağmen kazandı: ABD'nin ilk Müslüman senatörü oldu"
+    },
+    {
+     "s": "star",
+     "hl": "İsrail lobisine rağmen kazandı! ABD'nin ilk Müslüman senatörü olarak ülke tarihine geçti"
+    },
+    {
+     "s": "milliyet",
+     "hl": "ABD tarihinde bir ilk: Müslüman senatör Abdul El-Sayed Michigan’da zafer ilan etti!"
+    },
+    {
+     "s": "ahaber",
+     "hl": "ABD'nin ilk Müslüman senatörü Sayed, inancı nedeniyle hedef alınmasına ve İsrail lobisine rağmen kazandı! Trump'a ve JD Vance'e böyle seslendi"
+    },
+    {
+     "s": "takvim",
+     "hl": "ABD Senatosuna seçilen ilk Müslüman Abdul El-Sayed oldu: Michigan'da tarihi zafer"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Herkes ABD'nin ilk Müslüman senatörünü konuşuyor: İşte iflas eden kentte mucizeler yaratan hekim"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "İsrail lobisine rağmen kazandı - Abdul el-Sayed, Senatoya giren ilk Müslüman olarak tarihe geçti"
+    },
+    {
+     "s": "tgrt",
+     "hl": "ABD'nin ilk Müslüman Senatörü Sayed'den Kongre'ye savaş yetkilerini kullanma çağrısı"
+    }
+   ]
+  }
+ ]
+}

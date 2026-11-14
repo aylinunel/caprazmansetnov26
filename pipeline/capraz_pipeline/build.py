@@ -110,6 +110,14 @@ def build(root: Path, ref: Path, out: Path, since: str | None = None, until: str
     editorial = json.loads((ref / "editorial.json").read_text())
     refev = json.loads((ref / "events.json").read_text())
     lean = {s["s"]: s.get("lean") for s in editorial["S"]}
+    # 8.1: the collector's 72-publisher registry (names + addresses). Outlets outside the supplied
+    # placement table stay unplaced; the registry only names them and lists them as read feeds.
+    reg_p = ref / "registry.json"
+    reg = json.loads(reg_p.read_text()) if reg_p.exists() else []
+    known = {f["s"] for f in editorial["_feeds"]}
+    editorial["_feeds"] = editorial["_feeds"] + [{"s": r["slug"], "u": r["url"], "c": "sitemap", "e": None}
+                                                 for r in reg if r["slug"] not in known]
+    editorial["SN"] = {r["slug"]: r["name"] for r in reg}
 
     # events
     locked = {m for h in refev["hand"] for m in h["members"]}
