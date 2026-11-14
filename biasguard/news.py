@@ -35,18 +35,69 @@ def _load(path: Path) -> Any:
     return json.loads(gzip.decompress(path.read_bytes()))
 
 
+def _pack_columns(pack: dict, required: tuple[str, ...], optional: tuple[str, ...] = ()) -> int:
+    """Reject misaligned columns instead of silently dropping source provenance."""
+    ids = pack.get("i")
+    if not isinstance(ids, list):
+        raise ValueError("pack i must be an array")
+    for key in required + tuple(k for k in optional if k in pack):
+        if not isinstance(pack.get(key), list) or len(pack[key]) != len(ids):
+            raise ValueError(f"pack {key} must be an array aligned with i")
+    return len(ids)
+
+
+def _article_url(pack: dict, index: int) -> str | None:
+    """Decode the pack's URL, never substitute a guessed outlet/article URL.
+
+    Monthly packs retain host + path, not the original scheme; their public
+    decoder uses HTTPS. Uncompressed absolute URL fields are retained verbatim.
+    """
+    paths = pack.get("u")
+    if paths is None or paths[index] is None:
+        return None
+    path = paths[index]
+    if not isinstance(path, str):
+        raise ValueError("pack URL must be a string or null")
+    if path.startswith(("https://", "http://")):
+        return path
+    hosts, indices = pack.get("hosts"), pack.get("h")
+    if hosts is None or indices is None:
+        return None
+    host_index = indices[index]
+    if (not isinstance(hosts, list) or isinstance(host_index, bool)
+            or not isinstance(host_index, int) or not 0 <= host_index < len(hosts)):
+        raise ValueError("pack URL host index is invalid")
+    host = hosts[host_index]
+    if not isinstance(host, str) or not host:
+        return None
+    return f"https://{host}/{path}"
+
+
 def event_inputs(build: Path, top: int) -> list[dict[str, Any]]:
+    if isinstance(top, bool) or not isinstance(top, int) or top < 1:
+        raise ValueError("top must be a positive integer")
     core = _load(build / "core.bin")
     packs = core["meta"]["packs"]
     arts: dict[str, dict] = {}
     for m in packs["months"]:
         a = _load(build / f"a-{m}.bin")
+        _pack_columns(a, ("s", "t", "d"), ("u", "h"))
         for k, i in enumerate(a["i"]):
-            arts[i] = {"s": packs["sources"][a["s"][k]], "t": a["t"][k], "d": a["d"][k]}
+            source_index = a["s"][k]
+            if (isinstance(source_index, bool) or not isinstance(source_index, int)
+                    or not 0 <= source_index < len(packs["sources"])):
+                raise ValueError("pack source index is invalid")
+            if not all(isinstance(v, str) for v in (i, a["t"][k], a["d"][k])):
+                raise ValueError("pack article id, title and timestamp must be strings")
+            arts[i] = {"i": i, "s": packs["sources"][source_index], "t": a["t"][k], "d": a["d"][k],
+                       "url": _article_url(a, k)}
         lp = build / f"l-{m}.bin"
         if lp.exists():
             l = _load(lp)
+            _pack_columns(l, ("l",))
             for i, lede in zip(l["i"], l["l"]):
+                if not isinstance(i, str) or (lede is not None and not isinstance(lede, str)):
+                    raise ValueError("pack lede id must be a string and lede must be a string or null")
                 if i in arts:
                     arts[i]["l"] = lede
     lean = {s["s"]: s.get("lean") for s in core.get("S", [])}
@@ -60,19 +111,40 @@ def event_inputs(build: Path, top: int) -> list[dict[str, Any]]:
             if a and (a["s"] not in first or a["d"] < first[a["s"]]["d"]):
                 first[a["s"]] = a
         lines = []
+        segments = []
+        offset = 0
         for s, a in sorted(first.items(), key=lambda x: x[1]["d"]):
-            lede = (a.get("l") or "").strip().replace("\n", " ")
-            if len(lede) > LEDE_CHARS:
+            original_lede = a.get("l") or ""
+            lede = original_lede.strip().replace("\n", " ")
+            truncated = len(lede) > LEDE_CHARS
+            if truncated:
                 lede = lede[:LEDE_CHARS].rsplit(" ", 1)[0] + " …"
-            lines.append(f"[{s} · {a['d'][11:16]}] {a['t']}" + (f" — {lede}" if lede else ""))
+            prefix = f"[{s} · {a['d'][11:16]}] "
+            line = prefix + a["t"] + (f" — {lede}" if lede else "")
+            headline_start = offset + len(prefix)
+            headline_end = headline_start + len(a["t"])
+            segments.append({
+                "start": offset, "end": offset + len(line),
+                "headline_start": headline_start, "headline_end": headline_end,
+                "lede_start": headline_end + len(" — ") if lede else None,
+                "lede_end": offset + len(line) if lede else None,
+                "lede_truncated": truncated, "original_lede_length": len(original_lede),
+                "article_id": a["i"], "url": a["url"], "outlet": s, "timestamp": a["d"],
+            })
+            lines.append(line)
+            offset += len(line) + 1  # Python character offsets, including the inter-outlet newline
         def place(s: str) -> str:
             v = lean.get(s)
             return "yerleşim yok" if v is None else ("sol" if v < 45 else "sağ" if v > 55 else "orta") + f" ({v})"
         missing = sorted(active - set(first))
         context = (f"Olay: {e['t']}\nİlk başlık: {e['f']} · son başlık: {e['l']} (Türkiye saati)\n"
                    f"Kurumlar ve verilen yerleşimler: " + "; ".join(f"{s}: {place(s)}" for s in sorted(first)) + "\n"
-                   f"Olayı vermeyen etkin kurumlar: " + (", ".join(missing) if missing else "yok"))
-        out.append({"event": e["i"], "title": e["t"], "outlets": len(first), "text": "\n".join(lines), "context": context})
+                   f"Olayı vermeyen etkin kurumlar: " + (", ".join(missing) if missing else "yok") + "\n"
+                   "Sınırlama: Yerleşimler kaynak kaydından verilmiştir, bağımsız olarak doğrulanmamıştır; "
+                   "davranış kanıtı değildir. Toplayıcı kaydındaki boşluklar kurumun olayı yayımlamadığının "
+                   "kanıtı değildir; yalnızca toplanan örneklemi gösterir.")
+        out.append({"event": e["i"], "title": e["t"], "outlets": len(first), "text": "\n".join(lines),
+                    "context": context, "input_scope": "headline_and_partial_lede", "segments": segments})
     return out
 
 
@@ -186,7 +258,33 @@ def _outlet_counts(done: list[dict]) -> dict[str, dict[str, int]]:
     return out
 
 
-def apply(run: Path) -> dict[str, Any]:
+_COVERAGE_FIELDS = ("catalog_card_count", "selected_card_count", "assessed_card_count",
+                    "unassessed_card_count", "retrieval_limited", "completion_limited")
+_GUARDED_METADATA = {"algorithm": "news-validity-v1", "publication_status": "draft",
+                     "verification_status": "needs_review", "review_required": True}
+
+
+def _attribution_outlets(value: Any) -> set[str]:
+    """Collect source outlets from attributed occurrences, including cross-line spans."""
+    found: set[str] = set()
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if key == "outlet" and isinstance(child, str):
+                found.add(child)
+            elif key in {"outlets", "o"} and isinstance(child, list):
+                found.update(o for o in child if isinstance(o, str))
+            else:
+                found.update(_attribution_outlets(child))
+    elif isinstance(value, list):
+        for child in value:
+            found.update(_attribution_outlets(child))
+    return found
+
+
+def apply(run: Path, guarded: bool = False) -> dict[str, Any]:
+    """Replay local reviewer files; guarded artifacts are review-only, never public packs."""
+    if guarded:
+        from .validity import evidence_attribution, guard_news_result
     bg = BiasGuard()
     results = []
     tripped = (run / "BREAKER_TRIPPED").exists()  # written by the dispatcher when it stopped early
@@ -194,19 +292,43 @@ def apply(run: Path) -> dict[str, Any]:
         ev = it["event"]
         present = any((run / d / f"{ev}.json").exists() for d in ("selections", "reviews/advocate", "reviews/skeptic"))
         if not present:
-            results.append({"event": ev, "title": it["title"], "outlets": it["outlets"], "status": "not_attempted"})
-            continue
-        r = BiasGuard(reviewer=FileReviewer(run, ev)).analyze(it["text"], it["context"], stakes="medium", mode="ai",
-                                                             max_candidates=MAX_CANDIDATES)
+            if not guarded:
+                results.append({"event": ev, "title": it["title"], "outlets": it["outlets"], "status": "not_attempted"})
+                continue
+            r = bg._base_output(it["text"], it["context"], "medium", [], MAX_CANDIDATES)
+            r.update({"status": "not_attempted", "completion_limited": True, "reviewer_outcomes": [],
+                      "adjudication": [], "rejected_evidence": []})
+        else:
+            r = BiasGuard(reviewer=FileReviewer(run, ev)).analyze(it["text"], it["context"], stakes="medium", mode="ai",
+                                                                 max_candidates=MAX_CANDIDATES)
+        if guarded:
+            r = guard_news_result(r, it, bg.cards)
         lines = [(l[1:l.index(" ·")], l) for l in it["text"].splitlines() if l.startswith("[") and " ·" in l]
         who = lambda q: sorted({o for o, l in lines if q in l})  # outlets whose headline line holds the quote
-        slim = lambda f: {"id": f["id"], "name": f["name"], "status": f["status"], "definition": f["definition"],
-                          "source_url": f["source_url"], "evidence": [{"q": x["quote"], "src": x["source"], "kind": x.get("kind"),
-                                                                       "o": who(x["quote"]) if x["source"] == "text" else []}
-                                                                      for x in f["evidence"]],
-                          "mechanisms": f["mechanisms"], "alternatives": f["alternative_explanations"],
-                          "missing": f["missing_context"]}
-        results.append({
+
+        def slim_evidence(evidence: dict) -> dict:
+            exported = {"q": evidence["quote"], "src": evidence["source"], "kind": evidence.get("kind"),
+                        "o": who(evidence["quote"]) if evidence["source"] == "text" else []}
+            if guarded:
+                occurrences = evidence_attribution(it, evidence)
+                exported["occurrences"] = occurrences
+                exported["o"] = sorted(_attribution_outlets(occurrences)) if evidence["source"] == "text" else []
+            return exported
+
+        def slim(finding: dict) -> dict:
+            exported = {"id": finding["id"], "name": finding["name"], "status": finding["status"],
+                        "definition": finding["definition"], "source_url": finding["source_url"],
+                        "evidence": [slim_evidence(x) for x in finding["evidence"]],
+                        "mechanisms": finding["mechanisms"], "alternatives": finding["alternative_explanations"],
+                        "missing": finding["missing_context"]}
+            if guarded:
+                for key in ("entry_type", "review_policy", "not_necessarily_an_error", "eligibility", "validity_gate",
+                            "validity", "original_status", "validity_reasons"):
+                    if key in finding:
+                        exported[key] = finding[key]
+            return exported
+
+        exported = {
             "event": ev, "title": it["title"], "outlets": it["outlets"], "status": r["status"],
             "error": r.get("error"), "selected": r.get("candidate_ids"),
             "supported": [slim(f) for f in r["supported_findings"]],
@@ -216,7 +338,18 @@ def apply(run: Path) -> dict[str, Any]:
                               if a["original_verdict"] == "supported" and a["verdict"] != "supported"),
             "rejectedQuotes": len(r.get("rejected_evidence", [])),
             "quotesVerified": sum(len(a["verified_evidence"]) for o in r.get("reviewer_outcomes", []) for a in o["assessments"]),
-        })
+        }
+        if guarded:
+            exported.update({key: r[key] for key in _COVERAGE_FIELDS})
+            exported["coverage"] = {**r.get("coverage", {}), **{key: r[key] for key in _COVERAGE_FIELDS}}
+            exported["audit"] = r.get("audit", {})
+            exported["input_scope"] = r["validity_gate"]["input_scope"]
+            exported["adjudication"] = r.get("adjudication", [])
+            exported["segments"] = it.get("segments", [])
+            for key in ("validity_gate", "card_eligibility", "eligibility"):
+                if key in r:
+                    exported[key] = r[key]
+        results.append(exported)
     done = [x for x in results if x["status"] == "review_complete"]
     count = lambda k: sum(len(x[k]) for x in done)
     by_card: dict[str, dict] = {}
@@ -237,7 +370,18 @@ def apply(run: Path) -> dict[str, Any]:
         # outlet -> card id -> events where that outlet's headline was quoted as evidence (AI output, not a verdict)
         "outlets": _outlet_counts(done),
     }
-    return {"summary": summary, "events": results}
+    payload = {"summary": summary, "events": results}
+    if guarded:
+        # Totals are event-card review opportunities, not all-catalog negative verdicts.
+        summary["coverage"] = {
+            "catalog_card_count": len(bg.cards),
+            **{key: sum(x[key] for x in results) for key in
+               ("selected_card_count", "assessed_card_count", "unassessed_card_count")},
+            "retrieval_limited": any(x["retrieval_limited"] for x in results),
+            "completion_limited": any(x["completion_limited"] for x in results),
+        }
+        payload["metadata"] = dict(_GUARDED_METADATA)
+    return payload
 
 
 BANNED = ("bağlam gerekli", "desteklendi", "uncertain")
@@ -340,12 +484,15 @@ def main() -> None:
     p.add_argument("--stage", choices=["select", "review"])
     p.add_argument("--batch", type=int, default=10)
     p.add_argument("--out", type=Path)
+    p.add_argument("--guarded", action="store_true", help="apply the news validity gate; output remains a review-only draft")
     a = p.parse_args()
+    if a.top < 1:
+        p.error("--top must be a positive integer")
     a.run.mkdir(parents=True, exist_ok=True)
     if a.cmd == "inputs":
         items = event_inputs(a.build, a.top)
         (a.run / "inputs.jsonl").write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in items))
-        print(json.dumps({"events": len(items), "maxChars": max(len(x["text"]) + len(x["context"]) for x in items)}))
+        print(json.dumps({"events": len(items), "maxChars": max((len(x["text"]) + len(x["context"]) for x in items), default=0)}))
     elif a.cmd == "tasks":
         for path in write_tasks(a.run, a.stage, a.batch):
             print(path)
@@ -361,9 +508,12 @@ def main() -> None:
                 out.write_text(json.dumps(res, ensure_ascii=False))
     elif a.cmd == "pack":
         # Same keys build.py adds, without re-running the 20-minute pipeline.
+        from .validity import ensure_publication_allowed
+        data = json.loads((a.build / "biasguard.json").read_text())
+        ensure_publication_allowed(data)  # Reject review-only artifacts before reading or writing core.bin.
         core_path = a.build / "core.bin"
         core = _load(core_path)
-        core["BG"] = json.loads((a.build / "biasguard.json").read_text())
+        core["BG"] = data
         print(json.dumps(merge_explain(core["BG"], a.run)))
         import sys; sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pipeline"))
         from capraz_pipeline.narratives import merge
@@ -372,7 +522,7 @@ def main() -> None:
         core_path.write_bytes(gzip.compress(json.dumps(core, ensure_ascii=False, separators=(",", ":")).encode()))
         print(core_path)
     else:
-        res = apply(a.run)
+        res = apply(a.run, guarded=a.guarded)
         (a.out or a.run / "biasguard.json").write_text(json.dumps(res, ensure_ascii=False))
         print(json.dumps({k: v for k, v in res["summary"].items() if k != "cards"}))
 

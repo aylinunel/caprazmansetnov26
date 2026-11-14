@@ -30,3 +30,12 @@ the run folder; events with no output are reported as `not_attempted` and the su
 Re-running with an API key: write a reviewer with the same `select`/`review` interface as
 `FileReviewer` that calls the provider, logging the provider's error envelope on failure (the
 2026-10-28 run lost 34 tasks to an unlogged "no completion choice").
+
+## Experimental evidence-gated mode
+
+Use `python -m biasguard.news apply --run <unchanged-run> --guarded --out /tmp/review-draft.json`
+to replay saved reviews with documentary-observability gates and full source/coverage provenance.
+The output remains a draft: both public-pack paths refuse it. It is not an automatic approval or
+authenticated administration workflow. The optional 138-mechanism Mesa laboratory and offline
+reference evaluator are explained in [the integration guide](../docs/biasguard-validity.md).
+No simulation result changes article verdicts or supplied political placements automatically.

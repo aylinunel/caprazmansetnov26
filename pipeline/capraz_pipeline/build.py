@@ -86,9 +86,28 @@ def pack_month(arts: list[dict], sources: list[str], cats: list[str], keys: list
     return {"hosts": hosts, **col}
 
 
+def load_public_biasguard(path: Path) -> dict:
+    """Read a legacy public review or reject a new review-only draft.
+
+    The shared predicate is stdlib-only: pipeline builds do not acquire Mesa,
+    provider credentials, or the detector's optional dependencies.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_capraz_publication_guard", REPO / "biasguard" / "publication.py")
+    if spec is None or spec.loader is None:
+        raise ValueError("Public BiasGuard export gate is unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    module.ensure_publication_allowed(payload)
+    return payload
+
+
 def build(root: Path, ref: Path, out: Path, since: str | None = None, until: str | None = None,
           validate: bool = True) -> dict:
     t0 = time.time()
+    bg_path = out / "biasguard.json"
+    bg_payload = load_public_biasguard(bg_path) if bg_path.exists() else None
     store = Store(root / "store")
     work, models = root / "work", root / "models"
     days = store.days(since, until)
@@ -211,7 +230,10 @@ def build(root: Path, ref: Path, out: Path, since: str | None = None, until: str
     # 7.0: BiasGuard event reviews (python -m biasguard.news apply --out <out>/biasguard.json), plus the
     # archived 2026-10-28 simulation metrics; both are optional so a plain build still works.
     for key, path in (("BG", out / "biasguard.json"), ("BGS", REPO / "docs" / "biasguard-simulation" / "summary.json")):
-        if path.exists():
+        if key == "BG":
+            if bg_payload is not None:
+                core[key] = bg_payload
+        elif path.exists():
             core[key] = json.loads(path.read_text())
     narratives.merge(core)  # 7.0: agent-coded Anlatı haritası weeks after the hand-coded period
     report["sizes"] = sizes
