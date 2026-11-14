@@ -194,7 +194,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (bad) fails.push(`${tag}: anlati ${bad}`);
     }
     /* Broadsheet components each page must carry (spec §5), by route prefix */
-    const KINDS = { "#/": "head cascade splits tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/ilan": "head tickets scene cascade" };
+    const KINDS = { "#/": "head cascade tickets glass", "#/kurum?s=": "head lead tickets scene cascade", "#/oruntu?q=": "head scene", "#/ilan": "head tickets scene cascade" };
     const want = Object.keys(KINDS).find((p) => p.endsWith("=") ? route.startsWith(p) : route === p);
     if (want) {
       const miss = await page.evaluate((ks) => ks.split(" ").filter((k) => !document.querySelector(`#view [data-m=${k}]`)), KINDS[want]);
@@ -256,7 +256,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       };
       if (g[0] === 2) await hero(tag);
       if (g[2] !== "Bu haftanın ayrışmalarını gör ↓" || g[3] !== "#bu-hafta" || !g[4]) fails.push(`${tag}: .fh-cta / #bu-hafta wrong: ${g}`);
-      const fd = await page.evaluate(() => [document.querySelectorAll("#bu-hafta .v7-fc").length, !!document.querySelector("#bu-hafta h2"), !!document.querySelector(".v7-how [data-m=splits]"), document.querySelectorAll(".v7-hgrid .v7-hc").length, document.documentElement.scrollWidth > innerWidth]);
+      const fd = await page.evaluate(() => [document.querySelectorAll("#bu-hafta .v7-fc").length, !!document.querySelector("#bu-hafta h2"), document.querySelectorAll(".v7-how .v7-hsteps > li").length === 3, document.querySelectorAll(".v7-hgrid .v7-hc").length, document.documentElement.scrollWidth > innerWidth]);
       if (fd[0] > 6 || !fd[1] || !fd[2] || fd[3] !== 5) fails.push(`${tag}: homepage feed/steps/links wrong: ${fd}`);
       if (w === 390 && fd[4]) fails.push(`${tag}: home horizontal scroll`);
       const bt = await page.evaluate(() => document.body.innerText);

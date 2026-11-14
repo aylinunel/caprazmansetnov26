@@ -30,17 +30,18 @@ function feedHTML(lead) {
 function pgHome7() {
   var top = weeklySplits(D.E, DAYS[DAYS.length - 1], { cov: covOf }).filter(function (e) { return defaultPair(e); });
   var lead = top[0] || leadEvent();
-  var step = function (n, t, l) { return { bloc: "mid", word: String(n), title: t, text: l, outlets: [] }; }, m = D.meta.counts;
+  var step = function (n, t, l) { return '<li><span class="hs-n">0' + n + '</span><b class="hs-t">' + esc(t) + '</b><p class="hs-x">' + esc(l) + "</p></li>"; }, m = D.meta.counts;
   var deep = ["/olaylar", "/anlati", "/oruntu", "/kurumlar", "/yontem"].map(function (r) {
     var nv = r === "/anlati" ? ["", "Anlatı haritası"] : NAV.filter(function (n) { return n[0] === r; })[0];
     return nv ? '<a class="v7-hc" href="#' + r + '"><b>' + esc(nv[1]) + "</b><span>" + esc(NAV_SUB[r]) + "</span></a>" : "";
   }).join("");
   var h = fogHero(lead) + '<section id="bu-hafta" class="v7-feed">' + feedHTML(lead) + '</section><div class="wrap page v7-home">';
   h += '<section class="v7-how">' + pGlass(6) + '<div class="p-ne">' + pHead("Nasıl çalışır", "Çapraz Manşet nasıl çalışır") +
-    pTickets([{ n: m.articles, label: "başlık" }, { n: D.E.length, label: "olay" }, { n: D.meta.sources.length, label: "kurum" }]) + "</div>" + pSplits([
-    step(1, "Karşılaştır", "Aynı olayın bütün başlıklarını yan yana koyarız."),
-    step(2, "Fark et", "Kurumlar arasında ayrışan sözcükleri işaretleriz."),
-    step(3, "Ölç", "Bu farkların haftalar boyunca tekrar edip etmediğini sayarız.")]) + "</section>";
+    pTickets([{ n: m.articles, label: "başlık" }, { n: D.E.length, label: "olay" }, { n: D.meta.sources.length, label: "kurum" }]) + /* steps sit inside the pinned block, so no blank screen follows the tickets while the counters scrub */
+    '<ol class="v7-hsteps">' +
+    step(1, "Karşılaştır", "Aynı olayın bütün başlıklarını yan yana koyarız.") +
+    step(2, "Fark et", "Kurumlar arasında ayrışan sözcükleri işaretleriz.") +
+    step(3, "Ölç", "Bu farkların haftalar boyunca tekrar edip etmediğini sayarız.") + "</ol></div></section>";
   h += "<section>" + pHead("Çapraz Manşet", "Daha derine in") + '<div class="v7-hgrid">' + deep + "</div></section>";
   if (ADV && ADV.agenda) h += '<section class="v7-hnet"><div class="v7-hnet-t"><p class="eyebrow">Gündem ağı · ' + ADV.agenda.order.length + ' kurum</p><h2 class="v7-hh">Kim kiminle aynı haberleri seçiyor?</h2>' +
     '<p class="lede">Birlikte çok olay haber yapan kurumlar birbirine çekilir. Renk kayıt defterindeki yerleşim, büyüklük verilen olay sayısı. Bir kuruma ' + orTap() + ', komşuları öne çıksın.</p>' +

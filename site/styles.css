@@ -2559,6 +2559,60 @@ body:has(#app.intro){overflow-x:hidden}
 @media (max-width:600px){.ym-plain .ym-toc a{border-bottom:0}}
 .ym-plain .ym-toc li.x0{list-style:none}
 
+/* 8.1 · brand enhancement pass (Rebrand Proposal §10–11). Additive: no layout or component is replaced.
+   Contrast: text takes the brand inks (ink #1B1813, soft ink #5E5749 = 6.3:1+, mist #BDB4A0 on dark = 8.6:1).
+   Nasıl çalışır accents: newsprint surfaces, highlight yellow only behind a word, evidence amber only on small numerals. */
+:root{--ink:#1B1813;--ink2:#3A352C;--muted:#5E5749;--hl:#F6C453;--np:#F5F0E3;--np-line:#DDD5C2}
+:root[data-theme="dark"]{--ink:#F5F0E3;--ink2:#DDD5C2;--muted:#BDB4A0;--np:#24211A;--np-line:#3A352B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#F5F0E3;--ink2:#DDD5C2;--muted:#BDB4A0;--np:#24211A;--np-line:#3A352B}}
+.xbs{color:var(--ink)}
+.p-head .p-kick,.eyebrow,.tix-l,.p-no{color:var(--ink2)}
+
+/* home · Çapraz Manşet nasıl çalışır */
+section.v7-how{padding-bottom:28px}
+.v7-how .p-tix{gap:20px;margin:40px 0 8px}
+.v7-how .tix{background:var(--np);box-shadow:inset 0 0 0 1px var(--np-line)}
+.v7-how .tix-l{border-top-color:color-mix(in srgb,var(--ink) 40%,transparent)}
+/* the three steps sit side by side, all readable at rest (deck §01: rule, index, marked word, sentence) */
+.v7-hsteps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:40px 0 0;padding:0}
+.v7-hsteps li{display:grid;gap:10px;align-content:start;justify-items:start;border-top:2px solid var(--ink);padding-top:16px}
+.hs-n{font:600 12px var(--ff-m);letter-spacing:.16em;color:var(--hot)}
+.hs-t{font:600 clamp(22px,2.2vw,28px)/1.15 var(--serif);letter-spacing:-.01em;padding:1px 8px 3px;border-radius:5px;background:var(--hl);color:#1B1813}
+.hs-x{font:400 clamp(17px,1.5vw,20px)/1.45 var(--serif);color:var(--ink);max-width:28ch;text-wrap:pretty}
+@media (max-width:760px){.v7-hsteps{grid-template-columns:1fr;gap:22px}.hs-x{max-width:none}}
+.v7-home>section+section{margin-top:24px}
+.v7-hgrid{gap:16px}
+.v7-hc{padding:18px;gap:8px}
+
+/* /yontem · Nasıl çalışır: sections read as groups, numerals carry the accent */
+.ym-plain .phead .eyebrow::before{content:"";display:inline-block;width:7px;height:7px;margin-right:10px;background:var(--hl);outline:1px solid var(--ink);vertical-align:1px}
+.ym-plain .ym-toc{margin-bottom:36px;padding:20px 24px 16px;border:1px solid var(--np-line);border-radius:14px;background:var(--np)}
+.ym-plain .ym-toc b{color:var(--ink2);margin-bottom:12px}
+.ym-plain .ym-toc li{padding:4px 0}
+.ym-plain .ym-toc a{border-bottom-color:color-mix(in srgb,var(--ink) 35%,transparent)}
+.ym-plain .xpaper .abs{border:1px solid var(--np-line);border-left:3px solid var(--ink);border-radius:0 14px 14px 0;background:var(--np);padding:18px 22px;margin:0 0 40px}
+.ym-plain .xpaper .abs p:last-child{margin-bottom:0}
+.ym-plain .xpaper .abs p{color:var(--ink)}
+.ym-plain .xpaper h2,.ym-plain .xwalk>h2{border-top:2px solid var(--ink);margin:80px 0 20px;padding-top:20px}
+.ym-plain .xwalk>h2{margin-top:48px}
+.ym-plain .xpaper h2 .n{color:var(--hot);font-weight:500}
+.ym-plain .xpaper h3,.ym-plain .xpaper section.sec>h2{margin:40px 0 10px;color:var(--ink)}
+.ym-plain .xpaper h2+h3,.ym-plain .xpaper h2+section.sec>h2:first-child{margin-top:0}
+.ym-plain .ym-steps>li{margin-bottom:1.5em}
+.ym-plain .ym-steps>li::before{color:var(--hot);font-weight:500}
+.ym-plain .ym-promise{border-left:3px solid var(--ink);margin:2em 0 0!important;padding:4px 0 4px 1em;color:var(--ink)}
+.ym-plain .ym-promise b{padding:1px 6px 2px;border-radius:4px;background:var(--hl);color:#1B1813}
+.ym-plain .cm3-method{margin-top:48px}
+.ym-plain .cm3-steps{gap:12px;margin:10px 0 28px}
+.ym-plain .cm3-step{padding:14px 16px;gap:6px;border-color:var(--np-line);border-radius:12px;background:var(--np)}
+.ym-plain .cm3-steps:not(.side) .cm3-step b::before{color:var(--ink2);font-weight:500}
+.ym-plain .cm3-step span{color:var(--ink)}
+.ym-plain .xpaper .refs li::before,.ym-plain .v7-tr-block dt{color:var(--ink2)}
+.ym-plain .v7-tr-block{margin-bottom:36px}
+.ym-plain .v7-concept{padding:16px 0 4px}
+.ym-plain .v7-gloss>div{padding:14px 0}
+@media (max-width:600px){.ym-plain .ym-toc{padding:14px 14px 8px}.ym-plain .xpaper h2,.ym-plain .xwalk>h2{margin-top:56px}.ym-plain .xpaper .abs{padding:14px 16px}}
+
 /* ===== Anlatı haritası redesign (anlativ.js): reading room, season overview, timeline, ribbons, nine-dimension matrix. Kindred tokens only. */
 .an-room{margin:0 calc(50% - 50vw) 8px;background:var(--sunk);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:56px 0 48px}
 .an-wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
