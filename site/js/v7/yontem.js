@@ -291,8 +291,18 @@ function ymOpen(id, focus) {
 function ymGo(key) {
   ymOpen(key, true);
   try { history.pushState(null, "", "#/yontem?s=" + key); } catch (e) {}
-  var top = document.querySelector(".ym-lay").getBoundingClientRect().top + pageYOffset - 72;
-  window.scrollTo({ top: Math.max(0, top), behavior: "instant" });
+  var lay = document.querySelector(".ym-lay");
+  ymScrollTo(lay);
+  /* An auto-sized iframe grows a moment after the chapter swap; until then the page scrolls itself. Align again once the host has resized. */
+  setTimeout(function () { if (document.body.contains(lay)) ymScrollTo(lay); }, 300);
+}
+/* Top of el 72 px below the viewport top. scrollIntoView (not window.scrollTo) because inside the claude.ai artifact the page
+   sits in an iframe as tall as its content: only the host page scrolls there, and scrollIntoView reaches it. */
+function ymScrollTo(el) {
+  if (!el) return;
+  if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); /* drop any pending smooth target first */
+  el.style.scrollMarginTop = "72px";
+  el.scrollIntoView({ block: "start", behavior: "instant" });
 }
 
 /* After render: scroll to the section (old numeric anchors accepted), wire the concept search, highlight ?k=. */
@@ -328,5 +338,5 @@ function wireYontem(params) {
     }
   }
   var tg = id && document.getElementById(id);
-  if (tg) setTimeout(function () { tg.scrollIntoView({ block: "start" }); }, 30);
+  if (tg) setTimeout(function () { ymScrollTo(tg); }, 30);
 }
