@@ -300,7 +300,6 @@ function ymGo(key) {
    sits in an iframe as tall as its content: only the host page scrolls there, and scrollIntoView reaches it. */
 function ymScrollTo(el) {
   if (!el) return;
-  if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); /* drop any pending smooth target first */
   el.style.scrollMarginTop = "72px";
   el.scrollIntoView({ block: "start", behavior: "instant" });
 }

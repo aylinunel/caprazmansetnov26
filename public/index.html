@@ -2777,6 +2777,7 @@ html.menu-lock,html.menu-lock body{overflow:hidden}
 .xcard .bx{position:relative;z-index:2}
 @media (max-width:600px){.bx-b{min-height:44px;min-width:44px;padding:12px 4px}}
 .an-toc a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;text-decoration:none}
+.bx-t[hidden]{display:none}
 
 </style>
 </head>
@@ -15236,7 +15237,6 @@ function ymGo(key) {
    sits in an iframe as tall as its content: only the host page scrolls there, and scrollIntoView reaches it. */
 function ymScrollTo(el) {
   if (!el) return;
-  if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); /* drop any pending smooth target first */
   el.style.scrollMarginTop = "72px";
   el.scrollIntoView({ block: "start", behavior: "instant" });
 }

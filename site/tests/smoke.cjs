@@ -338,6 +338,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     for (const [cr, sel] of clicks) if (cr === route) {
       const el = await page.$(sel);
       if (!el) { fails.push(`${tag}: click target ${sel} missing`); continue; }
+      if (sel.includes(".bx-b") && await page.evaluate(() => [...document.querySelectorAll(".bx-t")].some((x) => x.offsetParent !== null))) fails.push(`${tag}: bias explanations must be collapsed before the click`);
       await el.click(); await sleep(300);
       if (sel.includes("data-vtip") && !(await page.$eval("#tip", (t) => t.classList.contains("on")))) fails.push(`${tag}: after click ${sel} #tip is not .on`);
       if (sel.includes(".bx-b")) { /* bias explainer opens in place and never navigates (cards carry a stretched link) */
