@@ -2764,3 +2764,4 @@ html.menu-lock,html.menu-lock body{overflow:hidden}
 .bx-t{display:block;max-width:46ch;margin:6px 0 4px;padding:8px 12px;font-size:13px;line-height:1.5;color:var(--ink2);background:var(--surface,var(--paper));border:1px solid var(--line2);border-radius:8px}
 .xcard .bx{position:relative;z-index:2}
 @media (max-width:600px){.bx-b{min-height:44px;min-width:44px;padding:12px 4px}}
+.an-toc a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;text-decoration:none}

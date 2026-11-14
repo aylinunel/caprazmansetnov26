@@ -1,8 +1,11 @@
 /* v7 Anlatı: the homepage. A map of how outlets told one event: rows = outlets, columns = narrative dimensions. */
-/* Intro on /anlati: the dotted header (eyebrow + title only), then the reading-room explainer (anlativ.js). */
-function v7Intro() {
-  return '<div class="phead"><div class="eyebrow">Anlatı haritası</div><h1>Aynı olay, kurum kurum farklı anlatılıyor</h1></div>' + anRoom();
-}
+/* Header of each /anlati page: the dotted band holds only eyebrow + title. */
+var AN_HEAD = {
+  nasil: ["Anlatı haritası", "Aynı olay, kurum kurum farklı anlatılıyor"],
+  sezon: ["Anlatı haritası · sezon", "Sezon haritası: kim hangi hikâyeyi tekrarlıyor?"],
+  olay: ["Anlatı haritası · olay", "Olay haritası: bir olay, kurum kurum"]
+};
+function v7Head(page) { var h = AN_HEAD[page]; return '<div class="phead"><div class="eyebrow">' + h[0] + "</div><h1>" + h[1] + "</h1></div>"; }
 
 function v7Weeks() {
   return NW.filter(function (w) { return w.k !== "v1"; }).map(function (w) {
@@ -131,10 +134,18 @@ function v7WeekBar(weeks, cur) {
   }).join("") + "</div>";
 }
 
+/* One route, three pages (anPage in logic.js): nasil = the explainer, sezon = season overview + timeline, olay = one event's maps. */
 function pgAnlati(q) {
   q = q || {};
+  var page = anPage(q);
+  if (page === "nasil") return '<div class="wrap page v7-an">' + v7Head("nasil") + anRoom() + "</div>";
+  if (page === "sezon") return '<div class="wrap page v7-an">' + v7Head("sezon") + anSeason() + anTimeline() + "</div>";
+  return pgAnlatiOlay(q);
+}
+
+function pgAnlatiOlay(q) {
   var weeks = v7Weeks(), full = weeks.filter(function (w) { return w.keys.length; });
-  var purpose = v7Intro();
+  var purpose = v7Head("olay");
   if (!full.length) return '<div class="wrap page v7-an">' + purpose + '<h1 class="v7-emptyh">Bu hafta için gösterilecek olay yok.</h1></div>';
   var latest = full[full.length - 1];
   var byN = q.n && D.N[q.n] ? full.filter(function (w) { return w.k === D.N[q.n].w; })[0] : null;
@@ -149,7 +160,7 @@ function pgAnlati(q) {
   var key = q.n && wk.keys.indexOf(q.n) >= 0 ? q.n : wk.keys[0], n = D.N[key], e = EV[n.ev], tab = q.v === "tablo", net = q.v === "ag";
   V7VIEW = tab ? "tablo" : net ? "ag" : "";
   var title = narrName(key, 140), ai = n.status === "agent_coded";
-  var h = '<div class="wrap page v7-an">' + v7Intro() + anSeason() + anTimeline() +
+  var h = '<div class="wrap page v7-an">' + purpose +
     '<section class="an-sec an-evs" id="an-event">' + pHead("Olay olay", "Bir olay seçin, kurumları yan yana okuyun") + '<h2 class="v7-evt">' + esc(title) + "</h2>";
   h += v7WeekBar(weeks, wk.k);
   h += '<div class="v7-events" role="group" aria-label="Olay">' + wk.keys.map(function (k) {
@@ -163,7 +174,7 @@ function pgAnlati(q) {
       '<div class="v7-scroll"><div id="v7-flow" data-key="' + esc(key) + '"></div></div><p class="v7-note">Her çizgi bir kurum; rengi kurumun yerleşimini gösterir. ' +
       "Aynı kutudan geçen çizgiler aynı seçimi yapmıştır. Bir çizgiye " + orTap() + ": kurumun seçimleri görünür.</p>" +
       '<p class="v7-leg"><span class="left">sola yerleşik</span><span class="mid">merkez</span><span class="right">sağa yerleşik</span></p>') +
-    "</div></div>" + anSankey(key) + anMatrix(key) + "</section>" + v7Body(n, e);
+    "</div></div>" + anSankey(key) + anMatrix(key) + "</section>" + v7Body(n, e) + (e ? olayReview(e) : "");
   var top = latest.keys.map(function (k) { return EV[D.N[k].ev]; }).filter(Boolean)
     .sort(function (a, b) { return b.s.length - a.s.length; }).slice(0, 3);
   h += '<section class="v7-weekstrip"><h2>Bu hafta <span class="v7-cnt">' + esc(latest.l) + "</span></h2><div class=\"v7-wk\">" + top.map(function (x) {

@@ -203,7 +203,7 @@ function yontemAnchor(s) {
   return Object.prototype.hasOwnProperty.call(YONTEM_OLD, s) ? YONTEM_OLD[s] : s;
 }
 
-var NAV_SUB = { "/olaylar": "Bütün olaylar, anlatı haritası ve kör noktalar", "/anlati": "Kurumlar bir olayı nasıl çerçeveledi",
+var NAV_SUB = { "/olaylar": "Bütün olaylar, kör noktalar ve resmî ilanlar", "/anlati": "Kurumlar bir olayı nasıl çerçeveledi",
   "/oruntu": "Haberlerde tekrar eden farklar", "/kurumlar": "Kim nasıl yazıyor, yan yana", "/yontem": "Yöntem, sözlük ve sınırlar" };
 /* Outlet page "Kısaca": up to three plain sentences. o = {name, events, total, mean, blocMean, placed, nb: [name, ...]}. */
 var KU_ONES = ["ı", "i", "si", "ü", "ü", "i", "sı", "si", "i", "u"];

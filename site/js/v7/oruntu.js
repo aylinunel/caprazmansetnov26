@@ -607,7 +607,7 @@ function orFindTrend() {
   return { id: "anlati-hafta",
     claim: "<b>" + ws.length + "</b> haftada en çok oynayan boyut “" + esc(NDL[mv.d]) + "”: kurumların bu boyutta ayrıştığı olayların payı, en düşük ve en yüksek hafta arasında <b>" + dec(100 * mv.r, 0) + "</b> puan değişti.",
     viz: '<div class="scroller"><table class="or-tbl"><thead>' + head + "</thead><tbody>" + body + '</tbody></table></div><p class="or-hint">Hücre: haftanın kodlanmış olaylarında o boyutun odak olduğu olayların yüzdesi; koyu hücre yüksek paydır. ' +
-      '<a class="lnk" href="#/anlati">Haftanın anlatı haritasını aç →</a></p>',
+      '<a class="lnk" href="#/anlati?t=olay">Haftanın anlatı haritasını aç →</a></p>',
     read: "Her satır bir boyut, her sütun bir hafta; koyu hücre, o hafta kurumların o boyutta sık ayrıştığını gösterir.",
     means: "Haftalık olay sayısı " + Math.min.apply(null, sz) + " ile " + Math.max.apply(null, sz) + " arasında; " + ai + " hafta yapay zekâ ile kodlandı " + yzBadge() + ", kalanı elle. " +
       "Kodlama yöntemi değiştiği için bu iki grup arasındaki sıçramalar gerçek bir değişimden olduğu kadar kodlama farkından da gelebilir; haftalar arası eğilim olarak okunmamalıdır. Her hafta o haftanın en çok kurumun verdiği olaylarından seçildi.",

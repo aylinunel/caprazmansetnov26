@@ -4675,7 +4675,7 @@ function svgURI(s) { return "data:image/svg+xml;charset=utf-8," + encodeURICompo
 /* ---------------------------------------------------------------- nav */
 var NAV; /* defined in v7/core.js */
 var SUB = {
-  "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/anlati", null, "Anlatı haritası"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
+  "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
   "/kurumlar": [["/kurumlar", "liste", "Kurumlar"], ["/kurumlar", "karsilastir", "Karşılaştır"], ["/kurumlar", "partiler", "Partiler"], ["/kurumlar", "kayit", "Kayıt ve güven"]],
   "/bulgular": [["/bulgular", "veriler", "Veriler"], ["/bulgular", "yorumlar", "Yorumlar"], ["/bulgular", "ileri", "İleri analiz"]],
   "/yanlilik": [["/yanlilik", "kesif", "Yapılar"], ["/yanlilik", "cozumleyici", "Başlık çözümleyici"],
@@ -6270,7 +6270,7 @@ function route() {
   var skip = '<a class="skip visually-hidden focusable" href="#view">İçeriğe atla</a>';
   document.getElementById("app").innerHTML = skip + (admin
     ? adminShell(tab) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + adminFoot()
-    : navHTML(path, home, tab || (path === "/oruntu" ? params.q || "secim" : null)) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + footer2());
+    : navHTML(path, home, tab || (path === "/oruntu" ? params.q || "secim" : path === "/anlati" ? anPage(params) : null)) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + footer2());
   closeModal();
   if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); else scrollTo(0, 0);
   if (!admin) layoutPills();

@@ -109,7 +109,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
         const v = document.querySelector(".v7-viz");
         if (!v || !v.querySelector("[data-go],[data-tip],[data-vtip],.vz-dp,.vz-lp")) return "first .v7-viz has no interactive mark";
         if (/bağlam gerekli/i.test(document.body.innerText)) return "text 'bağlam gerekli'";
-        const stat = /φ|ρ| r = | p = |%95|güven aralığı|PCA|Mantel|binom|Wilson|permütasyon/;
+        const stat = /φ|ρ| r = | p = |%95 (güven|CI)|%95’lik|güven aralığı|PCA|Mantel|binom|Wilson|permütasyon/;
         for (const f of fs) {
           const c = (f.querySelector(".v7-claim") || {}).textContent || "";
           if (stat.test(c)) return `#${f.id} claim has a statistical term: ${c.slice(0, 90)}`;
@@ -182,14 +182,30 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       const bad = await page.evaluate(() => {
         const q = (s) => document.querySelector(s);
         const ph = q(".phead"); if (!ph || ph.querySelector("p, details, section, .lede, .p-lead") || !ph.querySelector(".eyebrow") || !ph.querySelector("h1")) return "phead must hold only eyebrow + h1";
-        if (!q(".an-room .an-h") || document.querySelectorAll(".an-ideas>li").length < 3 || !q(".an-room .an-ex")) return "reading room incomplete";
-        const dd = [...document.querySelectorAll(".an-room details.an-dd summary")].map((s) => s.textContent).join("|");
-        if (dd !== "Veri nereden geliyor?|Dokuz boyut ne demek?|Nasıl okunur|Neyi göstermez?") return "deep-dives: " + dd;
-        for (const id of ["an-season", "an-time", "an-event", "an-matrix"]) if (!document.getElementById(id)) return "missing #" + id;
-        if (!q(".an-keys>li")) return "no key findings";
-        for (const id of ["an-rep", "an-skip", "an-timeline", "an-flow"]) { const f = document.getElementById(id); if (!f) return "missing #" + id; if (!f.querySelector(".v7-tbl table")) return `#${id} has no table twin`; }
-        if (!q("#an-flow svg .an-rb") || !q("#an-matrix table.an-mx td .an-cell") || !q("#an-time .an-led")) return "chart marks missing";
-        if (!q("#v7-flow svg, #v7-map table, .g6-box")) return "Akış/Ağ/Tablo view missing";
+        const page = new URLSearchParams(location.hash.split("?")[1] || "").get("t"), has = location.hash.match(/[?&](n|w|v)=/), kind = ["nasil", "sezon", "olay"].includes(page) ? page : has ? "olay" : "nasil";
+        const sub = q(".subtab.on"), want = { nasil: "Nasıl okunur", sezon: "Sezon haritası", olay: "Olay haritası" }[kind];
+        if (!sub || sub.textContent !== want) return `sub-tab should be ${want}, is ${sub && sub.textContent}`;
+        const pill = q(".xnav-a.on"); if (!pill || pill.textContent !== "Anlatı haritası") return "nav pill should be Anlatı haritası";
+        if (kind === "nasil") {
+          if (!q(".an-room .an-h") || document.querySelectorAll(".an-ideas>li").length < 3 || !q(".an-room .an-ex")) return "reading room incomplete";
+          const dd = [...document.querySelectorAll(".an-room details.an-dd summary")].map((s) => s.textContent).join("|");
+          if (dd !== "Veri nereden geliyor?|Dokuz boyut ne demek?|Nasıl okunur|Neyi göstermez?") return "deep-dives: " + dd;
+          if (document.querySelectorAll(".an-toc a").length !== 2) return "explainer must link to the two map pages";
+          if (q("#an-season") || q("#an-flow") || q("#v7-flow")) return "maps must not be on the explainer";
+        }
+        if (kind === "sezon") {
+          for (const id of ["an-season", "an-time"]) if (!document.getElementById(id)) return "missing #" + id;
+          if (!q(".an-keys>li")) return "no key findings";
+          for (const id of ["an-rep", "an-skip", "an-timeline"]) { const f = document.getElementById(id); if (!f) return "missing #" + id; if (!f.querySelector(".v7-tbl table")) return `#${id} has no table twin`; }
+          if (!q("#an-time .an-led")) return "chart marks missing";
+          if (q(".an-room")) return "explainer must not be on the season page";
+        }
+        if (kind === "olay") {
+          for (const id of ["an-event", "an-matrix", "an-flow"]) if (!document.getElementById(id)) return "missing #" + id;
+          if (!q("#an-flow svg .an-rb") || !q("#an-matrix table.an-mx td .an-cell")) return "chart marks missing";
+          if (!q("#v7-flow svg, #v7-map table, .g6-box")) return "Akış/Ağ/Tablo view missing";
+          if (!q("#an-flow .v7-tbl table")) return "#an-flow has no table twin";
+        }
         if (/NaN|undefined|\[object/.test(q("#view").textContent)) return "NaN/undefined on page";
         return "";
       });

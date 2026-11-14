@@ -2776,6 +2776,7 @@ html.menu-lock,html.menu-lock body{overflow:hidden}
 .bx-t{display:block;max-width:46ch;margin:6px 0 4px;padding:8px 12px;font-size:13px;line-height:1.5;color:var(--ink2);background:var(--surface,var(--paper));border:1px solid var(--line2);border-radius:8px}
 .xcard .bx{position:relative;z-index:2}
 @media (max-width:600px){.bx-b{min-height:44px;min-width:44px;padding:12px 4px}}
+.an-toc a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;text-decoration:none}
 
 </style>
 </head>
@@ -9193,7 +9194,7 @@ function svgURI(s) { return "data:image/svg+xml;charset=utf-8," + encodeURICompo
 /* ---------------------------------------------------------------- nav */
 var NAV; /* defined in v7/core.js */
 var SUB = {
-  "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/anlati", null, "Anlatı haritası"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
+  "/olaylar": [["/olaylar", "liste", "Tüm olaylar"], ["/olaylar", "kor", "Kör noktalar"], ["/olaylar", "ilan", "Resmî ilanlar"]],
   "/kurumlar": [["/kurumlar", "liste", "Kurumlar"], ["/kurumlar", "karsilastir", "Karşılaştır"], ["/kurumlar", "partiler", "Partiler"], ["/kurumlar", "kayit", "Kayıt ve güven"]],
   "/bulgular": [["/bulgular", "veriler", "Veriler"], ["/bulgular", "yorumlar", "Yorumlar"], ["/bulgular", "ileri", "İleri analiz"]],
   "/yanlilik": [["/yanlilik", "kesif", "Yapılar"], ["/yanlilik", "cozumleyici", "Başlık çözümleyici"],
@@ -10788,7 +10789,7 @@ function route() {
   var skip = '<a class="skip visually-hidden focusable" href="#view">İçeriğe atla</a>';
   document.getElementById("app").innerHTML = skip + (admin
     ? adminShell(tab) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + adminFoot()
-    : navHTML(path, home, tab || (path === "/oruntu" ? params.q || "secim" : null)) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + footer2());
+    : navHTML(path, home, tab || (path === "/oruntu" ? params.q || "secim" : path === "/anlati" ? anPage(params) : null)) + '<main id="view" tabindex="-1">' + fn(params) + "</main>" + footer2());
   closeModal();
   if (MOTION.lenis) MOTION.lenis.scrollTo(0, { immediate: true, force: true }); else scrollTo(0, 0);
   if (!admin) layoutPills();
@@ -11536,7 +11537,7 @@ function yontemAnchor(s) {
   return Object.prototype.hasOwnProperty.call(YONTEM_OLD, s) ? YONTEM_OLD[s] : s;
 }
 
-var NAV_SUB = { "/olaylar": "Bütün olaylar, anlatı haritası ve kör noktalar", "/anlati": "Kurumlar bir olayı nasıl çerçeveledi",
+var NAV_SUB = { "/olaylar": "Bütün olaylar, kör noktalar ve resmî ilanlar", "/anlati": "Kurumlar bir olayı nasıl çerçeveledi",
   "/oruntu": "Haberlerde tekrar eden farklar", "/kurumlar": "Kim nasıl yazıyor, yan yana", "/yontem": "Yöntem, sözlük ve sınırlar" };
 /* Outlet page "Kısaca": up to three plain sentences. o = {name, events, total, mean, blocMean, placed, nb: [name, ...]}. */
 var KU_ONES = ["ı", "i", "si", "ü", "ü", "i", "sı", "si", "i", "u"];
@@ -11831,8 +11832,9 @@ if (typeof module !== "undefined" && module.exports) {
 /* v7 core: navigation, YZ marker and the finding block (inlined into app.js IIFE after logic.js). */
 
 /* Navigation: four sections (Anlatı haritası is a sub-tab of Olaylar); Bulgular and Çerçeveleme fold into Örüntüler/Yöntem via redirectRoute. */
-NAV = [["/olaylar", "Olaylar", ["/olay", "/konu", "/anlati"]], ["/oruntu", "Örüntüler", []],
+NAV = [["/olaylar", "Olaylar", ["/olay", "/konu"]], ["/anlati", "Anlatı haritası", []], ["/oruntu", "Örüntüler", []],
   ["/kurumlar", "Kurumlar", ["/kurum"]], ["/yontem", "Nasıl çalışır", []]];
+SUB["/anlati"] = [["/anlati", "nasil", "Nasıl okunur"], ["/anlati", "sezon", "Sezon haritası"], ["/anlati", "olay", "Olay haritası"]];
 SUB["/oruntu"] = [["/oruntu", "secim", "Kim neyi haber yapıyor"], ["/oruntu", "dil", "Nasıl anlatıyor"],
   ["/oruntu", "anlati", "Kimi sorumlu tutuyor"], ["/oruntu", "hiz", "Kim önce veriyor"]];
 SECTIONS[0].fn = pgHome7;
@@ -13088,7 +13090,7 @@ function pgHome7() {
   var lead = top[0] || leadEvent();
   var step = function (n, t, l) { return '<li><span class="hs-n">0' + n + '</span><b class="hs-t">' + esc(t) + '</b><p class="hs-x">' + esc(l) + "</p></li>"; }, m = D.meta.counts;
   var deep = ["/olaylar", "/anlati", "/oruntu", "/kurumlar", "/yontem"].map(function (r) {
-    var nv = r === "/anlati" ? ["", "Anlatı haritası"] : NAV.filter(function (n) { return n[0] === r; })[0];
+    var nv = NAV.filter(function (n) { return n[0] === r; })[0];
     return nv ? '<a class="v7-hc" href="#' + r + '"><b>' + esc(nv[1]) + "</b><span>" + esc(NAV_SUB[r]) + "</span></a>" : "";
   }).join("");
   var h = fogHero(lead) + '<section id="bu-hafta" class="v7-feed">' + feedHTML(lead) + '</section><div class="wrap page v7-home">';
@@ -13108,10 +13110,13 @@ function pgHome7() {
 }
 
 /* v7 Anlatı: the homepage. A map of how outlets told one event: rows = outlets, columns = narrative dimensions. */
-/* Intro on /anlati: the dotted header (eyebrow + title only), then the reading-room explainer (anlativ.js). */
-function v7Intro() {
-  return '<div class="phead"><div class="eyebrow">Anlatı haritası</div><h1>Aynı olay, kurum kurum farklı anlatılıyor</h1></div>' + anRoom();
-}
+/* Header of each /anlati page: the dotted band holds only eyebrow + title. */
+var AN_HEAD = {
+  nasil: ["Anlatı haritası", "Aynı olay, kurum kurum farklı anlatılıyor"],
+  sezon: ["Anlatı haritası · sezon", "Sezon haritası: kim hangi hikâyeyi tekrarlıyor?"],
+  olay: ["Anlatı haritası · olay", "Olay haritası: bir olay, kurum kurum"]
+};
+function v7Head(page) { var h = AN_HEAD[page]; return '<div class="phead"><div class="eyebrow">' + h[0] + "</div><h1>" + h[1] + "</h1></div>"; }
 
 function v7Weeks() {
   return NW.filter(function (w) { return w.k !== "v1"; }).map(function (w) {
@@ -13240,10 +13245,18 @@ function v7WeekBar(weeks, cur) {
   }).join("") + "</div>";
 }
 
+/* One route, three pages (anPage in logic.js): nasil = the explainer, sezon = season overview + timeline, olay = one event's maps. */
 function pgAnlati(q) {
   q = q || {};
+  var page = anPage(q);
+  if (page === "nasil") return '<div class="wrap page v7-an">' + v7Head("nasil") + anRoom() + "</div>";
+  if (page === "sezon") return '<div class="wrap page v7-an">' + v7Head("sezon") + anSeason() + anTimeline() + "</div>";
+  return pgAnlatiOlay(q);
+}
+
+function pgAnlatiOlay(q) {
   var weeks = v7Weeks(), full = weeks.filter(function (w) { return w.keys.length; });
-  var purpose = v7Intro();
+  var purpose = v7Head("olay");
   if (!full.length) return '<div class="wrap page v7-an">' + purpose + '<h1 class="v7-emptyh">Bu hafta için gösterilecek olay yok.</h1></div>';
   var latest = full[full.length - 1];
   var byN = q.n && D.N[q.n] ? full.filter(function (w) { return w.k === D.N[q.n].w; })[0] : null;
@@ -13258,7 +13271,7 @@ function pgAnlati(q) {
   var key = q.n && wk.keys.indexOf(q.n) >= 0 ? q.n : wk.keys[0], n = D.N[key], e = EV[n.ev], tab = q.v === "tablo", net = q.v === "ag";
   V7VIEW = tab ? "tablo" : net ? "ag" : "";
   var title = narrName(key, 140), ai = n.status === "agent_coded";
-  var h = '<div class="wrap page v7-an">' + v7Intro() + anSeason() + anTimeline() +
+  var h = '<div class="wrap page v7-an">' + purpose +
     '<section class="an-sec an-evs" id="an-event">' + pHead("Olay olay", "Bir olay seçin, kurumları yan yana okuyun") + '<h2 class="v7-evt">' + esc(title) + "</h2>";
   h += v7WeekBar(weeks, wk.k);
   h += '<div class="v7-events" role="group" aria-label="Olay">' + wk.keys.map(function (k) {
@@ -13272,7 +13285,7 @@ function pgAnlati(q) {
       '<div class="v7-scroll"><div id="v7-flow" data-key="' + esc(key) + '"></div></div><p class="v7-note">Her çizgi bir kurum; rengi kurumun yerleşimini gösterir. ' +
       "Aynı kutudan geçen çizgiler aynı seçimi yapmıştır. Bir çizgiye " + orTap() + ": kurumun seçimleri görünür.</p>" +
       '<p class="v7-leg"><span class="left">sola yerleşik</span><span class="mid">merkez</span><span class="right">sağa yerleşik</span></p>') +
-    "</div></div>" + anSankey(key) + anMatrix(key) + "</section>" + v7Body(n, e);
+    "</div></div>" + anSankey(key) + anMatrix(key) + "</section>" + v7Body(n, e) + (e ? olayReview(e) : "");
   var top = latest.keys.map(function (k) { return EV[D.N[k].ev]; }).filter(Boolean)
     .sort(function (a, b) { return b.s.length - a.s.length; }).slice(0, 3);
   h += '<section class="v7-weekstrip"><h2>Bu hafta <span class="v7-cnt">' + esc(latest.l) + "</span></h2><div class=\"v7-wk\">" + top.map(function (x) {
@@ -13415,8 +13428,7 @@ function anRoom() {
       return '<li><b class="an-no">0' + (i + 1) + "</b><h3>" + esc(x[0]) + "</h3><p>" + esc(x[1]) + "</p></li>";
     }).join("") + "</ol>" + anExample() +
     '<div class="an-deep">' + dd("Veri nereden geliyor?", src) + dd("Dokuz boyut ne demek?", dims) + dd("Nasıl okunur", how) + dd("Neyi göstermez?", lim) + "</div>" +
-    '<nav class="an-toc" aria-label="Bu sayfada"><button type="button" data-go-id="an-season">Sezon özeti</button><button type="button" data-go-id="an-time">Zaman çizgisi</button>' +
-    '<button type="button" data-go-id="an-event">Olay olay</button></nav></div></section>';
+    '<nav class="an-toc" aria-label="Haritalar"><a class="chip" href="#/anlati?t=sezon">Sezon haritası →</a><a class="chip" href="#/anlati?t=olay">Olay haritası →</a></nav></div></section>';
 }
 
 /* ---------------------------------------------------------------- season overview */
@@ -14388,7 +14400,7 @@ function orFindTrend() {
   return { id: "anlati-hafta",
     claim: "<b>" + ws.length + "</b> haftada en çok oynayan boyut “" + esc(NDL[mv.d]) + "”: kurumların bu boyutta ayrıştığı olayların payı, en düşük ve en yüksek hafta arasında <b>" + dec(100 * mv.r, 0) + "</b> puan değişti.",
     viz: '<div class="scroller"><table class="or-tbl"><thead>' + head + "</thead><tbody>" + body + '</tbody></table></div><p class="or-hint">Hücre: haftanın kodlanmış olaylarında o boyutun odak olduğu olayların yüzdesi; koyu hücre yüksek paydır. ' +
-      '<a class="lnk" href="#/anlati">Haftanın anlatı haritasını aç →</a></p>',
+      '<a class="lnk" href="#/anlati?t=olay">Haftanın anlatı haritasını aç →</a></p>',
     read: "Her satır bir boyut, her sütun bir hafta; koyu hücre, o hafta kurumların o boyutta sık ayrıştığını gösterir.",
     means: "Haftalık olay sayısı " + Math.min.apply(null, sz) + " ile " + Math.max.apply(null, sz) + " arasında; " + ai + " hafta yapay zekâ ile kodlandı " + yzBadge() + ", kalanı elle. " +
       "Kodlama yöntemi değiştiği için bu iki grup arasındaki sıçramalar gerçek bir değişimden olduğu kadar kodlama farkından da gelebilir; haftalar arası eğilim olarak okunmamalıdır. Her hafta o haftanın en çok kurumun verdiği olaylarından seçildi.",

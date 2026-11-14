@@ -83,8 +83,7 @@ function anRoom() {
       return '<li><b class="an-no">0' + (i + 1) + "</b><h3>" + esc(x[0]) + "</h3><p>" + esc(x[1]) + "</p></li>";
     }).join("") + "</ol>" + anExample() +
     '<div class="an-deep">' + dd("Veri nereden geliyor?", src) + dd("Dokuz boyut ne demek?", dims) + dd("Nasıl okunur", how) + dd("Neyi göstermez?", lim) + "</div>" +
-    '<nav class="an-toc" aria-label="Bu sayfada"><button type="button" data-go-id="an-season">Sezon özeti</button><button type="button" data-go-id="an-time">Zaman çizgisi</button>' +
-    '<button type="button" data-go-id="an-event">Olay olay</button></nav></div></section>';
+    '<nav class="an-toc" aria-label="Haritalar"><a class="chip" href="#/anlati?t=sezon">Sezon haritası →</a><a class="chip" href="#/anlati?t=olay">Olay haritası →</a></nav></div></section>';
 }
 
 /* ---------------------------------------------------------------- season overview */
