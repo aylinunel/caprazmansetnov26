@@ -1,0 +1,178 @@
+{
+ "q": {
+  "happened": "Kahramanmaraş'ta MHP milletvekili Zuhal Karakoç'un da bulunduğu MHP konvoyu kaza yaptı; 1 kişi öldü, milletvekili yaralandı.",
+  "agree": "MHP konvoyunda kaza ve can kaybı ortak.",
+  "differ": "A Haber, Takvim, Milli Gazete ve Mynet milletvekili Zuhal Karakoç'un adını öne çıkarıyor; Habertürk, Karar, Dirilis ve 10haber adı anmadan can kaybı ve yaralı sayısına odaklanıyor; yaralı sayısı 4 ile 7 arasında değişiyor.",
+  "care": "Başlığın milletvekilini mi yoksa ölen ve yaralanan kişileri mi öne alması, kazanın siyasi mi yoksa genel trafik haberi olarak okunacağını etkiler."
+ },
+ "rows": [
+  {
+   "s": "cumhuriyet",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, yaralı",
+   "aff": "Milletvekili",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, yaralı",
+   "aff": "Milletvekili",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 4 yaralı",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 7 yaralı",
+   "aff": "Milletvekili ve il başkanı",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, yaralı",
+   "aff": "Milletvekili",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Trafik kazası",
+   "hero": "Zuhal Karakoç",
+   "blame": "",
+   "cause": "",
+   "cons": "Milletvekili yaralandı",
+   "aff": "Zuhal Karakoç",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "kisadalga",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 4 yaralı",
+   "aff": "Zuhal Karakoç",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, yaralı",
+   "aff": "Zuhal Karakoç",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Trafik kazası",
+   "hero": "Zuhal Karakoç",
+   "blame": "",
+   "cause": "",
+   "cons": "Milletvekili yaralandı",
+   "aff": "Zuhal Karakoç",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 4 yaralı",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Trafik kazası",
+   "hero": "Zuhal Karakoç",
+   "blame": "",
+   "cause": "",
+   "cons": "Milletvekili yaralandı",
+   "aff": "Zuhal Karakoç",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 7 yaralı",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 7 yaralı",
+   "aff": "Milletvekili ve il başkanı",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "10haber",
+   "frame": "Trafik kazası",
+   "hero": "MHP konvoyu",
+   "blame": "",
+   "cause": "",
+   "cons": "1 ölü, 7 yaralı",
+   "aff": "Yaralılar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

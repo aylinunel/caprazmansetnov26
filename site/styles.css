@@ -2742,3 +2742,17 @@ section.v7-how{padding-bottom:28px}
 
 /* phone menu open: the page behind does not scroll */
 html.menu-lock,html.menu-lock body{overflow:hidden}
+
+/* 8.1 Yeni */
+.v7-yn .yn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:20px;margin:28px 0}
+.yn-card{border:1px solid var(--line,#d8d2c4);border-radius:14px;padding:22px 22px 18px;background:var(--paper,transparent);min-width:0}
+.yn-card h2{font:600 22px/1.25 var(--serif);margin:6px 0 10px}
+.yn-claim{font-size:16px;line-height:1.5;margin:0 0 14px}
+.yn-tag{display:flex;align-items:center;justify-content:space-between;margin:0}
+.yn-chip{font:600 11px/1 var(--ff-m);letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:99px;background:var(--ink);color:var(--bg,#fff)}
+.yn-new .yn-chip{background:#2563EB}.yn-chg .yn-chip{background:#B45309}.yn-same .yn-chip{background:#6b7280}.yn-warn .yn-chip{background:#B91C1C}
+.yn-n{font:500 12px var(--ff-m);color:var(--muted)}
+.yn-t{width:100%;font-size:14px}.yn-t td,.yn-t th{padding:6px 8px;text-align:left;vertical-align:top}.yn-t .r{text-align:right}
+.yn-note{margin-top:12px}
+.v7-yn-band{margin:28px 0}.v7-yn-band .v7-hc{display:block}
+.yn-t a{display:inline-block;min-height:44px;line-height:22px;padding:11px 0}

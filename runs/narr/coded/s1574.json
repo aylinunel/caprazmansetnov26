@@ -1,0 +1,142 @@
+{
+ "q": {
+  "happened": "Dışişleri Bakanı Hakan Fidan, Bakü'deki CICA Zirvesi'nde İsrail Cumhurbaşkanı Herzog konuşurken salonu terk etti.",
+  "agree": "Fidan'ın Herzog konuşurken salondan ayrılması ortak.",
+  "differ": "Star, Takvim ve A Haber olayı 'dik duruş' ve 'ortak tepki' diye ödüllendiren bir dille veriyor, Herzog'a 'katil' diyen A Haber en sert; 10haber, Karar protesto çerçevesi kuruyor; NTV, Evrensel, Habertürk, Anka, Sabah ve Dirilis olguyu yalın aktarıyor.",
+  "care": "Hareketin 'protesto' ya da 'dik duruş' diye adlandırılması, bunun diplomatik bir tavır mı yoksa ulusal bir onur gösterisi mi olarak okunacağını etkiler."
+ },
+ "rows": [
+  {
+   "s": "star",
+   "frame": "İsrail'e tepki",
+   "hero": "Fidan ve heyetler",
+   "blame": "İsrail",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "Ortak tepki",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Diplomasi",
+   "hero": "Hakan Fidan",
+   "blame": "",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "İsrail'e tepki",
+   "hero": "Fidan ve heyetler",
+   "blame": "Katil İsrail",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "Ortak tepki",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "İsrail'e tepki",
+   "hero": "Hakan Fidan",
+   "blame": "Herzog",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "Dik duruş",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Diplomasi",
+   "hero": "Hakan Fidan",
+   "blame": "",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Diplomasi",
+   "hero": "Fidan ve birçok kişi",
+   "blame": "",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "10haber",
+   "frame": "Protesto",
+   "hero": "Fidan",
+   "blame": "İsrail",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Protesto",
+   "hero": "Fidan ve heyetler",
+   "blame": "İsrail",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Diplomasi",
+   "hero": "Hakan Fidan",
+   "blame": "",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Diplomasi",
+   "hero": "Hakan Fidan",
+   "blame": "",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Diplomasi",
+   "hero": "Hakan Fidan",
+   "blame": "",
+   "cause": "",
+   "cons": "Salonu terk",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

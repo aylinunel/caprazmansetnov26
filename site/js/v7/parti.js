@@ -4,7 +4,8 @@
 var PT = null, PT_SEL = null, PT_MIN = 10;
 var PT_NOTE = "<b>Parti yerleşimleri</b> ideolojik tanımlardan türetilmiştir, oy davranışından değil. <b>Yayın yerleşimleri</b> sağlanan kayıt defterinden gelir. " +
   "İkisi ayrı kaynaklardır ve bu sitede bağımsız olarak doğrulanmamıştır. Bir yayının bir partiye yakın düşmesi, ona ait olduğunu ya da onun sözcülüğünü yaptığını göstermez; " +
-  "yalnızca iki ayrı kaynağın onları altı eksende benzer yerlere koyduğunu gösterir.";
+  "yalnızca iki ayrı kaynağın onları altı eksende benzer yerlere koyduğunu gösterir. " +
+  "<b>A Parti</b> küçük bir partidir ve altı eksendeki konumu merkeze yakın tanımlanmıştır; bu yüzden ‘en yakın parti’ sıralamasında her zaman büyük partilerin arkasına konur (ısı haritasında, anma ve ton bölümlerinde yine görünür).";
 
 function ptPc(x) { return "%" + dec(100 * x, 1); }
 function ptName(s) { var p = (D.P || []).filter(function (x) { return x.s === s; })[0]; return p ? p.n : s; }

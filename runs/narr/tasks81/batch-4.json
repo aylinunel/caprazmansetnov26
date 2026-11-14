@@ -1,0 +1,2051 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s6988",
+   "week": "w10",
+   "title": "Kara para soruşturmasında tutuklanan Emir Sarıgül ev hapsi kararıyla tahliye edildi",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "İstanbul'daki kara para aklama soruşturmasında tutuklanan Emir Sarıgül'e \"ev hapsi\" şartıyla tahliye"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Emir Sarıgül, etkin pişmanlıktan faydalanarak tahliye edildi"
+    },
+    {
+     "s": "sol",
+     "hl": "'İtirafçı oldu' denilmişti: Emir Sarıgül ev hapsiyle tahliye edildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Mustafa Sarıgül'ün oğlu Emir Sarıgül tahliye edildi!"
+    },
+    {
+     "s": "haberler",
+     "hl": "Emir Sarıgül, etkin pişmanlıktan faydalanarak tahliye edildi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Son Dakika | Mustafa Sarıgül'ün oğlu Emir Sarıgül ev hapsi şartıyla tahliye edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Emir Sarıgül tahliye edildi"
+    },
+    {
+     "s": "akit",
+     "hl": "Mustafa Sarıgül'ün oğlu Emir Sarıgül, etkin pişmanlıktan faydalanarak tahliye edildi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Emir Sarıgül ev hapsi kararıyla tahliye edildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Kara para soruşturmasında tutuklanan Emir Sarıgül ev hapsi kararıyla tahliye edildi"
+    },
+    {
+     "s": "takvim",
+     "hl": "Mustafa Sarıgül'ün oğlu Emir Sarıgül etkin pişmanlıktan yararlandı! Ev hapsi kararıyla tahliye edildi"
+    },
+    {
+     "s": "onedio",
+     "hl": "Emir Sarıgül Etkin Pişmanlıktan Faydalandı: Ev Hapsi Şartıyla Tahliye"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika : Emir Sarıgül ‘Ev hapsi’ şartıyla tahliye edildi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kara para aklama soruşturmasında Emir Sarıgül'e ev hapsi!"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Emir Sarıgül ev hapsiyle tahliye edildi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Emir Sarıgül, etkin pişmanlıktan faydalanarak tahliye edildi"
+    },
+    {
+     "s": "karar",
+     "hl": "Mustafa Sarıgül'ün oğlu Emir Sarıgül tahliye edildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Emir Sarıgül hakkında ev hapsi kararı"
+    },
+    {
+     "s": "diken",
+     "hl": "Emir Sarıgül ev hapsiyle tahliye edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Emir Sarıgül “ev hapsi” şartıyla tahliye edildi"
+    },
+    {
+     "s": "star",
+     "hl": "Sarıgül davasında yeni gelişme: Mustafa Sarıgül'ün oğlu tahliye edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İtirafçı olan Emir Sarıgül ev hapsi şartıyla serbest bırakıldı"
+    },
+    {
+     "s": "anka",
+     "hl": "Emir Sarıgül ev hapsi şartıyla tahliye edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Kara para aklama soruşturmasında Emir Sarıgül'e ev hapsi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Emir Sarıgül adli kontrol şartıyla tahliye edildi"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "\"Etkin pişmanlık\"tan yararlandı: Emir Sarıgül, ev hapsiyle tahliye edildi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Emir Sarıgül tahliye edildi! Etkin pişmanlık ifadesinin ardından ev hapsi kararı"
+    }
+   ]
+  },
+  {
+   "event": "s7730",
+   "week": "w10",
+   "title": "Fon soruşturmasında yeni gelişme: 4 isim gözaltına alındı",
+   "headlines": [
+    {
+     "s": "onedio",
+     "hl": "Fon Soruşturmasında Tutuklanan 12 Önemli İsim"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Fon soruşturmasında yeni gelişme: Önemli isimler tutuklandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fon soruşturmasında 4 tutuklama"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Fon soruşturmasında 4 tutuklama daha"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Fon soruşturmasında yeni tutukluluklar"
+    },
+    {
+     "s": "tele1",
+     "hl": "Fon soruşturmasında 4 tutuklama"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Sermaye piyasası soruşturmasında BDDK Başkan Yardımcısı dahil 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Fon soruşturmasında dört kritik isme gözaltı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Fon soruşturmasında yeni gelişme: 4 isim gözaltına alındı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fon soruşturmasında 4 isim daha gözaltına alındı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fon soruşturmasında yeni gelişme: 4 isim için yeniden gözaltı kararı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon soruşturmasında 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "haberler",
+     "hl": "BDDK Başkan Yardımcısı dahil 4 kişi sermaye piyasası soruşturmasında gözaltına alındı"
+    },
+    {
+     "s": "dha",
+     "hl": "Sermaye piyasası soruşturmasında 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "diken",
+     "hl": "Fon soruşturmasında iki gözaltı daha"
+    },
+    {
+     "s": "aksam",
+     "hl": "Fon soruşturmasında yeni gelişme: 4 isim yeniden gözaltında"
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında sıcak gelişme: 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Fon soruşturmasında 2 kişi gözaltına alındı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fon soruşturmasında dört isim hakkında gözaltı kararı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında yeni gelişme: 4 kişi gözaltına alındı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Fon soruşturmasında yeni dalga! 4 yeni gözaltı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Fon soruşturmasında 4 tutuklama kararı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Fon soruşturmasında 4 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Fon soruşturmasında dört gözaltı daha"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Fon soruşturmasında yeni gözaltı"
+    }
+   ]
+  },
+  {
+   "event": "s9181",
+   "week": "w11",
+   "title": "BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı",
+   "headlines": [
+    {
+     "s": "sol",
+     "hl": "AKP'deki fon savaşı kelle aldı: Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu: İlişkili olduğum hiç kimsenin fonda parası yok"
+    },
+    {
+     "s": "evrensel",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu: Bakanla görüşmüşler, o yüzden randevu verdim"
+    },
+    {
+     "s": "memurlar",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Şahap Kavcıoğlu görevinden ayrıldı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu görevinden affını istedi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fon iddiaları gündem olmuştu! BDDK Başkanı Şahap Kavcıoğlu, istifa etti"
+    },
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı: \"Affımı istedim\""
+    },
+    {
+     "s": "akit",
+     "hl": "Sıcak gelişme: BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "haberler",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti! İlk açıklama geldi"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "BDDK Başkanı Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "takvim",
+     "hl": "Bankacılık sektöründe tepe değişimi: BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı: \"Kurum daha fazla yıpranmasın\""
+    },
+    {
+     "s": "diken",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "t24",
+     "hl": "Fon krizi: BDDK Başkanı Şahap Kavcıoğlu ‘affını isteyerek’ görevinden istifa etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "onedio",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu İstifa Etti"
+    },
+    {
+     "s": "karar",
+     "hl": "Fon vurgununda hedefteydi: BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "BDDK Başkanı Kavcıoğlu görevinden ayrıldı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "BDDK Başkanı Kavcıoğlu görevinden affını istedi!"
+    },
+    {
+     "s": "posta",
+     "hl": "BDDK Başkanı Kavcıoğlu, görevinden ayrıldığını duyurdu"
+    },
+    {
+     "s": "trthaber",
+     "hl": "BDDK Başkanı Kavcıoğlu görevinden affını istedi"
+    },
+    {
+     "s": "aa",
+     "hl": "BDDK Başkanı Kavcıoğlu, görevinden affını istedi"
+    },
+    {
+     "s": "star",
+     "hl": "Şahap Kavcıoğlu'ndan ayrılık kararı: Cumhurbaşkanı Erdoğan'dan affımı istedim"
+    },
+    {
+     "s": "bianet",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "tele1",
+     "hl": "BDDK Başkanı Kavcıoğlu, görevinden ayrıldı"
+    },
+    {
+     "s": "anka",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "aksam",
+     "hl": "BDDK Başkanı Kavcıoğlu görevden affını istedi"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Şahap Kavcıoğlu istifa etti: Merkez Bankası'nda faiz indirimleriyle, BDDK'da fon skandalıyla anıldı"
+    },
+    {
+     "s": "ntv",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu görevden affını istedi"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu, fon soruşturması ve iddialar sonrası istifa etti"
+    },
+    {
+     "s": "vatan",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu görevinden affını istedi! Şahap Kavcıoğlu kimdir?"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "BDDK Başkanı Şahap Kavcıoğlu istifa etti"
+    },
+    {
+     "s": "haber7",
+     "hl": "Son Dakika: BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı!"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "ŞAHAP KAVCIOĞLU KİMDİR? İstifa Eden BDDK Başkanı Şahap Kavcıoğlu Kaç Yaşında, Nereli, Neden İstifa Etti?"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "İstifa eden BDDK Başkanı Şahap Kavcıoğlu, 2 yıl boyunca maaş almaya devam edecek"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Görevden affını isteyen Şahap Kavcıoğlu 2 yıl boyunca maaş alacak"
+    }
+   ]
+  },
+  {
+   "event": "s9547",
+   "week": "w11",
+   "title": "Malatya'da askeri helikopter düştü: 4 askerimiz şehit oldu",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Malatya'da kaza kırıma uğrayan S-70 tipi helikopterdeki 4 asker şehit oldu"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Malatya'da askeri helikopter düştü! MSB'den açıklama geldi: 4 şehidimiz var"
+    },
+    {
+     "s": "sol",
+     "hl": "Malatya'da askeri helikopter düştü: Dört asker yaşamını yitirdi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Malatya'da helikopter düştü! MSB duyurdu, 4 askerimiz şehit oldu"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Malatya'da askeri helikopter düştü: 4 askerimiz şehit oldu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Malatya'da helikopter düştü! Çok sayıda şehidimiz var..."
+    },
+    {
+     "s": "haberler",
+     "hl": "Malatya'da askeri helikopter düştü! MSB'den açıklama geldi: 4 şehidimiz var"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Malatya'da askeri helikopter düştü: 4 asker şehit"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Malatya'da S-70 tipi askeri helikopter düştü: Dört asker şehit"
+    },
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | Malatya'da askeri helikopter kaza kırıma uğradı! MSB'den açıklama: 4 askerimiz şehit oldu"
+    },
+    {
+     "s": "akit",
+     "hl": "Son dakika! Malatya'da kahreden haber! Askeri helikopter düştü: 4 asker şehit oldu"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Son dakika haberi: Malatya'da helikopter düştü: 4 asker şehit oldu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... Malatya’da helikopter düştü! 4 asker şehit oldu..."
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "SON DAKİKA! Malatya'da askeri helikopter düştü"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Malatya’da askeri helikopter düştü! MSB acı haberi duyurdu: 4 asker şehit oldu | A Haber kaza yerinde"
+    },
+    {
+     "s": "karar",
+     "hl": "Malatya'da helikopter düştü... MSB: 4 şehidimiz var"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika haberi: Malatya’da helikopter düştü... MSB: 4 askerimiz şehit düştü"
+    },
+    {
+     "s": "onedio",
+     "hl": "Malatya'nın Yeşilyurt İlçesinde Askeri Helikopter Düştü"
+    },
+    {
+     "s": "birgun",
+     "hl": "Malatya'da askeri helikopter düştü: 4 asker yaşamını yitirdi"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Malatya'da helikopter düştü: 4 asker şehit oldu"
+    },
+    {
+     "s": "sabah",
+     "hl": "Malatya’da helikopter düştü"
+    },
+    {
+     "s": "takvim",
+     "hl": "Son dakika: Malatya'da askeri helikopter düştü"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Malatya'da S-70 tipi helikopter kaza kırıma uğradı"
+    },
+    {
+     "s": "anka",
+     "hl": "Malatya'nın Yeşilyurt ilçesi Samanköy mevkisinde askeri helikopter düştü"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Malatya'da askeri helikopter düştü: 4 asker yaşamını yitirdi"
+    },
+    {
+     "s": "t24",
+     "hl": "Malatya'da helikopter düştü: Bölgede yangın çıktı; 4 asker şehit oldu!"
+    },
+    {
+     "s": "diken",
+     "hl": "Malatya'da helikopter düştü; MSB: Dört şehit var"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Malatya'da askeri helikopter düştü: 4 askerimiz şehit oldu"
+    },
+    {
+     "s": "posta",
+     "hl": "Malatya'da askeri helikopter kazası! MSB acı haberi duyurdu: 4 askerimiz şehit düştü"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Malatya'da askeri helikopter düştü"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Meletî’de askeri helikopter düştü: 4 asker yaşamını yitirdi"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Malatya'da askeri helikopter düştü! Uzman isim CNN Türk'te açıkladı: İşte 4 askerin şehit olduğu kazaya neden olan ihtimaller.."
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "MSB: Malatya'da düşen helikopterde dört asker şehit oldu"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Malatya'da helikopter düştü: 4 askerimiz şehit oldu"
+    },
+    {
+     "s": "haber7",
+     "hl": "Malatya'dan acı haber! Askeri helikopter düştü: 4 asker şehit oldu"
+    },
+    {
+     "s": "aksam",
+     "hl": "Malatya'da askeri helikopter düştü: 4 şehit"
+    },
+    {
+     "s": "star",
+     "hl": "Malatya'da S-70 tipi helikopter düştü: 4 askerimiz şehit oldu"
+    },
+    {
+     "s": "vatan",
+     "hl": "Malatya’da helikopter düştü: MSB: 4 askerimiz şehit düştü"
+    },
+    {
+     "s": "ntv",
+     "hl": "Malatya'daki askeri helikopter neden düştü, kazaya hangi faktör yol açtı?"
+    }
+   ]
+  },
+  {
+   "event": "s8794",
+   "week": "w11",
+   "title": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon: 7 şüpheli gözaltına alındı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon! 7 kişi gözaltına alındı, 1 kişi aranıyor"
+    },
+    {
+     "s": "sol",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon: Sekiz kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Cafer Mahiroğlu soruşturması: 8 gözaltı kararı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon! 4 ilde 7 gözaltı"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA... Cafer Mahiroğlu soruşturmasında 2. dalga operasyon! 7 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon! 7 kişi gözaltına alındı, 1 kişi aranıyor"
+    },
+    {
+     "s": "mynet",
+     "hl": "Cafer Mahiroğlu soruşturmasında 8 gözaltı kararı!"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika... Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Cafer Mahiroğlu soruşturmasında 2. dalga operasyon: 7 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni operasyon: 4 ilde 7 gözaltı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... Cafer Mahiroğlu soruşturmasında yeni gelişme: 8 kişi hakkında gözaltı talimatı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni operasyon: 8 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Cafer Mahiroğlu soruşturmasında 4 ilde ikinci dalga operasyonu: 7 şüpheli gözaltında, 1 şüpheli aranıyor"
+    },
+    {
+     "s": "haber7",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci operasyon"
+    },
+    {
+     "s": "akit",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni dalga: Gözaltılar var"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Halk TV soruşturmasında ikinci dalga operasyon: 7 kişi gözaltına alındı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Halk TV soruşturmasında ikinci dalga operasyon: 7 kişi gözaltına alındı"
+    },
+    {
+     "s": "t24",
+     "hl": "Halk TV dahil şirketlerine kayyım atanan Cafer Mahiroğlu'na yönelik soruşturmada 7 gözaltı daha"
+    },
+    {
+     "s": "dha",
+     "hl": "Cafer Mahiroğlu'na yönelik soruşturmada 7 gözaltı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Cafer Mahiroğlu soruşturmasında 2’nci dalga operasyonu: 8 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Halk TV'nin sahibi Cafer Mahiroğlu'na soruşturmada yeni operasyon! 4 ilde 7 kişi gözaltına alındı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon! 7 şüpheli gözaltında"
+    },
+    {
+     "s": "karar",
+     "hl": "Halk TV soruşturmasında ikinci dalga operasyon: 8 gözaltı kararı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Cafer Mahiroğlu soruşturmasında 8 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "star",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon: 7 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "anka",
+     "hl": "Kayyum atanan Halk TV'nin sahibi Cafer Mahiroğlu'na yönelik soruşturmada 8 kişi hakkında gözaltı kararı verildi"
+    },
+    {
+     "s": "aa",
+     "hl": "İş insanı Cafer Mahiroğlu'na yönelik soruşturmada 7 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Milyonlarca liralık rüşvet iddiası! Cafer Mahiroğlu soruşturmasında 7 gözaltı daha: Şüphelilerin isimleri belli oldu"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Cafer Mahiroğlu'na yönelik soruşturmada 7 şüpheli yakalandı!"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Cafer Mahiroğlu soruşturmasında ikinci dalga! 7 kişi gözaltına alındı"
+    },
+    {
+     "s": "diken",
+     "hl": "Cafer Mahiroğlu soruşturması: Yedi gözaltı daha"
+    },
+    {
+     "s": "posta",
+     "hl": "Cafer Mahiroğlu soruşturmasında 7 kişi gözaltında"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Cafer Mahiroğlu'na yönelik soruşturmada 7 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "bianet",
+     "hl": "Cafer Mahiroğlu soruşturması: 7 gözaltı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Cafer Mahiroğlu soruşturmasında yeni dalga: Yedi gözaltı, bir kişi aranıyor"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Cafer Mahiroğlu soruşturmasında 8 kişi için daha gözaltı kararı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Cafer Mahiroğlu soruşturmasında 2. dalga: 7 şüpheli gözaltına alındı"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Halk TV'nin sahibi Cafer Mahiroğlu'na soruşturma: 7 gözaltı"
+    }
+   ]
+  },
+  {
+   "event": "s9111",
+   "week": "w11",
+   "title": "Nvidia CEO'su Jensen Huang istifa etti",
+   "headlines": [
+    {
+     "s": "milligazete",
+     "hl": "Nvidia CEO'su Jensen Huang ilk değil! Çin istihbaratının 'bal tuzağı' dosyaları yeniden gündemde"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Nvidia CEO’su Jensen Huang’ın serveti iki günde 15,8 milyar dolar eridi"
+    },
+    {
+     "s": "aa",
+     "hl": "Nvidia CEO Jensen Huang resigns amid board investigation"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Nvidia CEO'su Jensen Huang koltuğunu kaybedebilir! 1 trilyon dolarlık kayıp"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Jensen Huang olmadan Nvidia ne olur?"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Nvidia Pertimbangkan Pemecatan Jensen Huang"
+    },
+    {
+     "s": "milliyet",
+     "hl": "ABD'li senatörden Nvidia CEO'su Jensen Huang'a istifa çağrısı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Nvidia CEO'su Huang istifa etti, New York borsası düşüşle açıldı"
+    },
+    {
+     "s": "sol",
+     "hl": "Nvidia CEO'su Jensen Huang 'casusuluk' soruşturmasının ardından istifa etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Skandalların ardından Nvidia CEO’su Jensen Huang istifa etti"
+    },
+    {
+     "s": "t24",
+     "hl": "Silikon Vadisi'ni sarsan aşk: 'Çin ajanı'yla ilişkisi ortaya çıkan Nvidia CEO'su Jensen Huang, istifa etti!"
+    },
+    {
+     "s": "haberler",
+     "hl": "Adı yasak aşk iddialarına karışan Nvidia CEO’su Jensen Huang istifa etti"
+    },
+    {
+     "s": "haber7",
+     "hl": "Son Dakika: Nvidia CEO’su Jensen Huang istifa etti! Hisseler çakıldı..."
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "mynet",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti! - Finans haberlerinin doğru adresi"
+    },
+    {
+     "s": "onedio",
+     "hl": "Jensen Huang Nvidia CEO'luğundan İstifa Etti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti! Yasak aşk ve casusluk iddiaları..."
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Nvidia CEO'su Huang ikinci ilişki iddiası sonrası istifa etti"
+    },
+    {
+     "s": "akit",
+     "hl": "Teknoloji devinde ahlaksızlık depremi! Adı yasak aşk skandallarına karışan NVIDIA CEO’su Jensen Huang istifa etti!"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Nvidia'da skandallar zinciri: CEO Jensen Huang istifa etti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Casusluk iddiasıyla gündemdeydi: Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "dha",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "10haber",
+     "hl": "Çapkınlıkları dünyanın en güçlü CEO’sunu bitirdi; Jensen Huang, Nvidia’dan istifa etti"
+    },
+    {
+     "s": "diken",
+     "hl": "Nvidia CEO’su Jensen Huang istifa etti"
+    },
+    {
+     "s": "star",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "anka",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti, yerine geçici olarak Colette Kress atandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Nvidia CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "NVIDIA CEO'su Jensen Huang istifa etti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Nvidia'da istifa depremi: Jensen Huang görevini bıraktı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Jensen Huang Nvidia CEO'luğundan istifa etti"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Huang, ABD Kongresi'nde ifade vermeyi kabul etti"
+    },
+    {
+     "s": "takvim",
+     "hl": "Yasak aşk skandalıyla koltuğunu bırakan Nvidia CEO'su Jensen Huang'ın yeni ifşası: Üçüncü sevgilisi patladı"
+    }
+   ]
+  },
+  {
+   "event": "s8234",
+   "week": "w11",
+   "title": "Galatasaray efsanesi Cevad Prekazi, hayatını kaybetti",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Galatasaray efsanesi Cevad Prekazi, hayatını kaybetti"
+    },
+    {
+     "s": "sol",
+     "hl": "Efsane futbolcu Cevad Prekazi yaşamını yitirdi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Galatasaray efsanesi Cevad Prekazi, hayatını kaybetti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Galatasaray'ın efsane ismi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "takvim",
+     "hl": "Galatasaray efsanesinden acı haber geldi! Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Galatasaray efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Futbolun efsanesi Yugoslav Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "onedio",
+     "hl": "Galatasaray Efsanelerinden Prekazi Hayatını Kaybetti"
+    },
+    {
+     "s": "mynet",
+     "hl": "Galatasaray efsanesi Cevad Prekazi, 69 yaşında hayatını kaybetti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Galatasaray'dan açıklama: Efsane futbolcu Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "t24",
+     "hl": "Partizan ve Galatasaray'ın efsane futbolcularından Cevad Prekazi, yaşamını yitirdi!"
+    },
+    {
+     "s": "haber7",
+     "hl": "Galatasaray efsanesi Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Galatasaray'ın eski futbolcusu Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Galatasaray efsanesi Cevad Prekazi, hayatını kaybetti"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Galatasaray efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Galatasaray'ın efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "posta",
+     "hl": "Galatasaray efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Galatasaray'ın efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Galatasaray'ın efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "aksam",
+     "hl": "Acı haber: Cevad Prekazi hayatını kaybetti!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Galatasaray'ın eski futbolcusu Cevad Prekazi'den acı haber! 69 yaşında hayatını kaybetti"
+    },
+    {
+     "s": "dha",
+     "hl": "Galatasaray’ın efsane oyuncularından Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "akit",
+     "hl": "Galatasaray’ın unutulmaz ismi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "diken",
+     "hl": "Galatasaray efsanesi Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "star",
+     "hl": "Futbol camiası yasta... Cevad Prekazi hayatını kaybetti!"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Galatasaray efsanesi Cevad Prekazi 69 yaşında vefat etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "Galatasaray'ın efsane futbolcularından Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "anka",
+     "hl": "Galatasaray'ın efsane futbolcusu Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Cevad Prekazi neden öldü, hastalığı neydi? Cevad Prekazi kimdir, kaç yaşındaydı? Futbolcu Cevad Prekazi hayata gözlerini yumdu!"
+    },
+    {
+     "s": "10haber",
+     "hl": "Galatasaray’ın efsanesi Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "“Kalbim sol tarafta, ben de sol taraftayım” diyen Cevad Prekazi hayatını kaybetti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "TFF'den Cevad Prekazi için başsağlığı mesajı"
+    }
+   ]
+  },
+  {
+   "event": "s9268",
+   "week": "w11",
+   "title": "Merkez Bankası sınırlarını yükseltti: İhtiyaç, taşıt ve ticari kredilerinde yeni dönem",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "TCMB kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Merkez Bankası'ndan yeni karar: İhtiyaç, taşıt ve ticari kredilerde sınırlar yükseltildi"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "TCMB, kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "karar",
+     "hl": "Merkez Bankası'ndan kredi kararları: İhtiyaç, taşıt ve ticari kredilerde sınırlar yükseltildi"
+    },
+    {
+     "s": "akit",
+     "hl": "Merkez Bankası'ndan kredi büyüme sınırı kararı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Merkez Bankası'ndan kredi hamlesi: İhtiyaç, taşıt ve ticari kredilerde yeni dönem"
+    },
+    {
+     "s": "ntv",
+     "hl": "Merkez Bankası kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Merkez Bankası dört kredi kaleminde sınırı yükseltti"
+    },
+    {
+     "s": "mynet",
+     "hl": "Ticari, taşıt ve ticari... Merkez Bankası kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Merkez Bankası kredi büyüme sınırlarını artırdı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Merkez Bankası kredi sınırlarını yükseltti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Merkez Bankası'ndan kredi büyüme sınırlarında artış: İhtiyaç, taşıt ve ticari kredileri..."
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Merkez Bankası kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Merkez Bankası'ndan yeni karar: İhtiyaç, taşıt ve ticari kredilerde sınırlar yükseltildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Merkez Bankası’ndan kredilere yeni düzenleme: İhtiyaç, taşıt ve KOBİ kredilerinde büyüme sınırlarında artış"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Merkez Bankası'ndan kredi hamlesi! İhtiyaç, taşıt ve ticari kredilerde yeni dönem"
+    },
+    {
+     "s": "t24",
+     "hl": "Yeni düzenleme: İhtiyaç, taşıt ve ticari kredilerde büyüme sınırları artırıldı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Merkez Bankası'ndan kredi kararı! İhtiyaç, taşıt ve KOBİ kredilerinde yeni dönem"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Merkez Bankası kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "TCMB ihtiyaç, taşıt ve ticari kredi büyüme sınırlarını artırdı"
+    },
+    {
+     "s": "diken",
+     "hl": "MB, kredi büyüme sınırlarını yükseltti"
+    },
+    {
+     "s": "star",
+     "hl": "Merkez Bankası sınırlarını yükseltti: İhtiyaç, taşıt ve ticari kredilerinde yeni dönem"
+    },
+    {
+     "s": "haber7",
+     "hl": "Merkez Bankası ihtiyaç ve taşıt kredilerinde büyüme sınırını yükseltti"
+    },
+    {
+     "s": "memurlar",
+     "hl": "TCMB ihtiyaç ve taşıt kredilerinde büyüme sınırını yükseltti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Merkez Bankası kredi büyüme sınırlarını artırdı! İşte yeni oranlar"
+    },
+    {
+     "s": "posta",
+     "hl": "Merkez Bankası duyurdu! Kredi büyüme sınırları yükseltildi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Merkez Bankası'ndan kredi kararı! İhtiyaç, taşıt ve ticari kredilerde sınırlar yükseltildi"
+    },
+    {
+     "s": "anka",
+     "hl": "Merkez Bankası kredi büyüme sınırlarını artırdı: İhtiyaç, taşıt ve ticari kredilerde yeni oranlar"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | İhtiyaç, taşıt ve ticari kredilerinde yeni dönem! TCMB sınırlarını yükseltti"
+    },
+    {
+     "s": "onedio",
+     "hl": "Merkez Bankası Kredi Freninde Gevşemeye Gitti: İhtiyaç ve Taşıt Kredilerinde Sınır Yüzde 3,5'e Çıktı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Merkez Bankası'ndan yeni adım... Kredi büyüme sınırları yükseltildi"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Merkez Bankası'ndan kredi kararı: İhtiyaç, taşıt ve ticari kredilerde yeni oranlar belli oldu"
+    }
+   ]
+  },
+  {
+   "event": "s9641",
+   "week": "w11",
+   "title": "Kırmızı bültenle aranan suç örgütü elebaşı Sercan Sayal Türkiye'ye getirildi",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "116 suçtan aranıyordu! Kırmızı bültenli Sercan Sayal Türkiye’ye getirildi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Kırmızı bültenle aranan organize suç örgütü elebaşı Sercan Sayal Yunanistan'dan getirildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Suç örgütü elebaşı Yunanistan'da yakalandı"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "116 suçtan aranan suç örgütü elebaşı Sercan Sayal Türkiye'ye getirildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Son dakika: Yeni nesil organize suç örgütü elebaşı Sercan Sayal yakalandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Kırmızı bültenle aranıyordu: Organize suç örgütü elebaşı Türkiye'ye getirildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "116 suçtan aranan organize suç örgütü elebaşı Sercan Sayal Yunanistan'dan getiriliyor"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kırmızı bültenle aranan Sercan Sayal Yunanistan'dan Türkiye'ye getirildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "90 kurşunlama, 164 tehdit, 1 cinayet... Kırmızı bültenle aranan suç örgütü elebaşı Sercan Sayal Türkiye'ye getirildi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "116 suçtan kırmızı bültenle aranıyordu: Sercan Yanal Yunanistan'dan getirildi"
+    },
+    {
+     "s": "aa",
+     "hl": "Kırmızı bültenle aranan \"yeni nesil suç örgütü\" elebaşı Sayal, Yunanistan'da yakalandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Son dakika | İzmir'de terör estiriyordu! Kırmızı bültenle aranan Sercan Sayal Türkiye’ye getirildi"
+    },
+    {
+     "s": "takvim",
+     "hl": "Örgüt elebaşı Sercan Sayal yakalandı! Yunanistan'dan Türkiye'ye paket... 116 suç kaydı var"
+    },
+    {
+     "s": "akit",
+     "hl": "Kırmızı bültenle aranıyordu! Suç örgütü elebaşı Sercan Sayal Yunanistan'da yakalandı"
+    },
+    {
+     "s": "anka",
+     "hl": "İçişleri Bakanlığı: Kırmızı bültenle aranan suç örgütü elebaşı Sayal, Yunanistan'da yakalandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Kırmızı bültenle aranan Sercan Sayal Yunanistan'da yakalandı... Türkiye'ye getiriliyor!"
+    },
+    {
+     "s": "10haber",
+     "hl": "Kırmızı bültenle aranıyordu: Organize örgüt lideri Sercan Sayal Yunanistan’dan getiriliyor"
+    },
+    {
+     "s": "milligazete",
+     "hl": "116 suçtan aranan Sercan Sayal Yunanistan'dan getiriliyor"
+    },
+    {
+     "s": "tele1",
+     "hl": "Suç örgütü lideri Sercan Sayal Türkiye'ye getirildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Suç örgütü lideri Sercan Sayal Türkiye'ye getirildi"
+    },
+    {
+     "s": "ntv",
+     "hl": "116 suçtan aranan suç örgütü elebaşı Sercan Sayal Türkiye'de"
+    },
+    {
+     "s": "memurlar",
+     "hl": "116 suçtan aranan örgüt elebaşı Sercan Sayal Türkiye'ye getirildi"
+    },
+    {
+     "s": "posta",
+     "hl": "Kırmızı bültenle aranan organize suç örgütü elebaşı Sercan Sayal Yunanistan'dan getiriliyor"
+    },
+    {
+     "s": "birgun",
+     "hl": "Gürlek: Kırmızı bültenle aranan Sercan Sayal'ın Yunanistan'dan Türkiye'ye teslimi sağlandı"
+    },
+    {
+     "s": "karar",
+     "hl": "Bakan Gürlek: Kırmızı bültenle aranan Sercan Sayal’ın ülkemize teslimi yapıldı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Kırmızı bültenle aranan Sercan Sayal Yunanistan'dan Türkiye'ye getirildi"
+    },
+    {
+     "s": "sol",
+     "hl": "116 suçtan aranan Sercan Sayal yakalandığı Yunanistan'dan Türkiye'ye getirildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "116 suçtan aranan Yunanistan'da yakalanan suç örgütü elebaşı adliyede"
+    },
+    {
+     "s": "t24",
+     "hl": "Kırmızı bültenle aranan ve 116 suçtan aranma kaydı olan olan Sercan Sayal Türkiye'de; adliyeye sevk edildi"
+    },
+    {
+     "s": "star",
+     "hl": "Suç örgütü elebaşı Sercan Sayal tutuklandı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "\"Yeni nesil suç örgütü\" elebaşı Sayal tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s8362",
+   "week": "w11",
+   "title": "Adana'da 4,6 büyüklüğünde deprem",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Kayseri’de 3.2 büyüklüğünde deprem"
+    },
+    {
+     "s": "posta",
+     "hl": "Kayseri’de 3.2 büyüklüğünde deprem"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Kayseri’de 3.2 büyüklüğünde deprem"
+    },
+    {
+     "s": "aa",
+     "hl": "Adana'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem"
+    },
+    {
+     "s": "birgun",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem"
+    },
+    {
+     "s": "karar",
+     "hl": "Adana'da korkutan deprem"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika: Adana'da korkutan deprem!"
+    },
+    {
+     "s": "takvim",
+     "hl": "Adana'nın Kozan ilçesinde 4,6 büyüklüğünde deprem! AFAD sarsıntının derinliğini açıkladı"
+    },
+    {
+     "s": "t24",
+     "hl": "AFAD duyurdu: Adana'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... Adana'da 4,6 büyüklüğünde deprem! Çevre illerde de hissedildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem meydana geldi"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA! Adana'da korkutan deprem! Çevre illerde de hissedildi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Adana'da korkutan deprem: AFAD açıkladı"
+    },
+    {
+     "s": "onedio",
+     "hl": "AFAD Açıkladı: Adana'da 4.6 Büyüklüğünde Deprem"
+    },
+    {
+     "s": "akit",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Adana'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "anka",
+     "hl": "Adana Kozan'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "10haber",
+     "hl": "Adana’da 4.6 büyüklüğünde deprem"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Adana Kozan'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Adana'da 4,6 büyüklüğünde deprem! Çevre illerde de hissedildi: Bölgede son durum ne?"
+    },
+    {
+     "s": "ntv",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Adana'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "aksam",
+     "hl": "AFAD duyurdu: Adana'da 4,6 büyüklüğünde deprem"
+    },
+    {
+     "s": "star",
+     "hl": "Adana'da 4.6 büyüklüğünde deprem! Çevre illerde de hissedildi"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Van'da 3.5 büyüklüğünde deprem"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Adana'da deprem! AFAD büyüklüğünü açıkladı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "SON DAKİKA | AFAD duyurdu! Adana'da 3.7 büyüklüğünde korkutan deprem"
+    },
+    {
+     "s": "haber7",
+     "hl": "Adana'da 3,7 büyüklüğünde deprem!"
+    }
+   ]
+  },
+  {
+   "event": "s8789",
+   "week": "w11",
+   "title": "Fatih Terim, MHP Genel Başkanı Devlet Bahçeli'yi ziyaret etti",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "MHP Genel Başkanı Bahçeli, Fatih Terim'i kabul etti"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Fatih Terim'den Devlet Bahçeli'ye sürpriz ziyaret"
+    },
+    {
+     "s": "ensonhaber",
+     "hl": "Fatih Terim, Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fatih Terim'den Devlet Bahçeli’ye ziyaret"
+    },
+    {
+     "s": "haber7",
+     "hl": "Fatih Terim'den MHP lideri Devlet Bahçeli'ye sürpriz ziyaret"
+    },
+    {
+     "s": "sabah",
+     "hl": "Fatih Terim, Devlet Bahçeli'yi ziyaret etti!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fatih Terim MHP Genel Merkezi’nde: Devlet Bahçeli ile bir araya geldi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fatih Terim'den Devlet Bahçeli'ye ziyaret!"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fatih Terim'den Devlet Bahçeli'ye sürpriz ziyaret"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Fatih Terim MHP lideri Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fatih Terim, MHP lideri Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "t24",
+     "hl": "Fatih Terim, Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fatih Terim, Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fatih Terim MHP lideri Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "star",
+     "hl": "MHP Lideri Bahçeli, Fatih Terim'i kabul etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fatih Terim, MHP Genel Merkezi'nde Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fatih Terim Devlet Bahçeli'yi MHP Genel Merkezi'nde Ziyaret Etti"
+    },
+    {
+     "s": "anka",
+     "hl": "Fatih Terim, MHP Genel Başkanı Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fatih Terim'den Devlet Bahçeli'ye ziyaret! MHP Genel Merkezi'nde bir araya geldiler"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fatih Terim'den MHP lideri Devlet Bahçeli'ye ziyaret! Görüşmeye ilişkin ilk açıklama geldi"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Fatih Terim'den Devlet Bahçeli'ye ziyaret! MHP Genel Merkezi'nde bir araya geldiler"
+    },
+    {
+     "s": "dirilis",
+     "hl": "MHP Genel Başkanı Bahçeli, Fatih Terim'i kabul etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "MHP Genel Başkanı Bahçeli, Fatih Terim'i kabul etti"
+    },
+    {
+     "s": "10haber",
+     "hl": "Fatih Terim, Devlet Bahçeli’ye gitti"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Numan Kurtulmuş Devlet Bahçeli’yi ziyaret edecek"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "TBMM Başkanı Kurtulmuş, MHP lideri Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "karar",
+     "hl": "TBMM Başkanı Kurtulmuş'tan Bahçeli'ye ziyaret"
+    },
+    {
+     "s": "aksam",
+     "hl": "TBMM Başkanı Numan Kurtulmuş'tan MHP Genel Başkanı Devlet Bahçeli'ye ziyaret"
+    },
+    {
+     "s": "takvim",
+     "hl": "TBMM Başkanı Numan Kurtulmuş MHP Genel Başkanı Devlet Bahçeli'yi ziyaret etti"
+    },
+    {
+     "s": "posta",
+     "hl": "TBMM Başkanı Kurtulmuş, MHP Genel Başkanı Bahçeli'yi ziyaret etti"
+    }
+   ]
+  },
+  {
+   "event": "s8135",
+   "week": "w11",
+   "title": "Mısır'da tren kazası: 7 kişi öldü, 112 kişi yaralandı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Mısır'daki tren kazasında 7 kişi öldü, 112 kişi yaralandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Mısır'da tren kazası: Çok sayıda yaralı var"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Mısır'da tren kazası! Vagonlar raydan çıktı: Onlarca kişi yaralandı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Mısır'da korkunç tren kazası: 64 kişi yaralandı!"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Mısır'da Gize-Feyyum seferindeki tren kazasında en az 7 kişi öldü, 112 kişi yaralandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Mısır'da yolcu treni raydan çıktı: Onlarca kişi yaralandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Mısır'da tren kazası: Çok sayıda kişi yaralandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Mısır'da tren kazası: 64 yaralı"
+    },
+    {
+     "s": "dha",
+     "hl": "Mısır'da tren kazası: 4 ölü, 88 yaralı"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Mısır'da tren kazası: 64 yaralı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Mısır'daki tren kazasında ilk belirlemelere göre 4 kişi öldü, 88 kişi yaralandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Mısır'da tren kazası: 7 kişi öldü, 112 kişi yaralandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Mısır'da tren faciası: Yedi ölü 112 yaralı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Mısır'da tren faciası: 7 kişi hayatını kaybetti, 112 yaralı var"
+    },
+    {
+     "s": "haber7",
+     "hl": "Mısır'da tren kazası: 7 ölü 112 yaralı"
+    },
+    {
+     "s": "t24",
+     "hl": "Mısır'da tren faciası: 4 kişi öldü, 88 kişi yaralandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Mısır'da feci tren kazası: 7 kişi öldü, 112 kişi yaralandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Mısır'da iki tren çarpıştı! Çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Mısır'da tren kazası: En az yedi kişi öldü, onlarca kişi yaralı"
+    },
+    {
+     "s": "diken",
+     "hl": "Mısır'da tren kazası: Yedi ölü, 112 yaralı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Mısır'da tren kazası: 7 ölü, 112 yaralı"
+    },
+    {
+     "s": "posta",
+     "hl": "Mısır'da tren kazası: 7 ölü, 112 yaralı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Mısır'da tren kazası: Ölü ve yaralılar var"
+    },
+    {
+     "s": "karar",
+     "hl": "Mısır'da tren kazası: Ölü ve yaralılar var"
+    },
+    {
+     "s": "haberler",
+     "hl": "Mısır'da feci tren kazası! Tren, yolcu treninin arka vagonuna çarptı: 7 ölü, 112 yaralı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Mısır'da tren kazası faciası! 7 ölü, 112 yaralı | Video"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Mısır'da tren faciası! Yolcu treni başka bir trene arkadan çarptı: 7 ölü, 112 yaralı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Mısır’da tren faciası! Çok sayıda ölü ve yaralı"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Mısır’da tren kazası: 7 kişi yaşamını yitirdi"
+    }
+   ]
+  }
+ ]
+}

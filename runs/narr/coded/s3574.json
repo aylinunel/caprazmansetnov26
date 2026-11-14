@@ -1,0 +1,190 @@
+{
+ "q": {
+  "happened": "İstanbul Valiliği, olumsuz hava ve afet koşulları nedeniyle okulların bir gün daha tatil edildiğini duyurdu.",
+  "agree": "İstanbul'da okulların tatil edilmesi ortak.",
+  "differ": "Sol, Dirilis, Star, TRT Haber, Diken ve Bloomberg HT kararı haber olarak veriyor; Milli Gazete, Sözcü, Sabah, Cumhuriyet, Karar ve NTV başlığı 'tatil mi?' sorusuyla kuruyor; Anka kurtarma sayısını, Evrensel motosiklet yasağını ekliyor.",
+  "care": "Başlığın soru ya da duyuru biçiminde kurulması, haberin kararı bildiren mi yoksa okuyucunun arama sorusuna yanıt veren bir içerik mi olduğunu gösterir."
+ },
+ "rows": [
+  {
+   "s": "milligazete",
+   "frame": "Okul tatili sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sol",
+   "frame": "Okul tatili",
+   "hero": "İstanbul Valiliği",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Okul tatili sorusu",
+   "hero": "Valilik",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Okul tatili",
+   "hero": "İstanbul Valiliği",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "Öğrenciler",
+   "sol": "Motosiklet yasağı",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Okul tatili",
+   "hero": "İstanbul Valiliği",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Okul tatili",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Okul tatili sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "bloomberght",
+   "frame": "Okul tatili",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Okul tatili sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Okul tatili sorusu",
+   "hero": "Valilikler",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Okul tatili sorusu",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Okul tatili",
+   "hero": "Vali Gül",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Okul tatili",
+   "hero": "İstanbul Valiliği",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Okul tatili",
+   "hero": "İstanbul Valiliği",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Okul tatili",
+   "hero": "Vali Davut Gül",
+   "blame": "",
+   "cause": "",
+   "cons": "Okullar tatil, kurtarma",
+   "aff": "Kurtarılanlar",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

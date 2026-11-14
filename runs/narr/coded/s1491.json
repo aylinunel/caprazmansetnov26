@@ -1,0 +1,130 @@
+{
+ "q": {
+  "happened": "Suudi Arabistan'daki havalimanlarına yönelik saldırılarda ölü ve yaralılar var; Riyad Havalimanı'ndaki saldırıda 12 ölü, 309 yaralı bildirildi.",
+  "agree": "Suudi Arabistan'da havalimanlarına saldırı ortak.",
+  "differ": "Sol, Cumhuriyet, Sözcü, Habertürk ve Diken tek bir Riyad saldırısına ve 12 ölüye odaklanıyor, Sol saldırıyı Ensarullah'a atfediyor; TRT Haber, Yeni Yaşam, NTV ve AA 5 havalimanına 10 saldırı ve 19 ölü diyerek serinin bütününü veriyor.",
+  "care": "Tek bir saldırı mı yoksa bir haftalık saldırı dizisi mi olarak sunulması, olayın ölçeğini ve bölgesel gerilimi nasıl algılattığını değiştirir."
+ },
+ "rows": [
+  {
+   "s": "sol",
+   "frame": "Saldırı",
+   "hero": "Ensarullah",
+   "blame": "Ensarullah",
+   "cause": "",
+   "cons": "12 ölü, 309 yaralı",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Riyad saldırısı"
+  },
+  {
+   "s": "diken",
+   "frame": "Saldırı",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "12 ölü",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Riyad saldırısı"
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Saldırı",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "12 ölü, 309 yaralı",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Riyad saldırısı"
+  },
+  {
+   "s": "haberturk",
+   "frame": "Saldırı",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "12 ölü, 309 yaralı",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Riyad saldırısı"
+  },
+  {
+   "s": "sozcu",
+   "frame": "Saldırı",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "12 ölü, 309 yaralı",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Riyad saldırısı"
+  },
+  {
+   "s": "trthaber",
+   "frame": "Saldırı serisi",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "19 ölü",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "10 saldırı"
+  },
+  {
+   "s": "yeniyasam",
+   "frame": "Saldırı serisi",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "19 ölü",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "10 saldırı"
+  },
+  {
+   "s": "dirilis",
+   "frame": "Saldırı serisi",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "19 ölü, yüzlerce yaralı",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Havalimanı saldırıları"
+  },
+  {
+   "s": "ntv",
+   "frame": "Saldırı serisi",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "19 ölü",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "10 saldırı"
+  },
+  {
+   "s": "aa",
+   "frame": "Saldırı serisi",
+   "hero": "Havalimanları",
+   "blame": "",
+   "cause": "",
+   "cons": "19 ölü",
+   "aff": "Ölen ve yaralananlar",
+   "sol": "",
+   "moral": "",
+   "start": "Bir haftada 10 saldırı"
+  }
+ ]
+}

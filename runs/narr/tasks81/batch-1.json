@@ -1,0 +1,1231 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s1800",
+   "week": "w8",
+   "title": "Bulgaristan'da halk cumhurbaşkanı seçimi için sandık başında",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Bulgaristan'da vatandaşlar cumhurbaşkanı seçimi için bugün sandık başına gidecek"
+    },
+    {
+     "s": "star",
+     "hl": "Bulgaristan'da seçim heyecanı! Milyonlar yarın sandık başına gidecek"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Bulgaristan'da cumhurbaşkanı seçimi için 6,5 milyon seçmen oy kullanacak, Türkiye'de 18 ilde 78 sandık..."
+    },
+    {
+     "s": "evrensel",
+     "hl": "Bulgaristan halkı Cumhurbaşkanı seçimi için yarın sandık başına gidecek"
+    },
+    {
+     "s": "takvim",
+     "hl": "Bulgaristan'da cumhurbaşkanı seçimi başlıyor | Adaylar ve detaylar"
+    },
+    {
+     "s": "10haber",
+     "hl": "Bulgaristan’da Cumhurbaşkanı seçimi var"
+    },
+    {
+     "s": "anka",
+     "hl": "Bulgaristan'da cumhurbaşkanlığı seçimleri için oy verme işlemi başladı: Türkiye'de de 18 ilde, 78 sandık kuruldu"
+    },
+    {
+     "s": "birgun",
+     "hl": "Bulgaristan'daki cumhurbaşkanı seçimi için Türkiye'de 78 sandık kuruldu"
+    },
+    {
+     "s": "karar",
+     "hl": "Bulgaristan’da cumhurbaşkanlığı seçimleri başladı: Türkiye’de 18 ilde 78 sandık kuruldu"
+    },
+    {
+     "s": "mynet",
+     "hl": "Bulgaristan, cumhurbaşkanlığı seçimi için sandık başında"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Bulgaristan'da halk cumhurbaşkanı seçimi için sandık başında"
+    }
+   ]
+  },
+  {
+   "event": "s4131",
+   "week": "w8",
+   "title": "KPSS ortaöğretim sonuç tarihi 2026: KPSS ortaöğretim sınav sonuçları ne zaman açıklanacak?",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "KPSS ÖN LİSANS SONUÇLARI SORGULAMA SAYFASI! 2026 KPSS Ön Lisans sonuçları açıklandı mı, ne zaman açıklanacak? KPSS sonucu erken açıklanır mı?"
+    },
+    {
+     "s": "sabah",
+     "hl": "KPSS Ortaöğretim sınav sonuçları ne zaman açıklanacak? ÖSYM duyurdu!"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "2026 KPSS Ön Lisans sonuçları açıklandı mı? KPSS Ön Lisans sınav sonuçları nasıl öğrenilir?"
+    },
+    {
+     "s": "aa",
+     "hl": "KPSS Ortaöğretim yapıldı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika... KPSS Ortaöğretim yapıldı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "KPSS Ortaöğretim sona erdi: Sonuçlar ne zaman açıklanacak?"
+    },
+    {
+     "s": "trthaber",
+     "hl": "KPSS Ortaöğretim yapıldı"
+    },
+    {
+     "s": "onedio",
+     "hl": "KPSS Ortaöğretim Sonuçları Ne Zaman Açıklanacak? 2026 KPSS Lise Sonuç Tarihi"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Saatler kaldı! 2026 KPSS ön lisans sonuçları ne zaman açıklanacak?"
+    },
+    {
+     "s": "haberler",
+     "hl": "KPSS ortaöğretim sonuçları ne zaman açıklanacak 2026?"
+    },
+    {
+     "s": "ntv",
+     "hl": "KPSS ortaöğretim sonuç tarihi 2026: KPSS ortaöğretim sınav sonuçları ne zaman açıklanacak?"
+    }
+   ]
+  },
+  {
+   "event": "s1780",
+   "week": "w8",
+   "title": "Ürdün'de kiliseye saldırı: 7 ölü",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Ürdün'de bir kilisede düzenlenen silahlı saldırıda 7 kişi öldü, 27 kişi yaralandı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Ürdün'de kiliseye silahlı saldırı! 7 ölü, çok sayıda yaralı var"
+    },
+    {
+     "s": "star",
+     "hl": "Ürdün'de silahlı saldırı: En az 7 ölü"
+    },
+    {
+     "s": "ntv",
+     "hl": "Ürdün'de kiliseye cenaze sırasında saldırı. 7 can kaybı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Ürdün'de kilisedeki cenaze törenine silahlı saldırı: En az 7 kişi hayatını kaybetti"
+    },
+    {
+     "s": "agos",
+     "hl": "Ürdün'de kiliseye saldırı: 7 ölü"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Ürdün'de kiliseye kanlı baskın: Cenaze töreninde 7 kişi öldürüldü"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Ürdün'de kiliseye kanlı saldırı: 7 ölü"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Ürdün'de kilisede saldırı: 7 kişi öldü"
+    },
+    {
+     "s": "anka",
+     "hl": "Ürdün’de kilisede cenaze törenine silahlı saldırı: 7 ölü, 34 yaralı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Ürdün’de kiliseye silahlı saldırı: 7 ölü, 27 yaralı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Ürdün'de bir kilisede düzenlenen silahlı saldırıda 7 kişi öldü, 27 kişi yaralandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Türkiye, Ürdün'de kiliseye düzenlenen saldırıyı şiddetle kınadı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Ürdün'de kiliseye düzenlenen silahlı saldırıda 7 kişi hayatını kaybetti, 34 kişi yaralandı; Türkiye..."
+    },
+    {
+     "s": "trthaber",
+     "hl": "Türkiye, Ürdün'de kiliseye düzenlenen saldırıyı şiddetle kınadı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Türkiye şiddetle kınadı: Ürdün’de kiliseye kanlı saldırı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Ürdün'de kiliseye silahlı saldırı: Can kaybı 8'e yükseldi"
+    }
+   ]
+  },
+  {
+   "event": "s1669",
+   "week": "w8",
+   "title": "Hazine ve Maliye Bakan Yardımcısı Çelik emekliliğini sundu",
+   "headlines": [
+    {
+     "s": "sozcu",
+     "hl": "Fon krizinin ardından Hazine ve Maliye Bakan Yardımcısı ve SPK Başkanı gitti"
+    },
+    {
+     "s": "mynet",
+     "hl": "SPK Başkanı Mahmut Sütçü istifasını, Hazine ve Maliye Bakan Yardımcısı Osman Çelik emeklilik dilekçesini verdi"
+    },
+    {
+     "s": "ntv",
+     "hl": "SPK Başkanı istifasını sundu, Maliye Bakan Yardımcısı emekliliğini istedi"
+    },
+    {
+     "s": "star",
+     "hl": "Osman Çelik emeklilik dilekçesini sundu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Hazine ve Maliye Bakan Yardımcısı Osman Çelik kimdir?"
+    },
+    {
+     "s": "sabah",
+     "hl": "Hazine ve Maliye Bakan Yardımcısı Çelik, emeklilik dilekçesini sundu!"
+    },
+    {
+     "s": "diken",
+     "hl": "Hazine ve Maliye Bakan Yardımcısı Osman Çelik emekliliğini istedi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon vurgununda damadı tutuklanmıştı: Hazine ve Maliye Bakan Yardımcısı Osman Çelik emeklilik dilekçesi verdi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... Hazine ve Maliye Bakan Yardımcısı Osman Çelik, Mehmet Şimşek'e emeklilik dilekçesini sundu"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Hazine ve Maliye Bakan Yardımcısı Çelik emekliliğini sundu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Hazine ve Maliye Bakanlığı'nda beklenen ayrılık: Bakan Yardımcısı Osman Çelik emekliliğini istedi"
+    },
+    {
+     "s": "anka",
+     "hl": "Fon krizinde tutumları eleştirilen SPK Başkanı Sütçü istifasını, Bakan Yardımcısı Çelik emeklilik dilekçesini sundu"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "SPK Başkanı Sütcü istifasını, Bakan Yardımcısı Çelik emeklilik dilekçesini sundu"
+    }
+   ]
+  },
+  {
+   "event": "s4102",
+   "week": "w8",
+   "title": "İstanbul'da bazı yollar trafiğe kapatıldı! İşte 24 Ekim'de kapalı yollar ve alternatif güzergahlar",
+   "headlines": [
+    {
+     "s": "karar",
+     "hl": "İstanbul’da 29 Ekim ve prova günü trafik düzenlemesi: Bu yollar trafiğe kapatılıyor"
+    },
+    {
+     "s": "anka",
+     "hl": "29 Ekim Cumhuriyet Bayramı provaları ve töreni nedeniyle bazı yollar trafiğe kapatılacak"
+    },
+    {
+     "s": "star",
+     "hl": "İstanbullular dikkat: Bu yollar trafiğe kapatılıyor! İşte alternatif güzergahlar"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İstanbul’da yarın bazı yollar trafiğe kapatılacak"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İstanbul'da 29 Ekim'de hangi yollar trafiğe kapalı olacak? Valilik Duyurdu! İşte İstanbul'da trafiğe kapalı olacak yollar"
+    },
+    {
+     "s": "ntv",
+     "hl": "İstanbullular dikkat, bu yollar trafiğe kapalı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "İstanbul'da 24 ve 29 Ekim'de bazı yollar trafiğe kapatılacak"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İstanbul’da 24 ve 29 Ekim’de bazı yollar trafiğe kapatılacak"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul'da 24 ve 29 Ekim'de trafiğe kapatılacak yollar duyuruldu: Alternatif güzergahlar hangileri?"
+    },
+    {
+     "s": "ahaber",
+     "hl": "İstanbul'da o yollar trafiğe kapandı: İşte alternatif güzergahlar"
+    },
+    {
+     "s": "diken",
+     "hl": "İstanbul'da yarın ve 29 Ekim'de bazı yollar kapalı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İstanbul'da bazı cadde ve yollar trafiğe kapatıldı"
+    },
+    {
+     "s": "sabah",
+     "hl": "İstanbul'da Trafiğe Kapalı Yollar 24 Ekim 2026: Vatan Caddesi kapalı mı? İşte alternatif güzergahlar"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "İstanbul'da Cumhuriyet Bayramı tören provası nedeniyle bazı cadde ve yollar trafiğe kapatıldı"
+    },
+    {
+     "s": "aa",
+     "hl": "İstanbul'da Cumhuriyet Bayramı tören provası nedeniyle bazı cadde ve yollar trafiğe kapatıldı"
+    }
+   ]
+  },
+  {
+   "event": "s3809",
+   "week": "w8",
+   "title": "Fenerbahçe-Slavia Prag maçı ne zaman, saat kaçta, hangi kanalda?",
+   "headlines": [
+    {
+     "s": "star",
+     "hl": "Fenerbahçe-Slavia Prag maçına İspanyol hakem"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Fenerbahçe - Slavia Prag maçının hakemi belli oldu"
+    },
+    {
+     "s": "sabah",
+     "hl": "Fenerbahçe-Slavia Prag maçının hakemi belli oldu!"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fenerbahçe - Slavia Prag maçına İspanyol hakem!"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fenerbahçe-Slavia Prag maçının hakemi açıklandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fenerbahçe - Slavia Prag maçının hakemi belli oldu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fenerbahçe, Şampiyonlar Ligi'nde ilk galibiyet peşinde! Slavia Prag karşısında 2 eksik"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fenerbahçe, Slavia Prag karşısında ilk peşinde"
+    },
+    {
+     "s": "karar",
+     "hl": "Galatasaray Lille maçı şifresiz mi yayınlanacak? Ne zaman, saat kaçta, hangi kanalda?"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fenerbahçe-Slavia Prag maçı TRT 1'de"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Slavia Prag, Fenerbahçe maçına hazır!"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Slavia Prag Fenerbahçe maçı hangi gün? Nerede oynanacak? Saat kaçta? Canlı yayın ücretsiz mi?"
+    },
+    {
+     "s": "diken",
+     "hl": "Fenerbahçe, Slavia Prag'la berabere kaldı"
+    }
+   ]
+  },
+  {
+   "event": "s4257",
+   "week": "w9",
+   "title": "Sırbistan seçimini Öğrenciler Listesi kazandı, 12 yıllık Vucic yenilgiyi kabul etti",
+   "headlines": [
+    {
+     "s": "evrensel",
+     "hl": "Sırbistan’da seçimleri Öğrenci Listesi kazandı, Vucic yenilgiyi kabul etti"
+    },
+    {
+     "s": "aa",
+     "hl": "Sırbistan'da başbakan adayı Vucic, \"Öğrenci Listesi\" karşısında seçim mağlubiyetini kabul etti"
+    },
+    {
+     "s": "sol",
+     "hl": "Sırbistan'da Vucic yenilgiyi kabul etti: ‘Seçimi kaybettik’"
+    },
+    {
+     "s": "haberler",
+     "hl": "Sırbistan’da 12 yıllık Vucic iktidarı son buldu: Yenilgiyi kabul etti"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Sırbistan'da eski Cumhurbaşkanı Vucic başbakanlık seçiminde yenilgiyi kabul etti"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Sırbistan’da Vucic iktidarı son buldu: Yenilgiyi kabul etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "Sırbistan erken genel seçim: Vucic yenilgiyi kabul etti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sırbistan'da Vucic seçim yenilgisini kabul etti: Kaybettik"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Sırbistan'da erken genel seçim... Vucic seçim yenilgisini kabul etti: 'Muhalefet olarak üzerimize düşeni yapacağız'"
+    },
+    {
+     "s": "mynet",
+     "hl": "Sırbistan'da Vucic, \"Öğrenci Listesi\" karşısında seçim mağlubiyetini kabul etti"
+    },
+    {
+     "s": "star",
+     "hl": "Sırbistan'da seçim şoku: Vucic yenilgiyi kabul etti"
+    },
+    {
+     "s": "takvim",
+     "hl": "Sırbistan'da 12 yıllık iktidar bitti! İsrail yanlısı Vucic 'öğrenciler' karşısında yenilgiyi kabul etti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Sırbistan'da 12 yıllık Vucic dönemi bitti: Seçimi öğrenciler kazandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Sırbistan'da Vucic seçim mağlubiyetini kabul etti"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Vucic, seçim mağlubiyetini kabul etti"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Sırbistan'da aday Vucic, \"Öğrenci Listesi\" karşısında seçim mağlubiyetini kabul etti"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Sırbistan'da Vucic seçim yenilgisini kabul etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Sırbistan'da tarihi seçim: 12 yıllık Vucic dönemi sona erdi, Vucic yenilgiyi kabul etti"
+    },
+    {
+     "s": "aksam",
+     "hl": "12 yıllık iktidar sona erdi! İsrail ile yakınlığı dikkat çeken Vucic yenilgiyi kabul etti"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Sırbistan’da öğrencilerin listesi kazandı: Vučić yenilgiyi kabul etti"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Sırbistan’da Öğrenci Listesi seçimleri kazandı: Vučić yenilgiyi kabul etti"
+    },
+    {
+     "s": "tele1",
+     "hl": "Sırbistan'da seçimi 'Öğrenci Listesi' kazandı"
+    },
+    {
+     "s": "anka",
+     "hl": "Sırbistan'da tarihi seçim... Cumhurbaşkanı Vucic yenilgiyi kabul etti, öğrencilerin desteklediği liste kazandı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Sırbistan’da seçimi öğrenciler kazandı!"
+    }
+   ]
+  },
+  {
+   "event": "s4372",
+   "week": "w9",
+   "title": "SPK'dan Tera Portföy ve Pusula Portföy kararı: Faaliyetleri geçici olarak durduruldu",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "SPK, Tera Portföy ve Pusula Portföy'ün sermaye piyasası faaliyetlerini geçici olarak durdurdu"
+    },
+    {
+     "s": "sol",
+     "hl": "SPK, Tera Portföy ve Pusula Portföy'ün sermaye piyasası faaliyetlerini geçici olarak durdurdu"
+    },
+    {
+     "s": "haberturk",
+     "hl": "SPK, Tera ve Pusula'nın faaliyetlerini geçici olarak durdurdu"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SPK'dan Tera ve Pusula'nın faaliyetlerini durdurma kararı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fon soruşturmasında Tera ve Pusula Portföy şirketlerinin faaliyetleri durduruldu"
+    },
+    {
+     "s": "ntv",
+     "hl": "SPK'dan Tera Portföy ve Pusula Portföy kararı: Faaliyetleri geçici olarak durduruldu"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Tera ve Pusula Portföy'ün faaliyetleri geçici olarak durduruldu"
+    },
+    {
+     "s": "akit",
+     "hl": "Fon soruşturmasında sıcak gelişme! Tera ve Pusula'nın faaliyetleri durduruldu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "SPK'dan Tera ve Pusula Portföy kararı! Faaliyetleri durduruldu"
+    },
+    {
+     "s": "mynet",
+     "hl": "SPK'dan Tera ve Pusula kararı! Geçici olarak durduruldu"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "SPK'dan flaş karar: Tera ve Pusula'nın faaliyetleri geçici olarak durduruldu"
+    },
+    {
+     "s": "karar",
+     "hl": "SPK'dan Tera ve Pusula Portföy kararı: Faaliyetler durdu, bütün fonlar tasfiye kapsamına alındı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "SPK'dan Tera ve Pusula Portföy için flaş karar: Faaliyetleri durduruldu"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Tera Portföy ve Pusula Portföy'ün sermaye piyasası faaliyetleri durduruldu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "SPK, Tera Portföy ve Pusula Portföy'ün faaliyetleri geçici olarak durdurdu"
+    },
+    {
+     "s": "birgun",
+     "hl": "Tera Portföy ve Pusula Portföy'ün sermaye piyasası faaliyetleri geçici olarak durduruldu"
+    },
+    {
+     "s": "aksam",
+     "hl": "SPK düğmeye bastı: Tera ve Pusula portföy faaliyetleri durduruldu"
+    },
+    {
+     "s": "evrensel",
+     "hl": "SPK, Tera ve Pusula Portföy'ün faaliyetlerini geçici olarak durdurdu"
+    },
+    {
+     "s": "diken",
+     "hl": "SPK, Tera Portföy ve Pusula Portföy'ün sermaye piyasası faaliyetlerini askıya aldı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "SPK’dan Tera ve Pusula Portföy’e geçici durdurma kararı!"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Tera ve Pusula Portföy'ün sermaye piyasası faaliyetleri geçici olarak durduruldu"
+    },
+    {
+     "s": "anka",
+     "hl": "SPK'dan Tera ve Pusula Portföy kararı: Faaliyetleri geçici olarak durduruldu, fonlar tasfiye edilecek"
+    },
+    {
+     "s": "10haber",
+     "hl": "SPK, Tera Portföy ve Pusula Portföy’ün sermaye piyasası faaliyetlerini geçici olarak durdurdu"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Tera ve Pusula Portföy'ün faaliyetleri geçici olarak durduruldu"
+    }
+   ]
+  },
+  {
+   "event": "s4536",
+   "week": "w9",
+   "title": "Bahçelievler'de korku dolu anlar! İstinat duvarı yıkıldı: 20 daire tahliye edildi",
+   "headlines": [
+    {
+     "s": "haberler",
+     "hl": "Bahçelievler'de inşaatın istinat duvarı yıkılınca 20 daire tahliye edildi"
+    },
+    {
+     "s": "akit",
+     "hl": "İstanbul'da inşaatın istinat duvarı yıkıldı, 20 daire tahliye edildi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Bahçelievler'de gece yarısı korku dolu anlar! İstinat duvarı çöktü: 2 bina tahliye edildi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Bahçelievler'de inşaatın istinat duvarı yıkıldı. 2 bina tahliye edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Bahçelievler'de iki binanın zemininde çökme: 20 daire tahliye edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Bahçelievler'de temel kazısı yapılan inşaatın istinat duvarı yıkıldı: 2 bina tahliye edildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Bahçelievler'de istinat duvarı yıkıldı: İki binadaki 20 daire tahliye edildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Bahçelievler'de 2 bina tahliye edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Bahçelievler'de inşaatın istinat duvarı yıkıldı: 2 bina tahliye edildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Bahçelievler'de korku dolu gece! 2 bina çökme riskiyle tahliye edildi"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Bahçelievler'de inşaatın istinat duvarı yıkıldı: Bitişikteki 2 bina tahliye edildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Bahçelievler’de temel kazısı paniği: 2 apartman boşaltıldı, 20 daire tahliye edildi"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul Bahçelievler'de gece yarısı korku dolu anlar! İstinat duvarı çöktü: 2 binada 20 daire tahliye edildi"
+    }
+   ]
+  },
+  {
+   "event": "s4745",
+   "week": "w9",
+   "title": "Edirne'de tur otobüsüyle tır çarpıştı: 10 kişi yaralandı",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Edirne'de tur otobüsüyle tırın çarpıştığı kazada 10 kişi yaralandı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Edirne'de Bulgaristanlı turistleri taşıyan otobüs tırla çarpıştı, 10 yolcu yaralandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Edirne’de turistleri taşıyan otobüs TIR’a çarptı: 10 yaralı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Tur otobüsü TIR'a arkadan çarptı: 10 turist yaralı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Edirne'de tur otobüsü TIR'a çarptı: 10 yaralı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Edirne'de tur otobüsü ile tır çarpıştı! 10 yaralı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Edirne'de tur otobüsü tıra çarptı: 10 turist yaralandı"
+    },
+    {
+     "s": "star",
+     "hl": "Tur otobüsüyle tır çarpıştı: 10 kişi yaralandı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Tur otobüsü tırla çarpıştı! Yaralılar var"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Edirne'de tur otobüsüyle tır çarpıştı: 10 kişi yaralandı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Edirne'de tur otobüsüyle tır çarpıştı: 10 kişi yaralandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Edirne'de Bulgar turistleri taşıyan otobüs TIR'a çarptı: 10 yaralı"
+    },
+    {
+     "s": "karar",
+     "hl": "Edirne’de tur otobüsü TIR’a çarptı: 10 turist yaralandı"
+    }
+   ]
+  },
+  {
+   "event": "s6482",
+   "week": "w9",
+   "title": "Bakan Gürlek'ten fon soruşturmalarına ilişkin açıklama: Gönüllü iade hukuki sorumluluğu ortadan kaldırmaz",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Bakan Gürlek'ten fon soruşturmasına ilişkin açıklama"
+    },
+    {
+     "s": "sol",
+     "hl": "Akın Gürlek’ten ‘gönüllü iade’ savunusu: ‘Hukuki sorumluluğu ortadan kaldırmaz, iddialar ayrıca değerlendirilecek’"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Adalet Bakanı Sayın Gürlek'ten fon soruşturmalarında iade uyarısı \"Hukuki sorumluluğu kaldırmaz\""
+    },
+    {
+     "s": "takvim",
+     "hl": "Gönüllü iade tek başına yeterli değil! Bakan Akın Gürlek altını çizdi: Hukuki sorumluluğu ortadan..."
+    },
+    {
+     "s": "star",
+     "hl": "Bakan Gürlek'ten fon soruşturması mesajı: Gönüllü iade sorumluluğu ortadan kaldırmaz"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Adalet Bakanı Gürlek: Fon soruşturmalarında gönüllü iade sorumluluğu ortadan kaldırmaz"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Bakan Gürlek'ten fon soruşturmalarına ilişkin açıklama"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Bakan Gürlek'ten 'fon soruşturması' açıklaması: 'Gönüllü iade' vurgusu"
+    },
+    {
+     "s": "diken",
+     "hl": "Adalet bakanı: Paraların gönüllü iadesi hukuki sorumluluğu ortadan kaldırmaz"
+    },
+    {
+     "s": "anka",
+     "hl": "Bakan Gürlek'ten fon soruşturmalarına ilişkin açıklama: Gönüllü iade hukuki sorumluluğu ortadan kaldırmaz"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Bakan Gürlek'ten 'fon soruşturması' açıklaması: Dikkat çeken 'gönüllü iade' vurgusu"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Bakan Gürlek'ten fon soruşturmasına ilişkin açıklama"
+    },
+    {
+     "s": "birgun",
+     "hl": "Akın Gürlek'ten fon soruşturmalarına ilişkin açıklama: Gönüllü iade hukuki sorumluluğu ortadan kaldırmaz"
+    },
+    {
+     "s": "karar",
+     "hl": "Gürlek'ten fon soruşturmasında 'iade' uyarısı: Parayı geri vermek hukuki sorumluluğu kaldırmaz"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Gürlek'ten \"fon krizi\" açıklaması: Gönüllü iade hukuki sorumluluğu ortadan kaldırmaz"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Gönüllü iade sorumluluğu ortadan kaldırmaz"
+    }
+   ]
+  },
+  {
+   "event": "s4560",
+   "week": "w9",
+   "title": "Arif Ahmet Denizolgun'un ölümüne ilişkin doktoru Nurettin Demirkol'a hapis cezası",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Arif Ahmet Denizolgun'un ölümüne ilişkin doktoru Nurettin Demirkol'a hapis cezası"
+    },
+    {
+     "s": "takvim",
+     "hl": "Arif Ahmet Denizolgun'un şüpheli ölümünde karar: Nurettin Demirkol'a 2 yıl 6 ay hapis cezası! Tahliyesine itiraz"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Eski Ulaştırma Bakanı Arif Ahmet Denizolgun'un ölümüne ilişkin Doktor Nurettin Demirkol'a hapis ve tahliye"
+    },
+    {
+     "s": "birgun",
+     "hl": "Arif Ahmet Denizolgun'un ölümü: Doktor Nurettin Demirkol ilk kez hakim karşısında"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Denizolgun'un şüpheli ölümüne ilişkin davada özel doktoru Demirkol hakim karşısında"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Arif Ahmet Denizolgun'un ölümüne ilişkin yargılanan Nurettin Demirkol'un cezası belli oldu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Eski Bakan Denizolgun'un şüpheli ölümünde tutuklanan doktora hapis ve tahliye"
+    },
+    {
+     "s": "sabah",
+     "hl": "Eski Ulaştırma Bakanı Arif Ahmet Denizolgun'un doktoru Nurettin Demirkol hakim karşısında! Doktor Demirkol'a 2 yıl 6 ay hapis cezası"
+    },
+    {
+     "s": "aksam",
+     "hl": "Denizolgun dosyasında karar çıktı: Doktor Nurettin Demirkol'a hapis cezası"
+    },
+    {
+     "s": "star",
+     "hl": "Denizolgun'un şüpheli ölümü! Doktor Demirkol'un cezası belli oldu"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Süleymancıların cemaatinin eski lideri Arif Ahmet Denizolgun'un doktoruna 2 yıl 6 ay hapis cezası"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Eski Bakan Arif Ahmet Denizolgun'un şüpheli ölümünde karar! Doktora hapis cezası"
+    },
+    {
+     "s": "ntv",
+     "hl": "Eski bakan Denizolgun'un şüpheli ölümü. Doktoruna 'yalan tanıklık' suçundan 2 yıl 6 ay hapis cezası"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Arif Ahmet Denizolgun'un ölümüne ilişkin doktoru Nurettin Demirkol'a hapis cezası"
+    }
+   ]
+  }
+ ]
+}

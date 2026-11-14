@@ -1,0 +1,166 @@
+{
+ "q": {
+  "happened": "İstanbul Bahçelievler'de bir inşaatın istinat duvarı yıkıldı; bitişikteki iki binadan 20 daire tahliye edildi.",
+  "agree": "İstinat duvarının yıkılması ve tahliye ortak.",
+  "differ": "A Haber, Takvim ve TGRT 'korku dolu anlar' dramatik dilini kullanırken; Evrensel ve Cumhuriyet temel kazısını anıyor; Sabah 'zeminde çökme' diyor; çoğu kurum 2 bina ya da 20 daire sayısından birini veriyor.",
+  "care": "Başlıkta inşaat kazısının anılması olayı bir müteahhit denetimi meselesine yaklaştırırken, dramatik dil olayı bir panik hikâyesi olarak çerçeveler."
+ },
+ "rows": [
+  {
+   "s": "haberler",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "İnşaat istinat duvarı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "akit",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "İnşaat istinat duvarı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Panik anları",
+   "hero": "",
+   "blame": "",
+   "cause": "İstinat duvarı çöküşü",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "İnşaat istinat duvarı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "Zeminde çökme",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "Temel kazısı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "İstinat duvarı çöküşü",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Olgu aktarımı",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "birgun",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "İnşaat istinat duvarı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "tgrt",
+   "frame": "Panik anları",
+   "hero": "",
+   "blame": "",
+   "cause": "Çökme riski",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "yenisafak",
+   "frame": "Yapısal çökme",
+   "hero": "",
+   "blame": "",
+   "cause": "İnşaat istinat duvarı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Panik anları",
+   "hero": "",
+   "blame": "",
+   "cause": "Temel kazısı",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Panik anları",
+   "hero": "",
+   "blame": "",
+   "cause": "İstinat duvarı çöküşü",
+   "cons": "Tahliye",
+   "aff": "Bina sakinleri",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

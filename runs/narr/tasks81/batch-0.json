@@ -1,0 +1,1175 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s1544",
+   "week": "w7",
+   "title": "Papa 14. Leo akciğer kanseri ameliyatı oldu",
+   "headlines": [
+    {
+     "s": "haberturk",
+     "hl": "Papa 14. Leo ameliyat olacak"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Papa 14. Leo akciğer kanseri ameliyatı oldu"
+    },
+    {
+     "s": "10haber",
+     "hl": "Papa akciğer ameliyatı oldu"
+    },
+    {
+     "s": "karar",
+     "hl": "Papa 14. Leo akciğer ameliyatı için hastaneye yattı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Ameliyat geçiren Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "star",
+     "hl": "Ameliyat olacağı duyurulmuştu... Papa XIV. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Ameliyat geçiren Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "mynet",
+     "hl": "Ameliyat geçiren Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Ameliyat olmuştu: Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Papa 14. Leo ameliyat oldu: Kanser tanısı konuldu"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Ameliyatı başarılı geçen Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "sabah",
+     "hl": "Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "ntv",
+     "hl": "Ameliyat geçiren Papa 14. Leo'ya akciğer kanseri tanısı kondu"
+    },
+    {
+     "s": "diken",
+     "hl": "Papa 14'üncü Leo akciğer kanseri"
+    },
+    {
+     "s": "anka",
+     "hl": "Papa 14'üncü Leo'ya akciğer kanseri teşhisi konuldu: Vatikan, ameliyatın başarılı geçtiğini açıkladı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Papa 14'üncü Leo'ya akciğer kanseri teşhisi konuldu"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Akciğer kanseri teşhisi konulmuştu... Papa 14'üncü Leo, ameliyat oldu"
+    }
+   ]
+  },
+  {
+   "event": "s3574",
+   "week": "w7",
+   "title": "İstanbul'da okullar yarın da tatil edildi",
+   "headlines": [
+    {
+     "s": "milligazete",
+     "hl": "İstanbul'da okul tatil mi, yarın okullar açık mı, 14 Ekim Çarşamba tatil kararı çıktı mı?"
+    },
+    {
+     "s": "sol",
+     "hl": "İstanbul Valiliği duyurdu: Yarın okullar tatil edildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "İstanbul'da yarın okullar tatil mi? Valilikten öğrencilerin beklediği haber geldi mi?"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İstanbul'da okullar tatil edildi, motosiklet kullanımı yasaklandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "İstanbul’da yarın okullar tatil edildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "İstanbul'da bugün okullar tatil"
+    },
+    {
+     "s": "sabah",
+     "hl": "İstanbul’da yarın okullar tatil mi?"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "İstanbul'da okullar bir gün tatil edildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yarın okullar tatil mi? 15 Ekim Perşembe İstanbul'da okullar tatil mi edildi?"
+    },
+    {
+     "s": "karar",
+     "hl": "Yarın okullar tatil mi? 15 Ekim Perşembe İstanbul'da okul yok mu? Yalova, Kocaeli, Sakarya Valilik kararları ne?"
+    },
+    {
+     "s": "ntv",
+     "hl": "İstanbul'da yarın okullar tatil mi, tatil uzatıldı mı? 16 Ekim Cuma günü tatil olan iller"
+    },
+    {
+     "s": "star",
+     "hl": "Vali Gül duyurdu! İstanbul'da okullar yarın da tatil"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İstanbul'da okullar yarın da tatil"
+    },
+    {
+     "s": "diken",
+     "hl": "İstanbul'da okullar yarın da tatil"
+    },
+    {
+     "s": "anka",
+     "hl": "İstanbul Valisi Davut Gül: Okullar yarın da tatil edildi, 2 bin 722 kişi kurtarıldı"
+    }
+   ]
+  },
+  {
+   "event": "s1574",
+   "week": "w7",
+   "title": "Dışişleri Bakanı Fidan, İsrail Cumhurbaşkanı Herzog konuşurken salonu terk etti",
+   "headlines": [
+    {
+     "s": "star",
+     "hl": "Zirvede İsrail'e ortak tepki! Bakan Fidan salonu terk etti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Hakan Fidan, Herzog’un konuşması sırasında salonu terk etti"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Hakan Fidan ve 10'dan fazla ülkenin temsilcisi, katil İsrail Cumhurbaşkanı Herzog'un CICA Zirvesi'ndeki..."
+    },
+    {
+     "s": "takvim",
+     "hl": "Bakü’de dik duruş! İsrail Cumhurbaşkanı Herzog konuştu Hakan Fidan salonu terk etti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Dışişleri Bakanı Hakan Fidan İsrail Cumhurbaşkanı Herzog'un konuşması başlarken salonu terk etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "İsrail Cumhurbaşkanı konuşmasına başladı, Bakan Fidan dahil birçok kişi salonu terk etti"
+    },
+    {
+     "s": "10haber",
+     "hl": "Bakü’de İsrail protestosu: Hakan Fidan, Herzog konuşurken salonu terk etti"
+    },
+    {
+     "s": "karar",
+     "hl": "Bakü'de İsrail Cumhurbaşkanı'na protesto: Hakan Fidan ve 10'dan fazla ülkenin heyeti salonu terk etti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Hakan Fidan, Herzog konuşurken salonu terk etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Dışişleri Bakanı Fidan, İsrail Cumhurbaşkanı Herzog'un konuşması sırasında salonu terk etti"
+    },
+    {
+     "s": "anka",
+     "hl": "Dışişleri Bakanı Fidan, İsrail Cumhurbaşkanı Herzog konuşurken salonu terk etti"
+    }
+   ]
+  },
+  {
+   "event": "s6236",
+   "week": "w7",
+   "title": "Halk TV'ye kayyım atandı",
+   "headlines": [
+    {
+     "s": "sol",
+     "hl": "Halk TV'ye polis baskını: Kayyım atandı, yayın durduruldu"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Halk TV'ye kayyım atandı: Binaya polis girdi, yayın durduruldu"
+    },
+    {
+     "s": "karar",
+     "hl": "Halk TV’ye şafak operasyonu: TMSF kayyum olarak atandı, canlı yayın durduruldu"
+    },
+    {
+     "s": "sozcu",
+     "hl": "SON DAKİKA... Halk TV'ye kayyum atandı: Yayın durduruldu"
+    },
+    {
+     "s": "anka",
+     "hl": "Halk TV'ye kayyım atandı... Özgür Özel: Türkiye, bu kötülüğü yenecek"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... Halk TV’ye şafak baskını: Kayyım atandı, yayın durduruldu"
+    },
+    {
+     "s": "diken",
+     "hl": "Halk TV'ye kayyım atandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Halk TV'ye operasyon: Kayyum atandı, yayın kesildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "SON DAKİKA HABERLERİ: Halk TV'de arama, kayyum atandı! Halk TV'ye neden kayyum atandı, ne oldu?"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Halk TV'ye kayyım atandı, yayın durduruldu, 11 kişi gözaltına alındı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Halk TV’ye kayyum atandı, yayın durduruldu"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Halk TV'ye kayyum atandı, haber yayını durduruldu"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Halk TV’ye kayyım atandı: 17 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Halk TV'ye kayyım atandı, siyasiler ve meslek örgütleri tepkili"
+    }
+   ]
+  },
+  {
+   "event": "s1510",
+   "week": "w7",
+   "title": "Fon soruşturmasında 'gizli' belgeleri paylaşanlara soruşturma",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Fon krizi: Başsavcılıktan 'gizli belgeleri' paylaşanlara soruşturma"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fon soruşturmasında flaş gelişme: Gizli belgeleri sızdıranlara soruşturma!"
+    },
+    {
+     "s": "tele1",
+     "hl": "Sermaye piyasası soruşturmasında 'Gizli' belgeleri paylaşanlar hakkında soruşturma"
+    },
+    {
+     "s": "takvim",
+     "hl": "Fon soruşturmasında gizli belgeler için yeni soruşturma"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fon soruşturmasında 'gizli' belgeleri paylaşanlar için harekete geçildi!"
+    },
+    {
+     "s": "sabah",
+     "hl": "Sermaye piyasası soruşturmasında kritik gelişme: 'Gizli’ belgeleri paylaşanlara soruşturma"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Fon krizi... \"Gizli\" belgeleri paylaşanlara soruşturma başlatıldı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fon soruşturmasında gizli belgeleri paylaşanlar hakkında soruşturma başlatıldı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon vurgunu soruşturması: 'Gizli' belgeleri paylaşma gerekçesiyle soruşturma"
+    },
+    {
+     "s": "karar",
+     "hl": "Fon soruşturmasında 'gizli' belgeleri paylaşanlara soruşturma"
+    },
+    {
+     "s": "10haber",
+     "hl": "Fon soruşturması: ‘Gizli belge’ paylaşanlara uyarı"
+    }
+   ]
+  },
+  {
+   "event": "s1528",
+   "week": "w7",
+   "title": "Üsküdar-Sultanbeyli metro hattında patlama: Seferler normale döndü",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Son dakika: Sultanbeyli-Üsküdar metrosunda kablo patlaması! Seferler aksadı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Üsküdar-Sultanbeyli Metro Hattı'nda arıza"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Tünelde patlama sesleri ve yoğun duman alarmı: M5 Üsküdar-Sultanbeyli metrosunda seferler durduruldu"
+    },
+    {
+     "s": "takvim",
+     "hl": "İstanbul'da metro hattında patlama paniği! M5 Üsküdar-Sultanbeyli hattında seferler aksadı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "İstanbul'da Üsküdar-Sultanbeyli metrosunda kablo patlaması: Bir yolcu dumandan etkilendi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Üsküdar-Sultanbeyli Metro hattında kablo patlaması! Bazı seferler durdu"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "M5 metro hattında ne oldu? M5 Üsküdar-Sultanbeyli Metro Hattı neden kapatıldı?"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Üsküdar-Sultanbeyli Metro Hattı’nda kablo arızası nedeniyle patlama"
+    },
+    {
+     "s": "diken",
+     "hl": "Üsküdar-Sultanbeyli metro hattında patlama: Seferler normale döndü"
+    },
+    {
+     "s": "milligazete",
+     "hl": "M5 metro çalışıyor mu, 13 Ekim seferler normale döndü mü, Üsküdar-Sultanbeyli hattındaki arıza giderildi mi?"
+    },
+    {
+     "s": "haberturk",
+     "hl": "M5 METROSU ÇALIŞIYOR MU? Üsküdar-Sultanbeyli metrosu açıldı mı, seferler normale döndü mü? 13 Ekim 2026 Salı M5 Üsküdar-Sultanbeyli metro hattı son durum"
+    }
+   ]
+  },
+  {
+   "event": "s1491",
+   "week": "w7",
+   "title": "Suudi Arabistan'da havalimanına saldırı: 12 ölü, 309 yaralı",
+   "headlines": [
+    {
+     "s": "sol",
+     "hl": "Riyad Havalimanı'na Ensarullah saldırısı: 12 ölü, 309 yaralı"
+    },
+    {
+     "s": "diken",
+     "hl": "Suudi Arabistan'da havalimanına saldırı: 12 kişi öldü"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Suudi Arabistan'da Riyad Havalimanı'na saldırı: 12 ölü, 309 yaralı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Suudi Arabistan'da havalimanına saldırı! 12 can kaybı, 309 yaralı var!"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Suudi Arabistan'da havalimanına saldırı: 12 ölü, 309 yaralı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Suudi Arabistan'daki havalimanlarına düzenlenen 10 saldırıda 19 kişi öldü"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Suudi Arabistan’da 5 havalimanına 10 saldırı: 19 kişi hayatını kaybetti"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Suudi Arabistan’da havalimanlarına saldırı: 19 ölü, yüzlerce yaralı!"
+    },
+    {
+     "s": "ntv",
+     "hl": "Suudi Arabistan'daki 5 havalimanına 10 saldırı düzenlendi, 19 kişi öldü"
+    },
+    {
+     "s": "aa",
+     "hl": "Suudi Arabistan'daki 5 havalimanına bir haftada düzenlenen 10 saldırıda 19 kişi hayatını kaybetti"
+    }
+   ]
+  },
+  {
+   "event": "s6181",
+   "week": "w7",
+   "title": "MHP konvoyunda feci kaza: Milletvekili Zuhal Karakoç yaralandı",
+   "headlines": [
+    {
+     "s": "cumhuriyet",
+     "hl": "MHP'nin konvoyunda kaza: Milletvekili yaralandı, 1 kişi hayatını kaybetti"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika... MHP konvoyunda kaza: Milletvekili yaralandı, 1 kişi hayatını kaybetti"
+    },
+    {
+     "s": "karar",
+     "hl": "Kahramanmaraş’ta MHP konvoyu kaza yaptı: 1 ölü, 4 yaralı"
+    },
+    {
+     "s": "sabah",
+     "hl": "MHP'li milletvekili ve il başkanının konvoyunda kaza: 1 ölü, 7 yaralı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "MHP konvoyunda kaza: 1 kişi hayatını kaybetti, milletvekili yaralandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Kahramanmaraş'ta feci kaza! MHP milletvekili Zuhal Karakoç yaralandı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "MHP konvoyunda kaza: 1 kişi hayatını kaybetti, Zuhal Karakoç dahil 4 kişi yaralandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "MHP konvoyunda kaza! Milletvekili Zuhal Karakoç yaralandı, 1 kişi vefat etti"
+    },
+    {
+     "s": "takvim",
+     "hl": "MHP Milletvekili Zuhal Karakoç trafik kazasında yaralandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "MHP konvoyunda kaza: 1 can kaybı ve 4 yaralı var"
+    },
+    {
+     "s": "milligazete",
+     "hl": "MHP konvoyunda feci kaza: Milletvekili Zuhal Karakoç yaralandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Kahramanmaraş'ta MHP konvoyunda kaza: 1 ölü, 7 yaralı!"
+    },
+    {
+     "s": "ntv",
+     "hl": "MHP’li milletvekili ve il başkanının konvoyunda kaza: 1 ölü, 7 yaralı"
+    },
+    {
+     "s": "10haber",
+     "hl": "MHP konvoyunda kaza: 1 ölü, 7 yaralı"
+    }
+   ]
+  },
+  {
+   "event": "s3767",
+   "week": "w7",
+   "title": "Eski Türkiye güzeli Fatoş Seğmen’in kızı Alya Erdoğan hayatını kaybetti",
+   "headlines": [
+    {
+     "s": "sabah",
+     "hl": "Eski Türkiye Güzeli Fatoş Seğmen’in evlat acısı! Kızı Alya’ya yürek yakan veda..."
+    },
+    {
+     "s": "ntv",
+     "hl": "Fatoş Seğmen'in evlat acısı. Kızı Alya hayatını kaybetti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Miss Turkey güzeli Fatoş Seğmen'in evlat acısı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Fatoş Seğmen'in kızı Alya Erdoğan hayatını kaybetti!"
+    },
+    {
+     "s": "mynet",
+     "hl": "Geçen yıl eşini kaybetmişti! Miss Turkey güzeli Fatoş Seğmen'in evlat acısı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fatoş Seğmen’in kızı Alya Erdoğan’ın cenaze programı belli oldu"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Eski Türkiye güzeli Fatoş Seğmen’in kızı Alya Erdoğan hayatını kaybetti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Alya Erdoğan neden öldü? Fatoş Seğmen’in kızının ölüm nedeni açıklandı mı?"
+    },
+    {
+     "s": "10haber",
+     "hl": "Miss Turkey güzeli Fatoş Seğmen’in acısı katlandı: Kızını da kaybetti"
+    },
+    {
+     "s": "karar",
+     "hl": "Eşinin ardından şimdi de evlat acısıyla yıkıldı! 2004 Türkiye 2. güzeli Fatoş Seğmen’in kızı Alya Erdoğan hayatını kaybetti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Geçen yıl da eşini kaybetmişti... Eski Türkiye güzeli Fatoş Seğmen'in kızı Alya Erdoğan hayatını kaybetti"
+    }
+   ]
+  },
+  {
+   "event": "s3898",
+   "week": "w8",
+   "title": "Milas Belediyesi'ne operasyon! Belediye Başkanı Fevzi Topuz ve oğlu Doruk Topuz gözaltında",
+   "headlines": [
+    {
+     "s": "sol",
+     "hl": "Milas Belediyesi’ne operasyon: Başkan Fevzi Topuz ve oğlu gözaltında"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika... Milas Belediyesi'ne operasyon: Belediye başkanı dahil 29 kişi gözaltına alındı"
+    },
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | Milas Belediyesi'ne operasyon! Giriş çıkışılar durduruldu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Milas Belediyesi'ne operasyon! Belediye Başkanı Fevzi Topuz ve oğlu Doruk Topuz gözaltında"
+    },
+    {
+     "s": "star",
+     "hl": "2,5 milyarlık sahte ihale vurgunu! Milas Belediyesi'ne rüşvet operasyonu: Fevzi Topuz gözaltında"
+    },
+    {
+     "s": "ntv",
+     "hl": "Milas Belediyesi'ne operasyon: Başkan Fevzi Topuz dahil 20 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Milas Belediyesine operasyon: Belediye başkanı dahil 29 kişi gözaltında"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... Milas Belediyesi’ne operasyon: Başkan Fevzi Topuz ve oğlu dahil 33 gözaltı"
+    },
+    {
+     "s": "karar",
+     "hl": "Milas Belediyesi'ne operasyon: Belediye Başkanı Fevzi Topuz hakkında gözaltı kararı"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Milas Belediyesi’ne operasyon: 35 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Milas Belediyesi'ne operasyon: Belediye Başkanı Topuz dahil 35 kişiye gözaltı kararı"
+    },
+    {
+     "s": "diken",
+     "hl": "CHP'li Milas Belediye Başkanı Fevzi Topuz gözaltına alındı"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Muğla Milas Belediyesi’ne operasyon! Fevzi Topuz ve oğlu Doruk Topuz gözaltında: 2,5 milyar liralık sahte ihale detayı ortaya çıktı!"
+    },
+    {
+     "s": "anka",
+     "hl": "Milas Belediyesi’ne operasyon: Belediye Başkanı Topuz ve oğlu dahil 29 gözaltı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz görevinden uzaklaştırıldı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Milas Belediyesine operasyon! Başkan Fevzi Topuz gözaltında"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz ve oğlu gözaltına alındı!"
+    },
+    {
+     "s": "agos",
+     "hl": "Belediye Başkanı Fevzi Topuz dahil 29 kişi gözaltında"
+    },
+    {
+     "s": "10haber",
+     "hl": "Milas Belediyesi’ne operasyon: Belediye Başkanı ve oğlu dahil 29 gözaltı"
+    }
+   ]
+  },
+  {
+   "event": "s4327",
+   "week": "w8",
+   "title": "Mısır Meclisi, Suudi Arabistan'a askeri destek talebini onayladı",
+   "headlines": [
+    {
+     "s": "bbcturkce",
+     "hl": "Mısır neden Suudi Arabistan'a askeri güç göndermek istiyor?"
+    },
+    {
+     "s": "aa",
+     "hl": "Mısır Meclisi, Cumhurbaşkanı Sisi'ye Suudi Arabistan'ın savunmasına destek yetkisi verdi"
+    },
+    {
+     "s": "sol",
+     "hl": "Gereken son onay da geldi: Mısır Meclisi'nden Sisi'ye Suudi Arabistan'a asker gönderme yetkisi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Mısır’dan dikkat çeken karar: Sisi'ye Suudi Arabistan'ın savunmasına destek için yetki verildi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Mısır'dan Suudi Arabistan'a askeri destek kararı"
+    },
+    {
+     "s": "star",
+     "hl": "Mısır'dan Suudi Arabistan kararı: Askeri destek talebi onaylandı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Mısır'dan Suudi Arabistan'a askeri destek kararı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Mısır’dan Suudi Arabistan kararı: Askeri destek talebine onay çıktı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Mısır Meclisi onayladı: Suudi Arabistan'a askeri destek kararı!"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Husi saldırıları sonrası Mısır'dan sürpriz karar! Suudi Arabistan'a askeri destek onaylandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Mısır Meclisi, Suudi Arabistan'a askeri destek talebini onayladı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Mısır Parlamentosu, Sisi'ye Suudi Arabistan'ı savunmak için askeri destek yetkisi verdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Mısır Meclisinden kritik karar! Sisi'ye Suudi Arabistan'a destek için askeri yetki"
+    },
+    {
+     "s": "karar",
+     "hl": "Mısır'dan Suudi Arabistan'a askeri destek"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Mısır Meclisi'nden Suudi Arabistan'ın savunması için Sisi'ye yetki"
+    },
+    {
+     "s": "ntv",
+     "hl": "Mısır Meclisi, Cumhurbaşkanı Sisi'ye Suudi Arabistan'ın savunmasına destek için yetki verdi"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Mısır'dan Suudi Arabistan'a askeri destek kararı!"
+    },
+    {
+     "s": "anka",
+     "hl": "Mısır Parlamentosu, Cumhurbaşkanı Sisi'ye, Suudi Arabistan'ı savunmak için askeri destek yetkisi verdi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Mısır'dan Suudi Arabistan kararı: Askeri destek için yetki verildi"
+    }
+   ]
+  },
+  {
+   "event": "s1773",
+   "week": "w8",
+   "title": "Milas Belediye Başkanı Fevzi Topuz dahil 18 kişi tutuklandı",
+   "headlines": [
+    {
+     "s": "anka",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz ve 19 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz ve 19 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz dahil 20 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Milas Belediyesi'ne operasyon: 18 kişi tutuklandı!"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Milas Belediyesi soruşturmasında gelişme! Fevzi Topuz ve oğlu dahil 18 tutuklama"
+    },
+    {
+     "s": "takvim",
+     "hl": "Milas Belediyesi'nde sahte ihale soruşturması! Başkan Fevzi Topuz ve oğlu tutuklandı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Milas Belediyesi'ne operasyon: Başkan Fevzi Topuz dahil 20 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Milas belediye başkanı, oğlu ve 16 kişi tutuklandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz tutuklandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Belediye Başkanı Fevzi Topuz'un da aralarında bulunduğu 18 kişi tutuklandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Milas Belediyesi operasyonu: Belediye Başkanı dahil 18 kişi tutuklandı"
+    },
+    {
+     "s": "star",
+     "hl": "Milas Belediyesi operasyonunda yeni gelişme! Başkan ve oğlu dahil 18 şüpheli tutuklandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz ve oğlu tutuklandı"
+    },
+    {
+     "s": "karar",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz tutuklandı"
+    },
+    {
+     "s": "diken",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz dahil 18 kişi tutuklandı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Fevzi Topuz dahil 18 şüpheli tutuklandı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Milas Belediye Başkanı Fevzi Topuz tutuklandı! 18 kişi cezaevinde"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Milas Belediyesi soruşturması: 18 kişi tutuklandı"
+    }
+   ]
+  }
+ ]
+}

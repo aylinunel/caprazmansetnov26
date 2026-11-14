@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Çapraz Manşet 7.0</title>
+<title>Çapraz Manşet 8.1</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20160%20160%22%20width%3D%22160%22%20height%3D%22160%22%20role%3D%22img%22%20aria-label%3D%22Small-size%20mark%3A%20%C3%87%20with%20a%20wider%20cut%2C%20for%2016%20to%2024%20pixel%20use%22%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20rx%3D%2218%22%20fill%3D%22%231B1813%22%3E%3C/rect%3E%3Cpath%20d%3D%22M65%2064.9%2041.2%2069.1Q41.2%2067.9%2041.2%2066.6Q41.2%2056.7%2043.7%2047.9Q46.2%2039.1%2051.5%2032.4Q56.7%2025.8%2065%2022Q73.3%2018.2%2084.9%2018.2Q95%2018.2%20102.2%2021.1Q109.5%2023.9%20113.9%2028.9Q118.3%2033.9%20120%2040.3Q121.7%2046.8%20120.9%2053.8L100%2056.3Q100.3%2050.3%2098.5%2045.9Q96.8%2041.6%2093.2%2039.2Q89.6%2036.8%2084.2%2036.8Q79.6%2036.8%2076%2038.6Q72.4%2040.5%2070%2044.1Q67.5%2047.7%2066.3%2053.1Q65.1%2058.2%2065%2064.9Z%22%20fill%3D%22%23F5F0E3%22%3E%3C/path%3E%3Cpath%20d%3D%22M70%20114.5Q64.6%20113.6%2060.2%20111.6Q51.8%20107.8%2046.5%20101.1Q41.2%2094.4%2038.7%2085.8Q37.8%2082.4%2037.2%2078.9L60.6%2074.8Q61.1%2079%2062.3%2082.6Q64.6%2089.4%2069.2%2093.1Q73.8%2096.8%2080.8%2096.8Q87.2%2096.8%2090.9%2093.8Q94.7%2090.9%2096.2%2085.7Q97.7%2080.5%2097.2%2074.1L118.6%2075.9Q119.3%2083.6%20117.5%2090.7Q115.8%2097.8%20111.2%20103.4Q106.7%20109%2099.1%20112.2Q92.7%20114.9%2083.9%20115.3L83.5%20118.1Q88.5%20118.1%2092.1%20119Q95.8%20120%2097.8%20122.2Q99.8%20124.4%2099.8%20128.1Q99.8%20133.9%2095.8%20137Q91.9%20140.2%2085.6%20141.2Q79.4%20142.3%2072.8%20141.4Q66.2%20140.5%2060.9%20137.9L64.1%20126Q66.1%20127.3%2069.7%20128.3Q73.2%20129.3%2076.9%20129.7Q80.7%20130.1%2083.2%20129.3Q85.8%20128.6%2085.8%20126.3Q85.8%20125.6%2085.3%20124.8Q84.7%20123.9%2083%20123.3Q81.4%20122.7%2078%20122.4Q74.6%20122.1%2068.9%20122.4Z%22%20fill%3D%22%23F5F0E3%22%3E%3C/path%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2755,6 +2755,20 @@ section.v7-how{padding-bottom:28px}
 /* phone menu open: the page behind does not scroll */
 html.menu-lock,html.menu-lock body{overflow:hidden}
 
+/* 8.1 Yeni */
+.v7-yn .yn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:20px;margin:28px 0}
+.yn-card{border:1px solid var(--line,#d8d2c4);border-radius:14px;padding:22px 22px 18px;background:var(--paper,transparent);min-width:0}
+.yn-card h2{font:600 22px/1.25 var(--serif);margin:6px 0 10px}
+.yn-claim{font-size:16px;line-height:1.5;margin:0 0 14px}
+.yn-tag{display:flex;align-items:center;justify-content:space-between;margin:0}
+.yn-chip{font:600 11px/1 var(--ff-m);letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:99px;background:var(--ink);color:var(--bg,#fff)}
+.yn-new .yn-chip{background:#2563EB}.yn-chg .yn-chip{background:#B45309}.yn-same .yn-chip{background:#6b7280}.yn-warn .yn-chip{background:#B91C1C}
+.yn-n{font:500 12px var(--ff-m);color:var(--muted)}
+.yn-t{width:100%;font-size:14px}.yn-t td,.yn-t th{padding:6px 8px;text-align:left;vertical-align:top}.yn-t .r{text-align:right}
+.yn-note{margin-top:12px}
+.v7-yn-band{margin:28px 0}.v7-yn-band .v7-hc{display:block}
+.yn-t a{display:inline-block;min-height:44px;line-height:22px;padding:11px 0}
+
 </style>
 </head>
 <body>
@@ -4920,13 +4934,13 @@ function matrixChart(srcs) {
   srcs.forEach(function (k, i) {
     var y = padT + i * ch;
     var lb = mk("text", { x: padL - 9, y: y + ch / 2 + 3.5, "text-anchor": "end", fill: "var(--ink2)", "font-size": 11 });
-    lb.textContent = (SRC[k] ? SRC[k].n : k); s.appendChild(lb);
+    lb.textContent = (srcName(k)); s.appendChild(lb);
     DAYS.forEach(function (d, j) {
       var n = STAT[k].days[d] || 0;
       var g = mk("rect", { x: padL + j * cw + 1, y: y + 1, width: cw - 3, height: ch - 3, rx: 2,
         fill: n === 0 ? "var(--sunk)" : seq(Math.min(100, 18 + 82 * (n / max))),
         stroke: "var(--line)", "stroke-width": .8 });
-      bindTip(g, "<span class='k'>" + esc(SRC[k] ? SRC[k].n : k) + " · " + fmtD(d + "T00:00") + "</span>" +
+      bindTip(g, "<span class='k'>" + esc(srcName(k)) + " · " + fmtD(d + "T00:00") + "</span>" +
         (n === 0 ? "Bu gün için akışta kayıt yok" : n + " haber"));
       s.appendChild(g);
     });
@@ -5276,10 +5290,10 @@ function spectrumCard(e) {
     '<div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px;' +
     'font-size:12.5px;color:var(--ink2)">' +
     '<div><span class="eyebrow" style="font-size:9px">En yalın</span><div style="margin-top:3px">' +
-    esc(SRC[bot.s] ? SRC[bot.s].n : bot.s) + ' <span class="num" style="color:var(--muted)">' +
+    esc(srcName(bot.s)) + ' <span class="num" style="color:var(--muted)">' +
     bot.v + "</span></div></div>" +
     '<div><span class="eyebrow" style="font-size:9px">En yüklü</span><div style="margin-top:3px">' +
-    esc(SRC[top.s] ? SRC[top.s].n : top.s) + ' <span class="num" style="color:var(--hot)">' +
+    esc(srcName(top.s)) + ' <span class="num" style="color:var(--hot)">' +
     top.v + "</span></div></div></div>" +
     (c.left === 0 || c.right === 0 ?
       '<div style="margin-top:10px"><span class="tag b">' +
@@ -5421,7 +5435,7 @@ function pgEventsV1(q) {
         (x.gap >= 0 ? "+" : "") + Math.round(100 * x.gap) + " puan</span></div>" +
         '<div style="margin-top:11px">' + covBar(x.c) + "</div>" +
         '<div style="margin-top:9px;font-size:12px;color:var(--muted)">' +
-        esc(x.e.s.map(function (sl) { return SRC[sl] ? SRC[sl].n : sl; }).join(", ")) + "</div></div>";
+        esc(x.e.s.map(function (sl) { return srcName(sl); }).join(", ")) + "</div></div>";
     });
     h += "</div></section>";
   }
@@ -5441,7 +5455,7 @@ function renderEvents() {
     if (!q) return true;
     return storyLabel(e, 200).toLocaleLowerCase("tr").indexOf(q) >= 0 ||
       e.s.some(function (sl) {
-        return (SRC[sl] ? SRC[sl].n : sl).toLocaleLowerCase("tr").indexOf(q) >= 0; });
+        return (srcName(sl)).toLocaleLowerCase("tr").indexOf(q) >= 0; });
   });
   var box = $("#elist"); if (!box) return;
   var cnt = $("#ecount");
@@ -5489,7 +5503,7 @@ function pgEventV1(q) {
 
   h += '<div class="q"><div class="q-n">01</div><div><h3>Ne oldu?</h3>' +
     "<p>Bu kümedeki en az yüklü başlık, olayın en yalın aktarımıdır: " +
-    '<b>“' + esc(plain.t) + '”</b> — ' + esc(SRC[plain.s] ? SRC[plain.s].n : plain.s) +
+    '<b>“' + esc(plain.t) + '”</b> — ' + esc(srcName(plain.s)) +
     ", yoğunluk " + plain.v + " (" + esc(bandOf(plain.v).tr).toLocaleLowerCase("tr") + "). " +
     "Küme, " + fmtDT(e.f) + " ile " + fmtDT(e.l) + " arasında yayımlanan haberlerden oluşuyor.</p></div></div>";
 
@@ -5528,8 +5542,8 @@ function pgEventV1(q) {
       " bandında kaldı; başlıklar olayı bildiriyor, yeniden çerçevelemiyor. " +
       "Ayrışmanın <b>olmaması</b> da bir bulgudur: rutin aktarımda Türk basını büyük ölçüde aynı dili kullanıyor.</p>";
   } else {
-    h += "<p>En yüksek yoğunluk <b>" + esc(SRC[loud.s] ? SRC[loud.s].n : loud.s) + "</b>'de (" + loud.v +
-      "), en düşük <b>" + esc(SRC[plain.s] ? SRC[plain.s].n : plain.s) + "</b>'de (" + plain.v +
+    h += "<p>En yüksek yoğunluk <b>" + esc(srcName(loud.s)) + "</b>'de (" + loud.v +
+      "), en düşük <b>" + esc(srcName(plain.s)) + "</b>'de (" + plain.v +
       "). Aradaki fark olgudan değil, dilden geliyor. Tetiklenen yapılar:</p>";
     h += '<div style="margin-top:12px">';
     devKeys.forEach(function (k) {
@@ -5541,7 +5555,7 @@ function pgEventV1(q) {
         '<span class="tag b" style="margin-left:auto">' + hits.length + " başlıkta</span></div>";
       if (b) h += '<p style="margin-top:7px;font-size:13.5px;color:var(--ink2);line-height:1.6">' + esc(b.df) + "</p>";
       h += '<div style="margin-top:9px;font-size:12.5px;color:var(--muted);font-family:var(--ff-m)">' +
-        hits.map(function (x) { return esc(SRC[x.s] ? SRC[x.s].n : x.s) + " → “" + esc(x.ev) + "”"; }).join(" &nbsp;·&nbsp; ") +
+        hits.map(function (x) { return esc(srcName(x.s)) + " → “" + esc(x.ev) + "”"; }).join(" &nbsp;·&nbsp; ") +
         "</div></div>";
     });
     h += "</div>";
@@ -5972,7 +5986,7 @@ function pgAdminV1(q) {
     h += '<div class="scroller panel"><table><thead><tr><th>Kurum</th><th>Akış</th>' +
       "<th>Son kayıt</th><th>Sorun</th></tr></thead><tbody>" +
       bad.concat(stale).map(function (f) {
-        return "<tr><td>" + esc(SRC[f.s] ? SRC[f.s].n : f.s) + "</td>" +
+        return "<tr><td>" + esc(srcName(f.s)) + "</td>" +
           '<td class="mono" style="font-size:11.5px;color:var(--muted);max-width:360px;overflow-wrap:anywhere">' +
           esc(f.u || "—") + "</td>" +
           '<td class="mono" style="font-size:12px">' + esc(f.l || "—") + "</td>" +
@@ -5997,7 +6011,7 @@ function renderQueue() {
       var s2 = (st[a.i] && st[a.i].status) || "pending";
       if (fs !== "all" && fs !== s2) return false;
       if (qs) {
-        var nm = (SRC[a.s] ? SRC[a.s].n : a.s).toLocaleLowerCase("tr");
+        var nm = (srcName(a.s)).toLocaleLowerCase("tr");
         if (a.t.toLocaleLowerCase("tr").indexOf(qs) < 0 && nm.indexOf(qs) < 0) return false;
       }
       return true;
@@ -6839,7 +6853,7 @@ function renderExpPanel() {
         return '<a href="#/kurum?s=' + x.s + '" style="display:grid;' +
           "grid-template-columns:130px 1fr 62px;gap:12px;align-items:center;" +
           'text-decoration:none;font-size:13px">' +
-          "<span>" + esc(SRC[x.s] ? SRC[x.s].n : x.s) + "</span>" +
+          "<span>" + esc(srcName(x.s)) + "</span>" +
           '<span style="height:16px;background:var(--sunk);border-radius:3px;display:block;' +
           'position:relative"><span style="display:block;height:100%;width:' + wdt +
           '%;background:' + lean(SRC[x.s] ? SRC[x.s].lean : null) +
@@ -7041,7 +7055,7 @@ function renderBiasList() {
       esc(b.df || "") + "</p>" +
       (real ? '<p style="margin-top:8px;font-size:12.5px;color:var(--muted)">' +
         "Bu dönemdeki haberlerden örnek: “" + esc(real.t.slice(0, 78)) + "…” — " +
-        esc(SRC[real.s] ? SRC[real.s].n : real.s) + "</p>" : "") +
+        esc(srcName(real.s)) + "</p>" : "") +
       '<p style="margin-top:9px;font-size:12.5px;color:var(--right)">Ayrıntı, kanıt ve ' +
       "örnek için tıklayın →</p></div>";
   }).join("") || '<div class="note">Eşleşen yapı yok.</div>';
@@ -7334,7 +7348,7 @@ function blameStats() {
       var t = r.blame.trim();
       var a = (actor[t] = actor[t] || { n: 0, left: 0, mid: 0, right: 0, who: [], ev: [] });
       a.n++; a[bloc(r.s)]++;
-      a.who.push((SRC[r.s] ? SRC[r.s].n : r.s) + " (" + BLOCL[bloc(r.s)] + ")");
+      a.who.push((srcName(r.s)) + " (" + BLOCL[bloc(r.s)] + ")");
       if (r.ev) a.ev.push(r.ev);
     });
   });
@@ -7411,7 +7425,7 @@ function topicHeat() {
     var y = padT + i * ch;
     var lb = mk("text", { x: padL - 9, y: y + ch / 2 + 3.5, "text-anchor": "end",
       fill: "var(--ink2)", "font-size": 11 });
-    lb.textContent = SRC[k] ? SRC[k].n : k; s.appendChild(lb);
+    lb.textContent = srcName(k); s.appendChild(lb);
     SEC.forEach(function (sec, j) {
       var c = cell[k + "|" + sec];
       /* Every cell carries a hairline, not just the empty ones. The two
@@ -7420,7 +7434,7 @@ function topicHeat() {
       var g = mk("rect", { x: padL + j * cw + 1, y: y + 1, width: cw - 3, height: ch - 3, rx: 2,
         fill: !c ? "var(--sunk)" : seq(Math.min(100, (c.sum / c.n) * 3.2)),
         stroke: "var(--line)", "stroke-width": .8 });
-      bindTip(g, "<span class='k'>" + esc(SRC[k] ? SRC[k].n : k) + " · " +
+      bindTip(g, "<span class='k'>" + esc(srcName(k)) + " · " +
         esc(SECT[sec] || sec) + "</span>" + (!c ? "Bu bölümde haber yok" :
         c.n + " haber · ortalama yoğunluk " + (c.sum / c.n).toFixed(1)));
       s.appendChild(g);
@@ -8113,7 +8127,7 @@ function logArticle(id) {
 /* ---------- shared bits ---------- */
 var SIDE = { left: "Sol", mid: "Merkez", right: "Sağ", none: "Yerleşimsiz" };
 function sideOf(slug) { return bloc(slug); }
-function srcName(s) { return SRC[s] ? SRC[s].n : s; }
+function srcName(s) { return SRC[s] ? SRC[s].n : (D.SN && D.SN[s]) || s; }
 function covOf(e) { return e.cov || [0, 0, 0]; }
 function covPct(e) {
   var c = covOf(e), t = c[0] + c[1] + c[2] || 1;
@@ -8854,15 +8868,15 @@ function advHeat() {
   var s = svg(w, h); s.style.maxWidth = w + "px";
   var col = function (v) { return v >= .15 ? "var(--seq4)" : v >= .05 ? "var(--seq3)" : v >= -.05 ? "var(--seq2)" : "var(--seq1)"; };
   ord.forEach(function (a, i) {
-    var lab = tx(s, padL - 8, padT + i * cs + cs / 2 + 4, clip(SRC[a] ? SRC[a].n : a, 18), { anchor: "end" });
+    var lab = tx(s, padL - 8, padT + i * cs + cs / 2 + 4, clip(srcName(a), 18), { anchor: "end" });
     s.appendChild(mk("rect", { x: padL - 6, y: padT + i * cs + 6, width: 3, height: cs - 12, fill: lean(SRC[a] ? SRC[a].lean : null) }));
-    tx(s, padL + i * cs + cs / 2 + 4, padT - 8, clip(SRC[a] ? SRC[a].n : a, 16), { rotate: -55, anchor: "start" });
+    tx(s, padL + i * cs + cs / 2 + 4, padT - 8, clip(srcName(a), 16), { rotate: -55, anchor: "start" });
     ord.forEach(function (b, j) {
       var v = A.phi[a][b];
       var r = mk("rect", { x: padL + j * cs + 1, y: padT + i * cs + 1, width: cs - 2, height: cs - 2, rx: 3,
         fill: i === j ? "var(--line)" : col(v) });
       s.appendChild(r);
-      if (i !== j) bindTip(r, "<span class='k'>" + esc(SRC[a] ? SRC[a].n : a) + " ↔ " + esc(SRC[b] ? SRC[b].n : b) +
+      if (i !== j) bindTip(r, "<span class='k'>" + esc(srcName(a)) + " ↔ " + esc(srcName(b)) +
         "</span>φ = " + dec(v, 2) + "<br>Birlikte verdikleri: " + orN(orShared(a, b)) + " olay<br>" + A.size[a] + " ve " + A.size[b] + " olay");
     });
   });
@@ -8889,7 +8903,7 @@ function advScatter() {
   ks.sort(function (a, b) { return pts[a][0] - pts[b][0]; }).forEach(function (k) {
     var c = lean(SRC[k] ? SRC[k].lean : null), px = X(pts[k][0]), py = Y(pts[k][1]);
     var g = dotMark(s, px, py, 7, c, { opacity: .35 });
-    var lab = SRC[k] ? SRC[k].n : k, lw = lab.length * 6.4;
+    var lab = srcName(k), lw = lab.length * 6.4;
     var cand = [[px + 11, py + 4, "start"], [px - 11, py + 4, "end"], [px + 8, py - 11, "start"], [px + 8, py + 20, "start"],
       [px - 8, py - 11, "end"], [px - 8, py + 20, "end"]];
     var pick = cand[0];
@@ -8899,7 +8913,7 @@ function advScatter() {
       if (!hit(b) && b.x0 > 0 && b.x1 < w) { pick = cand[ci]; boxes.push(b); break; }
     }
     tx(s, pick[0], pick[1], lab, { size: 11, halo: 3, anchor: pick[2] });
-    bindTip(g, "<span class='k'>" + esc(SRC[k] ? SRC[k].n : k) + "</span>Yerleşim " + (SRC[k] ? SRC[k].lean : "—") +
+    bindTip(g, "<span class='k'>" + esc(srcName(k)) + "</span>Yerleşim " + (SRC[k] ? SRC[k].lean : "—") +
       "<br>1. bileşen " + pts[k][0].toFixed(2) + " · 2. bileşen " + pts[k][1].toFixed(2) + "<br>" + P.n[k] + " siyasi başlık");
   });
   return s;
@@ -8961,7 +8975,7 @@ function methodSecs() {
     '<div class="scroller panel"><table><thead><tr><th>Kurum</th><th class="r">Yerleşim</th><th class="r">Başlık</th><th class="r">Gün (' + WIN.days + ')</th><th class="r">İlk gün</th></tr></thead><tbody>' +
     (D.FD || []).slice().sort(function (a, b) { return (b.n || 0) - (a.n || 0); }).map(function (f) {
       var pf = SRC[f.s];
-      return '<tr><td><span class="xpm-s" style="--c:' + lean(pf ? pf.lean : null) + '">' + esc(pf ? pf.n : f.s) + "</span></td>" +
+      return '<tr><td><span class="xpm-s" style="--c:' + lean(pf ? pf.lean : null) + '">' + esc(srcName(f.s)) + "</span></td>" +
         '<td class="r num">' + (pf && pf.lean != null ? pf.lean : "—") + '</td><td class="r num">' + fmt(f.n || 0) + '</td><td class="r num">' + (f.w || 0) + '</td><td class="r num">' + (f.f ? fmtD(f.f + "T00:00") : "—") + "</td></tr>";
     }).join("") + '</tbody></table></div><p class="xsmall" style="margin-top:8px">Tablo 1. Kurum başına derlenen başlık, kapsanan gün sayısı ve ilk başlığın günü. ' +
     "Toplamaya sonradan katılan kurumlar (ör. yalnızca akışla toplananlar) dönemin yarısını kapsayana kadar etkin sayılmaz; kurumlar arası karşılaştırmalara bu yüzden girmez.</p>";
@@ -10981,7 +10995,7 @@ function route() {
       });
       ex.innerHTML = picks.map(function (x, i) {
         return '<button class="ex-btn" data-ex="' + i + '">' +
-          esc(SRC[x.s] ? SRC[x.s].n : x.s) + " · " + x.v + "</button>"; }).join("");
+          esc(srcName(x.s)) + " · " + x.v + "</button>"; }).join("");
       [].forEach.call(ex.querySelectorAll("[data-ex]"), function (bt) {
         bt.onclick = function () {
           inp.value = picks[+bt.getAttribute("data-ex")].t; runAnalyzer(); };
@@ -11698,7 +11712,8 @@ function axisDist(a, b, ax) {
 function partyRank(outlet, parties, ax) {
   return (parties || []).map(function (p) { return { p: p, d: axisDist(outlet, p, ax) }; })
     .filter(function (x) { return x.d !== null; })
-    .sort(function (x, y) { return x.d - y.d || (x.p.s < y.p.s ? -1 : 1); });
+    /* a party flagged minor (A Parti: small, axes set at the centre) never outranks a major one as "nearest" */
+    .sort(function (x, y) { return (x.p.minor ? 1 : 0) - (y.p.minor ? 1 : 0) || x.d - y.d || (x.p.s < y.p.s ? -1 : 1); });
 }
 function nearestParty(outlet, parties, ax) { var r = partyRank(outlet, parties, ax); return r.length ? r[0] : null; }
 
@@ -11709,7 +11724,7 @@ function nearestParty(outlet, parties, ax) { var r = partyRank(outlet, parties, 
 var PARTI_ALIAS = {
   akp: { f: ["ak parti", "akp"]  }, chp: { f: ["chp"] }, mhp: { f: ["mhp"] }, iyi: { f: ["iyi parti"]  },
   dem: { f: ["dem parti"], cs: ["DEM"]  }, hdp: { f: ["hdp"] }, zafer: { f: ["zafer partisi", "zafer partili"] },
-  yrp: { f: ["yeniden refah", "yrp"] }, anahtar: { f: ["anahtar parti"]  }, tip: { f: ["turkiye isci partisi"], cs: ["TİP"] },
+  yrp: { f: ["yeniden refah", "yrp"] }, anahtar: { f: ["a parti", "anahtar parti"]  }, tip: { f: ["turkiye isci partisi"], cs: ["TİP"] },
   tkp: { f: ["tkp"] }, hudapar: { f: ["huda par", "huda-par", "hudapar"]  }, saadet: { f: ["saadet partisi", "saadet partili"] },
   bbp: { f: ["bbp", "buyuk birlik partisi"] }, dsp: { f: ["dsp"] }, deva: { f: ["deva partisi", "deva partili"], cs: ["DEVA"] },
   gelecek: { f: ["gelecek partisi", "gelecek partili"] }, yep: { f: [], cx: ["Yeni Parti", "YENİ Parti", "YENİ PARTİ"] }
@@ -13047,6 +13062,8 @@ function pgHome7() {
     step(1, "Karşılaştır", "Aynı olayın bütün başlıklarını yan yana koyarız.") +
     step(2, "Fark et", "Kurumlar arasında ayrışan sözcükleri işaretleriz.") +
     step(3, "Ölç", "Bu farkların haftalar boyunca tekrar edip etmediğini sayarız.") + "</ol></div></section>";
+  if (D.W81) h += '<section class="v7-yn-band"><a class="v7-hc" href="#/yenilikler"><b>8.1’de yeni</b><span>' + orN(m.articles) + " başlık, " + D.meta.sources.length +
+    " kurum, 13 Kasım’a kadar: eklenen veri hangi bulguları değiştirdi?</span></a></section>";
   h += "<section>" + pHead("Çapraz Manşet", "Daha derine in") + '<div class="v7-hgrid">' + deep + "</div></section>";
   if (ADV && ADV.agenda) h += '<section class="v7-hnet"><div class="v7-hnet-t"><p class="eyebrow">Gündem ağı · ' + ADV.agenda.order.length + ' kurum</p><h2 class="v7-hh">Kim kiminle aynı haberleri seçiyor?</h2>' +
     '<p class="lede">Birlikte çok olay haber yapan kurumlar birbirine çekilir. Renk kayıt defterindeki yerleşim, büyüklük verilen olay sayısı. Bir kuruma ' + orTap() + ', komşuları öne çıksın.</p>' +
@@ -14607,7 +14624,8 @@ function kurumFindings7(s) {
 var PT = null, PT_SEL = null, PT_MIN = 10;
 var PT_NOTE = "<b>Parti yerleşimleri</b> ideolojik tanımlardan türetilmiştir, oy davranışından değil. <b>Yayın yerleşimleri</b> sağlanan kayıt defterinden gelir. " +
   "İkisi ayrı kaynaklardır ve bu sitede bağımsız olarak doğrulanmamıştır. Bir yayının bir partiye yakın düşmesi, ona ait olduğunu ya da onun sözcülüğünü yaptığını göstermez; " +
-  "yalnızca iki ayrı kaynağın onları altı eksende benzer yerlere koyduğunu gösterir.";
+  "yalnızca iki ayrı kaynağın onları altı eksende benzer yerlere koyduğunu gösterir. " +
+  "<b>A Parti</b> küçük bir partidir ve altı eksendeki konumu merkeze yakın tanımlanmıştır; bu yüzden ‘en yakın parti’ sıralamasında her zaman büyük partilerin arkasına konur (ısı haritasında, anma ve ton bölümlerinde yine görünür).";
 
 function ptPc(x) { return "%" + dec(100 * x, 1); }
 function ptName(s) { var p = (D.P || []).filter(function (x) { return x.s === s; })[0]; return p ? p.n : s; }
@@ -14823,7 +14841,8 @@ function ptOwn(d) {
 
 /* ------------------------------------------------ page */
 function ptLate(d) {
-  return pTickets([{ n: d.pn, label: "incelenen siyasi başlık" }, { n: d.any, label: "parti adı geçen başlık" }]) +
+  /* own wrapper: the tickets pin their parent, which must never be the whole page or the late block */
+  return '<div class="pt-sec">' + pTickets([{ n: d.pn, label: "incelenen siyasi başlık" }, { n: d.any, label: "parti adı geçen başlık" }]) + "</div>" +
     pHead("3 · Kim kimi anıyor", "Başlıklarda parti adları", "parti-3") + ptMention(d) +
     pHead("4 · Ton", "Hangi partiden hangi dille söz ediliyor", "parti-4") + ptTone(d) +
     pHead("5 · Sahiplik", "Sahiplik ve en yakın parti", "parti-5") + ptOwn(d) +
@@ -14833,8 +14852,8 @@ function pgParti() {
   var d = ptData(), c = ptClose(d);
   var h = '<div class="wrap page or"><div class="phead"><div class="eyebrow">Kurumlar › Partiler</div><h1>Kurumlar ve partiler: yakınlık, anma, ton</h1>' +
     '<p class="lede">Kurumların ve ' + d.parties.length + ' partinin aynı altı eksendeki yerleşimlerini yan yana koyuyor, sonra siyasi başlıklarda hangi partinin ne sıklıkla ve hangi dille anıldığına bakıyoruz.</p></div>';
-  h += pLead("Hiçbiri bir kurumun bir partiyle bağlantılı olduğunu göstermez: parti konumları ideolojik tanımlardan, kurum konumları sağlanan kayıt defterinden gelir ve ikisi de bu sitede doğrulanmadı. Yakın olmak, bağlı olmak değildir.");
-  h += pTickets([{ n: d.outs.length, label: "kurum, altı eksende yerleşik" }, { n: d.parties.length, label: "parti" }]);
+  h += '<div class="pt-sec">' + pLead("Hiçbiri bir kurumun bir partiyle bağlantılı olduğunu göstermez: parti konumları ideolojik tanımlardan, kurum konumları sağlanan kayıt defterinden gelir ve ikisi de bu sitede doğrulanmadı. Yakın olmak, bağlı olmak değildir.") +
+    pTickets([{ n: d.outs.length, label: "kurum, altı eksende yerleşik" }, { n: d.parties.length, label: "parti" }]) + "</div>";
   h += pHead("1 · Yakınlık", "Hangi kurum hangi partiye yakın", "parti-1") + c.find;
   h += pHead("2 · Altı eksen", "Kurumlar ve partiler altı eksende", "parti-2") + ptAxes(d);
   h += '<div id="pt-late" aria-busy="true"><p class="pt-skel">Başlıklar taranıyor…</p></div></div>';
@@ -14854,6 +14873,7 @@ function wireParti() {
     var box2 = document.getElementById("pt-late"); if (!box2 || !box2.getAttribute("aria-busy")) return;
     box2.innerHTML = ptLate(ptMent()); box2.removeAttribute("aria-busy"); wireGo(box2);
     if (typeof motionAdd === "function") motionAdd(box2);
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
   }, 0);
   if (!root._pt) {
     root._pt = 1;
@@ -15250,6 +15270,34 @@ function wireIlan() {
     if (m) { ILAN.n += 50; res.innerHTML = ilanResults(); motionAdd(res); }
   });
 }
+
+/* 8.1 "Yeni": what the added data changed, from D.W81 (pipeline/capraz_pipeline/whatsnew.py compares the 8.0 and 8.1 builds). */
+var YN_TAG = { yeni: "Yeni", "değişti": "Değişti", "sürüyor": "Sürüyor", "uyarı": "Sınır" };
+function ynCard(f, i) {
+  var rows = f.rows || [], three = rows.length && rows[0].length === 3 && !f.events, ev = f.events;
+  var head = three ? "<tr><th></th><th class=\"r\">8.0</th><th class=\"r\">8.1</th></tr>" : ev ? "<tr><th>Olay</th><th class=\"r\">Kurum</th></tr>" : "";
+  var body = rows.map(function (r) {
+    if (ev) return '<tr><td><a href="#/olay?e=' + encodeURIComponent(r[2]) + '">' + esc(r[0]) + '</a></td><td class="r num">' + esc(r[1]) + "</td></tr>";
+    return "<tr><td>" + esc(r[0]) + '</td><td class="r num">' + esc(r[1]) + "</td>" + (r[2] !== "" ? '<td class="r num">' + esc(r[2]) + "</td>" : "") + "</tr>";
+  }).join("");
+  return '<article class="yn-card yn-' + (f.tag === "uyarı" ? "warn" : f.tag === "yeni" ? "new" : f.tag === "değişti" ? "chg" : "same") + '" id="yn-' + esc(f.id) + '">' +
+    '<p class="yn-tag"><span class="yn-chip">' + esc(YN_TAG[f.tag] || f.tag) + '</span><span class="yn-n">' + (i + 1) + "</span></p>" +
+    "<h2>" + esc(f.title) + "</h2><p class=\"yn-claim\">" + esc(f.claim) + "</p>" +
+    (rows.length ? '<div class="scroller panel"><table class="yn-t"><thead>' + head + "</thead><tbody>" + body + "</tbody></table></div>" : "") +
+    (f.note ? '<p class="xsmall yn-note">' + esc(f.note) + "</p>" : "") + "</article>";
+}
+function pgYenilikler() {
+  var W = D.W81, m = D.meta.counts;
+  if (!W) return '<div class="wrap page"><div class="phead"><h1>8.1’de yeni</h1><p class="lede">Bu sürümde karşılaştırma verisi yok.</p></div></div>';
+  return '<div class="wrap page v7-yn"><div class="phead"><div class="eyebrow">Çapraz Manşet 8.1</div><h1>8.1’de yeni: eklenen veri neyi değiştirdi?</h1>' +
+    '<p class="lede">8.0, 1 Eylül–3 Kasım arasındaki 33 kurumun başlıklarına dayanıyordu. 8.1, toplayıcıdaki gelişmelerle ' + orN(m.articles) + ' başlığa, ' + D.meta.sources.length +
+    " kuruma ve 13 Kasım’a kadar uzanan bir pencereye geçti. Aşağıda bütün analizlerin iki sürümdeki sonucu yan yana; <b>Yeni</b> yalnızca 8.1’de olabilen bulgu, <b>Değişti</b> sonucu kayan, " +
+    "<b>Sürüyor</b> aynı kalan bulgudur. Her sayı iki veri paketinden hesaplanır.</p></div>" +
+    '<div class="yn-grid">' + W.findings.map(ynCard).join("") + "</div>" +
+    '<p class="xsmall">Yöntem ve sınırlar: <a href="#/yontem">Nasıl çalışır</a>. Örüntüler sayfalarındaki bütün grafikler 8.1 verisiyle yeniden hesaplandı.</p></div>';
+}
+SECTIONS.push({ p: "/yenilikler", label: "8.1’de yeni", fn: pgYenilikler });
+DETAIL["/yenilikler"] = { fn: pgYenilikler, of: "/yenilikler" };
 
 rev7Init();
 /* The measures are exposed for inspection. This is a research tool: anyone

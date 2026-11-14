@@ -1,0 +1,1635 @@
+{
+ "dimensions": {
+  "frame": "Çerçeve",
+  "hero": "Merkezdeki aktör",
+  "blame": "Sorumlu tutulan",
+  "cause": "Sunulan neden",
+  "cons": "Öne çıkan sonuç",
+  "aff": "Etkilenen kesim",
+  "sol": "Meşrulaştırılan çözüm",
+  "moral": "Ahlaki çerçeve",
+  "start": "Hikâyenin başlangıcı"
+ },
+ "examples_from_hand_coded_weeks": [
+  {
+   "q": {
+    "happened": "İçişleri Bakanlığı, Yahşihan Belediyesi'ne yönelik yolsuzluk soruşturması kapsamında Belediye Başkan Vekili Aydın Demirdirek'i görevden uzaklaştırdı.",
+    "agree": "Görevden uzaklaştırma ortak.",
+    "differ": "Soldaki kurumlar Demirdirek'in partisini ('AKP'li') ya da yolsuzluk operasyonunu başlığa taşıyor; sağdaki kurumlar kararı İçişleri Bakanlığı'nın adıyla duyuruyor.",
+    "care": "Bir belediye yöneticisinin partisinin başlıkta yer alıp almaması, yolsuzluk haberlerinin siyasi yükünü belirler; bu olayda partisi yalnızca soldaki bir kurum tarafından anılıyor."
+   },
+   "rows": [
+    {
+     "s": "birgun",
+     "hl": "Yahşihan Belediyesi'ne yönelik yolsuzluk operasyonu: Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Yahşihan Belediyesi Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "AKP'li Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Siyasi sorumluluk",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "AKP'li başkan vekili",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Hesap verebilirlik",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Yahşihan Belediye Başkan vekili Aydın Demirdirek görevden alındı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Yahşıyan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı - Politika Siyaset Haberleri",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ntv",
+     "hl": "Yahşihan Belediyesi soruşturması. Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Yahşihan Belediye Başkanvekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Yahşihan Belediye Başkan Vekili görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "milligazete",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKiKA I İçişleri Bakanlığı duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı!",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Bakanlık duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Olgu aktarımı",
+     "hero": "Aydın Demirdirek",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "Yahşihan’da tutuklama sonrası kritik karar! Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Yolsuzluk",
+     "hero": "Savcılık",
+     "blame": "Belediye yönetimi",
+     "cause": "Yolsuzluk",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "İçişleri duyurdu: Yahşihan Belediye Başkan Vekili Aydın Demirdirek görevden uzaklaştırıldı",
+     "frame": "Devlet otoritesi",
+     "hero": "İçişleri Bakanlığı",
+     "blame": "",
+     "cause": "",
+     "cons": "Görevden uzaklaştırma",
+     "aff": "",
+     "sol": "",
+     "moral": "Kamu düzeni",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "frame",
+    "hero"
+   ]
+  },
+  {
+   "q": {
+    "happened": "Fon soruşturması kapsamında gözaltına alınan gazeteciler Mustafa Balcı ve Şaban Sevinç tutuklandı.",
+    "agree": "Tutuklama ortak.",
+    "differ": "Soldaki kurumlar ikisini 'gazeteci' kimliğiyle ve Balcı'yı Sözcü editörü olarak tanıtıyor; sağdaki kurumlar haberi 'fon soruşturması' ya da 'dezenformasyon' çerçevesine yerleştiriyor; bir kurum 'Fon'daşlar kodese' diye alaycı bir başlık atıyor.",
+    "care": "Tutuklanan kişilerin 'gazeteci' kimliğinin başlıkta olması olayı bir basın özgürlüğü meselesi yapar; 'Fon'daşlar kodese' ifadesi ise kişileri yargı kararından önce bir suç grubunun üyeleri olarak etiketler."
+   },
+   "rows": [
+    {
+     "s": "cumhuriyet",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı tutuklama talebiyle hakimliğe sevk edildi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "diken",
+     "hl": "Gazeteciler Şaban Sevinç ve Mustafa Balcı gözaltına alındı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sözcü.com.tr editörü Mustafa Balcı ve gazeteci Şaban Sevinç hakkında karar çıktı",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "mynet",
+     "hl": "Gazeteci Şaban Sevinç ve Mustafa Balcı tutuklandı, İsmail Saymaz ve Murat Ağırel'e adli kontrol",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "haberturk",
+     "hl": "Gazeteci Mustafa Balcı ve Şaban Sevinç tutuklandı - Habertürk Son Dakika Haber",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "karar",
+     "hl": "Şaban Sevinç ve Mustafa Balcı hakkında tutuklama talebi",
+     "frame": "Basın özgürlüğü",
+     "hero": "Gazeteciler",
+     "blame": "Yargı",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "Gazeteciler",
+     "sol": "",
+     "moral": "Basın özgürlüğü",
+     "start": ""
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA… Fon soruşturmasında Şaban Sevinç ve Mustafa Balcı tutuklandı",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında dezenformasyon: Şaban Sevinç ve Mustafa Balcı'ya tutuklama talebi",
+     "frame": "Dezenformasyon",
+     "hero": "Savcılık",
+     "blame": "Gazeteciler",
+     "cause": "Dezenformasyon iddiası",
+     "cons": "Tutuklama talebi",
+     "aff": "",
+     "sol": "",
+     "moral": "Doğru bilgi",
+     "start": ""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Şaban Sevinç fon soruşturmasında tutuklandı! İsmail Saymaz, Murat Ağırel ve Mustafa Balcı ne dedi? Neden gözaltına alındı?",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    },
+    {
+     "s": "takvim",
+     "hl": "'Fon'daşlar kodese: Mustafa Balcı ve Şaban Sevinç tutuklandı, İsmail Saymaz ve Murat Ağırel'e ev hapsi",
+     "frame": "Alay / etiketleme",
+     "hero": "Savcılık",
+     "blame": "'Fon'daşlar'",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "Cezalandırma",
+     "start": ""
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturması kapsamında Şaban Sevinç ve Mustafa Balcı tutuklandı! Murat Ağırel ve İsmail Saymaz'a ev...",
+     "frame": "Fon soruşturması",
+     "hero": "Savcılık",
+     "blame": "Şüpheliler",
+     "cause": "",
+     "cons": "Tutuklama",
+     "aff": "",
+     "sol": "",
+     "moral": "",
+     "start": ""
+    }
+   ],
+   "focus": [
+    "blame",
+    "frame",
+    "moral",
+    "hero"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "event": "s7461",
+   "week": "w10",
+   "title": "Paraguay'da bankacılık krizi: İstifa eden Devlet Başkanı Santiago Pena gözaltına alındı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Paraguay Devlet Başkanı Pena, azil süreci sonrası görevden ayrıldığını duyurdu"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Paraguay Devlet Başkanı Pena bankacılık krizinin ardından istifa etti"
+    },
+    {
+     "s": "ntv",
+     "hl": "Paraguay'da bankacılık krizi hükümeti devirdi: Devlet Başkanı istifa etti"
+    },
+    {
+     "s": "haberler",
+     "hl": "Paraguay Devlet Başkanı Pena, partisi destekli azil sürecinin ardından istifa etti"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Paraguay Devlet Başkanı Santiago Pena, görevinden istifa etti"
+    },
+    {
+     "s": "sabah",
+     "hl": "Paraguay Devlet Başkanı Santiago Pena, görevinden istifa etti"
+    },
+    {
+     "s": "star",
+     "hl": "Ueno Bank skandalı Paraguay'ı sarstı: Devlet Başkanı Santiago Pena baskılar üzerine istifa etti"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Partisi de desteğini çekti: Paraguay Devlet Başkanı istifa etti"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "355 milyon dolarlık emeklilik fonu krizi Pena’yı koltuğundan etti: Paraguay Devlet Başkanı istifa etti"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Paraguay Devlet Başkanı istifa etti"
+    },
+    {
+     "s": "aksam",
+     "hl": "Paraguay Devlet Başkanı Pena azil sürecinin ardından istifa etti"
+    },
+    {
+     "s": "haber7",
+     "hl": "Paraguay Devlet Başkanı Santiago Pena, görevinden istifa etti"
+    },
+    {
+     "s": "karar",
+     "hl": "Paraguay'da fon skandalı devlet başkanını devirdi: Santiago Pena istifa etti"
+    },
+    {
+     "s": "t24",
+     "hl": "Paraguay Devlet Başkanı Pena, partisinin 'azil' kararına destek vermesinin ardından istifa etti"
+    },
+    {
+     "s": "mynet",
+     "hl": "Paraguay'da özel banka battı, Devlet Başkanı Pena görevinden istifa etti"
+    },
+    {
+     "s": "diken",
+     "hl": "Banka skandalı: Paraguay devlet başkanı istifa etti"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fon krizi istifa getirdi: Devlet Başkanı Santiago Pena, görevinden istifa etti"
+    },
+    {
+     "s": "milligazete",
+     "hl": "355 milyon dolarlık fon krizi ülkeyi sarstı! Paraguay Devlet Başkanı Santiago Peña istifa etti"
+    },
+    {
+     "s": "anka",
+     "hl": "Paraguay'da bankacılık krizi... Devlet Başkanı Santiago Pena istifa etti"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Paraguay Devlet Başkanı Pena, bankacılık krizinin ardından istifa etti"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Paraguay'da bankacılık krizi: İstifa eden Devlet Başkanı Santiago Pena gözaltına alındı"
+    },
+    {
+     "s": "aa",
+     "hl": "\"Görevi kötüye kullanmak suçundan\" azledilen Paraguay Devlet Başkanı Pena gözaltına alındı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Paraguay Devlet Başkanı Pena gözaltına alındı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Azledilen Paraguay Devlet Başkanı Pena gözaltına alındı"
+    },
+    {
+     "s": "dha",
+     "hl": "Paraguay'da azledilen Devlet Başkanı Santiago Pena ev hapsine alındı"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Paraguay'da bankacılık krizi: Devlet Başkanı görevden alındı ve ev hapsine konuldu"
+    },
+    {
+     "s": "yeniasya",
+     "hl": "Azledilen Paraguay Devlet Başkanı Santiago Pena gözaltına alındı"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Paraguay'da bankacılık skandalı: Devlet Başkanı Pena görevden alındı"
+    }
+   ]
+  },
+  {
+   "event": "s7050",
+   "week": "w10",
+   "title": "Esenyurt'ta metrobüs kazası: Haramidere-Sanayi Durağı'nda iki metrobüs çarpıştı, yaralılar var",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Esenyurt'ta iki metrobüs Haramidere durağında çarpıştı, ekipler sevk edildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Esenyurt Haramidere durağında iki metrobüs, henüz bilinmeyen bir nedenle çarpıştı. Olay yerine ekipler sevk edildi."
+    },
+    {
+     "s": "haberturk",
+     "hl": "İki metrobüs çarpıştı! 6 yaralı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Haramidere'de iki metrobüs çarpıştı: 6 yaralı var"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Esenyurt'ta iki metrobüs çarpıştı: 6 yaralı! İşte olay yerinden ilk görüntüler"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Esenyurt'ta metrobüsler çarpıştı... Yaralılar var!"
+    },
+    {
+     "s": "sabah",
+     "hl": "İstanbul Esenyurt'ta iki metrobüs çarpıştı: Feci kazada 6 yaralı var!"
+    },
+    {
+     "s": "karar",
+     "hl": "Esenyurt'ta metrobüs kazası: Yaralılar var"
+    },
+    {
+     "s": "tgrt",
+     "hl": "İstanbul'da metrobüs kazası: Yaralılar var"
+    },
+    {
+     "s": "takvim",
+     "hl": "Esenyurt'ta metrobüs kazası: Haramidere-Sanayi Durağı'nda iki metrobüs çarpıştı, yaralılar var"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Esenyurt'ta iki metrobüs çapıştı: Yaralılar var"
+    },
+    {
+     "s": "mynet",
+     "hl": "Esenyurt'ta metrobüsler çarpıştı! Yaralılar var"
+    },
+    {
+     "s": "birgun",
+     "hl": "Esenyurt'ta 2 metrobüs çarpıştı: 6 kişi yaralandı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Esenyurt'ta metrobüs kazası: 6 yaralı"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Esenyurt'ta iki metrobüs çarpıştı! Haramidere'deki kazada 6 kişi yaralandı"
+    },
+    {
+     "s": "diken",
+     "hl": "İstanbul'da metrobüs kazası: Altı yaralı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "İstanbul Esenyurt'ta metrobüs kazası: Yolcu alan araca arkadan çarptı"
+    },
+    {
+     "s": "star",
+     "hl": "Esenyurt'ta iki metrobüs çarpıştı! Yaralılar var"
+    },
+    {
+     "s": "aksam",
+     "hl": "Esenyurt'ta metrobüsler çarpıştı: Yaralılar var"
+    },
+    {
+     "s": "ntv",
+     "hl": "Esenyurt'ta metrobüs kazası. Yaralılar var"
+    },
+    {
+     "s": "trthaber",
+     "hl": "İstanbul'da metrobüs kazası: 6 yaralı"
+    }
+   ]
+  },
+  {
+   "event": "s8076",
+   "week": "w10",
+   "title": "Galatasaray'dan sakatlık açıklaması! Rafael Leao'nun son durumu belli oldu",
+   "headlines": [
+    {
+     "s": "mynet",
+     "hl": "Galatasaray'da Rafael Leao fırtınası! Amedspor maçında rekor kırdı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Galatasaray'da Rafael Leao sakatlandı"
+    },
+    {
+     "s": "sabah",
+     "hl": "Galatasaray’da Rafael Leao’dan sakatlık sözleri!"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Rafael Leao'dan sakatlık açıklaması"
+    },
+    {
+     "s": "aksam",
+     "hl": "Rafael Leao: Milli arada tedavimi olurum"
+    },
+    {
+     "s": "t24",
+     "hl": "Galatasaray’dan Amedspor karşılaşmasında sakatlanan Rafael Leao hakkında açıklama"
+    },
+    {
+     "s": "haber7",
+     "hl": "Galatasaray'dan Rafael Leao için sakatlık açıklaması!"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Galatasaray'dan Rafael Leao açıklaması: Sakatlığı belli oldu"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Galatasaray'da Rafael Leao şoku! Yıldız futbolcunun sakatlığında son durum"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Galatasaray'dan Rafael Leao açıklaması: Sakatlığı belli oldu"
+    },
+    {
+     "s": "dha",
+     "hl": "Galatasaray’dan Leao açıklaması"
+    },
+    {
+     "s": "star",
+     "hl": "Galatasaray'dan Rafael Leao açıklaması! Sağlık durumu belli oldu"
+    },
+    {
+     "s": "aa",
+     "hl": "Galatasaray'dan Leao'nun sağlık durumu hakkında açıklama"
+    },
+    {
+     "s": "ntv",
+     "hl": "Amedspor maçında sakatlanmıştı, Rafael Leao'nun son durumu belli oldu. Galatasaray açıkladı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Galatasaray'da Rafael Leao şoku: Sakatlığı açıklandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Amedspor maçında sakatlanmıştı! Galatasaray'dan Leao açıklaması"
+    },
+    {
+     "s": "karar",
+     "hl": "Rafael Leao sakatlandı mı, sahalardan ne kadar uzak kalacak? Galatasaray'dan resmî açıklama geldi"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Galatasaray'dan Leao A��klamas�"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Galatasaray'da Rafael Leao şoku! MR sonucu açıklandı, 4 hafta sahalardan uzak kalabilir"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Galatasaray'da Rafael Leao'nun dönüşü uzun sürecek"
+    }
+   ]
+  },
+  {
+   "event": "s7912",
+   "week": "w10",
+   "title": "Van'da tır ile minibüs çarpıştı: 9 ölü, 5 yaralı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Van'da tır ile minibüsün çarpışması sonucu 9 kişi öldü, 5 kişi yaralandı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Van-Özalp karayolunda tır ile minibüs çarpıştı, 9 kişi öldü, 5 kişi yaralandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Van'da tır ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Van'da tır minibüsle çarpıştı: 7 ölü, 7 yaralı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Van'da feci kaza! Tır ile minibüs çarpıştı: 7 ölü, 7 yaralı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Van'da katliam gibi kaza! Tır ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Van'da tır minibüsle çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Van'da korkunç kaza! Tır ile minibüs çarpıştı: 9 kişi hayatını kaybetti, 5 kişi yaralandı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Van'da trafik kazasında ağır bilanço! Tır ile minibüs çarpıştı, çok sayıda ölü ve yaralı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Van'da can pazarı: Tır ile minibüs çarpıştı, çok sayıda ölü ve yaralı var"
+    },
+    {
+     "s": "sabah",
+     "hl": "Van'da feci kaza! Tır ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Van'da tır ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "akit",
+     "hl": "Tır ile minibüs çarpıştı: Çok sayıda ölü, yaralı var! Van’da katliam gibi kaza"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Van'da tır minibüsle çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Wan’da TIR ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "karar",
+     "hl": "Van'da katliam gibi kaza! TIR ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "t24",
+     "hl": "Van'da feci kaza: TIR ile minibüsün çarpışması sonucu 9 kişi öldü, 5 kişi yaralandı!"
+    },
+    {
+     "s": "posta",
+     "hl": "Van'da facia gibi kaza! Tır minibüsle çarpıştı: Ölü ve yaralılar var"
+    },
+    {
+     "s": "milliyet",
+     "hl": "VAN KAZA HABERLERİ: Van'da tır minibüsle çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Van'da tır ile minibüs çarpıştı: 9 kişi öldü, 5 kişi yaralandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Van'da feci kaza! TIR ile minibüs çarpıştı: 9 ölü, 5 yaralı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Van'da TIR minibüsle çarpıştı: 9 ölü! Cenazeler İran'a gönderildi"
+    },
+    {
+     "s": "dha",
+     "hl": "Kütahya’da minibüsle, otomobil çarpıştı; 1 ölü, 4 yaralı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Balıkesir'de minibüsle otomobil çarpıştı: Ölü ve yaralılar var"
+    },
+    {
+     "s": "star",
+     "hl": "Balıkesir'de feci kaza! İşçi minibüsü ve otomobil çarpıştı: Ölü ve yaralılar var"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Balıkesir'de otomobil ile tarım işçilerini taşıyan minibüs çarpıştı: 1 ölü, 6 yaralı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Balıkesir'de otomobil ile minibüs çarpıştı. 1 ölü, 6 yaralı"
+    }
+   ]
+  },
+  {
+   "event": "s7582",
+   "week": "w10",
+   "title": "Fenerbahçe otobüsüne saldırı soruşturmasında 5 şüpheli hakkında iddianame hazırlandı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Fenerbahçe takım otobüsüne saldırıya ilişkin 5 şüpheli hakkındaki iddianame tamamlandı"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fenerbahçe takım otobüsüne yönelik silahlı saldırıda 5 şüpheliye iddianame hazırlandı"
+    },
+    {
+     "s": "t24",
+     "hl": "Fenerbahçe takım otobüsüne silahlı saldırı: 5 şüpheli hakkında 11 yıl sonra iddianame hazırlandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fenerbahçe takım otobüsüne saldırı soruşturması! Yeni iddianame hazırlandı: 5 şüpheli hakkında..."
+    },
+    {
+     "s": "sabah",
+     "hl": "Fenerbahçe otobüsüne saldırı soruşturmasında yeni iddianame: 5 şüpheli için istenen ceza belli oldu"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fenerbahçe otobüsüne saldırıda 5 şüpheliye ceza istemi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Fenerbahçe otobüsüne saldırı soruşturması tamamlandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Son dakika : Fenerbahçe otobüsüne saldırıya iddianame… 5 şüpheli hakkında ceza istendi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fenerbahçe otobüsüne silahlı saldırıda yeni gelişme! 5 şüpheli hakkında iddianame düzenlendi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fenerbahçe takım otobüsüne saldırıyla ilgili 5 şüpheli hakkında iddianame hazırlandı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fenerbahçe Otobüsüne Silahlı Saldırı Soruşturmasında Beş Kişi Hakkında İddianame Düzenlendi"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Fenerbahçe otobüsüne saldırı soruşturması tamamlandı"
+    },
+    {
+     "s": "posta",
+     "hl": "Fenerbahçe takım otobüsüne saldırıya ilişkin 5 şüpheli hakkındaki iddianame tamamlandı"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Fenerbahçe otobüsüne saldırı soruşturması tamamlandı"
+    },
+    {
+     "s": "dha",
+     "hl": "Fenerbahçe otobüsüne saldırı soruşturmasında iddianame hazırlandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "Son dakika haberi: Fenerbahçe otobüsüne saldırıya iddianame"
+    },
+    {
+     "s": "anka",
+     "hl": "Fenerbahçe otobüsüne yönelik saldırı nedeniyle beş kişi hakkında 11 yıl sonra iddianame düzenlendi"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Fenerbahçe otobüsüne saldırı iddianamesi: 5 şüpheliye ceza isteniyor"
+    },
+    {
+     "s": "10haber",
+     "hl": "Fenerbahçe otobüsüne saldırıya iddianame"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fenerbahçe otobüsüne kurşunlu saldırıda iddianame hazırlandı: 5 şüpheli için istenen ceza belli oldu"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fenerbahçe takım otobüsüne saldırı davasında çember daraldı! İddianamedeki detaylar ortaya çıktı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Fenerbahçe otobüsüne saldırı davasında yeni deliller ortaya çıktı"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Fenerbahçe takım otobüsüne saldırı iddianamesinin detayları"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fenerbahçe takım otobüsüne saldırı iddianamesinin detayları ortaya çıktı"
+    },
+    {
+     "s": "diken",
+     "hl": "İddianame: Fenerbahçe'nin otobüsüne saldırı planlı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Fenerbahçe takım otobüsüne saldırı: İddianamenin ayrıntıları ortaya çıktı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fenerbahçe takım otobüsüne saldırı iddianamesi: “Önceden planlanarak yapıldı”"
+    }
+   ]
+  },
+  {
+   "event": "s7864",
+   "week": "w10",
+   "title": "Dorukhan Büyükışık davasında 13 sanık tahliye edildi",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "İzmir'de Dorukhan Büyükışık davasında 26 tutuklu sanıktan 13'ü tahliye edildi"
+    },
+    {
+     "s": "sol",
+     "hl": "Dorukhan Büyükışık dosyası: Ölümüne ilişkin davada 12 sanık tahliye edildi"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Dorukhan Büyükışık davasında 12 sanığa tahliye"
+    },
+    {
+     "s": "haberler",
+     "hl": "Tümgeneral oğlu Dorukhan Büyükışık davasında 22 saatlik duruşma! Tutuklu 25 sanıktan 12'si tahliye edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Dorukhan Büyükışık'ın şantiyede ölü bulunması: 13 kişi tahliye edildi"
+    },
+    {
+     "s": "memurlar",
+     "hl": "Dorukhan Büyükışık davasında 22 saatlik duruşma: 12 sanık tahliye edildi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Dorukhan Büyükışık davasında 22 saat süren duruşma: 12 tahliye kararı"
+    },
+    {
+     "s": "posta",
+     "hl": "Dorukhan Büyükışık davasında ara karar çıktı! 12 sanık için tahliye"
+    },
+    {
+     "s": "karar",
+     "hl": "8 yıl önce şantiyede ölü bulunmuştu: Dorukhan Büyükışık davasında 12 tahliye"
+    },
+    {
+     "s": "anka",
+     "hl": "Dorukhan Büyükışık'ın ölümüne ilişkin davada 12 sanık tahliye edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Duruşma 20 saat sürdü! Dorukhan Büyükışık davasında yeni gelişme"
+    },
+    {
+     "s": "t24",
+     "hl": "Dorukhan Büyükışık'ın şüpheli ölümüne ilişkin davada 12 sanığa tahliye"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Dorukhan Büyükışık'ın ölümüne ilişkin davada 12 sanık tahliye edildi"
+    },
+    {
+     "s": "10haber",
+     "hl": "Dorukhan Büyükışık’ın ölümü: Maraton duruşmada 13 kişi tahliye edildi"
+    },
+    {
+     "s": "takvim",
+     "hl": "Dorukhan Büyükışık davasında 13 sanık tahliye edildi! 22 saatlik duruşmada ara karar açıklandı: HTS kayıtları incelenecek"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Dorukhan Büyükışık davası: 22 saat süren duruşma sonrasında karar çıktı"
+    },
+    {
+     "s": "mynet",
+     "hl": "22 saat süren duruşma! Dorukhan Büyükışık davasında 12 tahliye kararı"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Duruşma 20 saat sürdü! Dorukhan Büyükışık davasında 13 tahliye"
+    },
+    {
+     "s": "diken",
+     "hl": "Dorukhan Büyükışık'ın ölümü: 13 kişi tahliye edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "Dorukhan Büyükışık davasında 22 saatlik duruşma: 12 sanık hakkında karar verildi!"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Dorukhan Büyükışık'ın şüpheli ölümüyle ilgili davada 13 sanığa tahliye"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Dorukhan Büyükışık kimdir, neden öldü? Ethem Büyükışık'ın oğlu Dorukhan Büyükışık cinayeti davası"
+    }
+   ]
+  },
+  {
+   "event": "s7548",
+   "week": "w10",
+   "title": "Sarıgül soruşturmasında 11 yeni gözaltı! Şişli Meslek Yüksek Okulu’na kayyum atandı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Sarıgül soruşturmasında 11 yeni gözaltı! Şişli Meslek Yüksek Okulu’na kayyum atandı"
+    },
+    {
+     "s": "sol",
+     "hl": "Sarıgül soruşturmasında Şişli MYO'ya kayyım atandı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Sarıgül ailesine yönelik soruşturmada flaş gelişme: Şişli MYO'na kayyum atandı müdür gözaltına alındı"
+    },
+    {
+     "s": "takvim",
+     "hl": "Sarıgül soruşturmasında yeni dalga: 11 gözaltı! Şişli Meslek Yüksekokulu'na kayyum atandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Sarıgül soruşturmasında 11 kişi daha gözaltında! Şişli Meslek Yüksek Okulu'na kayyum atandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Sarıgül soruşturması: Şişli MYO'ya kayyum atandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Şişli Meslek Yüksek Okulu’na kayyım atandı! Sarıgüllere yönelik soruşturmada büyük gözaltı dalgası"
+    },
+    {
+     "s": "karar",
+     "hl": "Sarıgül soruşturması: Şişli MYO'ya kayyum atandı"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Sarıgül soruşturması: Şişli Meslek Yüksek Okulu'na kayyım, 11 kişi hakkında gözaltı kararı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Sarıgül soruşturmasında 11 kişi daha gözaltına alındı: Şişli Meslek Yüksekokulu'na kayyum atandı"
+    },
+    {
+     "s": "haberler",
+     "hl": "Sarıgül soruşturmasında 11 yeni gözaltı! Şişli Meslek Yüksek Okulu’na kayyum atandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Sarıgül soruşturması: Şişli Meslek Yüksekokulu'na kayyum atandı, 11 kişi için gözaltı kararı verildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika... Sarıgül soruşturmasında kritik gelişme: Şişli Meslek Yüksekokulu'na kayyım atandı, 11 kişi için gözaltı kararı verildi!"
+    },
+    {
+     "s": "yeniyasam",
+     "hl": "Sarıgül soruşturması: Şişli Meslek Yüksek Okulu’na kayyım atandı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Sarıgül Soruşturmasında 11 Kişi İçin Gözaltı Kararı Verildi: Şişli Meslek Yüksek Okulu'na Kayyum Atandı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Sarıgül soruşturmasında yeni gelişme: Şişli MYO'ya kayyım atandı"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Sarıgül soruşturmasında yeni dalga: 11 gözaltı daha! Şişli Meslek Yüksekokuluna kayyum atandı"
+    },
+    {
+     "s": "haber7",
+     "hl": "Sarıgüller soruşturmasında yeni gelişme! 11 yeni gözaltı: Bir okula da kayyum atandı"
+    },
+    {
+     "s": "t24",
+     "hl": "Sarıgül ailesine yönelik soruşturmada Şişli Meslek Yüksekokulu'na kayyım atandı; kurucu müdür dahil 11 kişi gözaltında!"
+    },
+    {
+     "s": "diken",
+     "hl": "Şişli Meslek Yüksekokulu'na kayyım atandı"
+    },
+    {
+     "s": "anka",
+     "hl": "Sarıgül ailesine yönelik \"kara para aklama\" soruşturması... Şişli Meslek Yüksekokulu’na kayyım atandı, 11 kişi hakkında gözaltı kararı verildi"
+    },
+    {
+     "s": "bbcturkce",
+     "hl": "Sarıgül ailesi soruşturması: 11 yeni gözaltı, yüksekokula kayyum"
+    },
+    {
+     "s": "sabah",
+     "hl": "Sarıgül soruşturmasında yeni gelişme: O okula kayyum atandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Sarıgül soruşturması okula sıçradı… Yönetime kayyum atandı"
+    },
+    {
+     "s": "milliyet",
+     "hl": "Sarıgül soruşturmasında 11 yeni gözaltı! Şişli MYO’ya kayyum atandı"
+    },
+    {
+     "s": "10haber",
+     "hl": "Sarıgül soruşturması: Okul yönetimine kayyım atandı"
+    }
+   ]
+  },
+  {
+   "event": "s7146",
+   "week": "w10",
+   "title": "Fatma Betül Sayan Kaya'nın tutuklanmasının ardından dikkat çeken paylaşım",
+   "headlines": [
+    {
+     "s": "star",
+     "hl": "Fon soruşturması... Fatma Betül Sayan Kaya'nın ifadesi alınacak"
+    },
+    {
+     "s": "haberler",
+     "hl": "Adliyeye gelen Fatma Betül Sayan Kaya'nın gözlükleri dikkat çekti! İşte güncel fiyatı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fatma Betül Sayan Kaya tutuklandı! Sevk yazısı ortaya çıktı: Fon tasfiyesinden 1 gün önce dikkat çeken satış"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Fatma Betül Sayan Kaya’nın gözlüğünün fiyatı ortaya çıktı!"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fatma Betül Sayan Kaya gözlük markası ve fiyatı 2026! Gözlük hangi firmaya ait? 500 dolar mı? Türkiye fiyatı ne kadar?"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Tutuklama istenen Fatma Betül Sayan Kaya’nın sevk yazısında dikkat çeken ayrıntılar"
+    },
+    {
+     "s": "haber7",
+     "hl": "Son dakika haberi: Fatma Betül Sayan Kaya'nın tutuklanması talep edildi"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Fatma Betül Sayan Kaya'nın tutuklama talebinin gerekçesi ortaya çıktı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fatma Betül Sayan Kaya'nın tutukluluğa sevk yazısı ortaya çıktı"
+    },
+    {
+     "s": "dha",
+     "hl": "Fatma Betül Sayan Kaya hakkında hazırlanan tutuklamaya sevk yazısı ortaya çıktı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Fatma Betül Sayan Kaya'nın tutuklama talebinin ardından Akın Gürlek'ten dikkat çeken paylaşım"
+    },
+    {
+     "s": "karar",
+     "hl": "Fatma Betül Sayan Kaya hakkında suç duyurusunu SPK yapmış: Tutuklama sevk yazısında ortaya çıktı"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Eski Bakan Kaya'nın tutuklanmasının ardından Akın Gürlek'ten dikkat çeken paylaşım: \"Yanlış yapanla vedalaşırız\""
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Bakan Akın Gürlek’ten Fatma Betül Sayan Kaya’nın tutuklandığı süreçte dikkat çeken paylaşım"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fatma Betül Sayan Kaya'nın tutuklanmasının ardından dikkat çeken paylaşım"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fatma Betül Sayan Kaya'nın tutuklanmasının ardından 'duruşumuz belli' paylaşımı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fatma Betül Sayan Kaya'nın tutuklanmasının istendiği sırada AK Partili isimler art arda paylaştı: \"Duruşumuz belli, istikametimiz nettir\""
+    },
+    {
+     "s": "akit",
+     "hl": "Fatma Betül Sayan Kaya’nın adliyeye gelirken taktığı gözlük olay oldu! Fiyatı ağızları açık bıraktı"
+    },
+    {
+     "s": "diken",
+     "hl": "Fon vurgunu: Fatma Betül Sayan Kaya'nın tutuklanma sevk yazısı ortaya çıktı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fatma Betül Sayan Kaya'nın Sevk Yazısında Dikkat Çeken Detay: \"Sürprizlere Hazır Olun\""
+    },
+    {
+     "s": "anka",
+     "hl": "Murat Emir: Fatma Betül Sayan Kaya'nın tutuklanması tek başına bir şey ifade etmez"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Murat Emir: Fatma Betül Sayan Kaya'nın tutuklanması tek başına bir şey ifade etmez"
+    }
+   ]
+  },
+  {
+   "event": "s7212",
+   "week": "w10",
+   "title": "Avrupa'da bomba ihbarları: En az 21 yolcu uçağı acil iniş yaptı",
+   "headlines": [
+    {
+     "s": "aa",
+     "hl": "Avrupa'da bomba ihbarları nedeniyle en az 17 uçak acil iniş yaptı"
+    },
+    {
+     "s": "sondakika",
+     "hl": "10'dan fazla yolcu uçağı Avrupa'da bomba ihbarları yüzünden acil inişe zorlandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Avrupa'da 'bomba' alarmı! Uçaklar acil iniş yaptı"
+    },
+    {
+     "s": "t24",
+     "hl": "Bir haftada ikinci kez: Avrupa'da 'bomba tehdidi' alarmı; sekiz uçuş rota değiştirdi; 16 uçak acil iniş yaptı!"
+    },
+    {
+     "s": "birgun",
+     "hl": "Avrupa'da bomba ihbarları: Çok sayıda uçak acil iniş yaptı, neler biliyoruz?"
+    },
+    {
+     "s": "haberler",
+     "hl": "Bomba ihbarları Avrupa'da 10'dan fazla yolcu uçağını acil inişe zorladı"
+    },
+    {
+     "s": "aksam",
+     "hl": "Avrupa'da peş peşe bomba ihbarları! Çok sayıda uçak acil iniş yaptı"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Avrupa'da bomba ihbarları nedeniyle en az 16 uçak acil iniş yaptı"
+    },
+    {
+     "s": "mynet",
+     "hl": "Avrupa'da semalarında bomba alarmı! En az 16 yolcu uçağı acil iniş yaptı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Avrupa'daki bomba ihbarları hava trafiğini alarma geçirdi: Çok sayıda uçak acil iniş yaptı"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Bulgaristan'da bomba ihbarı üzerine 3 uçak acil iniş yaptı"
+    },
+    {
+     "s": "star",
+     "hl": "Avrupa semalarında bomba alarmı! 10'dan fazla yolcu uçağı acil iniş yaptı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Avrupa semalarında bomba alarmı. Çok sayıda uçak acil iniş yaptı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Avrupa'da bomba alarmı! 7 ülkede en az 16 yolcu uçağı acil iniş yaptı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Avrupa'da uçaklarda bomba paniği: En az 17 yolcu uçağı acil iniş yaptı"
+    },
+    {
+     "s": "trthaber",
+     "hl": "Avrupa'da bomba ihbarları nedeniyle en az 17 uçak acil iniş yaptı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Avrupa'da bomba ihbarları: En az 21 yolcu uçağı acil iniş yaptı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA... Avrupa'da yine 'bomba' alarmı: Çok sayıda uçak acil iniş yaptı, içlerinden biri askeri üsse yönlendirildi"
+    },
+    {
+     "s": "karar",
+     "hl": "Avrupa'da bomba ihbarı paniği: 34 uçuş aksadı, uçaklar acil iniş yaptı"
+    }
+   ]
+  },
+  {
+   "event": "s7603",
+   "week": "w10",
+   "title": "Fon soruşturmasında eski SPK Başkan Vekili Enver Usca dahil 4 şüpheli tutuklandı",
+   "headlines": [
+    {
+     "s": "sondakika",
+     "hl": "Fon soruşturmasında eski SPK yöneticisi dahil 6 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fon soruşturmasında eski SPK Başkan Vekili Usca dahil 6 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Fon vurgunu soruşturması: Eski SPK Başkan Vekili Enver Usca'nın da aralarında olduğu 6 kişi adliyeye sevk edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Fon soruşturmasında 6 şüpheli adliyeye sevk edildi! Eski SPK yöneticileri de listede"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Fon soruşturmasında yeni gelişme: Eski SPK yöneticileri dahil 6 şüpheli adliyeye sevk edildi"
+    },
+    {
+     "s": "karar",
+     "hl": "Sermaye piyasası soruşturmasında 6 şüpheli adliyede: Aralarında Eski SPK Başkan Vekili Enver Usca da var"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fon soruşturmasında 6 kişi adliyeye sevk edildi! Eski SPK Başkanvekili de aralarında"
+    },
+    {
+     "s": "yenisafak",
+     "hl": "Fon soruşturmasında yeni gelişme: Eski SPK başkanvekili dahil 4 kişi daha tutuklandı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fon vurgunu soruşturması: Eski SPK Başkanvekili Enver Usca ve 3 kişi tutuklandı"
+    },
+    {
+     "s": "mynet",
+     "hl": "SON DAKİKA | Fon soruşturmasında eski SPK Başkanvekili Enver Usca tutuklandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika: Fon soruşturmasında eski SPK başkanı tutuklandı"
+    },
+    {
+     "s": "diken",
+     "hl": "Fon soruşturması: Eski SPK başkan vekili dahil dört tutuklama"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son Dakika... Fon soruşturmasında yeni gelişme: Eski SPK Başkanvekili Enver Usca tutuklandı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fon soruşturmasında 4 tutuklama! Aralarında Enver Usca da bulunuyor"
+    },
+    {
+     "s": "sabah",
+     "hl": "Eski SPK Başkan Vekili Enver Usca tutuklandı"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Fon soruşturmasında yeni gelişme: Eski SPK Başkan Vekili Enver Usca dahil 4 kişi tutuklandı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fon soruşturmasında eski SPK yöneticileri tutuklandı"
+    },
+    {
+     "s": "t24",
+     "hl": "Aralarında eski SPK Başkanvekili Enver Usca da var: Fon soruşturmasında 4 tutuklama daha"
+    },
+    {
+     "s": "star",
+     "hl": "Fon soruşturmasında yeni gelişme! Enver Usca dahil 4 şüpheli tutuklandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Eski SPK Başkan vekili dahil 4 kişi daha tutuklandı!"
+    },
+    {
+     "s": "10haber",
+     "hl": "Fon vurgunu soruşturması: Eski SPK Başkanvekili Enver Usca ve üç kişi tutuklandı"
+    },
+    {
+     "s": "cnnturk",
+     "hl": "SON DAKİKA | Fon soruşturması kapsamında eski SPK Başkan Vekili Enver Usca tutuklandı"
+    }
+   ]
+  },
+  {
+   "event": "s6678",
+   "week": "w10",
+   "title": "Fenerbahçe'de Emre Belözoğlu dönemi",
+   "headlines": [
+    {
+     "s": "takvim",
+     "hl": "Fenerbahçe'de flaş gelişme: Emre Belözoğlu ile anlaşma sağlandı! Conceiçao olmadı"
+    },
+    {
+     "s": "birgun",
+     "hl": "Fenerbahçe’de ibre Emre Belözoğlu'na döndü"
+    },
+    {
+     "s": "karar",
+     "hl": "Fenerbahçe'de Emre Belözoğlu sürprizi: Görüşmeler başladı"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi başladı! Aziz Yıldırım görüştü, anlaşma sağlandı"
+    },
+    {
+     "s": "akit",
+     "hl": "Fenerbahçe'de bomba gelişme: Emre Belözoğlu ile anlaşma sağlandı"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Emre Belözoğlu Fenerbahçe'ye imzayı attı"
+    },
+    {
+     "s": "ntv",
+     "hl": "Fenerbahçe'de Kocaman ya da Conceiçao derken 2. Emre Belözoğlu dönemi başlıyor"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi! Kasımpaşa'dan onay çıktı"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Rıdvan Dilmen açıkladı: Fenerbahçe’de Emre Belözoğlu iddiası"
+    },
+    {
+     "s": "aksam",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi! Yuvaya dönüyor"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi!"
+    },
+    {
+     "s": "star",
+     "hl": "Kasımpaşa'da Emre Belözoğlu dönemi resmen sona erdi!"
+    },
+    {
+     "s": "turkiyegz",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi resmen başladı: Anlaşma KAP'a bildirildi"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi! Sarı-lacivertliler yeni teknik direktörünü açıkladı"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Resmen açıklandı: Fenerbahçe'de Emre Belözoğlu dönemi!"
+    },
+    {
+     "s": "diken",
+     "hl": "Fenerbahçe'de ikinci Emre Belözoğlu dönemi"
+    },
+    {
+     "s": "anka",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi başladı: Yuvana hoş geldin"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Fenerbahçe'de son dakika! Emre Belözoğlu'ndan sürpriz karar"
+    },
+    {
+     "s": "haberler",
+     "hl": "Fenerbahçe'de son dakika! Emre Belözoğlu'ndan sürpriz karar"
+    },
+    {
+     "s": "mynet",
+     "hl": "Fenerbahçe'de Emre Belözoğlu dönemi başladı! İlk antrenmanına çıktı"
+    },
+    {
+     "s": "onedio",
+     "hl": "Fenerbahçe'de Emre Belözoğlu Dönemi Başladı: Takımın Başında İlk Antrenmanına Çıktı"
+    },
+    {
+     "s": "t24",
+     "hl": "Emre Belözoğlu, Fenerbahçe'deki ilk idmanına çıktı"
+    }
+   ]
+  },
+  {
+   "event": "s6935",
+   "week": "w10",
+   "title": "Mekke Anlaşması TBMM'de kabul edildi",
+   "headlines": [
+    {
+     "s": "trthaber",
+     "hl": "Mekke Anlaşması TBMM Genel Kurulu'nda görüşülecek"
+    },
+    {
+     "s": "sondakika",
+     "hl": "Mekke İttifakı teklifinin ilk maddesi TBMM'de kabul edildi, CHP olumlu oy verecek"
+    },
+    {
+     "s": "haberturk",
+     "hl": "Mekke Anlaşması'nın ilk maddesi kabul edildi"
+    },
+    {
+     "s": "sabah",
+     "hl": "SON DAKİKA I Mekke Anlaşması teklifi TBMM'de: Birinci madde kabul edildi"
+    },
+    {
+     "s": "sozcu",
+     "hl": "Son dakika...Mekke Savunma Anlaşması'nın ilk maddesi kabul edildi"
+    },
+    {
+     "s": "cumhuriyet",
+     "hl": "Son dakika… Mekke Anlaşması'nın ilk maddesi Meclis Genel Kurulu'nda kabul edildi"
+    },
+    {
+     "s": "birgun",
+     "hl": "Mekke Anlaşması'nın ilk maddesi kabul edildi"
+    },
+    {
+     "s": "dirilis",
+     "hl": "Mekke Anlaşması teklifinin ilk maddesi kabul edildi"
+    },
+    {
+     "s": "haberler",
+     "hl": "Mekke İttifakı anlaşmasının ilk maddesi TBMM Genel Kurulu'nda kabul edildi"
+    },
+    {
+     "s": "karar",
+     "hl": "Mekke İttifakı Anlaşması'nda ilk madde TBMM'den geçti"
+    },
+    {
+     "s": "diken",
+     "hl": "Mekke Anlaşması teklifinin ilk maddesi Meclis'ten geçti"
+    },
+    {
+     "s": "akit",
+     "hl": "Mekke Anlaşması’nın ilk maddesi kabul edildi! CHP anlaşmaya destek verdi"
+    },
+    {
+     "s": "ahaber",
+     "hl": "Mekke anlaşmasına ilişkin kanun teklifinin ilk maddesi TBMM'de kabul edildi"
+    },
+    {
+     "s": "mynet",
+     "hl": "Mekke Anlaşması’nın ilk maddesi kabul edildi"
+    },
+    {
+     "s": "aksam",
+     "hl": "Mekke Anlaşması'na TBMM'den ilk onay! Anlaşmanın birinci maddesi kabul edildi"
+    },
+    {
+     "s": "takvim",
+     "hl": "Mekke Ortak Savunma Anlaşması TBMM'de: İlk madde kabul edildi"
+    },
+    {
+     "s": "milligazete",
+     "hl": "Mekke Anlaşması TBMM'den geçti"
+    },
+    {
+     "s": "tgrt",
+     "hl": "Mekke Anlaşması TBMM'de kabul edildi"
+    },
+    {
+     "s": "hurriyet",
+     "hl": "Mekke İttifakı TBMM'de kabul edildi"
+    },
+    {
+     "s": "aydinlik",
+     "hl": "Mekke Anlaşması TBMM Genel Kurulu'nda kabul edildi"
+    },
+    {
+     "s": "posta",
+     "hl": "Mekke Ortak Savunma Anlaşması TBMM'de kabul edildi"
+    },
+    {
+     "s": "ntv",
+     "hl": "Mekke Anlaşması TBMM'de kabul edildi"
+    },
+    {
+     "s": "bloomberght",
+     "hl": "Mekke Anlaşması TBMM'de kabul edildi"
+    },
+    {
+     "s": "evrensel",
+     "hl": "Türkiye'yi savaş riskine sokan Mekke Anlaşması, TBMM'den geçti"
+    },
+    {
+     "s": "haber7",
+     "hl": "Türkiye'den son dakika Mekke İttifakı kararı! TBMM'de kabul edildi"
+    },
+    {
+     "s": "star",
+     "hl": "Üçlü savunma paktında tarihi adım: Mekke Anlaşması TBMM'den geçti"
+    },
+    {
+     "s": "dwturkce",
+     "hl": "Mekke Anlaşması TBMM Genel Kurulu'nda kabul edildi"
+    },
+    {
+     "s": "bianet",
+     "hl": "Mekke Anlaşması TBMM'den geçti"
+    },
+    {
+     "s": "kisadalga",
+     "hl": "Mekke Anlaşması Genel Kurul'da kabul edildi"
+    }
+   ]
+  }
+ ]
+}

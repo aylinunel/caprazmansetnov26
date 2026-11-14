@@ -1,0 +1,142 @@
+{
+ "q": {
+  "happened": "Başsavcılık, sermaye piyasası (fon) soruşturmasındaki gizli belgeleri paylaşanlar hakkında soruşturma başlattı.",
+  "agree": "Gizli belgeleri paylaşanlara soruşturma ortak.",
+  "differ": "Cumhuriyet ve Evrensel haberi 'fon krizi' ve 'vurgun' çerçevesinde verirken, Sözcü 'sızdıranlar' diyor; Sabah, Takvim ve Mynet gelişmeyi 'kritik' ya da 'harekete geçildi' ile vurguluyor; 10haber 'uyarı' sözcüğünü kullanıyor.",
+  "care": "Odağın fonlardaki yolsuzluk iddiasında mı yoksa belgeleri paylaşanlarda mı olduğu, haberin kamu yararı mı yoksa gizlilik ihlali mi olarak okunacağını etkiler."
+ },
+ "rows": [
+  {
+   "s": "cumhuriyet",
+   "frame": "Fon krizi",
+   "hero": "Başsavcılık",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Fon soruşturması",
+   "hero": "Başsavcılık",
+   "blame": "Belge sızdıranlar",
+   "cause": "Belge sızdırma",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "tele1",
+   "frame": "Sermaye piyasası soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Fon soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Fon soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Sermaye piyasası soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "kisadalga",
+   "frame": "Fon krizi",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Fon soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Fon vurgunu",
+   "hero": "",
+   "blame": "",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Fon soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Soruşturma",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "10haber",
+   "frame": "Fon soruşturması",
+   "hero": "",
+   "blame": "Belge paylaşanlar",
+   "cause": "Gizli belge paylaşımı",
+   "cons": "Uyarı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

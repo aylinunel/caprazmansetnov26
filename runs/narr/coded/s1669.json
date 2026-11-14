@@ -1,0 +1,166 @@
+{
+ "q": {
+  "happened": "Hazine ve Maliye Bakan Yardımcısı Osman Çelik emeklilik dilekçesini sundu; SPK Başkanı Mahmut Sütçü de istifa etti.",
+  "agree": "Osman Çelik'in emeklilik dilekçesi ortak.",
+  "differ": "Sözcü, Anka ve Evrensel ayrılığı fon krizi ve damadının tutuklanmasıyla ilişkilendiriyor; Mynet, NTV, Yeni Asya SPK Başkanı'nın istifasını da ekliyor; Star, Sabah, TRT Haber ve Diken yalnızca emeklilik başvurusunu aktarıyor.",
+  "care": "Ayrılığın fon krizine bağlanıp bağlanmaması, olayın rutin bir görev değişikliği mi yoksa siyasi sorumluluk meselesi mi olarak anlaşılacağını belirler."
+ },
+ "rows": [
+  {
+   "s": "sozcu",
+   "frame": "Fon krizi",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "Fon krizi",
+   "cons": "Görevden ayrılma",
+   "aff": "",
+   "sol": "",
+   "moral": "Hesap verebilirlik",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Üst düzey ayrılıklar",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "İstifa ve emeklilik",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Üst düzey ayrılıklar",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "İstifa ve emeklilik",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Olgu aktarımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "Emeklilik başvurusu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ahaber",
+   "frame": "Kişi tanıtımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Olgu aktarımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "Emeklilik başvurusu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Olgu aktarımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "Emeklilik talebi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Fon krizi",
+   "hero": "Osman Çelik",
+   "blame": "Osman Çelik",
+   "cause": "Fon vurgunu",
+   "cons": "Emeklilik başvurusu",
+   "aff": "",
+   "sol": "",
+   "moral": "Hesap verebilirlik",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Olgu aktarımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "Emeklilik başvurusu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Olgu aktarımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "Emeklilik başvurusu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Olgu aktarımı",
+   "hero": "Osman Çelik",
+   "blame": "",
+   "cause": "",
+   "cons": "Emeklilik talebi",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Fon krizi",
+   "hero": "SPK Başkanı Sütçü",
+   "blame": "SPK Başkanı Sütçü",
+   "cause": "Fon krizi",
+   "cons": "İstifa ve emeklilik",
+   "aff": "",
+   "sol": "",
+   "moral": "Hesap verebilirlik",
+   "start": ""
+  },
+  {
+   "s": "yeniasya",
+   "frame": "Üst düzey ayrılıklar",
+   "hero": "SPK Başkanı Sütçü",
+   "blame": "",
+   "cause": "",
+   "cons": "İstifa ve emeklilik",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

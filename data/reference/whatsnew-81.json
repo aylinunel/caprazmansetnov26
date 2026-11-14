@@ -1,0 +1,411 @@
+{
+ "version": "8.1",
+ "from": "2026-11-04",
+ "findings": [
+  {
+   "id": "veri",
+   "tag": "yeni",
+   "title": "Daha çok veri, daha çok kurum, iki hafta daha",
+   "claim": "Başlık sayısı 245.935’ten 388.760’e (+%58), kurum sayısı 33’ten 51’e, olay sayısı 5.341’ten 9.230’e çıktı.",
+   "rows": [
+    [
+     "Başlık",
+     "245.935",
+     "388.760"
+    ],
+    [
+     "Kurum (veri alınan)",
+     "33",
+     "51"
+    ],
+    [
+     "Kayıtlı yayıncı",
+     "37",
+     "72"
+    ],
+    [
+     "Olay",
+     "5.341",
+     "9.230"
+    ],
+    [
+     "Dönem",
+     "2026-09-01 – 2026-11-03",
+     "2026-09-01 – 2026-11-13"
+    ]
+   ],
+   "note": "Artış iki kaynaktan gelir: pencere 3 Kasım’dan 13 Kasım’a uzadı (3.087 olay 4 Kasım ve sonrasında başladı) ve toplayıcı geliştirildiği için 8.0’daki 33 kurumun kendisi de daha eksiksiz toplandı (aynı kurumlarda 245.935 → 351.297 başlık). 18 kurum ilk kez dahil: 10Haber, Agos, ANKA Haber Ajansı, BBC News Türkçe, Demirören Haber Ajansı, DW Türkçe, Evrensel, Haber7, Kısa Dalga, Memurlar.net, Posta, soL Haber, T24, Vatan, Yeni Yaşam (500+ başlığı olanlar). Yeni kurumların yerleşimi sağlanan kayıt defterinde yok; sayımlara girerler, sol–sağ bloklarına girmezler."
+  },
+  {
+   "id": "benzerlik",
+   "tag": "değişti",
+   "title": "Benzer yazan kurumlar artık yerleşime göre de kümeleniyor",
+   "claim": "Kurumların başlık dili benzerliği ile sol–sağ yerleşimi arasındaki ilişki (Mantel r) 0,20’den 0,24’e çıktı; p 0,059’ten 0,012’e düştü: 8.0’da sınırdaydı, 8.1’de anlamlı (p < 0,05).",
+   "rows": [
+    [
+     "Mantel r",
+     "0,203",
+     "0,244"
+    ],
+    [
+     "p",
+     "0,059",
+     "0,012"
+    ],
+    [
+     "Haritadaki kurum",
+     "17",
+     "19"
+    ]
+   ],
+   "note": "Bu, benzer yerleşimdeki kurumların benzer sözcükler seçtiğine dair daha güçlü kanıttır; nedensellik ya da niyet göstermez."
+  },
+  {
+   "id": "uslup",
+   "tag": "değişti",
+   "title": "Yazım üslubu ile yerleşim bağı sürüyor ama zayıfladı",
+   "claim": "Üslup eksenindeki Spearman ρ 0,57’den 0,49’e geriledi (p 0,008 → 0,016); iki sonuç da anlamlı (p < 0,05). İkinci eksen ρ 0,18 → 0,26, anlamlı değil.",
+   "rows": [
+    [
+     "ρ (1. eksen)",
+     "0,573",
+     "0,487"
+    ],
+    [
+     "p (1. eksen)",
+     "0,008",
+     "0,016"
+    ],
+    [
+     "ρ (2. eksen)",
+     "0,183",
+     "0,260"
+    ],
+    [
+     "p (2. eksen)",
+     "0,415",
+     "0,211"
+    ],
+    [
+     "Eksen payları",
+     "41,7% · 20,8% · 12,9%",
+     "39,5% · 21,3% · 12,8%"
+    ]
+   ],
+   "note": "Etkin kurum kümesi de değişti (aşağıda), bu yüzden iki sayı birebir aynı kurumlar üzerinde karşılaştırılamaz."
+  },
+  {
+   "id": "gundem",
+   "tag": "sürüyor",
+   "title": "Gündem seçimi yerleşimle hâlâ ilişkili değil",
+   "claim": "Hangi olayları haberleştirdikleri bakımından kurumların benzerliği yerleşimle ilişkili değil: Mantel r -0,01 → 0,04 (p 0,50). Konu karışımında da aynı: r -0,02 → -0,02 (p 0,83).",
+   "rows": [
+    [
+     "Gündem Mantel r",
+     "-0,013",
+     "0,036"
+    ],
+    [
+     "Gündem p",
+     "0,845",
+     "0,505"
+    ],
+    [
+     "Konu Mantel r",
+     "-0,020",
+     "-0,024"
+    ],
+    [
+     "Konu p",
+     "0,877",
+     "0,826"
+    ],
+    [
+     "Konu modeli başlığı",
+     "185.842",
+     "302.706"
+    ]
+   ],
+   "note": "Kurumlar aynı olayları seçiyor; fark, olayın nasıl anlatıldığında (dil ve üslup) ortaya çıkıyor."
+  },
+  {
+   "id": "etkin",
+   "tag": "değişti",
+   "title": "Karşılaştırılan kurum kümesi büyüdü, sağ blok daha ağır",
+   "claim": "Dönemin yarısından çoğunu kapsayan ve yerleşimi bilinen ‘etkin’ kurum sayısı 17’den 19’e çıktı (CNN Türk, Türkiye Gazetesi eklendi). Dağılım sol 4, merkez 2, sağ 11’ten sol 4, merkez 2, sağ 13’e geçti.",
+   "rows": [
+    [
+     "Sol",
+     "4",
+     "4"
+    ],
+    [
+     "Merkez",
+     "2",
+     "2"
+    ],
+    [
+     "Sağ",
+     "11",
+     "13"
+    ]
+   ],
+   "note": "Sol blok aynı kaldığı için bloklar arası karşılaştırmaların dengesizliği arttı; blok ortalamaları sağ blokta daha sağlam, solda hâlâ dört kuruma dayanıyor."
+  },
+  {
+   "id": "kornokta",
+   "tag": "değişti",
+   "title": "Kör nokta olayı sayısı arttı, oranı hafifçe düştü",
+   "claim": "Bir tarafın belirgin biçimde az haberleştirdiği olay sayısı 58’dan 79’e çıktı; toplam olayın içindeki payı ise %1,1’den %0,9’e hafifçe geriledi.",
+   "rows": [
+    [
+     "Kör nokta olayı",
+     "58",
+     "79"
+    ],
+    [
+     "Toplam olay",
+     "5.341",
+     "9.230"
+    ],
+    [
+     "4 Kasım sonrası kör nokta",
+     "—",
+     "26"
+    ]
+   ],
+   "note": "Sayı artışının büyük bölümü olay sayısındaki artıştan gelir; oran neredeyse sabit."
+  },
+  {
+   "id": "hiz",
+   "tag": "değişti",
+   "title": "Karşı blok daha geç yetişiyor",
+   "claim": "Soldan açılan olaylara sağ blok ortanca 99 dakikada yetişiyor (8.0: 74); sağdan açılanlara sol blok 159 dakikada (8.0: 111). Yetişme payı 99% → 95% (sağ) ve 79% → 74% (sol).",
+   "rows": [
+    [
+     "Soldan açılan → sağ (yetişme payı)",
+     "98,6%",
+     "94,7%"
+    ],
+    [
+     "Soldan açılan → sağ (ortanca dk)",
+     "74",
+     "99"
+    ],
+    [
+     "Sağdan açılan → sol (yetişme payı)",
+     "79,1%",
+     "73,6%"
+    ],
+    [
+     "Sağdan açılan → sol (ortanca dk)",
+     "111",
+     "159"
+    ]
+   ],
+   "note": "Sağ blok soldan açılan olaylara, sol blok sağdan açılanlara göre daha çabuk yetişiyor; bu fark 8.0’da da vardı."
+  },
+  {
+   "id": "yuk",
+   "tag": "sürüyor",
+   "title": "Yüklü dil sıralaması yerinde",
+   "claim": "8.0’daki 33 kurumun yük ortalaması iki sürümde neredeyse aynı (ortalama fark 0,14 puan). En yüksek: Star (12,5), A Haber (12,0), Takvim (11,5), Yeni Akit (11,5), Türkiye Gazetesi (11,1).",
+   "rows": [
+    [
+     "Türkiye Gazetesi",
+     "11,3",
+     "11,1"
+    ],
+    [
+     "Habertürk",
+     "7,4",
+     "7,2"
+    ],
+    [
+     "CNN Türk",
+     "8,4",
+     "8,8"
+    ],
+    [
+     "Milliyet",
+     "9,6",
+     "10,1"
+    ],
+    [
+     "Onedio",
+     "5,7",
+     "6,2"
+    ]
+   ],
+   "note": "Tabloda en çok değişen beş kurum; en çok değişenin farkı bile küçük. Yük, kurumun dönem boyunca sabit bir özelliği gibi görünüyor."
+  },
+  {
+   "id": "yeniKurum",
+   "tag": "yeni",
+   "title": "Yeni kurumlar: en sakin ve en yüklü yazanlar",
+   "claim": "Yeni katılan 15 kurum (500+ başlık) arasında en düşük yük DW Türkçe (5,5) ve Agos (6,3), en yüksek Vatan (9,9) ve Haber7 (9,8). Tam dönem ortalaması 8,5.",
+   "rows": [
+    [
+     "DW Türkçe",
+     "2.716",
+     "5,5"
+    ],
+    [
+     "Agos",
+     "773",
+     "6,3"
+    ],
+    [
+     "Yeni Yaşam",
+     "2.346",
+     "6,6"
+    ],
+    [
+     "Memurlar.net",
+     "1.676",
+     "6,8"
+    ],
+    [
+     "BBC News Türkçe",
+     "739",
+     "7,1"
+    ],
+    [
+     "Demirören Haber Ajansı",
+     "509",
+     "7,1"
+    ],
+    [
+     "ANKA Haber Ajansı",
+     "7.654",
+     "7,4"
+    ],
+    [
+     "Evrensel",
+     "6.182",
+     "7,4"
+    ],
+    [
+     "10Haber",
+     "5.221",
+     "7,7"
+    ],
+    [
+     "Kısa Dalga",
+     "1.375",
+     "7,7"
+    ],
+    [
+     "soL Haber",
+     "2.502",
+     "9,0"
+    ],
+    [
+     "T24",
+     "1.863",
+     "9,3"
+    ],
+    [
+     "Posta",
+     "1.047",
+     "9,5"
+    ],
+    [
+     "Haber7",
+     "1.396",
+     "9,8"
+    ],
+    [
+     "Vatan",
+     "578",
+     "9,9"
+    ]
+   ],
+   "note": "Bu kurumların yerleşimi kayıt defterinde yok; bu yüzden bloklara ve blok karşılaştırmalarına girmezler, kurum sayfalarında ve olaylarda görünürler."
+  },
+  {
+   "id": "olaylar",
+   "tag": "yeni",
+   "title": "4–13 Kasım’ın en çok kurumca haberleştirilen olayları",
+   "claim": "Pencerenin uzayan bölümünde 3.087 olay başladı; en geniş yankı bulan: Fatma Betül Sayan Kaya fon soruşturmasında tutuklandı (41 kurum).",
+   "rows": [
+    [
+     "Fatma Betül Sayan Kaya fon soruşturmasında tutuklandı",
+     "41",
+     "s7106"
+    ],
+    [
+     "BDDK Başkanı Şahap Kavcıoğlu görevinden ayrıldı",
+     "40",
+     "s9181"
+    ],
+    [
+     "Malatya'da askeri helikopter düştü: 4 askerimiz şehit oldu",
+     "39",
+     "s9547"
+    ],
+    [
+     "Cafer Mahiroğlu soruşturmasında ikinci dalga operasyon: 7 şüpheli gözaltına alındı",
+     "38",
+     "s8794"
+    ],
+    [
+     "İsrail'de hükümeti kurma görevi Eisenkot'a verildi",
+     "36",
+     "s7526"
+    ],
+    [
+     "Nvidia CEO'su Jensen Huang istifa etti",
+     "35",
+     "s9111"
+    ],
+    [
+     "Fon soruşturmasında BDDK 3. Daire Başkanı Bilal Soysal tutuklandı",
+     "35",
+     "s7923"
+    ],
+    [
+     "Polonya'da silahlı saldırı: 6 kişi öldü, 15 kişi yaralandı",
+     "34",
+     "s7854"
+    ]
+   ],
+   "events": true,
+   "note": "Her satır olay sayfasına bağlanır."
+  },
+  {
+   "id": "sinir",
+   "tag": "uyarı",
+   "title": "Sınırlar",
+   "claim": "8.1’in yeni bulguları şu sınırlarla okunmalı.",
+   "rows": [
+    [
+     "29–30 Ekim",
+     "veri boşluğu sürüyor (günde ~580 başlık)",
+     ""
+    ],
+    [
+     "14 Kasım",
+     "kısmi gün, dışarıda",
+     ""
+    ],
+    [
+     "Anlatı haritası",
+     "1–13 Kasım haftaları yapay zekâyla kodlandı (YZ)",
+     ""
+    ],
+    [
+     "BiasGuard",
+     "yalnızca 8.0’da incelenen olaylar kapsanır; sonradan açılan olaylar incelenmemiş sayılır",
+     ""
+    ],
+    [
+     "Yeni kurumlar",
+     "yerleşimleri kayıt defterinde yok",
+     ""
+    ]
+   ],
+   "note": ""
+  }
+ ]
+}

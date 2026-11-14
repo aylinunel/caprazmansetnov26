@@ -128,6 +128,9 @@ def merge(core: dict) -> None:
     cl = OUT.parent / "checklist-7.json"
     if cl.exists():
         core["CL"] = json.loads(cl.read_text())
+    wn = OUT.parent / "whatsnew-81.json"  # 8.1: 8.0 vs 8.1 findings (python -m capraz_pipeline.whatsnew)
+    if wn.exists():
+        core["W81"] = json.loads(wn.read_text())
     if OUT.exists():
         x = json.loads(OUT.read_text())
         core["N"] = {**core.get("N", {}), **x["N"]}

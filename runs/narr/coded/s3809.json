@@ -1,0 +1,166 @@
+{
+ "q": {
+  "happened": "Fenerbahçe, Şampiyonlar Ligi'nde Slavia Prag ile karşılaştı; maçın hakemi ve yayın bilgisi açıklandı.",
+  "agree": "Fenerbahçe-Slavia Prag maçı ortak konu.",
+  "differ": "Star, Cumhuriyet, Sabah, Mynet, Evrensel ve NTV hakem atamasını öne çıkarıyor; Türkiye Gazetesi ve Sözcü 'ilk galibiyet' arayışını vurguluyor; TRT Haber yayın kanalını veriyor; Diken berabere kalındığını bildiriyor; Karar farklı bir maçı (Galatasaray-Lille) konu ediyor.",
+  "care": "Aynı olay için önceden hakem, kanal ya da galibiyet beklentisi öne çıkarken sonucun başlığa girmesi, maçın hangi açıdan anlatıldığını değiştirir."
+ },
+ "rows": [
+  {
+   "s": "star",
+   "frame": "Hakem ataması",
+   "hero": "İspanyol hakem",
+   "blame": "",
+   "cause": "",
+   "cons": "Hakem belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Hakem ataması",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Hakem belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sabah",
+   "frame": "Hakem ataması",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Hakem belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "mynet",
+   "frame": "Hakem ataması",
+   "hero": "İspanyol hakem",
+   "blame": "",
+   "cause": "",
+   "cons": "Hakem belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "evrensel",
+   "frame": "Hakem ataması",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Hakem belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "ntv",
+   "frame": "Hakem ataması",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Hakem belli oldu",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "turkiyegz",
+   "frame": "İlk galibiyet arayışı",
+   "hero": "Fenerbahçe",
+   "blame": "",
+   "cause": "",
+   "cons": "Eksik oyuncular",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "İlk galibiyet arayışı",
+   "hero": "Fenerbahçe",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Yayın bilgisi",
+   "hero": "Galatasaray",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "trthaber",
+   "frame": "Yayın bilgisi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Yayın kanalı",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Maç hazırlığı",
+   "hero": "Slavia Prag",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "milligazete",
+   "frame": "Yayın bilgisi",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Maç tarihi ve yayını",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Maç sonucu",
+   "hero": "Fenerbahçe",
+   "blame": "",
+   "cause": "",
+   "cons": "Beraberlik",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  }
+ ]
+}

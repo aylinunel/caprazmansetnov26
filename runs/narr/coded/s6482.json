@@ -1,0 +1,202 @@
+{
+ "q": {
+  "happened": "Adalet Bakanı Akın Gürlek, fon soruşturmalarında gönüllü iadenin hukuki sorumluluğu ortadan kaldırmayacağını söyledi.",
+  "agree": "Bakan Gürlek'in açıklaması ve 'gönüllü iade hukuki sorumluluğu ortadan kaldırmaz' mesajı ortak.",
+  "differ": "AA, Habertürk, Diriliş ve Sol başlıkta içeriği vermeden ya da tırnak içinde aktarırken; Sözcü ve Cumhuriyet 'gönüllü iade vurgusu'nu öne çıkarıyor; TGRT, Karar ve Takvim 'uyarı' ya da 'tek başına yeterli değil' diyor.",
+  "care": "Başlıkta iade vurgusu mu yoksa hukuki sorumluluk uyarısı mı öne çıktığı, açıklamanın bir yumuşama mı yoksa caydırma mesajı mı olarak okunacağını etkiler."
+ },
+ "rows": [
+  {
+   "s": "aa",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sol",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "Ayrıca değerlendirme",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "tgrt",
+   "frame": "Uyarı",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "takvim",
+   "frame": "Uyarı",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "İade yeterli değil",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "star",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "yenisafak",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "haberturk",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "sozcu",
+   "frame": "Gönüllü iade vurgusu",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "diken",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "anka",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "cumhuriyet",
+   "frame": "Gönüllü iade vurgusu",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "dirilis",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "",
+   "aff": "",
+   "sol": "",
+   "moral": "",
+   "start": ""
+  },
+  {
+   "s": "birgun",
+   "frame": "Bakan açıklaması",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "karar",
+   "frame": "Uyarı",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Geri vermek sorumluluğu kaldırmaz",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "kisadalga",
+   "frame": "Fon krizi",
+   "hero": "Adalet Bakanı Gürlek",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  },
+  {
+   "s": "yeniasya",
+   "frame": "Bakan açıklaması",
+   "hero": "",
+   "blame": "",
+   "cause": "",
+   "cons": "Hukuki sorumluluk sürer",
+   "aff": "",
+   "sol": "",
+   "moral": "Hukuki sorumluluk",
+   "start": ""
+  }
+ ]
+}
