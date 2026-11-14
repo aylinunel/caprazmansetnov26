@@ -80,7 +80,7 @@ function olayFinding(f, x) {
   var qs = (f.evidence || []).slice(0, 3).map(function (q) {
     return "<li>“" + esc(q.q) + "”" + ((q.o || []).length ? " — " + q.o.map(function (o) { return esc(srcName(o)); }).join(", ") : "") + "</li>";
   }).join("");
-  return '<div class="v7-yzf"><h4><a class="lnk" href="#/yontem?s=kavramlar&k=' + encodeURIComponent(bg7k(f.id)) + '">' + esc(f.name) + "</a></h4>" +
+  return '<div class="v7-yzf"><h4>' + biasChip(f) + "</h4>" +
     (t.noticed ? "<p><b>" + (t.editor ? "Editör notu" : "Ne fark etti") + ".</b> " + esc(t.noticed) + "</p>" : "") +
     (qs ? "<ul>" + qs + "</ul>" : "") +
     (t.why ? "<p><b>Neden kesin değil.</b> " + esc(t.why) + "</p>" : "") + "</div>";

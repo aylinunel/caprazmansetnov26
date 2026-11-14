@@ -10,6 +10,21 @@ SECTIONS.forEach(function (s) { if (s.p === "/anlati") s.fn = pgAnlati; });
 SECTIONS.push({ p: "/oruntu", label: "Örüntüler", fn: pgOruntu });
 DETAIL["/oruntu"] = { fn: pgOruntu, of: "/oruntu" };
 
+/* A bias the AI named: link to the concept library plus an optional short explanation that opens in place. */
+function biasChip(f) {
+  var link = '<a class="lnk" href="#/yontem?s=kavramlar&k=' + encodeURIComponent(bg7k(f.id)) + '">' + esc(f.name) + "</a>", b = biasBrief(f.id, BREG, bg7k);
+  if (!b) return link;
+  var id = "bx-" + bg7k(f.id) + "-" + (biasChip.n = (biasChip.n || 0) + 1);
+  return '<span class="bx">' + link + ' <button type="button" class="bx-b" aria-expanded="false" aria-controls="' + id + '">Kısaca ne demek?</button>' +
+    '<span class="bx-t" id="' + id + '" hidden><b>' + esc(b.name) + "</b>" + (b.en ? " (" + esc(b.en) + ")" : "") + ": " + esc(b.text) + "</span></span>";
+}
+document.addEventListener("click", function (ev) {
+  var b = ev.target.closest && ev.target.closest(".bx-b"); if (!b) return;
+  ev.preventDefault(); ev.stopPropagation();
+  var t = document.getElementById(b.getAttribute("aria-controls")), on = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", on); if (t) t.hidden = !on;
+}, true);
+
 function yzBadge() { return '<span class="yz-badge" title="Yapay zekâ ile üretildi · Yöntem › YZ">YZ</span>'; }
 
 function yzBlock(innerHtml, title) {

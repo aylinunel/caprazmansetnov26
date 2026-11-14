@@ -324,6 +324,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       if (!el) { fails.push(`${tag}: click target ${sel} missing`); continue; }
       await el.click(); await sleep(300);
       if (sel.includes("data-vtip") && !(await page.$eval("#tip", (t) => t.classList.contains("on")))) fails.push(`${tag}: after click ${sel} #tip is not .on`);
+      if (sel.includes(".bx-b")) { /* bias explainer opens in place and never navigates (cards carry a stretched link) */
+        const o = await page.evaluate(() => ({ h: location.hash, v: [...document.querySelectorAll(".bx-t")].filter((x) => !x.hidden && x.offsetParent !== null).length }));
+        if (o.v < 1) fails.push(`${tag}: after click ${sel} no visible .bx-t`);
+        if (o.h !== route.slice(route.indexOf("#"))) fails.push(`${tag}: ${sel} navigated to ${o.h}`);
+      }
       const want = sel.includes("th[data-dim]") ? ".v7-group" : sel.includes(".v7-out") ? ".v7-hl" : sel.startsWith(".gl") ? ".gl-pop" : null;
       if (want) {
         const n = await page.$$eval(want, (xs) => xs.filter((x) => x.offsetParent !== null).length);

@@ -334,3 +334,18 @@ test("narrMatrix shared slots and alone counts", () => {
   assert.deepEqual(M.slot.frame, { X: 0 }); assert.deepEqual(M.slot.blame, {});
   assert.deepEqual(M.alone, { a: 1, b: 1, c: 1 }); /* P, Q and Z are each chosen by one outlet */
 });
+test("biasBrief: Turkish one-liner, alias, missing, empty", () => {
+  const reg = { "salience-bias": { tr: "Belirginlik yanlılığı", en: "Salience Bias", df: "Göze çarpan bilgiye odaklanmak." }, "base-rate": { tr: "Taban oranı", en: "Base rate", df: "Genel oranı yok saymak." }, empty: { tr: "X", en: "X", df: "" } };
+  assert.deepEqual(L.biasBrief("salience-bias", reg, (x) => x), { name: "Belirginlik yanlılığı", en: "Salience Bias", text: "Göze çarpan bilgiye odaklanmak." });
+  assert.equal(L.biasBrief("base-rate-fallacy", reg, (x) => ({ "base-rate-fallacy": "base-rate" })[x] || x).name, "Taban oranı");
+  assert.equal(L.biasBrief("nope", reg, (x) => x), null);
+  assert.equal(L.biasBrief("empty", reg, (x) => x), null);
+});
+test("anPage: which Anlatı page a query shows", () => {
+  assert.equal(L.anPage({}), "nasil");
+  assert.equal(L.anPage({ t: "sezon" }), "sezon");
+  assert.equal(L.anPage({ n: "w9-s1" }), "olay");
+  assert.equal(L.anPage({ w: "w9", v: "ag" }), "olay");
+  assert.equal(L.anPage({ t: "bogus" }), "nasil");
+  assert.equal(L.anPage({ t: "nasil", n: "x" }), "nasil");
+});

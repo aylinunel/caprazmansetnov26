@@ -2769,6 +2769,14 @@ html.menu-lock,html.menu-lock body{overflow:hidden}
 .v7-yn-band{margin:28px 0}.v7-yn-band .v7-hc{display:block}
 .yn-t a{display:inline-block;min-height:44px;line-height:22px;padding:11px 0}
 
+/* inline bias explanation */
+.bx{display:inline;position:relative;z-index:2}
+.bx-b{font:500 12px var(--ff-m);color:var(--ink2);background:none;border:0;border-bottom:1px dashed var(--line2);padding:2px 0;margin-left:6px;cursor:pointer}
+.bx-b[aria-expanded=true]{color:var(--ink)}
+.bx-t{display:block;max-width:46ch;margin:6px 0 4px;padding:8px 12px;font-size:13px;line-height:1.5;color:var(--ink2);background:var(--surface,var(--paper));border:1px solid var(--line2);border-radius:8px}
+.xcard .bx{position:relative;z-index:2}
+@media (max-width:600px){.bx-b{min-height:44px;min-width:44px;padding:12px 4px}}
+
 </style>
 </head>
 <body>
@@ -11218,7 +11226,7 @@ function bg7CardLine(e) {
   var x = bg7ev(e.i); if (!x || x.status !== "review_complete") return "";
   var fs = bg7Live(x);
   return '<p class="yz-line">' + bg7AiTag() + " " +
-    (fs.length ? "dikkat çektiği kavramlar (kesin değil): " + fs.map(function (f) { return esc(f.name); }).join(", ") : "seçilen kavramların hiçbiri öne çıkmadı") + "</p>";
+    (fs.length ? "dikkat çektiği kavramlar (kesin değil): " + fs.map(biasChip).join(", ") : "seçilen kavramların hiçbiri öne çıkmadı") + "</p>";
 }
 function bg7Concept(key) {
   var r = bg7Stats()[key]; if (!r) return "";
@@ -11801,8 +11809,21 @@ function toneCell(cell, min) {
   return { n: cell.c, mean: cell.sum / cell.c };
 }
 
+/* Short Turkish bias text for the inline "Kısaca ne demek?" control; null when the concept or its one-line definition is missing. */
+function biasBrief(k, reg, alias) {
+  var r = (reg || {})[(alias || function (x) { return x; })(k)];
+  return r && r.df ? { name: r.tr || r.en || k, en: r.en || "", text: r.df } : null;
+}
+
+/* Anlatı haritası pages: nasil (explainer), sezon (season map), olay (one event). Old deep links carry n/w/v and mean the event page. */
+function anPage(q) {
+  q = q || {};
+  if (q.t === "nasil" || q.t === "sezon" || q.t === "olay") return q.t;
+  return !q.t && (q.n || q.w || q.v) ? "olay" : "nasil";
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { anEmpty: anEmpty, narrHabits: narrHabits, narrFindings: narrFindings, narrTimeline: narrTimeline, narrMatrix: narrMatrix, trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
+  module.exports = { biasBrief: biasBrief, anPage: anPage, anEmpty: anEmpty, narrHabits: narrHabits, narrFindings: narrFindings, narrTimeline: narrTimeline, narrMatrix: narrMatrix, trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
     dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints,
     axisDist: axisDist, partyRank: partyRank, nearestParty: nearestParty, compileAliases: compileAliases, matchParties: matchParties, mentionStats: mentionStats, mentionShares: mentionShares, toneCell: toneCell, PARTI_ALIAS: PARTI_ALIAS };
 }
@@ -11818,6 +11839,21 @@ SECTIONS[0].fn = pgHome7;
 SECTIONS.forEach(function (s) { if (s.p === "/anlati") s.fn = pgAnlati; });
 SECTIONS.push({ p: "/oruntu", label: "Örüntüler", fn: pgOruntu });
 DETAIL["/oruntu"] = { fn: pgOruntu, of: "/oruntu" };
+
+/* A bias the AI named: link to the concept library plus an optional short explanation that opens in place. */
+function biasChip(f) {
+  var link = '<a class="lnk" href="#/yontem?s=kavramlar&k=' + encodeURIComponent(bg7k(f.id)) + '">' + esc(f.name) + "</a>", b = biasBrief(f.id, BREG, bg7k);
+  if (!b) return link;
+  var id = "bx-" + bg7k(f.id) + "-" + (biasChip.n = (biasChip.n || 0) + 1);
+  return '<span class="bx">' + link + ' <button type="button" class="bx-b" aria-expanded="false" aria-controls="' + id + '">Kısaca ne demek?</button>' +
+    '<span class="bx-t" id="' + id + '" hidden><b>' + esc(b.name) + "</b>" + (b.en ? " (" + esc(b.en) + ")" : "") + ": " + esc(b.text) + "</span></span>";
+}
+document.addEventListener("click", function (ev) {
+  var b = ev.target.closest && ev.target.closest(".bx-b"); if (!b) return;
+  ev.preventDefault(); ev.stopPropagation();
+  var t = document.getElementById(b.getAttribute("aria-controls")), on = b.getAttribute("aria-expanded") !== "true";
+  b.setAttribute("aria-expanded", on); if (t) t.hidden = !on;
+}, true);
 
 function yzBadge() { return '<span class="yz-badge" title="Yapay zekâ ile üretildi · Yöntem › YZ">YZ</span>'; }
 
@@ -13678,7 +13714,7 @@ function olayFinding(f, x) {
   var qs = (f.evidence || []).slice(0, 3).map(function (q) {
     return "<li>“" + esc(q.q) + "”" + ((q.o || []).length ? " — " + q.o.map(function (o) { return esc(srcName(o)); }).join(", ") : "") + "</li>";
   }).join("");
-  return '<div class="v7-yzf"><h4><a class="lnk" href="#/yontem?s=kavramlar&k=' + encodeURIComponent(bg7k(f.id)) + '">' + esc(f.name) + "</a></h4>" +
+  return '<div class="v7-yzf"><h4>' + biasChip(f) + "</h4>" +
     (t.noticed ? "<p><b>" + (t.editor ? "Editör notu" : "Ne fark etti") + ".</b> " + esc(t.noticed) + "</p>" : "") +
     (qs ? "<ul>" + qs + "</ul>" : "") +
     (t.why ? "<p><b>Neden kesin değil.</b> " + esc(t.why) + "</p>" : "") + "</div>";

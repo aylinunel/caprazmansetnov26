@@ -2756,3 +2756,11 @@ html.menu-lock,html.menu-lock body{overflow:hidden}
 .yn-note{margin-top:12px}
 .v7-yn-band{margin:28px 0}.v7-yn-band .v7-hc{display:block}
 .yn-t a{display:inline-block;min-height:44px;line-height:22px;padding:11px 0}
+
+/* inline bias explanation */
+.bx{display:inline;position:relative;z-index:2}
+.bx-b{font:500 12px var(--ff-m);color:var(--ink2);background:none;border:0;border-bottom:1px dashed var(--line2);padding:2px 0;margin-left:6px;cursor:pointer}
+.bx-b[aria-expanded=true]{color:var(--ink)}
+.bx-t{display:block;max-width:46ch;margin:6px 0 4px;padding:8px 12px;font-size:13px;line-height:1.5;color:var(--ink2);background:var(--surface,var(--paper));border:1px solid var(--line2);border-radius:8px}
+.xcard .bx{position:relative;z-index:2}
+@media (max-width:600px){.bx-b{min-height:44px;min-width:44px;padding:12px 4px}}

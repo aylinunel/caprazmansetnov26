@@ -6708,7 +6708,7 @@ function bg7CardLine(e) {
   var x = bg7ev(e.i); if (!x || x.status !== "review_complete") return "";
   var fs = bg7Live(x);
   return '<p class="yz-line">' + bg7AiTag() + " " +
-    (fs.length ? "dikkat çektiği kavramlar (kesin değil): " + fs.map(function (f) { return esc(f.name); }).join(", ") : "seçilen kavramların hiçbiri öne çıkmadı") + "</p>";
+    (fs.length ? "dikkat çektiği kavramlar (kesin değil): " + fs.map(biasChip).join(", ") : "seçilen kavramların hiçbiri öne çıkmadı") + "</p>";
 }
 function bg7Concept(key) {
   var r = bg7Stats()[key]; if (!r) return "";

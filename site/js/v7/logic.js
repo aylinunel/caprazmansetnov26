@@ -476,8 +476,21 @@ function toneCell(cell, min) {
   return { n: cell.c, mean: cell.sum / cell.c };
 }
 
+/* Short Turkish bias text for the inline "Kısaca ne demek?" control; null when the concept or its one-line definition is missing. */
+function biasBrief(k, reg, alias) {
+  var r = (reg || {})[(alias || function (x) { return x; })(k)];
+  return r && r.df ? { name: r.tr || r.en || k, en: r.en || "", text: r.df } : null;
+}
+
+/* Anlatı haritası pages: nasil (explainer), sezon (season map), olay (one event). Old deep links carry n/w/v and mean the event page. */
+function anPage(q) {
+  q = q || {};
+  if (q.t === "nasil" || q.t === "sezon" || q.t === "olay") return q.t;
+  return !q.t && (q.n || q.w || q.v) ? "olay" : "nasil";
+}
+
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { anEmpty: anEmpty, narrHabits: narrHabits, narrFindings: narrFindings, narrTimeline: narrTimeline, narrMatrix: narrMatrix, trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
+  module.exports = { biasBrief: biasBrief, anPage: anPage, anEmpty: anEmpty, narrHabits: narrHabits, narrFindings: narrFindings, narrTimeline: narrTimeline, narrMatrix: narrMatrix, trFold: trFold, weekEvents: weekEvents, pickWeek: pickWeek, narrGroups: narrGroups, orderOutlets: orderOutlets,
     dimShares: dimShares, blameByBloc: blameByBloc, yzText: yzText, ilanSearch: ilanSearch, redirectRoute: redirectRoute, NAV_SUB: NAV_SUB, yontemAnchor: yontemAnchor, weeklySplits: weeklySplits, outletKisaca: outletKisaca, recentSplits: recentSplits, whatDiffers: whatDiffers, GLOSSARY: GLOSSARY, glossTerms: glossTerms, pNums: pNums, pSplitPoints: pSplitPoints,
     axisDist: axisDist, partyRank: partyRank, nearestParty: nearestParty, compileAliases: compileAliases, matchParties: matchParties, mentionStats: mentionStats, mentionShares: mentionShares, toneCell: toneCell, PARTI_ALIAS: PARTI_ALIAS };
 }
