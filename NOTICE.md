@@ -9,3 +9,7 @@ The integration adapters and refactor are delivered in a private repository unde
 ## Ponytail
 
 `.claude/skills/ponytail/SKILL.md` is copied unchanged from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) at `09c434ab73ca43761c5d8b0c5d341926c2fba710` (MIT License, Copyright (c) 2026 DietrichGebert). It is a coding-style instruction for Claude Code sessions in this repository, not a runtime dependency.
+
+## Evidence-gated review and Mesa laboratory
+
+The `news-validity-v1` safeguards and offline evaluator are new repository-specific integration code. `tools/mesa/expanded_mesa_biases.py` is copied unchanged from the previously delivered, user-requested 138-mechanism Mesa extension; its hash and educational scope are recorded in `tools/mesa/source-manifest.json`. Its source descriptions derive from user-supplied materials. This project does not assert a redistribution license, source-owner endorsement, independent expert approval or empirical psychological validity for those materials or mechanisms. Exact quotes, passing software contracts and synthetic scenario expectations do not establish real-news detector accuracy. Mesa and other dependencies retain their own licenses.

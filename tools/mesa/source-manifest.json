@@ -1,0 +1,10 @@
+{
+  "sha256": "438c22ca49120be14555d7f4c75157ad74030490ef3546d1acaa69a5b4b46abb",
+  "file": "expanded_mesa_biases.py",
+  "source": "Previously delivered 138-module Mesa extension, copied unchanged",
+  "source_date": "2026-11-14",
+  "entries": 138,
+  "synthetic_only": true,
+  "empirically_validated": false,
+  "license_note": "Authored mechanism code and user-supplied source definitions; no assertion of third-party endorsement or source-article redistribution permission."
+}

@@ -1,0 +1,60 @@
+{
+  "algorithm": "news-validity-v1",
+  "baseline_commit": "cc872425aa7d8ad1bf1c984cfe21ae91563142fc",
+  "executed_date": "2026-11-14",
+  "live_model_calls": 0,
+  "public_data_updated": false,
+  "software": {
+    "biasguard": {
+      "tests": 93,
+      "passed": true
+    },
+    "pipeline": {
+      "tests": 33,
+      "passed": true
+    },
+    "javascript": {
+      "tests": 38,
+      "passed": true
+    }
+  },
+  "simulation": {
+    "contracts_passed": 138,
+    "contracts_expected": 138,
+    "agents": 12,
+    "replicates": 3,
+    "scenario_summaries": 277,
+    "expectation_checks_passed": 277,
+    "expectation_checks_total": 277,
+    "failed_concepts": 0,
+    "paired_agent_rows": 9972,
+    "empirically_validated": false
+  },
+  "archived_event_replay": {
+    "legacy-replay": {
+      "planned": 150,
+      "completed": 150,
+      "incomplete": 0,
+      "notAttempted": 0,
+      "supported": 0,
+      "uncertain": 439,
+      "effects": 0
+    },
+    "guarded-replay": {
+      "planned": 150,
+      "completed": 150,
+      "incomplete": 0,
+      "notAttempted": 0,
+      "supported": 0,
+      "uncertain": 439,
+      "effects": 0
+    },
+    "interpretation": "Saved file-based reviews only; no independent labels. All archived findings were already uncertain, so replay does not demonstrate an accuracy gain."
+  },
+  "empirical_accuracy_improvement_established": false,
+  "audit_repairs": [
+    "native root draft publication rejection",
+    "original outlet-record boundary validation",
+    "native candidate_ids routing and conflict checks"
+  ]
+}
