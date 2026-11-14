@@ -220,7 +220,8 @@ function ptOwn(d) {
 
 /* ------------------------------------------------ page */
 function ptLate(d) {
-  return pTickets([{ n: d.pn, label: "incelenen siyasi başlık" }, { n: d.any, label: "parti adı geçen başlık" }]) +
+  /* own wrapper: the tickets pin their parent, which must never be the whole page or the late block */
+  return '<div class="pt-sec">' + pTickets([{ n: d.pn, label: "incelenen siyasi başlık" }, { n: d.any, label: "parti adı geçen başlık" }]) + "</div>" +
     pHead("3 · Kim kimi anıyor", "Başlıklarda parti adları", "parti-3") + ptMention(d) +
     pHead("4 · Ton", "Hangi partiden hangi dille söz ediliyor", "parti-4") + ptTone(d) +
     pHead("5 · Sahiplik", "Sahiplik ve en yakın parti", "parti-5") + ptOwn(d) +
@@ -230,8 +231,8 @@ function pgParti() {
   var d = ptData(), c = ptClose(d);
   var h = '<div class="wrap page or"><div class="phead"><div class="eyebrow">Kurumlar › Partiler</div><h1>Kurumlar ve partiler: yakınlık, anma, ton</h1>' +
     '<p class="lede">Kurumların ve ' + d.parties.length + ' partinin aynı altı eksendeki yerleşimlerini yan yana koyuyor, sonra siyasi başlıklarda hangi partinin ne sıklıkla ve hangi dille anıldığına bakıyoruz.</p></div>';
-  h += pLead("Hiçbiri bir kurumun bir partiyle bağlantılı olduğunu göstermez: parti konumları ideolojik tanımlardan, kurum konumları sağlanan kayıt defterinden gelir ve ikisi de bu sitede doğrulanmadı. Yakın olmak, bağlı olmak değildir.");
-  h += pTickets([{ n: d.outs.length, label: "kurum, altı eksende yerleşik" }, { n: d.parties.length, label: "parti" }]);
+  h += '<div class="pt-sec">' + pLead("Hiçbiri bir kurumun bir partiyle bağlantılı olduğunu göstermez: parti konumları ideolojik tanımlardan, kurum konumları sağlanan kayıt defterinden gelir ve ikisi de bu sitede doğrulanmadı. Yakın olmak, bağlı olmak değildir.") +
+    pTickets([{ n: d.outs.length, label: "kurum, altı eksende yerleşik" }, { n: d.parties.length, label: "parti" }]) + "</div>";
   h += pHead("1 · Yakınlık", "Hangi kurum hangi partiye yakın", "parti-1") + c.find;
   h += pHead("2 · Altı eksen", "Kurumlar ve partiler altı eksende", "parti-2") + ptAxes(d);
   h += '<div id="pt-late" aria-busy="true"><p class="pt-skel">Başlıklar taranıyor…</p></div></div>';
@@ -251,6 +252,7 @@ function wireParti() {
     var box2 = document.getElementById("pt-late"); if (!box2 || !box2.getAttribute("aria-busy")) return;
     box2.innerHTML = ptLate(ptMent()); box2.removeAttribute("aria-busy"); wireGo(box2);
     if (typeof motionAdd === "function") motionAdd(box2);
+    if (window.ScrollTrigger) ScrollTrigger.refresh();
   }, 0);
   if (!root._pt) {
     root._pt = 1;
